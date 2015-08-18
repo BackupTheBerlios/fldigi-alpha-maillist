@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Rig Control/Freq Display request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3Ct2ue93450131005011320v973e1a86y23616b8d2f0ed5c6%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001179.html">
+   <LINK REL="Next"  HREF="001184.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Rig Control/Freq Display request</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3Ct2ue93450131005011320v973e1a86y23616b8d2f0ed5c6%40mail.gmail.com%3E"
+       TITLE="Rig Control/Freq Display request">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sat May  1 22:20:27 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001179.html">Rig Control/Freq Display request
+</A></li>
+        <LI>Next message: <A HREF="001184.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1181">[ date ]</a>
+              <a href="thread.html#1181">[ thread ]</a>
+              <a href="subject.html#1181">[ subject ]</a>
+              <a href="author.html#1181">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, May 1, 2010 at 12:55 PM, Anony Mous &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fyngyrz at gmail.com</A>&gt; wrote:
+&gt;&gt;<i> &gt; &gt; 2. The frequency display on the radios is almost never the actual
+</I>&gt;&gt;<i> &gt; &gt; frequency of the transmission.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Correct
+</I>&gt;<i>
+</I>&gt;<i> No, it isn't correct. For an SSB mode, &quot;the frequency&quot; is where 0 Hz is.
+</I>
+That is convention.
+
+&gt;<i> Other than that, the frequencies are all over the passband, and will vary
+</I>&gt;<i> hugely depending upon what you're doing. You're still tuned to the same
+</I>&gt;<i> place, though.
+</I>
+You got that right. I think we are arguing about different things
+here. Frequency convention came about in the days of AM and CW. In
+both those cases we report the carrier frequency, which just happens
+to be in the middle of the signal! In ham radio it became the
+convention to report the suppressed carrier frequency. BTW, if you
+look at how channels are defined in commercial SSB operation, they
+specify the passband width (3kHz) and a center frequency for the
+channel as that clearly defines precisely where the RF ends up in the
+spectrum.
+
+&gt;&gt;<i> The radio dial frequency is the readout in Fldigi. The AFSK waterfall
+</I>&gt;&gt;<i> frequency, added to that radio dial frequency, for the various audio
+</I>&gt;&gt;<i> tones, is the frequency, or frequencies, of actual transmission. The
+</I>&gt;&gt;<i> operating ham needs to know this.
+</I>&gt;<i>
+</I>&gt;<i> Ok. Here's the crux of the matter. Why does &quot;the operating ham need to know
+</I>&gt;<i> this&quot;?
+</I>
+Because he needs to know precisely where his RF is going so that he
+doesn't operate outside the band. Here in the US the FCC doesn't give
+a rat's patootie what the dial frequency is, only if the RF goes
+outside the spectrum allocated to the class of license held by the
+operator.
+
+&gt;<i> I can easily understand why you'd want to know the AF frequencies involved,
+</I>
+I don't, other than they represent an IF frequency, something
+important if I need to look under the hood but otherwise not so much.
+
+&gt;<i> so you can correctly tune the radio to the transmission and so that any
+</I>&gt;<i> filters, if shift, bandwidth adjustments can be made in a sensible
+</I>&gt;<i> fashion... the received information is pure AF once it's been detected...
+</I>&gt;<i> but I can't think of a single use for the information that &quot;FAX black is
+</I>&gt;<i> received on 14.2319 MHz&quot; when my receiver should be on 14.230 MHz USB, or
+</I>&gt;<i> &quot;RTTY Mark is received on 14.07725 MHz&quot; when my receiver should be on 14.080
+</I>&gt;<i> MHz LSB.
+</I>
+You are thinking too much from the point of view of doing things for
+the radio, not the radio doing things for you.
+
+&gt;<i> Please enlighten me here. What *is* fldigi's display of RF, as opposed to
+</I>&gt;<i> AF, frequency good for, and why does the operator &quot;need to know&quot;?
+</I>
+Uh, because the operator might not want a pink ticket?
+
+&gt;<i> On the other hand, if the waterfall is set to AF, and the modem is set
+</I>&gt;<i> correctly (let's say that RTTY mark is at 2125 Hz where it belongs),
+</I>
+Why does it belong at 2125? I never use 2125 for RTTY. I happen to use
+1500 because that is the center of my passband and I have my filters
+centered on that. I just switch the width to match the emission mode
+but they are still centered on 1500 Hz low IF.
+
+&gt;<i> then I
+</I>&gt;<i> can tune the radio while looking at the waterfall during reception, and I'll
+</I>&gt;<i> be exactly on the correct RF frequency every time, by simply putting the
+</I>&gt;<i> mark signal on the mark frequency, 2125 Hz.
+</I>
+You mean by mentally setting your radio dial 2125 Hz below the
+frequency where you actually want to operate. I understand why you do
+that. We have been doing that in our heads for probably 75 years when
+operating RTTY. But that doesn't mean that it is what is really
+happening. It is what we do by convention to ensure that we put the
+signal where it should be in the RF spectrum.
+
+&gt;<i> Whereas... if the modem has been &quot;slid&quot; off the correct AFSK points, then
+</I>&gt;<i> I'll be receiving on the wrong frequency; my transmit signal will come back
+</I>&gt;<i> shifted to the original signal (which is what defines my frequency as
+</I>&gt;<i> wrong); my opposite number wil have to re-tune his receiver; and any
+</I>&gt;<i> external gear I might have - RTTY filters, SSTV receivers, etc., will be
+</I>&gt;<i> completely unable to deal with the received signal, because the AF
+</I>&gt;<i> frequencies are wrong.
+</I>
+Uh, no. You and I could work all day long with me using a modem center
+frequency of 1500 Hz. Our dial frequencies will be different (who
+cares as it doesn't tell me where my transmit signal is anyway) but we
+will be able to work. The only difference is, I will know exactly the
+frequency of my RF output. You will have to expend some skull sweat to
+work it out.
+
+&gt;<i> I think it is important to keep in mind that the vast majority of digital
+</I>&gt;<i> modes are sent and received as AFSK, not FSK, and that the cutesy trend to
+</I>&gt;<i> try and specify frequencies based on FSK mark for those few transmitters
+</I>&gt;<i> that actually have a mode that can be used for RTTY, for instance, is both
+</I>&gt;<i> confusing to everyone else, and not particularly useful in and of itself. In
+</I>&gt;<i> the end, these are AF frequencies for almost everyone. It behooves us well
+</I>&gt;<i> to treat them that way - almost everything works better that way.
+</I>
+Well, confusion in the mind of the confused. The important thing is,
+&quot;what frequency is my RF coming out on?&quot; I would rather have the
+option of displaying that.
+
+-- 
+73 de Brian, WB6RQN/J79BPL
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001179.html">Rig Control/Freq Display request
+</A></li>
+	<LI>Next message: <A HREF="001184.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1181">[ date ]</a>
+              <a href="thread.html#1181">[ thread ]</a>
+              <a href="subject.html#1181">[ subject ]</a>
+              <a href="author.html#1181">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

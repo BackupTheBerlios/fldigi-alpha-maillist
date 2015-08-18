@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> WEFAX Works Great!
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20WEFAX%20Works%20Great%21&In-Reply-To=%3Ck2x1561aee61004120130x9c877fb1wef8da33856faeb39%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001108.html">
+   <LINK REL="Next"  HREF="001109.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>WEFAX Works Great!</H1>
+    <B>Ben</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20WEFAX%20Works%20Great%21&In-Reply-To=%3Ck2x1561aee61004120130x9c877fb1wef8da33856faeb39%40mail.gmail.com%3E"
+       TITLE="WEFAX Works Great!">ben at vk-agency.com
+       </A><BR>
+    <I>Mon Apr 12 10:30:43 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001108.html">WEFAX Works Great!
+</A></li>
+        <LI>Next message: <A HREF="001109.html">REQ_SYNC and REQ_ASYNC ???
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1110">[ date ]</a>
+              <a href="thread.html#1110">[ thread ]</a>
+              <a href="subject.html#1110">[ subject ]</a>
+              <a href="author.html#1110">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Apr 12, 2010 at 1:34 AM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> &lt;
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt; wrote:
+
+&gt;<i> Ben wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Feature suggestion that will help with weaker signals in auto: Protect
+</I>&gt;&gt;<i> against APT-end until a certain number of lines have been received (probably
+</I>&gt;&gt;<i> should be user-settable... default to maybe 1000 or so.) Otherwise, in weak
+</I>&gt;&gt;<i> signal conditions, the receive often quits very early, interpreting noise as
+</I>&gt;&gt;<i> &quot;stop.&quot; It would be nice to even disable APT-end, as once reception is
+</I>&gt;&gt;<i> begun, even horribly weak signals can be somewhat copied, but that APT-end
+</I>&gt;&gt;<i> will probably kill the fax under those conditions.
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>
+&gt;<i>  What about a small tick to disable Apt-End detection, displayed only when
+</I>&gt;<i> in auto mode ?
+</I>
+
+Yes, I think this would be just fine.
+
+On the matter of saving and loading fax preferences until you determine how
+the program otherwise works, I have a suggestion you might wish to employ as
+a stop-gap:
+
+Temporarily use fopen(), fwrite(), fread() and fclose(). These calls exist
+in the C library for windows, linux, and the mac (and probably almost
+everything else on the planet... they were in the Amiga libraries in the
+late 1980s, for instance.) So they should be extremely portable.
+
+If you look at these C library functions, you will see they are trivial to
+use, and allow storing and retrieving simple settings files with almost no
+effort. For example, here's a trivial and easily extensible system-agnostic
+prefs off the top of my head, uncompiled and untested, but should be close
+or correct:
+
+/* ----------- CUT -------- */
+
+#include &lt;stdio.h&gt;
+
+char keepwindowopen = 0;
+int16 numoflines = 10000; /* 2-byte integer... declaration may vary */
+
+/* returns int code with error bits:
+1 - file failed to open for write
+2 - failed to write keepwindow open byte
+4 - failed to write numoflines int
+*/
+int writeprefs()
+{
+FILE *fp;
+int err;
+
+err = 0;
+if (fp = fopen(&quot;prefs.txt&quot;,&quot;w&quot;) != NULL)
+{
+if (fwrite(&amp;keepwindowopen,1,1,fp) != 1) { err += 2; }
+if (fwrite(&amp;numoflines,2,1,fp) != 1) { err += 4; }
+fclose(fp);
+}
+else { err += 1; }
+return(err); /* 0 = good, other = error */
+}
+
+/* returns int code with error bits:
+1 - file failed to open for read
+2 - failed to read keepwindow open byte
+4 - failed to read numoflines int
+*/
+int readprefs()
+{
+FILE *fp;
+int err;
+
+err=0;
+if (fp=fopen(&quot;prefs.txt&quot;,&quot;r&quot;) != NULL) /* in current directory */
+{
+if (fread(&amp;keepwindowopen,1,1,fp) != 1) { err += 2; }
+if (fread(&amp;numoflines,2,1,fp) != 1) { err += 4; }
+fclose(fp);
+}
+else { err += 1; }
+return(err); /* 0=good, other = error */
+}
+
+/* ----------- CUT -------- */
+/* use: */
+/* at end of program: */
+
+int err;
+if ((err = writeprefs()) != 0)
+{
+/* failed to save prefs, see err */
+}
+
+/* ----------- CUT -------- */
+/* near beginning of program: */
+
+extern int16 numoflines;
+extern char keepwindowopen;
+
+if ((err = readprefs()) !=0)
+{
+/* failed to read prefs, can continue, should notify user though, see err */
+}
+/* sanity checks */
+
+if ((keepwindowopen != 0) &amp;&amp; (keepwindowopen != 1))
+{
+/* then we can't use it */
+keepwindowopen = 0; /* sane, conservative default */
+}
+
+if ((numoflines &lt; 0) || (numoflines &gt; 10000))
+{
+/* then we can't use it */
+numoflines = 2000;
+}
+
+/* here, values are set and sane */
+
+/* ----------- CUT -------- */
+
+
+Thanks for your ideas and remarks.
+&gt;<i>
+</I>
+You are most welcome, and in return, I wish to express my gratitude for your
+fine work.
+
+I wish I could get the software to compile and link here, for then I feel I
+could be of additional assistance. Unfortunately, the problem, whatever it
+is, remains obscure to me.
+
+--Ben
+AA7AS
+
+
+
+
+&gt;<i>
+</I>&gt;<i> Cheers
+</I>&gt;<i>
+</I>&gt;<i> Remi
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100412/1d47f458/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100412/1d47f458/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001108.html">WEFAX Works Great!
+</A></li>
+	<LI>Next message: <A HREF="001109.html">REQ_SYNC and REQ_ASYNC ???
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1110">[ date ]</a>
+              <a href="thread.html#1110">[ thread ]</a>
+              <a href="subject.html#1110">[ subject ]</a>
+              <a href="author.html#1110">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

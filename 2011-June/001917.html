@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi / fllog matched set posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20/%20fllog%20matched%20set%20posted&In-Reply-To=%3C4DFBCD99.6000208%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001915.html">
+   <LINK REL="Next"  HREF="001918.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi / fllog matched set posted</H1>
+    <B>Ed</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20/%20fllog%20matched%20set%20posted&In-Reply-To=%3C4DFBCD99.6000208%40gmail.com%3E"
+       TITLE="fldigi / fllog matched set posted">autek2 at gmail.com
+       </A><BR>
+    <I>Fri Jun 17 23:56:41 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001915.html">fldigi / fllog matched set posted
+</A></li>
+        <LI>Next message: <A HREF="001918.html">fldigi / fllog matched set posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1917">[ date ]</a>
+              <a href="thread.html#1917">[ thread ]</a>
+              <a href="subject.html#1917">[ subject ]</a>
+              <a href="author.html#1917">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 06/17/2011 01:41 PM, w1hkj wrote:
+&gt;<i> <A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+</I>&gt;<i> <A HREF="http://www.w1hkj.com/alpha/fllog/">http://www.w1hkj.com/alpha/fllog/</A>
+</I>&gt;<i>
+</I>&gt;<i> fllog reads/writes standard fldigi logbook adif files. It also acts as a server
+</I>&gt;<i> to multiple clients. These clients may be multiple running copies of fldigi on
+</I>&gt;<i> the same or multiple machines on the network.
+</I>&gt;<i>
+</I>&gt;<i> If fllog-0.9.905 and fldigi-3.22.0AB are executing on the same machine then no
+</I>&gt;<i> special parameters are needed for the client (fldigi) to communicate with the
+</I>&gt;<i> server (fllog).
+</I>&gt;<i>
+</I>&gt;<i> If fldigi and fllog are on different machines you will need to know the socket
+</I>&gt;<i> address of the server machine. The socket address and port are set at the client
+</I>&gt;<i> end using command line parameters to fldigi. This is similar to the command line
+</I>&gt;<i> parameters for arq and/or xmlrpc servers.
+</I>&gt;<i>
+</I>&gt;<i> --xmllog-server-address HOSTNAME
+</I>&gt;<i> Set the XMLLOG server address
+</I>&gt;<i> The default is: 127.0.0.1
+</I>&gt;<i>
+</I>&gt;<i> --xmllog-server-port PORT
+</I>&gt;<i> Set the XMLLOG server port
+</I>&gt;<i> The default is: 8421
+</I>&gt;<i>
+</I>&gt;<i> Do not change the xmllog-server-port in this alpha version. It is fixed in fllog
+</I>&gt;<i> to the 8421 address.
+</I>&gt;<i>
+</I>&gt;<i> The fllog server must be running for fldigi to make the connection. I recommend
+</I>&gt;<i> the following test sequence.
+</I>&gt;<i>
+</I>&gt;<i> Start flllog and immediately close the program. That will create an fllog files
+</I>&gt;<i> folder and an empty database.
+</I>&gt;<i>
+</I>&gt;<i> On Linux / OS X: ~/.fllog/ ~/.fllog/fllog.prefs ~/.fllog/logbook.adif
+</I>&gt;<i> ~/.fllog/status_log.txt
+</I>&gt;<i> On XP: C:\Documents and Settings\&lt;username&gt;\fllog.files with the same three files
+</I>&gt;<i> On Vista: C:\Users\&lt;username&gt;\fllog.files with the same three files
+</I>&gt;<i>
+</I>&gt;<i> Copy your current logbook file to this folder and name it logbook.adif. (.adi on
+</I>&gt;<i> Windows)
+</I>&gt;<i>
+</I>&gt;<i> Restart fllog ... you should now be able to browse your logbook etc.
+</I>&gt;<i>
+</I>&gt;<i> Start fldigi-3.22.0AB and select the remote logbook:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Access to the internal fldigi logbook is not available when using the server
+</I>&gt;<i> logbook.
+</I>&gt;<i>
+</I>&gt;<i> If the logbook server was successfully connected then the &quot;Connect to server&quot;
+</I>&gt;<i> menu item remains checked. Remember that the server must be running and
+</I>&gt;<i> accessible either via localhost or over the LAN.
+</I>&gt;<i>
+</I>&gt;<i> If you want fldigi to always start with access to the logbook server simply save
+</I>&gt;<i> the configuration &quot;Config / Save config&quot;.
+</I>&gt;<i>
+</I>&gt;<i> Fldigi will default to the internal logbook if at any time the connection to the
+</I>&gt;<i> server is terminated or not available at start.
+</I>&gt;<i>
+</I>&gt;<i> OK, all up and running? Try entering a known logbook entry CALL into fldigi's
+</I>&gt;<i> QSO entry panel. The call data should populate in fldigi. At the same time fllog
+</I>&gt;<i> browser should point to the found CALL and the data entry controls in fllog will
+</I>&gt;<i> be populated with the record data.
+</I>&gt;<i>
+</I>&gt;<i> I'm hoping a few of you might be able to use this during the forthcoming Field Day.
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>
+
+Built from source Ubuntu 10.04.
+
+Works like a charm. Sorry no way to test across the LAN.
+
+Ed W3NR
+
+
+
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001915.html">fldigi / fllog matched set posted
+</A></li>
+	<LI>Next message: <A HREF="001918.html">fldigi / fllog matched set posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1917">[ date ]</a>
+              <a href="thread.html#1917">[ thread ]</a>
+              <a href="subject.html#1917">[ subject ]</a>
+              <a href="author.html#1917">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

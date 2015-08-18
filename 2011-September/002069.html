@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Sound Card WWV calibration over VHF, (was Re: fldigi-3.22.0AS posted)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Sound%20Card%20WWV%20calibration%20over%20VHF%2C%20%28was%20Re%3A%20fldigi-3.22.0AS%20posted%29&In-Reply-To=%3C4E808385.3080302%40conas.co.cu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002053.html">
+   <LINK REL="Next"  HREF="002070.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Sound Card WWV calibration over VHF, (was Re: fldigi-3.22.0AS posted)</H1>
+    <B>Ing. Pavel Milanes Costa</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Sound%20Card%20WWV%20calibration%20over%20VHF%2C%20%28was%20Re%3A%20fldigi-3.22.0AS%20posted%29&In-Reply-To=%3C4E808385.3080302%40conas.co.cu%3E"
+       TITLE="Sound Card WWV calibration over VHF, (was Re: fldigi-3.22.0AS posted)">pavel at conas.co.cu
+       </A><BR>
+    <I>Mon Sep 26 15:52:05 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002053.html">fldigi-3.22.0AS posted
+</A></li>
+        <LI>Next message: <A HREF="002070.html">Sound Card WWV calibration over VHF, (was Re: fldigi-3.22.0AS	posted)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2069">[ date ]</a>
+              <a href="thread.html#2069">[ thread ]</a>
+              <a href="subject.html#2069">[ subject ]</a>
+              <a href="author.html#2069">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sorry for the delay... I was offline for the entire friday-today...
+
+This are the results for the WWV calibration using fldigi 3.22.0AS:
+
+Hardware:
+      Desktop: Via P4 2.4Ghz 1Gb RAM, with 2 Sound cards
+          OS: Ubuntu 11.04 custom kernel for oss support ***
+          Radio: FT-747GX for WWV via Hamlib and TK-760 for 2m link (the 
+2 interfaces are home made)
+      Laptop: Dell Inspiron 1200
+          OS: Ubuntu 11.04 default kernel
+          Radio: FT-23R handheld, home made interface
+
+As the sound card MUST one time base for &quot;TX&quot; and &quot;RX&quot;, the correction 
+of the sound card must be the same in RX/TX...
+
+the procedure was this
+
+1 - Adjust RX correction on desktop PC as mentioned in fldigi help topic 
+against WWV (in my case 25.000 Mhz was the most strong/clean at that time)
+      Result: Correction was +33 (Ensoniq ES1371 [AudioPCI-97], PCI 
+CARD, the small slant in the image is +33, and +34 have have the same 
+slant, just in the other way, so the real adjust may be +33.5 or so... 
+hi hi hi...)
+2 - Apply the same correction on TX
+3 - Use the new WWV TX mode to calibrate the RX on the Laptop against 
+the signal from the Desktop PC using low power FM 2m link (<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">1W at 145.010Mhz</A>)
+      Result: Correction was -8 (Intel Corporation 82801FB/FBM/FR/FW/FRW 
+ICH6 AC'97, laptop mobo)
+4 - Apply the correction found on laptop to TX
+5 - Test the correction of laptop against WWV to see differences between 
+WWV and fldigi TX...
+      Result: Perfect sync; hence fldigi is doing a great job and RX/TX 
+correction on Esoniq PCI on Desktop is the same.
+6 - Check TX of laptop against calibrated RX on desktop
+      Result: Perfect sync; hence RX/TX correction on Dell desktop 
+builtin soundcard is the same.
+7 - Calibrate my mobo built in soundcard: VIA Technologies, Inc. 
+VT8233/A/8235/8237 AC97 Audio Controller
+      Result RX: ~ +1345 (against WWV and fldigi on laptop)
+      Result TX: ~ +1350 (RX on laptop, moving TX o the desktop...)
+      The corrections is so big that the small changes is almost not 
+noticed, may be that is the cause of the difference on RX/TX...
+
+This confirm my idea of the poor quality of the via sound card on the 
+desktop (or bad driver support on linux, as it has some minor problems 
+on ubuntu.. but that's another story...)
+
+Then, the fldigi WWV calibration mode on RX is working ok (as always 
+was) and the new TX mode of WWV for calibrating machines via VHF/UHF 
+without &quot;original WWV in HF&quot; is working fine, as usual.
+
+Attached a screen shot of my desktop machine calibration against WWV...
+
+73, I hope this test help the developers a little.
+
+PS: My WEFAX reception now is much better, as I have't any problems of 
+slant now !!! see attachments
+
+*** I use a custom kernel for OSS support for Tvtime and gnomeradio 
+hack, all fldigi audio work in the desktop is done via /dev/dsp, that's 
+why two sliders in RX and TX panels...
+
+El 22/09/11 12:51, Ing. Pavel Milanes Costa escribi&#243;:
+  &gt; Build fine on Ubuntu 11.04
+  &gt;
+  &gt; This night I will try to calibrate my laptop soundcard with my dektop PC
+  &gt; which is calibrated to WWV
+  &gt;
+  &gt; 73
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: fldigi_adjust_desktop_ok.png
+Type: image/png
+Size: 332229 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110926/4b407ab8/attachment.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110926/4b407ab8/attachment.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: fldigi_WEFAX.png
+Type: image/png
+Size: 492495 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110926/4b407ab8/attachment-0001.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110926/4b407ab8/attachment-0001.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: pavel.vcf
+Type: text/x-vcard
+Size: 531 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110926/4b407ab8/attachment.vcf">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110926/4b407ab8/attachment.vcf</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002053.html">fldigi-3.22.0AS posted
+</A></li>
+	<LI>Next message: <A HREF="002070.html">Sound Card WWV calibration over VHF, (was Re: fldigi-3.22.0AS	posted)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2069">[ date ]</a>
+              <a href="thread.html#2069">[ thread ]</a>
+              <a href="subject.html#2069">[ subject ]</a>
+              <a href="author.html#2069">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

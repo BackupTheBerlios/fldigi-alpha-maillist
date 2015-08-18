@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLWRAP
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLWRAP&In-Reply-To=%3C4B2CF43B.2050601%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000563.html">
+   <LINK REL="Next"  HREF="000567.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLWRAP</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLWRAP&In-Reply-To=%3C4B2CF43B.2050601%40bellsouth.net%3E"
+       TITLE="FLWRAP">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Dec 19 16:41:47 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000563.html">fldigi-3.13BH posted on alpha web page
+</A></li>
+        <LI>Next message: <A HREF="000567.html">FLWRAP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#564">[ date ]</a>
+              <a href="thread.html#564">[ thread ]</a>
+              <a href="subject.html#564">[ subject ]</a>
+              <a href="author.html#564">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Don, I've opened this discussion up to a larger audience since the 
+resolution will effect many flwrap users.
+
+Donald Kemp wrote:
+
+Dave,
+
+Too late, I uninstalled and reinstalled flwrap from your site.
+No problem, didn't take long.
+
+I did what you suggested and it did work OK.
+I installed the flwrap on the other guy's computer
+and I am reasonably sure he used flwrap because the old
+WRAP was not installed. His fldigi did see the flwrap file
+and saveed it to the correct directory but he got the same
+encripted file when he dropped it through flwrap.
+
+You must have installed the wrap executable on the regular web site and 
+not the alpha page Don.  I just repeated the experiment with dropping 
+the file onto &quot;wrap-1.0&quot; which of course only yielded the compressed 
+file and not the original.  On Linux this is a no brainer as the user 
+can then uncompress using the lzma compression tool.  Some of the 
+windows compression tools might also work.  That makes me quite certain 
+that the two ends are not using compatible versions of flwrap.  The 
+confusion probably comes from my reusing the wrap icon for *fl*wrap.
+
+We do not use the desktop icons, we install it into the quick
+launch bar. Maybe that has something to do with it.
+
+I've never tried it that way, but be advised that the program was 
+designed for use with a desktop icon launcher.
+
+We have a directory for traffic to send and it has a flwrap shortcut in it
+and it resids at the lower left of fldigi.
+We then have the flwrap directory at the upper left of fldigi also
+with a shortcut of flwrap in it.
+When wrapped traffic comes in it appears in the flwrap directory;
+it can then be dropped into that shortcut and the native file should appear.
+This new file can be dragged into the send directory or into the
+fldigi send buffer
+is needed.
+It all works very quickly and efficiently.
+
+We will try again.
+
+Sounds like you have a process that works for you.
+
+However; having a file being transmitted as an incripted file
+will not work for MARS. 
+
+Bad word ... encrypt ... a no no as far as the FCC is concerned.  The 
+file is not encrypted, it is compressed using public domain compression 
+methods.
+
+As a traffic rep, I would have to send the file twice,
+once as a WRAP file and once as straight text. This only makes for
+longer traffic
+runs and wasts net time. Is it possible to make flwrap show normal text?
+
+Why?  When all of the users are using the same software would they not 
+all have the correct flwrap?
+
+Will the old WRAP still work with the current Alpha version of fldigi?
+
+Yes, but it will be deprecated by /*fl*wrap/.
+
+What you really want is either the original wrap behavior or a software 
+switch that forces all data to be uncompressed if it originated as plain 
+ASCII text.  Note that all images, binary data files (including MS Word 
+&quot;.doc&quot; files) would still require compression and encoding using 
+base64.  Because there are no &quot;configuration&quot; files for flwrap it would 
+be necessary to make that switch a command line switch.  On Windows 
+XP/Vista/Win7 that would require that the launcher properties be changed 
+to include something like:
+
+Target: &quot;C:\Program Files\flwrap-1.0.2\flwrap.exe&quot; --nocomp
+
+I just checked on Vista and the Quick Launch bar also allows you to 
+change the properties in this manner.
+
+It might be better to make the default without compression, since many 
+users seem to have minimal systems administration knowledge in the MS 
+world.  Then the launch target properties would be:
+
+Target: &quot;C:\Program Files\flwrap-1.0.2\flwrap.exe&quot; --usecomp
+
+The purpose of compressing all files was to reduce the transmission 
+time.  Files transferred using /flwrap/ contain data which must be 
+verified.  If you are simply eyeballing the internal contents of the 
+wrapped file you are defeating its purpose.  Why waste time with the 
+headers etc.  Just transmit the original file and accept propagation 
+errors.  If the data must be intact and verifiable then it makes no 
+difference whether you can read the data during transmission or not.  If 
+it cannot be unwrapped correctly then the data is useless.  A good 
+example might be a spreadsheet in comma separated value (.CSV) format 
+that contains numeric data.  How would you verify this data without the 
+wrap technology.  You would either have to repeat the file transmission 
+several times and then do voting, or the operators would have to verify 
+item-by-item.
+
+Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091219/cc118a7f/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091219/cc118a7f/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000563.html">fldigi-3.13BH posted on alpha web page
+</A></li>
+	<LI>Next message: <A HREF="000567.html">FLWRAP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#564">[ date ]</a>
+              <a href="thread.html#564">[ thread ]</a>
+              <a href="subject.html#564">[ subject ]</a>
+              <a href="author.html#564">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Non-Fatal 3.20.0b4-wefax error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Non-Fatal%203.20.0b4-wefax%20error&In-Reply-To=%3C63201.1268583883%40ct.metrocast.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001018.html">
+   <LINK REL="Next"  HREF="001023.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Non-Fatal 3.20.0b4-wefax error</H1>
+    <B>P.J. Rovero</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Non-Fatal%203.20.0b4-wefax%20error&In-Reply-To=%3C63201.1268583883%40ct.metrocast.net%3E"
+       TITLE="Non-Fatal 3.20.0b4-wefax error">provero at ct.metrocast.net
+       </A><BR>
+    <I>Sun Mar 14 17:24:43 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001018.html">wefax
+</A></li>
+        <LI>Next message: <A HREF="001023.html">fldigi 3.20.0b4 issues
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1021">[ date ]</a>
+              <a href="thread.html#1021">[ thread ]</a>
+              <a href="subject.html#1021">[ subject ]</a>
+              <a href="author.html#1021">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Unrelated to the wefax.
+
+In PSK-31 QSO, this error popped up during
+a transmission.  The receiving station didn't
+see any signal problems.  System appeared to operate
+normally after the QSO as well.
+
+I: append: Appending report (call=W6VZV mode=PSK31 freq=18101909 time=1268583204 type=3)
+V: progress: Found 5 new report(s)
+V: progress: Found 0 new report(s)
+V: append: Added (call=&quot;W6VOL&quot;, loc=&quot;&quot;, mode=&quot;PSK31&quot;, freq=18100792, time=1268583274, type=1)
+Expression 'ret' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 1025
+Expression 'AlsaOpen( &amp;alsaApi-&gt;baseHostApiRep, params, streamDir, &amp;self-&gt;pcm )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 1182
+Expression 'PaAlsaStreamComponent_Initialize( &amp;self-&gt;playback, alsaApi, outParams, StreamDirection_Out, NULL != callback )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 1413
+Expression 'PaAlsaStream_Initialize( stream, alsaHostApi, inputParameters, outputParameters, sampleRate, framesPerBuffer, callback, streamFlags, userData )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 1990
+E: trx_trx_transmit_loop: PortAudio error: Device unavailable
+V: append: Added (call=&quot;IK8NIJ&quot;, loc=&quot;&quot;, mode=&quot;PSK31&quot;, freq=18100782, time=1268583491, type=1)
+
+Build information:
+built : Thu Mar 11 17:22:58 EST 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">josh at radio.rovero.net</A> on x86_64-unknown-linux-gnu for x86_64-unknown-linux-gnu
+
+configure flags: '--enable-optimizations=sse2' '--with-xmlrpc'
+
+compiler : gcc version 4.4.1 20090725 (Red Hat 4.4.1-2) (GCC) 
+
+compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -pthread -I/usr/include/freetype2 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I/usr/include/libpng12 -I/usr/include/libxml2 -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -msse2 -mfpmath=sse -DNDEBUG
+
+linker flags : -lportaudio -lm -lpthread -lfltk_images -lpng -lz -ljpeg -lfltk -lX11 -lsamplerate -lhamlib -lm -lpng12 -lxmlrpc_server_abyss++ -ldl -lrt -lpthread
+
+libraries : FLTK 1.1.9
+libsamplerate 0.1.6
+ PortAudio 19
+Hamlib 1.2.8
+XMLRPC-C 1.16.6
+
+Runtime information:
+system : Linux radio.rovero.net 2.6.30.10-105.2.23.fc11.x86_64 #1 SMP Thu Feb 11 07:06:34 UTC 2010 x86_64
+
+libraries : libsamplerate-0.1.6 (c) 2002-2008 Erik de Castro Lopo
+PortAudio V19-devel (built Feb 26 2009) 1899
+Hamlib version 1.2.9
+
+
+P.J. &quot;Josh&quot; Rovero        Ham Radio:  KK1D
+ABC:  9277                   1985 BMW R80RT
+Web:     <A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>
+
+ 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001018.html">wefax
+</A></li>
+	<LI>Next message: <A HREF="001023.html">fldigi 3.20.0b4 issues
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1021">[ date ]</a>
+              <a href="thread.html#1021">[ thread ]</a>
+              <a href="subject.html#1021">[ subject ]</a>
+              <a href="author.html#1021">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

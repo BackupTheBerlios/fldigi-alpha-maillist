@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Rig Control/Freq Display request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3C201005011752.25726.k9ao%40charter.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001186.html">
+   <LINK REL="Next"  HREF="001189.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Rig Control/Freq Display request</H1>
+    <B>Rick Kunath</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3C201005011752.25726.k9ao%40charter.net%3E"
+       TITLE="Rig Control/Freq Display request">k9ao at charter.net
+       </A><BR>
+    <I>Sat May  1 23:52:25 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001186.html">Rig Control/Freq Display request
+</A></li>
+        <LI>Next message: <A HREF="001189.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1188">[ date ]</a>
+              <a href="thread.html#1188">[ thread ]</a>
+              <a href="subject.html#1188">[ subject ]</a>
+              <a href="author.html#1188">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Comments inline...
+&gt;<i> OTOH, do it my way, there's ONE re-tuning step to start. Tune the radio. IF
+</I>&gt;<i> shift remains constant - when the modem freq is constant, so is the
+</I>&gt;<i> IF-shift. Passband width is the same either way.  There's also ONE tuning
+</I>&gt;<i> step to re-tune: Tune the radio. There's minimal AGC pumping because the IF
+</I>&gt;<i> bandwidth is properly set the moment the signal is in the right place on
+</I>&gt;<i>  the waterfall.
+</I>
+I see what you are trying to do. But is this HF or FM at VHF or something?
+
+Basically you are suggesting the way we did it years ago on RTTY. We knew the 
+frequency offsets were standard in the TU and thus the rig FSK readout was the 
+mark frequency, and this was dialed in to get you on frequency.
+
+&gt;<i> Don't see the benefit of your way at all. Doesn't give you more space to
+</I>&gt;<i> tune around in; makes external filtering hardware you might want to use
+</I>&gt;<i>  have to re-tune; adds tuning steps (or else commits you to use an open IF
+</I>&gt;<i>  bandwidth so that everything in the passband gets through, which isn't the
+</I>&gt;<i>  best idea I've heard recently, unless you like getting your AGC pumped by
+</I>&gt;<i>  that strong signal down-passband... entertainment value? challenge? :)
+</I>
+Tuning like this is the only way that makes sense when tuning around for a 
+QSO. That's not what I hear you wanting to do; enter one sked frequency and 
+not tune around looking for a contact. 
+
+Set the modem sweet spot where you want it and have the waterfall locked. Then 
+the cursor can't be clicked to change the frequency. Dial the radio to the 
+frequency you tell them and likely they'll be close. Still, there is going to 
+be some minor tuning around based on radio calibration.
+
+&gt;<i>  - just offhand - the rate of change of a lower frequency AF signal isn't
+</I>&gt;<i>  as fast as a higher one. That's why most AFSK signals are designed to
+</I>&gt;<i>  reside at the higher frequency side of the passband - e.g., SSTV isn't 300
+</I>&gt;<i>  Hz sync and 500 Hz to 1300 Hz, it's 1200 Hz and 1500 Hz to 2300 Hz. If you
+</I>&gt;<i>  move stuff to the  lower end, you're not doing the frequency response of
+</I>&gt;<i>  the channel any favors that I'm aware of.
+</I>
+Rate of change has nothing to do with the choice of higher frequencies for the 
+modes mentioned. Passband ripple and filter response rolloff are the reasons the 
+higher frequencies were chosen. Additionally when set this way, any overdrive 
+is likely to place harmonics of the AF frequencies out of the rig's filter 
+passband on transmit.
+
+&gt;<i> That doesn't mean it's the right thing to do. It just means it was
+</I>&gt;<i>  something that could be done, and was. No one has yet to put a *benefit*
+</I>&gt;<i>  of this approach on the table. 
+</I>
+Well heck, I think it's easier that way. It is the way I intuitively operate 
+and have for years. It works. Your way would be too confusing for me.
+
+&gt;<i>  I've pointed out that it adds unnecessary
+</I>&gt;<i>  tuning, compromises optimum IF settings requiring resetting (or expose you
+</I>&gt;<i>  to AGC pumping), can lower the signaling rate, and compromises external
+</I>&gt;<i>  filters requiring resetting.
+</I>
+That's what the QSY function is for.
+
+&gt;<i> the
+</I>&gt;<i>  operator doesn't need to &quot;know&quot; anything other than (a) is the signal
+</I>&gt;<i>  where it belongs in the waterfall and (b) what they want to send.
+</I>
+I would disagree there expecting the operator to know where they are 
+transmitting. Exactly. WHer eit is in the waterfall is only one part of the 
+entire issue.
+
+&gt;<i> Generally speaking, the sensible place for the (high[est] tone) is 2295 Hz,
+</I>&gt;<i> same as RTTY 170, 450, 800. Space and any intermediate frequencies are down
+</I>&gt;<i> from there. If one needs to re-tune, it should be done with the radio, so
+</I>&gt;<i> that IF shift doesn't need re-adjustment, and so that it is one operation.
+</I>
+You can already do that now. Set the modem's sweet spot there. Lock it. Tune 
+the radio either using the dial or via the Fldigi CAT control readout. Or shut 
+off the frequency display in Fldigi altogether. Just lock the modem and tune 
+the radio. I think that's what you wanted?
+
+&gt;<i> Such a setting lets you use external AF filtering and other hardware, if
+</I>&gt;<i> available, and also sets a convention so that the radio may be tuned, just
+</I>&gt;<i> one step, instead of radio, modem, if shift, external hardware - up to four
+</I>&gt;<i> or more steps.
+</I>
+Yes. Not causal operating method, but I get what you are wanting to do.
+
+&gt;<i> &gt; One of the things I used to do was set up VSATs. The frequency we were
+</I>&gt;<i> &gt; assigned was the center of the transmitted signal, not the frequency
+</I>&gt;<i> &gt; of the LO injection. As far as I can discern, the only place where
+</I>&gt;<i> &gt; &quot;dial frequency&quot; is &quot;transmit frequency&quot; is amateur radio. Everyone
+</I>&gt;<i> &gt; else uses the center of the transmission.
+</I>
+Amateur radio does not use the dial frequency is the transmit frequency. The 
+operator still has to know exactly where his signal is going. 
+
+&gt;<i> ..then what's the benefit of trying to say to them &quot;well, you're currently
+</I>&gt;<i> sending signals from 14.231200 to 14.232300 Mhz&quot;? They're not going to be
+</I>&gt;<i> tuning any hardware filters to those frequencies. The numbers they NEED are
+</I>&gt;<i> 1200 Hz, and 1500...2300 Hz. And 14.230 MHz. These numbers give you (1) the
+</I>&gt;<i> correct radio receive tuning, (2) constant setting for filters, (3) the
+</I>&gt;<i> correct radio transmit tuning, (4) constant AF conditions so that IF shift
+</I>&gt;<i> remains constant if a signal comes up on another frequency.
+</I>&gt;<i> 
+</I>&gt;<i> &gt; Here is another way to look at it. When I see a 500Hz blank spot in my
+</I>&gt;<i> &gt; spectrum display, I want to be able to tell my buddy to transmit in
+</I>&gt;<i> &gt; the middle of that blank spot, not have to calculate a bunch of
+</I>&gt;<i> &gt; offsets in my head.
+</I>&gt;<i> 
+</I>&gt;<i> Say you're on 14.230 Mhz. You see the blank spot. The Waterfall reads out
+</I>&gt;<i> from 0 Hz to 3 Khz (for example.) You're on USB. The blank spot begins at
+</I>&gt;<i> 2000 Hz. So, you tell you buddy to &quot;tune up 2 KHz.&quot; No calculations
+</I>&gt;<i> involved. If you *want* to do so, you can say 14.232 KHz, but we're all
+</I>&gt;<i>  used to moving a few hundred or a few KHz... aren't we? I know I am. &quot;Meet
+</I>&gt;<i>  you up (or down) x KHz&quot; is an unbelievably common AR form of message, I
+</I>&gt;<i>  have trouble believing anyone would balk at saying such a thing. In this
+</I>&gt;<i>  case, it's &quot;meet you up 2 Khz.&quot; No big deal.
+</I>
+Makes sense to me, that's the current convention. Lots of people specify the 
+transmitted frequency like that, i.e. dial xx.xxx and audio 2000.
+
+Anyway, I guess I have about talked this to death. I think everything fits 
+already into how things operate. I feel comfortable with it and I think you 
+can do what you want too, not that I think it's necessarily any more efficient 
+or easier that way, but it works.
+
+Rick Kunath, k9ao
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001186.html">Rig Control/Freq Display request
+</A></li>
+	<LI>Next message: <A HREF="001189.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1188">[ date ]</a>
+              <a href="thread.html#1188">[ thread ]</a>
+              <a href="subject.html#1188">[ subject ]</a>
+              <a href="author.html#1188">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

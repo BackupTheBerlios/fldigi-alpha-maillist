@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13AG posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AG%20posted&In-Reply-To=%3C5f51f8060909151635g5ce24e18n86df52176298947a%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000151.html">
+   <LINK REL="Next"  HREF="000153.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13AG posted</H1>
+    <B>John Douyere</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AG%20posted&In-Reply-To=%3C5f51f8060909151635g5ce24e18n86df52176298947a%40mail.gmail.com%3E"
+       TITLE="fldigi 3.13AG posted">vk2eta at gmail.com
+       </A><BR>
+    <I>Wed Sep 16 01:35:09 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000151.html">fldigi 3.13AG posted
+</A></li>
+        <LI>Next message: <A HREF="000153.html">fldigi 3.13AG posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#152">[ date ]</a>
+              <a href="thread.html#152">[ thread ]</a>
+              <a href="subject.html#152">[ subject ]</a>
+              <a href="author.html#152">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave and Team,
+
+Tested the new version and the Thor squelch evaluator is a great improvement
+for the ARQ exchanges. It now behaves in a similar way to MFSK and PSK
+modes. This allow to position the threshold high enough for all modes usable
+with ARQ operations.
+
+Thanks for this prompt change.
+
+On Ubuntu 8.04, using /dev/dsp1 with a Tigertronics USB, I had to disable
+&quot;Use right audio channel&quot; otherwise there was like a background pattern
+(looked like 50 Hz, our mains freq, but not sure) superimposed to the signal
+in the waterfall. I really found this option by chance after looking at the
+connections to the interface, disconnecting the antenna and so on. It was
+selected when I launched this version of Fldigi. Should be off by default?
+
+I mentioned some times ago that I had issues with 3.13AF regarding not
+decoding an MFSK signal and showing strange waterfall frequencies. I have
+not been able to reproduce this issue. So for the moment this is off my list
+of potential bugs.
+
+Regards,
+
+John
+
+On Wed, Sep 16, 2009 at 5:24 AM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A>&gt; wrote:
+
+&gt;<i>  Version 3.13AG
+</I>&gt;<i>     1.  rigCAT mods
+</I>&gt;<i>         Restructured i/o to allow use with broadcast transceivers.
+</I>&gt;<i>         Icom 7xxx series default to a CI-V server that broadcasts
+</I>&gt;<i>         serial data which disrupted fldigi serial data stream extract.
+</I>&gt;<i>         New code passed tests on Vista with IC-746Pro operating in
+</I>&gt;<i>         CI-V Transceive (server) mode.
+</I>&gt;<i>     2.  Serial i/o Stopbits
+</I>&gt;<i>         Added stopbits configuration for hamlib and rigcat serial i/o
+</I>&gt;<i>     3.  Dom/Thor mod
+</I>&gt;<i>         Modified squelch evaluator for increased sensitivity
+</I>&gt;<i>     4.  QRZ lookup
+</I>&gt;<i>         Added post thread startup delay to allow OS to set up
+</I>&gt;<i>         conditionals.
+</I>&gt;<i>
+</I>&gt;<i> Notes:
+</I>&gt;<i>
+</I>&gt;<i>    1. rigCAT mods should provide better cat i/o with all makes of
+</I>&gt;<i>    transceiver.  You may need to adjust your timing.  This is a major rewrite
+</I>&gt;<i>    to the rigCAT execution code.
+</I>&gt;<i>    2. You need to know whether your transceiver uses 1 or 2 stop bits.
+</I>&gt;<i>    Icom 7xxx series are usually 1 stop bit.  Kenwoods are usually 2 stop
+</I>&gt;<i>    bits.   I would like to know what performance you see with a TS50 or TS450.
+</I>&gt;<i>    This mod was targeted at the 2 stop bit transceivers.
+</I>&gt;<i>    3. Squelch for DominoEX and Thor modes should be faster acting and also
+</I>&gt;<i>    closer in level to PSK modes.
+</I>&gt;<i>    4. This should correct the 2x - 1st time QRZ problem on MS and some
+</I>&gt;<i>    Linux distros.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>    - <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG.tar.gz">http://www.w1hkj.com/friday/fldigi-3.13AG.tar.gz</A>
+</I>&gt;<i>    - <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AG.bin.tgz</A>
+</I>&gt;<i>    - <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG.npa.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AG.npa.bin.tgz</A>
+</I>&gt;<i>    - <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG_setup.exe">http://www.w1hkj.com/friday/fldigi-3.13AG_setup.exe</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i> for the development team
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090916/4bffb5e0/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090916/4bffb5e0/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000151.html">fldigi 3.13AG posted
+</A></li>
+	<LI>Next message: <A HREF="000153.html">fldigi 3.13AG posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#152">[ date ]</a>
+              <a href="thread.html#152">[ thread ]</a>
+              <a href="subject.html#152">[ subject ]</a>
+              <a href="author.html#152">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

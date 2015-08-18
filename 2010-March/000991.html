@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Time Check on Startup
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Time%20Check%20on%20Startup&In-Reply-To=%3C4B9A2411.8080107%40salsgiver.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000959.html">
+   <LINK REL="Next"  HREF="000992.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Time Check on Startup</H1>
+    <B>David Kleber</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Time%20Check%20on%20Startup&In-Reply-To=%3C4B9A2411.8080107%40salsgiver.com%3E"
+       TITLE="Time Check on Startup">davek at salsgiver.com
+       </A><BR>
+    <I>Fri Mar 12 12:22:57 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000959.html">3.20.0b3 logbook time
+</A></li>
+        <LI>Next message: <A HREF="000992.html">Time Check on Startup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#991">[ date ]</a>
+              <a href="thread.html#991">[ thread ]</a>
+              <a href="subject.html#991">[ subject ]</a>
+              <a href="author.html#991">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>A while back, I suggested that upon startup of FLDIGI, a window pop up 
+showing the current time and date that the computer is set to.  This 
+could appear with a question, &quot;Is your time and date correct&quot; and a yes 
+to continue... maybe clicking no would take you to where you can make 
+the correction.  Perhaps there could be somewhere in the program that 
+this could be disabled for those who just can't stand the idea.
+
+I think for EmComm, this could become a very important issue, especially 
+when logging incoming wrap files during an actual emergency deployment. 
+  Its pretty important to know that your messages are logged with the 
+correct time and date.
+
+BTW, take a look at the time and date headers from folks in your email 
+in boxes.  I bet you don't have to look very far before you find a few 
+with incorrect times or zulu time corrections (i.e. I'm at -5 but that 
+will be -4 in a few days).
+
+-Dave
+
+Ed wrote:
+&gt;<i> Dick Kriss wrote:
+</I>&gt;&gt;&gt;<i> Date: Mon, 8 Mar 2010 11:20:58 +0100
+</I>&gt;&gt;&gt;<i> From: &quot;M. Jenssen&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">m.jenssen at wtnet.de</A>&gt;
+</I>&gt;&gt;&gt;<i> To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i> Subject: 3.20.0b3 logbook time
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> This morning during QSO I noted that the &quot;time end&quot; indication 
+</I>&gt;&gt;&gt;<i> changed from
+</I>&gt;&gt;&gt;<i> 0859 to 0860 rather than 0900.
+</I>&gt;&gt;&gt;<i> First time this showed up ever.
+</I>&gt;&gt;&gt;<i> 73 Fred DL6XAZ
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Fred,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I just tired to duplicate the problem using your call in fldigi and 
+</I>&gt;&gt;<i> clicked
+</I>&gt;&gt;<i> on the &lt;LOG&gt; macro as the OS X computer clock in the OSX desktop changed
+</I>&gt;&gt;<i> from 2:59.59 to 3:00.00 and the QSO was logged correct at 2100. Prior to
+</I>&gt;&gt;<i> clicking on the log button, I had 2059 entered in fldigi as the OFF time.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Seemed to work normal to me?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Let me know if there is something else I need to try to duplicate the
+</I>&gt;&gt;<i> 60 minutes.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dick AA5VU 
+</I>&gt;<i> 
+</I>&gt;<i> I would look at the bios time, as this is where fldigi gets the time to 
+</I>&gt;<i> calculate on/off times.
+</I>&gt;<i> 
+</I>&gt;<i> I do know that the begin/end time was worked on extensively about 3 
+</I>&gt;<i> years ago and there have been no problems since then that I'm aware of.
+</I>&gt;<i> 
+</I>&gt;<i> Ed W3NR
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000959.html">3.20.0b3 logbook time
+</A></li>
+	<LI>Next message: <A HREF="000992.html">Time Check on Startup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#991">[ date ]</a>
+              <a href="thread.html#991">[ thread ]</a>
+              <a href="subject.html#991">[ subject ]</a>
+              <a href="author.html#991">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

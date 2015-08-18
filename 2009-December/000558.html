@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.13BH posted on alpha web page
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.13BH%20posted%20on%20alpha%20web%20page&In-Reply-To=%3C4B2C1881.4020002%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000557.html">
+   <LINK REL="Next"  HREF="000561.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.13BH posted on alpha web page</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.13BH%20posted%20on%20alpha%20web%20page&In-Reply-To=%3C4B2C1881.4020002%40bellsouth.net%3E"
+       TITLE="fldigi-3.13BH posted on alpha web page">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Dec 19 01:04:17 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000557.html">flics-0.3.3 posted
+</A></li>
+        <LI>Next message: <A HREF="000561.html">fldigi-3.13BH posted on alpha web page
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#558">[ date ]</a>
+              <a href="thread.html#558">[ thread ]</a>
+              <a href="subject.html#558">[ subject ]</a>
+              <a href="author.html#558">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha">http://www.w1hkj.com/alpha</A>
+
+Posted for Linux, win32 and Pet.  The OS X development computer is off 
+line due to an electrical outage in North Carolina caused by severe weather.
+
+Notice the new modem types that were developed by John Douyere, VK2ETA.  
+Thanks John.
+
+Also several rapid responses to requests from the alpha team ... 
+courtesy of Stelios who is doing all this magic on a netbook !
+
+73, Dave, W1HKJ
+for the development team
+
+3.13BH contains the following additional funcationality:
+
+Version 3.13BH
+    Add new RSID codes
+      * Reorganise RSID data declarations
+      * Synchronise with F6CTE's RSID list
+      * Decode and transmit RSID for Olivia 8/1000 and 8/250
+      * Print message when decoding RSID for unimplemented modes
+    Fix rig mode menu
+    Improve rig control methods
+      * Convert set_new_name helper to a static member function
+      * Replace set_new_modes and set_new_bandwidths helpers with
+        set_combo_contents
+      * Replace set_new_mode and set_new_bandwidth helpers with
+        set_combo_value
+      * Deprecate main.get_sideband and main.set_sideband
+      * Add main.get_wf_sideband and main.set_wf_sideband
+      * main.set_rig_mode and main.set_rig_bandwidth now invoke the menu
+        callback, and will therefore change the corresponding rig setting
+        if possible
+      * Add main.get_rig_modes and main.get_bandwidths methods
+    Fix Fl_ComboBox
+      * value method should set index
+      * add size method
+    Add new XML-RPC methods
+      * fldigi.terminate
+      * log.get_exchange
+      * log.get_serial_number_sent
+      * log.set_exchange
+      * log.set_name
+      * log.set_serial_number
+    Improve XML-RPC log.get_rx method
+      * Permit the second argument to be -1, which sets the requested length
+        to the size of the buffer. Clients can use this to eliminate or
+        reduce log.get_rx_length calls.
+      * Do all text buffer access in a single function to avoid race
+        conditions made possible by allowing concurrent XML-RPC clients
+    Save PSK Browser search string
+      Store the PSK Browser search string in the status file
+      Store old event logs
+      Save up to five old versions of the event log file
+    Lower slow CPU speed test threshold
+      The Intel Atom N270 and N280 processors score about 17 in the 
+speed test
+      and are placed in the slowest category, which uses the LINEAR sample
+      rate converter.  However, they can easily handle the much better
+      SINC_FASTEST converter with some operator care.  Lower the slowest
+      threshold to 15 and assume that the operator will know not to run too
+      many CPU-intensive programs at the same time as fldigi.
+    THOR squelch adjustment
+        Adjusted THOR  squelch responsiveness
+    PSKR - PSK63F - new modem types
+        * Added new modem types PSK-125R, PSK-250R, PSK-500R,
+          which use the following for additional noise and phase
+          multipath immunity:
+            . convolutional coding
+            . bit interleaving
+            . soft decoding
+        * Added modem type PSK63F, compatible with MultiPsk PSK63FEC
+        * Added RSID codes for PSKR and PSK63F
+        * Changed naming convention of MODEM_BPSK31 to MODEM_PSK31 to be
+          consistent with other PSK baud rates
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091218/1a3710f0/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091218/1a3710f0/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000557.html">flics-0.3.3 posted
+</A></li>
+	<LI>Next message: <A HREF="000561.html">fldigi-3.13BH posted on alpha web page
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#558">[ date ]</a>
+              <a href="thread.html#558">[ thread ]</a>
+              <a href="subject.html#558">[ subject ]</a>
+              <a href="author.html#558">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

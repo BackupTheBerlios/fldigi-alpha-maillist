@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.21.0AG x86_64 compile warnings
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.21.0AG%20x86_64%20compile%20warnings&In-Reply-To=%3C8502.1277848857%40ct.metrocast.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001308.html">
+   <LINK REL="Next"  HREF="001309.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.21.0AG x86_64 compile warnings</H1>
+    <B>P.J. Rovero</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.21.0AG%20x86_64%20compile%20warnings&In-Reply-To=%3C8502.1277848857%40ct.metrocast.net%3E"
+       TITLE="3.21.0AG x86_64 compile warnings">provero at ct.metrocast.net
+       </A><BR>
+    <I>Wed Jun 30 00:00:57 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001308.html">fldigi 3.21.0AG posted
+</A></li>
+        <LI>Next message: <A HREF="001309.html">3.21.0AG x86_64 compile warnings
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1307">[ date ]</a>
+              <a href="thread.html#1307">[ thread ]</a>
+              <a href="subject.html#1307">[ subject ]</a>
+              <a href="author.html#1307">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Builds, runs, but does have these compile warnings:
+
+In file included from ./include/olivia.h:33,
+                 from olivia/olivia.cxx:33:
+./include/jalocha/pj_mfsk.h: In member function &#8216;char* MFSK_Receiver&lt;Type&gt;::PrintParameters() [with Type = double]&#8217;:
+olivia/olivia.cxx:326:   instantiated from here
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 4 has type &#8216;size_t&#8217;
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 7 has type &#8216;size_t&#8217;
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 9 has type &#8216;size_t&#8217;
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 10 has type &#8216;size_t&#8217;
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 11 has type &#8216;size_t&#8217;
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 4 has type &#8216;size_t&#8217;
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 7 has type &#8216;size_t&#8217;
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 9 has type &#8216;size_t&#8217;
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 10 has type &#8216;size_t&#8217;
+./include/jalocha/pj_mfsk.h:2171: warning: format &#8216;%d&#8217; expects type &#8216;int&#8217;, but argument 11 has type &#8216;size_t&#8217;
+
+
+In file included from widgets/Fl_Text_Display_mod.cxx:5:
+widgets/Fl_Text_Display_mod_1_1.cxx: In member function &#8216;int Fl_Text_Display_mod::position_to_line(int, int*)&#8217;:
+widgets/Fl_Text_Display_mod_1_1.cxx:1415: warning: assuming signed overflow does not occur when assuming that (X - c) &gt; X is always false
+
+trx/trx.cxx: In function &#8216;void trx_xmit_wfall_draw(int)&#8217;:
+trx/trx.cxx:92: warning: &#8216;rv[1].ringbuffer&lt;double&gt;::vector_type::buf&#8217; may be used uninitialized in this function
+trx/trx.cxx: In function &#8216;void trx_xmit_wfall_queue(int, const double*, size_t)&#8217;:
+trx/trx.cxx:156: warning: &#8216;wv[1].ringbuffer&lt;double&gt;::vector_type::buf&#8217; may be used uninitialized in this function
+trx/trx.cxx: In function &#8216;void trx_trx_receive_loop()&#8217;:
+trx/trx.cxx:221: warning: &#8216;rbvec[1].ringbuffer&lt;double&gt;::vector_type::buf&#8217; may be used uninitialized in this function
+trx/trx.cxx: In function &#8216;void trx_trx_transmit_loop()&#8217;:
+trx/trx.cxx:133: warning: &#8216;wv[1].ringbuffer&lt;double&gt;::vector_type::buf&#8217; may be used uninitialized in this function
+trx/trx.cxx:133: note: &#8216;wv[1].ringbuffer&lt;double&gt;::vector_type::buf&#8217; was declared here
+
+
+
+P.J. &quot;Josh&quot; Rovero        Ham Radio:  KK1D
+ABC:  9277                   1985 BMW R80RT
+Web:     <A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>
+
+ 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001308.html">fldigi 3.21.0AG posted
+</A></li>
+	<LI>Next message: <A HREF="001309.html">3.21.0AG x86_64 compile warnings
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1307">[ date ]</a>
+              <a href="thread.html#1307">[ thread ]</a>
+              <a href="subject.html#1307">[ subject ]</a>
+              <a href="author.html#1307">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

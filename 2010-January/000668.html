@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.13BM posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.13BM%20posted&In-Reply-To=%3C4B44B410.3000904%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000665.html">
+   <LINK REL="Next"  HREF="000669.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.13BM posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.13BM%20posted&In-Reply-To=%3C4B44B410.3000904%40bellsouth.net%3E"
+       TITLE="fldigi-3.13BM posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Wed Jan  6 17:02:24 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000665.html">External CW Key Question
+</A></li>
+        <LI>Next message: <A HREF="000669.html">fldigi-3.13BM posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#668">[ date ]</a>
+              <a href="thread.html#668">[ thread ]</a>
+              <a href="subject.html#668">[ subject ]</a>
+              <a href="author.html#668">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>For all OS at:
+
+<A HREF="http://www.w1hkj.com/alpha/fldigi-flarq/">http://www.w1hkj.com/alpha/fldigi-flarq/</A>
+
+Version 3.13BM
+
+Change waterfall focus handling
+   
+    The waterfall widget steals focus when it has the mouse pointer and a
+    modifier key is pressed, and restores it when the modifier key is
+    released.  This allows is to handle certain keyboard shortcuts
+    (e.g. Shift/Ctrl+arrow keys) without requiring a click to take focus.
+   
+    This commit changes the event handler to send non-arrow keys events to
+    the transmit text widget, so that things will mostly work even if the
+    user is typing into the transmit widget with the mouse pointer inside
+    the waterfall.
+
+Improve mode cycling
+   
+    Use visible modes setting when cycling modes using the scroll wheel on
+    the mode status button.
+
+Add keyboard shortcuts
+   
+      * flarq:  Help and About
+      * fldigi: Help-&gt;About and Contest fields
+   
+    Also remove focus stealing from fldigi's help dialog.
+
+Open PSK Browser only when last mode is a PSK mode
+
+UI adjustments
+   
+        Fix size and alignment of widgets in logging panel.
+
+Add ID mode exceptions
+   
+    Add menus to select
+      * modes that will be switched to on RSID reception
+      * modes for which to transmit RSID / VideoID / CWID
+   
+    The defaults are:
+      * Receive RSID: all modes
+      * Transmit RSID &amp; VideoID: all except CW, PSK31, RTTY
+      * CWID: all except CW
+   
+    Also add option to choose which modes are shown in the main OpMode
+    menu.
+
+MS Excel compatibility
+   
+    Modified csv export to be strict MS Excel compatible.
+
+CW Squelch
+   
+    Reduced frequency of squelch level update.
+    Squelch level now reduces in absence of signal.
+
+QPSK Reverse
+   
+    Restored Reverse Button function to QPSK, a phase sensitive
+    mode.
+
+ARQ parser
+   
+    Problems reported by pskmail users with parser errors
+      * Changed various debug levels from DEBUG to INFO
+      * Added raw data INFO with control characters converted to
+        ascii text equivalents.
+      * Tested with modified flarq to insure that parser error
+        was not occuring in fldigi parser
+
+73, Dave, W1HKJ
+for the development team
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100106/a7a0b924/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100106/a7a0b924/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000665.html">External CW Key Question
+</A></li>
+	<LI>Next message: <A HREF="000669.html">fldigi-3.13BM posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#668">[ date ]</a>
+              <a href="thread.html#668">[ thread ]</a>
+              <a href="subject.html#668">[ subject ]</a>
+              <a href="author.html#668">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

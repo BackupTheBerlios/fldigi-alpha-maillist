@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Mixer Controls
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Mixer%20Controls&In-Reply-To=%3C4AD8A427.80503%40charter.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000233.html">
+   <LINK REL="Next"  HREF="000235.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Mixer Controls</H1>
+    <B>Rick Kunath</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Mixer%20Controls&In-Reply-To=%3C4AD8A427.80503%40charter.net%3E"
+       TITLE="Mixer Controls">k9ao at charter.net
+       </A><BR>
+    <I>Fri Oct 16 18:49:43 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000233.html">Mixer Controls
+</A></li>
+        <LI>Next message: <A HREF="000235.html">Mixer Controls
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#236">[ date ]</a>
+              <a href="thread.html#236">[ thread ]</a>
+              <a href="subject.html#236">[ subject ]</a>
+              <a href="author.html#236">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dick Kriss wrote:
+
+&gt;<i> I wonder why the Mixer controls are only on the Linux version and if
+</I>&gt;<i> they would be useful in other versions?
+</I>
+Because there is no equivalent in Windows or otherwise for the standard 
+emulated OSS mixer control set that is used by Fldigi under Linux.
+
+It is this emulated OSS mixer functionality that translates the myriad 
+of exotic mixer controls found on modern sound cards and card types into 
+the standard mixer elements that Fldigi can control using it's mixer applet.
+
+The Linux (ALSA) driver maintainer aliases the appropriate specific 
+sound card driver controls to the ones that are appropriate on the 
+specific sound card driver's emulated mixer controls under OSS 
+emulation. These emulated controls are slaved to the actual mixer 
+elements in the specific sound card driver in use.
+
+Every sound card looks alike to Fldigi via the OSS emulated mixer. These 
+emulated mixer controls move the appropriate real ones, so ALSA, 
+PortAudio, PulseAudio, all work.
+
+In the worst case, the user aliases these manually.
+
+There is no equivalent in Windows.
+
+Rick Kunath, k9ao
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000233.html">Mixer Controls
+</A></li>
+	<LI>Next message: <A HREF="000235.html">Mixer Controls
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#236">[ date ]</a>
+              <a href="thread.html#236">[ thread ]</a>
+              <a href="subject.html#236">[ subject ]</a>
+              <a href="author.html#236">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

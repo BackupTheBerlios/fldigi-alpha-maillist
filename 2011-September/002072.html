@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [linuxham] Fldigi and CQ-WW-RTTY
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20%5Blinuxham%5D%20Fldigi%20and%20CQ-WW-RTTY&In-Reply-To=%3CCB7D6DEC-A74A-42FA-9B94-04DCF510A486%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002071.html">
+   <LINK REL="Next"  HREF="002073.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[linuxham] Fldigi and CQ-WW-RTTY</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20%5Blinuxham%5D%20Fldigi%20and%20CQ-WW-RTTY&In-Reply-To=%3CCB7D6DEC-A74A-42FA-9B94-04DCF510A486%40att.net%3E"
+       TITLE="[linuxham] Fldigi and CQ-WW-RTTY">aa5vu at att.net
+       </A><BR>
+    <I>Tue Sep 27 18:09:36 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002071.html">Linus Torvalds'thoughts about software development
+</A></li>
+        <LI>Next message: <A HREF="002073.html">[linuxham] Fldigi and CQ-WW-RTTY
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2072">[ date ]</a>
+              <a href="thread.html#2072">[ thread ]</a>
+              <a href="subject.html#2072">[ subject ]</a>
+              <a href="author.html#2072">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sep 26, 2011, at 4:00 PM, Jaak Hohensee ES1HJ wrote:
+
+&gt;<i> In run mode, used by me rarely,  fldigi 3.22.0AT 3-4 times unexpectedly shut off when I used Esc to stop the macro timer. Maybe I moved same time mouse. No big problem, fldigi needs only some seconds for restart.
+</I>
+I used fldigi-3.22.0AT for most of the CW-WW-RTTY contest and finished with the newly released fldigi-3.21.15 toward the end of the contest.  No crashes as you described but I do not use a macro timer. I assume you are talking about a macro that repeats the same command, like a CQ TEST etc., over and over with some delay. I just use a CQ macro and mouse on the macro to resend it agin. QSL on your comment that fldigi only take a few seconds to quit and restart. This is useful and used when strange things start to happen. I have also learned to use the right-click &quot;Clear&quot; option clears clutter on receive pane and seems to improve decoding.
+
+&gt;<i> 
+</I>&gt;<i> With 10W and vertical (20m) : 17 zones, 45 dxcc, 18 states, 242 qso incl 59 different continent, overall working time 19h. Fldigi send nice rtty signal
+</I>&gt;<i> .
+</I>&gt;<i> But seems that decoding is better around the sweet spot 1500 Hz?
+</I>
+Yes, many fldig users set the sweet spot to 1500 Hz to center the Rx signal to the &quot;fixed&quot; filters in their rigs for better decoding; however, this may not be the best sweet spot for Tx.
+
+As a test use your fldigi &quot;QSY&quot; button to center your rig's VFO to where you want to operate. The QSY button centers your Rx and Tx at the defined sweet spot.  Now transmit and monitor you output to see if you transmitted signal sounds right.  Now mouse to the left side of the waterfall, but DO NOT use the QSY button. Transmit and listen to your signal.  Then do the same on right side of he waterfall.  You will probably notice a pitch change in the your Tx. When I was using 1500 Hz as the sweet spot, my Tx signal sounded better to me when I used 1000 Hz as the sweet spot. By sounding better I mean my transmitted RTTY signal sounded more like what recalled as normal FSK signal.  The same applies to PSK and CW transmissions. For this reason I now use 1000 Hz as my sweet spot and I have adjusted the &quot;variable&quot; TS-590's Rx filters to accordingly.  When I engage the The TS-590's filters, all signals outside the bandwidth are blanked.I can change the bandwidth on-the-fly depending on congestion.
+
+If I see a signal I want to work on either side of the sweet spot on the waterfall, I mouse on the signal, use the &quot;QSY&quot; button to move the signal (and VFO) to the sweet spot. My Rx and Tx are now in sync using the really cool &quot;QSY&quot; button W1HKJ incorporated into fldigi.   For S&amp;P operation I use the &quot;QSY&quot; button to sync my Rx and Tx and manually tune with the VFO to bring stations to the Space and Mark lines on the waterfall.  If I see one I want to work I use the QSY again to center the station, let the AFC take over then call the station.
+
+As you listen around the bands you will notice some really squeaky sounding signals.  This probably means they are transmitting up or down the waterfall from where they are receiving.  
+
+&gt;<i> Problem is the log. Contest robot accepted the 4th version&#8230;  
+</I>
+Like you it took me four revisions to get CQ Robot to accept my Cabrillo format. The Robot nag notes will point out what may be wrong; however, the comments are obscure and you have to fix the first problem reported before it will let you move on to others. The first  error was the ACCESSED vs. NON-ACCESSED.  I had used NON-ASSESSED but the robot did not like the format. I did a copy/paste from nag note and that cleared that issue. The show stopper was 
+
+I do not recognize '' as a valid QTH.
+[X] QSO: 14112 RY 2011-09-24 0034 AA5VU         599  04 TX     PZ5RA         599 09
+Line ignored.
+
+and the fix was to change the PZ5RA from &quot;599 09&quot; to &quot;599 09 DX&quot;
+
+This was caused by my interpretation of the rules saying the exchange for Non US stations should be &quot;RST + CQ Zone&quot; so that was the way I setup the macro to log the exchange. It never entered my mine to add a &quot;0&quot; in the logged report for Non US stations.  Susan, K5DU, sent me a tip to add the &quot;DX&quot; in place of the state. Once the &quot;DX&quot; was added, the CQ Robot smiled and accepted the aa5vu.log file.
+
+&gt;<i> 
+</I>&gt;<i> Good idea to connect F1...F12 with second (upper) macrobar if there are 2 bars.
+</I>&gt;<i> 
+</I>
+No comment because I only use F-Keys Mac computer functions 
+
+The above may be more than you wanted to read but I learn something new in each contest.  The more I use fldigi in contests, the more I appreciate the efforts of Ed, W3NR, and Dave, W1HKJ. Fldigi was not designed as as heavy duty contesting application; however, it is very good for the casual user to be able to enjoy contests.
+
+73 Dick AA5VU
+
+&gt;<i> 
+</I>&gt;<i> 73, Jaak
+</I>&gt;<i> es1hj
+</I>&gt;<i> 
+</I>&gt;<i> 24.09.2011 16:42, Dick Kriss wrote:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> On Sep 23, 2011, at 6:12 AM, Dick Kriss wrote:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> I just modified my macros for the CQ-WW-RTTY contest this weekend.
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> This will be my S&amp;P Exchange for the CQ-WW-RTTY
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> Macro Button &quot;Exch @&gt;|&quot;
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> &lt;TX&gt;
+</I>&gt;&gt;&gt;<i> &lt;CALL&gt; QSL &lt;XOUT&gt; TU &lt;MYCALL&gt;
+</I>&gt;&gt;&gt;<i> &lt;RX&gt;
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> Also checked the format of Cabrillo report and it looks correct.
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> QSO: 14081 RY 2011-09-23 1054 AA5VU         599   TX 04    W3NR          599 AL 04         
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> 73 Dick AA5VU
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> One of the first rules in contesting is to read the rules.  I read the abbreviated rules at
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> <A HREF="http://www.hornucopia.com/contestcal/weeklycont.php#3514">http://www.hornucopia.com/contestcal/weeklycont.php#3514</A>
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> regarding the exchange in setting up my my macro.  Once the contest started, I notice some were sending RST + ST + Zone and others were sending RST + Zone + ST.  This was really confusing so I checked the  CQ rules at
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> &lt;<A HREF="http://www.cq-amateur-radio.com/cq_contests/cq_ww_rtty_dx_contest/cq_ww_rtty_dx_contest_rules/2011_cq_ww_rtty_dx_contest_rules.pdf">http://www.cq-amateur-radio.com/cq_contests/cq_ww_rtty_dx_contest/cq_ww_rtty_dx_contest_rules/2011_cq_ww_rtty_dx_contest_rules.pdf</A>&gt;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> and the correct format is  RST + Zone + ST.   The CQ rules are logical since DX stations only send RST + Zone so all zones will line up in the Cabrillo report. After a few QSO's I changed my fld igi configuration (UI/Contest Exchange Out to 04 TX with the box checked to RST always 599) to follow the real vs. abbreviated rules. 
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> The CQ-WW-RTTY is a long contest so jump in make some QSO's to understand the neat contest features W1HKJ and W3NR have packed into fldigi. The competitive contesters depend on the rest of us to jump in make a few Q's.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 73 Dick AA5VU
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> __._,_.___
+</I>&gt;&gt;<i> Reply to sender | Reply to group | Reply via web post | Start a New Topic
+</I>&gt;&gt;<i> Messages in this topic (1)
+</I>&gt;&gt;<i> RECENT ACTIVITY: New Members 6
+</I>&gt;&gt;<i> Visit Your Group
+</I>&gt;&gt;<i> MARKETPLACE
+</I>&gt;&gt;<i> Stay on top of your group activity without leaving the page you're on - Get the Yahoo! Toolbar now.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Switch to: Text-Only, Daily Digest &#8226; Unsubscribe &#8226; Terms of Use
+</I>&gt;&gt;<i> .
+</I>&gt;&gt;<i>  
+</I>&gt;&gt;<i> __,_._,___
+</I>&gt;<i> 
+</I>&gt;<i> -- 
+</I>&gt;<i> Kirjutas ja tervitab
+</I>&gt;<i> Jaak Hohensee
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110927/0d60eb33/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110927/0d60eb33/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002071.html">Linus Torvalds'thoughts about software development
+</A></li>
+	<LI>Next message: <A HREF="002073.html">[linuxham] Fldigi and CQ-WW-RTTY
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2072">[ date ]</a>
+              <a href="thread.html#2072">[ thread ]</a>
+              <a href="subject.html#2072">[ subject ]</a>
+              <a href="author.html#2072">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

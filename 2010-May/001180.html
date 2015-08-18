@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Rig Control/Freq Display request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3Ck2ue93450131005011305i3110f1bdge5b7ae36f6ceb5bd%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001191.html">
+   <LINK REL="Next"  HREF="001186.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Rig Control/Freq Display request</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3Ck2ue93450131005011305i3110f1bdge5b7ae36f6ceb5bd%40mail.gmail.com%3E"
+       TITLE="Rig Control/Freq Display request">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sat May  1 22:05:05 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001191.html">Rig Control/Freq Display request
+</A></li>
+        <LI>Next message: <A HREF="001186.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1180">[ date ]</a>
+              <a href="thread.html#1180">[ thread ]</a>
+              <a href="subject.html#1180">[ subject ]</a>
+              <a href="author.html#1180">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, May 1, 2010 at 11:59 AM, Anony Mous &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fyngyrz at gmail.com</A>&gt; wrote:
+&gt;<i> Uh, no. If I'm tuned to 14.230 MHz on the radio, and I'm receiving a FAX
+</I>&gt;<i> signal that is AFSK between 1500 Hz and 2300 Hz, then the transmission is,
+</I>&gt;<i> in fact, on 14.230 Mhz - the &quot;center&quot; (1900 Hz, or 14.2319 MHz) is not only
+</I>&gt;<i> *not* where the radio is tuned, if it *was* tuned there (you'd have to
+</I>&gt;<i> offset the fax modem to do it), then if the operator of the transmitter were
+</I>&gt;<i> to speak up and tell you &quot;that was a fax of the important document you asked
+</I>&gt;<i> for&quot;, you wouldn't be able to understand them, because you're incorrectly
+</I>&gt;<i> tuned. Furthermore, if you were to send a fax back, you typically want the
+</I>&gt;<i> radio on 14.230 as well; otherwise, you have to operate split.
+</I>&gt;<i>
+</I>&gt;<i> The correct frequency IS the frequency the radio is tuned to. Not whatever
+</I>&gt;<i> fldigi calculates as the modem center. This stuff is AFSK. Note the AF.
+</I>
+Uh, no. What you have described is the convention used by amateur
+radio operators, not what really happens physically. Here is an
+example.
+
+We have 50 stations operation PSK on 20m. All have their radios tuned
+to 14,070 kHz. None of them are interfering with each other. By your
+reckoning, they are all on the same frequency because they have tuned
+the big knob on their transceiver until the number on the display
+reads 14,070 kHz. OTOH, if each of them uses a frequency counter to
+measure the carrier frequency they are radiating, they are each going
+to get a different number, something between 14,070 and 14,073 kHz.
+
+So the actual RF radiated is the sum of the low IF signal injected at
+the mic jack, e.g. 1.500 kHz, and the dial frequency of the radio,
+e.g. 14,070 kHz. You would hold that is 14,070 kHz and I would hold
+that it is 14,071.5 kHz.
+
+&gt;<i> There are numerous reasons to receive signals at the tones they were
+</I>&gt;<i> designed to be sent at. If you have external gear of almost any kind, RTTY,
+</I>&gt;<i> packet, SSTV, FAX, etc, they're going to be expecting very specific AF
+</I>&gt;<i> tones. The tones you'll get when your radio is tuned appropriately, and when
+</I>&gt;<i> the signal falls on the AF indications on the waterfall that are the design
+</I>&gt;<i> points for the mode - for FAX, that's 1500 hz and 2300 hz. For SSTV, 1200,
+</I>&gt;<i> 1500...2300 Hz. For RTTY, etc.
+</I>
+That is the problem of the receiver, not what goes out over the air.
+To me all the following are the same:
+
+Dial          low IF (tone)
+
+14,070      3.0
+14,071      2.0
+14,072      1.0
+
+As they all produce a carrier at 14,073 kHz. The operator then choses
+the proper receiver injection frequency (dial setting) to produce an
+IF output that the demodulator expects. Again, that is the
+*operator's* problem. What I want to know is the actual frequency of
+the emitted RF as that is what the FCC or anyone else is going to care
+about.
+
+Even fldigi pays homage to this concept. That is what the QSY button
+does. It retunes the radio to produce the IF signal at the same
+frequency no matter what.
+
+&gt;&gt;<i> Fldigi does calculate and display the
+</I>&gt;&gt;<i> actual center frequency only in the log window.
+</I>&gt;<i>
+</I>&gt;<i> It's a misleading number at best. The correct frequency is the one the radio
+</I>&gt;<i> is telling you.
+</I>
+Au contraire! What fldigi reports is that actual carrier frequency,
+the frequency one would measure with a frequency counter connected to
+the transmitter output!
+
+&gt;<i> For optimum operations, the waterfall should be set to AF,
+</I>&gt;<i> the modems should be at the design points, and the frequency display is
+</I>&gt;<i> misleading and/or duplicates the radio display, consumes UI space that could
+</I>&gt;<i> be better used for something useful, and should probably be disabled as a
+</I>&gt;<i> direct consequence. Speaking of any situation where we are not just
+</I>&gt;<i> entertaining ourselves, but are working in circumstances where correct
+</I>&gt;<i> operation may have social or human consequences. There is no benefit to
+</I>&gt;<i> fldigi's frequency display when it is duplicating the radio's; there is no
+</I>&gt;<i> benefit when it is displaying a misleading &quot;center frequency,&quot; either. If
+</I>&gt;<i> you were using it to preview fldigi memories, that I can see. Otherwise... I
+</I>&gt;<i> have yet to be presented with a point in its favor.
+</I>
+You actually believe what you wrote there, right? You aren't just
+yanking my chain? If not, please tell me the proper modem design point
+for PSK31, Olivia, DominoEX, JT65, etc.
+
+One of the things I used to do was set up VSATs. The frequency we were
+assigned was the center of the transmitted signal, not the frequency
+of the LO injection. As far as I can discern, the only place where
+&quot;dial frequency&quot; is &quot;transmit frequency&quot; is amateur radio. Everyone
+else uses the center of the transmission.
+
+Regardless, I would be quite happy with the display being the
+start-frequency or the mark-frequency in an *FSK (2-FSK, m-FSK, ISK).
+And I know that the display in fldigi is the frequency sent to the
+rig. But if you think about it, the value sent to the PLL or DDS in
+the radio is NOT the display on the front of the rig. The value in the
+VFO is actually the sum (difference) between the VFO injection
+frequency and the IF frequency. In the case of fldigi we are dealing
+with an IF of typically between 0kHz and 3kHz. (OK, call it an IF
+frequency of 1.5kHz.) That is what the frequency readout should
+display (in my world).
+
+This is why I suggested it as an option. I want the display in fldigi
+to best reflect the physical transmission, not an arbitrary value
+agreed upon because that was what made the calculation easier 50 years
+ago.
+
+And I agree with Rick, K9AO, 100% on one thing: this is an education
+issue. Operators need to know precisely where their signal is going.
+That is why I am asking for the option to display a center frequency
+as an option in addition to the dial frequency of the radio. The dial
+frequency of the radio is already displayed on the radio. No need to
+repeat it on fldigi (except for troubleshooting purposes).
+
+Here is another way to look at it. When I see a 500Hz blank spot in my
+spectrum display, I want to be able to tell my buddy to transmit in
+the middle of that blank spot, not have to calculate a bunch of
+offsets in my head.
+
+-- 
+73 de Brian, WB6RQN/J79BPL
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001191.html">Rig Control/Freq Display request
+</A></li>
+	<LI>Next message: <A HREF="001186.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1180">[ date ]</a>
+              <a href="thread.html#1180">[ thread ]</a>
+              <a href="subject.html#1180">[ subject ]</a>
+              <a href="author.html#1180">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

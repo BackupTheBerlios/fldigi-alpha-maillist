@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Bug with macro &lt;TIMER:NN&gt; ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Bug%20with%20macro%20%3CTIMER%3ANN%3E%20%3F&In-Reply-To=%3CCACMWOgvnPVWHNyM%3DdPG1FgmcF6A8EmgogNWZs%2BHP3b4UEPx%2Byg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002017.html">
+   <LINK REL="Next"  HREF="002022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Bug with macro &lt;TIMER:NN&gt; ?</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Bug%20with%20macro%20%3CTIMER%3ANN%3E%20%3F&In-Reply-To=%3CCACMWOgvnPVWHNyM%3DdPG1FgmcF6A8EmgogNWZs%2BHP3b4UEPx%2Byg%40mail.gmail.com%3E"
+       TITLE="Bug with macro &lt;TIMER:NN&gt; ?">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Wed Sep 14 19:41:44 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002017.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+        <LI>Next message: <A HREF="002022.html">Hangs if exiting when a TIMER macro runs ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2021">[ date ]</a>
+              <a href="thread.html#2021">[ thread ]</a>
+              <a href="subject.html#2021">[ subject ]</a>
+              <a href="author.html#2021">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>OK, no prob.
+
+At the same time, why not having pQSY() and doQSY() which are very
+similar, share some common code ? ( Same remark for doMODEM() and
+pMODEM() but this is not related to what I wish to do ).
+
+
+On Tue, Sep 13, 2011 at 10:23 PM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A>&gt; wrote:
+&gt;<i> The current implementation requires a &lt;TX&gt; in the macro for the &lt;TIMER:nn&gt;
+</I>&gt;<i> to be effective.
+</I>&gt;<i>
+</I>&gt;<i> If you propose any changes please be sure that they are based on 3.22.0AN or
+</I>&gt;<i> later.&#160; Note that I have added the ability to delay execution of certain
+</I>&gt;<i> macro tags until the actual time of occurrence in the macro string.
+</I>&gt;<i>
+</I>&gt;<i> Dave
+</I>&gt;<i>
+</I>&gt;<i> On 09/13/2011 04:03 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> wrote:
+</I>&gt;<i>
+</I>&gt;<i> Thanks. Apparently, it's OK but &lt;TIMER&gt; needs I think the macro tag &lt;TX&gt; is
+</I>&gt;<i> needed otherwise there is no repetition. Am I wrong ? Is it intended and if
+</I>&gt;<i> not should it be corrected, so that &lt;TIMER&gt; would repeat even if there is no
+</I>&gt;<i> transmission ?
+</I>&gt;<i>
+</I>&gt;<i> Remi
+</I>&gt;<i>
+</I>&gt;<i> Le 13.09.2011 18:40, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pa3gwh at pa3gwh.com</A> a &#233;crit :
+</I>&gt;<i>
+</I>&gt;<i> I have the TIMER tag before the RX tag, not sure why I ever put it there
+</I>&gt;<i> but it has worked fine for me even though it is described differently in
+</I>&gt;<i> the manual :-)
+</I>&gt;<i>
+</I>&gt;<i> Having said that, I have e-mailed with Dave extensively about problems I
+</I>&gt;<i> had with the timer randomly stopping. Most evident while switching between
+</I>&gt;<i> virtual screens in KDE at first, but that was fixed a long time ago. The
+</I>&gt;<i> last time I had this problem I *think* I deleted my macro definition file
+</I>&gt;<i> and rebuilt it from scratch and that fixed it that time.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Richard
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Sun, Sep 11, 2011 at 08:59:41PM +0100, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;<i> Apparently there is a problem with the macro tag&lt;TIMER:NN&gt;&#160; :&#160; There is
+</I>&gt;<i> no repetition.
+</I>&gt;<i>
+</I>&gt;<i> For example, this macro does not work as expected:
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.w1hkj.com/FldigiHelp-3.12/Macros.html">http://www.w1hkj.com/FldigiHelp-3.12/Macros.html</A>
+</I>&gt;<i>
+</I>&gt;<i> &lt;TX&gt;&lt;IDLE:5&gt;CQ CQ de&lt;MYCALL&gt;&#160; &lt;MYCALL&gt;&#160; k&lt;RX&gt;&lt;TIMER:20&gt;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Sun, Sep 11, 2011 at 9:54 PM, Larry Levesque&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ka1vgm at gmail.com</A>&gt;&#160; wrote:
+</I>&gt;<i>
+</I>&gt;<i> Define repetition? Are you expecting the macro to repeat itself after
+</I>&gt;<i> the 20 seconds?
+</I>&gt;<i>
+</I>&gt;<i> Yes.
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.w1hkj.com/FldigiHelp-3.22/Macros.html">http://www.w1hkj.com/FldigiHelp-3.22/Macros.html</A>
+</I>&gt;<i>
+</I>&gt;<i> &lt;TX&gt;&lt;IDLE:5&gt;CQ CQ de&lt;MYCALL&gt;&#160; &lt;MYCALL&gt;&#160; k&lt;RX&gt;&lt;TIMER:20&gt;
+</I>&gt;<i>
+</I>&gt;<i> *will enable the PTT
+</I>&gt;<i> *cause 5 seconds of idle signal
+</I>&gt;<i> *send the CQ CQ de W1HKJ W1HKJ k
+</I>&gt;<i> *disable PTT
+</I>&gt;<i> *and count down 20 seconds before repeating the macro
+</I>&gt;<i>
+</I>&gt;<i> I'll investigate more but could you please confirm that this macro
+</I>&gt;<i> should automatically restart every 20 seconds? Thanks
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002017.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+	<LI>Next message: <A HREF="002022.html">Hangs if exiting when a TIMER macro runs ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2021">[ date ]</a>
+              <a href="thread.html#2021">[ thread ]</a>
+              <a href="subject.html#2021">[ subject ]</a>
+              <a href="author.html#2021">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> No Country Data logbook auto fill Fldigi-0AM
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20No%20Country%20Data%20logbook%20auto%20fill%20Fldigi-0AM&In-Reply-To=%3C4E71FD10.3030009%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002025.html">
+   <LINK REL="Next"  HREF="002027.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>No Country Data logbook auto fill Fldigi-0AM</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20No%20Country%20Data%20logbook%20auto%20fill%20Fldigi-0AM&In-Reply-To=%3C4E71FD10.3030009%40bellsouth.net%3E"
+       TITLE="No Country Data logbook auto fill Fldigi-0AM">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Sep 15 15:26:40 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002025.html">No Country Data logbook auto fill Fldigi-0AM
+</A></li>
+        <LI>Next message: <A HREF="002027.html">No Country Data logbook auto fill Fldigi-0AM
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2026">[ date ]</a>
+              <a href="thread.html#2026">[ thread ]</a>
+              <a href="subject.html#2026">[ subject ]</a>
+              <a href="author.html#2026">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i> Interesting.  I was curious, and looked in my server directory for the
+</I>&gt;<i> cty.dat file and could not find it.  I looked in /.fllog, and in /fllog
+</I>&gt;<i> and it is not there, yet on my remote fldigi, the country data still
+</I>&gt;<i> appears, so I am going to assume it is finding the cty.dat file on the
+</I>&gt;<i> local machine rather than getting it from the remote fllog server.   On
+</I>&gt;<i> standard fldigi,  I put the cty.dat in the /.fldigi folder.  Is that
+</I>&gt;<i> where it should be on the remote log server directory, in /.fllog?  If
+</I>&gt;<i> not then where would be the best place for fllog to find it?  Note
+</I>&gt;<i> fldigi is not running on the remote server.
+</I>cty.dat is not accessed by fllog, only fldigi.  So that file belongs in 
+the active fldigi files folder, i.e.
+
+~/.fldigi
+c:\Documents and Settings\&lt;user&gt;\fldigi.files
+etc.
+&gt;<i> While I was looking, I noticed that the log text .adif file had nothing
+</I>&gt;<i> in it, although the gui panel had all the remotely enterd logs
+</I>&gt;<i> appearing.
+</I>The file text.adif is used only for interfacing to external logging 
+programs that require a file interface.  The database is updated 
+immediately when a new entry is made (either at fllog or fldigi), or it 
+is modified at fllog.  If this is occurring with the main adif logbook 
+file then you might be seeing a permissions problem ... see paragraphs 
+below.
+&gt;<i>   So I went to the fllog menu, File, and hit save.  Now my log
+</I>&gt;<i> file has all the cached data in it.  So it seems a few things are not
+</I>&gt;<i> really ready for remote operation.  The save function needs to be
+</I>&gt;<i> automatic, or continuous, or something other than requiring a manual
+</I>&gt;<i> save.  If the server loses power or something fails, I would really hate
+</I>&gt;<i> to loose everything in cache that had not been saved.
+</I>
+&gt;<i> Also I was unable
+</I>&gt;<i> to edit the fllog with the normal update and delete buttons like I do
+</I>&gt;<i> with fldigi, because they were all greyed out.
+</I>That does not make sense Al.  I've tested this on several different 
+platforms and those buttons are active on fllog and accessible either at 
+the server work station or using a remote desktop.
+&gt;<i>    I have found mistakes I
+</I>&gt;<i> make, or double log entries, that I would like to remove to make a
+</I>&gt;<i> cleaner log, but was unable to.  I wondered  if it was a permissions
+</I>&gt;<i> thing, and looked back in /usr/local/bin, and found write was limited to
+</I>&gt;<i> root only.  Protection I guess.
+</I>Probably because of how you installed fllog.  Check your ~/.fllog 
+directory and its contents to be sure that you have not restricted 
+either the file or directory permissions.
+
+&gt;<i>   I use Ubuntu where root is harder to
+</I>&gt;<i> get to, so I changed the permissions to include me and now it works fine.
+</I>confirms my suspicions.
+
+Dave
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002025.html">No Country Data logbook auto fill Fldigi-0AM
+</A></li>
+	<LI>Next message: <A HREF="002027.html">No Country Data logbook auto fill Fldigi-0AM
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2026">[ date ]</a>
+              <a href="thread.html#2026">[ thread ]</a>
+              <a href="subject.html#2026">[ subject ]</a>
+              <a href="author.html#2026">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi &quot;E: trx_trx_receive_loop&quot;  Error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20%22E%3A%20trx_trx_receive_loop%22%20%20Error&In-Reply-To=%3C757313.73092.qm%40web56408.mail.re3.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000633.html">
+   <LINK REL="Next"  HREF="000635.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi &quot;E: trx_trx_receive_loop&quot;  Error</H1>
+    <B>mrtembry</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20%22E%3A%20trx_trx_receive_loop%22%20%20Error&In-Reply-To=%3C757313.73092.qm%40web56408.mail.re3.yahoo.com%3E"
+       TITLE="fldigi &quot;E: trx_trx_receive_loop&quot;  Error">mrtembry at yahoo.com
+       </A><BR>
+    <I>Thu Dec 31 01:52:58 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000633.html">fldigi 3.13BJ Crash
+</A></li>
+        <LI>Next message: <A HREF="000635.html">fldigi / flrig updates posted to alpha test page
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#634">[ date ]</a>
+              <a href="thread.html#634">[ thread ]</a>
+              <a href="subject.html#634">[ subject ]</a>
+              <a href="author.html#634">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Runing&#160; fldigi 3.12.X and up.&#160; 
+* * *
+I get this random error within 1 hours on 3.12.x so I added debugging info.
+This error happens consistently.
+&#160;
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">tembry at lisa32</A>:~/.fldigi$&#160; cat status_log.txt
+Q: main: fldigi 3.12.5 log started on Wed Dec 30 16:17:02 2009
+E: trx_trx_receive_loop: Sound error: Connection timed out, TE-04
+E: trx_trx_receive_loop: Sound error: Connection timed out, TE-04
+E: trx_trx_receive_loop: Sound error: Connection timed out, TE-04
+E: trx_trx_receive_loop: Sound error: Connection timed out, TE-04
+E: trx_trx_receive_loop: Sound error: Connection timed out, TE-04
+E: trx_trx_receive_loop: Sound error: Connection timed out, TE-04
+
+Added debuggin info &quot;TE-04&quot; is in source code src/trx/trx.cxx.
++++++++++++++++++++++++++++++++++++
+
+// If we change to an 8000Hz modem while RSID is on we'll never detect anything.
+&#160;&#160;&#160; &#160;&#160;&#160; // Toggle rsid_detecting so that the audio device is reopened with the ReedSolomon
+&#160;&#160;&#160; &#160;&#160;&#160; // samplerate in the next loop iteration.
+&#160;&#160;&#160; &#160;&#160;&#160; if (progdefaults.rsid &amp;&amp; rsid_detecting &amp;&amp; current_samplerate != ReedSolomon-&gt;samplerate())
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; rsid_detecting = false;
+
+&#160;&#160;&#160; &#160;&#160;&#160; try {
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; if (trxrb.write_space() == 0) // discard some old data
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; trxrb.read_advance(SCBLOCKSIZE);
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; trxrb.get_wv(rbvec);
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; numread = 0;
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; while (numread &lt; SCBLOCKSIZE &amp;&amp; trx_state == STATE_RX)
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; numread += scard-&gt;Read(rbvec[0].buf + numread, SCBLOCKSIZE - numread);
+&#160;&#160;&#160; &#160;&#160;&#160; }
+&#160;&#160;&#160; &#160;&#160;&#160; catch (const SndException&amp; e) {
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; scard-&gt;Close();
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; LOG_ERROR(&quot;%s, TE-04&quot;, e.what());
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; put_status(e.what(), 5);
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; MilliSleep(10);
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; return;
+&#160;&#160;&#160; &#160;&#160;&#160; }
+
+++++++++++++++++++++++++++++++++++++++
+
+Again, this is a random error.
+
+I have &quot;apt-get&quot; purged pulseaudio, bluetooth and lmsensors. 
+
+Source code 3.11.6 seems to works without errors or problems.
+The longest 3.11.6 test(s) was for 6 hours.
+I know I should test longer but I did not.
+
+I am running Ubuntu 9.10 on kernel 2.6.31.16.
+What else do I need to test?
+
+Thanks,
+
+Terry, KJ4EED
+&#160;
+
+
+
+
+
+
+
+      
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091230/88875942/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091230/88875942/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000633.html">fldigi 3.13BJ Crash
+</A></li>
+	<LI>Next message: <A HREF="000635.html">fldigi / flrig updates posted to alpha test page
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#634">[ date ]</a>
+              <a href="thread.html#634">[ thread ]</a>
+              <a href="subject.html#634">[ subject ]</a>
+              <a href="author.html#634">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

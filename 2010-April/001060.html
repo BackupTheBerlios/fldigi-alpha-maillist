@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Any further progress on the fax capabilities?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Any%20further%20progress%20on%20the%20fax%20capabilities%3F&In-Reply-To=%3Cp2x5f51f8061004071215z9502de49r92e2b6308fc7f6bc%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001059.html">
+   <LINK REL="Next"  HREF="001061.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Any further progress on the fax capabilities?</H1>
+    <B>John Douyere</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Any%20further%20progress%20on%20the%20fax%20capabilities%3F&In-Reply-To=%3Cp2x5f51f8061004071215z9502de49r92e2b6308fc7f6bc%40mail.gmail.com%3E"
+       TITLE="Any further progress on the fax capabilities?">vk2eta at gmail.com
+       </A><BR>
+    <I>Wed Apr  7 21:15:09 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001059.html">Any further progress on the fax capabilities?
+</A></li>
+        <LI>Next message: <A HREF="001061.html">Any further progress on the fax capabilities?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1060">[ date ]</a>
+              <a href="thread.html#1060">[ thread ]</a>
+              <a href="subject.html#1060">[ subject ]</a>
+              <a href="author.html#1060">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Ben,
+
+Remi has pushed a lot of changes late March. See below.
+
+Regards,
+
+John
+
+
+
+On Sun, Mar 28, 2010 at 10:41 AM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> &lt;
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt; wrote:
+
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> Many bug fixes pushed in the branch pu/rc :
+</I>&gt;<i>
+</I>&gt;<i> * Less calls to REQ(update_rx_pix) to reduce lost pixels.
+</I>&gt;<i> * Received image now starts at the good column when phasing detected.
+</I>&gt;<i> * Fixed proportion of transmit image.
+</I>&gt;<i> * Uses proper C_FIR_filter class.
+</I>&gt;<i> * Corrected bug when slanting zoomed image.
+</I>&gt;<i> * Zoomed-in images correctly displayed.
+</I>&gt;<i> * No left shift of images when increasing height.
+</I>&gt;<i> * Reception image can be zoomed in/out. Usual width is now 1809 pixels.
+</I>&gt;<i> * Fix error on default window width.
+</I>&gt;<i> * Slant adjustment is split in integer lpm value and slant percentage.
+</I>&gt;<i> * Manual mode can continuously split into successive max size images.
+</I>&gt;<i> * Clean function for converting ioc into width.
+</I>&gt;<i> * Added lpm=240 value.
+</I>&gt;<i> * Adjust reception window width.
+</I>&gt;<i> * Maximum number of lines is now a Fl_Int_Input, easier to change.
+</I>&gt;<i> * Code cleanup.
+</I>&gt;<i> * Implemented a fully manual mode.
+</I>&gt;<i> * Maximum number of lines is now editable.
+</I>&gt;<i> * Fixed scroll error of reception image.
+</I>&gt;<i> * Avoids crashes when choosing another wefax modem, while receiving.
+</I>&gt;<i> * Now it compiles without Hamlib.
+</I>&gt;<i> * std::cerr replaced by LOG_ERROR.
+</I>&gt;<i>
+</I>&gt;<i> I tried to take into account all bugs and remarks.
+</I>&gt;<i>
+</I>&gt;<i> Cheers
+</I>&gt;<i>
+</I>&gt;<i> RC
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i>
+</I>
+
+
+On Wed, Apr 7, 2010 at 6:47 AM, Ben &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ben at vk-agency.com</A>&gt; wrote:
+
+&gt;<i> Remi, it's been a few weeks now... I'm really eager to use the system with
+</I>&gt;<i> the display aspect corrected so I can dump my other software entirely. :)
+</I>&gt;<i>
+</I>&gt;<i> --Ben
+</I>&gt;<i> AA7AS
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100408/e4d34440/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100408/e4d34440/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001059.html">Any further progress on the fax capabilities?
+</A></li>
+	<LI>Next message: <A HREF="001061.html">Any further progress on the fax capabilities?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1060">[ date ]</a>
+              <a href="thread.html#1060">[ thread ]</a>
+              <a href="subject.html#1060">[ subject ]</a>
+              <a href="author.html#1060">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

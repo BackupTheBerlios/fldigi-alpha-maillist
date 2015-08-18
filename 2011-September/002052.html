@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.22.0AS posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.22.0AS%20posted&In-Reply-To=%3C4E7A6F69.4060602%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002051.html">
+   <LINK REL="Next"  HREF="002053.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.22.0AS posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.22.0AS%20posted&In-Reply-To=%3C4E7A6F69.4060602%40bellsouth.net%3E"
+       TITLE="fldigi-3.22.0AS posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Sep 22 01:12:41 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002051.html">fldigi 3.22.0AR posted
+</A></li>
+        <LI>Next message: <A HREF="002053.html">fldigi-3.22.0AS posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2052">[ date ]</a>
+              <a href="thread.html#2052">[ thread ]</a>
+              <a href="subject.html#2052">[ subject ]</a>
+              <a href="author.html#2052">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+
+WWV xmt mode
+       * Added sound card time tick transmit
+
+Here is a macro which demonstrates how to use the WWV mode to transmit 
+time ticks.
+
+===========snip==========
+&lt;MODEM:NULL&gt;
+&lt;!QSY:1802.0:1000&gt;
+&lt;!MODEM:CW&gt;&lt;!WPM:18&gt;QST de &lt;MYCALL&gt;
+1 min time tick cal run follows
+de &lt;MYCALL&gt;
+&lt;!MODEM:NULL&gt;&lt;!IDLE:2&gt;
+&lt;!MODEM:WWV&gt;&lt;!IDLE:60&gt;
+&lt;!MODEM:NULL&gt;&lt;!IDLE:2&gt;
+&lt;!MODEM:CW&gt;QST de &lt;MYCALL&gt; end of cal run de &lt;MYCALL&gt; k
+&lt;TX&gt;&lt;RX&gt;
+===========snip==========
+
+Change the &lt;!QSY line (or delete it).  You might want to substitute 
+&lt;!GOFREQ:1000&gt;
+
+Sends a CW preamble announcing a 1 minute time tick calibration run
+Sends time ticks for 1 minute. The pulses are 200 msec in duration with 
+4 msec leading and trailing edges.  The pulse modulates a 1000 Hz audio 
+sub carrier.
+Sends a CW postample announcing the end of the calibration run.
+
+Usage:
+Master station calibrates the sound card to WWV on 5, 10 or 15 MHz (or 
+the Euro / Asian counterpart).
+
+Master sends a long time tick transmission which is copied by all other 
+stations that want to be synchronized to the Master station.  The 
+receiving stations copy the transmission just as if it were from WWV.  
+The calibration procedure is identical.  This can be used to assist 
+VHF/UHF FM stations who do not have an HF receiver to use for the WWV 
+calibration of the sound card clock.  The sound card clock's error in 
+ppm is measured by comparing receiving the once per second tick signal 
+and adjusting for no slant on the WWV scope display.
+
+I've posted an example wav for you to listen to: 
+<A HREF="http://www.w1hkj.com/alpha/fldigi/timetick.wav">http://www.w1hkj.com/alpha/fldigi/timetick.wav</A>
+
+73, Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110921/0b328d8f/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110921/0b328d8f/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002051.html">fldigi 3.22.0AR posted
+</A></li>
+	<LI>Next message: <A HREF="002053.html">fldigi-3.22.0AS posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2052">[ date ]</a>
+              <a href="thread.html#2052">[ thread ]</a>
+              <a href="subject.html#2052">[ subject ]</a>
+              <a href="author.html#2052">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

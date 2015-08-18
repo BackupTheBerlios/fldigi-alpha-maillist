@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> pre-release fldigi-3.21.27 and fllog-1.1.0 posted for testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20pre-release%20fldigi-3.21.27%20and%20fllog-1.1.0%20posted%20for%20testing&In-Reply-To=%3C4EC812EA.1080301%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002155.html">
+   <LINK REL="Next"  HREF="002151.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>pre-release fldigi-3.21.27 and fllog-1.1.0 posted for testing</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20pre-release%20fldigi-3.21.27%20and%20fllog-1.1.0%20posted%20for%20testing&In-Reply-To=%3C4EC812EA.1080301%40bellsouth.net%3E"
+       TITLE="pre-release fldigi-3.21.27 and fllog-1.1.0 posted for testing">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Nov 19 21:34:50 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002155.html">fldigi-3.22.0BC alpha posted
+</A></li>
+        <LI>Next message: <A HREF="002151.html">pre-release fldigi-3.21.27 and fllog-1.1.0 posted for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2150">[ date ]</a>
+              <a href="thread.html#2150">[ thread ]</a>
+              <a href="subject.html#2150">[ subject ]</a>
+              <a href="author.html#2150">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+
+<A HREF="http://www.w1hkj.com/alpha/fllog/">http://www.w1hkj.com/alpha/fllog/</A>
+
+fldigi:
+
+Version 3.21.27 - Maintenance release
+
+   Log r/w improvements
+     * Created separate thread for writing database.  User with over
+       35,000 records was experiencing UI interruption of several
+       seconds on Windows XP system.
+     * Removed compatibility code from log r/w.  Logs prior to 3.1 will
+       read but some fields will be ignored.
+     * Added new method &quot;newrec&quot; to CQsoDb class.
+     * Modified logbook read and write behavior to eliminate duplication
+       and employ faster string lookup algorithm in matching ADIF tags
+       to internal database entries.
+
+   WEFAX error logging fix
+     * Fixed format compiler warnings and errors.
+
+   Restore Log Sort
+     * After adding a record
+
+fllog:
+
+Version 1.1.0 - Upgrade release
+
+   R/W speedup
+     * Changes to increase speed of ADIF file read/write
+     * Added annunciation of read and write progress
+
+Both have been tested locally on Linux, XP, Vista and OS X with a log 
+database of 106,000+ records.
+
+If you have a very large logbook database then you should consider using 
+the fllog logbook server and fldigi as the client.  That provides the 
+absolutely fastest lookups, adds, amends, deletes etc without 
+interrupting fldigi operation.
+
+73, Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111119/236e63d2/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111119/236e63d2/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002155.html">fldigi-3.22.0BC alpha posted
+</A></li>
+	<LI>Next message: <A HREF="002151.html">pre-release fldigi-3.21.27 and fllog-1.1.0 posted for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2150">[ date ]</a>
+              <a href="thread.html#2150">[ thread ]</a>
+              <a href="subject.html#2150">[ subject ]</a>
+              <a href="author.html#2150">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

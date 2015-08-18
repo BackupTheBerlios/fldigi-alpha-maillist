@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Time Check on Startup
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Time%20Check%20on%20Startup&In-Reply-To=%3C4B9C06F9.8050907%40salsgiver.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001009.html">
+   <LINK REL="Next"  HREF="001000.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Time Check on Startup</H1>
+    <B>David Kleber</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Time%20Check%20on%20Startup&In-Reply-To=%3C4B9C06F9.8050907%40salsgiver.com%3E"
+       TITLE="Time Check on Startup">davek at salsgiver.com
+       </A><BR>
+    <I>Sat Mar 13 22:43:21 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001009.html">Time Check on Startup
+</A></li>
+        <LI>Next message: <A HREF="001000.html">Time Check on Startup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1008">[ date ]</a>
+              <a href="thread.html#1008">[ thread ]</a>
+              <a href="subject.html#1008">[ subject ]</a>
+              <a href="author.html#1008">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have a backup laptop (5yo panasonic toughbook) that only gets turned 
+on about 4 times a year and  has no wireless, so it wouldn't pick up the 
+update from the internet time servers automatically.  It would be VERY 
+easy for me to fire this up in a flooding situation on Monday (if we 
+were called out), after the time change, and not notice the time was off.
+
+Also, several of the County EOC's I've dealt with, do not want the 
+RACES/ARES computers on their network, so the auto internet time updates 
+would be out there, too.
+
+-Dave, KB3FXI
+
+Joseph A. Counsil wrote:
+&gt;<i> Yep - you nailed it!  Sometimes I use old junker PCs for Field Day, and they 
+</I>&gt;<i> often have dead CMOS batteries, so it would be nice to have a time check warning 
+</I>&gt;<i> on startup.
+</I>&gt;<i> 
+</I>&gt;<i> 73,
+</I>&gt;<i> -Joe-
+</I>&gt;<i> 
+</I>&gt;<i> Mike Haynes wrote:
+</I>&gt;&gt;<i> I can only imagine this being a problem if the CMOS Battery is dead causing 
+</I>&gt;&gt;<i> one to have to manually set the
+</I>&gt;&gt;<i> time or it is about to go dead and causing time to be incorrect.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have never noticed a problem on any platform or OS I have used.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Perhaps I am missing something. 
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Yes NTP would do a very nice job if one is connected to the internet.  In my 
+</I>&gt;&gt;<i> portable EmComm work I do
+</I>&gt;&gt;<i> not have internet but have not had an issue.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 73's
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Mike
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Fri, Mar 12, 2010 at 8:45 AM, Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">m0gld at enotty.net</A> 
+</I>&gt;&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">m0gld at enotty.net</A>&gt;&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     &gt;&gt;&gt;&gt;&gt; On Fri, 12 Mar 2010 06:22:57 -0500, David Kleber
+</I>&gt;&gt;<i>     &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">davek at salsgiver.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">davek at salsgiver.com</A>&gt;&gt; said:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     &gt; A while back, I suggested that upon startup of FLDIGI, a window pop up
+</I>&gt;&gt;<i>     &gt; showing the current time and date that the computer is set to.  This
+</I>&gt;&gt;<i>     &gt; could appear with a question, &quot;Is your time and date correct&quot; and a yes
+</I>&gt;&gt;<i>     &gt; to continue... maybe clicking no would take you to where you can make
+</I>&gt;&gt;<i>     &gt; the correction.  Perhaps there could be somewhere in the program that
+</I>&gt;&gt;<i>     &gt; this could be disabled for those who just can't stand the idea.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     This is a pretty easy problem to solve without involving fldigi.  If
+</I>&gt;&gt;<i>     your machince is connected to the internet, you can just set up an NTP
+</I>&gt;&gt;<i>     client and forget about the issue.  It will keep your clock to within a
+</I>&gt;&gt;<i>     few milliseconds of the NTP server, accounting for drift and avoiding
+</I>&gt;&gt;<i>     large increments.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     Here are some instructions for Windows:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>      <A HREF="http://www.boulder.nist.gov/timefreq/service/pdf/win2000xp.pdf">http://www.boulder.nist.gov/timefreq/service/pdf/win2000xp.pdf</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     On Linux systems you would install the ntp package.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     &gt; I think for EmComm, this could become a very important issue, especially
+</I>&gt;&gt;<i>     &gt; when logging incoming wrap files during an actual emergency deployment.
+</I>&gt;&gt;<i>     &gt;   Its pretty important to know that your messages are logged with the
+</I>&gt;&gt;<i>     &gt; correct time and date.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     Then you should make good timekeeping part of your SOP.  NTP is the
+</I>&gt;&gt;<i>     simplest solution.  It's much better for fldigi to assume that the time
+</I>&gt;&gt;<i>     is correct and let specialised software deal with setting it, because
+</I>&gt;&gt;<i>     that's usually a privileged operation that cannot be done in a system
+</I>&gt;&gt;<i>     independent manner.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     --
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     73,
+</I>&gt;&gt;<i>     Stelios, M0GLD.
+</I>&gt;&gt;<i>     _______________________________________________
+</I>&gt;&gt;<i>     fldigi-alpha mailing list
+</I>&gt;&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> --------------------------------------------------------------------------------
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> fldigi-alpha mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;<i>   
+</I>&gt;<i> 
+</I>&gt;<i> -- 
+</I>&gt;<i> +---------------------------------------------------------------+
+</I>&gt;<i> | Joseph A. Counsil  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>  Phone:(573) 341-5186 |
+</I>&gt;<i> | 1310 Woodlawn Drive, Rolla, MO 65401  Amateur Radio: - K&#216;OG - |
+</I>&gt;<i> +---------------------------------------------------------------+
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001009.html">Time Check on Startup
+</A></li>
+	<LI>Next message: <A HREF="001000.html">Time Check on Startup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1008">[ date ]</a>
+              <a href="thread.html#1008">[ thread ]</a>
+              <a href="subject.html#1008">[ subject ]</a>
+              <a href="author.html#1008">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

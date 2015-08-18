@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> High CPU load with USB sound device
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C4B76FB80.70302%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000836.html">
+   <LINK REL="Next"  HREF="000838.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>High CPU load with USB sound device</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C4B76FB80.70302%40bellsouth.net%3E"
+       TITLE="High CPU load with USB sound device">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Feb 13 20:20:32 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000836.html">High CPU load with USB sound device
+</A></li>
+        <LI>Next message: <A HREF="000838.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#837">[ date ]</a>
+              <a href="thread.html#837">[ thread ]</a>
+              <a href="subject.html#837">[ subject ]</a>
+              <a href="author.html#837">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Peter Hamilton wrote:
+&gt;&gt;<i> The reason for the difference is....
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Interesting. Linux audio does seem to be a can of worms. The one
+</I>&gt;<i> consistent trend I've noticed is that the more &quot;primitive&quot; the sound
+</I>&gt;<i> subsystem the better it is in this application. Less versatile, maybe. I
+</I>&gt;<i> had no end of problems with Pulseaudio, Portaudio had a few minor
+</I>&gt;<i> problems but was basically OK apart from this, and OSS seems rock solid.
+</I>&gt;<i>   
+</I>Really a function of the drivers that have been written for the h/w.  
+OSS has the least amount of support in the newest distributions.  It 
+will also be the most likely to give resampling errors.  Portaudio 
+resampling is done internally in fldigi using high quality sample rate 
+converters.  Pulseaudio allows the user to select the sample rate 
+converter (some choices are the same as fldigi's converters).
+
+If you notice tx audio clicks or dropouts then abandon the OSS audio 
+i/o.  The culprit will be a grossly inadequate sample rate converter in 
+the OSS driver.
+
+Dave, W1HKJ
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100213/65ad5576/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100213/65ad5576/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000836.html">High CPU load with USB sound device
+</A></li>
+	<LI>Next message: <A HREF="000838.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#837">[ date ]</a>
+              <a href="thread.html#837">[ thread ]</a>
+              <a href="subject.html#837">[ subject ]</a>
+              <a href="author.html#837">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Rig Control/Freq Display request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3C201005011658.11913.k9ao%40charter.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001181.html">
+   <LINK REL="Next"  HREF="001187.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Rig Control/Freq Display request</H1>
+    <B>Rick Kunath</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3C201005011658.11913.k9ao%40charter.net%3E"
+       TITLE="Rig Control/Freq Display request">k9ao at charter.net
+       </A><BR>
+    <I>Sat May  1 22:58:11 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001181.html">Rig Control/Freq Display request
+</A></li>
+        <LI>Next message: <A HREF="001187.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1184">[ date ]</a>
+              <a href="thread.html#1184">[ thread ]</a>
+              <a href="subject.html#1184">[ subject ]</a>
+              <a href="author.html#1184">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i> Well, confusion in the mind of the confused. The important thing is,
+</I>&gt;<i> &quot;what frequency is my RF coming out on?&quot; I would rather have the
+</I>&gt;<i> option of displaying that.
+</I>
+Might be something to consider.
+
+However, the frequency readout inside of Fldigi is a part of the rig control 
+CAT portion of the app, and because of this, it's directly setting the radio's 
+dial frequency. It's not supposed to indicate the frequency of transmission.
+
+I think this is as it should be. 
+
+It is here that I can control the rig's tuning. It is not there to assist you 
+in knowing where you are transmitting. That is handled in the waterfall via 
+the frequency readouts there or by you if you have no CAT and are summing the 
+radio frequency with the waterfall audio frequency.
+
+I don't see how the two can be reconciled and I need things the way they are 
+to operate digital.
+
+You are asking for some sort of moving readout that follows the waterfall 
+maybe? It's basically there when Fldigi calculates the waterfall frequency or 
+sums the audio frequency to the radio dial readout for logging. 
+
+I don't know. It seems too confusing to me. By convention when you treat the 
+audio passband as baseband, the appropriate starting point is always the 
+carrier reinsertion frequency. 
+
+You are going to wind up having untrained operators moving the radio dial from 
+the appropriate carrier reinsertion point, which as was mentioned up the 
+thread there is some flexibility of based on knowing where you are transmitting 
+and your equipment, but the untrained operator may well wind up with an 
+inappropriate radio dial setting and compensate using the waterfall cursor, 
+thus winding up inefficiently using the equipment or rendering the connection 
+impossible. It will look to them like they are on the right frequency, but the 
+combination of carrier reinsertion point and radio dial setting may be 
+unusable.
+
+It all boils down to the operator having to understand what they are doing. 
+And that is training. It's not that hard. If we really have operators that are 
+that unable to understand what and where they are going to be transmitting, 
+should they even be transmitting at all?
+
+I don't want the Fldigi display to display anything but the radio dial 
+setting. I think that is as it should be. The rest is determined from the 
+waterfall AF. CAT allows the waterfall to display the actual dial frequency. 
+Non-CAT displays the AF. 
+
+If you have the modem sweet spot set where you want it, and are not using CAT 
+control, the program is going to come up set right unless some untrained 
+operator clicks off the appropriate spot on the waterfall.
+
+If you disable the frequency readout and tell the op to make sure the cursor 
+is set at the appropriate audio frequency, does not get the job you want done?
+
+Is this all over VHF/UHF FM or something? 
+
+Rick Kunath, k9ao
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001181.html">Rig Control/Freq Display request
+</A></li>
+	<LI>Next message: <A HREF="001187.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1184">[ date ]</a>
+              <a href="thread.html#1184">[ thread ]</a>
+              <a href="subject.html#1184">[ subject ]</a>
+              <a href="author.html#1184">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

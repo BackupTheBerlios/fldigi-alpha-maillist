@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Portaudio ?.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C4A813431.3060507%40urbakken.dk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000014.html">
+   <LINK REL="Next"  HREF="000016.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Portaudio ?.</H1>
+    <B>Erik Jakobsen</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C4A813431.3060507%40urbakken.dk%3E"
+       TITLE="Portaudio ?.">eja at urbakken.dk
+       </A><BR>
+    <I>Tue Aug 11 11:04:49 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000014.html">Portaudio ?.
+</A></li>
+        <LI>Next message: <A HREF="000016.html">Portaudio ?.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stelios Bounanos wrote:
+&gt;&gt;&gt;&gt;&gt;&gt;<i> On Tue, 11 Aug 2009 05:20:53 +0200, Erik Jakobsen &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">eja at urbakken.dk</A>&gt; said:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>             
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Stelios Bounanos wrote:
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;&gt;<i> That input device looks like an output device to me :)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Let's take a closer look at those virtual cable devices.  Please run the
+</I>&gt;&gt;&gt;<i> program below and send me the output file (pa_devs_out.txt) that it
+</I>&gt;&gt;&gt;<i> generates.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="http://download2.berlios.de/pub/fldigi/alpha/pa_devs.exe">http://download2.berlios.de/pub/fldigi/alpha/pa_devs.exe</A>
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Ok Stelios, here's the ouput file:
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> [...]
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> --------------------------------------- device #9
+</I>&gt;&gt;<i> Name                        = Virtual Cable 2
+</I>&gt;&gt;<i> Host API                    = Windows DirectSound
+</I>&gt;&gt;<i> Max inputs = 8, Max outputs = 0
+</I>&gt;&gt;<i> Default low input latency   =    0.000
+</I>&gt;&gt;<i> Default low output latency  =    0.000
+</I>&gt;&gt;<i> Default high input latency  =    0.000
+</I>&gt;&gt;<i> Default high output latency =    0.000
+</I>&gt;&gt;<i> Default sample rate         =     0.00
+</I>&gt;&gt;<i> Supported standard sample rates
+</I>&gt;&gt;<i>  for half-duplex 16 bit 8 channel input =
+</I>&gt;&gt;<i>      8000.00,  9600.00, 11025.00, 12000.00,
+</I>&gt;&gt;<i>     16000.00, 22050.00, 24000.00, 32000.00,
+</I>&gt;&gt;<i>     44100.00, 48000.00, 88200.00, 96000.00,
+</I>&gt;&gt;<i>     192000.00
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> This is Virtual Audio Cable masquerading as a DirectSound device.  This
+</I>&gt;<i> is the input device that gives you the error.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Because of it's masquerading ?.
+&gt;&gt;<i> --------------------------------------- device #7
+</I>&gt;&gt;<i> Name                        = Virtual Cable 2
+</I>&gt;&gt;<i> Host API                    = MME
+</I>&gt;&gt;<i> Max inputs = 0, Max outputs = 2
+</I>&gt;&gt;<i> Default low input latency   =    0.200
+</I>&gt;&gt;<i> Default low output latency  =    0.200
+</I>&gt;&gt;<i> Default high input latency  =    0.400
+</I>&gt;&gt;<i> Default high output latency =    0.400
+</I>&gt;&gt;<i> Default sample rate         = 44100.00
+</I>&gt;&gt;<i> Supported standard sample rates
+</I>&gt;&gt;<i>  for half-duplex 16 bit 2 channel output =
+</I>&gt;&gt;<i>      8000.00,  9600.00, 11025.00, 12000.00,
+</I>&gt;&gt;<i>     16000.00, 22050.00, 24000.00, 32000.00,
+</I>&gt;&gt;<i>     44100.00, 48000.00, 88200.00, 96000.00,
+</I>&gt;&gt;<i>     192000.00
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> This is the same device accessed via the MME API.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Ok.
+&gt;<i> Please try again with the MME devices for both capture and playback,
+</I>&gt;<i> i.e., not the &quot;Virtual Cable 2&quot; devices that are under the &quot;Windows
+</I>&gt;<i> DirectSound devices&quot; submenus.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Do you mean still using the VAC, or make a change in the set up in the 
+SDR itself, here ?
+
+<A HREF="http://www.urbakken.dk/MME.jpg">http://www.urbakken.dk/MME.jpg</A>
+and
+<A HREF="http://www.urbakken.dk/MME2.jpg">http://www.urbakken.dk/MME2.jpg</A>
+
+and try running this or ?
+
+<A HREF="http://www.urbakken.dk/windowsdirectsound.jpg">http://www.urbakken.dk/windowsdirectsound.jpg</A>
+
+I'm not quite sure what to try.
+&gt;<i> If this works we'll have to assume that VAC doesn't work well under
+</I>&gt;<i> DirectSound, or that there's a bug in PortAudio's DirectSound backend.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>We'll see it when I have it explained what to do :-)
+&gt;<i> I think what Brian achieves by forcing the sample rate is to avoid the
+</I>&gt;<i> problem where fldigi tries to set a sample rate of 0.0 (the default rate
+</I>&gt;<i> reported by PortAudio for VAC/DS).  The toggle to &quot;File I/O&quot; and back
+</I>&gt;<i> must be a way to reinitialise PortAudio.  If you save the settings and
+</I>&gt;<i> restart fldigi you shouldn't have to do this.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>I understand.
+&gt;<i> I'm not sure why PortAudio reports 0.0 for the VAC DSound device, or how
+</I>&gt;<i> fldigi should handle this.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Maybe it's totally a fail to try to get Fldigi to run with Flex radios ?.
+
+73s-Erik-OZ4KK
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000014.html">Portaudio ?.
+</A></li>
+	<LI>Next message: <A HREF="000016.html">Portaudio ?.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

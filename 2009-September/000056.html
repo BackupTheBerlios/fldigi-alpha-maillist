@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> TX Tail Test, fldigi-3.13AE/Win32
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20TX%20Tail%20Test%2C%20fldigi-3.13AE/Win32&In-Reply-To=%3C4A9D9BEC.1060102%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000079.html">
+   <LINK REL="Next"  HREF="000057.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>TX Tail Test, fldigi-3.13AE/Win32</H1>
+    <B>Joseph A. Counsil</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20TX%20Tail%20Test%2C%20fldigi-3.13AE/Win32&In-Reply-To=%3C4A9D9BEC.1060102%40gmail.com%3E"
+       TITLE="TX Tail Test, fldigi-3.13AE/Win32">counsil at rollanet.org
+       </A><BR>
+    <I>Wed Sep  2 00:10:52 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000079.html">fldigi 3.13AE alpha test posted
+</A></li>
+        <LI>Next message: <A HREF="000057.html">PSK Browser
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#56">[ date ]</a>
+              <a href="thread.html#56">[ thread ]</a>
+              <a href="subject.html#56">[ subject ]</a>
+              <a href="author.html#56">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Greetings,
+
+Gary (N0GW) and I just tested on 80m fldigi-3.13AE on Windows, and a 
+problem we were having with PSK250 has been solved in this version.
+
+Testing last weekend we found that with PSK250 and FLArq, the &lt;EOT&gt; was 
+being truncated.  The PTT was dropping too soon and the last bit of 
+audio was not sending.  Dave added a delay at the end, and now it has a 
+little bit of a tail, so all the audio is transmitting as it should.  
+File transfers, etc. all worked perfectly, and it is noticeably faster 
+not having to run RSID to keep the PTT up (which is what we had to do 
+before).
+
+I'll do some more testing otherwise, but with the quick test all seems good.
+
+Thanks for the fix Dave!
+
+73,
+-Joe-
+
+-- 
++---------------------------------------------------------------+
+|<i> Joseph A. Counsil  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>  Phone:(573) 341-5186 |
+</I>|<i> 1310 Woodlawn Drive, Rolla, MO 65401  Amateur Radio: - K&#216;OG - |
+</I>+---------------------------------------------------------------+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000079.html">fldigi 3.13AE alpha test posted
+</A></li>
+	<LI>Next message: <A HREF="000057.html">PSK Browser
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#56">[ date ]</a>
+              <a href="thread.html#56">[ thread ]</a>
+              <a href="subject.html#56">[ subject ]</a>
+              <a href="author.html#56">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

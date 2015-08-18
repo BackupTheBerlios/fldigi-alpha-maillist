@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> link failure -- anyone have any ideas?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20link%20failure%20--%20anyone%20have%20any%20ideas%3F&In-Reply-To=%3Cu2g1561aee61004120137na588c008se3436af07a939c63%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001104.html">
+   <LINK REL="Next"  HREF="001112.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>link failure -- anyone have any ideas?</H1>
+    <B>Ben</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20link%20failure%20--%20anyone%20have%20any%20ideas%3F&In-Reply-To=%3Cu2g1561aee61004120137na588c008se3436af07a939c63%40mail.gmail.com%3E"
+       TITLE="link failure -- anyone have any ideas?">ben at vk-agency.com
+       </A><BR>
+    <I>Mon Apr 12 10:37:47 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001104.html">Wefax: Sinuous, wavy parasite lines
+</A></li>
+        <LI>Next message: <A HREF="001112.html">WEFAX Works Great! (Ben)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1111">[ date ]</a>
+              <a href="thread.html#1111">[ thread ]</a>
+              <a href="subject.html#1111">[ subject ]</a>
+              <a href="author.html#1111">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here's what happens during the link phase:
+
+g++ -I/usr/local/include   -I/Users/benwilliams1/src/fltk/include
+-D_THREAD_SAFE -D_REENTRANT   -I/usr/local/include
+-I/usr/local/include/libpng14        -pipe -Wall -fexceptions -O2
+-ffast-math -finline-functions  -DNDEBUG -g -O2   -o fldigi
+fldigi-locator.o   fldigi-regex.o   fldigi-nls.o  fldigi-combo.o fldigi-cw.o
+fldigi-morse.o fldigi-rtty.o fldigi-colorsfonts.o fldigi-confdialog.o
+fldigi-fl_digi.o fldigi-font_browser.o fldigi-Viewer.o fldigi-htmlstrings.o
+fldigi-notifydialog.o fldigi-thor.o fldigi-thorvaricode.o fldigi-dominoex.o
+fldigi-dominovar.o fldigi-feld.o fldigi-feldfonts.o fldigi-fft.o
+fldigi-Fl_Native_File_Chooser.o fldigi-fileselect.o fldigi-fftfilt.o
+fldigi-filters.o fldigi-viterbi.o fldigi-globals.o fldigi-irrXML.o
+fldigi-adif_io.o fldigi-calendar.o fldigi-date.o fldigi-lgbook.o
+fldigi-logbook.o fldigi-logsupport.o fldigi-qso_db.o fldigi-table.o
+fldigi-textio.o fldigi-logger.o fldigi-rx_extract.o fldigi-speak.o
+fldigi-main.o fldigi-interleave.o fldigi-mfsk.o fldigi-mfskvaricode.o
+fldigi-ascii.o fldigi-configuration.o fldigi-debug.o fldigi-dxcc.o
+fldigi-flstring.o fldigi-icons.o fldigi-log.o fldigi-macroedit.o
+fldigi-macros.o fldigi-misc.o fldigi-network.o fldigi-newinstall.o
+fldigi-arq_io.o fldigi-lookupcall.o fldigi-pixmaps.o fldigi-qrzlib.o
+fldigi-re.o fldigi-socket.o fldigi-stacktrace.o fldigi-status.o
+fldigi-strutil.o fldigi-threads.o fldigi-timeops.o fldigi-util.o
+fldigi-dsp.o fldigi-mt63.o fldigi-mt63base.o fldigi-olivia.o fldigi-psk.o
+fldigi-pskcoeff.o fldigi-pskvaricode.o fldigi-viewpsk.o fldigi-pskeval.o
+fldigi-qrunner.o fldigi-FreqControl.o fldigi-ptt.o fldigi-rigMEM.o
+fldigi-rigio.o fldigi-rigsupport.o fldigi-rigxml.o fldigi-serial.o
+fldigi-rsid.o fldigi-mixer.o fldigi-sound.o fldigi-soundconf.o
+fldigi-notify.o fldigi-pskrep.o fldigi-spot.o fldigi-throb.o fldigi-modem.o
+fldigi-trx.o fldigi-colorbox.o fldigi-digiscope.o fldigi-raster.o
+fldigi-waterfall.o fldigi-FTextView.o fldigi-FTextRXTX.o
+fldigi-Fl_Text_Display_mod.o fldigi-Fl_Text_Editor_mod.o
+fldigi-Fl_Tile_Check.o fldigi-flinput2.o fldigi-flmisc.o fldigi-picture.o
+fldigi-progress.o fldigi-analysis.o fldigi-wwv.o  -framework CoreAudio
+-framework AudioToolbox -framework AudioUnit -framework Carbon
+-L/usr/local/lib -lportaudio   -L/Users/benwilliams1/src/fltk/lib
+-lfltk_images -lpng -lz -ljpeg -lfltk -lpthread -framework Carbon -framework
+ApplicationServices   -L/usr/local/lib -lsamplerate     -L/usr/local/lib
+-lpng14    -L/usr/local/lib -lintl -liconv -lc -Wl,-framework
+-Wl,CoreFoundation
+Undefined symbols:
+  &quot;Fl::lock()&quot;, referenced from:
+      _main in fldigi-main.o
+      showRxViewer(int, int)in fldigi-mfsk.o
+      mfsk::rx_process(double const*, int)in fldigi-mfsk.o
+      mfsk::tx_process()      in fldigi-mfsk.o
+      buildlist()    in fldigi-rigsupport.o
+  &quot;Fl::unlock()&quot;, referenced from:
+      showRxViewer(int, int)in fldigi-mfsk.o
+      mfsk::rx_process(double const*, int)in fldigi-mfsk.o
+      mfsk::tx_process()      in fldigi-mfsk.o
+      buildlist()    in fldigi-rigsupport.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+make[2]: *** [fldigi] Error 1
+make[1]: *** [all] Error 2
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100412/b25d55e0/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100412/b25d55e0/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001104.html">Wefax: Sinuous, wavy parasite lines
+</A></li>
+	<LI>Next message: <A HREF="001112.html">WEFAX Works Great! (Ben)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1111">[ date ]</a>
+              <a href="thread.html#1111">[ thread ]</a>
+              <a href="subject.html#1111">[ subject ]</a>
+              <a href="author.html#1111">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

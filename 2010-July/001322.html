@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.0AJ posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.0AJ%20posted&In-Reply-To=%3C4C3F53E5.4060401%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001321.html">
+   <LINK REL="Next"  HREF="001323.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.0AJ posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.0AJ%20posted&In-Reply-To=%3C4C3F53E5.4060401%40bellsouth.net%3E"
+       TITLE="fldigi-3.21.0AJ posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Jul 15 20:31:01 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001321.html">fldigi 3.21.0AI posted
+</A></li>
+        <LI>Next message: <A HREF="001323.html">fldigi-3.21.0AJ posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1322">[ date ]</a>
+              <a href="thread.html#1322">[ thread ]</a>
+              <a href="subject.html#1322">[ subject ]</a>
+              <a href="author.html#1322">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi-flarq/">http://www.w1hkj.com/alpha/fldigi-flarq/</A>
+
+Posted source, Linux, Puppy and Windows executables.  OS X will follow 
+some time tomorrow.
+
+See attached for the complete list of patches that have been 
+incorporated in 3.21.0
+
+Changes from 3.20.0AI to 3.20.0AJ include:
+
+    MultiUser Logbook
+      Enabled access to a single fldigi adif logbook database from
+      multiple running instances of fldigi or fldigi and another
+      program using same ADIF database file.
+
+    Contestia Olivia info
+      Changed LOG_INFO to LOG_DEBUG for event log printing of
+      Contestia / Olivia parameters
+
+    RSID silence period
+      Removed silence periods between RSID transmission and start
+      of modem signal.
+
+    Logbook Save
+      Fixed logic error in save record to logbook
+
+    '^' Parser
+      Modified '^' character sequence parsing to eliminate idle
+      character.  Beneficial for slow modem baud rates.
+
+    &lt;LOG&gt; change
+      Added new logging macro tag &lt;LNW&gt; (Log NoW), which places
+      the code pair &quot;^L&quot; into the transmit stream.  QSO logging
+      takes place when that pair occurs in the transmit sequence.
+      This guarantees that the time of log will concur with the
+      ^L occurance.
+   
+      Changed tag parsing to always place &lt;RX&gt; (^r) as last control
+      tag in the expanded text that is placed into the Tx buffer.
+
+73, Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100715/d05206b4/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100715/d05206b4/attachment.html</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: 3.21AJ.changes
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100715/d05206b4/attachment.ksh">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100715/d05206b4/attachment.ksh</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001321.html">fldigi 3.21.0AI posted
+</A></li>
+	<LI>Next message: <A HREF="001323.html">fldigi-3.21.0AJ posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1322">[ date ]</a>
+              <a href="thread.html#1322">[ thread ]</a>
+              <a href="subject.html#1322">[ subject ]</a>
+              <a href="author.html#1322">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

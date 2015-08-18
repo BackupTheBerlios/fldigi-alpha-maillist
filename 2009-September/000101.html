@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Pskmail TX lock-up with 3.13AE (in fact since 3.10)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Pskmail%20TX%20lock-up%20with%203.13AE%20%28in%20fact%20since%203.10%29&In-Reply-To=%3C4AA61EBA.3000401%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000100.html">
+   <LINK REL="Next"  HREF="000111.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Pskmail TX lock-up with 3.13AE (in fact since 3.10)</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Pskmail%20TX%20lock-up%20with%203.13AE%20%28in%20fact%20since%203.10%29&In-Reply-To=%3C4AA61EBA.3000401%40bellsouth.net%3E"
+       TITLE="Pskmail TX lock-up with 3.13AE (in fact since 3.10)">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Tue Sep  8 11:07:06 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000100.html">Pskmail TX lock-up with 3.13AE (in fact since 3.10)
+</A></li>
+        <LI>Next message: <A HREF="000111.html">Pskmail TX lock-up with 3.13AE (in fact since 3.10)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I will look at the SysV interface code in fldigi.
+
+John, you can set the duration of visibility on that popup 
+announcement.  The default of 15 seconds is a little long.  Look on the 
+Notifications dialog.
+
+Stelios:  Perhaps the notification box could be suppressed if the 
+&quot;Notifications Only&quot; (ID tab) is not checked.
+
+Dave
+
+Rein Couperus wrote:
+&gt;<i> Hi all,
+</I>&gt;<i>
+</I>&gt;<i> actually fldigi sends a 0x06 at the end of each transmission, which is recognized by the modem driver.
+</I>&gt;<i>
+</I>&gt;<i> When msgsnd writes the message to fldigi (BTW, the server still uses the POSIX SYS V queue) a flag is set 
+</I>&gt;<i> in the .pskmail directory. On receipt of the 0x06 this flag (.tx.lck) is removed.
+</I>&gt;<i> So in principle the exchange with fldigi is mutex based.
+</I>&gt;<i>
+</I>&gt;<i> I think 2 things should happen:
+</I>&gt;<i> * check what is the reason why fldigi stops the queue, this should not happen
+</I>&gt;<i> * check if the mutex handling works as required, pskmail should wait before sending the next frame.
+</I>&gt;<i>
+</I>&gt;<i> I will take a look at the second one. As I am only using PSK250 it has not happened on PI4TUE.
+</I>&gt;<i>
+</I>&gt;<i> 73,
+</I>&gt;<i>
+</I>&gt;<i> Rein PA0R
+</I>&gt;<i>
+</I>&gt;<i> (follow 'pskmail' on twitter...)
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> -----Urspr&#252;ngliche Nachricht-----
+</I>&gt;&gt;<i> Von: &quot;John Douyere&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">vk2eta at gmail.com</A>&gt;
+</I>&gt;&gt;<i> Gesendet: 08.09.09 02:22:28
+</I>&gt;&gt;<i> An: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;<i> Betreff: Pskmail TX lock-up with 3.13AE (in fact since 3.10)
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Hi All,
+</I>&gt;<i>   
+</I>&gt;&gt;<i> First let me say that the new feature of background RSID is a great 
+</I>&gt;&gt;<i> addition for the ARQ scene as it allows to connect in (more or less) 
+</I>&gt;&gt;<i> any mode depending on the conditions. More on the tests below.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> But for the lockup issue: I have done more tests to identify the 
+</I>&gt;&gt;<i> issue I highlighted some months ago where Fldigi would lockup and 
+</I>&gt;&gt;<i> stop transmitting at connect or seemingly at random while used with 
+</I>&gt;&gt;<i> the Server of PSKmail.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The problem (very repeatable now that I know what to look for) occurs 
+</I>&gt;&gt;<i> when Fldigi is currently sending a frame and another frame is being 
+</I>&gt;&gt;<i> submitted by the server before the end of the transmission. 
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This also explains why lockups would be far more common on slow(er) 
+</I>&gt;&gt;<i> modes like THOR22, uncommon with PSK125 and rare with PSK250 since 
+</I>&gt;&gt;<i> the chances of frames overlaps is greater as the transmission time 
+</I>&gt;&gt;<i> extends.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> It also explains why the server would stop responding at seemingly 
+</I>&gt;&gt;<i> random times. In fact this occurs when there is a timeout condition 
+</I>&gt;&gt;<i> in the server and a poll frame is sent to Fldigi while a normal 
+</I>&gt;&gt;<i> status frame is being currently transmitted.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I believe has been experienced by other PSKMail server operators too (
+</I>&gt;&gt;<i> in particular VK2ZSZ with whom I did a number of tests).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Restarting Fldigi clears the issue until another frame overlap occurs.
+</I>&gt;&gt;<i> Restarting the server only does not resolve the problem.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This issue appeared at the transition between Fldigi 3.03 to 3.10. In 
+</I>&gt;&gt;<i> other words, version 3.03 does not exhibit this issue. Please note 
+</I>&gt;&gt;<i> that this occurs with pre-compiled binaries as well as when 
+</I>&gt;&gt;<i> recompiling from source.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Current operating environment: Ubuntu 8.04 (up to date), PSKMail 
+</I>&gt;&gt;<i> server 0.9.1 (but issue present on older versions too), Fldigi 13AE (
+</I>&gt;&gt;<i> compiled from source).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Correcting this problem in the server by adding delays partially 
+</I>&gt;&gt;<i> solve the problem but it is still unreliable since the server has no 
+</I>&gt;&gt;<i> knowledge of the transmission status of Fldigi. Therefore the 
+</I>&gt;&gt;<i> effective behaviour is for Fldigi to queue the frames for transmission.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Just for information, slower more robust modes are essential as our 
+</I>&gt;&gt;<i> tests have demonstrated here in VK: large distances, land mobile 
+</I>&gt;&gt;<i> operations (and therefore compromise antennas and constantly changing 
+</I>&gt;&gt;<i> earth and orientation of the car means significant and rapid QSB).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> We have had great success with the THOR and MFSK modes on 40 and 80M 
+</I>&gt;&gt;<i> while mobile, but this issue issue is really a show stopper.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Please let me know how I can help more. My knowledge would probably 
+</I>&gt;&gt;<i> extend to setting up a debugging environment and tracing the code in 
+</I>&gt;&gt;<i> Fldigi. 
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> So far I have traced the Perl code on the server side and I can 
+</I>&gt;&gt;<i> confirm that the frames are being sent to fldigi via the msgsnd 
+</I>&gt;&gt;<i> function but Fldigi does not respond to what is being received. If 
+</I>&gt;&gt;<i> required I could setup a small Perl script to emulate the issue.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Now back on the background RSID: I have successfully tried that new 
+</I>&gt;&gt;<i> option with the PSKMail server. This allows us to scan different 
+</I>&gt;&gt;<i> frequencies independently of the mode used for the exchange. 
+</I>&gt;&gt;<i> Brilliant.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The only small issue is that even if the option &quot;only provide 
+</I>&gt;&gt;<i> notification&quot; in the RSID tab is unticked, I still get a notification 
+</I>&gt;&gt;<i> pop-up window which is redundant since the change of mode and 
+</I>&gt;&gt;<i> frequency adjustment has already occurred.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Please keep up the great work.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks and regards, John (VK2ETA)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________ fldigi-alpha mailing 
+</I>&gt;&gt;<i> list <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A> <A HREF="https://lists.berlios.de/mailman/">https://lists.berlios.de/mailman/</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> listinfo/fldigi-alpha
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090908/a46d8a2d/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090908/a46d8a2d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000100.html">Pskmail TX lock-up with 3.13AE (in fact since 3.10)
+</A></li>
+	<LI>Next message: <A HREF="000111.html">Pskmail TX lock-up with 3.13AE (in fact since 3.10)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

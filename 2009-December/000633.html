@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13BJ Crash
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BJ%20Crash&In-Reply-To=%3C62403.1262216445%40ct.metrocast.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000626.html">
+   <LINK REL="Next"  HREF="000634.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13BJ Crash</H1>
+    <B>P.J. Rovero</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BJ%20Crash&In-Reply-To=%3C62403.1262216445%40ct.metrocast.net%3E"
+       TITLE="fldigi 3.13BJ Crash">provero at ct.metrocast.net
+       </A><BR>
+    <I>Thu Dec 31 00:40:45 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000626.html">flrig and flics
+</A></li>
+        <LI>Next message: <A HREF="000634.html">fldigi &quot;E: trx_trx_receive_loop&quot;  Error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#633">[ date ]</a>
+              <a href="thread.html#633">[ thread ]</a>
+              <a href="subject.html#633">[ subject ]</a>
+              <a href="author.html#633">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Initiating a transmission in Olivia 500/16 mode just as
+the macro key was clicked.
+
+Earlier transmissionw went without a hitch, and 3.13BJ has
+been very solid 
+
+I: append: Added (call=&quot;DL8LE&quot;, loc=&quot;&quot;, mode=&quot;OLIVIA&quot;, freq=3583500, time=1262215321, type=3)
+I: append: Appending report (call=DL8LE mode=OLIVIA freq=3583500 time=1262215321 type=3)
+I: progress: Found 1 new report(s)
+I: progress: Found 0 new report(s)
+I: progress: Found 0 new report(s)
+*** glibc detected *** fldigi: free(): invalid next size (fast): 0x000000000374df90 ***
+======= Backtrace: =========
+/lib64/libc.so.6[0x3ad4875506]
+fldigi[0x53bd20]
+fldigi[0x53c638]
+/usr/lib64/libfltk.so.1.1(_ZN2Fl4waitEd+0x98)[0x7f933beaaf58]
+/usr/lib64/libfltk.so.1.1(_ZN2Fl3runEv+0x1d)[0x7f933beab0fd]
+fldigi[0x49b587]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x3ad481ea4d]
+fldigi[0x413389]
+======= Memory map: ========
+00400000-005db000 r-xp 00000000 fd:00 498                                /usr/local/bin/fldigi
+007db000-00811000 rw-p 001db000 fd:00 498                                /usr/local/bin/fldigi
+00811000-00840000 rw-p 00000000 00:00 0 
+021fd000-0631f000 rw-p 00000000 00:00 0                                  [heap]
+3ad4400000-3ad441f000 r-xp 00000000 fd:00 15993                          /lib64/ld-2.10.2.so
+3ad461e000-3ad461f000 r--p 0001e000 fd:00 15993                          /lib64/ld-2.10.2.so
+3ad461f000-3ad4620000 rw-p 0001f000 fd:00 15993                          /lib64/ld-2.10.2.so
+3ad4800000-3ad4964000 r-xp 00000000 fd:00 15994                          /lib64/libc-2.10.2.so
+3ad4964000-3ad4b64000 ---p 00164000 fd:00 15994                          /lib64/libc-2.10.2.so
+3ad4b64000-3ad4b68000 r--p 00164000 fd:00 15994                          /lib64/libc-2.10.2.so
+3ad4b68000-3ad4b69000 rw-p 00168000 fd:00 15994                          /lib64/libc-2.10.2.so
+3ad4b69000-3ad4b6e000 rw-p 00000000 00:00 0 
+3ad4c00000-3ad4c82000 r-xp 00000000 fd:00 17088                          /lib64/libm-2.10.2.so
+3ad4c82000-3ad4e81000 ---p 00082000 fd:00 17088                          /lib64/libm-2.10.2.so
+3ad4e81000-3ad4e82000 r--p 00081000 fd:00 17088                          /lib64/libm-2.10.2.so
+3ad4e82000-3ad4e83000 rw-p 00082000 fd:00 17088                          /lib64/libm-2.10.2.so
+3ad5000000-3ad5002000 r-xp 00000000 fd:00 97404                          /lib64/libdl-2.10.2.so
+3ad5002000-3ad5202000 ---p 00002000 fd:00 97404                          /lib64/libdl-2.10.2.so
+3ad5202000-3ad5203000 r--p 00002000 fd:00 97404                          /lib64/libdl-2.10.2.so
+3ad5203000-3ad5204000 rw-p 00003000 fd:00 97404                          /lib64/libdl-2.10.2.so
+3ad5400000-3ad5417000 r-xp 00000000 fd:00 97446                          /lib64/libpthread-2.10.2.so
+3ad5417000-3ad5616000 ---p 00017000 fd:00 97446                          /lib64/libpthread-2.10.2.so
+3ad5616000-3ad5617000 r--p 00016000 fd:00 97446                          /lib64/libpthread-2.10.2.so
+3ad5617000-3ad5618000 rw-p 00017000 fd:00 97446                          /lib64/libpthread-2.10.2.so
+3ad5618000-3ad561c000 rw-p 00000000 00:00 0 
+3ad5800000-3ad5815000 r-xp 00000000 fd:00 97410                          /lib64/libz.so.1.2.3
+3ad5815000-3ad5a14000 ---p 00015000 fd:00 97410                          /lib64/libz.so.1.2.3
+3ad5a14000-3ad5a15000 rw-p 00014000 fd:00 97410                          /lib64/libz.so.1.2.3
+3ad5c00000-3ad5c11000 r-xp 00000000 fd:00 97661                          /usr/lib64/libjack.so.0.0.28
+3ad5c11000-3ad5e11000 ---p 00011000 fd:00 97661                          /usr/lib64/libjack.so.0.0.28
+3ad5e11000-3ad5e13000 rw-p 00011000 fd:00 97661                          /usr/lib64/libjack.so.0.0.28
+3ad5e13000-3ad5e1b000 rw-p 00000000 00:00 0 
+3ad6000000-3ad6007000 r-xp 00000000 fd:00 97458                          /lib64/librt-2.10.2.so
+3ad6007000-3ad6206000 ---p 00007000 fd:00 97458                          /lib64/librt-2.10.2.so
+3ad6206000-3ad6207000 r--p 00006000 fd:00 97458                          /lib64/librt-2.10.2.so
+3ad6207000-3ad6208000 rw-p 00007000 fd:00 97458                          /lib64/librt-2.10.2.so
+3ad7000000-3ad7002000 r-xp 00000000 fd:00 97412                          /usr/lib64/libXau.so.6.0.0
+3ad7002000-3ad7201000 ---p 00002000 fd:00 97412                          /usr/lib64/libXau.so.6.0.0
+3ad7201000-3ad7202000 rw-p 00001000 fd:00 97412                          /usr/lib64/libXau.so.6.0.0
+3ad7400000-3ad7534000 r-xp 00000000 fd:00 97414                          /usr/lib64/libX11.so.6.2.0
+3ad7534000-3ad7733000 ---p 00134000 fd:00 97414                          /usr/lib64/libX11.so.6.2.0
+3ad7733000-3ad7739000 rw-p 00133000 fd:00 97414                          /usr/lib64/libX11.so.6.2.0
+3ad7800000-3ad781a000 r-xp 00000000 fd:00 97413                          /usr/lib64/libxcb.so.1.1.0
+3ad781a000-3ad7a1a000 ---p 0001a000 fd:00 97413                          /usr/lib64/libxcb.so.1.1.0
+3ad7a1a000-3ad7a1b000 rw-p 0001a000 fd:00 97413                          /usr/lib64/libxcb.so.1.1.0
+3ad8000000-3ad8026000 r-xp 00000000 fd:00 97408                          /lib64/libexpat.so.1.5.2
+3ad8026000-3ad8225000 ---p 00026000 fd:00 97408                          /lib64/libexpat.so.1.5.2
+3ad8225000-3ad8228000 rw-p 00025000 fd:00 97408                          /lib64/libexpat.so.1.5.2
+3ad8800000-3ad8811000 r-xp 00000000 fd:00 97422                          /usr/lib64/libXext.so.6.4.0
+3ad8811000-3ad8a11000 ---p 00011000 fd:00 97422                          /usr/lib64/libXext.so.6.4.0
+3ad8a11000-3ad8a12000 rw-p 00011000 fd:00 97422                          /usr/lib64/libXext.so.6.4.0
+3ad8c00000-3ad8c93000 r-xp 00000000 fd:00 97407                          /usr/lib64/libfreetype.so.6.3.20
+3ad8c93000-3ad8e93000 ---p 00093000 fd:00 97407                          /usr/lib64/libfreetype.so.6.3.20
+3ad8e93000-3ad8e99000 rw-p 00093000 fd:00 97407                          /usr/lib64/libfreetype.so.6.3.20
+3ad9000000-3ad9023000 r-xp 00000000 fd:00 50342                          /usr/lib64/libhamlib.so.2.0.9
+3ad9023000-3ad9223000 ---p 00023000 fd:00 50342                          /usr/lib64/libhamlib.so.2.0.9
+3ad9223000-3ad9226000 rw-p 00023000 fd:00 50342                          /usr/lib64/libhamlib.so.2.0.9
+3ad9400000-3ad9404000 r-xp 00000000 fd:00 20736                          /lib64/libcap.so.2.16
+3ad9404000-3ad9603000 ---p 00004000 fd:00 20736                          /lib64/libcap.so.2.16
+3ad9603000-3ad9604000 rw-p 00003000 fd:00 20736                          /lib64/libcap.so.2.16
+3ad9800000-3ad996b000 r-xp 00000000 fd:00 25318                          /usr/lib64/libsamplerate.so.0.1.6
+3ad996b000-3ad9b6a000 ---p 0016b000 fd:00 25318                          /usr/lib64/libsamplerate.so.0.1.6
+3ad9b6a000-3ad9b6b000 rw-p 0016a000 fd:00 25318                          /usr/lib64/libsamplerate.so.0.1.6
+3ad9c00000-3ad9c25000 r-xp 00000000 fd:00 97411                          /usr/lib64/libpng12.so.0.37.0
+3ad9c25000-3ad9e24000 ---p 00025000 fd:00 97411                          /usr/lib64/libpng12.so.0.37.0
+3ad9e24000-3ad9e25000 rw-p 00024000 fd:00 97411                          /usr/lib64/libpng12.so.0.37.0
+3ada000000-3ada03c000 r-xp 00000000 fd:00 27194                          /lib64/libdbus-1.so.3.4.0
+3ada03c000-3ada23c000 ---p 0003c000 fd:00 27194                          /lib64/libdbus-1.so.3.4.0
+3ada23c000-3ada23d000 r--p 0003c000 fd:00 27194                          /lib64/libdbus-1.so.3.4.0
+3ada23d000-3ada23e000 rw-p 0003d000 fd:00 27194                          /lib64/libdbus-1.so.3.4.0
+3adac00000-3adac05000 r-xp 00000000 fd:00 97426                          /usr/lib64/libXf
+Caught signal 6
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x4cec10]
+/lib64/libpthread.so.0[0x3ad540eea0]
+/lib64/libc.so.6(gsignal+0x35)[0x3ad4833275]
+/lib64/libc.so.6(abort+0x175)[0x3ad4834a55]
+/lib64/libc.so.6[0x3ad486fb5b]
+/lib64/libc.so.6[0x3ad4875506]
+fldigi[0x53bd20]
+fldigi[0x53c638]
+/usr/lib64/libfltk.so.1.1(_ZN2Fl4waitEd+0x98)[0x7f933beaaf58]
+/usr/lib64/libfltk.so.1.1(_ZN2Fl3runEv+0x1d)[0x7f933beab0fd]
+fldigi[0x49b587]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x3ad481ea4d]
+fldigi[0x413389]
+
+****** Version information:
+fldigi 3.13BJ
+Copyright (C) 2008, 2009 Dave Freese, Stelios Bounanos, Leigh Klotz, and others.
+License GPLv2+: GNU GPL version 2 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-2.0.html">http://www.gnu.org/licenses/gpl-2.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Mon Dec 21 17:28:47 EST 2009 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">josh at radio.rovero.net</A> on x86_64-unknown-linux-gnu for x86_64-unknown-linux-gnu
+
+  configure flags: '--enable-optimizations=sse2' '--with-xmlrpc'
+
+  compiler       : gcc version 4.4.1 20090725 (Red Hat 4.4.1-2) (GCC) 
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -pthread -I/usr/include/freetype2 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I/usr/include/libpng12 -I/usr/include/libxml2 -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -fomit-frame-pointer -msse2 -mfpmath=sse -DNDEBUG
+
+  linker flags   : -lportaudio -lm -lpthread -lfltk_images -lpng -lz -ljpeg -lfltk -lX11 -lsamplerate -lhamlib -lm -lpng12 -lxmlrpc_server_abyss++ -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.1.9
+                   libsamplerate 0.1.6
+                   PortAudio 19
+                   Hamlib 1.2.8
+                   XMLRPC-C 1.16.6
+
+
+Runtime information:
+  system         : Linux radio.rovero.net 2.6.30.10-105.fc11.x86_64 #1 SMP Thu Dec 24 16:41:51 UTC 2009 x86_64
+
+  libraries      : libsamplerate-0.1.6 (c) 2002-2008 Erik de Castro Lopo
+                   PortAudio V19-devel (built Feb 26 2009) 1899
+                   Hamlib version 1.2.9
+Segmentation fault
+[<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">josh at radio</A> ~]$ 
+
+
+P.J. &quot;Josh&quot; Rovero        Ham Radio:  KK1D
+ABC:  9277                   1985 BMW R80RT
+Web:     <A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>
+
+ 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000626.html">flrig and flics
+</A></li>
+	<LI>Next message: <A HREF="000634.html">fldigi &quot;E: trx_trx_receive_loop&quot;  Error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#633">[ date ]</a>
+              <a href="thread.html#633">[ thread ]</a>
+              <a href="subject.html#633">[ subject ]</a>
+              <a href="author.html#633">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

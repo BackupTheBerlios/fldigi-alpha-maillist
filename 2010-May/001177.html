@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Rig Control/Freq Display request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3Cm2i1561aee61005011159xe5ca54feic5b878725648fe6b%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001176.html">
+   <LINK REL="Next"  HREF="001178.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Rig Control/Freq Display request</H1>
+    <B>Anony Mous</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3Cm2i1561aee61005011159xe5ca54feic5b878725648fe6b%40mail.gmail.com%3E"
+       TITLE="Rig Control/Freq Display request">fyngyrz at gmail.com
+       </A><BR>
+    <I>Sat May  1 20:59:13 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001176.html">Rig Control/Freq Display request
+</A></li>
+        <LI>Next message: <A HREF="001178.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1177">[ date ]</a>
+              <a href="thread.html#1177">[ thread ]</a>
+              <a href="subject.html#1177">[ subject ]</a>
+              <a href="author.html#1177">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, May 1, 2010 at 12:35 PM, Brian Lloyd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A>&gt; wrote:
+
+&gt;<i>
+</I>&gt;<i> Two points here:
+</I>&gt;<i>
+</I>&gt;<i> 1. If you have two displays, they should display the same thing if
+</I>&gt;<i> they are supposed to display the same thing. Anything else is
+</I>&gt;<i> confusing to the operator.
+</I>&gt;<i>
+</I>
+That's why you should be able to turn the fldigi display off, as point was
+made earlier. It's duplicated data, potentially a slowdown/confusion to the
+operator. The radio is on the frequency it says it is, that's all anyone
+needs to know.
+
+
+&gt;<i> 2. The frequency display on the radios is almost never the actual
+</I>&gt;<i> frequency of the transmission.
+</I>
+
+Uh, no. If I'm tuned to 14.230 MHz on the radio, and I'm receiving a FAX
+signal that is AFSK between 1500 Hz and 2300 Hz, then the transmission is,
+in fact, on 14.230 Mhz - the &quot;center&quot; (1900 Hz, or 14.2319 MHz) is not only
+*not* where the radio is tuned, if it *was* tuned there (you'd have to
+offset the fax modem to do it), then if the operator of the transmitter were
+to speak up and tell you &quot;that was a fax of the important document you asked
+for&quot;, you wouldn't be able to understand them, because you're incorrectly
+tuned. Furthermore, if you were to send a fax back, you typically want the
+radio on 14.230 as well; otherwise, you have to operate split.
+
+The correct frequency IS the frequency the radio is tuned to. Not whatever
+fldigi calculates as the modem center. This stuff is AFSK. Note the AF.
+
+There are numerous reasons to receive signals at the tones they were
+designed to be sent at. If you have external gear of almost any kind, RTTY,
+packet, SSTV, FAX, etc, they're going to be expecting very specific AF
+tones. The tones you'll get when your radio is tuned appropriately, and when
+the signal falls on the AF indications on the waterfall that are the design
+points for the mode - for FAX, that's 1500 hz and 2300 hz. For SSTV, 1200,
+1500...2300 Hz. For RTTY, etc.
+
+
+&gt;<i> Fldigi does calculate and display the
+</I>&gt;<i> actual center frequency only in the log window.
+</I>&gt;<i>
+</I>
+It's a misleading number at best. The correct frequency is the one the radio
+is telling you. For optimum operations, the waterfall should be set to AF,
+the modems should be at the design points, and the frequency display is
+misleading and/or duplicates the radio display, consumes UI space that could
+be better used for something useful, and should probably be disabled as a
+direct consequence. Speaking of any situation where we are not just
+entertaining ourselves, but are working in circumstances where correct
+operation may have social or human consequences. There is no benefit to
+fldigi's frequency display when it is duplicating the radio's; there is no
+benefit when it is displaying a misleading &quot;center frequency,&quot; either. If
+you were using it to preview fldigi memories, that I can see. Otherwise... I
+have yet to be presented with a point in its favor.
+
+
+&gt;<i> Request: I would like the option of having the main fldigi display
+</I>&gt;<i> show the actual transmission center frequency for the mode.
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> 73 de Brian, WB6RQN/J79BPL
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100501/4a87107b/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100501/4a87107b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001176.html">Rig Control/Freq Display request
+</A></li>
+	<LI>Next message: <A HREF="001178.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1177">[ date ]</a>
+              <a href="thread.html#1177">[ thread ]</a>
+              <a href="subject.html#1177">[ subject ]</a>
+              <a href="author.html#1177">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

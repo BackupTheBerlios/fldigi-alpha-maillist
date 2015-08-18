@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> New Postings:
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Postings%3A&In-Reply-To=%3C4B0D2777.2020808%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000483.html">
+   <LINK REL="Next"  HREF="000493.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>New Postings:</H1>
+    <B>Walter Fey</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Postings%3A&In-Reply-To=%3C4B0D2777.2020808%40web.de%3E"
+       TITLE="New Postings:">walter.fey at web.de
+       </A><BR>
+    <I>Wed Nov 25 13:47:51 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000483.html">New Postings:
+</A></li>
+        <LI>Next message: <A HREF="000493.html">RSID
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#488">[ date ]</a>
+              <a href="thread.html#488">[ thread ]</a>
+              <a href="subject.html#488">[ subject ]</a>
+              <a href="author.html#488">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello
+
+All new versions compile without any error for openSUSE 11.0, 11.1 and 11.2
+RPM files are available at:
+<A HREF="http://download.opensuse.org/repositories/home:/dl8fcl/">http://download.opensuse.org/repositories/home:/dl8fcl/</A>
+
+For flics-0.2.1 I had to use the attached patch when compiling openSUSE
+11.2.
+
+73, Walter DL8FCL
+
+
+Am 24.11.2009 12:01, schrieb w1hkj:
+&gt;<i> fldigi-3.13BC / flarq
+</I>&gt;<i>
+</I>&gt;<i>     Version 3.13BD
+</I>&gt;<i>         Remove unused variables
+</I>&gt;<i>         Add missing USE_X checks
+</I>&gt;<i>         Update crash handler
+</I>&gt;<i>           * Change bug report address
+</I>&gt;<i>           * Add new ticket URL
+</I>&gt;<i>           * Replace abort() with exit()
+</I>&gt;<i>         Fix LDFLAGS
+</I>&gt;<i>             Link with all needed libraries. Required when linking with
+</I>&gt;<i>             --no-add-needed or the experimental gold linker, which has
+</I>&gt;<i>     this
+</I>&gt;<i>             behaviour by default.
+</I>&gt;<i>               * Add -lpthread switch (needed by flarq)
+</I>&gt;<i>               * On X11 platforms we should explicitly link with libX11
+</I>&gt;<i>     because
+</I>&gt;<i>                 we use XCreatePixmap via the FLTK fl_create_offscreen
+</I>&gt;<i>     macro
+</I>&gt;<i>         Fix custom pkg-config macro
+</I>&gt;<i>             AC_FLDIGI_PKG_CHECK([pkg], [pkg], [no], ...) should check
+</I>&gt;<i>     for pkg
+</I>&gt;<i>             despite no help being shown
+</I>&gt;<i>         Fix conditional pkg check
+</I>&gt;<i>             Correctly skip checks for libsamplerate and libpng when
+</I>&gt;<i>             --disable-fldigi is used
+</I>&gt;<i>         Hamlib build fix
+</I>&gt;<i>             * Added missing #if USE_HAMLIB pragma in conf.fl source file
+</I>&gt;<i>               and in fl_digi.cxx
+</I>&gt;<i>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BD.tar.gz">http://www.w1hkj.com/alpha/fldigi-3.13BD.tar.gz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BD.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13BD.bin.tgz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BD.npa.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13BD.npa.bin.tgz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BD_setup.exe">http://www.w1hkj.com/alpha/fldigi-3.13BD_setup.exe</A>
+</I>&gt;<i>
+</I>&gt;<i> flwrap-1.0.1 - */replacement for wrap/* - automatically compresses the
+</I>&gt;<i> data when compression / base64 encoding results in a smaller payload. 
+</I>&gt;<i> The compression/decompression is lzma.
+</I>&gt;<i>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flwrap-1.0.1.tar.gz">http://www.w1hkj.com/alpha/flwrap-1.0.1.tar.gz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flwrap-1.0.1.bin.tgz">http://www.w1hkj.com/alpha/flwrap-1.0.1.bin.tgz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flwrap-1.0.1_setup.exe">http://www.w1hkj.com/alpha/flwrap-1.0.1_setup.exe</A>
+</I>&gt;<i>
+</I>&gt;<i> flics-0.2.0 - this version is compatible with flwrap-1.0.1 and
+</I>&gt;<i> includes the automatic compression.
+</I>&gt;<i>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flics-0.2.0.tar.gz">http://www.w1hkj.com/alpha/flics-0.2.0.tar.gz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flics-0.2.0.bin.tgz">http://www.w1hkj.com/alpha/flics-0.2.0.bin.tgz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flics-0.2.0_setup.exe">http://www.w1hkj.com/alpha/flics-0.2.0_setup.exe</A>
+</I>&gt;<i>
+</I>&gt;<i> flrig-0.9.9
+</I>&gt;<i>
+</I>&gt;<i>     <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.9.tar.gz">http://www.w1hkj.com/alpha/flrig-0.9.9.tar.gz</A>
+</I>&gt;<i>     <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.9.bin.tgz">http://www.w1hkj.com/alpha/flrig-0.9.9.bin.tgz</A>
+</I>&gt;<i>     <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.9_setup.exe">http://www.w1hkj.com/alpha/flrig-0.9.9_setup.exe</A>
+</I>&gt;<i>
+</I>&gt;<i>     Version 0.9.9
+</I>&gt;<i>         * Initial gnu autotools build source
+</I>&gt;<i>         Build fixes
+</I>&gt;<i>             * Added correct flrig.icns for OS-X build
+</I>&gt;<i>             * Added missing specifiers to mingw32 build scripts
+</I>&gt;<i>             * Added builddist.sh script
+</I>&gt;<i>         Fix OS X compilation
+</I>&gt;<i>           * Add OSX conditional for Pixmap code
+</I>&gt;<i>           * Always define KNAME and call Fl_Window::xclass()
+</I>&gt;<i>         Fix resource include
+</I>&gt;<i>         Add pthreads-w32 build flags
+</I>&gt;<i>
+</I>&gt;<i> ==============================================
+</I>&gt;<i> Note the following changes for all of these applications:
+</I>&gt;<i>     Building the source is now identical for all 4;
+</I>&gt;<i>
+</I>&gt;<i>     ./configure - make - make install
+</I>&gt;<i>
+</I>&gt;<i>     The 'make install' includes the creation of the desktop scripts
+</I>&gt;<i> for the menu
+</I>&gt;<i> and desktop launch icons.
+</I>&gt;<i>
+</I>&gt;<i>     Win32 installation uses a setup program for each with proper
+</I>&gt;<i> registration
+</I>&gt;<i> and uninstall included for each installation.
+</I>&gt;<i>
+</I>&gt;<i> The OS-X dmg and Pet files will follow later today as time and build
+</I>&gt;<i> machines
+</I>&gt;<i> become available.
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i> for the development team
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>   
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091125/826072a9/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091125/826072a9/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 11.2.diff
+Type: text/x-patch
+Size: 904 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091125/826072a9/attachment.bin">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091125/826072a9/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000483.html">New Postings:
+</A></li>
+	<LI>Next message: <A HREF="000493.html">RSID
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#488">[ date ]</a>
+              <a href="thread.html#488">[ thread ]</a>
+              <a href="subject.html#488">[ subject ]</a>
+              <a href="author.html#488">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

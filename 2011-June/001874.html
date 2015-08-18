@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi Alpha Wish List - AA5VU
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi%20Alpha%20Wish%20List%20-%20AA5VU&In-Reply-To=%3CBANLkTi%3D%2Bi%3DZ%2B%3DQX9pYoOU1DM1VK-iBr3WA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001872.html">
+   <LINK REL="Next"  HREF="001875.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi Alpha Wish List - AA5VU</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi%20Alpha%20Wish%20List%20-%20AA5VU&In-Reply-To=%3CBANLkTi%3D%2Bi%3DZ%2B%3DQX9pYoOU1DM1VK-iBr3WA%40mail.gmail.com%3E"
+       TITLE="Fldigi Alpha Wish List - AA5VU">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sat Jun  4 05:02:15 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001872.html">Fldigi Alpha Wish List - AA5VU
+</A></li>
+        <LI>Next message: <A HREF="001875.html">Fldigi Alpha Wish List - AA5VU
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1874">[ date ]</a>
+              <a href="thread.html#1874">[ thread ]</a>
+              <a href="subject.html#1874">[ subject ]</a>
+              <a href="author.html#1874">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Jun 3, 2011 at 4:10 PM, Leigh L. Klotz, Jr WA5ZNU
+&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">Leigh at wa5znu.org</A>&gt;wrote:
+
+&gt;<i>  Actually, I think we should decouple the UI from the modem and services
+</I>&gt;<i> (logging, spotting, etc) set and use a protocol between them.  I've done a
+</I>&gt;<i> couple of versions of this in the past, and believe that an HTTP based
+</I>&gt;<i> approach is the right one now.  (It's not quite what we have with XML-RPC,
+</I>&gt;<i> but similar.  I'm not going to complain about something that works and is
+</I>&gt;<i> easy to author, and don't think we should move away from it, but it's not a
+</I>&gt;<i> good play for the interoperable web space and across different digimode
+</I>&gt;<i> application.)
+</I>&gt;<i>
+</I>
+I think you are right on and starting to think in terms of an integrated
+system. I am not sure that I would pick HTTP other than it certainly is
+ubiquitous.
+
+
+&gt;<i> Right nowI'm working with a few other people who've had this same idea.
+</I>&gt;<i>  The main reason I propose this is because it lets the modem and
+</I>&gt;<i> software-hard developers do their thing best, and lets the UI designers do
+</I>&gt;<i> what they do.  So, instead of a &quot;fork&quot; of fldigi, if we had this type of
+</I>&gt;<i> approach, it'd be a new front-end client to fldigi.
+</I>&gt;<i>
+</I>
+That does make a lot of sense. I am thinking in terms of how the system
+presents itself to the user and that is independent of the way it works
+under the hood but I suspect that how you think about the system is going to
+leak into the implementation.
+
+I think you need to go one step further. What we are really talking about is
+thinking of the &quot;modems&quot; (I prefer CODECs) as plug-ins to our communications
+system. We blur or completely eliminate the dividing line between the IF
+(the rig) and the CODEC (fldigi) until it functions as a single entity. That
+is the direction we are going. Right now because we have two pieces of
+hardware, i.e. rig and computer, we think they are really separate. They
+aren't. Heck, many years ago a top-notch receiver was a tunable IF at one
+frequency, something like 40m, and then we used receiving converters ahead
+of that to get the bands we wanted. I am sure that everyone was thinking
+back then that these were separate. Then Collins came along with the KWM1
+and made it all look so simple and integrated. Sure the converters still
+existed in there but now you just didn't see them or have to do the
+frequency calculations in your head. It became one receiving system and the
+operator's life was easier. In fact, what I am talking about is
+*IDENTICAL*to that situation. We have a low tunable IF (fldigi) and a
+higher tunable IF
+(the rig). Instead of tuning them separately we have a single &quot;knob&quot; to tune
+everything at once.
+
+
+&gt;<i> I realize this isn't an overnight change, and so I'm continuing to work on
+</I>&gt;<i> it in the background.  A common control protocol would mean that front ends
+</I>&gt;<i> could work with multiple different programs, and I think it's quite likely
+</I>&gt;<i> that with or without us (us, me, fldigi, et al) this will come to pass
+</I>&gt;<i> anyway.
+</I>&gt;<i>
+</I>
+Yes, it probably will.
+
+
+&gt;<i>
+</I>&gt;<i> As an example of what this might enable, I believe that a PSK Reporter like
+</I>&gt;<i> UI as for a digimode program is an enchanting idea, and might appeal to a
+</I>&gt;<i> different set of people than the current style of digimode UI, which range
+</I>&gt;<i> from MultiPSK's highly utilitiarian to HRD Deluxe's Mad Scientist.
+</I>&gt;<i>
+</I>
+Yeah, speaking of how to go completely overboard without any sort of thought
+about system structure ...
+
+
+&gt;<i> There's no reason someone who wants to do a different UI (map-based UI or a
+</I>&gt;<i> cloud-text UI, or even like KI6IMM who wants an xboard front end so he can
+</I>&gt;<i> play chess over the air) should have to deal with a complex modem system or
+</I>&gt;<i> C++ or Pascal (MultiPSK) or anything at all remotely like that.  In fact, I
+</I>&gt;<i> think an HTML+JS based UI, or an Apple or Android toolkit UI should be
+</I>&gt;<i> trivially possible, and each will appeal to a different set of people as
+</I>&gt;<i> users and as developers.
+</I>&gt;<i>
+</I>
+You are one step further along than where I was starting with this.
+
+-- 
+Brian Lloyd, WB6RQN/J79BPL
+3191 Western Dr.
+Cameron Park, CA 95682
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A>
++1.767.617.1365 (Dominica)
++1.931.492.6776 (USA)
+(+1.931.4.WB6RQN)
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110603/b2c6c2d7/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110603/b2c6c2d7/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001872.html">Fldigi Alpha Wish List - AA5VU
+</A></li>
+	<LI>Next message: <A HREF="001875.html">Fldigi Alpha Wish List - AA5VU
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1874">[ date ]</a>
+              <a href="thread.html#1874">[ thread ]</a>
+              <a href="subject.html#1874">[ subject ]</a>
+              <a href="author.html#1874">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

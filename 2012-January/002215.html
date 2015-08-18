@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> OT - new packet configuration utility, testers needed
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20OT%20-%20new%20packet%20configuration%20utility%2C%20testers%20needed&In-Reply-To=%3C4F14518C.5070804%40conas.co.cu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002222.html">
+   <LINK REL="Next"  HREF="002216.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>OT - new packet configuration utility, testers needed</H1>
+    <B>Ing. Pavel Milanes Costa</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20OT%20-%20new%20packet%20configuration%20utility%2C%20testers%20needed&In-Reply-To=%3C4F14518C.5070804%40conas.co.cu%3E"
+       TITLE="OT - new packet configuration utility, testers needed">pavel at conas.co.cu
+       </A><BR>
+    <I>Mon Jan 16 17:34:20 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002222.html">New alpha postings
+</A></li>
+        <LI>Next message: <A HREF="002216.html">fltk-1.3.0 and fldigi-3.21.35 -- Compiler warning...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2215">[ date ]</a>
+              <a href="thread.html#2215">[ thread ]</a>
+              <a href="subject.html#2215">[ subject ]</a>
+              <a href="author.html#2215">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all and sorry about the off topic, but I think some one may thanks 
+this info (me, as the first interested people)
+
+I have been working since jan 2011 in a set of scripts to make simpler 
+the packet configuration in linux.
+
+That work itself is called easypacket and I have not any mean of 
+publishing it but this, it is launched as GPL 2.0 (Free software) and is 
+in it's 1.0b3 release as a deb of about 15Kb.
+
+Software features includes:
+- automatic configuration of soundmodem and ax25d for 1k2, 4k8 and 9k6 
+bauds, yes audio TNC, no hardware TNC.
+- working and tested at 1k2 &amp; 4k8 AFSK and 9k6 FSK with less than  15% 
+of packet loss in tcp/ip modes (4k8 &amp; 9k6) and 0% in 1k2
+- full support of OSS and testing ALSA right now
+- automatic detection of the correct sound card at bootup (ubuntu/debian 
+swap the assignation of the interface on each bootup)
+- start modems as simple as &quot;packeton 1k2&quot; or &quot;packeton 9k6&quot;
+- stop modems as simple as &quot;packetoff&quot;
+- deb packaged with dependences included
+- faster modes as 4k8 and 9k6 need direct output of detector and direct 
+access to the modulator on a radio not capable of 9k6, or a 9k6 capable 
+radio
+- implementation of new modes by demand is a breeze, as for example 2k4, 
+or newQPSK
+- auto configuration of the firewall for not to send tcp/udp packages 
+that pollutes the radio channel
+- must use a separate sound card for packet modem if you use a desktop 
+on the machine, aka you have only one soundcard and use it for playing 
+audio and video.
+- user oriented
+- have man pages of each script and the complete manual is a work in 
+progress
+
+Users interested in try it can contact me directly by email at 
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pavel at conas.co.cu.</A>
+
+This is a beta software and is not exempt of bugs, that's the point, I 
+need users to try it to found that bugs, any help is welcomed.
+
+At this time I have only 3 testers here in Cuba and we want to release 
+it to the public.
+
+If any of you knows a better place to discuss/improve this software, 
+please let me know, but only email, I'm in Cuba and I can't get google 
+groups or yahoo groups either, and much other sites are banned to me.
+
+Dave please, if you can host the binaries in your site in the 
+contributed software I will appreciate it.
+
+Sorry again about the off-topic.
+
+73 de CO7WT.
+
+-- 
+Pavel Milanes Costa
+Consultor Inform&#225;tico
+Consultores Asociados S.A. (CONAS), sucursal Camag&#252;ey.
+Telef: (32) 29-6344
+
+&quot;Utilizamos Open Source en nuestros servidores porque es una manera m&#225;s 
+de controlar nuestro propio destino.&quot;
+
+     DiBona (Google SysAdmin)
+
+Yo uso Free and Open Source Software (FOSS), y t&#250;?
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: pavel.vcf
+Type: text/x-vcard
+Size: 531 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120116/7b40f43b/attachment.vcf">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120116/7b40f43b/attachment.vcf</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002222.html">New alpha postings
+</A></li>
+	<LI>Next message: <A HREF="002216.html">fltk-1.3.0 and fldigi-3.21.35 -- Compiler warning...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2215">[ date ]</a>
+              <a href="thread.html#2215">[ thread ]</a>
+              <a href="subject.html#2215">[ subject ]</a>
+              <a href="author.html#2215">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

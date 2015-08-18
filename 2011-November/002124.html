@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI broken by FEDORA CORE 16
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20broken%20by%20FEDORA%20CORE%2016&In-Reply-To=%3CCAH-RX425TtiwTxaAsUPYn%3DisMyzZ-0YFNx5w7jWYPuykMMwZXg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002131.html">
+   <LINK REL="Next"  HREF="002126.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI broken by FEDORA CORE 16</H1>
+    <B>Josh Rovero</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20broken%20by%20FEDORA%20CORE%2016&In-Reply-To=%3CCAH-RX425TtiwTxaAsUPYn%3DisMyzZ-0YFNx5w7jWYPuykMMwZXg%40mail.gmail.com%3E"
+       TITLE="FLDIGI broken by FEDORA CORE 16">josh.rovero at gmail.com
+       </A><BR>
+    <I>Sun Nov 13 15:26:11 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002131.html">fldigi-3.22.0BA posted for testing
+</A></li>
+        <LI>Next message: <A HREF="002126.html">FLDIGI broken by FEDORA CORE 16
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2124">[ date ]</a>
+              <a href="thread.html#2124">[ thread ]</a>
+              <a href="subject.html#2124">[ subject ]</a>
+              <a href="author.html#2124">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>All,
+
+The FLTK 1.1.0 libraries are required
+for the &quot;release&quot; RPM version of fldigi
+that comes with FC16.
+
+Several developer packages and FLTK 1.1.0
+are required to build fldigi on FC16.  The RPMs
+were added with the FC16 Add/Remove software tool,
+FLTK was downloaded and built from source.
+
+What I did to build the latest fldigi-3.22.0BA:
+
+  Uninstall FLTK 1.3 that comes with FC16 (just to make sure I was using 1.1.0)
+  Download FLTK 1.1.0 tar.gz, build with &quot;--enable-threads&quot; option
+  Install RPM package libsamplerate-devel
+  Install RPM package portaudio-devel
+  Install RPM package pulseaudio-devel
+  Install RPM package hamlib (plus devel and bindings)
+  Install RPM xmlrpc-devel
+
+After that, fldigi built fine on x86_64 (with a few unused variable and
+cast size warnings)  with &quot;./config --enable-debug --with-xmlrpc&quot;,
+make, make install.  Seems to be working fine....
+
+Hope this helps,
+
+-- 
+P.J. &quot;Josh&quot; Rovero&#160; &#160;&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160;Ham Radio: KK1D
+Web1: &#160;<A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>
+Web2: &#160;<A HREF="http://sites.google.com/site/roveroresearch/">http://sites.google.com/site/roveroresearch/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002131.html">fldigi-3.22.0BA posted for testing
+</A></li>
+	<LI>Next message: <A HREF="002126.html">FLDIGI broken by FEDORA CORE 16
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2124">[ date ]</a>
+              <a href="thread.html#2124">[ thread ]</a>
+              <a href="subject.html#2124">[ subject ]</a>
+              <a href="author.html#2124">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,391 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> CALLID in Fldigi ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20CALLID%20in%20Fldigi%20%3F&In-Reply-To=%3CCAKpk-KM2Y3noy6F6OFZzqNSiZHo_-cbG-%3Da4aLA2ZOzCqnzsXw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001958.html">
+   <LINK REL="Next"  HREF="001955.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>CALLID in Fldigi ?</H1>
+    <B>Andy obrien</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20CALLID%20in%20Fldigi%20%3F&In-Reply-To=%3CCAKpk-KM2Y3noy6F6OFZzqNSiZHo_-cbG-%3Da4aLA2ZOzCqnzsXw%40mail.gmail.com%3E"
+       TITLE="CALLID in Fldigi ?">k3ukandy at gmail.com
+       </A><BR>
+    <I>Sat Jul  2 19:24:01 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001958.html">Unified logs aka. ADIF Intelligent Merger / adifmerg
+</A></li>
+        <LI>Next message: <A HREF="001955.html">CALLID in Fldigi ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1954">[ date ]</a>
+              <a href="thread.html#1954">[ thread ]</a>
+              <a href="subject.html#1954">[ subject ]</a>
+              <a href="author.html#1954">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I wonder if there is any ability for Fldigi to incorporate the CALLID
+feature that Multipsk has?  I think that this feature would be very
+useful for NBEMS nets  and even help automatically  maintain a list of
+check-ins.  Most of the  NBEMS have a check-in procedure that is VERY
+long.  Use of CALLID would dramatically reduce the net check-in time.
+I usually use Multipsk when I check in to digital nets but since most
+other stations use Fdigi, the addition of this feature for Fldigi
+would be quite useful.  I think, not sure, that it would even detect
+several callsigns  at  almost the same time,  if they were spaced out
+a little.
+
+Andy K3UK
+
+
+
+Use of the &quot;Call ID&quot;
+identifier of call sign and  Locator and use as &quot;Prop ID&quot; or &quot;Message ID&quot;
+
+Main use
+This &quot;Call ID&quot; (&quot;Call&quot; for &quot;Call sign&quot;) identifier can be,
+automatically, detected and located. It can be any Call sign or Call
+sign 6 characters + Locator, Prop ID or Message ID (see further). The
+Call ID is always detected at -13 dB (first decodings at -18 dB), so
+with a sensitivity better than the PSK31 one. The central frequency of
+the identifier (which is also the central frequency of the
+transmission), is determined with a precision of +/- 2.7 Hz. As soon
+as this identifier (without any error) is received, Multipsk:
+
+display, on the waterfall,  the call sign, possibly preceded by &quot;CQ &quot;
+and possibly followed by &quot;Emergency!&quot; (and a short ring), the Locator
+and station data (Prop ID),
+display the time of reception, the call sign, the Locator and the
+Signal to Noise ratio in the Call ID reception window,
+switch on the received frequency (optional),
+display the position the Locator on a map (optional).
+This identifier is transmitted in 3.3 sec and has a bandwidth of 172
+Hz.  It is composed of a RS ID (code 153) followed by a sequence of 56
+bits of data and 24 bits of CRC. For the RS ID information, click on
+Use of the Reed-Solomon identifier (&quot;RS ID&quot;) of mode and frequency
+
+This identifier can be transmitted by clicking on the &quot;Call ID&quot; button.
+
+As a RS ID, it can be decoded either in the detection mode &quot;On demand&quot;
+or in the detection mode &quot;Continuous&quot;.
+
+The &quot;Management of the mode identifiers (ID): RS ID, Call ID and Video
+ID&quot; option of the &quot;Configuration&quot; menu or the button &quot;ID&quot; permit to
+open a window where are located different options relative to
+transmission and reception of RS, Call and video identifiers.
+
+Note: for the programmers of coding/decoding softwares, I propose, on
+demand, the source in Pascal (Delphi) for the creation and management
+of the sequence of 56 bits of data and the 24 bits of CRC.
+
+Most simple use
+
+The default options being a search in 200-2500 Hz on the mode
+&quot;Detection on demand&quot;, the user will have only to click on the &quot;RX
+Call ID&quot; button. The Call ID identifier received in the 200-2500 Hz
+bandwidth will switch Multipsk on the central frequency given by this
+identifier.
+It will be displayed the call sign on the waterfall and various pieces
+of information (time and Signal-to-Noise ratio). If a Locator is sent,
+the call sign will be positioned on a map.
+
+Principle
+It can be transmitted:
+
+either a formatted call sign (14 characters max),
+or a free call sign (10 characters max),
+or a 6 characters call sign followed by the Locator,
+or a &quot;Prop ID&quot; (&quot;Propagation ID&quot;) composed of a 6 characters call
+sign, a Locator on 4 characters &quot;+&quot;, the power level, the antenna type
+or gain and the directivity of the antenna.  The &quot;Prop ID&quot;  could be
+processed to determine the real propagation conditions, but the main
+use is to define the station,
+or a message (Message ID of 9 characters max) to use during a QSO. It
+is an auxiliary function.
+This ID sequence is composed of 80 bits, i.e 20 symbols of 4 bits
+transmitted as in RS ID transmissions shared into:
+  * 56 bits of data
+  * 24 bits of CRC (in fact 2 CRC: one of 16 bits and the other of 8
+bits, of the same type of the Packet one)
+This sequence must be preceded by a specific RS ID (Code 153).
+The CALL ID is immediatly transmitted after the RS ID.
+The transmission of the CALL ID symbols is done exactly as for the RS
+ID symbols: same MFSK modulation (4 bits) and same AF frequency
+bandwidth.
+
+There are 16 possibilities of frequencies separated by
+11025/1024=10.766 Hz, each symbol transmission being done on only one
+frequency for a duration equal to 1024/11025*1000=92.88 ms. So the 35
+(15+20) symbols are transmitted in 35*1024/11025=3,3 s.
+
+It is a free error transmission, i.e in presence of an Call ID, there
+are two solutions:
+
+either the Call ID is not received because the signal is too weak,
+or it is received and it is correct, the probability of detection of a
+wrong identifier due to radio noise being almost nil.
+Transmission
+
+In all modes (included MT63, SSTV, Fax, FELD HELL...), an identifier
+can be transmitted. It will be sent on the average transmission
+frequency, except in SSTV where it will be sent on the synchronization
+peak on the waterfall display (between 1150 and 1400 Hz).
+
+Reception
+
+In all the modes, included Fax, SSTV and MT63, the Call ID can be detected.
+
+It could possible to choose the bandwidth (between 500 Hz and all the
+spectrum). In this space, any identifier will be detected (in time and
+in frequency).
+
+Important: all the digital modes are supposed to be transmit in USB
+with their standard shift (for example, 170 Hz for the RTTY 45 bauds).
+
+Relatively to the average transmitted power:
+
+The ratio between the average power and the maximal power is equal to
+1 because it is a sequence transmitted in MFSK. This ratio equal to 1
+is an advantage because it is transmitted the maximum energy during
+the 3.3 sec of the sequence.
+
+Options and commands on the identifiers management window for the RS
+ID and the Call ID (common to both identifiers)
+
+Click on Use of the Reed-Solomon identifier (&quot;RS ID&quot;) of mode and frequency
+
+Options and commands specific to Call ID
+
+Options (for reception)
+As soon as the Call ID is received, Multipsk:
+
+display the call sign (possibly preceded by &quot;CQ &quot;) and the Locator on
+the waterfall,
+
+display the time of reception (UTC), the call sign, the Locator and
+the Signal to Noise ratio in the Call ID reception window. This window
+can be cleared (&quot;Clear the Call ID window&quot; button).
+If a client application is connected to Multipsk through TCP/IP link,
+the same information (as a &quot;comment&quot;) is also sent to this client
+(see Multipsk control through a TCP/IP link).
+
+switch on the received frequency, if the option &quot;Switch of the
+frequency on Call ID&quot; is on duty,
+
+display the position the Locator on a map, if the option &quot;Automatic
+positioning of the call on the map if Locator received&quot; is on duty.
+On clicking on the &quot;See the hidden map&quot; button, if the map on which
+appear positions, is hidden behind the RX/TX screen, it is set on top,
+so as to see it.
+
+If &quot;Call ID ---&gt; CALL_ID.TXT&quot; is checked, it is automatically added
+the Call ID pieces of information in the &quot;CALL_ID.TXT&quot; file
+(sub-directory &quot;WORLD&quot;). The addition is done at the end of the file.
+This file can be periodically examined by the user (programmer) for
+any use. The user must empty this file from time to time.
+
+If &quot;QSO fields&quot; is checked, it is automatically filled the QSO fields
+(RX/TX screen) using the Call ID information: &quot;Call&quot;, and possibly
+&quot;Locator&quot; and &quot;Notes&quot; (for &quot;CQ&quot; and &quot;Emergency!&quot;).
+
+If &quot;---&gt;Spot&quot; is checked, it is automatically transmitted  an outgoing
+spot to a cluster through SpotCollector, using the Call ID information
+(RX/TX screen) which fills the QSO fields: &quot;Call&quot;, and possibly
+&quot;Locator&quot; and &quot;Notes&quot; (for &quot;CQ&quot; and &quot;Emergency!&quot;). If the &quot;Freq MHz&quot;
+QSO field is empty, nothing is exported.
+
+To start the Call ID, the user must click on the &quot;RX Call ID&quot; button
+on the RX/TX main screen.
+
+Call ID and RS ID monitoring without actions
+
+With the button &quot;RS ID and Call ID monitoring on standard waterfall&quot;,
+RS ID and Call ID are monitored on the standard waterfall and are
+displayed on the blue line (finished by an &quot;OK&quot; button), without any
+mode and frequency forcing. However, it is proposed to switch on the
+Call ID frequency or the RS ID mode and frequency.
+
+The &quot;Beep&quot; button permits to generate a beep on reception of a RS ID
+or a Call ID.
+
+Commandes (in transmission)
+It can be transmitted:
+
+either a formatted call sign (14 characters max). For this, check on
+&quot;Transmission of your call sign, in a formatted way&quot;.
+With this option, in case of justified emergency, it can be checked
+&quot;Emergency&quot;. It makes know that the transmission of the call sign is
+designed for emergency needs (high priority). In this case, it is
+added &quot;Emergency!&quot; to the call sign and a very short sound is emitted.
+
+or a free call sign (10 characters max). For this, check on
+&quot;Transmission of your call sign, in a free way:&quot; and fill the
+corresponding field (10 characters max). The accepted characters are
+A..Z, 0..9, space and /
+
+
+or a 6 characters call sign followed by the Locator. For this, check
+on &quot;Transmission of your call sign (6 characters max) + Locator&quot;,
+
+or a &quot;Prop ID&quot; (&quot;Propagation ID&quot;) composed of a 6 characters call
+sign, a Locator on 4 characters &quot;+&quot; (precision: +/-0.5 &#176; in longitude
+and in latitude), the power level (0.5 to 500 Watts), the type of the
+antenna or its gain (4 to 19 dB) and the directivity of the antenna
+(&quot;NW&quot; for &quot;North West&quot; for example). For this,  check on &quot;Prop ID:
+callsign+Locator(4+)&quot;.
+
+Select the Power level (effectively radiated power transmitted by the
+antenna taking into account any losses), among the proposed powers
+(0.5, 1, 2, 5, 10, 20, 50, 100, 200 or 500 Watts).
+
+Select the type of the antenna or the gain of the antenna (if
+monodirectional) among the following options:
+* &quot;Vertical&quot;: vertical antenna (omni directional)
+* &quot;Dipole&quot;: dipole antenna (gain around 2 dBi with a foreward and
+backward radiation),
+* &quot;Bidirec.&quot;: Bidirectional antennas as colinear or group of parallel
+antennas (with a foreward and backward radiation), the gain being
+close to 5 or 6 dBi
+* &quot;4 dBi&quot; (for example Quad loop)
+* &quot;7 dBi&quot; (for example 2 elements Yagi)
+* &quot;10 dBi&quot; (for example 2 elements Quad or 3 elements Yagi)
+* &quot;13 dBi&quot; (for example 4 to 7 elements Yagi or 3 elements Quad)
+* &quot;16 dBi&quot; (for example 5 elements Quad)
+* &quot;19 dBi&quot; (for example multi elements Yagi or Quad)
+
+Notes:
+The gain in dBi is relative to the isotropic antenna (same power in
+all directions).
+If the gain is expressed (4 to 19 dBi), it is supposed that the
+directional antenna is a Yagi or a Quad antenna, the backward radiated
+power being reduced.
+In the case of a vertical antenna, the directivity will not be taken
+into account.
+
+Select the the antenna directivity (taken into account if the antenna
+is not vertical is superior to 0) among the proposed directions: &quot;NE
+(North East), &quot;E&quot; (East), &quot;SE&quot; (South East), &quot;S&quot; (South), &quot;SW&quot; (South
+West), &quot;W&quot; (West), &quot;NW&quot; (North West), &quot;N&quot; (North).
+
+It can be transmitted a 'CQ ' previously to the call sign (except for
+the free call sign) by checking &quot;CQ&quot;. This CQ makes know that the
+transmission of the call sign is done to initiate a QSO or to answer
+to a QSO. Without CQ bit, it means that it is a one way beacon (for
+propagation etc).
+
+In case of justified emergency, it can be checked &quot;Emergency&quot;. It
+makes know that the transmission of the call sign is designed for
+emergency needs (high priority). In this case, it is added
+&quot;Emergency!&quot; to the call sign and a very short sound is emitted.
+
+The macro &lt;CALL ID&gt; (see Personal data and macros) permits to transmit
+the Call ID in a sequence. For example, it would be possible, inside a
+sequence, to send the Call ID to introduce yourself, then send the RS
+ID to make switch the other Ham to the desired mode:
+&lt;TX&gt;&lt;CALL ID&gt;&lt;RS ID&gt;
+CQ CQ CQ CQ CQ CQ DE F6CTE F6CTE
+CQ CQ CQ CQ CQ CQ DE F6CTE F6CTE
+CQ CQ CQ CQ CQ CQ DE F6CTE F6CTE +K
+&lt;RX&gt;
+The program switches to TX, sends the Call ID then the RS ID and a CQ
+call. Afterwards, the program switches to RX.
+
+Important: to send a Call ID in reception (only one transmission or as
+a beacon), use the button &quot;Call ID&quot;. In transmission, use the macro
+&lt;CALL ID&gt;.
+
+If  &quot;Beacon&quot; is checked, it is transmits a Call ID at each interval of
+time defined by the user, as soon as the button &quot;Call ID&quot; (RX/TX
+screen) is pushed.
+The interval of time is adjusted with the arrows between 10 seconds to
+20 minutes.
+If the user wants a fixed AF frequency on the waterfall, without AFC
+effect, it will be necessary to select the CW mode and extract the
+&quot;QRP decoding&quot; button if pushed.
+
+The Call ID is transmitted at each interval of time defined by the
+user, once the &quot;Call ID&quot; button on the RX/TX main screen is pushed.
+
+The pieces of information &quot;Call sign&quot; and &quot;Locator&quot; are available by
+clicking on the &quot;Personal&quot; button. These pieces of data are used for
+all the formats except the free call sign.
+
+The button &quot;Check&quot; permits to check that the call sign and, possibly,
+the Locator are correct.
+
+
+Initial Message ID (9 char. max): it is possible to send a message of
+9 characters maximum (with the following set of characters (56) A..Z
+0..9 space . ? = / + ! - , ; : % &lt; &gt; $ &quot; ( ) * ), in background. As it
+is not related to any specific mode, it can be useful, for example, in
+case of difficulty of doing a QSO (thanks to the editor over the &quot;Call
+ID&quot; button on the RX/TX screen). Message ID are not considered as true
+Call ID and are not stored.
+
+The main use is simply to send a short message in case in difficulty
+during a QSO (&quot;PSE PSK10&quot;, for example, to ask &quot;To switch to PSK10&quot; or
+&quot;QRM +1K&quot; for &quot;There is QRM, I increase the dial frequency by 1 KHz&quot;
+or &quot;STIL HERE&quot; to say that &quot;I'm still here, even if communication
+seems impossible&quot;.
+
+
+It could be also possible to exchange information between Hams doing
+other QSO, or between a Ham not in QSO and Hams in QSO, for two
+reasons:
+- the Call ID is received and transmitted in background so it can be
+used at any time and in any mode,
+- the Call ID appears to everybody in the bandwidth.
+For example &quot;Hi mode?&quot; to say &quot;Hello, what is the mode that you use&quot;
+and it can be answered &quot;OL 32 1K&quot; for &quot;Olivia 32 carriers 1000 Hz&quot;.
+
+
+It will be efficient to use Q code and Ham abbreviations and to use
+punctuations to limit the number of characters:
+- &quot;?&quot; question (a confirmation is required),
+- &quot;!&quot; a strong demand is done by the Ham with who you are in QSO (an
+action is required),
+- &quot;&gt;&quot; or &quot;-&quot; for &quot;to increase the frequency&quot;,
+- &quot;&lt;&quot; or &quot;-&quot; for &quot;to increase the frequency&quot;,
+- &quot;=&quot; at the beginning without following space for &quot;PSE &quot; or &quot;Please &quot;
+- &quot;+&quot; at the end of the message for &quot;I wait for an answer&quot;
+and why not net general smileys as &quot;:-)&quot; for &quot;Smile&quot;
+
+
+The &quot;Standard parameters&quot; button selects the default paramaters.The
+Call ID is transmitted by clicking on the &quot;Call ID&quot; button on the
+RX/TX main screen
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001958.html">Unified logs aka. ADIF Intelligent Merger / adifmerg
+</A></li>
+	<LI>Next message: <A HREF="001955.html">CALLID in Fldigi ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1954">[ date ]</a>
+              <a href="thread.html#1954">[ thread ]</a>
+              <a href="subject.html#1954">[ subject ]</a>
+              <a href="author.html#1954">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

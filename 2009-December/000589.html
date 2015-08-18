@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.13BI / flwrap-1.0.4 posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.13BI%20/%20flwrap-1.0.4%20posted&In-Reply-To=%3C4B2ECB7B.4050804%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000586.html">
+   <LINK REL="Next"  HREF="000591.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.13BI / flwrap-1.0.4 posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.13BI%20/%20flwrap-1.0.4%20posted&In-Reply-To=%3C4B2ECB7B.4050804%40bellsouth.net%3E"
+       TITLE="fldigi-3.13BI / flwrap-1.0.4 posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Dec 21 02:12:27 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000586.html">No Caps in Blue xmit window 
+</A></li>
+        <LI>Next message: <A HREF="000591.html">fldigi-3.13BI / flwrap-1.0.4 posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#589">[ date ]</a>
+              <a href="thread.html#589">[ thread ]</a>
+              <a href="subject.html#589">[ subject ]</a>
+              <a href="author.html#589">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>FLWRAP:
+
+Note: flwrap 1.0.3 never posted.
+
+Version 1.0.4
+    Compress Always Command Line Switch
+        Added command line switch &quot;--usecomp&quot; to force lzma
+        compression independent of file type.
+    Compress Always-Never
+        Changed wrap to:
+          compress always for binary data source,
+          compress never for ASCII text data source.
+        Changed unwrap to:
+          decompress maybe if LZMA identifier string is found in
+          the wrapped payload.
+        Base64 encoding always for compressed wrap.
+    Noise Suppression
+        Added code to ignore leading and trailing random characters
+        in the wrapped file.  These might be present as a result of
+        transmission path noise or automatic wrapped file extraction
+        processing.
+
+FLDIGI:
+
+Version 3.13BI
+    Auto Extraction bug fix
+        Auto extracting a 'wrap' file always inserted leading random
+        characters into the text, a result of the string matching
+        used to find the start of a wrap transmission.  Fixed.
+
+Together these modifications should address the concern of the flwrap 
+testing community, particularly MARS operators who might confuse 
+compression with encryption.
+
+Find the files at:
+
+<A HREF="http://www.w1hkj.com/alpha/fldigi-flarq/">http://www.w1hkj.com/alpha/fldigi-flarq/</A>
+<A HREF="http://www.w1hkj.com/alpha/flwrap/">http://www.w1hkj.com/alpha/flwrap/</A>
+
+73, Dave, W1HKJ
+for the development team
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091220/d7157c2b/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091220/d7157c2b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000586.html">No Caps in Blue xmit window 
+</A></li>
+	<LI>Next message: <A HREF="000591.html">fldigi-3.13BI / flwrap-1.0.4 posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#589">[ date ]</a>
+              <a href="thread.html#589">[ thread ]</a>
+              <a href="subject.html#589">[ subject ]</a>
+              <a href="author.html#589">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

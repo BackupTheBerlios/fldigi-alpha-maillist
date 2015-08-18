@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Cp2xe93450131004171037m3f92967ida495282dfaf80ca%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001146.html">
+   <LINK REL="Next"  HREF="001132.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Cp2xe93450131004171037m3f92967ida495282dfaf80ca%40mail.gmail.com%3E"
+       TITLE="Contestia">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sat Apr 17 19:37:31 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001146.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001132.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1128">[ date ]</a>
+              <a href="thread.html#1128">[ thread ]</a>
+              <a href="subject.html#1128">[ subject ]</a>
+              <a href="author.html#1128">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>(I forgot to reply to all.)
+
+On Sat, Apr 17, 2010 at 9:49 AM, Brian Lloyd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A>&gt; wrote:
+
+&gt;<i> On Sat, Apr 17, 2010 at 9:01 AM, hteller &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hteller at comcast.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>  Brian,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> We again tested DominoEx against Contestia on UHF today with the customary
+</I>&gt;&gt;<i> Doppler disturbance and DominoEx 8 did poorly, but Contestia had perfect
+</I>&gt;&gt;<i> copy.
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Now, did you do a fair and accurate comparison? Did you turn on FEC?
+</I>&gt;<i> DominoEX without FEC is, frankly, not useful in a path dominated by flutter
+</I>&gt;<i> and doppler. Turn on FEC on DominoEX or, better still, compare Contestia to
+</I>&gt;<i> Thor, which is DominoEX with FEC done properly. I think you will find the
+</I>&gt;<i> difference less apparent.
+</I>&gt;<i>
+</I>&gt;<i> If you are interested in *why* you are seeing the results you are, see
+</I>&gt;<i> this:
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://homepage.mac.com/chen/Technical/DominoEX/Measurements/">http://homepage.mac.com/chen/Technical/DominoEX/Measurements/</A>
+</I>&gt;<i>
+</I>&gt;<i> And specifically this graph:
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://homepage.mac.com/chen/Technical/DominoEX/ITU/ITU/flutter.html">http://homepage.mac.com/chen/Technical/DominoEX/ITU/ITU/flutter.html</A>
+</I>&gt;<i>
+</I>&gt;<i> Notice the very high error rate of DominoEX in the presence of flutter with
+</I>&gt;<i> FEC turned off and the HUGE improvement with it turned on. This is a real
+</I>&gt;<i> analysis of the characteristics of the protocols. This is the kind of thing
+</I>&gt;<i> that needs to be done in order to find what works best.
+</I>&gt;<i>
+</I>&gt;<i> It is really Really *REALLY* important to understand what is going on with
+</I>&gt;<i> these protocols in the presence of propagation anomalies in order to be able
+</I>&gt;<i> to make decisions about which modes work best under what conditions. My own
+</I>&gt;<i> recent experiments in monitoring and graphing the phase/frequency changes of
+</I>&gt;<i> the WWV carrier over time (20-30 minute samples typically) have convinced me
+</I>&gt;<i> that sequential testing of protocols, i.e. transmitting a message and then
+</I>&gt;<i> immediately transmitting the same message using the other protocol, is not
+</I>&gt;<i> likely to produce valid results unless repeated numerous times and then the
+</I>&gt;<i> results averaged with outliers discarded. I have been pestering Dave to do a
+</I>&gt;<i> test version of fldigi that would let me transmit the same data in two modes
+</I>&gt;<i> at the same time in the same passband so that both experience *exactly* the
+</I>&gt;<i> same propagation conditions concurrently. *THAT* will let us see which one
+</I>&gt;<i> works better, especially if it can report the channel conditions for fading
+</I>&gt;<i> (slow amplitude change), flutter (rapid amplitude change), multipath (rapid
+</I>&gt;<i> phase change and selective fading), and doppler (slow steady phase/frequency
+</I>&gt;<i> change).
+</I>&gt;<i>
+</I>&gt;<i> Digital data transmission over HF and NLOS VHF/UHF is an area ripe for
+</I>&gt;<i> analysis and experimentation. Right now in this area hams have the ability
+</I>&gt;<i> to be out in front again as they were through the 1950's. The only person I
+</I>&gt;<i> know of who is doing meaningful work in this area is Kok Chen, W7AY. He
+</I>&gt;<i> assures me that there are a few others but, frankly, I haven't met them. And
+</I>&gt;<i> I say meaningful in that he has come up with a means of testing in a
+</I>&gt;<i> controlled, simulated environment as a first pass in determining what we
+</I>&gt;<i> think we should see if we truly understand what is going on. The next step
+</I>&gt;<i> is to repeat that testing in the real world over live paths but in a
+</I>&gt;<i> strictly controlled manner so that we can extract real performance data.
+</I>&gt;<i>
+</I>&gt;<i> So building a bunch of digital modes is nice and very useful but now we
+</I>&gt;<i> need to go the next step and use the tools in a scientific way to extract
+</I>&gt;<i> better understanding.  (Don't get me wrong, I wouldn't be here pondering
+</I>&gt;<i> this if it weren't for Dave's and Stelios' work in producing fldigi with all
+</I>&gt;<i> these modes with which to experiment.) Time to take the next step and build
+</I>&gt;<i> on Chen's work by getting real, controlled data from live propagation.
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> 73 de Brian, WB6RQN/J79BPL
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+-- 
+73 de Brian, WB6RQN/J79BPL
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/32e52fb8/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/32e52fb8/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001146.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001132.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1128">[ date ]</a>
+              <a href="thread.html#1128">[ thread ]</a>
+              <a href="subject.html#1128">[ subject ]</a>
+              <a href="author.html#1128">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

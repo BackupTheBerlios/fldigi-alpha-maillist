@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI and Packet Operation: openpty()
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3CCAE3hgTd6xFXYepiuQMKQKkHKJ5uniOuvoQQBEZFrZ8zWVD60HA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002195.html">
+   <LINK REL="Next"  HREF="002196.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI and Packet Operation: openpty()</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3CCAE3hgTd6xFXYepiuQMKQKkHKJ5uniOuvoQQBEZFrZ8zWVD60HA%40mail.gmail.com%3E"
+       TITLE="FLDIGI and Packet Operation: openpty()">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sat Dec 10 17:30:49 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002195.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+        <LI>Next message: <A HREF="002196.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2198">[ date ]</a>
+              <a href="thread.html#2198">[ thread ]</a>
+              <a href="subject.html#2198">[ subject ]</a>
+              <a href="author.html#2198">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Dec 9, 2011 at 10:10 AM, Remi Chateauneu
+&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;wrote:
+
+&gt;<i> On Fri, Dec 9, 2011 at 4:56 PM, Brian Lloyd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A>&gt;
+</I>&gt;<i> wrote:
+</I>&gt;<i> &gt; And the Bell 103 modem is a really, really, really, really, really,
+</I>&gt;<i> STUIPID,
+</I>&gt;<i> &gt; STUPID choice for HF. This is where it would make a huge amount of sense
+</I>&gt;<i> to
+</I>&gt;<i> &gt; use a different modem with IP, TCP, and UDP layered atop. Just look at
+</I>&gt;<i> all
+</I>&gt;<i> &gt; the much-better modems exist in fldigi. Why keep using crap like the bell
+</I>&gt;<i> &gt; 103? If we had a way of running IP over HF, with or without link-layer
+</I>&gt;<i> ARQ,
+</I>&gt;<i> &gt; using decent modems with FEC, it would be SOOO much better and also quite
+</I>&gt;<i> &gt; interesting!
+</I>&gt;<i>
+</I>&gt;<i> Does this go to the right direction ?
+</I>&gt;<i>
+</I>&gt;<i> &quot;FX.25 is a protocol extension to the AX.25 Link Layer Protocol. FX.25
+</I>&gt;<i> provides a Forward Error Correction (FEC) capability while maintaining
+</I>&gt;<i> legacy compatibility with non-FEC equipment. FX.25 was created by the
+</I>&gt;<i> Stensat Group in 2005, and was presented as a technical paper at the
+</I>&gt;<i> 2006 TAPR Digital Communications Conference in Tucson, AZ.&quot;
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://en.wikipedia.org/wiki/FX.25_Forward_Error_Correction">http://en.wikipedia.org/wiki/FX.25_Forward_Error_Correction</A>
+</I>
+
+Well, FEC is the right idea but building it into the network protocol as
+opposed to making it part of the modem, doesn't make a lot of sense. (AX.25
+is actually an adaptation of a link-layer protocol to be a network protocol
+for a datagram-based network, something that annoyed the heck out of people
+when Phil Karn pointed this out in the late '80s.) If we were dealing with
+a pure AWGN-dominated channel, e.g. space communications, you can get away
+with putting it there. It is less so if you are using it on NLOS
+terrestrial VHF/UHF/SHF links and even less so on HF links.
+
+So, no, I don't think that is the proper approach. The FEC should be
+matched to the characteristics of the MODEM in the medium where the MODEM
+is being used. Olivia, MFSK16, and Thor have the right idea. Now we need to
+layer a proper ARQ on top of that. And please don't assume it should
+necessarily be an antiquated stop-and-wait ARQ with fixed timing like we
+have used in AMPR, PACTOR, and AMTOR. Adaptive ARQ is now common AND we
+have the option of changing what we think the unit of data transfer should
+be.
+
+AX.25, even when used as a point-to-point reliable link, fails badly for
+all the reasons that Phil and I outlined in our paper for the ARRL 7th
+Annual Computer Networking Conference in 1988. We applied our findings to
+running TCP/IP over packet radio (this is where the KISS TNC came from) and
+proved just how much more robust packet radio could be.
+
+It was kind of funny. For that effort I was accuse of trying to ruin packet
+radio for everyone else. :-) From that I went on to develop PPP.
+
+-- 
+Brian Lloyd, WB6RQN/J79BPL
+3191 Western Dr.
+Cameron Park, CA 95682
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A>
++1.767.617.1365 (Dominica)
++1.916.877.5067 (USA)
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111210/ccf63614/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111210/ccf63614/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002195.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+	<LI>Next message: <A HREF="002196.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2198">[ date ]</a>
+              <a href="thread.html#2198">[ thread ]</a>
+              <a href="subject.html#2198">[ subject ]</a>
+              <a href="author.html#2198">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

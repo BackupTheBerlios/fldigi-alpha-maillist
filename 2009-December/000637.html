@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Anomaly in fldigi for windoze and (seldom) linux
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Anomaly%20in%20fldigi%20for%20windoze%20and%20%28seldom%29%20linux&In-Reply-To=%3C1515100942%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000639.html">
+   <LINK REL="Next"  HREF="000638.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Anomaly in fldigi for windoze and (seldom) linux</H1>
+    <B>Rein Couperus</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Anomaly%20in%20fldigi%20for%20windoze%20and%20%28seldom%29%20linux&In-Reply-To=%3C1515100942%40web.de%3E"
+       TITLE="Anomaly in fldigi for windoze and (seldom) linux">rein at couperus.com
+       </A><BR>
+    <I>Thu Dec 31 14:55:35 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000639.html">fldigi-help 3.13
+</A></li>
+        <LI>Next message: <A HREF="000638.html">Anomaly in fldigi for windoze and (seldom) linux
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#637">[ date ]</a>
+              <a href="thread.html#637">[ thread ]</a>
+              <a href="subject.html#637">[ subject ]</a>
+              <a href="author.html#637">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>While monitoring the pskmail frequency I found the following:
+
+&lt;cmd&gt;&lt;txrsid&gt;ON&lt;/txrsid&gt;&lt;/cmd&lt;SOH&gt;00uF4EED:26 !4524.20N/00421.65Eyjpskmail 0.4.0.2 en test 
+sous xubuntu (Psk500 ...)76BB&lt;EOT&gt;
+
+Which is a pskmail beacon from F4EED. You can see the arq command string, sent over the air.
+
+Subsequent testing revealed that this error occurs in windows (100%) and sometimes in linux 
+(some have reported this, never seen it myself so it is difficult to debug).
+
+All command strings are subject to this. In the seldom cases that it happens under Linux, after 
+running the ommand, the command string is also sent to the RX window (with the TX attribute set). 
+In windows all commands are sent to the modem for transmit without showing up in either TX or RX window.
+
+Here is the debug output for windows XP and UBUNTU 8.04-3 LTS
+
+Windows XP:
+
+Q: main: fldigi 3.13BK log started on Thu Dec 31 12:41:44 2009
+
+D: [12:42:33] misc/arq_io.cxx:141: Command string: &lt;cmd&gt;&lt;txrsid&gt;ON&lt;/txrsid&gt;&lt;/cmd&gt;
+D: [12:42:33] misc/arq_io.cxx:120: TxRsID turned ON
+D: [12:42:33] misc/arq_io.cxx:527: &lt;cmd&gt;&lt;txrsid&gt;ON&lt;/txrsid&gt;&lt;/cmd&gt;
+&gt;&gt;<i>This is where it is going wrong, should not be sent...
+</I>
+D: [12:42:34] soundcard/sound.cxx:1202: input rbsize=16384
+D: [12:42:34] soundcard/sound.cxx:1208: output rbsize=16384
+D: [12:42:40] misc/arq_io.cxx:527: 00uPA0R&gt;&lt;IS0GRB-3 4E96
+
+
+Linux 8.04-3 LTS (no problem here...):
+
+Q: main: fldigi 3.13BK log started on Thu Dec 31 13:11:22 2009
+
+D: [13:12:31] misc/arq_io.cxx:141: Command string: &lt;cmd&gt;&lt;mode&gt;PSK500R&lt;/mode&gt;&lt;/cmd&gt;
+D: [13:12:31] misc/arq_io.cxx:96: ARQ new modem set to PSK500R
+D: [13:12:31] soundcard/sound.cxx:1202: input rbsize=16384
+D: [13:12:31] soundcard/sound.cxx:1208: output rbsize=16384
+D: [13:12:54] misc/arq_io.cxx:527: 00uPA0R:7 A8AB
+
+D: [13:12:54] soundcard/sound.cxx:1202: input rbsize=16384
+D: [13:12:54] soundcard/sound.cxx:1208: output rbsize=16384
+D: [13:13:00] soundcard/sound.cxx:1202: input rbsize=16384
+D: [13:13:00] soundcard/sound.cxx:1208: output rbsize=16384
+D: [13:13:04] misc/arq_io.cxx:141: Command string: &lt;cmd&gt;&lt;txrsid&gt;ON&lt;/txrsid&gt;&lt;/cmd&gt;
+D: [13:13:04] misc/arq_io.cxx:120: TxRsID turned ON
+D: [13:13:05] misc/arq_io.cxx:527: 00uPA0R&gt;&lt;PI4TUE 42F6
+D: [13:13:05] soundcard/sound.cxx:1202: input rbsize=16384
+D: [13:13:05] soundcard/sound.cxx:1208: output rbsize=16384
+D: [13:13:12] soundcard/sound.cxx:1202: input rbsize=16384
+D: [13:13:12] soundcard/sound.cxx:1208: output rbsize=16384
+D: [13:13:31] misc/arq_io.cxx:141: Command string: &lt;cmd&gt;&lt;mode&gt;PSK500R&lt;/mode&gt;&lt;/cmd&gt;
+D: [13:13:31] misc/arq_io.cxx:96: ARQ new modem set to PSK500R
+
+D: [13:13:31] soundcard/sound.cxx:1202: input rbsize=16384
+D: [13:13:31] soundcard/sound.cxx:1208: output rbsize=16384
+
+I had not noticed this before as I never use windows myself (always get depressed 
+while doing it)....
+
+73,
+
+Rein PA0R
+
+-- 
+<A HREF="http://pa0r.blogspirit.com">http://pa0r.blogspirit.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000639.html">fldigi-help 3.13
+</A></li>
+	<LI>Next message: <A HREF="000638.html">Anomaly in fldigi for windoze and (seldom) linux
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#637">[ date ]</a>
+              <a href="thread.html#637">[ thread ]</a>
+              <a href="subject.html#637">[ subject ]</a>
+              <a href="author.html#637">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

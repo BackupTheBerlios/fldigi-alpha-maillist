@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Portaudio ?.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C200908101658.43603.pinozollo%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000017.html">
+   <LINK REL="Next"  HREF="000011.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Portaudio ?.</H1>
+    <B>Pino Zollo</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C200908101658.43603.pinozollo%40gmail.com%3E"
+       TITLE="Portaudio ?.">pinozollo at gmail.com
+       </A><BR>
+    <I>Mon Aug 10 22:58:43 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000017.html">Portaudio ?.
+</A></li>
+        <LI>Next message: <A HREF="000011.html">Portaudio ?.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Il luned&#236; 10 agosto 2009 15:59:06 Stelios Bounanos ha scritto:
+&gt;<i> &gt;&gt;&gt;&gt;&gt; On Mon, 10 Aug 2009 21:42:25 +0200, Erik Jakobsen &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">eja at urbakken.dk</A>&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; said:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Thanks Stelios for the reply. I disabled the right channel, but still
+</I>&gt;<i> &gt; have issue(s)
+</I>&gt;<i>
+</I>&gt;<i> Please start fldigi with --debug-level 9 and post the log output. The
+</I>&gt;<i> sound card information will tell us how many channels are supported in
+</I>&gt;<i> each direction.
+</I>
+Hi Stelios,
+I too have some error with portaudio... many &quot;failed&quot;
+But all seems to work OK.
+
+Any idea ?
+Here is the result of the --debug-level 9
+73
+Pino ZP4KFX
+
+------------------------------------------------------------
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pino at IK1CHE</A>:~$ fldigi --debug-level 9
+D: [16:50:13] misc/threads.cxx:90: fldigi thread 7 is LWP 4202
+I: [16:50:13] misc/dxcc.cxx:100: Loaded 1936 prefixes for 351 countries
+D: [16:50:13] misc/threads.cxx:90: fldigi thread 0 is LWP 4204
+I: [16:50:13] rigcontrol/rigclass.cxx:38: Initialised rig model 311: 
+IC-706MkIIG
+I: [16:50:13] rigcontrol/rigclass.cxx:138: setting &quot;rig_pathname&quot; 
+to &quot;/dev/ttyS0&quot;
+I: [16:50:13] rigcontrol/rigclass.cxx:138: setting &quot;post_write_delay&quot; to &quot;0&quot;
+I: [16:50:13] rigcontrol/rigclass.cxx:138: setting &quot;write_delay&quot; to &quot;1&quot;
+I: [16:50:13] rigcontrol/rigclass.cxx:138: setting &quot;timeout&quot; to &quot;200&quot;
+I: [16:50:13] rigcontrol/rigclass.cxx:138: setting &quot;retry&quot; to &quot;3&quot;
+I: [16:50:13] rigcontrol/rigclass.cxx:138: setting &quot;serial_speed&quot; to &quot;9600&quot;
+I: [16:50:13] rigcontrol/rigclass.cxx:138: setting &quot;rts_state&quot; to &quot;OFF&quot;
+I: [16:50:13] rigcontrol/rigclass.cxx:138: setting &quot;dtr_state&quot; to &quot;OFF&quot;
+I: [16:50:13] rigcontrol/rigclass.cxx:138: setting &quot;serial_handshake&quot; 
+to &quot;None&quot;
+I: [16:50:13] rigcontrol/hamlib.cxx:214: trying frequency request
+D: [16:50:14] misc/threads.cxx:90: fldigi thread 2 is LWP 4205
+D: [16:50:14] rigcontrol/rigsupport.cxx:660: hamlib
+D: [16:50:14] rigcontrol/ptt.cxx:222: Serial port /dev/ttyS0 open; status = 
+4000, 00000000
+D: [16:50:14] rigcontrol/ptt.cxx:271: Status 00, 00000000
+D: [16:50:14] soundcard/sound.cxx:1229: looking for device &quot;default&quot;
+D: [16:50:14] misc/threads.cxx:90: fldigi thread 6 is LWP 4206
+D: [16:50:14] misc/threads.cxx:90: fldigi thread 5 is LWP 4207
+D: [16:50:14] misc/threads.cxx:90: fldigi thread 4 is LWP 4208
+D: [16:50:14] spot/pskrep.cxx:639: long_station_info=&quot;02 19 00 40 06 5A 50 34 
+4B 46 58 06 47 47 31 35 6C 76 57 72 5F 79 2D 55 72 45 18 66 6C 64 69 67 69 2D 
+33 2E 31 33 41 43 2F 4C 69 6E 75 78 2D 69 36 38 36 0A 46 6F 72 63 65 31 32 20 
+43 33 00 00&quot;
+D: [16:50:14] spot/pskrep.cxx:656: short_station_info=&quot;02 18 00 1C 06 5A 50 34 
+4B 46 58 06 47 47 31 35 6C 76 57 72 5F 79 2D 55 72 45 00 00&quot;
+D: [16:50:14] soundcard/sound.cxx:1304: using input (1 ch) device &quot;default&quot;:
+index: 14
+name: default
+host API: ALSA
+max input channels: 128
+max output channels: 128
+default sample rate: 44100
+supported sample rates: 8000 9600 11025 16000 22050 32000 44100 48000 88200 
+input only: false
+output only: false
+full duplex: true
+system default input: false
+system default output: false
+host API default input: true
+host API default output: true
+default low input latency: 0.0426531
+default high input latency: 0.0464399
+default low output latency: 0.0426531
+default high output latency: 0.0464399
+
+D: [16:50:14] soundcard/sound.cxx:1310: input: resampling 22050.000000 &lt;=&gt; 
+8000.000000
+D: [16:50:14] soundcard/sound.cxx:1314: input: frames_per_buffer=0
+D: [16:50:14] soundcard/sound.cxx:1181: input rbsize=8192
+D: [16:50:14] soundcard/sound.cxx:1229: looking for device &quot;SiS SI7012: SiS 
+SI7012 (hw:0,0)&quot;
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+Expression 'parameters-&gt;channelCount &lt;= maxChans' failed 
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 924
+Expression 'ValidateParameters( inputParameters, hostApi, 
+StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 
+1134
+D: [16:50:14] soundcard/sound.cxx:1304: using output (2 ch) device &quot;SiS 
+SI7012: SiS SI7012 (hw:0,0)&quot;:
+index: 2
+name: SiS SI7012: SiS SI7012 (hw:0,0)
+host API: ALSA
+max input channels: 0
+max output channels: 6
+default sample rate: 44100
+supported sample rates: 8000 11025 16000 22050 32000 44100 48000 
+input only: false
+output only: true
+full duplex: false
+system default input: false
+system default output: false
+host API default input: false
+host API default output: false
+default low input latency: -1
+default high input latency: -1
+default low output latency: 0.01161
+default high output latency: 0.0464399
+
+D: [16:50:14] soundcard/sound.cxx:1310: output: resampling 44100.000000 &lt;=&gt; 
+8000.000000
+D: [16:50:14] soundcard/sound.cxx:1314: output: frames_per_buffer=0
+D: [16:50:14] soundcard/sound.cxx:1187: output rbsize=16384
+
+---------------------------------------------------------------
+
+
+-- 
+Key ID: 0xF6768208 
+Key fingerprint = B16D 0A7C 5B29 A334 CE6A  71F6 EAF8 3D88 F676 8208
+Key server: <A HREF="hkp://wwwkeys.eu.pgp.net">hkp://wwwkeys.eu.pgp.net</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000017.html">Portaudio ?.
+</A></li>
+	<LI>Next message: <A HREF="000011.html">Portaudio ?.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

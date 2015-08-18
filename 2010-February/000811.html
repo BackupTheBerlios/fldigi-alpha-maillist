@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Please test 3.13BW with PulseAudio
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Please%20test%203.13BW%20with%20PulseAudio&In-Reply-To=%3C201002081620.09863.pinozollo%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000810.html">
+   <LINK REL="Next"  HREF="000808.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Please test 3.13BW with PulseAudio</H1>
+    <B>Pino Zollo</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Please%20test%203.13BW%20with%20PulseAudio&In-Reply-To=%3C201002081620.09863.pinozollo%40gmail.com%3E"
+       TITLE="Please test 3.13BW with PulseAudio">pinozollo at gmail.com
+       </A><BR>
+    <I>Mon Feb  8 20:20:09 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000810.html">Please test 3.13BW with PulseAudio
+</A></li>
+        <LI>Next message: <A HREF="000808.html">Please test 3.13BW with PulseAudio (was Re: fldigi-3.13BW posted	/	flrig-0.9.99L posted)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#811">[ date ]</a>
+              <a href="thread.html#811">[ thread ]</a>
+              <a href="subject.html#811">[ subject ]</a>
+              <a href="author.html#811">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Il luned&#236; 8 febbraio 2010 14:08:15 Stelios Bounanos ha scritto:
+&gt;<i> This suggests some kind of authentication failure. &#160;Without knowing more
+</I>&gt;<i> about your system I cannot guess why that might be. &#160;Are you running a
+</I>&gt;<i> system-wide pulseaudio daemon? &#160;Does pulseaudio log anything informative
+</I>&gt;<i> if you run it with -vvv?
+</I>
+Hi Stelios,
+
+yes a lot of errors...see the attached file.
+
+I have also added my user (pino) to group pulse-rt but no change.
+
+Now I have stopped the daemon and run pulseaudio -vvv ...it gave less errors 
+but fldigi now gives:
+
+E: trx_trx_receive_loop: PulseAudio error: Invalid argument
+
+and the vvv:
+
+I: client.c: Created 0 &quot;Native client (UNIX socket client)&quot;
+I: protocol-native.c: Got credentials: uid=1000 gid=1000 success=1
+I: protocol-native.c: Enabled SHM for new connection
+I: client.c: Client 0 changed name from &quot;Native client (UNIX socket client)&quot; 
+to &quot;fldigi&quot;
+I: client.c: Freed 0 &quot;fldigi&quot;
+I: protocol-native.c: connection died.
+
+
+I am on Debian 5.01   
+
+How is your /etc/default/pulseaudio  ?
+
+Thanks for help
+
+Pino ZP4KFX
+
+-- 
+
+&quot;In the universe there is no time existing as a physical reality,
+ there is no past, no present and no future&quot;
+&quot;Time is a mind construction into which one experiences motion&quot;
+&quot;Time is a flow of irreversible material changes&quot;
+-Davide Fiscaletti
+
+Key ID: 0xF6768208 
+Key fingerprint = B16D 0A7C 5B29 A334 CE6A  71F6 EAF8 3D88 F676 8208
+Key server: <A HREF="hkp://wwwkeys.eu.pgp.net">hkp://wwwkeys.eu.pgp.net</A>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: pulse.err.zip
+Type: application/x-zip
+Size: 1832 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100208/ad84c165/attachment.bin">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100208/ad84c165/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000810.html">Please test 3.13BW with PulseAudio
+</A></li>
+	<LI>Next message: <A HREF="000808.html">Please test 3.13BW with PulseAudio (was Re: fldigi-3.13BW posted	/	flrig-0.9.99L posted)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#811">[ date ]</a>
+              <a href="thread.html#811">[ thread ]</a>
+              <a href="subject.html#811">[ subject ]</a>
+              <a href="author.html#811">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

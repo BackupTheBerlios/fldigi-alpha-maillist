@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.21.6 crashes
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.6%20crashes&In-Reply-To=%3Calpine.LFD.2.02.1103211904140.4040%40Frances%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001810.html">
+   <LINK REL="Next"  HREF="001812.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.21.6 crashes</H1>
+    <B>Jim Haynes</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.6%20crashes&In-Reply-To=%3Calpine.LFD.2.02.1103211904140.4040%40Frances%3E"
+       TITLE="fldigi 3.21.6 crashes">jhhaynes at earthlink.net
+       </A><BR>
+    <I>Tue Mar 22 01:06:28 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001810.html">fldigi 3.21.6
+</A></li>
+        <LI>Next message: <A HREF="001812.html">FAQ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1811">[ date ]</a>
+              <a href="thread.html#1811">[ thread ]</a>
+              <a href="subject.html#1811">[ subject ]</a>
+              <a href="author.html#1811">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Here are three typescripts
+
+The first came from running the stock precompiled fldigi.  This has run
+correctly before, but also has often crashed.
+
+the second is compiling from source with debug enabled.  The third
+is running the program compiled from source with gdb.
+
+Script1
+Script started on Mon 21 Mar 2011 06:34:35 PM CDT
+]0;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A>:~[<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A> ~]$ fldigi 
+I: testCommPorts: Found serial port /dev/ttyS0
+I: testCommPorts: Found serial port /dev/ttyS1
+I: testCommPorts: Found serial port /dev/ttyS2
+I: testCommPorts: Found serial port /dev/ttyS3
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server socket
+jack server is not running or cannot be started
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x81485cc]
+[0x855400]
+fldigi[0x819d1b0]
+fldigi[0x81a63af]
+fldigi[0x8165300]
+/lib/libpthread.so.0[0x2b4e99]
+/lib/libc.so.6(clone+0x5e)[0x502d2e]
+
+****** Version information:
+fldigi 3.21.6
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+   built          : Fri Mar 18 15:59:06 CDT 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">dave at linux-dev</A> on i686-pc-linux-gnu for i686-pc-linux-gnu
+
+   configure flags: '--enable-static' '--without-asciidoc' '--prefix=/tmp/fldigi-build'
+
+   compiler       : gcc version 4.4.1 (Ubuntu 4.4.1-4ubuntu9)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread -I/usr/local/include -I/usr/local/include -I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -I/usr/local/include -I/usr/local/include -D_REENTRANT -I/usr/local/include -I/usr/include/libpng12 -I/usr/local/include -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+
+   linker flags   : -L/usr/local/lib -lportaudio -lasound -lm -lpthread /usr/local/lib/libfltk_images.a -lpng -lz -ljpeg /usr/local/lib/libfltk.a -lXft -lpthread -ldl -lm -lXext -lX11 -lX11 -L/usr/local/lib -lsndfile -L/usr/local/lib -lsamplerate -lpulse-simple -lpulse -L/usr/local/lib -lhamlib -lm -lpng12 -Wl,-Bstatic -L/usr/local/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++ -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lpthread -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -Wl,-Bdynamic -ldl -lrt -lpthread
+
+   libraries      : FLTK 1.2.0
+                    libsamplerate 0.1.7
+                    libsndfile 1.0.21
+                    PortAudio 19
+                    PulseAudio 0.9.19
+                    Hamlib 1.2.13
+                    XMLRPC-C 1.06.31
+
+
+Runtime information:
+   system         : Linux Grover 2.6.35.11-83.fc14.i686 #1 SMP Mon Feb 7 07:04:18 UTC 2011 i686
+
+   libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                    libsndfile-1.0.23
+                    PortAudio V19-devel (built Jul 28 2009) 1899
+                    Pulseaudio 0.9.21
+                    Hamlib 1.2.12
+]0;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A>:~[<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A> ~]$ fldigi 
+I: testCommPorts: Found serial port /dev/ttyS0
+I: testCommPorts: Found serial port /dev/ttyS1
+I: testCommPorts: Found serial port /dev/ttyS2
+I: testCommPorts: Found serial port /dev/ttyS3
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server socket
+jack server is not running or cannot be started
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x81485cc]
+[0x332400]
+fldigi[0x819d1b0]
+fldigi[0x81a63af]
+fldigi[0x8165300]
+/lib/libpthread.so.0[0x2b4e99]
+/lib/libc.so.6(clone+0x5e)[0x516d2e]
+
+****** Version information:
+fldigi 3.21.6
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+   built          : Fri Mar 18 15:59:06 CDT 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">dave at linux-dev</A> on i686-pc-linux-gnu for i686-pc-linux-gnu
+
+   configure flags: '--enable-static' '--without-asciidoc' '--prefix=/tmp/fldigi-build'
+
+   compiler       : gcc version 4.4.1 (Ubuntu 4.4.1-4ubuntu9)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread -I/usr/local/include -I/usr/local/include -I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -I/usr/local/include -I/usr/local/include -D_REENTRANT -I/usr/local/include -I/usr/include/libpng12 -I/usr/local/include -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+
+   linker flags   : -L/usr/local/lib -lportaudio -lasound -lm -lpthread /usr/local/lib/libfltk_images.a -lpng -lz -ljpeg /usr/local/lib/libfltk.a -lXft -lpthread -ldl -lm -lXext -lX11 -lX11 -L/usr/local/lib -lsndfile -L/usr/local/lib -lsamplerate -lpulse-simple -lpulse -L/usr/local/lib -lhamlib -lm -lpng12 -Wl,-Bstatic -L/usr/local/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++ -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lpthread -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -Wl,-Bdynamic -ldl -lrt -lpthread
+
+   libraries      : FLTK 1.2.0
+                    libsamplerate 0.1.7
+                    libsndfile 1.0.21
+                    PortAudio 19
+                    PulseAudio 0.9.19
+                    Hamlib 1.2.13
+                    XMLRPC-C 1.06.31
+
+
+Runtime information:
+   system         : Linux Grover 2.6.35.11-83.fc14.i686 #1 SMP Mon Feb 7 07:04:18 UTC 2011 i686
+
+   libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                    libsndfile-1.0.23
+                    PortAudio V19-devel (built Jul 28 2009) 1899
+                    Pulseaudio 0.9.21
+                    Hamlib 1.2.12
+]0;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A>:~[<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A> ~]$ exit 
+exit
+
+Script done on Mon 21 Mar 2011 06:35:11 PM CDT
+
+Script 2
+
+Script started on Mon 21 Mar 2011 06:40:14 PM CDT
+]0;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A>:fldigi-3.21.6[<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A> fldigi-3.21.6]$ src/fldigi 
+I: testCommPorts: Found serial port /dev/ttyS0
+I: testCommPorts: Found serial port /dev/ttyS1
+I: testCommPorts: Found serial port /dev/ttyS2
+I: testCommPorts: Found serial port /dev/ttyS3
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server socket
+jack server is not running or cannot be started
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+src/fldigi(_Z9diediediev+0xaa)[0x8221db2]
+src/fldigi(_Z13handle_signali+0x19)[0x8221fd9]
+[0x169400]
+src/fldigi(_ZN5modem11set_reverseEb+0x25)[0x827e32d]
+src/fldigi(_ZN9waterfall3USBEb+0x62)[0x828ce10]
+src/fldigi[0x8241a72]
+/lib/libpthread.so.0[0x2b4e99]
+/lib/libc.so.6(clone+0x5e)[0x561d2e]
+
+****** Version information:
+fldigi 3.21.6
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+   built          : Mon Mar 21 18:36:42 CDT 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A> on i686-pc-linux-gnu for i686-pc-linux-gnu
+
+   configure flags: '--enable-debug'
+
+   compiler       : gcc version 4.5.1 20100924 (Red Hat 4.5.1-4) (GCC)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread -I/usr/include/freetype2 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT -I/usr/include/libpng12 -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -O0 -fno-inline-functions -ggdb3 -Wall -UNDEBUG
+
+   linker flags   : -rdynamic -lportaudio -lm -lpthread -lfltk_images -lpng -lz -ljpeg -lfltk -lX11 -lsamplerate -lpulse-simple -lpulse -lhamlib -lm -lpng12 -ldl -lrt -lpthread
+
+   libraries      : FLTK 1.1.10
+                    libsamplerate 0.1.7
+                    PortAudio 19
+                    PulseAudio 0.9.21
+                    Hamlib 1.2.12
+
+Runtime information:
+   system         : Linux Grover 2.6.35.11-83.fc14.i686 #1 SMP Mon Feb 7 07:04:18 UTC 2011 i686
+
+   libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                    PortAudio V19-devel (built Jul 28 2009) 1899
+                    Pulseaudio 0.9.21
+                    Hamlib 1.2.12
+Segmentation fault (core dumped)
+]0;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A>:fldigi-3.21.6[<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">haynes at Grover</A> fldigi-3.21.6]$ ^Dexit
+
+Script done on Mon 21 Mar 2011 06:40:33 PM CDT
+
+Script 3
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001810.html">fldigi 3.21.6
+</A></li>
+	<LI>Next message: <A HREF="001812.html">FAQ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1811">[ date ]</a>
+              <a href="thread.html#1811">[ thread ]</a>
+              <a href="subject.html#1811">[ subject ]</a>
+              <a href="author.html#1811">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fwd: fldigi behior strangeness
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20fldigi%20behior%20strangeness&In-Reply-To=%3C5f51f8060910131349y92992b8w8602db12a7e17cfa%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000207.html">
+   <LINK REL="Next"  HREF="000213.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fwd: fldigi behior strangeness</H1>
+    <B>John Douyere</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20fldigi%20behior%20strangeness&In-Reply-To=%3C5f51f8060910131349y92992b8w8602db12a7e17cfa%40mail.gmail.com%3E"
+       TITLE="Fwd: fldigi behior strangeness">vk2eta at gmail.com
+       </A><BR>
+    <I>Tue Oct 13 22:49:36 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000207.html">fldigi AN compiled with Ubuntu Karmic Koala beta
+</A></li>
+        <LI>Next message: <A HREF="000213.html">fldigi behior strangeness
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#210">[ date ]</a>
+              <a href="thread.html#210">[ thread ]</a>
+              <a href="subject.html#210">[ subject ]</a>
+              <a href="author.html#210">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Forwarded: I should have sent it to the mail list. Sorry.
+
+---------- Forwarded message ----------
+From: John Douyere &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">vk2eta at gmail.com</A>&gt;
+Date: Wed, Oct 14, 2009 at 7:47 AM
+Subject: Re: fldigi behior strangeness
+To: Gary Wescom &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">wescom at wildblue.net</A>&gt;
+
+
+Gary,
+
+First let me say that this behavior is intended but not to the extent that
+you mentioned and that it is controllable by parameters.
+
+I also noted that the PSK modes are far more susceptible to this drift than
+other modes like MSK. THOR doesn't move and has AFC automatically disabled
+since it can pickup drifts of up to around 100Hz.
+
+The logic is as follow: when Fldigi is used as a modem like with FLARQ for
+example, it is required to listen on a specific frequency and within a
+limited range of that frequency (say +/- 20Hz as a typical example).
+
+Since the AFC is required (there may be no operator around at time of
+connect) to lock in an incoming signal, the center frequency needs to be
+adjusted constantly as the modem is trying to lock in on any signal
+(including noise). This would result in the centre frequency drifting
+overtime far away from the targeted listening point.
+
+Therefore a few mechanisms are used for this purpose. First there is a
+&quot;reset to carrier&quot; function that regularly takes the centre frequency back
+to the sweet spot when we don't have a signal lock. Two, there are limits as
+to how far the centre frequency can &quot;wonder around&quot;. and three there is a
+sensitivity level for the centre frequency search.
+
+These mechanisms are triggered as soon as you start an ARQ application like
+FLARQ or Pskmail which explains why you see that behaviour when you start
+the latter, and it disappears only when you restart Fldigi.
+
+In 3.13AN you have two tabs for the behaviour of the PSK mode frequency
+search: one for QSO mode (Called &quot;General&quot;) and one for AQR mode (called
+&quot;Mail&quot;). I have attached two screen copies of my setup as a starting point
+for your investigation. These values give me a stable system for psk mode
+linkups.
+
+Hope this helps,
+
+Regards,
+
+John (VK2ETA)
+
+
+
+On Wed, Oct 14, 2009 at 5:46 AM, Gary Wescom &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">wescom at wildblue.net</A>&gt; wrote:
+
+&gt;<i>  While testing fldigi 3.13AN today with pskmail on XP today, I noticed
+</I>&gt;<i> something a bit strange.  I monitored 10.148 MHz for a while with fldigi.  I
+</I>&gt;<i> was getting good BPSK250 copy from a few stations.  Call signs W8MCH, KB2FN,
+</I>&gt;<i> WB5CON, KD5WQD, and others as I remember.  I then fired up jpskmail (version
+</I>&gt;<i> 0.3.7) for the first time to see what that was like.  Once I had gone
+</I>&gt;<i> through the basic configuratin of jpskmail I started paying attention to
+</I>&gt;<i> what was going on with fldigi.  I noticed then that it was bouncing around
+</I>&gt;<i> in frequency randomly over a range of plus and minus 200 Hz or so.  Turning
+</I>&gt;<i> of AFC did not stop this behaviour.  Squelch setting did not change the
+</I>&gt;<i> hopping around.
+</I>&gt;<i>
+</I>&gt;<i> The problem the hopping around seemed to cause is that it looked like I was
+</I>&gt;<i> starting to occasionally miss receiving the the first characters of
+</I>&gt;<i> transmissions.  It is like there is a search algorithm running that
+</I>&gt;<i> eventually finds the BPSK250 signal but because it is covering such a wide
+</I>&gt;<i> range, lock in can be slow.  This was also a bit of a problem at times when
+</I>&gt;<i> other nearby signals came on as it appeared fldigi was spending extra time
+</I>&gt;<i> figuring out that it was NOT hearing a BPSK250 signal and to start searching
+</I>&gt;<i> again.  Once this frequency hopping starts, shutting down jpskmail does not
+</I>&gt;<i> stop it.
+</I>&gt;<i>
+</I>&gt;<i> I believe I have seen this problem crop up during my testing with flarq
+</I>&gt;<i> with BPSK250 but didn't find a way to repeat it.  Oh yes, once this starts
+</I>&gt;<i> with BPSK250, it continues in other speeds of PSK.  The hopping around thing
+</I>&gt;<i> does not seem to show up if I switch some other mode like Olivia or MFSK but
+</I>&gt;<i> if I switch back to PSK it starts up again.  This continues until I stop and
+</I>&gt;<i> restart fldigi.
+</I>&gt;<i>
+</I>&gt;<i> To repeat, today's repeatable wierdness:  Windows XP - fldigi up and
+</I>&gt;<i> running and successfully monitoring BPSK250 transmissions on 10.148 MHz
+</I>&gt;<i> (10.146.5 MHz plus 1500 Hz audio center).  Start jpskmail and after first
+</I>&gt;<i> automatic transmission, fldigi receive frequency randomly hops around up to
+</I>&gt;<i> 200 Hz.
+</I>&gt;<i>
+</I>&gt;<i> First off, I guess I should ask if this is an intended design feature.  If
+</I>&gt;<i> it is, what it the intent?
+</I>&gt;<i>
+</I>&gt;<i> Gary - N0GW
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/f86eb6cd/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/f86eb6cd/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Fldigi 3.13AN - Psk - General - Config.JPG
+Type: image/jpeg
+Size: 30304 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/f86eb6cd/attachment.jpe">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/f86eb6cd/attachment.jpe</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Fldigi 3.13AN - Psk - Mail - Config.JPG
+Type: image/jpeg
+Size: 30227 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/f86eb6cd/attachment-0001.jpe">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/f86eb6cd/attachment-0001.jpe</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Fldigi 3.13AN - Misc - Sweet Spot  - Config.JPG
+Type: image/jpeg
+Size: 26112 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/f86eb6cd/attachment-0002.jpe">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/f86eb6cd/attachment-0002.jpe</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000207.html">fldigi AN compiled with Ubuntu Karmic Koala beta
+</A></li>
+	<LI>Next message: <A HREF="000213.html">fldigi behior strangeness
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#210">[ date ]</a>
+              <a href="thread.html#210">[ thread ]</a>
+              <a href="subject.html#210">[ subject ]</a>
+              <a href="author.html#210">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

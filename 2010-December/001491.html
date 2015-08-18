@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Notifications and Run Program
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Notifications%20and%20Run%20Program&In-Reply-To=%3C4CF6CFE8.20104%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001490.html">
+   <LINK REL="Next"  HREF="001492.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Notifications and Run Program</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Notifications%20and%20Run%20Program&In-Reply-To=%3C4CF6CFE8.20104%40gmail.com%3E"
+       TITLE="Notifications and Run Program">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Wed Dec  1 23:44:56 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001490.html">Notifications and Run Program
+</A></li>
+        <LI>Next message: <A HREF="001492.html">Attn: FT-450, 950, 2000, 5000, and 9000 Fldigi Hamlib users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1491">[ date ]</a>
+              <a href="thread.html#1491">[ thread ]</a>
+              <a href="subject.html#1491">[ subject ]</a>
+              <a href="author.html#1491">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>If we assume that the macro &lt;REGEXP:x:y&gt; waits for x seconds, a string 
+matching &quot;y&quot; (REGEXP means &quot;regular expression&quot;, a kind of string 
+matcher), such a macro syntax might help:
+
+&lt;REGEXP:60:paNBEMS [WX|FLMSG]&gt;&lt;TX&gt;Received $Match&lt;RX&gt;&lt;REPEAT&gt;
+
+It would translate as:
+
+Wait 60 seconds until a string matches &quot;paNBEMS WX&quot; or &quot;paNBEMS FLMSG&quot;. 
+If yes, transmit the string &quot;Received 'matched string'&quot;. If not, do 
+nothing. Then repeat the macro.
+
+Or:
+
+&lt;REGEXP:60:paNBEMS [WX|FLMSG]&gt;&lt;EXEC&gt;echo $Match | mail -s nbems 
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">user at address.com</A> &lt;/EXEC&gt;&lt;REPEAT&gt;
+
+... which would mean:
+
+Wait 60 seconds until a string matches &quot;paNBEMS WX&quot; or &quot;paNBEMS FLMSG&quot;. 
+If yes, mail the matched string. If not, do nothing. Then repeat the macro.
+
+
+FYI, I am (slowly) thinking about something like that for a different 
+application (Frequency scanning), at the price of a couple of changes to 
+the macro execution logic.
+
+
+Le 30.11.2010 23:35, Dave Kleber a &#233;crit :
+&gt;<i> Well, knowing little to nothing about programming, I think what you're
+</I>&gt;<i> saying is what I was looking for.
+</I>&gt;<i>
+</I>&gt;<i> I brought the subject up because a local NWS station has expressed some
+</I>&gt;<i> interest in getting set up for NBEMS. They have a fairly large call
+</I>&gt;<i> watch area and the furthest Counties out can't be reached by VHF/UHF.
+</I>&gt;<i> They have an HF station and antenna. The thought would be to have anyone
+</I>&gt;<i> at the office simply turn on the station which would be locked to a
+</I>&gt;<i> fixed 80m frequency. Then boot up the computer, which we could have
+</I>&gt;<i> NBEMS set to open on start up. From there, have the notification feature
+</I>&gt;<i> act upon a certain text string (i.e. &quot;paNBEMS WX&quot; or &quot;paNBEMS FLMSG&quot;),
+</I>&gt;<i> which would trigger an event that would automatically print the wrap
+</I>&gt;<i> message following the trigger text. The sound of the page being printed
+</I>&gt;<i> would alert the forecasters of an incoming message. Maybe an additional
+</I>&gt;<i> event for a wave file could be done, too.
+</I>&gt;<i>
+</I>&gt;<i> Something along the lines of what I describe would have been a major
+</I>&gt;<i> plus on our last Simulated Emergency Test (SET) exercise last month. A
+</I>&gt;<i> traffic manager at our Official Relay station could have simply
+</I>&gt;<i> collected the printed messages and managed the direction of the traffic,
+</I>&gt;<i> by priority, to the various nets on different frequencies and bands we
+</I>&gt;<i> were relaying to.
+</I>&gt;<i>
+</I>&gt;<i> -Dave, KB3FXI
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On 11/30/2010 5:57 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> wrote:
+</I>&gt;&gt;<i> Hi,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Are you thinking about a macro with a filter string which would
+</I>&gt;&gt;<i> trigger a program upon reception of this string ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This macro could also try a range of frequency, waiting X seconds on
+</I>&gt;&gt;<i> each of them.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Le 30.11.2010 21:06, Dave Kleber a &#233;crit :
+</I>&gt;&gt;&gt;<i> Hello all,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> In reading the online help for FLDIGI, I see that the &quot;run program&quot;
+</I>&gt;&gt;&gt;<i> feature under notifications is currently limited to Unix/Linux.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I'm wondering if this feature will be extended to the other operating
+</I>&gt;&gt;&gt;<i> systems and would be interested in seeing some practical examples of
+</I>&gt;&gt;&gt;<i> programs that might run with the notification trigger. I'd also like to
+</I>&gt;&gt;&gt;<i> know if the following might be possible:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> If notification were set, for instance, to activate upon receiving
+</I>&gt;&gt;&gt;<i> &quot;paNBEMS flmsg&quot;, would it be possible to activate a batch file routine
+</I>&gt;&gt;&gt;<i> to automatically print an flmsg message following the &quot;paNBEMS flmsg&quot;
+</I>&gt;&gt;&gt;<i> text?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> This could be a very powerful feature in the advancement of NBEMS,
+</I>&gt;&gt;&gt;<i> especially for EOC, NWS and Official Emergency/Relay station operations.
+</I>&gt;&gt;&gt;<i> My thought is that with this functionality, even stations waiting for
+</I>&gt;&gt;&gt;<i> the arrival of a licensed op could get automatic print outs of all
+</I>&gt;&gt;&gt;<i> priority and emergency messages on a fixed frequency by simply turning
+</I>&gt;&gt;&gt;<i> on a transceiver and booting up the connected computer and printer.
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001490.html">Notifications and Run Program
+</A></li>
+	<LI>Next message: <A HREF="001492.html">Attn: FT-450, 950, 2000, 5000, and 9000 Fldigi Hamlib users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1491">[ date ]</a>
+              <a href="thread.html#1491">[ thread ]</a>
+              <a href="subject.html#1491">[ subject ]</a>
+              <a href="author.html#1491">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

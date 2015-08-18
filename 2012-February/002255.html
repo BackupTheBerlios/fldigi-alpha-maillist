@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI and Packet Operation: openpty()
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3CCAE3hgTdXLPb6x2WmTsy020Cq3%2BJokLLTsRh8goA77VsMbkjDTw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002254.html">
+   <LINK REL="Next"  HREF="002257.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI and Packet Operation: openpty()</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3CCAE3hgTdXLPb6x2WmTsy020Cq3%2BJokLLTsRh8goA77VsMbkjDTw%40mail.gmail.com%3E"
+       TITLE="FLDIGI and Packet Operation: openpty()">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sun Feb 12 00:07:28 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002254.html">Cyrillic macros
+</A></li>
+        <LI>Next message: <A HREF="002257.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2255">[ date ]</a>
+              <a href="thread.html#2255">[ thread ]</a>
+              <a href="subject.html#2255">[ subject ]</a>
+              <a href="author.html#2255">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, Feb 11, 2012 at 2:46 PM, Charles Brabham &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">n5pvl at uspacket.org</A>&gt; wrote:
+
+&gt;<i> **
+</I>&gt;<i> To hear some people's political opinions about Packet, you would think
+</I>&gt;<i> that it would not work at all.
+</I>&gt;<i>
+</I>
+&gt;<i> Only thing is... It does work, and has worked FB on HF for decades. Not
+</I>&gt;<i> only that, but AX25 Packet does things that most other digital modes simply
+</I>&gt;<i> cannot do.
+</I>&gt;<i>
+</I>&gt;<i> If you leave off the politics and just stick with observed reality, the
+</I>&gt;<i> fact is that no other digital mode has been developed yet to do what Packet
+</I>&gt;<i> does - but better.
+</I>&gt;<i>
+</I>&gt;<i> Q15x25 was a nice try, but in on the air tests, regular old HF Packet was
+</I>&gt;<i> more robust, and provided better throughput despite the lower baud rate. We
+</I>&gt;<i> had great hopes for Q15x25, but it did not prove to be better than 300 baud
+</I>&gt;<i> Packet.
+</I>&gt;<i>
+</I>&gt;<i> The old urban myth about Packet being technically unusable on HF was
+</I>&gt;<i> started in the late 80's by amateur TCPIP buffs who were frustrated because
+</I>&gt;<i> nobody liked amateur TCPIP.
+</I>&gt;<i>
+</I>
+&gt;<i> The situation hasn't changed... HF Packet is still going strong,
+</I>&gt;<i> and the myth-makers are still frustrated because nobody likes amateur TCPIP.
+</I>&gt;<i>
+</I>
+And here I thought that the old AX.25 vs. TCP/IP wars were over. I know I
+moved on. I guess there are die-hards everywhere. :-)
+
+And for what it's worth, if we compare the success of TCP/IP with the
+success of any flavor of X.25, including the mis-named AX.25, well, the
+jury is definitely in on that topic. :-)
+
+But getting back to AMPR on HF, consider: that something works does not
+mean that it is optimal and cannot be made better. And my comments about
+both the FSK modem and the AX.25 protocol specifics are true no matter who
+speaks them. Phil Karn and I did an excellent analysis of the AX.25
+shortcomings back in the 1987 or 1988 ARRL Computer Networking Conference.
+We ran computer simulations and then backed them up with real-world
+observations of live networks. And the observations and conclusions haven't
+changed, even after 25 years. (Wow, has it been that long?)
+
+So, just because it works doesn't mean it can't get better. And just
+because someone who likes TCP/IP says it, doesn't mean it isn't true.
+Frankly, I couldn't care less about running TCP/IP over an HF link but I do
+think that it is possible to craft a better protocol that will do what
+AX.25 is doing, but do it better and more reliably. It would be quite
+interesting to see progress in this area rather than arguments about how
+adequate it is.
+
+73 OM
+
+-- 
+Brian Lloyd, WB6RQN/J79BPL
+3191 Western Dr.
+Cameron Park, CA 95682
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A>
++1.767.617.1365 (Dominica)
++1.916.877.5067 (USA)
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120211/3e829025/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120211/3e829025/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002254.html">Cyrillic macros
+</A></li>
+	<LI>Next message: <A HREF="002257.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2255">[ date ]</a>
+              <a href="thread.html#2255">[ thread ]</a>
+              <a href="subject.html#2255">[ subject ]</a>
+              <a href="author.html#2255">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

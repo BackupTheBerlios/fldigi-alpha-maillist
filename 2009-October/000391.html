@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> flrig 0.9.951 available for testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flrig%200.9.951%20available%20for%20testing&In-Reply-To=%3C4AE8D098.10705%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000389.html">
+   <LINK REL="Next"  HREF="000390.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>flrig 0.9.951 available for testing</H1>
+    <B>Joseph A. Counsil</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flrig%200.9.951%20available%20for%20testing&In-Reply-To=%3C4AE8D098.10705%40gmail.com%3E"
+       TITLE="flrig 0.9.951 available for testing">counsil at rollanet.org
+       </A><BR>
+    <I>Thu Oct 29 00:15:36 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000389.html">flrig 0.9.951 available for testing
+</A></li>
+        <LI>Next message: <A HREF="000390.html">flrig 0.9.951 available for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#391">[ date ]</a>
+              <a href="thread.html#391">[ thread ]</a>
+              <a href="subject.html#391">[ subject ]</a>
+              <a href="author.html#391">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave,
+
+You've been busy!
+
+I tried it with my FT100D, and unfortunately it only partially works. 
+
+* The frequency does not display (it displays all 0.000), and the mode 
+and filter do not display to reflect changes at the radio.
+* When I try to enter a frequency, I can not enter any numbers to the 
+right of the decimal point.  Also, to get 7.0 MHz, I have to enter &quot;70.000&quot;.
+* The S-meter displays occasionally for very strong signals, but seems 
+to be off.
+* I CAN change mode to any of the modes in the list, and the radio 
+properly changes.
+* PTT via CAT works as it should.  Also, PTT via serial port works as it 
+should.
+
+I tried massively increasing the time delays for the CAT, but that did 
+not improve things.
+
+Here is a short burst from the event log in debug mode while it was 
+polling for frequency.  Perhaps you can make something of it.  The 
+frequency was set to 7.000.000 MHz.
+
+W: main: flrig log started on Wed Oct 28 18:05:09 2009
+
+E: init_xmlrpc: xmlrpc queries disabled
+Unable to transport XML to server and get XML response back.  libcurl 
+failed to execute the HTTP POST transaction.  Failed connect to 
+localhost:7362; No error
+W: initStatusConfigDialog: Aux port not selected
+D: sendCommand: sent 00 00 00 00 10
+D: sendCommand: reply 07 00 55 73 00 11 08 00 03 F1 00 00 03 33 00 22 0B 
+00 AB C0 C0 11 08 00 00 A0 00 00 03 33 11 22
+D: sendCommand: sent 00 00 00 00 F7
+D: sendCommand: reply FF 01 00 76 00 00 FF 5D C4
+D: sendCommand: sent 00 00 00 00 10
+D: sendCommand: reply 07 00 55 73 00 11 08 00 03 F1 00 00 03 33 00 22 0B 
+00 AB C0 C0 11 08 00 00 A0 00 00 03 33 11 22
+D: sendCommand: sent 00 00 00 00 F7
+D: sendCommand: reply FF 01 00 71 00 00 FF 5D C4
+D: sendCommand: sent 00 00 00 00 10
+D: sendCommand: reply 07 00 55 73 00 11 08 00 03 F1 00 00 03 33 00 22 0B 
+00 AB C0 C0 11 08 00 00 A0 00 00 03 33 11 22
+D: sendCommand: sent 00 00 00 00 F7
+D: sendCommand: reply FF 01 00 75 00 00 FF 5D C4
+D: sendCommand: sent 00 00 00 00 10
+D: sendCommand: reply 07 00 55 73 00 11 08 00 03 F1 00 00 03 33 00 22 0B 
+00 AB C0 C0 11 08 00 00 A0 00 00 03 33 11 22
+D: sendCommand: sent 00 00 00 00 F7
+D: sendCommand: reply FF 01 00 73 00 00 FF 5D C4
+D: sendCommand: sent 00 00 00 00 10
+D: sendCommand: reply 07 00 55 73 00 11 08 00 03 F1 00 00 03 33 00 22 0B 
+00 AB C0 C0 11 08 00 00 A0 00 00 03 33 11 22
+D: sendCommand: sent 00 00 00 00 F7
+D: sendCommand: reply FF 01 00 82 00 00 FF 5D C4
+D: sendCommand: sent 00 00 00 00 10
+
+73,
+-Joe-
+
+w1hkj wrote:
+&gt;<i> Flrig is a separate rig control program that can be also run as an 
+</I>&gt;<i> adjunct to fldigi on Linux and Windows platforms (no OS X yet).  It 
+</I>&gt;<i> currently supports the following transceivers
+</I>&gt;<i>
+</I>&gt;<i> 1.  FT100D          11. IC756PRO-II         21. TT516
+</I>&gt;<i> 2.  FT450           12. IC756PRO-II         22. TT538
+</I>&gt;<i> 3.  FT817           13. IC7000              23. TT550
+</I>&gt;<i> 4.  FT857D          14. IC7200              24. TT563
+</I>&gt;<i> 5.  FT2000          15. IC7700
+</I>&gt;<i> 6.  IC706MKIIG      16. IC910H
+</I>&gt;<i> 7.  IC728           17. K2
+</I>&gt;<i> 8.  IC735           18. K3
+</I>&gt;<i> 9.  IC746           19. TS140
+</I>&gt;<i> 10. IC746PRO        20. TS2000
+</I>&gt;<i>
+</I>&gt;<i> The program configures its primary dialog in accordance with the 
+</I>&gt;<i> capability of the transceiver.  The user only sees and can operate the 
+</I>&gt;<i> controls that are relevant to the transceiver being controlled.  
+</I>&gt;<i> Controls not available are either hidden or grayed out.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Older Icom Model
+</I>&gt;<i> 	
+</I>&gt;<i>
+</I>&gt;<i> Modern Icom HF/VHF all mode
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Low cost Yaesu HF all mode
+</I>&gt;<i> 	
+</I>&gt;<i>
+</I>&gt;<i> TenTec - Pegasus - Computer Only Transceiver
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> If you use the program with fldigi, then fldigi needs to start first 
+</I>&gt;<i> and finish last as it acts as a socket server to the flrig program.  
+</I>&gt;<i> When used together flrig sends vital data to fldigi respecting the 
+</I>&gt;<i> transceiver characteristic, TRANSCEIVER MODES / TRANSCEIVER 
+</I>&gt;<i> BANDWIDTHS.  For some transceivers the bandwidth selection is mode 
+</I>&gt;<i> dependent.  flrig manages that relationship.  You tell fldigi to work 
+</I>&gt;<i> with flrig by selecting the rig control called &quot;xmlrpc&quot; from the rig 
+</I>&gt;<i> control configuration tabs.
+</I>&gt;<i>
+</I>&gt;<i> Most, but not all of the supported transceivers have been tested.  
+</I>&gt;<i> Remember that you will be testing alpha code if you choose to try this 
+</I>&gt;<i> program.
+</I>&gt;<i>
+</I>&gt;<i> The s/n and power out meters will be active if and only if your 
+</I>&gt;<i> transceiver supports sending that data.
+</I>&gt;<i>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.951.zip">http://www.w1hkj.com/alpha/flrig-0.9.951.zip</A> - windows executable
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.951.tgz">http://www.w1hkj.com/alpha/flrig-0.9.951.tgz</A> - linux binary
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.951.src.tgz">http://www.w1hkj.com/alpha/flrig-0.9.951.src.tgz</A> - source code
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/rig.png">http://www.w1hkj.com/alpha/rig.png</A> - image suitable for linux
+</I>&gt;<i>       desktop launcher
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>   
+</I>
+-- 
++---------------------------------------------------------------+
+|<i> Joseph A. Counsil  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>  Phone:(573) 341-5186 |
+</I>|<i> 1310 Woodlawn Drive, Rolla, MO 65401  Amateur Radio: - K&#216;OG - |
+</I>+---------------------------------------------------------------+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000389.html">flrig 0.9.951 available for testing
+</A></li>
+	<LI>Next message: <A HREF="000390.html">flrig 0.9.951 available for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#391">[ date ]</a>
+              <a href="thread.html#391">[ thread ]</a>
+              <a href="subject.html#391">[ subject ]</a>
+              <a href="author.html#391">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

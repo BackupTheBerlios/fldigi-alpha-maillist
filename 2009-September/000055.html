@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13AE alpha test posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AE%20alpha%20test%20posted&In-Reply-To=%3C4A9CF981.7050301%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000058.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13AE alpha test posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AE%20alpha%20test%20posted&In-Reply-To=%3C4A9CF981.7050301%40bellsouth.net%3E"
+       TITLE="fldigi 3.13AE alpha test posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Tue Sep  1 12:37:53 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000058.html">fldigi 3.13AE alpha test posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#55">[ date ]</a>
+              <a href="thread.html#55">[ thread ]</a>
+              <a href="subject.html#55">[ subject ]</a>
+              <a href="author.html#55">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Version 3.13AE
+
+    * Source code:
+      <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AE.tar.gz">http://www.w1hkj.com/friday/fldigi-3.13AE.tar.gz</A>
+    * Linux binary:
+      <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AE.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AE.bin.tgz</A>
+    * Linux binary without pulse audio dependency:
+      <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AE.npa.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AE.npa.bin.tgz</A>
+    * Windows setup:
+      <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AE_setup.exe">http://www.w1hkj.com/friday/fldigi-3.13AE_setup.exe</A>
+    * OSX binary:
+      <A HREF="http://download2.berlios.de/pub/fldigi/alpha/fldigi-3.13AE.dmg">http://download2.berlios.de/pub/fldigi/alpha/fldigi-3.13AE.dmg</A>
+
+Changes:
+
+Improve RSID notifications
+
+*Enable concurrent RSID decoding
+*    * Change Sound*::Read methods to float
+    * Enable RSID upsampling for 8 KHz modems
+    * Add main.{get,set,toggle}_rsid XML-RPC methods
+    * Add option to disable RSID decoding on reception
+    * RSID may be enabled during transmit or tune
+
+Clean up RSID code
+
+Handle nested qrunner calls
+
+Fix notifier TX text handling
+
+Replace all occurences of backreference strings in the &quot;TX text&quot; field.
+
+Fix log/manual spotting
+
+Change transmit-lock marker width
+    In some modes, the main marker is wider than the modem bandwidth. The
+    transmit-lock marker must always be the same width as vertical tracks.
+
+Add missing include
+
+*PSK post DCD signal   
+    Increased post DCD signal to be same length as pre DCD signal
+*
+The two big changes are in bold.
+
+
+RSID is now a background modem that runs concurrent with your normal 
+operations. You can have the RSID detector automatically change the 
+operation to the detected frequency and mode, or simply annunciate the 
+detected RSID signal.  Please test this as often as you can.  This is a 
+significant change in the processing path for RSID.   Thanks Stelios.
+
+73, Dave, W1HKJ
+for the development team
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090901/3f84da7d/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090901/3f84da7d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000058.html">fldigi 3.13AE alpha test posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#55">[ date ]</a>
+              <a href="thread.html#55">[ thread ]</a>
+              <a href="subject.html#55">[ subject ]</a>
+              <a href="author.html#55">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

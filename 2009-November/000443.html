@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> hamlib and Mode Change on IC706MKIIG
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20hamlib%20and%20Mode%20Change%20on%20IC706MKIIG&In-Reply-To=%3C200911081600.46226.pinozollo%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000444.html">
+   <LINK REL="Next"  HREF="000445.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>hamlib and Mode Change on IC706MKIIG</H1>
+    <B>Pino Zollo</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20hamlib%20and%20Mode%20Change%20on%20IC706MKIIG&In-Reply-To=%3C200911081600.46226.pinozollo%40gmail.com%3E"
+       TITLE="hamlib and Mode Change on IC706MKIIG">pinozollo at gmail.com
+       </A><BR>
+    <I>Sun Nov  8 20:00:45 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000444.html">Flrig S Meter not showing any level VFO update
+</A></li>
+        <LI>Next message: <A HREF="000445.html">Help compiling under Windows with cygwin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#443">[ date ]</a>
+              <a href="thread.html#443">[ thread ]</a>
+              <a href="subject.html#443">[ subject ]</a>
+              <a href="author.html#443">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi List,
+
+This just to let you know that in hamlib 1.2.9 and to 1.2.10 the Mode change 
+with IC 706 MKIIG is broken.
+
+I ignore about other rigs.
+
+You can check it from fldigi trying to change mode: only AM  and FM do succeed 
+but it inserts the narrow filter ( M3 FIL).
+
+This can be checked also using the rigctl ( In my case: rigctl -m 
+311 -r /dev/ttyS0 -s 9600 -c0x58 -vvvvv)
+
+Actually hamlib sends :
+
+FE FE 58 E0 06 01 02 FD
+
+or
+ 
+FE FE 58 E0 06 03 02 FD
+
+where the 02 forces the narrow band filter....this happens which ever 
+parameter is given to the M command e.g.
+
+M USB 1
+or
+M USB 2
+
+Only M USB 0  fails which, in accord to the manual,  should set the default 
+mode.
+
+By the way I am using 'jpnevulator --ascii  --tty /dev/ttyS0 --read' to check 
+what hamlib sends to the radio.
+
+The same behaviour happens using rigctld as in DBLog.
+
+Please, can somebody with other radio, check how is the behaviour of hamlib in 
+his set-up ?
+
+By the time I suggest to go back to version 1.2.8.
+
+Also the polling of the mode seems to fail in USB and CW: the inserted filter 
+is not recognised with the 'm' command, but it works if the radio is in AM o 
+FM.
+
+Best 73
+
+Pino ZP4KFX
+
+-- 
+Key ID: 0xF6768208 
+Key fingerprint = B16D 0A7C 5B29 A334 CE6A  71F6 EAF8 3D88 F676 8208
+Key server: <A HREF="hkp://wwwkeys.eu.pgp.net">hkp://wwwkeys.eu.pgp.net</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000444.html">Flrig S Meter not showing any level VFO update
+</A></li>
+	<LI>Next message: <A HREF="000445.html">Help compiling under Windows with cygwin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#443">[ date ]</a>
+              <a href="thread.html#443">[ thread ]</a>
+              <a href="subject.html#443">[ subject ]</a>
+              <a href="author.html#443">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

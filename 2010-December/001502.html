@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> PSK31 spotting without GUI?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20PSK31%20spotting%20without%20GUI%3F&In-Reply-To=%3C4D13987F.4000602%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001501.html">
+   <LINK REL="Next"  HREF="001503.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>PSK31 spotting without GUI?</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20PSK31%20spotting%20without%20GUI%3F&In-Reply-To=%3C4D13987F.4000602%40WA5ZNU.org%3E"
+       TITLE="PSK31 spotting without GUI?">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Thu Dec 23 19:44:15 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001501.html">PSK31 spotting without GUI?
+</A></li>
+        <LI>Next message: <A HREF="001503.html">PSK31 spotting without GUI?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1502">[ date ]</a>
+              <a href="thread.html#1502">[ thread ]</a>
+              <a href="subject.html#1502">[ subject ]</a>
+              <a href="author.html#1502">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>There's been some thought abotu an fldigi-lib but it would be a major task.
+Outside of fldigi I did a PSK engine (ui-free, network-based) in Java 
+called znudigi, mostly for academic purposes; it doesn't do spotting or 
+multi-decoding.
+
+With the current software, here's what I found:
+Setting the waterfall speed to PAUSE causes the CPU usage to drop from 
+14% to 12% on my system.
+Changing from Best to Fast Sinc interpolator under Sound Settings causes 
+it to drop to 4%.
+I also tried moving the main RX squelch slider all the way up and didn't 
+see any change.
+At that point, re-enabling waterfall speed didn't increase CPU usage.
+
+What X server are you using? There is an X server called xvnc that 
+writes solely to memory and not to display, and you can then connect to 
+them with VNC if you want to see.
+
+Leigh/WA5ZNU
+
+On 12/23/2010 10:17 AM, Rob Frohne wrote:
+&gt;<i> Hi Everyone,
+</I>&gt;<i>
+</I>&gt;<i> I've been using fldigi to spot PSK31 signals on our websdr server. 
+</I>&gt;<i> &lt;<A HREF="http://outside.wallawalla.edu:8901/">http://outside.wallawalla.edu:8901/</A>&gt;  I have been using jack to feed 
+</I>&gt;<i> the audio to websdr and to sdr-core (DttSP) and then on to fldigi.  I 
+</I>&gt;<i> would like to run more instances of fldigi to spot for more bands, but 
+</I>&gt;<i> the load is getting a bit heavy for the CPU to keep up with.  The 
+</I>&gt;<i> instances of fldigi are the biggest CPU hogs and NX which I was using 
+</I>&gt;<i> because I need X to use fldigi is sometimes also a big CPU user.  What 
+</I>&gt;<i> I think I want is the PSK spotting engine of fldigi running without 
+</I>&gt;<i> all the GUI and from the command line.  What is the best way to 
+</I>&gt;<i> address these issues?
+</I>&gt;<i>
+</I>&gt;<i> Thanks &amp; 73,
+</I>&gt;<i>
+</I>&gt;<i> Rob
+</I>&gt;<i> KL7NA
+</I>&gt;<i> -- 
+</I>&gt;<i> Rob Frohne, Ph.D., P.E.
+</I>&gt;<i> E.F. Cross School of Engineering
+</I>&gt;<i> Walla Walla University
+</I>&gt;<i> 100 SW 4th Street
+</I>&gt;<i> College Place, WA 99324
+</I>&gt;<i> (509) 527-2075			<A HREF="http://people.wallawalla.edu/~rob.frohne">http://people.wallawalla.edu/~rob.frohne</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101223/b3cc761a/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101223/b3cc761a/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001501.html">PSK31 spotting without GUI?
+</A></li>
+	<LI>Next message: <A HREF="001503.html">PSK31 spotting without GUI?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1502">[ date ]</a>
+              <a href="thread.html#1502">[ thread ]</a>
+              <a href="subject.html#1502">[ subject ]</a>
+              <a href="author.html#1502">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

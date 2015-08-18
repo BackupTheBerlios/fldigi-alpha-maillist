@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.22.0BC alpha posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.22.0BC%20alpha%20posted&In-Reply-To=%3C4EC66273.2070102%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002144.html">
+   <LINK REL="Next"  HREF="002146.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.22.0BC alpha posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.22.0BC%20alpha%20posted&In-Reply-To=%3C4EC66273.2070102%40bellsouth.net%3E"
+       TITLE="fldigi-3.22.0BC alpha posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Nov 18 14:49:39 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002144.html">Fldigi Decoding While Other Commands Sleeping-on-the-Job
+</A></li>
+        <LI>Next message: <A HREF="002146.html">fldigi-3.22.0BC alpha posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2145">[ date ]</a>
+              <a href="thread.html#2145">[ thread ]</a>
+              <a href="subject.html#2145">[ subject ]</a>
+              <a href="author.html#2145">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+
+Note ADIF write log commit in the summary of changes.  This is a 
+synopsis of tests I performed on various systems using 3.22.0BC and a 
+logbook database consisting of 35,787 records.
+
+System
+	CPU/RAM
+	Time to load
+mini-Mac
+	1.25 GHz Power PC, G4 1 G ram
+	27.55 seconds
+mini-Mac
+	1.83 GHz Intel Core 2 Duo, 1 G ram
+	8.26 seconds
+Lenovo S10 XP
+	Atom N270 1.6 GHz, 1.6 G ram
+	30.25 seconds
+Lenovo S10 Ubuntu 10.04
+	Atom N270 1.6 GHz, 1.6 G ram
+	11.67 seconds
+Vista HP desktop
+	AMD Athalon 64 X2 2.3 GHz, 3 G ram
+	12.25 seconds
+Ubuntu 10.04 HP desktop
+	AMD Athalon 64 X2 2.3 GHz, 3 G ram
+	4.83 seconds
+
+
+Both reads and writes to the logbook now take place as a background 
+process (separate thread).  This allows the UI to remain responsive 
+while the read and write takes place.  The Lenovo S10 and HP desktop 
+results provide fairly strong proof that Linux is a better performer on 
+the same hardware.  These two systems are dual boot.
+
+I strongly urge you to back up your logbook adi(f) file before testing 
+this version.
+
+73, Dave, w1hkj
+
+Summary of changes sinc 3.22.0BA
+
+Version 3.22.0BC - Alpha release
+
+   ADIF write_log
+     * Created separate thread for reading/writing database.  User with
+       over 35,000 records was experiencing UI interruption of several
+       seconds on Windows XP system.
+
+   WEFAX error logging fix
+     * Fixed format compiler warnings and errors.
+
+   Restore Log Sort
+     * After adding a record
+
+   Wefax enhancements.
+     * Adjustable carrier frequency. Can adjust the carrier frequency 
+from the GUI.
+     * All messages are now internationalised.
+     * Images absence/presence better detected also with line-to-line 
+statistic correlation.
+
+   Use Logbook record
+     * Added Dial button in logbook editor to set frequency / mode / 
+operator
+       to the the current record.
+       - allows easy retrieval of logged data to either continue a QSO or
+         set one up based on a log entry.
+
+   eQSL update
+     * Added embedded tags to optional message
+        - {CALL} other operators callsign
+       - {NAME} other operators name
+       - {MODE} full mode / submode
+         eQSL.cc does not accept all submodes, i.e
+         MFSK11 must be logged at MFSK16
+         THROB4 must be logged as THRB etc.
+         This tag allows you to add specificity to the
+         eQSL record
+     * Added default message
+     * Added switch to enable sending eQSL when either
+       - log button is pressed
+       - &lt;LOG&gt; or &lt;LNW&gt; is encountered in macro
+       - logic to disallow duplicating eQSL submission
+
+   eQSL thread
+     * Changed send URL to separate thread implementation
+       - prevents interruption to decoder / GUI while waiting
+         for eQSL.cc response
+       - removed popup messages
+       - added event logging
+
+   eQSL
+     * Changed User Nickname to QTH Nickname on configuration tab
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111118/a5ad5c58/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111118/a5ad5c58/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002144.html">Fldigi Decoding While Other Commands Sleeping-on-the-Job
+</A></li>
+	<LI>Next message: <A HREF="002146.html">fldigi-3.22.0BC alpha posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2145">[ date ]</a>
+              <a href="thread.html#2145">[ thread ]</a>
+              <a href="subject.html#2145">[ subject ]</a>
+              <a href="author.html#2145">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

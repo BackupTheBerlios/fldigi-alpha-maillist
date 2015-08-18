@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Portaudio problem.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20problem.&In-Reply-To=%3C4B371148.8000304%40urbakken.dk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000612.html">
+   <LINK REL="Next"  HREF="000615.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Portaudio problem.</H1>
+    <B>Erik Jakobsen</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20problem.&In-Reply-To=%3C4B371148.8000304%40urbakken.dk%3E"
+       TITLE="Portaudio problem.">eja at urbakken.dk
+       </A><BR>
+    <I>Sun Dec 27 08:48:24 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000612.html">Version 3.13BJ
+</A></li>
+        <LI>Next message: <A HREF="000615.html">Portaudio problem.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#614">[ date ]</a>
+              <a href="thread.html#614">[ thread ]</a>
+              <a href="subject.html#614">[ subject ]</a>
+              <a href="author.html#614">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi.
+
+I have just installed Fldigi 3.13BJ on a windows7 ultimate 64bit computer.
+
+I had the same problem while ago, and got info from Stelios to switch
+off the
+right channel in my audio. I'm running Flex 5000 A, and VAC.
+
+It did not helped to switch off this right channel.
+
+Here is the log showing the problem I have.
+
+index: 25
+name: Line 1 (Virtual Audio Cable)
+host API: Windows DirectSound
+max input channels: 0
+max output channels: 2
+default sample rate: 44100
+supported sample rates: Unknown
+input only: false
+output only: true
+full duplex: false
+system default input: false
+system default output: false
+host API default input: false
+host API default output: false
+default low input latency: 0
+default high input latency: 0
+default low output latency: 0
+default high output latency: 0
+
+D: [08:36:55] soundcard/sound.cxx:1331: input: resampling 48000.000000
+&lt;=&gt; 8000.000000
+D: [08:36:55] soundcard/sound.cxx:1335: input: frames_per_buffer=0
+D: [08:36:55] soundcard/sound.cxx:1202: input rbsize=16384
+E: [08:36:55] trx/trx.cxx:115: PortAudio error: Invalid number of channels
+D: [08:36:55] rigcontrol/rigio.cxx:88: reply 5A 5A 46 49 30 39 3B
+D: [08:36:55] rigcontrol/rigio.cxx:73: 5A 5A 49 46 3B
+D: [08:36:56] rigcontrol/rigio.cxx:88: reply 5A 5A 49 46 30 30 30 30 33
+35 38 32 36 33 32 30 30 31 31 2B 30 30 30 30 30 30 30 30 30 30 30 30 39
+30 30 30 30 30 30 30 3B
+D: [08:36:56] rigcontrol/rigio.cxx:73: 5A 5A 49 46 3B
+D: [08:36:56] soundcard/sound.cxx:1250: looking for device &quot;Line 1
+(Virtual Audio Cable)&quot;
+D: [08:36:56] soundcard/sound.cxx:1325: using input (1 ch) device &quot;Line
+1 (Virtual Audio Cable)&quot;:
+
+
+What could be the reason(s) ?
+
+-- 
+Med venlig hilsen / Best regards
+Erik Jakobsen OZ4KK
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">eja at urbakken.dk</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000612.html">Version 3.13BJ
+</A></li>
+	<LI>Next message: <A HREF="000615.html">Portaudio problem.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#614">[ date ]</a>
+              <a href="thread.html#614">[ thread ]</a>
+              <a href="subject.html#614">[ subject ]</a>
+              <a href="author.html#614">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> RTTY Improvement Work
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20RTTY%20Improvement%20Work&In-Reply-To=%3C4B9893BA.3010902%40persidus.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000973.html">
+   <LINK REL="Next"  HREF="000979.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>RTTY Improvement Work</H1>
+    <B>Mark</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20RTTY%20Improvement%20Work&In-Reply-To=%3C4B9893BA.3010902%40persidus.com%3E"
+       TITLE="RTTY Improvement Work">fldigi-alpha at persidus.com
+       </A><BR>
+    <I>Thu Mar 11 07:54:50 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000973.html">Follow up:  Copy and paste in 3.20b3
+</A></li>
+        <LI>Next message: <A HREF="000979.html">RTTY Improvement Work
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#974">[ date ]</a>
+              <a href="thread.html#974">[ thread ]</a>
+              <a href="subject.html#974">[ subject ]</a>
+              <a href="author.html#974">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi guys,
+
+First, let me introduce myself. My name is Mark Priddy and I've recently 
+graduated with a bachelors degree in engineering. During my time at the 
+university, I took a class on communication theory. For the project in 
+this class, my classmates and I worked on looking at how we could 
+improve fldigi while we were learning about communication systems.
+
+This brings me to why I'm sending this email. My professor in the class, 
+Rob Frohne, recently forwarded me an email from this mailing list about 
+interest in improving the RTTY code. I thought this might be a good time 
+to mention my (and Frohne's) work that we've done in improving the RTTY 
+code.
+
+So far, in a rather old version now, we've created a matched filter for 
+the RTTY code and created a maximum a posteriori detector which uses 
+statistical analysis to determine whether the received letter was really 
+what was sent. We've also worked out a way to determine when the most 
+optimal time to to sample the bits in the signal, using statistics based 
+off of the current transmission. This is currently what I'm working on 
+implementing now.
+
+The matched filter is the biggest improvement on output quality while 
+the maximum a posteriori detector makes roughly a 10% improvement 
+correcting a few more letters than it incorrectly &quot;corrected.&quot; While I 
+don't remember the specifics of a few test cases we did I do remember 
+that the improvement was quite impressive; running the same signal 
+through both the improved and the original fldigi we found that the 
+original code made the signal completely unreadable while the matched 
+filter code was still readable. (Frohne, do you remember the specifics?)
+
+While a lot of the code is done, I still have yet to polish the code and 
+integrate it with the interface and with the latest version of fldigi. 
+Since it has been almost a year since I started work on this, I haven't 
+looked at the latest fldigi code. Has any of this been implemented already?
+
+Anyway, I'm nearing completion on this and I hope to be able to submit 
+my code to the main developers soon! I thought I should let people know 
+what I was working on to minimize duplication of work. Hopefully someone 
+will find the code to be useful.
+
+Mark
+KE7UFF
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000973.html">Follow up:  Copy and paste in 3.20b3
+</A></li>
+	<LI>Next message: <A HREF="000979.html">RTTY Improvement Work
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#974">[ date ]</a>
+              <a href="thread.html#974">[ thread ]</a>
+              <a href="subject.html#974">[ subject ]</a>
+              <a href="author.html#974">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

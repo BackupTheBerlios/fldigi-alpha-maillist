@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Olivia events
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Olivia%20events&In-Reply-To=%3C50BCC6DC.4050308%40flex-radio.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002405.html">
+   <LINK REL="Next"  HREF="002408.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Olivia events</H1>
+    <B>Tim Ellison, W4TME</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Olivia%20events&In-Reply-To=%3C50BCC6DC.4050308%40flex-radio.com%3E"
+       TITLE="Olivia events">tim at flex-radio.com
+       </A><BR>
+    <I>Mon Dec  3 16:35:56 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002405.html">Repeater testing version info
+</A></li>
+        <LI>Next message: <A HREF="002408.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2407">[ date ]</a>
+              <a href="thread.html#2407">[ thread ]</a>
+              <a href="subject.html#2407">[ subject ]</a>
+              <a href="author.html#2407">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>If this is running on Vista or Win7, then it may be related to the 
+crappy down conversion code in Windows.
+
+Try setting Fldigi and the sound card's default sampling rate to 11025 
+and see if the problem is resolved.  That will point to the crappy 
+Windows down conversion code.
+
+In PowerSDR when we transfer audio to digital mode programs using VAC (a 
+virtual sound card &quot;conduit&quot;), we have to change the VAC default 
+sampling rate set in Windows  from 44.1k to 48k to eliminate unwanted 
+audio artifacts and improve SNR.  There is a how to article on our 
+HelpDesk that explains the problem and how to change the default 
+sampling rate of the sound device (card). We use Fldgi as an example. 
+<A HREF="http://helpdesk.flexradio.com/entries/20306323-sample-rate-synchronization-between-vac-and-vista-win7-sound-devices">http://helpdesk.flexradio.com/entries/20306323-sample-rate-synchronization-between-vac-and-vista-win7-sound-devices</A>
+
+
+Tim Ellison, W4TME
+
+On 10/15/2012 7:09 PM, Andrew O'Brien wrote:
+&gt;<i> Seems that the issue was related to sample rate of the sound card as 
+</I>&gt;<i> set in fldigi.  It was set at 11025 and after changing it to 4410 per 
+</I>&gt;<i> KB3FXI's suggestion, all Olivia problems were solved.  M&lt;any thanks to 
+</I>&gt;<i> Dave KB3FXI.
+</I>&gt;<i>
+</I>&gt;<i> Andy K3UK
+</I>&gt;<i>
+</I>&gt;<i> On Sun, Oct 14, 2012 at 7:26 PM, Leigh L. Klotz, Jr WA5ZNU 
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">Leigh at wa5znu.org</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">Leigh at wa5znu.org</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>     Dave, if you got the Olivia modem from gMFSK, that's the code I
+</I>&gt;<i>     got from Pawel Jalocha directly and sent to Tomi OH2BNS.
+</I>&gt;<i>     gMFSK was the first and only program outside of Pawel's own test
+</I>&gt;<i>     program to run Olivia, for quite some time. Pawel released the
+</I>&gt;<i>     code under GPL at my request directly.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     Patrick F6CTE writes MultiPSK in Pascal, and also it is not GPL,
+</I>&gt;<i>     so it cannot be incorporating the original code, though he may
+</I>&gt;<i>     have examined it by some separate agreement with Pawel.  As for
+</I>&gt;<i>     MixW, it's also proprietary and I don't know the implementation
+</I>&gt;<i>     language, so either it was re-implemented or made available
+</I>&gt;<i>     directly by Pawel.
+</I>&gt;<i>
+</I>&gt;<i>     Leigh/WA5ZNU
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     On 10/14/2012 02:25 PM, w1hkj wrote:
+</I>&gt;&gt;<i>     The Olivia specification written by the inventer, Jolacha,
+</I>&gt;&gt;<i>     specifies that the underlying sample rate for all Olivia modem
+</I>&gt;&gt;<i>     types should be 8000.  If another piece of software is producing
+</I>&gt;&gt;<i>     an &quot;Olivia&quot; using 11025 then it is not in compliant with the
+</I>&gt;&gt;<i>     specification.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     Dave
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     On 10/14/2012 02:26 PM, Dave Kleber wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     I've run into issues where with FLDIGI copying MixW stations the
+</I>&gt;&gt;&gt;<i>     text is garbled with Olivia. I would switch to MultiPSK and it
+</I>&gt;&gt;&gt;<i>     was clear. In several cases I found folks running 11125 sample
+</I>&gt;&gt;&gt;<i>     rate on MixW and other programs with native 44100 sound cards.
+</I>&gt;&gt;&gt;<i>     Once they switched to the correct sample rate for their sound
+</I>&gt;&gt;&gt;<i>     card, the text was clear.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     I'm not sure why MultiPSK manages to pull clean copy in these
+</I>&gt;&gt;&gt;<i>     instances where FLDIGI does not. BTW, I have never seen the
+</I>&gt;&gt;&gt;<i>     garbled text issue when all stations are running FLDIGI.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     -Dave, KB3FXI
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     *From:*<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha-bounces at lists.berlios.de</A>
+</I>&gt;&gt;&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha-bounces at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i>     [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha-bounces at lists.berlios.de</A>] *On Behalf Of
+</I>&gt;&gt;&gt;<i>     *Andrew O'Brien
+</I>&gt;&gt;&gt;<i>     *Sent:* Sunday, October 14, 2012 1:59 PM
+</I>&gt;&gt;&gt;<i>     *To:* fldigi-alpha
+</I>&gt;&gt;&gt;<i>     *Subject:* Re: Olivia events
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     Here is an example of what I copied just now with both Multipsk
+</I>&gt;&gt;&gt;<i>     and Fldigi open..
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     MULTIPSK DECODE : Ave used HRD, like it better but no ICS
+</I>&gt;&gt;&gt;<i>     messages....
+</I>&gt;&gt;&gt;<i>     will work on upgrade to fldigi, rig control not working
+</I>&gt;&gt;&gt;<i>     btu
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     Fldigi 3.21.55 decode :  lso have used HRD, l[ke it bet,2h;[+s2o
+</I>&gt;&gt;&gt;<i>     ICS messag&quot;!c...=Zill work q&lt;h`|;rade to fldigi, rig control not
+</I>&gt;&gt;&gt;<i>     wHhing
+</I>&gt;&gt;&gt;<i>     btu N
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     On Sun, Oct 14, 2012 at 1:39 PM, Andrew O'Brien
+</I>&gt;&gt;&gt;<i>     &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">k3ukandy at gmail.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">k3ukandy at gmail.com</A>&gt;&gt; wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     I switched PCs and thought the trouble I was having with people
+</I>&gt;&gt;&gt;<i>     not decoding me was my audio settings.  Today, after doing some
+</I>&gt;&gt;&gt;<i>     work, it my be Olivia in Fldigi.  I have tried 3 or 4 or the
+</I>&gt;&gt;&gt;<i>     latest versiosn but when sending Olivia peole receive mostly
+</I>&gt;&gt;&gt;<i>     jibberish and it apepars similar to how I deocde them In PSK31
+</I>&gt;&gt;&gt;<i>     there is no real issue.  Today I switched to Multipsk and people
+</I>&gt;&gt;&gt;<i>     could copy me where previosly with Fldigi, they could not.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     Here is an example of the deode at my end.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     *** Reading 419 bytes from logbook.adi
+</I>&gt;&gt;&gt;<i>     *** Read 3 records in 0.00 seconds
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     n3fll de k3uk now with fldigi 3.21 .55 , how copy de k3uk kn
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     Before RSID: &lt;&lt;2012-10-14T17:31Z Olivia @ 7072500
+</I>&gt;&gt;&gt;<i>     x-l
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     k3uk de nnp4l
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     t
+</I>&gt;&gt;&gt;<i>     at's stran,&lt;` ma2&lt;) K[sc charac,2s mixed in there.  I saw8
+</I>&gt;&gt;&gt;<i>     [at when you were
+</I>&gt;&gt;&gt;<i>     in your prev0;1s qso    vC
+</I>&gt;&gt;&gt;<i>     I missed the &quot;leaves8 [z=fke &quot; so won't hold(2[u  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">leaves at are</A>
+</I>&gt;&gt;&gt;<i>     more imbtan&gt;&lt; hihi
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     tnxr the c=Y+)2n 73 good lhHszK[th the decode problemS[
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     k3uk de n3 p!;([6J|%Yes VERY strange , I get the same, I also
+</I>&gt;&gt;&gt;<i>     get the strange characters when I decode you.  Thanks for the
+</I>&gt;&gt;&gt;<i>     test 73 n3fll de k3uk sk
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     _______________________________________________
+</I>&gt;&gt;&gt;<i>     fldigi-alpha mailing list
+</I>&gt;&gt;&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>  &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     _______________________________________________
+</I>&gt;&gt;<i>     fldigi-alpha mailing list
+</I>&gt;&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>  &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     _______________________________________________
+</I>&gt;<i>     fldigi-alpha mailing list
+</I>&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20121203/80cfbf69/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20121203/80cfbf69/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002405.html">Repeater testing version info
+</A></li>
+	<LI>Next message: <A HREF="002408.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2407">[ date ]</a>
+              <a href="thread.html#2407">[ thread ]</a>
+              <a href="subject.html#2407">[ subject ]</a>
+              <a href="author.html#2407">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

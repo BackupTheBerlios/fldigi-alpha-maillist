@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Rig Control/Freq Display request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3C201005011529.46174.k9ao%40charter.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001177.html">
+   <LINK REL="Next"  HREF="001179.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Rig Control/Freq Display request</H1>
+    <B>Rick Kunath</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3C201005011529.46174.k9ao%40charter.net%3E"
+       TITLE="Rig Control/Freq Display request">k9ao at charter.net
+       </A><BR>
+    <I>Sat May  1 21:29:46 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001177.html">Rig Control/Freq Display request
+</A></li>
+        <LI>Next message: <A HREF="001179.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1178">[ date ]</a>
+              <a href="thread.html#1178">[ thread ]</a>
+              <a href="subject.html#1178">[ subject ]</a>
+              <a href="author.html#1178">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Comments inline...
+
+On Saturday 01 May 2010 02:59:13 pm Anony Mous wrote:
+&gt;<i> On Sat, May 1, 2010 at 12:35 PM, Brian Lloyd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A>&gt; wrote:
+</I>&gt;<i> &gt; Two points here:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 1. If you have two displays, they should display the same thing if
+</I>&gt;<i> &gt; they are supposed to display the same thing. Anything else is
+</I>&gt;<i> &gt; confusing to the operator.
+</I>
+Exactly.
+
+&gt;<i> That's why you should be able to turn the fldigi display off, as point was
+</I>&gt;<i> made earlier. It's duplicated data, potentially a slowdown/confusion to the
+</I>&gt;<i> operator. The radio is on the frequency it says it is, that's all anyone
+</I>&gt;<i> needs to know.
+</I>
+Yes, just shut off the display.
+
+&gt;<i> &gt; 2. The frequency display on the radios is almost never the actual
+</I>&gt;<i> &gt; frequency of the transmission.
+</I>
+Correct and the Fldigi frequency display in question isn't intended to display 
+the actual transmitted frequencies. Although this is an area that 
+inexperienced and untrained hams always have trouble with. Again, it's a 
+training issue. Hams need to know what the software and hardware they are 
+putting on the air is doing. It's not idiot proof and never will be.
+
+&gt;<i> Uh, no. If I'm tuned to 14.230 MHz on the radio, and I'm receiving a FAX
+</I>&gt;<i> signal that is AFSK between 1500 Hz and 2300 Hz, then the transmission is,
+</I>&gt;<i> in fact, on 14.230 Mhz - the &quot;center&quot; (1900 Hz, or 14.2319 MHz) is not only
+</I>&gt;<i> *not* where the radio is tuned, if it *was* tuned there (you'd have to
+</I>&gt;<i> offset the fax modem to do it), then if the operator of the transmitter
+</I>&gt;<i>  were to speak up and tell you &quot;that was a fax of the important document
+</I>&gt;<i>  you asked for&quot;, you wouldn't be able to understand them, because you're
+</I>&gt;<i>  incorrectly tuned. Furthermore, if you were to send a fax back, you
+</I>&gt;<i>  typically want the radio on 14.230 as well; otherwise, you have to operate
+</I>&gt;<i>  split.
+</I>&gt;<i> 
+</I>&gt;<i> The correct frequency IS the frequency the radio is tuned to. Not whatever
+</I>&gt;<i> fldigi calculates as the modem center. This stuff is AFSK. Note the AF.
+</I>
+The radio dial frequency is the readout in Fldigi. The AFSK waterfall 
+frequency, added to that radio dial frequency, for the various audio tones, is 
+the frequency, or frequencies, of actual transmission. The operating ham needs 
+to know this. Many times it is not a single frequency, but several or a range. 
+
+&gt;<i> There are numerous reasons to receive signals at the tones they were
+</I>&gt;<i> designed to be sent at. If you have external gear of almost any kind, RTTY,
+</I>&gt;<i> packet, SSTV, FAX, etc, they're going to be expecting very specific AF
+</I>&gt;<i> tones. The tones you'll get when your radio is tuned appropriately, and
+</I>&gt;<i>  when the signal falls on the AF indications on the waterfall that are the
+</I>&gt;<i>  design points for the mode - for FAX, that's 1500 hz and 2300 hz. For
+</I>&gt;<i>  SSTV, 1200, 1500...2300 Hz. For RTTY, etc.
+</I>&gt;<i> 
+</I>&gt;<i> &gt; Fldigi does calculate and display the
+</I>&gt;<i> &gt; actual center frequency only in the log window.
+</I>
+Yes.
+
+&gt;<i> 
+</I>&gt;<i> It's a misleading number at best. The correct frequency is the one the
+</I>&gt;<i>  radio is telling you. For optimum operations, the waterfall should be set
+</I>&gt;<i>  to AF, the modems should be at the design points, and the frequency
+</I>&gt;<i>  display is misleading and/or duplicates the radio display, consumes UI
+</I>&gt;<i>  space that could be better used for something useful, and should probably
+</I>&gt;<i>  be disabled as a direct consequence. Speaking of any situation where we
+</I>&gt;<i>  are not just entertaining ourselves, but are working in circumstances
+</I>&gt;<i>  where correct operation may have social or human consequences. There is no
+</I>&gt;<i>  benefit to fldigi's frequency display when it is duplicating the radio's;
+</I>&gt;<i>  there is no benefit when it is displaying a misleading &quot;center frequency,&quot;
+</I>&gt;<i>  either. If you were using it to preview fldigi memories, that I can see.
+</I>&gt;<i>  Otherwise... I have yet to be presented with a point in its favor.
+</I>
+For one thing, it's live. It controls the radio remotely if you have CAT 
+working. It's a confirmation where the radio dial is set. I rarely touch the 
+radio when doing digital. You don't need to.
+
+&gt;<i> &gt; Request: I would like the option of having the main fldigi display
+</I>&gt;<i> &gt; show the actual transmission center frequency for the mode.
+</I>
+That is not and never was it's intended purpose. It is designed to control the 
+CAT of the radio, and/or to indicate the carrier reinsertion frequency of the 
+rig, for waterfall audio frequency addition or subtraction for logging.
+
+Besides, for some digital modes the frequency stated for nets and skeds is 
+definitely *not* the center frequency of the tone(s) transmitted. For some it's 
+the start tone, or the others the mark tone.
+
+You are missing the entire intended purpose of the display of frequency. It 
+would appear for your purposes maybe you need to just shut it off.
+
+It works as intended and that operation is clear to anyone who has taken the 
+time to read the manual and to understand how the digital modes that they are 
+transmitting work. 
+
+Being inexperienced is no substitute for knowing what you are doing with any 
+transmitter you are controlling.
+
+Again, this is a training issue. Get the operators trained so that they know 
+what they are doing and more importantly where their transmitted signal is 
+going.
+
+Rick Kunath, k9ao
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001177.html">Rig Control/Freq Display request
+</A></li>
+	<LI>Next message: <A HREF="001179.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1178">[ date ]</a>
+              <a href="thread.html#1178">[ thread ]</a>
+              <a href="subject.html#1178">[ subject ]</a>
+              <a href="author.html#1178">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLWRAP
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLWRAP&In-Reply-To=%3C4B2D4587.9020200%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000572.html">
+   <LINK REL="Next"  HREF="000565.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLWRAP</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLWRAP&In-Reply-To=%3C4B2D4587.9020200%40bellsouth.net%3E"
+       TITLE="FLWRAP">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Dec 19 22:28:39 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000572.html">FLWRAP
+</A></li>
+        <LI>Next message: <A HREF="000565.html">FLWRAP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#573">[ date ]</a>
+              <a href="thread.html#573">[ thread ]</a>
+              <a href="subject.html#573">[ subject ]</a>
+              <a href="author.html#573">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Larry Levesque wrote:
+&gt;&gt;<i> Thanks Dave.  It sounds like your requirements are not far removed from 
+</I>&gt;&gt;<i> Don's.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I will be changing flwrap to wrap ASCII text uncompressed.  Binary data 
+</I>&gt;&gt;<i> (images, Word documents etc) will still require compression and base64 
+</I>&gt;&gt;<i> encoding.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I've already made the changes for the next posting of fldigi to suppress 
+</I>&gt;&gt;<i> the leading garbage characters in an auto extracted wrap file.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dave
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> How about a command line switch to enable the compression? I would really like that!
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>As a first cut I've code it as follows:
+
+    Compress Always-Never
+   
+        Changed wrap to:
+          compress always for binary data source,
+          compress never for ASCII text data source.
+        Changed unwrap to:
+          decompress maybe if LZMA identifier string is found in
+          the wrapped payload.
+        Base64 encoding always for compressed wrap.
+
+The command line switch is quite feasible.  It seems that the MS 
+community really does not understand how to enable command line switches 
+on their desktop launchers.  I recently posted a long email on linuxham, 
+NBEMSham, and win-fldigi on how to use &quot;--config-dir&quot;.  I'll be there 
+will still be questions on how to do it.
+
+Dave
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091219/9f42a059/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091219/9f42a059/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000572.html">FLWRAP
+</A></li>
+	<LI>Next message: <A HREF="000565.html">FLWRAP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#573">[ date ]</a>
+              <a href="thread.html#573">[ thread ]</a>
+              <a href="subject.html#573">[ subject ]</a>
+              <a href="author.html#573">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

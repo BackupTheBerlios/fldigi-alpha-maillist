@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.13AF posted for testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.13AF%20posted%20for%20testing&In-Reply-To=%3C4AAB6FE2.4060504%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000130.html">
+   <LINK REL="Next"  HREF="000143.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.13AF posted for testing</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.13AF%20posted%20for%20testing&In-Reply-To=%3C4AAB6FE2.4060504%40bellsouth.net%3E"
+       TITLE="fldigi-3.13AF posted for testing">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Sep 12 11:54:42 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000130.html">fldigi-3.13AF posted for testing
+</A></li>
+        <LI>Next message: <A HREF="000143.html">fldigi-3.13AF posted for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#132">[ date ]</a>
+              <a href="thread.html#132">[ thread ]</a>
+              <a href="subject.html#132">[ subject ]</a>
+              <a href="author.html#132">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Rick Kunath wrote:
+&gt;<i> I've been getting a few of these timeouts. This is using PortAudio, but I get 
+</I>&gt;<i> a sometimes similar flush error if I use PulseAudio.
+</I>&gt;<i>
+</I>&gt;<i> Sometimes PulseAudio will come up with no waterfall audio display at all. A 
+</I>&gt;<i> re-launch of Fldigi usually fixes this and normal display occurs. I generally 
+</I>&gt;<i> don't use PulseAudio
+</I>&gt;<i>
+</I>&gt;<i> I tried sampling at Auto and Native, and there seems to be no pattern. Receive 
+</I>&gt;<i> continues after these. Seems to happen with the PSK Viewer open or not.
+</I>&gt;<i>
+</I>&gt;<i> on PortAudio:
+</I>&gt;<i> E: trx_trx_receive_loop: Sound error: Connection timed out
+</I>&gt;<i>
+</I>&gt;<i> Any idea what might be causing this?
+</I>&gt;<i>   
+</I>==================== Snippet of the code involved:
+*    catch (const SndException&amp; e) {
+        LOG_ERROR(&quot;%s&quot;, e.what());
+*        put_status(e.what(), 5);
+*        scard-&gt;Close();
+*====================
+
+This error is generated in the source file sound.cxx in either one of 
+two places:
+
+==================== Snippet of the code involved:
+    if (req_sample_rate != sd[0].dev_sample_rate || rxppm != 0) {
+        long r;
+        size_t n = 0;
+        sd[0].blocksize = SCBLOCKSIZE;
+        while (n &lt; count) {
+            if  ((r = src_callback_read(rx_src_state, sd[0].src_ratio,
+                            count - n, rbuf + n * 
+sd[0].params.channelCount)) == 0)
+*                throw SndException(ETIMEDOUT);
+*            n += r;
+        }
+    }
+    else {
+        bool timeout = false;
+        WAIT_FOR_COND( (sd[0].rb-&gt;read_space() &gt;= count * 
+sd[0].params.channelCount / sd[0].src_ratio), sd[0].rwsem,
+                   (MAX(1.0, 2 * count * sd[0].params.channelCount / 
+sd-&gt;dev_sample_rate)) );
+        if (timeout)
+*            throw SndException(ETIMEDOUT);
+*
+====================
+
+The PulseAudio code is similar but the first *throw 
+SndException(ETIMEDOUT) *is replaced with *return n
+
+*Are you still compiling from source Rick?  You could change line 1014 
+in sound.cxx to read
+
+// throw SndException(ETIMEDOUT);
+return n;
+
+Test the modified PortAudio code and let us know your results.  I will 
+make similar tests here.  Let me know if you are no longer compiling 
+from source and I will create a test suite for you.
+
+Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090912/f4a4e643/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090912/f4a4e643/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000130.html">fldigi-3.13AF posted for testing
+</A></li>
+	<LI>Next message: <A HREF="000143.html">fldigi-3.13AF posted for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#132">[ date ]</a>
+              <a href="thread.html#132">[ thread ]</a>
+              <a href="subject.html#132">[ subject ]</a>
+              <a href="author.html#132">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

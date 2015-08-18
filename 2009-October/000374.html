@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Hamlib DLL issue (was: Re: fldigi-alpha Digest, Vol 6, Issue 38)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hamlib%20DLL%20issue%20%28was%3A%20Re%3A%20fldigi-alpha%20Digest%2C%20Vol%206%2C%20Issue%2038%29&In-Reply-To=%3C87y6mxmce8.wl%40logrus.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000373.html">
+   <LINK REL="Next"  HREF="000375.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Hamlib DLL issue (was: Re: fldigi-alpha Digest, Vol 6, Issue 38)</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hamlib%20DLL%20issue%20%28was%3A%20Re%3A%20fldigi-alpha%20Digest%2C%20Vol%206%2C%20Issue%2038%29&In-Reply-To=%3C87y6mxmce8.wl%40logrus.enotty.net%3E"
+       TITLE="Hamlib DLL issue (was: Re: fldigi-alpha Digest, Vol 6, Issue 38)">m0gld at enotty.net
+       </A><BR>
+    <I>Tue Oct 27 10:09:19 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000373.html">fldigi-alpha Digest, Vol 6, Issue 38
+</A></li>
+        <LI>Next message: <A HREF="000375.html">3.13AY posted  Saved Op Mode
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#374">[ date ]</a>
+              <a href="thread.html#374">[ thread ]</a>
+              <a href="subject.html#374">[ subject ]</a>
+              <a href="author.html#374">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> On Tue, 27 Oct 2009 01:30:20 -0400, Andrew Hart &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">andylhart at gmail.com</A>&gt; said:
+</I>
+&gt;<i> Re All recent fldigi alphas - Hamlib
+</I>
+&gt;<i> Thanks very much to the two kind gentlemen that pointed out how to find and
+</I>&gt;<i> correct the problem with the hamlib rig configuration.
+</I>
+&gt;<i> Which is - Remove all hamlib***.dll files in your path.
+</I>
+&gt;<i> I found there were 27 such dll files to remove in one of the windows
+</I>&gt;<i> sub-directories, so they were in the path, and had been there since the 24th
+</I>&gt;<i> August. Not sure now which programme loaded them. I had not noticed this
+</I>&gt;<i> earlier as I normally use flrig or the rigcat configuration.
+</I>
+We have been talking with the hamlib developers and found a solution to
+this issue.  The next public release of fldigi will no longer load other
+hamlib dlls found on the system.
+
+For the curious: we are simply using versioned symbols.  Fldigi will
+only load hamlib libraries that contain the same versions as the ones it
+was built with.  Advanced users can still build their own hamlib with the
+right ABI_VERSION, or of course build their own fldigi binary.
+
+
+-- 
+
+73,
+Stelios, M0GLD.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000373.html">fldigi-alpha Digest, Vol 6, Issue 38
+</A></li>
+	<LI>Next message: <A HREF="000375.html">3.13AY posted  Saved Op Mode
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#374">[ date ]</a>
+              <a href="thread.html#374">[ thread ]</a>
+              <a href="subject.html#374">[ subject ]</a>
+              <a href="author.html#374">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

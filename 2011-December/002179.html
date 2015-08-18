@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI and Packet Operation: openpty()
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3C6CBE1926623B4E41BF4B5B51A0BE7D4A%40DadPC%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002178.html">
+   <LINK REL="Next"  HREF="002180.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI and Packet Operation: openpty()</H1>
+    <B>Charles Brabham</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3C6CBE1926623B4E41BF4B5B51A0BE7D4A%40DadPC%3E"
+       TITLE="FLDIGI and Packet Operation: openpty()">n5pvl at uspacket.org
+       </A><BR>
+    <I>Fri Dec  9 02:31:06 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002178.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+        <LI>Next message: <A HREF="002180.html">FLDIGI and Packet Operation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2179">[ date ]</a>
+              <a href="thread.html#2179">[ thread ]</a>
+              <a href="subject.html#2179">[ subject ]</a>
+              <a href="author.html#2179">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>There's always Flex32 for a windows soundmodem driver that does KISS ports, AFASK, Q15x25, and others.
+
+73 DE Charles, N5PVL
+
+  ----- Original Message ----- 
+  From: Tim Ellison, W4TME 
+  To: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A> 
+  Sent: Thursday, December 08, 2011 5:16 PM
+  Subject: Re: FLDIGI and Packet Operation: openpty()
+
+
+  A Windows solution would be better for my intended application. Other than MixW and AGW-PE (which doesn't work well with Windows sound devices), there isn't a viable Windows solution for a &quot;soft&quot; KISS TNC
+
+
+  Tim Ellison, W4TME
+  Product Management, Sales &amp; Support
+  FlexRadio Systems&#8482;
+  4616 W Howard Ln Ste 1-150
+  Austin, TX 78728
+  Phone: 512-535-4713 Ext. 223
+  Email: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">tim at flexradio.com</A>
+  Web: www.flexradio.com
+
+   
+
+
+
+  On 12/8/2011 6:04 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> wrote: 
+    I am not a specialist but apparently soundmodem can create a KISS port (What you wish) and a AX25 port (In MKISS mode) 
+
+    <A HREF="http://www.xastir.org/wiki/HowTo:SoundModem#Setting_up_Soundmodem_on_Linux">http://www.xastir.org/wiki/HowTo:SoundModem#Setting_up_Soundmodem_on_Linux</A> 
+
+    You might have more details in soundmodem source code: <A HREF="http://www.baycom.org/~tom/ham/soundmodem/">http://www.baycom.org/~tom/ham/soundmodem/</A> 
+
+
+    Le 08.12.2011 22:42, Tim Ellison, W4TME a &#233;crit : 
+
+      What would be great is to implement a KISS mode where AX.25 was sent out 
+      of a com port in KISS format and you could send Fldig KISS commands so 
+      that you could have a KISS software TNC. 
+
+      Tim Ellison, W4TME 
+      Product Management, Sales &amp; Support 
+      FlexRadio Systems&#8482; 
+      4616 W Howard Ln Ste 1-150 
+      Austin, TX 78728 
+      Phone: 512-535-4713 Ext. 223 
+      Email: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">tim at flexradio.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">tim at flexradio.com</A>&gt; 
+      Web: www.flexradio.com &lt;<A HREF="http://www.flexradio.com">http://www.flexradio.com</A>&gt; 
+
+      logo 
+
+
+      On 12/8/2011 5:31 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> wrote: 
+
+        Is there a plan to create a packet interface just like soundmodem does ? 
+        It uses the Linux function openpty() to create I think a pseudo pty 
+        usable by kernel ax25. This interface name is then given to the kernel 
+        ax25 operations, like that: 
+
+        $ cat /etc/ax25/axports 
+        sm0 F4ECW 1200 255 7 SoundModem1 afsk1200 
+
+        Then this interface becomes usable by applications such : XFBB (aka 
+        FBB) or Xastir. It is also possible with ifconfig (Ideally, one needs 
+        an AMPRNET IP address: 44.x.y.z) , to run any network application 
+        (ftp, telnet ...) 
+
+        I have no idea how this can be done on Windows and Apple OS but at 
+        least on Linux this can be done. 
+
+        Le 03.09.2011 00:43, Charles Brabham a &#233;crit : 
+
+          I get the impression that Packet mode is a new feature, perhaps not 
+          fully implemented yet. 
+          It worked great for me, monitoring HFactivity on the 20m NET105 the 
+          other night. 
+          73 DE Charles, N5PVL 
+
+
+
+
+
+        _______________________________________________ 
+        fldigi-alpha mailing list 
+        <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A> 
+        <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A> 
+
+
+
+      _______________________________________________ 
+      fldigi-alpha mailing list 
+      <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A> 
+      <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A> 
+
+
+    _______________________________________________ 
+    fldigi-alpha mailing list 
+    <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A> 
+    <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A> 
+
+
+
+------------------------------------------------------------------------------
+
+
+  _______________________________________________
+  fldigi-alpha mailing list
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111208/f35b3b9e/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111208/f35b3b9e/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: logo_300x37.bmp
+Type: image/bmp
+Size: 33354 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111208/f35b3b9e/attachment.bin">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111208/f35b3b9e/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002178.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+	<LI>Next message: <A HREF="002180.html">FLDIGI and Packet Operation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2179">[ date ]</a>
+              <a href="thread.html#2179">[ thread ]</a>
+              <a href="subject.html#2179">[ subject ]</a>
+              <a href="author.html#2179">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

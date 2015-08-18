@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Feature location, or feature request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Feature%20location%2C%20or%20feature%20request&In-Reply-To=%3C877hppj13l.wl%40logrus.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000922.html">
+   <LINK REL="Next"  HREF="000932.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Feature location, or feature request</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Feature%20location%2C%20or%20feature%20request&In-Reply-To=%3C877hppj13l.wl%40logrus.enotty.net%3E"
+       TITLE="Feature location, or feature request">m0gld at enotty.net
+       </A><BR>
+    <I>Sat Mar  6 09:39:10 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000922.html">Feature location, or feature request
+</A></li>
+        <LI>Next message: <A HREF="000932.html">Feature location, or feature request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#923">[ date ]</a>
+              <a href="thread.html#923">[ thread ]</a>
+              <a href="subject.html#923">[ subject ]</a>
+              <a href="author.html#923">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> On Sat, 6 Mar 2010 01:09:45 -0700, Anony Mous &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fyngyrz at gmail.com</A>&gt; said:
+</I>
+&gt;<i> Under OS X, I often run SSTV, FAX and RTTY software (fldigi) all at once. I
+</I>&gt;<i> can pause the SSTV and FAX software to free up my CPU for the other two
+</I>&gt;<i> programs; is there a pause feature in fldigi?
+</I>
+You could send fldigi SIGSTOP and SIGCONT. Try these in a terminal with
+fldigi running:
+
+  killall -STOP fldigi
+
+or
+
+  killall -CONT fldigi
+
+Of course you won't be able to use it at all while it is suspended.
+When it resumes, fldigi will complain that the audio stream timed out
+but it should be able to recover.
+
+&gt;<i> If not, then please consider this a feature request. Turn off the waterfall,
+</I>&gt;<i> just wait until a mode is picked before consuming CPU constantly.
+</I>
+The waterfall can be paused by clicking on the speed button next to the
+frequency readout under the waterfall.  The speeds are: NORM, FAST,
+PAUSE, SLOW.
+
+
+-- 
+
+73,
+Stelios, M0GLD.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000922.html">Feature location, or feature request
+</A></li>
+	<LI>Next message: <A HREF="000932.html">Feature location, or feature request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#923">[ date ]</a>
+              <a href="thread.html#923">[ thread ]</a>
+              <a href="subject.html#923">[ subject ]</a>
+              <a href="author.html#923">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

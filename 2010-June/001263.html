@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> wefax tuning in 3.21.0AD
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20wefax%20tuning%20in%203.21.0AD&In-Reply-To=%3C4C0DD8B4.9000204%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001262.html">
+   <LINK REL="Next"  HREF="001259.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>wefax tuning in 3.21.0AD</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20wefax%20tuning%20in%203.21.0AD&In-Reply-To=%3C4C0DD8B4.9000204%40gmail.com%3E"
+       TITLE="wefax tuning in 3.21.0AD">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Tue Jun  8 07:44:20 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001262.html">wefax tuning in 3.21.0AD
+</A></li>
+        <LI>Next message: <A HREF="001259.html">flrig-1.0.0bF posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1263">[ date ]</a>
+              <a href="thread.html#1263">[ thread ]</a>
+              <a href="subject.html#1263">[ subject ]</a>
+              <a href="author.html#1263">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>ke4lkq wrote:
+&gt;<i> Please read the following, it works for me.
+</I>&gt;<i> 
+</I>&gt;<i> 1) Tune your radio USB to 1.9 KHz below listed freq
+</I>
+Yes, please see this code excerpt:
+wefax/wefax.cxx:        m_carrier        = 1900 ;
+
+<A HREF="http://f6its.over-blog.com/pages/Frequences_meteo_FAX_et_teletype_RTTY-780785.html">http://f6its.over-blog.com/pages/Frequences_meteo_FAX_et_teletype_RTTY-780785.html</A>
+
+&quot;Do not forget to set the receiver frequency 1.9 KHz lower than the 
+value in the table, mode=USB .&quot;
+
+&gt;<i> 3) Narrow bandwidth on receiver if you can
+</I>
+By the way, it is now easy to add new FIR filters, Any idea welcome.
+
+&gt;<i> 4) There is a separate FAX reception window, see menu
+</I>
+Or please type &quot;Alt-V W&quot;
+
+&gt;<i> On 6/7/2010 5:38 PM, Jim Haynes wrote:
+</I>&gt;&gt;<i> I just tried it on the station on 12789.9 published frequency by
+</I>&gt;&gt;<i> setting my receiver frequency to 12788.0 USB.
+</I>
+On the other hand, it seems that Jim already did that. Maybe it is 
+necessary to adjust the power threshold ?
+
+&gt;&gt;<i>
+</I>&gt;&gt;<i> I could receive a little fax, but it kept dropping to the &quot;skip
+</I>&gt;&gt;<i> phasing&quot; and &quot;skip APT&quot; buttons.  To get it to receive continuously
+</I>&gt;&gt;<i> I had to mistune to 12787.9 or 12788.1
+</I>
+If it helps, you can switch to &quot;Manual mode&quot; to let the prog load the 
+image without interruption.
+
+&gt;&gt;<i> Am I correct that the mouse cursor is meaningingless in wefax mode?
+</I>&gt;&gt;<i> Could it be made to disappear?
+</I>
+Right, someone already asked for that. I do not know exactly what should 
+ideally be done. Has someone an idea please ?
+
+
+Cheers
+
+Remi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001262.html">wefax tuning in 3.21.0AD
+</A></li>
+	<LI>Next message: <A HREF="001259.html">flrig-1.0.0bF posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1263">[ date ]</a>
+              <a href="thread.html#1263">[ thread ]</a>
+              <a href="subject.html#1263">[ subject ]</a>
+              <a href="author.html#1263">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

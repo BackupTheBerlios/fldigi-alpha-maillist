@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Weather fax
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax&In-Reply-To=%3C4B9C2AF4.9070905%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000997.html">
+   <LINK REL="Next"  HREF="001012.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Weather fax</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax&In-Reply-To=%3C4B9C2AF4.9070905%40gmail.com%3E"
+       TITLE="Weather fax">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Mar 14 01:16:52 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000997.html">Weather fax
+</A></li>
+        <LI>Next message: <A HREF="001012.html">Weather fax
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1011">[ date ]</a>
+              <a href="thread.html#1011">[ thread ]</a>
+              <a href="subject.html#1011">[ subject ]</a>
+              <a href="author.html#1011">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ben wrote:
+&gt;<i> On Fri, Mar 12, 2010 at 1:05 AM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;&gt;<i> The following are the basic features you need for a fax system:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> 1) manual start/stop
+</I>&gt;&gt;&gt;<i> 2) auto start/stop (switchable option)
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> &quot;Theoretically&quot;, it starts automatically when an APT start sequence is
+</I>&gt;&gt;<i> detected. I do not know how to enhance the process at the moent. Maybe a
+</I>&gt;&gt;<i> better filter. The APT frequency has some margin, but if it is too large, it
+</I>&gt;&gt;<i> starts decoding each time 300 hz is detected in noise. So, the method
+</I>&gt;&gt;<i> should be refined.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> You must have a mode where the automatic start/stop detection is
+</I>&gt;<i> disabled. Otherwise, some fax reception will falsely trigger starts
+</I>&gt;<i> and ends, particularly when the signal is weak.
+</I>This is now implemented and will be available at the next push. Here is 
+how ot works, please tell me whether it is OK.
+The button 'Abort' is replaced at startup by 'Manual mode'. When 
+pressed, it is replaced by the usual 'Abort' and receives an image until 
+the number of lines reaches 10000 (Adjustable). If one presses 'Abort', 
+it goes to the usual automatic mode.
+The funny thing is that at first stage, it is in automatic mode. It may 
+then very quickly skip APT and be in phasing mode. You then must press 
+Abort, then 'Manual mode', and maybe insist one or two times.
+
+By the way, I have a proble with the Fl_Counter widget to adjust the 
+maximum number of lines: The step cannot be bigger than one apparently, 
+which takes a long time to increase from 10000 to, say, 20000 or more !
+
+&gt;<i>  I agree that it is
+</I>&gt;<i> worth improving the automatic detection, but no matter how good that
+</I>&gt;<i> is, it will not remove the need for a fully manual mode. Particularly
+</I>&gt;<i> in this case, because your arrangement for horizontal alignment and
+</I>&gt;<i> skew is so perfectly implemented -- this fax system can receive any
+</I>&gt;<i> signal, no matter how weak and faded, as long as we can disable the
+</I>&gt;<i> automatic features.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;&gt;<i> 3) auto home to top (switchable option)
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> If the end of an image is detected, it is saved in a file (Whose name
+</I>&gt;&gt;<i> contains the date/time and the frequency, by default in the directory
+</I>&gt;&gt;<i> $HOME/.fldigi/images just like MFSK image files), and the image is emptied.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> I understand, but this action must be switchable to disabled.
+</I>&gt;<i> Otherwise, the image is erased from the display, and this is often
+</I>&gt;<i> (usually, in fact) not desirable.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;<i> if timer resolution allows it, it would be to add one
+</I>&gt;<i> more decimal place to the LPM widget, as the available precision can't
+</I>&gt;<i> quite get the image perfectly straight. Very close, but not correct.
+</I>&gt;<i> If this can't be improved, I can live with it.
+</I>&gt;<i>   
+</I>I tried this, but it gives precision problems: There is no interpolation 
+but simply pixel moves: The consequence is that the images appears 
+horizontaly &quot;cut&quot;, that is, slanted in horizontal slices of about 30 
+pixels: I hesitate to add a real linear interpolation because it is more 
+CPU-intensive, and on the other hand, slanting the image without 
+interpolation, and with a very small angle gives an horrible result. 
+What do you think ?
+&gt;&gt;<i> If LPM=120 which seems to be the most common cases, the width in pixels is
+</I>&gt;&gt;<i> 904.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> For 120 LPM at IOC 576, use 1808 pixels / line. That will fix the
+</I>&gt;<i> round/egg issue. Here are two images received yesterday, scaled to
+</I>&gt;<i> 1808 horizontally...
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://fyngyrz.com/wf1.png">http://fyngyrz.com/wf1.png</A>
+</I>&gt;<i> <A HREF="http://fyngyrz.com/wf2.png">http://fyngyrz.com/wf2.png</A>
+</I>&gt;<i>
+</I>&gt;<i> So either sample at 2x the rate, or just duplicate the sample so the
+</I>&gt;<i> image is twice as wide if doubling the sample rate is impractical.
+</I>&gt;<i> Another option is to discard every other incoming line, but this is
+</I>&gt;<i> undesirable as it loses significant details.
+</I>&gt;<i>   
+</I>There might be an error in my formula:
+index_of_correlation = 576 ;
+m_img_width = ( index_of_correlation * M_PI ) / 2.0 ;
+
+This gives 904. Should I drop the division ? On the other hand, the 
+image will have to be scaled in order to fit naturally on a typical 
+screen, which is not very convenient with the FLTK library. This is 
+possible but I will have to manipulate two buffers: One for the image as 
+received from the fax, and another one, scaled to the desired 
+proportion. Possible but maybe cpu and memory hungry. What do you think? 
+This is related to zoom in/out feature.
+
+&gt;&gt;<i> I can certainly add zoom in/ zoom out buttons. Is it what you mean ?
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Yes. Often, during reception, it is convenient to see only a small
+</I>&gt;<i> version of what is coming in. When the image is done, that's the time
+</I>&gt;<i> to enlarge the window and scale the received fax to 1:1. Larger than
+</I>&gt;<i> 1:1, say 2:1, is nice, but not a must. Smaller is highly desirable,
+</I>&gt;<i> though.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;&gt;<i> 6) line mode (threshold the signal to b/w at 1900 hz)
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> OK.
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> 7) grey mode - linear grey levels from black (1500 hz) to white (2300 hz)
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> OK. This is the current mode, no ?
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Yes.
+</I>&gt;<i>   
+</I>This make me think that Hamfax is able to send/receive color faxes. As I 
+could never find an emitter, I have no idea whether this is useful or 
+not. What do you think ? Same for the possiblity to receive faxes in 
+inverted mode.
+&gt;<i>  I was althgough thinking about applying
+</I>&gt;<i>   
+</I>&gt;&gt;<i> image enhagcement filters on -the-fly, but hesitated because this can be
+</I>&gt;&gt;<i> done with image editing tools such as Gimp or Photoshop, and chose initially
+</I>&gt;&gt;<i> to focus on pure &quot;radio fax&quot; features.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Yes, I'd definitely vote to avoid this. Let the image come in as-is,
+</I>&gt;<i> and filter it later. Although I think filters from the community are
+</I>&gt;<i> highly desirable. Just a C code model that can be linked in, no XML or
+</I>&gt;<i> other complicated mechanisms. Just add a &quot;filter&quot; menu, hand us a
+</I>&gt;<i> pointer to the image data, define the XY resolution and pixel size and
+</I>&gt;<i> packing, and we'll do the rest.
+</I>&gt;<i>   
+</I>This should probably go with a zoom/1808/color/line mode release - that 
+is, a redesign of the display layer - that I promise to do :):), but I 
+need a bit of a thinking :)
+&gt;&gt;&gt;<i> 8) reception to memory so display is never a restricting factor on
+</I>&gt;&gt;&gt;<i> resolution or sample rate
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> There is not limit on the height of images: I just add a hard-limit of 10000
+</I>&gt;&gt;<i> lines because no reasonable fax should have this size (Most are about 1300
+</I>&gt;&gt;<i> lines). When this size is reached, an image file is saved and the image
+</I>&gt;&gt;<i> cleared.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> My concern here is that during reception, if you move or resize the
+</I>&gt;<i> window, black areas appear in the image that never seem to be
+</I>&gt;<i> refreshed. Perhaps the data is there and this is a display code issue.
+</I>&gt;<i>   
+</I>Do you mean horizontal black lines ? I have this problem too, and as 
+well when another task on my PC takes all the CPU (make -j3). This is 
+why I need more information about the behaviour of sampling on a heavily 
+loaded machine. Maybe wefax is too cpu-intensive?
+&gt;<i>   
+</I>&gt;&gt;&gt;&gt;<i> From there, a plug-in system for image processing operators would be
+</I>&gt;&gt;&gt;&gt;<i> wonderful.
+</I>&gt;&gt;&gt;&gt;<i>         
+</I>&gt;&gt;<i> Yes, I was thinking about adding xml-rpc calls.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Ouch. Well, my vote is no XML, thank you very much. Really, all we
+</I>&gt;<i> need is a pointer and five chunks of data, and we can process the
+</I>&gt;<i> image without any further complications:
+</I>&gt;<i>
+</I>&gt;<i> a pointer to image base
+</I>&gt;<i> x resolution
+</I>&gt;<i> y resolution
+</I>&gt;<i> data size (word, byte, nybble)
+</I>&gt;<i> data packing (two nybbles/byte, etc.)
+</I>&gt;<i> packing order:
+</I>&gt;<i>
+</I>&gt;<i> I recommend (presuming nybbles in bytes):
+</I>&gt;<i>
+</I>&gt;<i> struct fimage:
+</I>&gt;<i> {
+</I>&gt;<i>     word *image; // NULL if invalid, otherwise points to image in RAM.
+</I>&gt;<i>     long xwidth; // ex 1808
+</I>&gt;<i>     long ywidth; // ex 1200
+</I>&gt;<i>     long pixelbits; // ex 4
+</I>&gt;<i>     long pixelsperword; // ex 4
+</I>&gt;<i>     long packingorder; // 0.W.X.Y (unused)(LR or RL within word)(LR or
+</I>&gt;<i> RL within line)(TB or BT within image)
+</I>&gt;<i> // packingorder ex in hex: 0000: (unused)(LR)(LR)(TB) [this is natural
+</I>&gt;<i> bigendian ordering)
+</I>&gt;<i> }
+</I>&gt;<i>   
+</I>No problem with that because this is close to the layout of the existing 
+&quot;picture&quot; class. Now, where would you like to have this entry point ? At 
+which stage of the processing ? When displaying ? Should I reuse 
+'picture' or create a brand new class?
+
+&gt;&gt;&gt;&gt;<i> The displayed images and the file captures are stretched in the vertical
+</I>&gt;&gt;&gt;&gt;<i> dimension. Circles appear quite egg-shaped. This may be more related to
+</I>&gt;&gt;&gt;&gt;<i> the
+</I>&gt;&gt;&gt;&gt;<i> station I was receiving than the program itself, but it would be cool if
+</I>&gt;&gt;&gt;&gt;<i> there were some way to compensate for that.
+</I>&gt;&gt;&gt;&gt;<i>         
+</I>&gt;&gt;<i> This is right, I will work on this. Again, I wished at first stage to focus
+</I>&gt;&gt;<i> on pure fax features
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Just change horizontal sample rate to 1808 and it will fix itself. :)
+</I>&gt;<i>
+</I>&gt;<i> --Ben
+</I>&gt;<i> AA7AS
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000997.html">Weather fax
+</A></li>
+	<LI>Next message: <A HREF="001012.html">Weather fax
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1011">[ date ]</a>
+              <a href="thread.html#1011">[ thread ]</a>
+              <a href="subject.html#1011">[ subject ]</a>
+              <a href="author.html#1011">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

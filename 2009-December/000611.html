@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Version 3.13BJ
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Version%203.13BJ&In-Reply-To=%3C200912262043.59092.pinozollo%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000621.html">
+   <LINK REL="Next"  HREF="000612.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Version 3.13BJ</H1>
+    <B>Pino Zollo</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Version%203.13BJ&In-Reply-To=%3C200912262043.59092.pinozollo%40gmail.com%3E"
+       TITLE="Version 3.13BJ">pinozollo at gmail.com
+       </A><BR>
+    <I>Sun Dec 27 00:43:58 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000621.html">fldigi-3.13 documentation
+</A></li>
+        <LI>Next message: <A HREF="000612.html">Version 3.13BJ
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#611">[ date ]</a>
+              <a href="thread.html#611">[ thread ]</a>
+              <a href="subject.html#611">[ subject ]</a>
+              <a href="author.html#611">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Il sabato 26 dicembre 2009 18:14:41 hai scritto:
+&gt;<i> Pino Zollo wrote:
+</I>&gt;<i> &gt; Hi,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Version 3.13BJ
+</I>&gt;<i> &gt;&gt;     XMLRPC set_freq bug fix
+</I>&gt;<i> &gt;&gt;         main.set_frequency calls to main gui events did not use
+</I>&gt;<i> &gt;&gt;         REQ_LOCK.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Seems that Version 3.13BJ does not sets any more the radio frequency on
+</I>&gt;<i> &gt; my IC-706MKIIG when controlled via XMLRPC by DBLog.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; The Version 3.13BH works 100% fine.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I have not tried yet the new releases.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Best 73, Happy New Year
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Pino ZP4KFX
+</I>&gt;<i>
+</I>&gt;<i> Fix one break another.
+</I>&gt;<i>
+</I>&gt;<i> How were you using the main.set_frequency Pino? 
+</I>
+------ this is a part of the subroutine that sends the command to fldigi -----------------
+
+  sCad = &quot;&lt;?xml version=&quot; &amp; Chr(34) &amp; &quot;1.0&quot; &amp; Chr(34) &amp; &quot;?&gt;&quot; &amp; Chr(13) &amp; Chr(10)
+  sCad = sCad &amp; &quot;&lt;methodCall&gt;&quot; 
+  sCad = sCad &amp; &quot;&lt;methodName&gt;&quot; &amp; method2 &amp; &quot;&lt;/methodName&gt;&quot;  
+  sCad = sCad &amp; &quot;&lt;params&gt;&lt;param&gt;&lt;value&gt;&lt;double&gt;&quot; &amp; freq &amp; &quot;&lt;/double&gt;&lt;/value&gt;&lt;/param&gt;&lt;/params&gt;&quot;
+  sCad = sCad &amp; &quot;&lt;/methodCall&gt;&quot; 
+  
+     P.Post(&quot;text/xml&quot;, sCad)
+---------------------------
+where method2 is a variable that = &quot;main.set_frequency&quot; ; the symbol &amp; chains the strings
+
+&gt;<i> Is fldigi controlling 
+</I>&gt;<i> the transceiver or DBlog?
+</I>
+When fldigi is active DBLog stops controlling the radio a gives the task to fldigi.
+In my setup fldigi uses hamlibs and  3.13BJ reads correctly the radio  VFO.
+&gt;<i>
+</I>&gt;<i> Dave
+</I>
+Best 73
+
+Pino
+
+-- 
+Key ID: 0xF6768208 
+Key fingerprint = B16D 0A7C 5B29 A334 CE6A  71F6 EAF8 3D88 F676 8208
+Key server: <A HREF="hkp://wwwkeys.eu.pgp.net">hkp://wwwkeys.eu.pgp.net</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000621.html">fldigi-3.13 documentation
+</A></li>
+	<LI>Next message: <A HREF="000612.html">Version 3.13BJ
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#611">[ date ]</a>
+              <a href="thread.html#611">[ thread ]</a>
+              <a href="subject.html#611">[ subject ]</a>
+              <a href="author.html#611">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

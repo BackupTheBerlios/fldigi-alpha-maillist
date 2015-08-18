@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> High CPU load with USB sound device
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C4B76FFB0.1080907%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000837.html">
+   <LINK REL="Next"  HREF="000839.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>High CPU load with USB sound device</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C4B76FFB0.1080907%40WA5ZNU.org%3E"
+       TITLE="High CPU load with USB sound device">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Sat Feb 13 20:38:24 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000837.html">High CPU load with USB sound device
+</A></li>
+        <LI>Next message: <A HREF="000839.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#838">[ date ]</a>
+              <a href="thread.html#838">[ thread ]</a>
+              <a href="subject.html#838">[ subject ]</a>
+              <a href="author.html#838">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Under what ham situations is PulseAudio useful?  I understand it's 
+useful for shared audio desktop stuff, but I don't understand what it 
+does for radio DSP.  A quick read of 
+<A HREF="http://en.wikipedia.org/wiki/PulseAudio">http://en.wikipedia.org/wiki/PulseAudio</A> firms up my confusion.
+
+Portaudio is an API, albeit portable, just as OSS is now (mostly) an API 
+to ALSA (non-portable).
+
+Something that might clarify understanding for fldigi users: the USB 
+audio interface is a &quot;class standard.&quot;  They can all use the same 
+&quot;driver,&quot; and do on Linux, although a few devices have what are called 
+&quot;quirks,&quot; which are either workarounds for bugs or are special settings.
+
+An example of a quirk is the EMU-0202; I recently helped implement the 
+48KHz and 96KHz sampling rate features, and it's done as a special case 
+for the device in the USB sound driver, but the code size is very small, 
+a half dozen line at most, and it's all just setting control values.
+
+Dave's point about sample rate conversion is a set of &quot;favors&quot; being 
+done for users by the API or mid-tier software, not the USB Audio driver 
+itself, which is essentially the same across all USB cards regardless of 
+what chipset is used or how much it cost.  Choosing OSS or PortAudio 
+lets you decide which mid-tier software is doing you which favors.  Most 
+of the favors there are done for music recording, and the performance 
+and operations decisions aren't necessarily optimal for ham use.
+
+Leigh/WA5ZNU
+
+
+On 02/13/2010 11:20 AM, w1hkj wrote:
+&gt;<i> Peter Hamilton wrote:
+</I>&gt;&gt;&gt;<i> The reason for the difference is....
+</I>&gt;&gt;&gt;<i>      
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Interesting. Linux audio does seem to be a can of worms. The one
+</I>&gt;&gt;<i> consistent trend I've noticed is that the more &quot;primitive&quot; the sound
+</I>&gt;&gt;<i> subsystem the better it is in this application. Less versatile, maybe. I
+</I>&gt;&gt;<i> had no end of problems with Pulseaudio, Portaudio had a few minor
+</I>&gt;&gt;<i> problems but was basically OK apart from this, and OSS seems rock solid.
+</I>&gt;&gt;<i>    
+</I>&gt;<i> Really a function of the drivers that have been written for the h/w.  
+</I>&gt;<i> OSS has the least amount of support in the newest distributions.  It 
+</I>&gt;<i> will also be the most likely to give resampling errors.  Portaudio 
+</I>&gt;<i> resampling is done internally in fldigi using high quality sample rate 
+</I>&gt;<i> converters.  Pulseaudio allows the user to select the sample rate 
+</I>&gt;<i> converter (some choices are the same as fldigi's converters).
+</I>&gt;<i>
+</I>&gt;<i> If you notice tx audio clicks or dropouts then abandon the OSS audio 
+</I>&gt;<i> i/o.  The culprit will be a grossly inadequate sample rate converter 
+</I>&gt;<i> in the OSS driver.
+</I>&gt;<i>
+</I>&gt;<i> Dave, W1HKJ
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>    
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100213/bbb73127/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100213/bbb73127/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000837.html">High CPU load with USB sound device
+</A></li>
+	<LI>Next message: <A HREF="000839.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#838">[ date ]</a>
+              <a href="thread.html#838">[ thread ]</a>
+              <a href="subject.html#838">[ subject ]</a>
+              <a href="author.html#838">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

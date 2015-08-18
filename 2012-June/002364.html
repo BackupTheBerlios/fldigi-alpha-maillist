@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> ARM build /  BeagleBone and Fldigi
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20ARM%20build%20/%20%20BeagleBone%20and%20Fldigi&In-Reply-To=%3C4FE6F25E.2090802%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002363.html">
+   <LINK REL="Next"  HREF="002365.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>ARM build /  BeagleBone and Fldigi</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20ARM%20build%20/%20%20BeagleBone%20and%20Fldigi&In-Reply-To=%3C4FE6F25E.2090802%40gmail.com%3E"
+       TITLE="ARM build /  BeagleBone and Fldigi">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Jun 24 12:56:30 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002363.html">KISS interface for several modems ?
+</A></li>
+        <LI>Next message: <A HREF="002365.html">ARM build /  BeagleBone and Fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2364">[ date ]</a>
+              <a href="thread.html#2364">[ thread ]</a>
+              <a href="subject.html#2364">[ subject ]</a>
+              <a href="author.html#2364">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Dave,
+
+Any idea please ?
+
+Remi
+
+Le 24.06.2012 03:43, Robert Krasowski a &#233;crit :
+&gt;<i>
+</I>&gt;<i> well, I spent 2h trying to upgrade to ver 3.21.45 from 38 . Latest one 
+</I>&gt;<i> available for ARM platform is 38, so far no luck. I Added new PPA 
+</I>&gt;<i> source to my list of depositories etc, but no luck
+</I>&gt;<i> I will try tomorrow.
+</I>&gt;<i> R
+</I>&gt;<i>
+</I>&gt;<i> --- On *Sat, 6/23/12, Remi Chateauneu /&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rchateauneu at hotmail.com</A>&gt;/* wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     From: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rchateauneu at hotmail.com</A>&gt;
+</I>&gt;<i>     Subject: Re: [linuxham] BeagleBone and Fldigi
+</I>&gt;<i>     To: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxham at yahoogroups.com</A>
+</I>&gt;<i>     Cc: &quot;Robert Krasowski&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rkrasowski at yahoo.com</A>&gt;
+</I>&gt;<i>     Date: Saturday, June 23, 2012, 7:36 PM
+</I>&gt;<i>
+</I>&gt;<i>     core_pattern contains &quot;core&quot;, that's fine, it means that any core
+</I>&gt;<i>     dump will be generated in the current directory (And might be
+</I>&gt;<i>     named simply 'core').
+</I>&gt;<i>
+</I>&gt;<i>     Please run the comand:
+</I>&gt;<i>     ulimit -c unlimited
+</I>&gt;<i>
+</I>&gt;<i>     ... to set ot to the max.
+</I>&gt;<i>
+</I>&gt;<i>     Only 3.21.45 is able to generate a core dump, so you have to
+</I>&gt;<i>     install it to see what's going on. It's worth, it's faster and
+</I>&gt;<i>     brings a couple of new features.
+</I>&gt;<i>
+</I>&gt;<i>     Rgrds
+</I>&gt;<i>
+</I>&gt;<i>     R
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     Le 23.06.2012 17:02, Robert Krasowski a &#233;crit :
+</I>&gt;<i>
+</I>&gt;&gt;<i>     Thanks Remi for working with me, appreciated.
+</I>&gt;&gt;<i>     Ok I did following:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     export FLDIGI_COREDUMP=1
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     echo $FLDIGI_COREDUMP
+</I>&gt;&gt;<i>     response -&gt; 1
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     I rerun fldigi, do not see core.xxxx ( xxxx being PID of Fldigi)
+</I>&gt;&gt;<i>     in my home directory where I am now, I checked /proc/sys/kernel I
+</I>&gt;&gt;<i>     see core_pattern which is a file that have one word: core,
+</I>&gt;&gt;<i>     nothing else.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     ulimit -c
+</I>&gt;&gt;<i>     response_-&gt; 0
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     Interesting ....
+</I>&gt;&gt;<i>     Thanks in advance for your help
+</I>&gt;&gt;<i>     Robert
+</I>&gt;&gt;<i>     KB2PNM
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     --- On *Sat, 6/23/12, Remi Chateauneu /&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rchateauneu at hotmail.com</A>&gt;
+</I>&gt;&gt;<i>     &lt;/mc/compose?to=<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rchateauneu at hotmail.com</A>&gt;/* wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         From: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rchateauneu at hotmail.com</A>&gt;
+</I>&gt;&gt;<i>         &lt;/mc/compose?to=<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rchateauneu at hotmail.com</A>&gt;
+</I>&gt;&gt;<i>         Subject: Re: [linuxham] BeagleBone and Fldigi
+</I>&gt;&gt;<i>         To: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxham at yahoogroups.com</A>
+</I>&gt;&gt;<i>         &lt;/mc/compose?to=<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxham at yahoogroups.com</A>&gt;
+</I>&gt;&gt;<i>         Date: Saturday, June 23, 2012, 11:36 AM
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         By default, current directory. If not, please look at 
+</I>&gt;&gt;<i>         /proc/sys/kernel/core_pattern .
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         If still no core visible, please type:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         ulimit -c
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         ... which will tell you what's the max size of a core file.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         By the way; when I said &quot;core.xxxx&quot; it actually means
+</I>&gt;&gt;<i>         &quot;core.12345&quot; where 12345 is the process id of the process
+</I>&gt;&gt;<i>         which crashed.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         Le 23.06.2012 14:14, Robert Krasowski a &#233;crit :
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>         where core.xxxx will be located??
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>         Robert KB2PNM
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>         --- On *Sat, 6/23/12, Remi Chateauneu
+</I>&gt;&gt;&gt;<i>         /&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rchateauneu at hotmail.com</A>&gt;/* wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>             From: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rchateauneu at hotmail.com</A>&gt;
+</I>&gt;&gt;&gt;<i>             Subject: Re: [linuxham] BeagleBone and Fldigi
+</I>&gt;&gt;&gt;<i>             To: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxham at yahoogroups.com</A>
+</I>&gt;&gt;&gt;<i>             Date: Saturday, June 23, 2012, 5:31 AM
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>             We need a core dump, which is possible with the latest
+</I>&gt;&gt;&gt;<i>             version 3.21.45.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>             Please set this environment variable:
+</I>&gt;&gt;&gt;<i>             export FLDIGI_COREDUMP=1
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>             Then rerun fldigi. It should generate a core file
+</I>&gt;&gt;&gt;<i>             (core.xxxx).
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>             Then you can type:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>             gdb fldigi core.xxxx
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>             It will tell use where the program crashed.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>             Le 23.06.2012 01:40, Robert Krasowski a &#233;crit :
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>             ok Ed, I did run that, but I am getting the sa,e thing
+</I>&gt;&gt;&gt;&gt;<i>             on startup of fldigi from terminal:
+</I>&gt;&gt;&gt;&gt;<i>             Caught signal 11
+</I>&gt;&gt;&gt;&gt;<i>             Aborting fldigi due to a fatal error.
+</I>&gt;&gt;&gt;&gt;<i>             Please report this to: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-devel at lists.berlios.de</A>
+</I>&gt;&gt;&gt;&gt;<i>             or file a bug report at:
+</I>&gt;&gt;&gt;&gt;<i>             <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>             ****** Stack trace:
+</I>&gt;&gt;&gt;&gt;<i>             fldigi[0xc5fb4]
+</I>&gt;&gt;&gt;&gt;<i>             fldigi[0xc60fc]
+</I>&gt;&gt;&gt;&gt;<i>             /lib/arm-linux-gnueabihf/libc.so.6(__default_sa_restorer_v2+0x0)[0x40681aa0]
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>             ****** Version information:
+</I>&gt;&gt;&gt;&gt;<i>             fldigi 3.21.38
+</I>&gt;&gt;&gt;&gt;<i>             Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos,
+</I>&gt;&gt;&gt;&gt;<i>             Leigh Klotz, Remi Chateauneu, and others.
+</I>&gt;&gt;&gt;&gt;<i>             License GPLv3+: GNU GPL version 3 or later
+</I>&gt;&gt;&gt;&gt;<i>             &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i>             This is free software: you are free to change and
+</I>&gt;&gt;&gt;&gt;<i>             redistribute it.
+</I>&gt;&gt;&gt;&gt;<i>             There is NO WARRANTY, to the extent permitted by law.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>             ****** Build information:
+</I>&gt;&gt;&gt;&gt;<i>             Build information:
+</I>&gt;&gt;&gt;&gt;<i>               built          : Tue Feb  7 00:35:31 UTC 2012 by
+</I>&gt;&gt;&gt;&gt;<i>             <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">buildd at actinidiaceae</A> on arm-unknown-linux-gnueabihf for
+</I>&gt;&gt;&gt;&gt;<i>             arm-unknown-linux-gnueabihf
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>               configure flags: '--build=arm-linux-gnueabihf'
+</I>&gt;&gt;&gt;&gt;<i>             '--prefix=/usr' '--includedir=${prefix}/include'
+</I>&gt;&gt;&gt;&gt;<i>             '--mandir=${prefix}/share/man'
+</I>&gt;&gt;&gt;&gt;<i>             '--infodir=${prefix}/share/info' '--sysconfdir=/etc'
+</I>&gt;&gt;&gt;&gt;<i>             '--localstatedir=/var'
+</I>&gt;&gt;&gt;&gt;<i>             '--libexecdir=${prefix}/lib/fldigi'
+</I>&gt;&gt;&gt;&gt;<i>             '--disable-maintainer-mode'
+</I>&gt;&gt;&gt;&gt;<i>             '--disable-dependency-tracking'
+</I>&gt;&gt;&gt;&gt;<i>             'build_alias=arm-linux-gnueabihf' 'CXXFLAGS=-g -O2
+</I>&gt;&gt;&gt;&gt;<i>             -fstack-protector --param=ssp-buffer-size=4 -Wformat
+</I>&gt;&gt;&gt;&gt;<i>             -Wformat-security' 'LDFLAGS=-Wl,-Bsymbolic-functions
+</I>&gt;&gt;&gt;&gt;<i>             -Wl,-z,relro' 'CPPFLAGS=-D_FORTIFY_SOURCE=2' 'CFLAGS=-g
+</I>&gt;&gt;&gt;&gt;<i>             -O2 -fstack-protector --param=ssp-buffer-size=4
+</I>&gt;&gt;&gt;&gt;<i>             -Wformat -Wformat-security'
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>               compiler       : gcc version 4.6.2 (Ubuntu/Linaro
+</I>&gt;&gt;&gt;&gt;<i>             4.6.2-12ubuntu1)
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>               compiler flags : -I$(srcdir) -I$(srcdir)/include
+</I>&gt;&gt;&gt;&gt;<i>             -I$(srcdir)/irrxml -I$(srcdir)/fileselector
+</I>&gt;&gt;&gt;&gt;<i>             -I$(srcdir)/xmlrpcpp -pthread -pthread
+</I>&gt;&gt;&gt;&gt;<i>             -I/usr/include/cairo -I/usr/include/glib-2.0
+</I>&gt;&gt;&gt;&gt;<i>             -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include
+</I>&gt;&gt;&gt;&gt;<i>             -I/usr/include/pixman-1 -I/usr/include/freetype2
+</I>&gt;&gt;&gt;&gt;<i>             -I/usr/include/libpng12 -I/usr/include/freetype2
+</I>&gt;&gt;&gt;&gt;<i>             -pthread -I/usr/include/cairo -I/usr/include/glib-2.0
+</I>&gt;&gt;&gt;&gt;<i>             -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include
+</I>&gt;&gt;&gt;&gt;<i>             -I/usr/include/pixman-1 -I/usr/include/freetype2
+</I>&gt;&gt;&gt;&gt;<i>             -I/usr/include/libpng12 -fstack-protector
+</I>&gt;&gt;&gt;&gt;<i>             --param=ssp-buffer-size=4 -Wformat -Wformat-security
+</I>&gt;&gt;&gt;&gt;<i>             -Werror=format-security -D_LARGEFILE_SOURCE
+</I>&gt;&gt;&gt;&gt;<i>             -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+</I>&gt;&gt;&gt;&gt;<i>             -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT
+</I>&gt;&gt;&gt;&gt;<i>             -I/usr/include/libpng12 -I/usr/include -pipe -Wall
+</I>&gt;&gt;&gt;&gt;<i>             -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>               linker flags   : -lportaudio -lasound -lm -lpthread
+</I>&gt;&gt;&gt;&gt;<i>             -L/usr/lib/arm-linux-gnueabihf -Wl,-Bsymbolic-functions
+</I>&gt;&gt;&gt;&gt;<i>             -Wl,-z,relro -lfltk_images -lfltk -lX11 -lsndfile
+</I>&gt;&gt;&gt;&gt;<i>             -lsamplerate -lpulse-simple -lpulse -lhamlib -lm
+</I>&gt;&gt;&gt;&gt;<i>             -lpng12 -L/usr/lib -lxmlrpc_server_abyss++
+</I>&gt;&gt;&gt;&gt;<i>             -lxmlrpc_server++ -lxmlrpc_server_abyss -lxmlrpc_server
+</I>&gt;&gt;&gt;&gt;<i>             -lxmlrpc_abyss -lxmlrpc++ -lxmlrpc -lxmlrpc_util
+</I>&gt;&gt;&gt;&gt;<i>             -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt -lpthread
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>               libraries      : FLTK 1.3.0
+</I>&gt;&gt;&gt;&gt;<i>                                libsamplerate 0.1.8
+</I>&gt;&gt;&gt;&gt;<i>                                libsndfile 1.0.25
+</I>&gt;&gt;&gt;&gt;<i>                                PortAudio 19
+</I>&gt;&gt;&gt;&gt;<i>                                PulseAudio 1.1
+</I>&gt;&gt;&gt;&gt;<i>                                Hamlib 1.2.15
+</I>&gt;&gt;&gt;&gt;<i>                                XMLRPC-C 1.16.33
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>             Runtime information:
+</I>&gt;&gt;&gt;&gt;<i>               system         : Linux omap 3.2.18-psp14 #1 Sat Jun 9
+</I>&gt;&gt;&gt;&gt;<i>             05:26:22 UTC 2012 armv7l
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>               libraries      : libsamplerate-0.1.8 (c) 2002-2008
+</I>&gt;&gt;&gt;&gt;<i>             Erik de Castro Lopo
+</I>&gt;&gt;&gt;&gt;<i>                                libsndfile-1.0.25
+</I>&gt;&gt;&gt;&gt;<i>                                PortAudio V19-devel (built Dec 10
+</I>&gt;&gt;&gt;&gt;<i>             2011 12:22:13) 1899
+</I>&gt;&gt;&gt;&gt;<i>                                Pulseaudio 1.1.0
+</I>&gt;&gt;&gt;&gt;<i>                                Hamlib 1.2.15.1
+</I>&gt;&gt;&gt;&gt;<i>             <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ubuntu at omap</A>:~$
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>             --- On *Fri, 6/22/12, Ed /&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">autek at comcast.net</A>&gt;/*wrote:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>                 From: Ed &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">autek at comcast.net</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i>                 Subject: Re: [linuxham] BeagleBone and Fldigi
+</I>&gt;&gt;&gt;&gt;<i>                 To: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxham at yahoogroups.com</A>
+</I>&gt;&gt;&gt;&gt;<i>                 Date: Friday, June 22, 2012, 6:34 PM
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>                 On 06/22/2012 06:14 PM, Robert Krasowski wrote:
+</I>&gt;&gt;&gt;&gt;<i>                 &gt; here we go, that is what I get starting from
+</I>&gt;&gt;&gt;&gt;<i>                 terminal:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>                 Try apt-get build-dep fldigi and then see what you
+</I>&gt;&gt;&gt;&gt;<i>                 get. Looks to me as
+</I>&gt;&gt;&gt;&gt;<i>                 thought you are missing the -dev libraries.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>                 Ed
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> __._,_.___
+</I>&gt;<i> Reply to sender 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">rkrasowski at yahoo.com</A>?subject=Re%3A%20%5Blinuxham%5D%20BeagleBone%20and%20Fldigi&gt; 
+</I>&gt;<i> | Reply to group 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxham at yahoogroups.com</A>?subject=Re%3A%20%5Blinuxham%5D%20BeagleBone%20and%20Fldigi&gt; 
+</I>&gt;<i> | Reply via web post 
+</I>&gt;<i> &lt;<A HREF="http://groups.yahoo.com/group/linuxham/post;_ylc=X3oDMTJyZW1zdnJqBF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARtc2dJZAMxNzk3NQRzZWMDZnRyBHNsawNycGx5BHN0aW1lAzEzNDA1MDU4NDA-?act=reply&amp;messageNum=17975">http://groups.yahoo.com/group/linuxham/post;_ylc=X3oDMTJyZW1zdnJqBF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARtc2dJZAMxNzk3NQRzZWMDZnRyBHNsawNycGx5BHN0aW1lAzEzNDA1MDU4NDA-?act=reply&amp;messageNum=17975</A>&gt; 
+</I>&gt;<i> | Start a New Topic 
+</I>&gt;<i> &lt;<A HREF="http://groups.yahoo.com/group/linuxham/post;_ylc=X3oDMTJmajE5MDJ2BF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARzZWMDZnRyBHNsawNudHBjBHN0aW1lAzEzNDA1MDU4NDA-">http://groups.yahoo.com/group/linuxham/post;_ylc=X3oDMTJmajE5MDJ2BF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARzZWMDZnRyBHNsawNudHBjBHN0aW1lAzEzNDA1MDU4NDA-</A>&gt; 
+</I>&gt;<i>
+</I>&gt;<i> Messages in this topic 
+</I>&gt;<i> &lt;<A HREF="http://groups.yahoo.com/group/linuxham/message/17955;_ylc=X3oDMTM3NzgzbzkzBF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARtc2dJZAMxNzk3NQRzZWMDZnRyBHNsawN2dHBjBHN0aW1lAzEzNDA1MDU4NDAEdHBjSWQDMTc5NTU-">http://groups.yahoo.com/group/linuxham/message/17955;_ylc=X3oDMTM3NzgzbzkzBF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARtc2dJZAMxNzk3NQRzZWMDZnRyBHNsawN2dHBjBHN0aW1lAzEzNDA1MDU4NDAEdHBjSWQDMTc5NTU-</A>&gt; 
+</I>&gt;<i> (18)
+</I>&gt;<i> Recent Activity:
+</I>&gt;<i>
+</I>&gt;<i>     * New Members
+</I>&gt;<i>       &lt;<A HREF="http://groups.yahoo.com/group/linuxham/members;_ylc=X3oDMTJncm42anQ5BF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARzZWMDdnRsBHNsawN2bWJycwRzdGltZQMxMzQwNTA1ODQw?o=6">http://groups.yahoo.com/group/linuxham/members;_ylc=X3oDMTJncm42anQ5BF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARzZWMDdnRsBHNsawN2bWJycwRzdGltZQMxMzQwNTA1ODQw?o=6</A>&gt;
+</I>&gt;<i>       7
+</I>&gt;<i>
+</I>&gt;<i> Visit Your Group 
+</I>&gt;<i> &lt;<A HREF="http://groups.yahoo.com/group/linuxham;_ylc=X3oDMTJmb2kzdjl0BF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARzZWMDdnRsBHNsawN2Z2hwBHN0aW1lAzEzNDA1MDU4NDA-">http://groups.yahoo.com/group/linuxham;_ylc=X3oDMTJmb2kzdjl0BF9TAzk3MzU5NzE0BGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARzZWMDdnRsBHNsawN2Z2hwBHN0aW1lAzEzNDA1MDU4NDA-</A>&gt; 
+</I>&gt;<i>
+</I>&gt;<i> Yahoo! Groups 
+</I>&gt;<i> &lt;<A HREF="http://groups.yahoo.com/;_ylc=X3oDMTJlbG42Ymc2BF9TAzk3NDc2NTkwBGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARzZWMDZnRyBHNsawNnZnAEc3RpbWUDMTM0MDUwNTg0MA--">http://groups.yahoo.com/;_ylc=X3oDMTJlbG42Ymc2BF9TAzk3NDc2NTkwBGdycElkAzE3MjU5ODc2BGdycHNwSWQDMTcwNTA2MzEwOARzZWMDZnRyBHNsawNnZnAEc3RpbWUDMTM0MDUwNTg0MA--</A>&gt; 
+</I>&gt;<i>
+</I>&gt;<i> Switch to: Text-Only 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxham-traditional at yahoogroups.com</A>?subject=Change%20Delivery%20Format:%20Traditional&gt;, 
+</I>&gt;<i> Daily Digest 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxham-digest at yahoogroups.com</A>?subject=Email%20Delivery:%20Digest&gt; 
+</I>&gt;<i> &#8226; Unsubscribe 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxham-unsubscribe at yahoogroups.com</A>?subject=Unsubscribe&gt; &#8226; 
+</I>&gt;<i> Terms of Use &lt;<A HREF="http://docs.yahoo.com/info/terms/">http://docs.yahoo.com/info/terms/</A>&gt;
+</I>&gt;<i> .
+</I>&gt;<i>
+</I>&gt;<i> __,_._,___
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120624/e8ea4089/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120624/e8ea4089/attachment-0001.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002363.html">KISS interface for several modems ?
+</A></li>
+	<LI>Next message: <A HREF="002365.html">ARM build /  BeagleBone and Fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2364">[ date ]</a>
+              <a href="thread.html#2364">[ thread ]</a>
+              <a href="subject.html#2364">[ subject ]</a>
+              <a href="author.html#2364">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

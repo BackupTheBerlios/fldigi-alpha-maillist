@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi alpha on Debian
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20alpha%20on%20Debian&In-Reply-To=%3C4AEFD13F.4060904%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000428.html">
+   <LINK REL="Next"  HREF="000430.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi alpha on Debian</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20alpha%20on%20Debian&In-Reply-To=%3C4AEFD13F.4060904%40WA5ZNU.org%3E"
+       TITLE="fldigi alpha on Debian">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Tue Nov  3 07:44:15 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000428.html">fldigi alpha on Debian
+</A></li>
+        <LI>Next message: <A HREF="000430.html">fldigi alpha on Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#429">[ date ]</a>
+              <a href="thread.html#429">[ thread ]</a>
+              <a href="subject.html#429">[ subject ]</a>
+              <a href="author.html#429">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Try
+ alsamixer
+ alsamixer -c0
+ alsamixer -c1
+ alsamixer -c2
+
+and see if you can raise any sound cards that way.  If not you may want 
+to run dmesg when you plug and unplug the SignaLink.
+
+Leigh/WA5ZNU
+&gt;<i> Mike Stansberry wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> I'm having problems getting fldig 3.13AZ to build on Debian
+</I>&gt;&gt;<i> 5.03.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> After compiling and running fldigi I get:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> E: init_portaudio: No available audio devices
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> note:  audio devices are available, just not found.  ;-)
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Replying to my own message:
+</I>&gt;<i>
+</I>&gt;<i> *If* Debian uses the same naming convention for sound cards
+</I>&gt;<i> (/dev/dsp, /dev/dsp1, etc.)  it appears that my Debian build
+</I>&gt;<i> is NOT recognizing any sound cards, either the internal sound
+</I>&gt;<i> card or the SignaLink USB.
+</I>&gt;<i>
+</I>&gt;<i> Back to the drawing board, I guess.
+</I>&gt;<i>
+</I>&gt;<i> Mike, K0TER
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000428.html">fldigi alpha on Debian
+</A></li>
+	<LI>Next message: <A HREF="000430.html">fldigi alpha on Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#429">[ date ]</a>
+              <a href="thread.html#429">[ thread ]</a>
+              <a href="subject.html#429">[ subject ]</a>
+              <a href="author.html#429">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

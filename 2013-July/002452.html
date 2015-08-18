@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.72BM posted for testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.72BM%20posted%20for%20testing&In-Reply-To=%3C51D9C206.8070101%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002451.html">
+   <LINK REL="Next"  HREF="002453.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.72BM posted for testing</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.72BM%20posted%20for%20testing&In-Reply-To=%3C51D9C206.8070101%40bellsouth.net%3E"
+       TITLE="fldigi-3.21.72BM posted for testing">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sun Jul  7 21:31:18 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002451.html">fldigi-3.21.72BK tests
+</A></li>
+        <LI>Next message: <A HREF="002453.html">fldigi-3.21.72BM hangs on Exit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2452">[ date ]</a>
+              <a href="thread.html#2452">[ thread ]</a>
+              <a href="subject.html#2452">[ subject ]</a>
+              <a href="author.html#2452">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/v3.21/">http://www.w1hkj.com/alpha/fldigi/v3.21/</A>
+
+73,
+fldigi development team
+
+Includes following changes from 3.21.72
+
+commit 0327acd1077a0cb86551bda344cb52fd1af47f93
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Feb 11 17:46:43 2013 -0600
+
+     Version 3.21 alpha
+
+       * Version 3.21.72BM
+
+commit afa7be61aacd0fc8f4fcd02d4e425d2607591926
+Author: Robert Stiles &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">kk5vd at yahoo.com</A>&gt;
+Date:   Sun Jul 7 13:21:37 2013 -0500
+
+     Portaudio exceptions
+
+       * Ignore exceptions &gt;= 0
+
+commit 11370c30546cc7007692c251982730a177aec691
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Jul 7 02:48:43 2013 -0500
+
+     mxe-win32 regex
+
+       * inhibit use of mxe-win32 regex library
+
+commit 2490d0fca7d472a37705e7e1c71407796ea3cacf
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jul 4 09:33:57 2013 -0500
+
+     Thor update
+
+       * Changes to insure that array boundaries are not exceeded
+       * Moved large array from stack to static store.
+       * Added cmd line parameter --debug-audio to enable audio
+         debug events.  default is off.
+
+commit bda55189835e1a921a8f265f1ec6c504172fcae4
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Jul 3 15:29:14 2013 -0500
+
+     record_loader fix
+
+       * test for existence of dialog before trying to access it!
+
+commit 19c07aa85db314437f71626a51741ff206f35b97
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sat Jun 1 02:40:24 2013 -0500
+
+     KML/Synop/RTTY/Navtex
+
+       * Synop decoding in RTTY mode in reception buffer, in red.
+       * Creation of KML file for Synop data.
+       * Creation of KML file for Navtex messages.
+       * User locator displayed in KML.
+       * Multiline Synop and Navtex messages displayed in Adif logs.
+       * Added flsynop program as stand alone Synop decoder.
+       * Fixed Navtex default stations filename and Italian stations.
+       * Fixed Navtex frequency error.
+       * Added KML tab in configuration menu.
+       * Added parameters files for Synop decoding.
+       * Fixed CoordinateT type for different deserialization.
+       * Less logging messages from subthreads, because they might crash.
+       * Added try/catch blocks in main program.
+       * Can reload previous KML files at startup.
+       * Named WMO code tables in Synop decoding.
+       * Synop data can be logged to Adif files.
+       * flsynop can load kml files from one dir and save them elsewhere.
+       * Added strreplace and strcapitalize.
+       * Added Levenshtein distance for future use.
+       * Added class QsoHelper to ease Adif logging.
+       * East longitude positive, West negative. Fixes Navtex detection.
+       * Chars '=' or ';' used as a Synop end-of-section marker.
+       * Added option command in KML tab executed on KML file save.
+       * Reverse mode now saved in configuration.
+       * Comments in DOxygen syntax.
+       * Kml snippet stored once only per placemark.
+       * Code more compatible with Eclipse parsing.
+       * Synop decoded text can be interleaved with 5-digits groups.
+       * KML balloons can be in simple tables, matrices or plain text.
+       * Adif messages are saved in the main thread.
+       * Starts external command only if KML file was saved.
+       * Maximum KML data retention time is ten years, default 0 is no 
+limit.
+       * Do not reload KML files when changing KML parameters.
+       * User kml file does not grow at each fldigi start.
+       * Relative humidity always parsed with Celsius temperature.
+       * Empty KML files are created on startup if not there.
+       * Prepared porting processes functions to Mingw.
+       * Added script for FTP transfer of KML files.
+       * Added synop_tool
+       * Navtex now has reverse mode.
+       * Data files can be updated from the Internet.
+       * HTTP load without anymore because crash in Wine
+
+commit 0f5ede7efa44e328aed8b3bb3506a90e0c12d3aa
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jul 5 06:53:18 2013 -0500
+
+     PSKMAIL/ARQ socket
+
+       * rewrite of arq_io.cxx with assistance of Remi
+         - more clearly define use of various variable mutex
+         - added mutex blocks to TLF interface
+         - changed from ::lock ::unlock to
+           guard_lock usage.
+       * added command line switch
+           --debug-pskmail
+         which enables verbose time-tagged logging for
+         ARQ and PSKMAIL events
+       * added guard_lock to debug methods
+
+commit 6e16b416207c80b4e2ba07a96a34d7382cf62a76
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Jul 2 14:42:19 2013 -0500
+
+     Code cleanup
+
+       * fldigi.cxx/fldigi.h
+         - Changed scope of variables to static if not accessed
+           outside of fl_digi.cxx
+         - added gettext precompiler notation where needed
+       * Removed unused variables / code
+         - src/compat/getsysinfo.c
+         - src/widgets/Fl_Text_Display_mod_1_3.cxx
+         - src/xmlrpcpp/XmlRpcSource.cpp
+
+commit 50c1c12f924ba77a3e532b5632a2e44b964e79a2
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Jul 1 11:11:35 2013 -0500
+
+     Pskmail Notify RsID
+
+       * Call to socket not within a REQ(...) inter-thread
+         message - possible cause of random failure when
+         running with pskmail server
+
+commit 4b9c5782f9e14d53c1775f101bcc64ea351fa22c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Jun 29 07:52:09 2013 -0500
+
+     MFSK shut down
+
+       * Added code to prevent MFSK shuttting down until transmit
+         terminates.
+
+commit af5e09a061e4f975a0907f1d9d79c9bda5089785
+Author: Robert Stiles &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">kk5vd at yahoo.com</A>&gt;
+Date:   Thu Jun 27 09:35:26 2013 -0500
+
+     Cwidth test for zero
+
+       * cwidth tested for zero to avoid divide-by-zero fault
+       * cwidth == 0 caused by corrupted font file on OS X
+         potential for same to occur on other OS.
+
+commit 389c189d2e65a218af87a2e86fde057106996be3
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Jun 19 15:02:16 2013 -0500
+
+     MXE compile
+
+       * Mxe-ming32 compatibility changes
+
+commit b6ee3f7517ad8f8807d0039cb7592d786ff7f30d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jun 21 18:36:12 2013 -0500
+
+     XMLRPC
+
+       * removed references to external xmlrpc-c library
+
+commit dfc2bd8027f6cbffdade38060001afdb2c2889a7
+Author: Stefan Fendt &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">smfendt at gmail.com</A>&gt;
+Date:   Wed Jun 19 03:43:44 2013 -0500
+
+     RTTY decoder
+
+       * filter update
+
+commit 7d62b22752228d45f247c6623ef0ea3f18295c36
+Author: Dennis Engdahl &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">engdahl at snowcrest.net</A>&gt;
+Date:   Sun Jun 9 14:18:38 2013 -0500
+
+     RigCAT user commands
+
+       * Added user definable RigCAT user strings as Macros
+&lt;RIGCAT: hex hex:retnbr&gt;
+&lt;RIGCAT: &quot;string&quot;:retnbr&gt;
+         where:
+           hex hex ... are sequential hexadecimal values
+           string is Ascii char sequence
+           retnbr is number of bytes in xcvr response
+           ':retnbr' is optional; retnbr set to 0 if missing
+
+commit 385086251b9c1d6c5fd3336d45644ff7c03e0eff
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Jun 8 09:51:04 2013 -0500
+
+     TX state
+
+       * Change method of reporting trx_state variable to xmlrpc request
+         TX, RX, OTHER
+
+commit 9b26ff66111211ff0c7f2b9252e48b8cee5ce766
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Jun 4 19:47:34 2013 -0500
+
+     pskmail events
+
+       * changed INFO event reporting to be like DEBUG level report
+       * added event reports to provide additional program flow
+
+commit e12a3733b3255db53030204dbc01afab8d5d8607
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Jun 2 21:30:07 2013 -0500
+
+       * Changed extended rsid iaw doc/rsid_codes.gnumeric
+
+commit 3bb70e4308fd20000bc69db797c1d8ff4e4818ba
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sat Jun 1 02:41:39 2013 -0500
+
+     Port to MXE / MingW
+
+       * Wefax destination directory now ended by one slash only.
+       * Use PRId64 for printing long long.
+       * Set right pthread library for mingw.
+       * Fixed include files in debug build mode.
+       * This commit does not include modifications specific to
+         SYNOP commit, due to reordering of commits submitted by
+         Remi during branch merging.
+
+commit 34b3baf16ff66d38e926487b632ddae1ffb2bf27
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Date:   Fri May 31 19:20:00 2013 -0500
+
+     QSL VIA
+
+       * Added QSL_VIA field in ADIF files.
+
+commit 6cd70171effdb8b76481a8944f4de88f138e24df
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Date:   Fri May 31 19:15:00 2013 -0500
+
+     XML parser
+
+     * Removed use of REGEX in configuration_def.xml parser
+
+commit 2c9c73fb279f43ec60af94335e83e0a9884b8935
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri May 31 18:05:27 2013 -0500
+
+     ARQ support changes
+
+       * ARQ changes chasing down the elusive pskmail server fault
+       * Added &lt;cmd&gt;abort&lt;/cmd&gt; ARQ command string
+         - immediately clears all ARQ buffers and returns fldigi to
+           Rx mode
+         - sends the 0x06 acknowledgment character back to ARQ client.
+       * Added AbortARQ call for xmlrpc main.abort command
+
+commit f8e26f385f8a0587812434b46bee68422fe4caaa
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun May 26 14:09:24 2013 -0500
+
+     xmlrpcpp
+
+       * Fixes for uncaught exceptions in xmlrpc.cxx
+       * Changes required by recent change from xmlrpc_c
+         to xmlrpcpp library
+
+commit 237cc8f143fc9b7cb594e329537b3dd34d1b9087
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri May 24 07:35:04 2013 -0500
+
+     PortAudio
+
+       * Added throw exception statement and loop test to PortAudio
+         Read and Write while blocks
+       * Potentially cause of reported faults and unresponsive behavior
+         by both Linux and Windows users.
+
+commit dc7173c457da87ac2f568b10906dcf15ab1ebb7d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu May 23 16:32:30 2013 -0500
+
+     SysV ARQ interface
+
+       * Removed SysV from ARQ implementation.
+       * Changed event logging to INFO for most ARQ reports
+
+commit 1ea46c69bdd9c1aa03fc21c97a50c97ce90b56d8
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon May 20 22:21:54 2013 -0500
+
+     METAR format
+
+       * Added user definable METAR end-of-header search string
+         - Default is &quot;Connecton close&quot;, but may vary depending on
+           selected METAR station
+
+commit e1004fc2672d1e403b4093d385ae7c3eee31366c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun May 19 05:53:06 2013 -0500
+
+     RSID logic
+
+       * Corrected tool tips on ID config tab
+       * Changed logic used for RsID conditionals
+       * Original patch submitted by: Kamal Mostafa &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">kamal at whence.com</A>&gt;
+         - BugLink: <A HREF="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=705431">http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=705431</A>
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20130707/a4339699/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20130707/a4339699/attachment-0001.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002451.html">fldigi-3.21.72BK tests
+</A></li>
+	<LI>Next message: <A HREF="002453.html">fldigi-3.21.72BM hangs on Exit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2452">[ date ]</a>
+              <a href="thread.html#2452">[ thread ]</a>
+              <a href="subject.html#2452">[ subject ]</a>
+              <a href="author.html#2452">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

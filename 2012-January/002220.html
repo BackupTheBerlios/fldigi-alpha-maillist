@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> wefax and navtex in pu/rc
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20wefax%20and%20navtex%20in%20pu/rc&In-Reply-To=%3C4F14C2DB.8060806%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002221.html">
+   <LINK REL="Next"  HREF="002225.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>wefax and navtex in pu/rc</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20wefax%20and%20navtex%20in%20pu/rc&In-Reply-To=%3C4F14C2DB.8060806%40gmail.com%3E"
+       TITLE="wefax and navtex in pu/rc">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Tue Jan 17 01:37:47 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002221.html">fltk-1.3.0 and fldigi-3.21.35 -- Compiler warning...
+</A></li>
+        <LI>Next message: <A HREF="002225.html">Fldigi config error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2220">[ date ]</a>
+              <a href="thread.html#2220">[ thread ]</a>
+              <a href="subject.html#2220">[ subject ]</a>
+              <a href="author.html#2220">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Many changes in pu/rc and (miracle !) I managed to cleanly (I hope) add 
+them on top of 3.22.0BO
+
+Cheers
+
+Remi
+
+commit a0a6e9865a81fffe7e4bd4b7cae89cbf40438d81
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sun Jan 15 21:58:10 2012 +0000
+
+     WEFAX : Noise reduction, less disk space.
+
+     * Fax can be saved in monochrome, takes less disk space.
+     * New option to reduce noise on images.
+     * Changed RX interface: Non-stop reception is now easier.
+     * Image RX starts ten lines earlier when high correlation detected.
+     * Experimental: Uses correlation to reduce image echo.
+     * Display speed-up when zoomed.
+     * Cleaner indeing of correlation buffer (Method at_mod).
+
+commit b63e1e6e8ad683e9176719f8b5350138fe8f566c
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sun Jan 8 16:09:44 2012 +0000
+
+     Wefax b/w fix
+
+     * The generated image is now really back and white.
+     * Display speedup.
+
+commit 7e9be5afeabc2b485612cd328a65092546f26fdb
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Date:   Fri Jan 6 23:59:04 2012 +0000
+
+     Wefax GUI enhancement.
+
+     * The tx and rx windows can be displayed separately as now, or 
+embedded in the main window.
+     * Fixed a couple of uninitialised values spotted by valgrind.
+     * Added wefax tab in configuration menu.
+     * Max rows number, and adif log flag now stored in configuration.
+     * Destination directory can be set in configuration menu with 
+Fl_File_Chooser.
+     * Added option for opening tx window from main menu (Like the rx 
+window).
+     * RX and TX text windows now disabled (They were useless).
+     * Shift can ba changed, default 800. Can be set to 850 Hz for 
+Deutsche Wetterdienst.
+     * Wefax adif log flag now in configuration (And is memorized).
+     * When clicking on a received file, the image is displayed in the 
+tx window.
+     * More internationalization.
+     * Transmit image can be zoomed. Default zoom 50% like rx image.
+     * Suppressed duplicate info messages.
+
+commit 34a7e1f88993e99dae31ccd68d47d5bec410c917
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sun Dec 11 20:31:13 2011 +0000
+
+     Navtex code cleanup and warnings.
+
+commit 329db5789e6dff02d0b94dc6ad2a590adf09b0a1
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sun Dec 11 18:45:17 2011 +0000
+
+     Added Navtex deviation in waterfall.
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002221.html">fltk-1.3.0 and fldigi-3.21.35 -- Compiler warning...
+</A></li>
+	<LI>Next message: <A HREF="002225.html">Fldigi config error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2220">[ date ]</a>
+              <a href="thread.html#2220">[ thread ]</a>
+              <a href="subject.html#2220">[ subject ]</a>
+              <a href="author.html#2220">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

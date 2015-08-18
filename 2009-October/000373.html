@@ -1,0 +1,652 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-alpha Digest, Vol 6, Issue 38
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-alpha%20Digest%2C%20Vol%206%2C%20Issue%2038&In-Reply-To=%3C2cce4ed60910262230p1edef9fbkbbe99b8642952e2e%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000371.html">
+   <LINK REL="Next"  HREF="000374.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-alpha Digest, Vol 6, Issue 38</H1>
+    <B>Andrew Hart</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-alpha%20Digest%2C%20Vol%206%2C%20Issue%2038&In-Reply-To=%3C2cce4ed60910262230p1edef9fbkbbe99b8642952e2e%40mail.gmail.com%3E"
+       TITLE="fldigi-alpha Digest, Vol 6, Issue 38">andylhart at gmail.com
+       </A><BR>
+    <I>Tue Oct 27 06:30:20 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000371.html">email non delivery
+</A></li>
+        <LI>Next message: <A HREF="000374.html">Hamlib DLL issue (was: Re: fldigi-alpha Digest, Vol 6, Issue 38)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#373">[ date ]</a>
+              <a href="thread.html#373">[ thread ]</a>
+              <a href="subject.html#373">[ subject ]</a>
+              <a href="author.html#373">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Re All recent fldigi alphas - Hamlib
+
+Thanks very much to the two kind gentlemen that pointed out how to find and
+correct the problem with the hamlib rig configuration.
+
+Which is - Remove all hamlib***.dll files in your path.
+
+I found there were 27 such dll files to remove in one of the windows
+sub-directories, so they were in the path, and had been there since the 24th
+August. Not sure now which programme loaded them. I had not noticed this
+earlier as I normally use flrig or the rigcat configuration.
+
+Dave: If we could have the macro back for TXID it would be useful to at
+least one user. - me. but not much lost if this is too much work. I prefer
+to use the keyboard more than the mouse as I suffer from carpel tunnel
+problems, and you can't toggle the check boxes with the keyboard.
+
+Last comment, the adjustable configuration for the waterfall menu, and the
+sizing works very nicely.
+
+Thanks again Dave and Stelios for these excellent programmes.
+
+73, Andy VE3NVK
+
+&gt;<i>
+</I>&gt;<i>   1. All recent fldigi alphas - Hamlib (Andrew Hart)
+</I>&gt;<i>   2. Re: Flarq Plain Talk, E-mail Items (Gary Wescom)
+</I>&gt;<i>   3. Re: Flarq Plain Talk, E-mail Items (Harry Bloomberg)
+</I>&gt;<i>   4. Re: 3.13AY posted (John Douyere)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 1
+</I>&gt;<i> Date: Mon, 26 Oct 2009 15:46:06 -0400
+</I>&gt;<i> From: &quot;Andrew Hart&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">Andrew.hart at bell.net</A>&gt;
+</I>&gt;<i> Subject: All recent fldigi alphas - Hamlib
+</I>&gt;<i> To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;<i> Message-ID: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">BLU0-SMTP14A36971582F0BDF0C7B8086BA0 at phx.gbl</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=&quot;us-ascii&quot;
+</I>&gt;<i>
+</I>&gt;<i> 1.            I am running Windows 7, and I cannot get a pull down box to
+</I>&gt;<i> appear to set up Hamlib in the rig configuration. This does not effect me,
+</I>&gt;<i> as I can and do use RigCAT to control my radio. I have tried renaming the
+</I>&gt;<i> entire fldigi directory in my user root, which give me a new clean
+</I>&gt;<i> configuration, but I still cannot get the pull down list to appear.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     Any suggestions?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>    (By the way, I have had absolutely no other problems with any on the
+</I>&gt;<i> fldigi alpha releases with Windows 7, in all of its incarnations as betas,
+</I>&gt;<i> RC candidates and the final released version - installed last Friday. I
+</I>&gt;<i> also
+</I>&gt;<i> use two different sound cards, one for the radio and one for the desktop.
+</I>&gt;<i> Again, no problem.)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 2.            Did we at one point in time have a macro command to turn on
+</I>&gt;<i> and off or toggle the TXID? If so, I can not locate it now.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> If we did not have it then it might be useful to have, so that on a CQ call
+</I>&gt;<i> the RSID could be toggled on. Then the first exchange macro could turn it
+</I>&gt;<i> off, so it is not enabled for every transmission when in a QSO. Then the
+</I>&gt;<i> last SK macro could then toggle the TXID back on so that others can see the
+</I>&gt;<i> mode in use.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I am thinking  more use of RSID on modes other than PSK31 is necessary, I
+</I>&gt;<i> still can not differentiate many of the different digital modes in use, and
+</I>&gt;<i> anything that helps but does not need us to send unnecessary data, and use
+</I>&gt;<i> the extra bandwidth of the RSID signals all of the time, has its place and
+</I>&gt;<i> value.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Andy - VE3NVK
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> An HTML attachment was scrubbed...
+</I>&gt;<i> URL:
+</I>&gt;<i> <A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091026/dfe18ffd/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091026/dfe18ffd/attachment-0001.html</A>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 2
+</I>&gt;<i> Date: Mon, 26 Oct 2009 15:29:07 -0500
+</I>&gt;<i> From: &quot;Gary Wescom&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">wescom at wildblue.net</A>&gt;
+</I>&gt;<i> Subject: Re: Flarq Plain Talk, E-mail Items
+</I>&gt;<i> To: &quot;hteller&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hteller at comcast.net</A>&gt;,    &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>&gt;
+</I>&gt;<i> Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> Message-ID: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">E3FDF1AF6973421AB52C94F408E05B5D at latop01</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; format=flowed; charset=&quot;iso-8859-1&quot;;
+</I>&gt;<i>        reply-type=original
+</I>&gt;<i>
+</I>&gt;<i> Hi Skip,
+</I>&gt;<i>
+</I>&gt;<i> I'll jump in here to answer.  I believe Joe works during the day.
+</I>&gt;<i>
+</I>&gt;<i> On the day of testing Joe's message refers to, we were practicing running a
+</I>&gt;<i> fldigi/flarq style network for EOC to EOC operation.  The PA guys have done
+</I>&gt;<i> a great job with the fldigi/wrap operation so we thought we'd try something
+</I>&gt;<i> a little different.
+</I>&gt;<i>
+</I>&gt;<i> We were using macros for burst transmission in fldigi.  That works just
+</I>&gt;<i> fine
+</I>&gt;<i> for us testers when using fldigi with higher speed modes.  Where the
+</I>&gt;<i> confusion may be coming from is that we are thinking in terms of having to
+</I>&gt;<i> teach non-digitally experienced hams to use NBEMS during an emergency
+</I>&gt;<i> situation.  We look for ways to use those people effectively for passing
+</I>&gt;<i> tactical traffic on short notice.  For that, simpler is better as long as
+</I>&gt;<i> it
+</I>&gt;<i> is still effective.
+</I>&gt;<i>
+</I>&gt;<i> We accidentally discovered how convenient it was to have full time Plain
+</I>&gt;<i> Talk operation while running a net with multiple stations.  We had been
+</I>&gt;<i> using the burst transmission macro method on fldigi to coordinate
+</I>&gt;<i> operation.
+</I>&gt;<i> When it came time to send a message using flarq, two stations connected
+</I>&gt;<i> with
+</I>&gt;<i> flarq and coordinated with each other using Plain Talk.  The rest of us
+</I>&gt;<i> could keep track of what they were doing by watching the raw transmissions
+</I>&gt;<i> in the fldigi window.  Gradually we found we tended to make all our text
+</I>&gt;<i> comments via the Plain Talk transmit line since hitting enter sends the
+</I>&gt;<i> line
+</I>&gt;<i> even without a connection.  It worked for us but sometimes it was a little
+</I>&gt;<i> confusing depending upon how flarq segmented the text line for
+</I>&gt;<i> transmission.
+</I>&gt;<i>
+</I>&gt;<i> Just for the heck of it, two more of us also connected to each other.  That
+</I>&gt;<i> meant there were two fairly idle connections operating simultaneously.
+</I>&gt;<i>  That
+</I>&gt;<i> is probably not something we would want to do on a regular basis but we
+</I>&gt;<i> were
+</I>&gt;<i> testing after all.  We noticed then the Plain Talk messaging scheme does
+</I>&gt;<i> not
+</I>&gt;<i> care what connections the messages are coming from.  All plain talk text
+</I>&gt;<i> showed up on all connected flarqs.  That was really handy since now we
+</I>&gt;<i> didn't have the problem of mentally reassembling the segmented text on
+</I>&gt;<i> fldigi window.  Of course, then we discovered that we did not no for sure
+</I>&gt;<i> who transmitted what.  We began manually inserting our callsigns in each
+</I>&gt;<i> text line.
+</I>&gt;<i>
+</I>&gt;<i> Once we had a chance to think about what we were doing, we all came to the
+</I>&gt;<i> conclusion that we could make even better use of flarq if it had the option
+</I>&gt;<i> to display unconnected Plain Talk lines and use the callsigns already
+</I>&gt;<i> available in the message header show them in the text.  Our thinking was
+</I>&gt;<i> that once we had a transceiver set up and operating with fldigi and flarq,
+</I>&gt;<i> we could fairly easily teach someone to chat back and forth with Plain Talk
+</I>&gt;<i> and connect and disconnect when traffic is passed.  Keep in mind that the
+</I>&gt;<i> radio side of thing is only part of the teaching problem.  We also have to
+</I>&gt;<i> deal with the different file directories and file types involved, plus how
+</I>&gt;<i> traffic is handed off to and received from the rest of the EOC staff.
+</I>&gt;<i>
+</I>&gt;<i> Anyway, this is a long story but sometimes I think it is necessary to give
+</I>&gt;<i> a
+</I>&gt;<i> little of the background to know why a subject comes up.  This thing about
+</I>&gt;<i> the unconnected Plain Talk operation and callsigns in NOT a make or break
+</I>&gt;<i> thing.  It is just one of those ideas that comes up during testing.  While
+</I>&gt;<i> there are several of us here in Missouri that like the idea, I bet there
+</I>&gt;<i> are
+</I>&gt;<i> others groups that may not care for it.
+</I>&gt;<i>
+</I>&gt;<i> Now for the rest of the testing.  FLDIGI and FLARQ rock!  We had an
+</I>&gt;<i> especially good day for testing.  We were on 3585 during the mid morning
+</I>&gt;<i> hours and then later in the afternoon.  Our NVIS path distances varied from
+</I>&gt;<i> 30 miles to over 150 miles which we felt was a good sample for Missouri
+</I>&gt;<i> regional operation.  What made this day so good was that thunder storms
+</I>&gt;<i> were
+</I>&gt;<i> moving over and between our stations, providing plenty of strong QRN plus
+</I>&gt;<i> we
+</I>&gt;<i> experienced some deep QSB in the afternoon.  Conditions were bad enough
+</I>&gt;<i> that
+</I>&gt;<i> MFSK32 was very poor.  Our best operation, believe it or not, was with
+</I>&gt;<i> BPSK250.   During our checks using fldigi and keyboard operation to find a
+</I>&gt;<i> good mode, we pretty much had to give up until we went to BPSK250.
+</I>&gt;<i>  Keyboard
+</I>&gt;<i> to keyboard was much better and were able to pass messages with flarq very
+</I>&gt;<i> well.  I think we were all operating with our jaws on the table top.
+</I>&gt;<i> BPSK250 was not supposed to work under these conditions.  The Gettysburg
+</I>&gt;<i> Address went through during very heavy QRN and QSB in 91 seconds.  I think
+</I>&gt;<i> that says a lot for the fldigi and flarq software and BPSK250.
+</I>&gt;<i>
+</I>&gt;<i> We did notice a quirk with DominoEX though.  Keyboard to keyboard operation
+</I>&gt;<i> was about the same as with MFSK but when we tried to use it with flarq, we
+</I>&gt;<i> noticed that none of the ARQ special characters (&lt;soh&gt;, &lt;eot&gt;, etc.) were
+</I>&gt;<i> displayed in fldigi during receive.  Of course, flarq connects did not
+</I>&gt;<i> work.
+</I>&gt;<i>
+</I>&gt;<i> Anyway, that's my story and I'm sticking to it.
+</I>&gt;<i>
+</I>&gt;<i> Gary - N0GW
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----- Original Message -----
+</I>&gt;<i> From: &quot;hteller&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hteller at comcast.net</A>&gt;
+</I>&gt;<i> To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>&gt;
+</I>&gt;<i> Cc: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;<i> Sent: Monday, October 26, 2009 3:28 PM
+</I>&gt;<i> Subject: Re: Flarq Plain Talk, E-mail Items
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> &gt; Hi Joe, try this:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Select macro set 4 in fldigi.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Create a macro for F9 that is labeled &quot;Myself&quot; and make the macro &lt;K0OG&gt;.
+</I>&gt;<i> &gt; Create another macro for F12 that is labeled &quot;Send&quot; and make the macro
+</I>&gt;<i> &gt; &lt;TX&gt;&lt;RX&gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; To &quot;chat&quot; in fldigi without flarq or Plain Talk:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 1. Press F9
+</I>&gt;<i> &gt; 2. Type what you want to say, for example, Not all hams are radio
+</I>&gt;<i> &gt; amateurs!
+</I>&gt;<i> &gt; 3. Press F12 to transmit what you want to say with &lt;K0OG&gt; appended to
+</I>&gt;<i> &gt; the start of the text and automatically return to receive.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; The advantage in using a macro to &quot;Send&quot; instead of pressing Enter, as
+</I>&gt;<i> &gt; in a chat application, is that you can add CRLF's such as:
+</I>&gt;<i> &gt; This is line one
+</I>&gt;<i> &gt; This is line two
+</I>&gt;<i> &gt; This is line three
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; and fldigi will transmit it that way.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Is that what you want to accomplish?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 73 Skip KH6TY
+</I>&gt;<i> &gt; NBEMS Development Team
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Joseph A. Counsil wrote:
+</I>&gt;<i> &gt;&gt; Dave,
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Several of us just ran a loose &quot;net&quot; using Flarq, and found that during
+</I>&gt;<i> &gt;&gt; a roundtable it was very confusing using the plain-talk.  It would be
+</I>&gt;<i> &gt;&gt; good if each line in the plain talk window were preceded with the
+</I>&gt;<i> &gt;&gt; sender's callsign, something like &lt;K0OG&gt; to identify the sender.  As a
+</I>&gt;<i> &gt;&gt; temporary help, I copied &quot;&lt;K0OG&gt;&quot; and would just Ctrl-V to paste it
+</I>&gt;<i> &gt;&gt; prior to each line I would type.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Also, I received an e-mail message but it did not show up in the
+</I>&gt;<i> &gt;&gt; NBEMS.files, nor any other directory structure I could find.  We are
+</I>&gt;<i> &gt;&gt; still working on trying to figure that out - maybe I have something set
+</I>&gt;<i> &gt;&gt; up incorrectly?  It would be nice to have a menu item or button in Flarq
+</I>&gt;<i> &gt;&gt; to open the received e-mail and received-files directories.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; I'm running AX, Windows XP Pro SP3.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Several of us in Missouri and possibly in Kansas will try some things
+</I>&gt;<i> &gt;&gt; again at 2:00 PM, 3.585 MHz if anyone would like to drop in.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; 73,
+</I>&gt;<i> &gt;&gt; -Joe-
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; fldigi-alpha mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 3
+</I>&gt;<i> Date: Mon, 26 Oct 2009 16:38:04 -0400 (EDT)
+</I>&gt;<i> From: Harry Bloomberg &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hpb+ at pitt.edu</A> &lt;hpb%<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">2B at pitt.edu</A>&gt;&gt;
+</I>&gt;<i> Subject: Re: Flarq Plain Talk, E-mail Items
+</I>&gt;<i> To: Gary Wescom &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">wescom at wildblue.net</A>&gt;
+</I>&gt;<i> Cc: hteller &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hteller at comcast.net</A>&gt;, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> Message-ID: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">Pine.GSO.4.63.0910261635080.8865 at unixs1.cis.pitt.edu</A>&gt;
+</I>&gt;<i> Content-Type: TEXT/PLAIN; format=flowed; charset=US-ASCII
+</I>&gt;<i>
+</I>&gt;<i>    Gary, great posting!
+</I>&gt;<i>
+</I>&gt;<i>    I've been so busy lately...took a vacation with the XYL, I'm in the
+</I>&gt;<i> middle of football season, had to step in as acting EC, and we've got our
+</I>&gt;<i> SET this Saturday.  When I get a spare minute, I very much want to revisit
+</I>&gt;<i> flarq.  There seems to be an increase in interest in it, particularly with
+</I>&gt;<i> PSK250.
+</I>&gt;<i>
+</I>&gt;<i> 73,
+</I>&gt;<i> Harry Bloomberg W3YJ
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hpb at pitt.edu</A>
+</I>&gt;<i>
+</I>&gt;<i> On Mon, 26 Oct 2009, Gary Wescom wrote:
+</I>&gt;<i>
+</I>&gt;<i> &gt; Hi Skip,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I'll jump in here to answer.  I believe Joe works during the day.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; On the day of testing Joe's message refers to, we were practicing running
+</I>&gt;<i> a
+</I>&gt;<i> &gt; fldigi/flarq style network for EOC to EOC operation.  The PA guys have
+</I>&gt;<i> done
+</I>&gt;<i> &gt; a great job with the fldigi/wrap operation so we thought we'd try
+</I>&gt;<i> something
+</I>&gt;<i> &gt; a little different.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; We were using macros for burst transmission in fldigi.  That works just
+</I>&gt;<i> fine
+</I>&gt;<i> &gt; for us testers when using fldigi with higher speed modes.  Where the
+</I>&gt;<i> &gt; confusion may be coming from is that we are thinking in terms of having
+</I>&gt;<i> to
+</I>&gt;<i> &gt; teach non-digitally experienced hams to use NBEMS during an emergency
+</I>&gt;<i> &gt; situation.  We look for ways to use those people effectively for passing
+</I>&gt;<i> &gt; tactical traffic on short notice.  For that, simpler is better as long as
+</I>&gt;<i> it
+</I>&gt;<i> &gt; is still effective.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; We accidentally discovered how convenient it was to have full time Plain
+</I>&gt;<i> &gt; Talk operation while running a net with multiple stations.  We had been
+</I>&gt;<i> &gt; using the burst transmission macro method on fldigi to coordinate
+</I>&gt;<i> operation.
+</I>&gt;<i> &gt; When it came time to send a message using flarq, two stations connected
+</I>&gt;<i> with
+</I>&gt;<i> &gt; flarq and coordinated with each other using Plain Talk.  The rest of us
+</I>&gt;<i> &gt; could keep track of what they were doing by watching the raw
+</I>&gt;<i> transmissions
+</I>&gt;<i> &gt; in the fldigi window.  Gradually we found we tended to make all our text
+</I>&gt;<i> &gt; comments via the Plain Talk transmit line since hitting enter sends the
+</I>&gt;<i> line
+</I>&gt;<i> &gt; even without a connection.  It worked for us but sometimes it was a
+</I>&gt;<i> little
+</I>&gt;<i> &gt; confusing depending upon how flarq segmented the text line for
+</I>&gt;<i> transmission.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Just for the heck of it, two more of us also connected to each other.
+</I>&gt;<i>  That
+</I>&gt;<i> &gt; meant there were two fairly idle connections operating simultaneously.
+</I>&gt;<i>  That
+</I>&gt;<i> &gt; is probably not something we would want to do on a regular basis but we
+</I>&gt;<i> were
+</I>&gt;<i> &gt; testing after all.  We noticed then the Plain Talk messaging scheme does
+</I>&gt;<i> not
+</I>&gt;<i> &gt; care what connections the messages are coming from.  All plain talk text
+</I>&gt;<i> &gt; showed up on all connected flarqs.  That was really handy since now we
+</I>&gt;<i> &gt; didn't have the problem of mentally reassembling the segmented text on
+</I>&gt;<i> &gt; fldigi window.  Of course, then we discovered that we did not no for sure
+</I>&gt;<i> &gt; who transmitted what.  We began manually inserting our callsigns in each
+</I>&gt;<i> &gt; text line.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Once we had a chance to think about what we were doing, we all came to
+</I>&gt;<i> the
+</I>&gt;<i> &gt; conclusion that we could make even better use of flarq if it had the
+</I>&gt;<i> option
+</I>&gt;<i> &gt; to display unconnected Plain Talk lines and use the callsigns already
+</I>&gt;<i> &gt; available in the message header show them in the text.  Our thinking was
+</I>&gt;<i> &gt; that once we had a transceiver set up and operating with fldigi and
+</I>&gt;<i> flarq,
+</I>&gt;<i> &gt; we could fairly easily teach someone to chat back and forth with Plain
+</I>&gt;<i> Talk
+</I>&gt;<i> &gt; and connect and disconnect when traffic is passed.  Keep in mind that the
+</I>&gt;<i> &gt; radio side of thing is only part of the teaching problem.  We also have
+</I>&gt;<i> to
+</I>&gt;<i> &gt; deal with the different file directories and file types involved, plus
+</I>&gt;<i> how
+</I>&gt;<i> &gt; traffic is handed off to and received from the rest of the EOC staff.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Anyway, this is a long story but sometimes I think it is necessary to
+</I>&gt;<i> give a
+</I>&gt;<i> &gt; little of the background to know why a subject comes up.  This thing
+</I>&gt;<i> about
+</I>&gt;<i> &gt; the unconnected Plain Talk operation and callsigns in NOT a make or break
+</I>&gt;<i> &gt; thing.  It is just one of those ideas that comes up during testing.
+</I>&gt;<i>  While
+</I>&gt;<i> &gt; there are several of us here in Missouri that like the idea, I bet there
+</I>&gt;<i> are
+</I>&gt;<i> &gt; others groups that may not care for it.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Now for the rest of the testing.  FLDIGI and FLARQ rock!  We had an
+</I>&gt;<i> &gt; especially good day for testing.  We were on 3585 during the mid morning
+</I>&gt;<i> &gt; hours and then later in the afternoon.  Our NVIS path distances varied
+</I>&gt;<i> from
+</I>&gt;<i> &gt; 30 miles to over 150 miles which we felt was a good sample for Missouri
+</I>&gt;<i> &gt; regional operation.  What made this day so good was that thunder storms
+</I>&gt;<i> were
+</I>&gt;<i> &gt; moving over and between our stations, providing plenty of strong QRN plus
+</I>&gt;<i> we
+</I>&gt;<i> &gt; experienced some deep QSB in the afternoon.  Conditions were bad enough
+</I>&gt;<i> that
+</I>&gt;<i> &gt; MFSK32 was very poor.  Our best operation, believe it or not, was with
+</I>&gt;<i> &gt; BPSK250.   During our checks using fldigi and keyboard operation to find
+</I>&gt;<i> a
+</I>&gt;<i> &gt; good mode, we pretty much had to give up until we went to BPSK250.
+</I>&gt;<i>  Keyboard
+</I>&gt;<i> &gt; to keyboard was much better and were able to pass messages with flarq
+</I>&gt;<i> very
+</I>&gt;<i> &gt; well.  I think we were all operating with our jaws on the table top.
+</I>&gt;<i> &gt; BPSK250 was not supposed to work under these conditions.  The Gettysburg
+</I>&gt;<i> &gt; Address went through during very heavy QRN and QSB in 91 seconds.  I
+</I>&gt;<i> think
+</I>&gt;<i> &gt; that says a lot for the fldigi and flarq software and BPSK250.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; We did notice a quirk with DominoEX though.  Keyboard to keyboard
+</I>&gt;<i> operation
+</I>&gt;<i> &gt; was about the same as with MFSK but when we tried to use it with flarq,
+</I>&gt;<i> we
+</I>&gt;<i> &gt; noticed that none of the ARQ special characters (&lt;soh&gt;, &lt;eot&gt;, etc.) were
+</I>&gt;<i> &gt; displayed in fldigi during receive.  Of course, flarq connects did not
+</I>&gt;<i> work.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Anyway, that's my story and I'm sticking to it.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Gary - N0GW
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; ----- Original Message -----
+</I>&gt;<i> &gt; From: &quot;hteller&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hteller at comcast.net</A>&gt;
+</I>&gt;<i> &gt; To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>&gt;
+</I>&gt;<i> &gt; Cc: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;<i> &gt; Sent: Monday, October 26, 2009 3:28 PM
+</I>&gt;<i> &gt; Subject: Re: Flarq Plain Talk, E-mail Items
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Hi Joe, try this:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Select macro set 4 in fldigi.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Create a macro for F9 that is labeled &quot;Myself&quot; and make the macro
+</I>&gt;<i> &lt;K0OG&gt;.
+</I>&gt;<i> &gt;&gt; Create another macro for F12 that is labeled &quot;Send&quot; and make the macro
+</I>&gt;<i> &gt;&gt; &lt;TX&gt;&lt;RX&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; To &quot;chat&quot; in fldigi without flarq or Plain Talk:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; 1. Press F9
+</I>&gt;<i> &gt;&gt; 2. Type what you want to say, for example, Not all hams are radio
+</I>&gt;<i> &gt;&gt; amateurs!
+</I>&gt;<i> &gt;&gt; 3. Press F12 to transmit what you want to say with &lt;K0OG&gt; appended to
+</I>&gt;<i> &gt;&gt; the start of the text and automatically return to receive.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; The advantage in using a macro to &quot;Send&quot; instead of pressing Enter, as
+</I>&gt;<i> &gt;&gt; in a chat application, is that you can add CRLF's such as:
+</I>&gt;<i> &gt;&gt; This is line one
+</I>&gt;<i> &gt;&gt; This is line two
+</I>&gt;<i> &gt;&gt; This is line three
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; and fldigi will transmit it that way.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Is that what you want to accomplish?
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; 73 Skip KH6TY
+</I>&gt;<i> &gt;&gt; NBEMS Development Team
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Joseph A. Counsil wrote:
+</I>&gt;<i> &gt;&gt;&gt; Dave,
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Several of us just ran a loose &quot;net&quot; using Flarq, and found that during
+</I>&gt;<i> &gt;&gt;&gt; a roundtable it was very confusing using the plain-talk.  It would be
+</I>&gt;<i> &gt;&gt;&gt; good if each line in the plain talk window were preceded with the
+</I>&gt;<i> &gt;&gt;&gt; sender's callsign, something like &lt;K0OG&gt; to identify the sender.  As a
+</I>&gt;<i> &gt;&gt;&gt; temporary help, I copied &quot;&lt;K0OG&gt;&quot; and would just Ctrl-V to paste it
+</I>&gt;<i> &gt;&gt;&gt; prior to each line I would type.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Also, I received an e-mail message but it did not show up in the
+</I>&gt;<i> &gt;&gt;&gt; NBEMS.files, nor any other directory structure I could find.  We are
+</I>&gt;<i> &gt;&gt;&gt; still working on trying to figure that out - maybe I have something set
+</I>&gt;<i> &gt;&gt;&gt; up incorrectly?  It would be nice to have a menu item or button in
+</I>&gt;<i> Flarq
+</I>&gt;<i> &gt;&gt;&gt; to open the received e-mail and received-files directories.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; I'm running AX, Windows XP Pro SP3.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Several of us in Missouri and possibly in Kansas will try some things
+</I>&gt;<i> &gt;&gt;&gt; again at 2:00 PM, 3.585 MHz if anyone would like to drop in.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; 73,
+</I>&gt;<i> &gt;&gt;&gt; -Joe-
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt; fldigi-alpha mailing list
+</I>&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; fldigi-alpha mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 4
+</I>&gt;<i> Date: Tue, 27 Oct 2009 09:20:13 +1100
+</I>&gt;<i> From: John Douyere &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">vk2eta at gmail.com</A>&gt;
+</I>&gt;<i> Subject: Re: 3.13AY posted
+</I>&gt;<i> To: fldigi-alpha &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;<i> Message-ID:
+</I>&gt;<i>        &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">5f51f8060910261520y4eafc0cby644303e62b5dbbe1 at mail.gmail.com</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=&quot;iso-8859-1&quot;
+</I>&gt;<i>
+</I>&gt;<i> Dave,
+</I>&gt;<i>
+</I>&gt;<i> As much as I would be proud if it was the case, I cannot take credit for
+</I>&gt;<i> the
+</I>&gt;<i> PSK500 patch. My contribution was only for the ARQ RSID control
+</I>&gt;<i> incorporated
+</I>&gt;<i> in the previous version.
+</I>&gt;<i>
+</I>&gt;<i> The patch for psk500 (and originally for psk1000 for that matter) is the
+</I>&gt;<i> work of Roberto (IS0GRB) I believe, at least as far as I can trace it.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 73s,
+</I>&gt;<i>
+</I>&gt;<i> John (VK2ETA)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Tue, Oct 27, 2009 at 4:23 AM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i> &gt;  <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AY.tar.gz">http://www.w1hkj.com/alpha/fldigi-3.13AY.tar.gz</A> - source
+</I>&gt;<i> &gt; <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AY.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13AY.bin.tgz</A> - linux
+</I>&gt;<i> &gt; <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AY.npa.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13AY.npa.bin.tgz</A> - linux sans pulse
+</I>&gt;<i> &gt; audio
+</I>&gt;<i> &gt; <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AY_setup.exe">http://www.w1hkj.com/alpha/fldigi-3.13AY_setup.exe</A> - windows
+</I>&gt;<i> &gt; <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AY.dmg">http://www.w1hkj.com/alpha/fldigi-3.13AY.dmg</A> - OS X
+</I>&gt;<i> &gt; <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13.pet">http://www.w1hkj.com/alpha/fldigi-3.13.pet</A> - Puppy - full install
+</I>&gt;<i> &gt; <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AY.pet">http://www.w1hkj.com/alpha/fldigi-3.13AY.pet</A> - Puppy fldigi binary only
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; <A HREF="http://www.w1hkj.com/alpha/log-313.txt">http://www.w1hkj.com/alpha/log-313.txt</A> - log of changes since 3.12
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Version 3.13AY
+</I>&gt;<i> &gt;     Macro Save Log
+</I>&gt;<i> &gt;         * Now correctly clears the &quot;save log&quot; nag flag
+</I>&gt;<i> &gt;     No Rig Save
+</I>&gt;<i> &gt;         * Saves the status frequency and sideband for case when CAT
+</I>&gt;<i> &gt;           is not used, or when the transceiver is a base-rig.
+</I>&gt;<i> &gt;     Base Rig
+</I>&gt;<i> &gt;         * Mod to allow control of transceivers which accept frequency
+</I>&gt;<i> &gt;           and/or mode commands but are not capable of responding
+</I>&gt;<i> &gt;           to a data request for either.
+</I>&gt;<i> &gt;           Patch created by Joe Veldhuis, N8FG
+</I>&gt;<i> &gt;     PSK500 Addition
+</I>&gt;<i> &gt;         * Added PSK500 mode at the request of the pskmail users
+</I>&gt;<i> &gt;           Patch created by John Douyere, VK2ETA
+</I>&gt;<i> &gt;           Submitted by Rein Couperus, PA0R
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 73, Dave, W1HKJ
+</I>&gt;<i> &gt; for the development team
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; fldigi-alpha mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> An HTML attachment was scrubbed...
+</I>&gt;<i> URL:
+</I>&gt;<i> <A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091027/302c9e86/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091027/302c9e86/attachment.html</A>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> End of fldigi-alpha Digest, Vol 6, Issue 38
+</I>&gt;<i> *******************************************
+</I>&gt;<i>
+</I>
+
+
+-- 
+Andrew Hart - VE3NVK
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091027/64997fb6/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091027/64997fb6/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000371.html">email non delivery
+</A></li>
+	<LI>Next message: <A HREF="000374.html">Hamlib DLL issue (was: Re: fldigi-alpha Digest, Vol 6, Issue 38)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#373">[ date ]</a>
+              <a href="thread.html#373">[ thread ]</a>
+              <a href="subject.html#373">[ subject ]</a>
+              <a href="author.html#373">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

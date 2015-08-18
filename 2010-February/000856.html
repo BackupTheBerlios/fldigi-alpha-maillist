@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Difficulties with rig control
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Difficulties%20with%20rig%20control&In-Reply-To=%3C4B7A9D77.7%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000855.html">
+   <LINK REL="Next"  HREF="000884.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Difficulties with rig control</H1>
+    <B>Ed</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Difficulties%20with%20rig%20control&In-Reply-To=%3C4B7A9D77.7%40gmail.com%3E"
+       TITLE="Difficulties with rig control">autek2 at gmail.com
+       </A><BR>
+    <I>Tue Feb 16 14:28:23 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000855.html">Difficulties with rig control
+</A></li>
+        <LI>Next message: <A HREF="000884.html">Difficulties with rig control
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#856">[ date ]</a>
+              <a href="thread.html#856">[ thread ]</a>
+              <a href="subject.html#856">[ subject ]</a>
+              <a href="author.html#856">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>John Witchell wrote:
+&gt;<i> I have recently added a CAT style interface to an elderly TS-530S rig to
+</I>&gt;<i>  capture the frequency and mode and also to key the TX. In doing so I
+</I>&gt;<i> have found Fldigi to be quite susceptible to anything out of the
+</I>&gt;<i> ordinary in its rig control.
+</I>&gt;<i> 
+</I>&gt;<i> I am using the RigCAT interface and a cut down FT-1000.XML file but have
+</I>&gt;<i> had problems with a proper FT-1000 radio and the Hamlib interface too.
+</I>&gt;<i> It seems that if anything happens out of the ordinary Fldigi freezes up
+</I>&gt;<i> taking about 60% CPU and has to be killed from a terminal.
+</I>&gt;<i> 
+</I>&gt;<i> This is the same with the current release version running on Windows,
+</I>&gt;<i> Ubuntu and Puppy Linux and also with the latest Alpha 3.13BY.
+</I>&gt;<i> 
+</I>&gt;<i> If the rig is turned off while Fldigi is running it freezes most times.
+</I>&gt;<i>  If an out-of-range frequency is reported by the rig (happened a few
+</I>&gt;<i> times while developing the interface for the TS-530) it freezes and if
+</I>&gt;<i> there is anything wrong with the XML file again its all over until the
+</I>&gt;<i> process is killed.
+</I>&gt;<i> 
+</I>&gt;<i> Is this something experienced by others or have I just been unfortunate
+</I>&gt;<i> I wonder?
+</I>&gt;<i> 
+</I>&gt;<i> Best regards
+</I>&gt;<i> John Witchell G4OTJ
+</I>
+Start fldigi, disable rig control. Open the Event log, move the slider 
+all the way to the right. Restart rig control. When fldigi crashes, open 
+./fldigi and see if the status log tells you anything.
+
+Ed W3NR
+
+
+
+
+
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000855.html">Difficulties with rig control
+</A></li>
+	<LI>Next message: <A HREF="000884.html">Difficulties with rig control
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#856">[ date ]</a>
+              <a href="thread.html#856">[ thread ]</a>
+              <a href="subject.html#856">[ subject ]</a>
+              <a href="author.html#856">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

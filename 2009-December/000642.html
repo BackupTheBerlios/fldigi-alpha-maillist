@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi / flrig updates posted to alpha test page
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20/%20flrig%20updates%20posted%20to%20alpha%20test%20page&In-Reply-To=%3C4B3D221C.1090304%40salsgiver.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000635.html">
+   <LINK REL="Next"  HREF="000643.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi / flrig updates posted to alpha test page</H1>
+    <B>David Kleber</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20/%20flrig%20updates%20posted%20to%20alpha%20test%20page&In-Reply-To=%3C4B3D221C.1090304%40salsgiver.com%3E"
+       TITLE="fldigi / flrig updates posted to alpha test page">davek at salsgiver.com
+       </A><BR>
+    <I>Thu Dec 31 23:13:48 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000635.html">fldigi / flrig updates posted to alpha test page
+</A></li>
+        <LI>Next message: <A HREF="000643.html">fldigi / flrig updates posted to alpha test page
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#642">[ date ]</a>
+              <a href="thread.html#642">[ thread ]</a>
+              <a href="subject.html#642">[ subject ]</a>
+              <a href="author.html#642">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Vast improvement on software squelch while running Olivia with 3.13BK 
+and Vista Home Premium.
+
+Thanks and Happy New Year to all!
+
+-Dave, KB3FXI
+
+
+w1hkj wrote:
+&gt;<i> <A HREF="http://www.w1hkj.com/alpha/">http://www.w1hkj.com/alpha/</A>
+</I>&gt;<i> 
+</I>&gt;<i> Updates to OS X, Linux, Puppy and Windows files
+</I>&gt;<i> 
+</I>&gt;<i> Fldigi 3.13BK
+</I>&gt;<i> 
+</I>&gt;<i>    Olivia Mods
+</I>&gt;<i>      * Added integration period default settings iaw the number
+</I>&gt;<i>        of tones and the bandwidth for the specific Olivia mode.
+</I>&gt;<i>      * Modified squelch detection using SyncSNR value generated
+</I>&gt;<i>        by Pawel's MFSK C++ template.
+</I>&gt;<i> 
+</I>&gt;<i>    Fix xmlrpc locking
+</I>&gt;<i>        Add new XMLRPC_LOCK macro that should be called in every execute()
+</I>&gt;<i>      method that modifies the server state or calls REQ.
+</I>&gt;<i> 
+</I>&gt;<i>    Clean up xmlrpc
+</I>&gt;<i>        * Rename the following methods (old methods are kept for
+</I>&gt;<i>        compatibility):
+</I>&gt;<i>        - main.set_rig_name -&gt; rig.set_name
+</I>&gt;<i>        - main.set_rig_frequency -&gt; rig.set_frequency
+</I>&gt;<i>        - main.set_rig_modes -&gt; rig.set_modes
+</I>&gt;<i>        - main.set_rig_mode -&gt; rig.set_mode
+</I>&gt;<i>        - main.get_rig_modes -&gt; rig.get_modes
+</I>&gt;<i>        - main.get_rig_mode -&gt; rig.get_mode
+</I>&gt;<i>        - main.set_rig_bandwidths -&gt; rig.set_bandwidths
+</I>&gt;<i>        - main.set_rig_bandwidth -&gt; rig.set_bandwidth
+</I>&gt;<i>        - main.get_rig_bandwidths -&gt; rig.get_bandwidths
+</I>&gt;<i>        - main.get_rig_bandwidth -&gt; rig.get_bandwidth
+</I>&gt;<i>      * Add log.set_qth and log.set_locator
+</I>&gt;<i>      * Deprecate log.get_sideband, which became equivalent to
+</I>&gt;<i>        main.get_wf_sideband
+</I>&gt;<i> 
+</I>&gt;<i>    THOR soft decoding
+</I>&gt;<i>        Removed soft decoding.  The implementation gave questionable
+</I>&gt;<i>      signal processing s/n gain.
+</I>&gt;<i> ==================================================================
+</I>&gt;<i> Flrig 0.9.99B
+</I>&gt;<i> 
+</I>&gt;<i>    XML_IO Race Condition
+</I>&gt;<i>          Corrected race condition during xml_io update to mode/bw
+</I>&gt;<i>      TT-516 AM bandwidths
+</I>&gt;<i>          Added AM bandwidths table
+</I>&gt;<i> 
+</I>&gt;<i>    FT100D fix
+</I>&gt;<i>          Fixed bit interpretation for transceiver bandwidth report
+</I>&gt;<i>        Submitted by Walter Fey, DL8FCL
+</I>&gt;<i> 
+</I>&gt;<i>    XMLRPC mod
+</I>&gt;<i>          Updated xmlrpc calls to server to comply with changes in
+</I>&gt;<i>        server command language.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i> for the development team
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000635.html">fldigi / flrig updates posted to alpha test page
+</A></li>
+	<LI>Next message: <A HREF="000643.html">fldigi / flrig updates posted to alpha test page
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#642">[ date ]</a>
+              <a href="thread.html#642">[ thread ]</a>
+              <a href="subject.html#642">[ subject ]</a>
+              <a href="author.html#642">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

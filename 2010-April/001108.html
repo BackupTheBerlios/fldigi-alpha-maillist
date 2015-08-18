@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> WEFAX Works Great!
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20WEFAX%20Works%20Great%21&In-Reply-To=%3C4BC2CCED.4040003%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001105.html">
+   <LINK REL="Next"  HREF="001110.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>WEFAX Works Great!</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20WEFAX%20Works%20Great%21&In-Reply-To=%3C4BC2CCED.4040003%40gmail.com%3E"
+       TITLE="WEFAX Works Great!">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Mon Apr 12 09:34:05 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001105.html">WEFAX documentation ?
+</A></li>
+        <LI>Next message: <A HREF="001110.html">WEFAX Works Great!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1108">[ date ]</a>
+              <a href="thread.html#1108">[ thread ]</a>
+              <a href="subject.html#1108">[ subject ]</a>
+              <a href="author.html#1108">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ben wrote:
+&gt;<i>
+</I>&gt;<i> Bug: I set max lines to 2000; let manual run; when it reset to auto, 
+</I>&gt;<i> the widgets wrote text over the first line of fax controls, at the 
+</I>&gt;<i> right end.
+</I>I have noticed this, sometimes. I suspect this is related to a REQ event 
+being lost. I made a fix to correct it by hiding the redundant menu 
+(Available in next commit&#176; and did not see the problem happen again.
+
+ &gt; A little confusion as to which widget is active at that time, perhaps.
+Yes, this is why the window label will indicate  the manual/auto mode.
+
+&gt;<i>
+</I>&gt;<i> Operational issue: In manual, it resets into auto mode when the max 
+</I>&gt;<i> lines complete. It should stay in manual unless I take it out.
+</I>Yes, well done. Fix will be available in next commit to pu/rc.
+&gt;<i>
+</I>&gt;<i> Also, in manual, rather than abort, I suggest it go to STOP, where it 
+</I>&gt;<i> isn't receiving at all, just paused. As it is, the image immediately 
+</I>&gt;<i> erases and if not saving, you never get to look at it.
+</I>Yes, I feel the same need. The plan is to suppress the button 'Hide' 
+because it does exactly what closing the window does (By cliking the 
+cross at the upper right corner). This button Hide is therefore 
+redundant, and it is quite ergonomic to replace it by 'Pause/Restart' 
+just as you suggest. This way, I do not touch 'Abort' so I am sure not 
+to add any bug, nor to displease people who like it.
+
+It will be available in next commit.
+&gt;<i>
+</I>&gt;<i> Feature suggestion that will help with weaker signals in auto: Protect 
+</I>&gt;<i> against APT-end until a certain number of lines have been received 
+</I>&gt;<i> (probably should be user-settable... default to maybe 1000 or so.) 
+</I>&gt;<i> Otherwise, in weak signal conditions, the receive often quits very 
+</I>&gt;<i> early, interpreting noise as &quot;stop.&quot; It would be nice to even disable 
+</I>&gt;<i> APT-end, as once reception is begun, even horribly weak signals can be 
+</I>&gt;<i> somewhat copied, but that APT-end will probably kill the fax under 
+</I>&gt;<i> those conditions.
+</I>What about a small tick to disable Apt-End detection, displayed only 
+when in auto mode ?
+
+&gt;<i>
+</I>&gt;<i> Possible bug: I set up my slant (now -.005), ran the wefax mode for a 
+</I>&gt;<i> while, then quit fldigi using the menu, during receive. My slant 
+</I>&gt;<i> setting was not restored when I restarted;
+</I>Yes, this is right. At the moment, I do not know how to save settings, 
+and we decided more or less not to add a 'wefax modem' tab to the modem 
+settings, due to the apparent complexity to change the 'fluid-generated' 
+fltk menus, and postpone these changes.
+
+So, if there is a way to save these settings without using fluid, I will 
+be happy to do it. Otherwise, I would prefer to postpone it until we 
+will know the entire list of parameters to set in this modem menu.
+&gt;<i>
+</I>&gt;<i> Operational issue: The wefax display window, which was open when I 
+</I>&gt;<i> quit, and did not re-open when I re-started fldigi. My feeling is that 
+</I>&gt;<i> it should. If you're in wefax mode and the window is open when you 
+</I>&gt;<i> quit, that's how it should restart. IMHO.
+</I>Someone also suggested that when entering any wefax mode, the reception 
+window should open. It corroborates the fact that a couple of users when 
+entering this mode, simply did not know what to do until suggested to go 
+to 'View'. My problem here is the same: How to save a user setting 
+without using the modem menus?
+&gt;<i>
+</I>&gt;<i> Lost data bug: It still loses receive data when you re-size the 
+</I>&gt;<i> window. It acts like the thread that manages the window is the one 
+</I>&gt;<i> that is capturing the data? Just guessing... but the hole in the image 
+</I>&gt;<i> is very noticeable.
+</I>Yes again. I would like to know whether it is possible to lose events in 
+REQ. My plan is to temporarily replace REQ by REQ_SYNC.
+&gt;<i>
+</I>&gt;<i>
+</I>To summarize, we need some clarification about what are the clean ways 
+to save user settings in fldigi, without having to change modem menus.
+
+Thanks for your ideas and remarks.
+
+Cheers
+
+Remi
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001105.html">WEFAX documentation ?
+</A></li>
+	<LI>Next message: <A HREF="001110.html">WEFAX Works Great!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1108">[ date ]</a>
+              <a href="thread.html#1108">[ thread ]</a>
+              <a href="subject.html#1108">[ subject ]</a>
+              <a href="author.html#1108">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

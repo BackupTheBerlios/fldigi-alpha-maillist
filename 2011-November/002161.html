@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.21.29 pre release posted for testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.29%20pre%20release%20posted%20for%20testing&In-Reply-To=%3C4ED19BAE.5090305%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002160.html">
+   <LINK REL="Next"  HREF="002162.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.21.29 pre release posted for testing</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.29%20pre%20release%20posted%20for%20testing&In-Reply-To=%3C4ED19BAE.5090305%40bellsouth.net%3E"
+       TITLE="fldigi 3.21.29 pre release posted for testing">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sun Nov 27 03:08:46 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002160.html">3.22.0BG posted
+</A></li>
+        <LI>Next message: <A HREF="002162.html">fldigi 3.21.29 pre release posted for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2161">[ date ]</a>
+              <a href="thread.html#2161">[ thread ]</a>
+              <a href="subject.html#2161">[ subject ]</a>
+              <a href="author.html#2161">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+
+fldigi-3.21.29 pre release
+
+   Merge Logs
+     * Added duplicate checking to log merger
+     * Save duplicates to an ADIF file and display results of merger on 
+the Rx panel.
+     * Save merged records to a merged rec file
+     * Altered read adif to accommodate LoTW peculiarities
+
+   eQSL QTH nickname
+     * Changed location of &lt;APP_EQSL_QTH_NICKNAME:%d&gt;%s to come after &lt;EOH&gt;
+
+   ADIF i/o tweaks
+     * Changes to improve file i/o performance
+     * Removed &lt;ADIF_VER: check to allow importing from non compliant 
+ADIF files.
+
+   Call lookup
+     * Added ability to lookup calls with multiple slash and to 
+recognize leading slashed preamble
+       - KH6/W1HKJ/M
+       - W1HKJ/6
+       - M2/W1HKJ
+
+Paul:  This is an update to the previous 3.21.29 pre release that you 
+tested.
+
+All:  You can use the merge log routines to cull duplicates from an 
+existing database.  Start fldigi and then open a &quot;new&quot; logbook.  Import 
+your current log into the new one and the new log will have all 
+duplicate records removed.  Save the new log giving it an appropriate 
+name (not the old logbook name).  The merge routine will populate the 
+new logbook and create two adif files containing the merged and the 
+duplicate records (only if either/or exist).  You will receive 
+notification of the merge results and the file names both on the Rx 
+panel and in the event log.
+
+73, Dave, w1hkj
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111126/f9fb80e7/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111126/f9fb80e7/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002160.html">3.22.0BG posted
+</A></li>
+	<LI>Next message: <A HREF="002162.html">fldigi 3.21.29 pre release posted for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2161">[ date ]</a>
+              <a href="thread.html#2161">[ thread ]</a>
+              <a href="subject.html#2161">[ subject ]</a>
+              <a href="author.html#2161">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

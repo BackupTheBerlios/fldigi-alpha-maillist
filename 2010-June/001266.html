@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [linuxham] Fldigi 3.21.0AB Off button for RTTY TxID
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20%5Blinuxham%5D%20Fldigi%203.21.0AB%20Off%20button%20for%20RTTY%20TxID&In-Reply-To=%3CC833BD71.FD3D%25aa5vu%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001265.html">
+   <LINK REL="Next"  HREF="001267.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[linuxham] Fldigi 3.21.0AB Off button for RTTY TxID</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20%5Blinuxham%5D%20Fldigi%203.21.0AB%20Off%20button%20for%20RTTY%20TxID&In-Reply-To=%3CC833BD71.FD3D%25aa5vu%40att.net%3E"
+       TITLE="[linuxham] Fldigi 3.21.0AB Off button for RTTY TxID">aa5vu at att.net
+       </A><BR>
+    <I>Tue Jun  8 16:27:13 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001265.html">[linuxham] Fldigi 3.21.0AB Off button for RTTY TxID
+</A></li>
+        <LI>Next message: <A HREF="001267.html">FSK-Hell (245) TX-RSID
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1266">[ date ]</a>
+              <a href="thread.html#1266">[ thread ]</a>
+              <a href="subject.html#1266">[ subject ]</a>
+              <a href="author.html#1266">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 6/8/10 8:53 AM, &quot;Dave Freese W1HKJ&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A>&gt; wrote:
+
+&gt;<i> Dick Kriss wrote:
+</I>&gt;&gt;<i>  
+</I>&gt;&gt;<i> Dave, 
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I just downloaded the latest fldigi-3.21.0AD and the note you posted
+</I>&gt;&gt;<i> indicated:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i>         RSID code base
+</I>&gt;&gt;<i>               Reverted to 3.20.nn code.
+</I>&gt;&gt;<i>               removed wefax RSID identifiers
+</I>&gt;&gt;<i>               restored conditional rx/tx RSID functions
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I must not understand how the TxID works or there may still be a glitch
+</I>&gt;&gt;<i> in fldigi-3.21.0AD because the only way I can disable TxID in RTTY mode
+</I>&gt;&gt;<i> is to globally disable TxID by unchecking the Config/ID/Video Preamble ID
+</I>&gt;&gt;<i> Transmit mode ID.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I was under the impression the purpose of the Video ID modes selector (on
+</I>&gt;&gt;<i> the right side of the panel) was so the user could disable the Preamble ID
+</I>&gt;&gt;<i> for certain modes.  In my settings I have CW, BPSK-31 and RTTY unchecked.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Please clarify
+</I>&gt;&gt;<i>   
+</I>&gt;<i> A picture is worth a thousand words.&#160; Here is two snapshots of 3.20.13, RTTY
+</I>&gt;<i> tx with and without RSID:
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> It was not necessary to save the configuration or anything else.&#160; Just toggled
+</I>&gt;<i> the RTTY selector in the RSID Transmit selector dialog.
+</I>&gt;<i> 
+</I>&gt;<i> Is OS X behaving differently than standard Unix / Linux or Windows?&#160; I get the
+</I>&gt;<i> same result on Vista and XP.
+</I>&gt;<i> 
+</I>&gt;<i> Dave
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Dave,
+</I>&gt;<i> 
+</I>&gt;<i> The following are my settings and the
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> (Since the reflector strips pictures &#173; it shows the Video Preamble CHECKED and
+</I>&gt;<i> the Vidio ID monitor show RTTY UNCHECKED
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Note TxID is unchecked
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> This is what shows up when I transmit RTTY.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ((( The video preamble is transmitted showing
+</I>&gt;<i> 
+</I>&gt;<i> RT
+</I>&gt;<i> TY
+</I>&gt;<i> 
+</I>&gt;<i> in the waterfall )
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> How about asking some other Mac users to test this function. Something
+</I>&gt;<i> is not working as you intended.
+</I>&gt;<i> 
+</I>&gt;<i> Again, the only way I can disable the TxID for RTTY is to uncheck the
+</I>&gt;<i> global command
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Dick AA5VU
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: image.png
+Type: image/png
+Size: 8950 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: image.png
+Type: image/png
+Size: 7315 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0001.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0001.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: image.png
+Type: image/png
+Size: 55259 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0002.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0002.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: image.png
+Type: image/png
+Size: 14734 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0003.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0003.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: image.png
+Type: image/png
+Size: 21509 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0004.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0004.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: image.png
+Type: image/png
+Size: 20954 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0005.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100608/205c31b1/attachment-0005.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001265.html">[linuxham] Fldigi 3.21.0AB Off button for RTTY TxID
+</A></li>
+	<LI>Next message: <A HREF="001267.html">FSK-Hell (245) TX-RSID
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1266">[ date ]</a>
+              <a href="thread.html#1266">[ thread ]</a>
+              <a href="subject.html#1266">[ subject ]</a>
+              <a href="author.html#1266">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

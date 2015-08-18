@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI and Packet Operation: openpty()
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3CCACMWOgvyJANs2wQMjp587M%3DXFq%2B28953TUT8W-vBAfFDtVXLHw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002204.html">
+   <LINK REL="Next"  HREF="002210.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI and Packet Operation: openpty()</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3CCACMWOgvyJANs2wQMjp587M%3DXFq%2B28953TUT8W-vBAfFDtVXLHw%40mail.gmail.com%3E"
+       TITLE="FLDIGI and Packet Operation: openpty()">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Tue Dec 20 14:13:09 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002204.html">fldigi-alpha Digest, Vol 32, Issue 13
+</A></li>
+        <LI>Next message: <A HREF="002210.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2209">[ date ]</a>
+              <a href="thread.html#2209">[ thread ]</a>
+              <a href="subject.html#2209">[ subject ]</a>
+              <a href="author.html#2209">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This Perl module is probably a good starting point in term of
+implementation:
+
+<A HREF="http://search.cpan.org/~rbdavison/Device-TNC-0.03/lib/Device/TNC/KISS.pm">http://search.cpan.org/~rbdavison/Device-TNC-0.03/lib/Device/TNC/KISS.pm</A>
+
+&quot; This module trys to implement an easy way to talk to a KISS mode Terminal
+Node Controller (TNC) such as the TNC-X via a serial port.&quot;
+On Fri, Dec 9, 2011 at 3:40 PM, Tim Ellison, W4TME &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">tim at flex-radio.com</A>&gt;wrote:
+
+&gt;<i> A serial (com) port.
+</I>&gt;<i>
+</I>&gt;<i> A KISS TNC has a very limited command set, not like a full blown hardware
+</I>&gt;<i> TNC
+</I>&gt;<i>
+</I>&gt;<i>  Tim Ellison, W4TME
+</I>&gt;<i> Product Management, Sales &amp; Support
+</I>&gt;<i> FlexRadio Systems&#8482;
+</I>&gt;<i> 4616 W Howard Ln Ste 1-150
+</I>&gt;<i> Austin, TX 78728
+</I>&gt;<i> Phone: 512-535-4713 Ext. 223
+</I>&gt;<i> Email: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">tim at flexradio.com</A>
+</I>&gt;<i> Web: www.flexradio.com
+</I>&gt;<i>
+</I>&gt;<i> [image: logo]
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>  On 12/9/2011 8:26 AM, Remi Chateauneu wrote:
+</I>&gt;<i>
+</I>&gt;<i>   What's the interface of a KISS port on Windows ? Network socket ?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Fri, Dec 9, 2011 at 2:52 AM, Tim Ellison, W4TME &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">tim at flex-radio.com</A>&gt;wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> FLEX32 does not support separate input and output sound devices which is
+</I>&gt;&gt;<i> one of my requirements.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">listfldigi-alpha at lists.berlios.dehttps</A>://lists.berlios.de/mailman/listinfo/fldigi-alpha
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111220/557d445a/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111220/557d445a/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: logo_300x37.bmp
+Type: image/bmp
+Size: 33354 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111220/557d445a/attachment.bin">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111220/557d445a/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002204.html">fldigi-alpha Digest, Vol 32, Issue 13
+</A></li>
+	<LI>Next message: <A HREF="002210.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2209">[ date ]</a>
+              <a href="thread.html#2209">[ thread ]</a>
+              <a href="subject.html#2209">[ subject ]</a>
+              <a href="author.html#2209">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

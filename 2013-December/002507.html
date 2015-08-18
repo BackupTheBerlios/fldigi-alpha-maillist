@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> New Bayesian Morse decoder for FLDIGI available for alpha testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2013-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Bayesian%20Morse%20decoder%20for%20FLDIGI%20available%20for%20alpha%20testing&In-Reply-To=%3C0LxxCW-1VQIo02ImS-015iRt%40mrelay.perfora.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002504.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>New Bayesian Morse decoder for FLDIGI available for alpha testing</H1>
+    <B>Mauri Niininen</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Bayesian%20Morse%20decoder%20for%20FLDIGI%20available%20for%20alpha%20testing&In-Reply-To=%3C0LxxCW-1VQIo02ImS-015iRt%40mrelay.perfora.net%3E"
+       TITLE="New Bayesian Morse decoder for FLDIGI available for alpha testing">mauri at innomore.com
+       </A><BR>
+    <I>Thu Dec 26 23:44:46 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002504.html">Alsa
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2507">[ date ]</a>
+              <a href="thread.html#2507">[ thread ]</a>
+              <a href="subject.html#2507">[ subject ]</a>
+              <a href="author.html#2507">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Remi
+I have created synthetic Morse code test audio files with SNR from +60 dB to -20 dB and with various speeds up to 40 WPM.
+
+I experimented also adding some QSB on these synthetic files but I haven't figured out the right formula to create realistic ionospheric effects. There is a Windows program (Pathsim or something like that) that I used earlier but the results did not sound very realistic. As expected decoding accuracy falls quickly when SNR falls below threshold in these simulated audio files.
+
+I have also thought about adding random fluctuations on Morse timing but my Morse generator is Octave based and haven't had time to start rebuilding that yet. Humans seem to have fairly individualistic rhythm patterns that don't follow Gaussian distribution except when aggregated across multiple individuals. Modeling those individual patterns may be difficult....
+
+I was quite surprised to get on &quot;Ask Slashdot&quot; home page with my question. I got some good ideas but also many replies with no new information. 
+
+This pursuit of improved CW decoder is quite challenging. Not just from software perspective but also in getting good test material and actionable feedback. I have certainly learned a lot but I feel that I am not making much progress.
+
+73 and happy holidays 
+
+Mauri AG1LE 
+
+
+
+
+
+-----Original Message-----
+From: &quot;Remi Chateauneu&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+Sent: &#8206;12/&#8206;26/&#8206;2013 16:21
+To: &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mauri at innomore.com</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mauri at innomore.com</A>&gt;
+Cc: &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;; &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha-request at lists.berlios.de</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha-request at lists.berlios.de</A>&gt;
+Subject: Re: New Bayesian Morse decoder for FLDIGI available for alpha testing
+
+Hi Mauri
+
+
+Have you considered generating noise and distortions, to make better tests ?
+
+
+
+PS: Some advertisement here.
+
+
+<A HREF="http://ask.slashdot.org/story/13/12/26/1523250/ask-slashdot-how-to-build-a-morse-code-audio-library-for-machine-learning">http://ask.slashdot.org/story/13/12/26/1523250/ask-slashdot-how-to-build-a-morse-code-audio-library-for-machine-learning</A>
+
+
+
+
+
+On Wed, Dec 25, 2013 at 4:27 AM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mauri at innomore.com</A> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mauri at innomore.com</A>&gt; wrote:
+
+I have been working on a new Bayesian Morse decoder for FLDIGI for a while.  
+The goal was to have a CW decoder that adapts better to different operators rhytms, sudden speed changes, signal fluctuations and noise and still is able to decode Morse code fairly accurately.  
+
+While this software is not perfect and has some bugs I am happy to release this brand new version for alpha testing.  I finished the software integration to FLDIGI v3.21.75 and spent few hours today listening bands.  Below is a small example of W1AW code bulletin at 3.58105 MHz  received with KX3 and a side by side comparison of legacy CW decoder  vs  Bayesian decoder:  
+<A HREF="http://ag1le.blogspot.com/2013/12/new-morse-decoder-part-2.html">http://ag1le.blogspot.com/2013/12/new-morse-decoder-part-2.html</A> 
+
+The full source code is available in here:  <A HREF="http://www.w1hkj.com/ag1le">http://www.w1hkj.com/ag1le</A> 
+
+I would like to get some alpha testers who are not afraid of compiling this code from sources,  playing with it, breaking it and hopefully also helping me to find the bugs.  
+For example  - the noise level estimator (noise.c) needs some serious work.  If you have a algorithm that does the job better this would be one place to start improving.  Also, if you know Viterbi or Kalman filter algorithms like your pockets I would like to get help fixing a bug that appears in posterior probability calculations in probp.c occasionally.  
+
+Anyways,  happy holidays for all FLDIGI users and hope to work you over the radio.  
+
+73  
+Mauri AG1LE 
+  
+
+_______________________________________________
+fldigi-alpha mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20131226/71974e7e/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20131226/71974e7e/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002504.html">Alsa
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2507">[ date ]</a>
+              <a href="thread.html#2507">[ thread ]</a>
+              <a href="subject.html#2507">[ subject ]</a>
+              <a href="author.html#2507">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

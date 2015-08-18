@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13AE alpha test posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AE%20alpha%20test%20posted&In-Reply-To=%3CPine.GSO.4.63.0909022151201.2876%40unixs1.cis.pitt.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000060.html">
+   <LINK REL="Next"  HREF="000062.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13AE alpha test posted</H1>
+    <B>Harry Bloomberg</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AE%20alpha%20test%20posted&In-Reply-To=%3CPine.GSO.4.63.0909022151201.2876%40unixs1.cis.pitt.edu%3E"
+       TITLE="fldigi 3.13AE alpha test posted">hpb+ at pitt.edu
+       </A><BR>
+    <I>Thu Sep  3 03:52:31 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000060.html">fldigi 3.13AE alpha test posted
+</A></li>
+        <LI>Next message: <A HREF="000062.html">fldigi 3.13AE alpha test posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave, not that I've got all this figured out, but I think I have it 
+configured on my system.  It looks like what you can have a pop-up occur 
+alerting you to the presense of an RSID signal and the mode and frequency 
+of the signal.  Most cool!
+
+73,
+Harry Bloomberg W3YJ
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hpb at pitt.edu</A>
+
+On Wed, 2 Sep 2009, David Kleber wrote:
+
+&gt;<i> Stelios,
+</I>&gt;<i>
+</I>&gt;<i> Well, I can see you've been hard at work.  Very interesting, but a lot
+</I>&gt;<i> to digest!  Your comments clear up a lot of my questions and I'm looking
+</I>&gt;<i> forward to testing on our nets here in Western Pennsylvania.
+</I>&gt;<i>
+</I>&gt;<i> Thanks very much for your work on this!
+</I>&gt;<i>
+</I>&gt;<i> -Dave, KB3FXI
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Stelios Bounanos wrote:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> On Wed, 02 Sep 2009 18:44:29 -0400, David Kleber &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">davek at salsgiver.com</A>&gt; said:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Dave and all,
+</I>&gt;&gt;&gt;<i> Any chance of getting a layman's summary of the notifications menu?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> There is some documentation in the online help, but it does not describe
+</I>&gt;&gt;<i> some recent work on the notifier such as the RSID support.  For the
+</I>&gt;&gt;<i> latter:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Select &quot;RSID reception&quot; from the event menu.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Check &quot;Ignore duplicates&quot; and set a suitable time span.  This will
+</I>&gt;&gt;<i> ignore successive RSID transmissions for the previously received mode
+</I>&gt;&gt;<i> and frequency (+/- the RSID precision).  Not essential but recommended.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Set trigger limit to 0 (no limit) unless there are a lot of RSID
+</I>&gt;&gt;<i> transmissions on the band.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Click the button next to &quot;Show alert window&quot; to insert the default text.
+</I>&gt;&gt;<i> Or click on the button next to &quot;Append to RX text&quot; to get the text that
+</I>&gt;&gt;<i> inserts a clickable marker in the received text every time the event is
+</I>&gt;&gt;<i> triggered.  You can customize the text and of course you can have both
+</I>&gt;&gt;<i> action types.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Select an appropriate window timeout, e.g. 30s, if using the alert
+</I>&gt;&gt;<i> window.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Test the event to see what the alerts do.  If you are ignoring
+</I>&gt;&gt;<i> duplicates, you will find that subsequent tests will be ignored
+</I>&gt;&gt;<i> according to the Dup. time.  To get around this you can reselect the
+</I>&gt;&gt;<i> event from the list at the bottom to redisplay the event -- this resets
+</I>&gt;&gt;<i> the timeout of the temporary event that is used for testing.  Or you can
+</I>&gt;&gt;<i> enable duplicate filtering after testing :-)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Finally click the Add button to register the event.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> With an RSID reception event set up, you could also select
+</I>&gt;&gt;<i> &quot;Notifications only&quot; in the RSID pane of the main config.  The
+</I>&gt;&gt;<i> notification windows will show the detected modem and frequency and the
+</I>&gt;&gt;<i> &quot;Go to ...&quot; button will switch to that modem/freq.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Note: naturally, if you select &quot;Notifications only&quot; but have no RSID
+</I>&gt;&gt;<i> events registered or they are all disabled (or they have no actions),
+</I>&gt;&gt;<i> then RSID reception will be effectively ignored even if enabled in the
+</I>&gt;&gt;<i> main window.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000060.html">fldigi 3.13AE alpha test posted
+</A></li>
+	<LI>Next message: <A HREF="000062.html">fldigi 3.13AE alpha test posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

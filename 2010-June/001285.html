@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Picky ARRL Contest Robot for June VHF QSO Party
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Picky%20ARRL%20Contest%20Robot%20for%20June%20VHF%20QSO%20Party&In-Reply-To=%3CC83C444D.10184%25aa5vu%40arrl.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001284.html">
+   <LINK REL="Next"  HREF="001286.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Picky ARRL Contest Robot for June VHF QSO Party</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Picky%20ARRL%20Contest%20Robot%20for%20June%20VHF%20QSO%20Party&In-Reply-To=%3CC83C444D.10184%25aa5vu%40arrl.net%3E"
+       TITLE="Picky ARRL Contest Robot for June VHF QSO Party">aa5vu at arrl.net
+       </A><BR>
+    <I>Tue Jun 15 03:40:45 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001284.html">Fldigi-3.21.0AB In WEFAX mode
+</A></li>
+        <LI>Next message: <A HREF="001286.html">[Ham-Mac] fldigi 3.20.16 posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1285">[ date ]</a>
+              <a href="thread.html#1285">[ thread ]</a>
+              <a href="subject.html#1285">[ subject ]</a>
+              <a href="author.html#1285">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I played around in the ARRL VHF QSO Party over the weekend
+and logged the QSO&#185;s in fldigi-3.21.0AE using the recently added
+option to log SSB QSOs.
+
+The logging worked fine; however, I encountered some format
+issues when I exported the QSO&#185;s in Cabrillo format.
+
+After several passes with the nagging ARRL robot, I finally
+earned the 
+
+     [4105270.arrl-vhf-jun] AA5VU
+
+that says the robot accepted my log with no errors.
+
+Lessons learned:
+
+Fldigi saved my QSO frequencies correct in the logbook, like
+50.12500 for SSB and 146.5500 for a 2-meter QSO&#185;s; however,
+the exported Cabrillo file dropped the decimal point and that tilted
+the robot. For this contest, the robot wanted whole numbers like
+50 and 144. I changed Cabrillo file to whole numbers and it sill
+objected to 146 (for 146.550) so I had to change it to 144 &#173; the
+only number the robot would accept for the 2-meter band.
+
+For reasons I do not understand, the robot would not accept my
+callsign using the fldigi convention of
+
+# The callsign used during the contest.
+CALLSIGN: AA5VU
+
+I went to school on the robot&#185;s rejection note and guessed it
+could be a case sensitive issue and this worked
+
+Callsign: AA5VU
+
+I then edited on all items in the fldigi generated template to
+appease the robot. I then double checked the Cabrillo QSO
+templates at
+
+<A HREF="http://www.kkn.net/~trey/Cabrillo_v2/arrl-vhf.txt">http://www.kkn.net/~trey/Cabrillo_v2/arrl-vhf.txt</A>
+
+and it fldigi follows the example but the robot did not. I then
+check with N8NOE who used another program to generate his
+Cabrillo format and it used all uppercase. The robot accepted
+his file. Go figure?  I still don&#185;t understand what was happening.
+
+Finally, my SSB logged QSO&#185;s showed up as RY in the Cabrillo
+export so I changed change them all to PH that was expected for
+this contest.
+
+Head up the next time you need to export a Cabrillo format.
+
+
+73 Dick AA5VU
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100614/7999a56f/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100614/7999a56f/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001284.html">Fldigi-3.21.0AB In WEFAX mode
+</A></li>
+	<LI>Next message: <A HREF="001286.html">[Ham-Mac] fldigi 3.20.16 posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1285">[ date ]</a>
+              <a href="thread.html#1285">[ thread ]</a>
+              <a href="subject.html#1285">[ subject ]</a>
+              <a href="author.html#1285">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

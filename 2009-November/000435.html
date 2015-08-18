@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi alpha on Debian
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20alpha%20on%20Debian&In-Reply-To=%3C20091103234911.GY15980%40n0nb.us%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000434.html">
+   <LINK REL="Next"  HREF="000431.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi alpha on Debian</H1>
+    <B>Nate Bargmann</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20alpha%20on%20Debian&In-Reply-To=%3C20091103234911.GY15980%40n0nb.us%3E"
+       TITLE="fldigi alpha on Debian">n0nb at n0nb.us
+       </A><BR>
+    <I>Wed Nov  4 00:49:11 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000434.html">fldigi alpha on Debian
+</A></li>
+        <LI>Next message: <A HREF="000431.html">fldigi alpha on Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#435">[ date ]</a>
+              <a href="thread.html#435">[ thread ]</a>
+              <a href="subject.html#435">[ subject ]</a>
+              <a href="author.html#435">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>* Mike Stansberry &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mjstansberry at qwest.net</A>&gt; [2009 Nov 03 16:20 -0600]:
+&gt;<i> Ed wrote:
+</I>&gt;<i> &gt; On Tue, 3 Nov 2009 18:26:28 +1100
+</I>&gt;<i> &gt; John Douyere &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">vk2eta at gmail.com</A>&gt; wrote:
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt;&gt; Mike,
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; 1. I suspect it is trying to access an &quot;unvalid&quot; portaudio device.
+</I>&gt;<i> &gt;&gt; You can try to delete the .fldigi directory under your home
+</I>&gt;<i> &gt;&gt; directory. In that case I believe Fldigi will try for the OSS devices
+</I>&gt;<i> &gt;&gt; (/dev/dsp) first, then you can try to re-selct the desired portaaudio
+</I>&gt;<i> &gt;&gt; device.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; Keep in mind that if you do this you loose logs, macros....etc. You
+</I>&gt;<i> &gt; only need to delete the fldigi_defs.xml file.
+</I>&gt;<i> 
+</I>&gt;<i> Nothing will be lost.  I normally use Ubuntu 9.04 and this Debian is
+</I>&gt;<i> on a separate drive, for &quot;testing&quot;.  I just wanted to see if I could
+</I>&gt;<i> compile and run fldigi on Debian.  I guess I cannot.
+</I>
+I compile Fldigi on my Debian installations routinely and I use
+portaudio.  I don't recall having to do anything special.  In fact my
+Signallink USB is recognized without any extra effort on my part.
+
+&gt;<i> &gt; The user determines which sound device to use, not fldigi. fldigi shows
+</I>&gt;<i> &gt; a list of all sound devices it found, whether they are available is
+</I>&gt;<i> &gt; another question.
+</I>&gt;<i> 
+</I>&gt;<i> No sound devices are found by fldigi.
+</I>&gt;<i> 
+</I>&gt;<i> Here are the results from several things you, Ed, asked me to try, plus
+</I>&gt;<i> one other from another suggestion.
+</I>&gt;<i> 
+</I>&gt;<i> I doubt that I'm going to spend much more time on this.  It appears
+</I>&gt;<i> that Ubuntu is MUCH, MUCH more user friendly.
+</I>
+In some ways, yes.  Just be careful asserting that around the time
+people are trying to upgrade from one release to the next.  The Ubuntu
+flavors seem a bit more fraught with adventure than Debian,
+
+&gt;<i> Oh, I had done the apt-get build-dep fldigi last night but I'm still
+</I>&gt;<i> seeing the same results.  No &quot;GLIBC&quot; error message, just no sound
+</I>&gt;<i> cards found.
+</I>
+
+Hmmmm.  I build Fldigi using the supplied scripts.  i.e.:
+
+./configure --enable-optimizations=native
+make
+sudo make install
+
+Here is the output at the end of the conigure script's run:
+
+Configuration summary:
+
+  Version ..................... 3.13AZ
+  
+  Static linking .............. no
+  CPU optimizations ........... native
+  Debugging ................... no
+        
+  fldigi ...................... yes
+  flarq ....................... yes
+            
+  i18n ........................ yes
+              
+  fldigi build options:
+               
+  sndfile ..................... yes
+  oss ......................... yes
+  portaudio ................... yes
+  pulseaudio .................. yes
+                       
+  hamlib ...................... yes
+  xmlrpc ...................... yes
+
+That's it.  Perhaps the `apt-get build-dep fldigi' process is missing the 
+portaudio dependency?  I've never used it as I don't bother with trying
+to integrate locally built packages into the Debian package system.  As
+Hamlib (locally compiled), Fldigi, and CQRlog (downloaded binary from the
+home site) are the only ham programs I use, it's not much of a handicap.
+
+&gt;<i> lspci results:
+</I>&gt;<i> 
+</I>&gt;<i> 00:00.0 Host bridge: VIA Technologies, Inc. VT8363/8365 [KT133/KM133] 
+</I>&gt;<i> (rev 03)
+</I>&gt;<i> 00:01.0 PCI bridge: VIA Technologies, Inc. VT8363/8365 [KT133/KM133 AGP]
+</I>&gt;<i> 00:07.0 ISA bridge: VIA Technologies, Inc. VT82C686 [Apollo Super South] 
+</I>&gt;<i> (rev 40)
+</I>&gt;<i> 00:07.1 IDE interface: VIA Technologies, Inc. 
+</I>&gt;<i> VT82C586A/B/VT82C686/A/B/VT823x/A/C PIPC Bus Master IDE (rev 06)
+</I>&gt;<i> 00:07.2 USB Controller: VIA Technologies, Inc. VT82xxxxx UHCI USB 1.1 
+</I>&gt;<i> Controller (rev 1a)
+</I>&gt;<i> 00:07.3 USB Controller: VIA Technologies, Inc. VT82xxxxx UHCI USB 1.1 
+</I>&gt;<i> Controller (rev 1a)
+</I>&gt;<i> 00:07.4 SMBus: VIA Technologies, Inc. VT82C686 [Apollo Super ACPI] (rev 40)
+</I>&gt;<i> 00:07.5 Multimedia audio controller: VIA Technologies, Inc. VT82C686 
+</I>&gt;<i> AC97 Audio Controller (rev 50)
+</I>&gt;<i> 00:0a.0 Ethernet controller: Realtek Semiconductor Co., Ltd. 
+</I>&gt;<i> RTL-8139/8139C/8139C+ (rev 10)
+</I>&gt;<i> 01:00.0 VGA compatible controller: Silicon Integrated Systems [SiS] 
+</I>&gt;<i> 86C326 5598/6326 (rev 0b)
+</I>&gt;<i> 
+</I>&gt;<i> lsusb results:
+</I>&gt;<i> Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+</I>&gt;<i> Bus 001 Device 003: ID 08bb:2904 Texas Instruments Japan PCM2904 Audio Codec
+</I>&gt;<i> Bus 001 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+</I>
+I see much the same:
+
+$ lsusb
+Bus 003 Device 002: ID 08bb:2904 Texas Instruments Japan PCM2904 Audio Codec
+Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+&gt;<i> tail end of dmesg after unplugging and replugging the usb from
+</I>&gt;<i>    the back of the SignaLink USB:
+</I>&gt;<i> 
+</I>&gt;<i> [  289.376244] input,hidraw0: USB HID v1.00 Device [Burr-Brown from TI 
+</I>&gt;<i>               USB Audio CODEC ] on usb-0000:00:07.2-2
+</I>&gt;<i> [  289.376449] usb 1-2: New USB device found, idVendor=08bb, idProduct=2904
+</I>&gt;<i> [  289.376455] usb 1-2: New USB device strings: Mfr=1, Product=2, 
+</I>&gt;<i> SerialNumber=0
+</I>&gt;<i> [  289.376460] usb 1-2: Product: USB Audio CODEC
+</I>&gt;<i> [  289.376464] usb 1-2: Manufacturer: Burr-Brown from TI
+</I>
+My kernel output is similar upon insertion:
+
+kernel: [291788.148251] usb 3-1: new full speed USB device using uhci_hcd and address 2
+kernel: [291788.473234] usb 3-1: New USB device found, idVendor=08bb, idProduct=2904
+kernel: [291788.473246] usb 3-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+kernel: [291788.473256] usb 3-1: Product: USB Audio CODEC
+kernel: [291788.473264] usb 3-1: Manufacturer: Burr-Brown from TI
+kernel: [291788.473510] usb 3-1: configuration #1 chosen from 1 choice
+kernel: [291788.797843] usbcore: registered new interface driver hiddev
+kernel: [291788.818788] usbcore: registered new interface driver snd-usb-audio
+kernel: [291788.845365] input: Burr-Brown from TI               USB Audio CODEC  as /devices/pci0000:00/0000:00:1d.1/usb3/3-1/3-1:1.3/input/input8
+kernel: [291788.845489] generic-usb 0003:08BB:2904.0001: input,hidraw0: USB HID v1.00 Device [Burr-Brown from TI               USB Audio CODEC ] on usb-0000:00:1d.1-1/input3
+kernel: [291788.845513] usbcore: registered new interface driver usbhid
+kernel: [291788.845517] usbhid: v2.6:USB HID core driver
+
+The newest lines of lsmod show:
+
+$ lsmod                                                          
+Module                  Size  Used by                                       
+snd_usb_audio          72088  1                                             
+snd_usb_lib            13528  1 snd_usb_audio                               
+usbhid                 31568  0                                             
+snd_hwdep               6120  1 snd_usb_audio                               
+hid                    34528  1 usbhid                                      
+
+Attached is a pair of screenshots of my Fldigi sound config.
+
+73, de Nate &gt;&gt;
+
+-- 
+
+&quot;The optimist proclaims that we live in the best of all
+possible worlds.  The pessimist fears this is true.&quot;
+
+Ham radio, Linux, bikes, and more: <A HREF="http://n0nb.us/index.html">http://n0nb.us/index.html</A>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: snapshot4.png
+Type: image/png
+Size: 34515 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091103/7bf2836e/attachment.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091103/7bf2836e/attachment.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: snapshot5.png
+Type: image/png
+Size: 32315 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091103/7bf2836e/attachment-0001.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091103/7bf2836e/attachment-0001.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000434.html">fldigi alpha on Debian
+</A></li>
+	<LI>Next message: <A HREF="000431.html">fldigi alpha on Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#435">[ date ]</a>
+              <a href="thread.html#435">[ thread ]</a>
+              <a href="subject.html#435">[ subject ]</a>
+              <a href="author.html#435">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

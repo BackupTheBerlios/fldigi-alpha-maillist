@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> export.adif file missing modes and FSK/AFSK
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20export.adif%20file%20missing%20modes%20and%20FSK/AFSK&In-Reply-To=%3C4CF14363.5040208%40charter.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001484.html">
+   <LINK REL="Next"  HREF="001486.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>export.adif file missing modes and FSK/AFSK</H1>
+    <B>Rick Kunath</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20export.adif%20file%20missing%20modes%20and%20FSK/AFSK&In-Reply-To=%3C4CF14363.5040208%40charter.net%3E"
+       TITLE="export.adif file missing modes and FSK/AFSK">k9ao at charter.net
+       </A><BR>
+    <I>Sat Nov 27 18:44:03 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001484.html">export.adif file missing modes and FSK/AFSK
+</A></li>
+        <LI>Next message: <A HREF="001486.html">export.adif file missing modes and FSK/AFSK
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1485">[ date ]</a>
+              <a href="thread.html#1485">[ thread ]</a>
+              <a href="subject.html#1485">[ subject ]</a>
+              <a href="author.html#1485">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Comments inline...
+
+On 10-11-27 11:24 AM, Dick wrote:
+&gt;<i> I have been working with another user that provided me a copy of his
+</I>&gt;<i> fldigi-3.20.30 export.adif file that he could not sign using the
+</I>&gt;<i> LoTW's tqsl app.  Yes, his fldigi exported ADIF file was missing all
+</I>&gt;<i> modes.
+</I>&gt;<i>
+</I>&gt;<i> When he sent me a screen shot, it was obvious he was using the fldigi
+</I>&gt;<i> radio mode popup selector (under the Frequency Display) to put his
+</I>&gt;<i> Icom 756 Pro III into FSK-RTTY and the fldigi operating modem box in
+</I>&gt;<i> he lower left corner said RTTY. He included a print of his Logbook
+</I>&gt;<i> the mode was blank.
+</I>
+So far so good.
+
+&gt;<i> I think he trying to receive RTTY on one VFO in radio FSK mode to
+</I>&gt;<i> take advantage of the Pro III's RTTY fiters that do not work in AFSK
+</I>&gt;<i> this may have caused the problem. I have no idea how he can transmit
+</I>&gt;<i> in AFSK on the other VFO and be on the same frequency that he is
+</I>&gt;<i> receiving on in FSK.  Sounds too hard to me or the Pro III is really
+</I>&gt;<i> smart rig.  It may not be big deal for split operation but it would
+</I>&gt;<i> be a pain for simplex.
+</I>
+Are you certain that this was what he was trying to do?
+
+Fldigi should be able to put the rig into FSK mode, and then if the user 
+has selected the pseudo-FSK on right audio channel, a proper FSK audio 
+waveform is available for rectification and driving an opto-coupler to 
+generate the FSK contact closure the rig needs. He should be able to set 
+the sweet spot for RTTY to the center of the rig's filters, and a click 
+on QSY would then move the QSO to that place in the rig's passband. Of 
+course you could always use the VFO to tune around as we used to in days 
+past. But the crossed ellipse scope in Fldigi uses the same filters that 
+the RTTY modem does, and these are far too narrow to get the expected 
+rotation of the crossed ellipse display that we are used to for quick 
+VFO centering. And the waterfall seems too slow also. The pulse display 
+is better. But for VFO dialing, I'd prefer a separate set of wider 
+filters driving just the crossed ellipse display (with a reverse 
+rotation option, to get the rotation to match the VFO dial direction) so 
+that it rotates as scope displays used to do on the old analog TUs. Then 
+searching and pouncing using VFO rotation would be fast and intuitive.
+
+&gt;<i> As a test I used the fldigi radio mode selector to change my TS-570S
+</I>&gt;<i> to RTTY-FSK and logged a dummy QSO.  When exported, it showed up as a
+</I>&gt;<i> CW mode in the ADIF file as CW was the last Operating Modem I had
+</I>&gt;<i> used.
+</I>
+I would think that the contact should have been logged as RTTY.
+
+&gt;<i> Has anyone tested the logging effects caused by changing the fldigi
+</I>&gt;<i> popup radio mode selector?
+</I>&gt;<i>
+</I>&gt;<i> Anyone been successful in doing FSK/AFSK setup for Rx and Tx?
+</I>
+Interesting idea, but does that really allow the use of the rig's tight 
+twin-peak filters? Wouldn't pure FSK be better? With tight filtering you 
+aren't going to see anything outside the rig's passband on the 
+waterfall. And with the rig's filters set to wide, why not just use AFSK.
+
+I still am not sure what the idea was that was trying to be 
+accomplished. Was the user trying to have a sort of dual setup? Wide rig 
+filters for waterfall clicking and searching and then a click to narrow 
+filters for digging out a weak one, except that then he needed the rig 
+to be in FSK mode using a contact closure to generate the FSK and not 
+AFSK to the mic?
+
+Rick Kunath, k9ao
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001484.html">export.adif file missing modes and FSK/AFSK
+</A></li>
+	<LI>Next message: <A HREF="001486.html">export.adif file missing modes and FSK/AFSK
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1485">[ date ]</a>
+              <a href="thread.html#1485">[ thread ]</a>
+              <a href="subject.html#1485">[ subject ]</a>
+              <a href="author.html#1485">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

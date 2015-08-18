@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Esc Key Bug, 3.20.28x
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Esc%20Key%20Bug%2C%203.20.28x&In-Reply-To=%3C4C8C1B5A.2060005%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001370.html">
+   <LINK REL="Next"  HREF="001372.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Esc Key Bug, 3.20.28x</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Esc%20Key%20Bug%2C%203.20.28x&In-Reply-To=%3C4C8C1B5A.2060005%40bellsouth.net%3E"
+       TITLE="Esc Key Bug, 3.20.28x">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sun Sep 12 02:14:18 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001370.html">Esc Key Bug, 3.20.28x
+</A></li>
+        <LI>Next message: <A HREF="001372.html">Esc Key Bug, 3.20.28x
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1371">[ date ]</a>
+              <a href="thread.html#1371">[ thread ]</a>
+              <a href="subject.html#1371">[ subject ]</a>
+              <a href="author.html#1371">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Joseph A. Counsil wrote:
+&gt;<i>  Greetings,
+</I>&gt;<i>
+</I>&gt;<i> I have been using the released version 3.20.28 today, and found a bug 
+</I>&gt;<i> with the Esc key function.  I'm running WinXP Pro/SP3/latest updates.
+</I>&gt;<i>
+</I>&gt;<i> When I click on the TUNE button, with previous versions I was able to 
+</I>&gt;<i> hit the Esc key on the keyboard to abort the TUNE tone.  Also, with 
+</I>&gt;<i> previous version when I do an auto CQ (a macro with the TIMER 
+</I>&gt;<i> function), and the timer is counting between transmissions, I can 
+</I>&gt;<i> abort the timer with a tap of the Esc key on the keyboard.  I found 
+</I>&gt;<i> that with released version 3.20.28 this does not work - the Esc 
+</I>&gt;<i> keypress is ignored during TUNE and TIMER functions.  However, with 
+</I>&gt;<i> all versions if I press the Esc key WHILE text is being transmitted, 
+</I>&gt;<i> it will abort the current transmission.  I also tried 3.20.281 in the 
+</I>&gt;<i> Alpha directory, and it has the same problem with the Esc key being 
+</I>&gt;<i> ignored during TUNE and TIMER functions.
+</I>&gt;<i>
+</I>&gt;<i> So, I reverted to 3.21.0AK, and the Esc key will abort any function in 
+</I>&gt;<i> any mode at any time (including the TUNE function) as expected.  This 
+</I>&gt;<i> Esc key abort always worked in previous Alpha and Released versions 
+</I>&gt;<i> that I have tried.
+</I>&gt;<i>
+</I>&gt;<i> 73,
+</I>&gt;<i> -Joe-
+</I>&gt;<i>
+</I>Changes were made in the way that the ESC key functions while 
+transmitting.  The reason was to prevent a loss of data when autosending 
+data from either flmsg or flarq.  I will look to see what is required to 
+restore the functionality to the Tune and Macro timer functions.  In the 
+meantime I would recommend using 3.20.28 for the benefit of other 
+changes that are not in 3.21.0AK.
+
+73, Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100911/133eaf60/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100911/133eaf60/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001370.html">Esc Key Bug, 3.20.28x
+</A></li>
+	<LI>Next message: <A HREF="001372.html">Esc Key Bug, 3.20.28x
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1371">[ date ]</a>
+              <a href="thread.html#1371">[ thread ]</a>
+              <a href="subject.html#1371">[ subject ]</a>
+              <a href="author.html#1371">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Olivia problems in3.20.0b9
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Olivia%20problems%20in3.20.0b9&In-Reply-To=%3C4BB66659.20100%40penjarvis.co.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001052.html">
+   <LINK REL="Next"  HREF="001045.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Olivia problems in3.20.0b9</H1>
+    <B>Peter Hamilton</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Olivia%20problems%20in3.20.0b9&In-Reply-To=%3C4BB66659.20100%40penjarvis.co.uk%3E"
+       TITLE="Olivia problems in3.20.0b9">fldigi at penjarvis.co.uk
+       </A><BR>
+    <I>Fri Apr  2 23:49:13 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001052.html">GMT on Linux
+</A></li>
+        <LI>Next message: <A HREF="001045.html">Incorrect &quot;postamble&quot; sent  in QPSK31:    fldigi 3.20.0b9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1044">[ date ]</a>
+              <a href="thread.html#1044">[ thread ]</a>
+              <a href="subject.html#1044">[ subject ]</a>
+              <a href="author.html#1044">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Olivia problems noticed in 3.20.0b9:
+
+- Sometimes on switching to Olivia from another mode a huge number
+appears in the audio frequency window below the waterfall. I have seen
+&quot;-1127217&quot; more than once. This is accompanied sometimes by an erratic
+waterfall display and &quot;Sound Error....&quot; messages. The waterfall cursor
+is in the expected place. Clicking in the waterfall corrects the
+frequency display, the erratic waterfall and  &quot;sound error&quot; messages.
+(This might not be unique to Olivia, which is the mode I use most, but I
+have never seen it when switching to a different mode).
+
+
+- The s/n estimation appears to be flawed. Although the numbers are as
+expected using an Rx filter similar to the FFT bandwidth, if a narrow Rx
+filter is switched in the reading changes, sometimes dramatically.
+
+For instance, with no signal present (just atmospheric noise on a &quot;dead&quot;
+band, with Rx AGC off to prevent noise density varying with IF
+bandwidth) and a 3600Hz FFT bandwidth, the following s/n readings are
+seen as a function of Rx IF bandwidth:
+
+3000Hz  -13dB
+2000Hz  -12dB
+1000Hz   -12dB
+750Hz    -11dB
+500Hz    Rises steadily til it limits at +30dB!
+
+Note the 500Hz figure! The s/n with a 500Hz DSP filter always settles at
++30dB, regardless of actual s/n or indeed whether there's a signal there.
+
+The figures for wider bandwidths are approximate as they're averaged by eye.
+
+Is the out-of-band noise being used in the s/n estimate? The above
+figures do suggest that is the case. This behaviour is not seen in MFSK,
+which gives bandwidth-independent s/n estimates as expected.
+
+
+- 3.20.0b9 has crashed once on switching to Olivia mode (from MFSK32 to
+Olivia 500/16 in this case). I have seen similar crashes in earlier
+versions. Console output shown below. (Xubuntu V9.10, fully patched to
+01April2010, portaudio, IC-7200 using internal USB):
+
+
+-- 
+Peter
+G4VLC
+
+
+Crash on selecting Olivia:
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x81296fc]
+[0xc0d400]
+fldigi[0x813d286]
+fldigi[0x81412a7]
+fldigi[0x813b924]
+fldigi[0x8181d46]
+fldigi[0x818331d]
+/lib/tls/i686/cmov/libpthread.so.0[0x38080e]
+/lib/tls/i686/cmov/libc.so.6(clone+0x5e)[0x8828de]
+
+****** Version information:
+fldigi 3.20.0b9
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, and
+others.
+License GPLv3+: GNU GPL version 3 or later
+&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Tue Mar 30 23:50:26 BST 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">root at g4vlc-desktop</A> on
+i686-pc-linux-gnu for i686-pc-linux-gnu
+
+  configure flags:
+
+  compiler       : gcc version 4.4.1 (Ubuntu 4.4.1-4ubuntu9)
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+-I$(srcdir)/fileselector -pthread -I/usr/include/freetype2
+-D_THREAD_SAFE -D_REENTRANT -I/usr/include/libpng12 -I/usr/include -pipe
+-Wall -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+
+  linker flags   : -lportaudio -lasound -lm -lpthread
+-Wl,-Bsymbolic-functions -lfltk_images -lfltk -lX11 -lsndfile
+-lsamplerate -lhamlib -lm -lpng12 -L/usr/lib -lxmlrpc_server_abyss++
+-lxmlrpc_server++ -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss
+-lpthread -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse
+-lxmlrpc_xmltok -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.1.9
+                   libsamplerate 0.1.7
+                   libsndfile 1.0.20
+                   PortAudio 19
+                   Hamlib 1.2.10
+                   XMLRPC-C 1.06.27
+
+
+Runtime information:
+  system         : Linux g4vlc-desktop 2.6.31-20-generic #58-Ubuntu SMP
+Fri Mar 12 05:23:09 UTC 2010 i686
+
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.20
+                   PortAudio V19-devel (built Jun 20 2009 13:28:51) 1899
+                   Hamlib 1.2.10
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001052.html">GMT on Linux
+</A></li>
+	<LI>Next message: <A HREF="001045.html">Incorrect &quot;postamble&quot; sent  in QPSK31:    fldigi 3.20.0b9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1044">[ date ]</a>
+              <a href="thread.html#1044">[ thread ]</a>
+              <a href="subject.html#1044">[ subject ]</a>
+              <a href="author.html#1044">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

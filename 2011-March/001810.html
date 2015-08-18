@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.21.6
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.6&In-Reply-To=%3CAANLkTikBXy2ArBLb%3Dp8bnLriN5HWeJ-QK3HQHNUHB%3DNi%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001809.html">
+   <LINK REL="Next"  HREF="001811.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.21.6</H1>
+    <B>Leigh L Klotz Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.6&In-Reply-To=%3CAANLkTikBXy2ArBLb%3Dp8bnLriN5HWeJ-QK3HQHNUHB%3DNi%40mail.gmail.com%3E"
+       TITLE="fldigi 3.21.6">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Sat Mar 19 19:22:34 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001809.html">fldigi 3.21.6
+</A></li>
+        <LI>Next message: <A HREF="001811.html">fldigi 3.21.6 crashes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1810">[ date ]</a>
+              <a href="thread.html#1810">[ thread ]</a>
+              <a href="subject.html#1810">[ subject ]</a>
+              <a href="author.html#1810">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Maybe you can do this for your startup script:
+
+#!/bin/sh
+cd ~
+script ...path...to...fldigi
+mv typescript typescript.$$
+echo See file ~/typescript.$$
+
+Replace ...path...to...fldigi with the real path of the fldigi you are
+testing.  Look in the resulting file for captured output.
+
+You can also make your icon use this script.
+
+Leigh/WA5ZNU
+On Mar 19, 2011 10:57 AM, &quot;Jim Haynes&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">jhhaynes at earthlink.net</A>&gt; wrote:
+&gt;<i> I'm getting to be a chronic complainer, I guess. Every time there is a
+</I>&gt;<i> new version and I install it on my Fedora 14 Linux system I have trouble
+</I>&gt;<i> getting it to run - for a while - and then it starts working.
+</I>&gt;<i>
+</I>&gt;<i> Whether it's the pre-compiled version or compiled from source doesn't
+</I>&gt;<i> seem to make any difference. I try to start it from an icon in the
+</I>&gt;<i> top bar and nothing happens, meaning it crashed. I try to start it
+</I>&gt;<i> from a terminal window and a whole bunch of information appears in the
+</I>&gt;<i> screen as it crashes. About the time I try to capture all that
+</I>&gt;<i> information it quits doing it.
+</I>&gt;<i>
+</I>&gt;<i> What is a constant, when starting it by hand, is that it reports the COM
+</I>&gt;<i> ports and then says it can't connect to the jack audio server. I don't
+</I>&gt;<i> know what the jack audio server is, or why it is trying to connect to it,
+</I>&gt;<i> or why I want to have one.
+</I>&gt;<i>
+</I>&gt;<i> Sometimes I try setting aside the .fldigi directory and let it create
+</I>&gt;<i> a new one.
+</I>&gt;<i>
+</I>&gt;<i> Now here is a clue from the last round of that. I started configuring,
+</I>&gt;<i> and as soon as I choose memory mapping as the method of rig control and
+</I>&gt;<i> click on initialize it crashes. So if I try again and choose some other
+</I>&gt;<i> method of rig control and initialize it is OK, and then I can change to
+</I>&gt;<i> memory mapping and it is still OK. So there may be something going wrong
+</I>&gt;<i> if it's trying to initialize the rig control when memory mapping is
+</I>&gt;<i> selected for the first time.
+</I>&gt;<i>
+</I>&gt;<i> I'm not having any of this trouble in the Windows version.
+</I>&gt;<i>
+</I>&gt;<i> Am I the only one using a Kachina and memory mapping? It sure works
+</I>&gt;<i> well when it works.
+</I>&gt;<i>
+</I>&gt;<i> Jim W6JVE
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110319/d42c1580/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110319/d42c1580/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001809.html">fldigi 3.21.6
+</A></li>
+	<LI>Next message: <A HREF="001811.html">fldigi 3.21.6 crashes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1810">[ date ]</a>
+              <a href="thread.html#1810">[ thread ]</a>
+              <a href="subject.html#1810">[ subject ]</a>
+              <a href="author.html#1810">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

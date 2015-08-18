@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> QRZ Lookup - takes two tries first time
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20QRZ%20Lookup%20-%20takes%20two%20tries%20first%20time&In-Reply-To=%3C4AAAEF5E.10606%40cox.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000120.html">
+   <LINK REL="Next"  HREF="000126.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>QRZ Lookup - takes two tries first time</H1>
+    <B>Bob Snyder</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20QRZ%20Lookup%20-%20takes%20two%20tries%20first%20time&In-Reply-To=%3C4AAAEF5E.10606%40cox.net%3E"
+       TITLE="QRZ Lookup - takes two tries first time">bob.snyder at cox.net
+       </A><BR>
+    <I>Sat Sep 12 02:46:22 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000120.html">QRZ Lookup - takes two tries first time
+</A></li>
+        <LI>Next message: <A HREF="000126.html">QRZ Lookup - takes two tries first time
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#125">[ date ]</a>
+              <a href="thread.html#125">[ thread ]</a>
+              <a href="subject.html#125">[ subject ]</a>
+              <a href="author.html#125">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ed wrote:
+&gt;<i> On Mon, 2009-09-07 at 10:37 -0700, Bob Snyder wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Joseph A. Counsil wrote:
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Greetings,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I noticed in the latest stable release 3.12.4 (for Windows), and in 
+</I>&gt;&gt;&gt;<i> Alpha release 3.13AE that when I double-click on a callsign in the 
+</I>&gt;&gt;&gt;<i> received text window, then the first time after executing FLDigi 
+</I>&gt;&gt;&gt;<i> right-clicking on the callsign and select &quot;Look up call&quot; nothing 
+</I>&gt;&gt;&gt;<i> happens.  If I right-click again and select &quot;Look up call&quot; it opens the 
+</I>&gt;&gt;&gt;<i> web browser (Firefox in my case) and displays the QRZ page for that 
+</I>&gt;&gt;&gt;<i> callsign.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> If I close FLDigi (leaving Firefox open), then execute FLDigi again, it 
+</I>&gt;&gt;&gt;<i> does the same thing - requiring two attempts to get the QRZ lookup, then 
+</I>&gt;&gt;&gt;<i> all subsequent lookups work on the first try.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I'm not using the QRZ paid service, but just using the public web lookup.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Bug?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> 73,
+</I>&gt;&gt;&gt;<i> -Joe-
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> I have had the same or a similar problem going back many versions, both 
+</I>&gt;&gt;<i> downloaded as binaries and when I've compiled it myself.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The first time after starting fldigi, when I right click on a call in 
+</I>&gt;&gt;<i> the Rx pane and click &quot;Look up call&quot;, the notes window shows &quot;Request 
+</I>&gt;&gt;<i> sent to QRZ.com...&quot; but nothing actually happens, it just stays like 
+</I>&gt;&gt;<i> that although everything else continues to work fine. I have verified 
+</I>&gt;&gt;<i> with Wireshark that there is nothing being sent to qrz.com. When I 
+</I>&gt;&gt;<i> repeat the procedure, it will work fine. I am a subscriber to qrz.com, fwiw.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Bob, W6CP
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Works as expected here. In 3.12.4 as well as 3.13AE. No matter if I use
+</I>&gt;<i> the lookup from the QSO window and click on the QRZ icon or right click
+</I>&gt;<i> from the receive text. It just works.
+</I>&gt;<i>
+</I>&gt;<i> In Linux you can set the default browser, but I've not a clue how you do
+</I>&gt;<i> it in M$ and that may be part of the problem. I know when we first
+</I>&gt;<i> started testing the look up feature it had problems with determining the
+</I>&gt;<i> default browser. 
+</I>&gt;<i>
+</I>&gt;<i> Ubuntu 9.04
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Ed W3NR
+</I>
+Hi Ed, thanks for testing for the problem.
+
+It may help for me to be more specific.
+
+I am experiencing this problem on Slackware Linux 12.0, on two different 
+machines. I see it both on the distribution binary and when I build it 
+from source. I have seen it on every version of fldigi going back a year 
+or more. It seems especially curious that while most don't see the 
+problem, the original poster saw what seems to me to be the same problem 
+on Windows.
+
+It doesn't matter whether I configure it for &quot;QRZ online via default 
+Internet Browser&quot; or &quot;Paid online subscription&quot;. It also doesn't matter 
+which method I use to invoke the lookup: &quot;right click menu-&gt;Look up 
+call&quot; or enter the call manually and press the QRZ button. It doesn't 
+matter which order I use those methods. The very first time I do this, 
+nothing happens. If I'm configured for the subscription, I see &quot;Request 
+sent to qrz.com...&quot; With it set for web lookup nothing happens on my 
+browser. If the browser is not running it won't be started. In any case 
+it will stay in that state forever although fldigi continues to operate 
+normally. On all subsequent lookup attempts, whichever method I use, it 
+works fine.
+
+Using Wireshark I have verified that on the first attempt nothing is 
+sent out to QRZ.com. If I had to take a wild guess, I'd say it may be 
+related to some library version, or possibly the kernel version 
+(2.6.21.5-smp) since that is something that could be different on my 
+setup. This isn't a major issue, but it bugs me every time :-)
+
+Fwiw, I've included the output from ldd on fldigi Ver 3.13AD below.
+
+Bob W6CP
+
+$ ldd /usr/local/bin/fldigi
+        linux-gate.so.1 =&gt;  (0xffffe000)
+        libportaudio.so.2 =&gt; /usr/local/lib/libportaudio.so.2 (0xb7f7c000)
+        libpthread.so.0 =&gt; /lib/libpthread.so.0 (0xb7f65000)
+        libpng.so.3 =&gt; /usr/lib/libpng.so.3 (0xb7f2a000)
+        libz.so.1 =&gt; /usr/lib/libz.so.1 (0xb7f16000)
+        libjpeg.so.62 =&gt; /usr/lib/libjpeg.so.62 (0xb7ef5000)
+        libXft.so.2 =&gt; /usr/lib/libXft.so.2 (0xb7ee3000)
+        libdl.so.2 =&gt; /lib/libdl.so.2 (0xb7edf000)
+        libm.so.6 =&gt; /lib/libm.so.6 (0xb7eb8000)
+        libXext.so.6 =&gt; /usr/lib/libXext.so.6 (0xb7eaa000)
+        libX11.so.6 =&gt; /usr/lib/libX11.so.6 (0xb7dc2000)
+        libsndfile.so.1 =&gt; /usr/lib/libsndfile.so.1 (0xb7d6c000)
+        libsamplerate.so.0 =&gt; /usr/local/lib/libsamplerate.so.0 (0xb7c03000)
+        libpulse-simple.so.0 =&gt; /usr/local/lib/libpulse-simple.so.0 
+(0xb7bf5000)
+        libpulse.so.0 =&gt; /usr/local/lib/libpulse.so.0 (0xb7ba7000)
+        libhamlib.so.2 =&gt; /usr/local/lib/libhamlib.so.2 (0xb7b8d000)
+        libpng12.so.0 =&gt; /usr/lib/libpng12.so.0 (0xb7b52000)
+        libxmlrpc_server_abyss++.so.3 =&gt; 
+/usr/local/lib/libxmlrpc_server_abyss++.so.3 (0xb7b4c000)
+        libxmlrpc_server++.so.3 =&gt; 
+/usr/local/lib/libxmlrpc_server++.so.3 (0xb7b43000)
+        libxmlrpc_server_abyss.so.3 =&gt; 
+/usr/local/lib/libxmlrpc_server_abyss.so.3 (0xb7b3f000)
+        libxmlrpc_server.so.3 =&gt; /usr/local/lib/libxmlrpc_server.so.3 
+(0xb7b3b000)
+        libxmlrpc_abyss.so.3 =&gt; /usr/local/lib/libxmlrpc_abyss.so.3 
+(0xb7b2c000)
+        libxmlrpc++.so.3 =&gt; /usr/local/lib/libxmlrpc++.so.3 (0xb7b0a000)
+        libxmlrpc.so.3 =&gt; /usr/local/lib/libxmlrpc.so.3 (0xb7afe000)
+        libxmlrpc_util.so.3 =&gt; /usr/local/lib/libxmlrpc_util.so.3 
+(0xb7afb000)
+        libxmlrpc_xmlparse.so.3 =&gt; 
+/usr/local/lib/libxmlrpc_xmlparse.so.3 (0xb7aef000)
+        libxmlrpc_xmltok.so.3 =&gt; /usr/local/lib/libxmlrpc_xmltok.so.3 
+(0xb7ada000)
+        librt.so.1 =&gt; /lib/librt.so.1 (0xb7ad1000)
+        libstdc++.so.6 =&gt; /usr/lib/libstdc++.so.6 (0xb79ed000)
+        libgcc_s.so.1 =&gt; /usr/lib/libgcc_s.so.1 (0xb79e2000)
+        libc.so.6 =&gt; /lib/libc.so.6 (0xb78a0000)
+        libfontconfig.so.1 =&gt; /usr/lib/libfontconfig.so.1 (0xb7875000)
+        libasound.so.2 =&gt; /usr/lib/libasound.so.2 (0xb77bc000)
+        /lib/ld-linux.so.2 (0xb7fbe000)
+        libfreetype.so.6 =&gt; /usr/lib/libfreetype.so.6 (0xb774e000)
+        libXrender.so.1 =&gt; /usr/lib/libXrender.so.1 (0xb7746000)
+        libXau.so.6 =&gt; /usr/lib/libXau.so.6 (0xb7743000)
+        libxcb-xlib.so.0 =&gt; /usr/lib/libxcb-xlib.so.0 (0xb7741000)
+        libxcb.so.1 =&gt; /usr/lib/libxcb.so.1 (0xb772a000)
+        libFLAC.so.7 =&gt; /usr/lib/libFLAC.so.7 (0xb76e8000)
+        libgdbm.so.3 =&gt; /usr/lib/libgdbm.so.3 (0xb76e2000)
+        libSM.so.6 =&gt; /usr/lib/libSM.so.6 (0xb76da000)
+        libICE.so.6 =&gt; /usr/lib/libICE.so.6 (0xb76c2000)
+        libusb-0.1.so.4 =&gt; /usr/lib/libusb-0.1.so.4 (0xb76ba000)
+        libexpat.so.1 =&gt; /usr/lib/libexpat.so.1 (0xb7699000)
+        libXdmcp.so.6 =&gt; /usr/lib/libXdmcp.so.6 (0xb7694000)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000120.html">QRZ Lookup - takes two tries first time
+</A></li>
+	<LI>Next message: <A HREF="000126.html">QRZ Lookup - takes two tries first time
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#125">[ date ]</a>
+              <a href="thread.html#125">[ thread ]</a>
+              <a href="subject.html#125">[ subject ]</a>
+              <a href="author.html#125">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

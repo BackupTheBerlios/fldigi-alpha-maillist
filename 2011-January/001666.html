@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> notes for translators
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20notes%20for%20translators&In-Reply-To=%3C8762t7bxp1.fsf%40penny.tippete.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001665.html">
+   <LINK REL="Next"  HREF="001670.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>notes for translators</H1>
+    <B>Pierfrancesco Caci</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20notes%20for%20translators&In-Reply-To=%3C8762t7bxp1.fsf%40penny.tippete.net%3E"
+       TITLE="notes for translators">pf at tippete.net
+       </A><BR>
+    <I>Sat Jan 29 15:18:18 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001665.html">fldigi-alpha Digest, Vol 21, Issue 31 MT63
+</A></li>
+        <LI>Next message: <A HREF="001670.html">notes for translators
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1666">[ date ]</a>
+              <a href="thread.html#1666">[ thread ]</a>
+              <a href="subject.html#1666">[ subject ]</a>
+              <a href="author.html#1666">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hello,
+after working on the it.po file for fldigi for a few days, I noticed
+that some strings were not translated at all. Thinking that maybe some
+calls to gettext were missing I went to look at the sources, and all
+calls are indeed there. 
+What happens is that the fldigi.pot (the master index of translatable
+strings) is (purposedly) not rebuilt on each autoreconf;configure;make 
+cycle. There is a special target that needs to be called manually. This
+is:  
+
+make fldigi.pot-update
+
+from within the po directory. I have not been able to figure out if the
+master Makefile has a call for it.
+This target should be called when there are significant additions or
+modifications to the source code.
+
+Pf, ik5pvx
+
+-- 
+Pierfrancesco Caci
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001665.html">fldigi-alpha Digest, Vol 21, Issue 31 MT63
+</A></li>
+	<LI>Next message: <A HREF="001670.html">notes for translators
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1666">[ date ]</a>
+              <a href="thread.html#1666">[ thread ]</a>
+              <a href="subject.html#1666">[ subject ]</a>
+              <a href="author.html#1666">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldig-3.13AH  Manual Log Entry and Recommended Mode Selector Change
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldig-3.13AH%20%20Manual%20Log%20Entry%20and%20Recommended%20Mode%20Selector%20Change&In-Reply-To=%3CC6EAA331.590A%25aa5vu%40arrl.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000171.html">
+   <LINK REL="Next"  HREF="000177.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldig-3.13AH  Manual Log Entry and Recommended Mode Selector Change</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldig-3.13AH%20%20Manual%20Log%20Entry%20and%20Recommended%20Mode%20Selector%20Change&In-Reply-To=%3CC6EAA331.590A%25aa5vu%40arrl.net%3E"
+       TITLE="Fldig-3.13AH  Manual Log Entry and Recommended Mode Selector Change">aa5vu at arrl.net
+       </A><BR>
+    <I>Fri Oct  2 01:19:29 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000171.html">[Fwd: Re: Spotting Hellschreiber]
+</A></li>
+        <LI>Next message: <A HREF="000177.html">Hellschreiber Bandwidth Not Saved in 3.13AH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#173">[ date ]</a>
+              <a href="thread.html#173">[ thread ]</a>
+              <a href="subject.html#173">[ subject ]</a>
+              <a href="author.html#173">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At the start of each month I save the previous month&#185;s
+log in a .fldig/logs-archive folder and start over with a
+fresh newlog.adif file.
+
+There were no calls in the newlog.adif I created and
+that caused fldgit to created an entry in the Event log.
+I had just worked PJ5/AH6HF on SSB so I tried to
+enter the new QSO in the newly created newlog.adif
+file and ran into two issues.
+
+I opened the newlog.adif using the fldigi/View Logbook
+menu and typed in the new QSO in the blanks and
+clicked on the &#179;Update&#178; button to save the new entry.
+To be sure it was saved, I even used the File/Logs/Save
+logbook button. I then Saved the configuration and quit ....
+assuming I was good to go for another month.
+
+Wrong assumption on my part because the next time
+I opened fldigi, it nagged me that I had an empty log.
+I opened the saved newlog.adif file and the QSO I had
+entered was not there.
+
+My conclusion was fldigi will not allow you to type in
+a new entry to the log.  The only new QSO entry device
+in fldigi is the via the main fldigi panel. Seems strange
+you can edit a log entry but cannot add a new one to
+the log.
+
+I then type in the PJ5/AH6HF call into the fldigi panel
+and this time it worked; however, there was no SSB
+option under the fldigi mode selector on the left side. I
+then opened and corrected the mode by changing it
+from USB (useless term) to SSB that is recognized by
+both LoTW and DXCC.
+
+Since neither USB or LSB are recognized modes in
+the ADIF Specifications,
+
+&lt;<A HREF="http://www.adif.org/adif223.htm#Mode%20Enumeration">http://www.adif.org/adif223.htm#Mode%20Enumeration</A>&gt;
+
+I was going to recommend they both be dropped and
+replaced with SSB; however, this would present a new
+issue with rig control because radio manufactures have
+limited mode reporting and do not recognize SSB or
+Phone. Catch-22.  
+
+For this reason I recommend that SSB be added to
+the fldigi mode selector in the next normal fldigi
+maintenance release.
+
+There are no LoTW or DXCC Awards for USB or LSB.
+These are radio modes that have nothing to do with
+how we should log QSOs.
+
+Thanks for reading
+
+73 Dick AA5VU
+
+Ps: Even though not covered in the ADIF specification it
+is my understanding the ARRL DXCC Desk may accept
+USB, LSB or SSB as credit for Phone awards on QSL
+cards.  LoTW uses the ADIF Specifications.  This is
+another Time ON vs. Time OFF thing.
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000171.html">[Fwd: Re: Spotting Hellschreiber]
+</A></li>
+	<LI>Next message: <A HREF="000177.html">Hellschreiber Bandwidth Not Saved in 3.13AH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#173">[ date ]</a>
+              <a href="thread.html#173">[ thread ]</a>
+              <a href="subject.html#173">[ subject ]</a>
+              <a href="author.html#173">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

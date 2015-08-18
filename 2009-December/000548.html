@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> CPU usage on Linux.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20CPU%20usage%20on%20Linux.&In-Reply-To=%3C4B27858F.2020902%40charter.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000543.html">
+   <LINK REL="Next"  HREF="000535.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>CPU usage on Linux.</H1>
+    <B>Rick Kunath</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20CPU%20usage%20on%20Linux.&In-Reply-To=%3C4B27858F.2020902%40charter.net%3E"
+       TITLE="CPU usage on Linux.">k9ao at charter.net
+       </A><BR>
+    <I>Tue Dec 15 13:48:15 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000543.html">CPU usage on Linux.
+</A></li>
+        <LI>Next message: <A HREF="000535.html">flrig-0.9.97 posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#548">[ date ]</a>
+              <a href="thread.html#548">[ thread ]</a>
+              <a href="subject.html#548">[ subject ]</a>
+              <a href="author.html#548">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Mike Stansberry wrote:
+&gt;<i> Well, you've hit on something.  I reset fldigi back to the default
+</I>&gt;<i> configuration and the CPU usage dropped down to about 13%.  Then,
+</I>&gt;<i> I started changing everything back to where I started.  When selecting
+</I>&gt;<i> the sound card /dev/dsp1, which is the SignaLink USB external modem,
+</I>&gt;<i> the CPU usage shot up to around 80%.  I'm using port audio if that
+</I>&gt;<i> matters.
+</I>&gt;<i> 
+</I>&gt;<i> I'm now trying the same thing on my laptop computer, running Ubuntu
+</I>&gt;<i> 9.10 as well.  With the SignaLink selected, it's running about
+</I>&gt;<i> 80% CPU.  Selecting the internal sound card, the CPU drops to
+</I>&gt;<i> about 5%.
+</I>&gt;<i> 
+</I>&gt;<i> Guess it's reflecting the added usage through the USB port?
+</I>
+Not sure if this is related...
+
+But on Mandriva 2010 I see extremely slow response time when Pulse is 
+selected. In my case though, PortAudio and OSS work fine.
+
+I haven't investigated further, but I don't get any debug messages, 
+other than the occasional audio buffer overflow on Pulse. I did see this 
+on Mandriva 2009.1, but it didn't exhibit the same things as 2010.
+
+The PSK scope slows to an update maybe once or twice a second on 2010 
+running Pulse. PortAudio and OSS are fine.
+
+In my case I am still using the Audigy PCI card and the EMU10k1 driver.
+
+And as always, I compile from source.
+
+Rick, k9ao
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000543.html">CPU usage on Linux.
+</A></li>
+	<LI>Next message: <A HREF="000535.html">flrig-0.9.97 posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#548">[ date ]</a>
+              <a href="thread.html#548">[ thread ]</a>
+              <a href="subject.html#548">[ subject ]</a>
+              <a href="author.html#548">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.72BM hangs on Exit
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.72BM%20hangs%20on%20Exit&In-Reply-To=%3C4C66BDD6-B897-42D8-8034-1D548348BB0A%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002452.html">
+   <LINK REL="Next"  HREF="002454.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.72BM hangs on Exit</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.72BM%20hangs%20on%20Exit&In-Reply-To=%3C4C66BDD6-B897-42D8-8034-1D548348BB0A%40att.net%3E"
+       TITLE="fldigi-3.21.72BM hangs on Exit">aa5vu at att.net
+       </A><BR>
+    <I>Sun Jul  7 22:11:29 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002452.html">fldigi-3.21.72BM posted for testing
+</A></li>
+        <LI>Next message: <A HREF="002454.html">More on fldigi-3.21.72BM hangs on Exit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2453">[ date ]</a>
+              <a href="thread.html#2453">[ thread ]</a>
+              <a href="subject.html#2453">[ subject ]</a>
+              <a href="author.html#2453">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 7, 2013, at 2:31 PM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A>&gt; wrote:
+
+&gt;<i> <A HREF="http://www.w1hkj.com/alpha/fldigi/v3.21/">http://www.w1hkj.com/alpha/fldigi/v3.21/</A>
+</I>&gt;<i> 
+</I>&gt;<i> 73,
+</I>&gt;<i> fldigi development team
+</I>
+Dave,
+
+I tried fldigi-3.21.72BM and it 'hangs' on exit, like 3.21.72BK under OS X Mountain Lion 10.8.5. You may not have had time to address the BK issue reported before the birth of BK.  Flidigi-3.21.72BK runs find but does not QUIT when I use the File/Exit command.  The app quits but something hangs and I could not even restart the app after using the OS X &quot;Force Quit&quot; to quit.
+
+
+
+The reason for the broken dock icon (see the question mark) noted after the hand is the failure or whatever was so bad the app was erased from the Applications folder.
+
+
+
+I reinstalled fldigi-3.21.72BK and tried a second time. It still runs fine but 'hangs' big time on File/Exit; however, this time  I was able to restart BK from the dock after using Force Quit.  It did not go &quot;poof&quot; this time
+
+Fldigi-3.21.72 quits fine.
+
+
+Dick AA5VU
+
+
+
+
+Date/Time:       2013-07-07 14:40:03 -0500
+OS Version:      10.8.5 (Build 12F17)
+Architecture:    x86_64
+Report Version:  11
+
+Command:         Fldigi
+Path:            /Applications/fldigi-3.21.72BM.app/Contents/MacOS/fldigi
+Version:         3.21 (3.21)
+Parent:          launchd [130]
+
+PID:             3824
+Event:           hang
+Duration:        3.31s
+Steps:           34 (100ms sampling interval)
+
+Hardware model:  iMac12,2
+Active cpus:     4
+Free pages:      2543355 pages (-1128)
+Pageins:         8 pages
+Pageouts:        0 pages
+
+
+Process:         fldigi [3824]
+Path:            /Applications/fldigi-3.21.72BM.app/Contents/MacOS/fldigi
+Architecture:    i386
+Parent:          launchd [130]
+UID:             501
+Task size:       9309 pages
+
+  Thread 0x3705d    priority 46        
+  34 start + 41 (fldigi) [0x23ed]
+    34 _start + 216 (fldigi) [0x24c6]
+      34 main + 5409 (fldigi) [0x136183]
+        34 KmlServer::Exit() + 32 (fldigi) [0x16c2b4]
+          34 KmlSrvImpl::~KmlSrvImpl() + 443 (fldigi) [0x4a9c53]
+            34 semaphore_wait_trap + 10 (libsystem_kernel.dylib) [0x9663380a]
+             *34 semaphore_wait_continue + 0 (mach_kernel) [0xffffff8000234050]
+
+  Thread 0x37163    DispatchQueue 1701273966 priority 48        
+  34 _dispatch_mgr_thread + 53 (libdispatch.dylib) [0x9a4367a9]
+    34 kevent + 10 (libsystem_kernel.dylib) [0x966369ae]
+     *34 ??? (mach_kernel + 3504704) [0xffffff8000557a40]
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20130707/d826608a/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20130707/d826608a/attachment-0001.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PastedGraphic-1.png
+Type: image/png
+Size: 127563 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20130707/d826608a/attachment-0002.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20130707/d826608a/attachment-0002.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Screen Shot 2013-07-07 at 2.51.14 PM.png
+Type: image/png
+Size: 145918 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20130707/d826608a/attachment-0003.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20130707/d826608a/attachment-0003.png</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002452.html">fldigi-3.21.72BM posted for testing
+</A></li>
+	<LI>Next message: <A HREF="002454.html">More on fldigi-3.21.72BM hangs on Exit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2453">[ date ]</a>
+              <a href="thread.html#2453">[ thread ]</a>
+              <a href="subject.html#2453">[ subject ]</a>
+              <a href="author.html#2453">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

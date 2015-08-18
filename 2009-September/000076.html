@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi feature idea
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20feature%20idea&In-Reply-To=%3C74e84ea8a16b6268d4120e706f210c73.squirrel%40graflex.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000077.html">
+   <LINK REL="Next"  HREF="000070.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi feature idea</H1>
+    <B>Leigh L. Klotz, Jr. WA5ZNU</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20feature%20idea&In-Reply-To=%3C74e84ea8a16b6268d4120e706f210c73.squirrel%40graflex.org%3E"
+       TITLE="fldigi feature idea">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Thu Sep  3 22:13:17 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000077.html">fldigi feature idea
+</A></li>
+        <LI>Next message: <A HREF="000070.html">Fldigi-3.13AD with Win XP and EMU 0404 soundcard
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I think there is merit in the original idea, but I also believe that modes
+that affect UI are hard to understand.  See
+<A HREF="http://en.wikipedia.org/wiki/Mode_%28computer_interface%29">http://en.wikipedia.org/wiki/Mode_%28computer_interface%29</A>
+
+So, while the macro button proposals provide the functionality, they don't
+provide the ease-of-use that the original users seems to want.  To do that
+without building in a mode would require a new window or dialog.
+
+I think, as I said, that that idea has merit.  Think of it as a chat window.
+You could have a menu item to bring it up, just like with the PSK Viewer
+dialog, except that it would have a history buffer at the top and a
+one-line typein area (to discourage long-windedness which translates to
+dead air time).
+
+Another enhancement: Many chat programs fill in dead air time by sending a
+&quot;foobar is typing&quot; message.  This dialog could do the same; if there is no
+RX sync and you're typing, every 15 seconds or so it could send &quot;de
+WA5ZNU: &lt;AS&gt;&quot; which the receiving program would interpret at a signal to
+display a &quot;typing&quot; icon and other hams reading on the air would recognize
+as the CW &quot;AS&quot; prosign, to wait.  This would also prevent unintentional
+QRM.  (Applying an CSMA-like exponential backoff algorithm would be
+difficult though so it would be useful only in a QSO, not in a net, where
+it would simply itself become QRM).
+
+Another enhancement, maybe not worth it but an interesting
+gedankenexperiment: bring the analogy with IM chat and the similarity to
+PSK Viewer forward a step further and you could have multiple chat windows
+open and do multiple simultaneous QSOS on different frequencies. The
+half-duplex nature means it wouldn't work very well, but it's an
+interesting thought and perhaps some further thought can lead to more
+overlap with the PSK viewer window.
+
+In summary, I can see a new dialog like the PSK Viewer, but with a big
+text RX buffer, a single line input, and no TX button (maybe a STOP
+button, maybe a signal quality green bar), and maybe a &quot;someone is typing&quot;
+icon that lights up (or perhaps that just shows up as italic colored text
+in the RX buffer which is replaced by the actual text when it appears).
+
+Leigh/WA5ZNU
+&gt;<i> Stelios Bounanos wrote:
+</I>&gt;&gt;<i> You can already do something like this, though not using the Enter key
+</I>&gt;&gt;<i> as in flarq.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 1) In receive mode, type a line of text followed by ^r
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 2) Press Ctrl-T. The text up to and including the ^r is transmitted and
+</I>&gt;&gt;<i>    erased, and fldigi goes back to receive. In the meantime you are
+</I>&gt;&gt;<i>    typing the next line and so on.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Remember that fldigi will pause transmission whenever it encounters the
+</I>&gt;&gt;<i> text cursor, so that must always be positioned past the text you want to
+</I>&gt;&gt;<i> send (and the ^r)
+</I>&gt;&gt;<i> It is easy to prefix every line with some text.  You would put that text
+</I>&gt;&gt;<i> in a macro and press the correct F-key at the beginning of each chunk of
+</I>&gt;&gt;<i> text you are sending.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i> Seek and ye shall find,
+</I>&gt;<i> Ask and it shall be given,
+</I>&gt;<i> Knock and the door shall be opened unto you.
+</I>&gt;<i>
+</I>&gt;<i> Thanks Stelios, I've used that technique so many times I forgot that it
+</I>&gt;<i> was there!
+</I>&gt;<i>
+</I>&gt;<i> Instead of the ^t you could also the default F9 macro to start the
+</I>&gt;<i> transmit.  And oh yes,  that is not a control-r that you enter in to the
+</I>&gt;<i> text.  It is the carat followed by the r.  The transmit is control-t as
+</I>&gt;<i> Stelios points out.
+</I>&gt;<i>
+</I>&gt;<i> A variation on the above is to create multiple macro lines where each
+</I>&gt;<i> has a line of text followed by the ^r, as in:
+</I>&gt;<i>
+</I>&gt;<i> &quot;this is a line of text
+</I>&gt;<i> ^r&quot;
+</I>&gt;<i>
+</I>&gt;<i> Note the newline between text and ^r ... makes it easier to read.
+</I>&gt;<i>
+</I>&gt;<i> Then simply press the macro key(s) for those lines and send each with a
+</I>&gt;<i> new control-t.
+</I>&gt;<i>
+</I>&gt;<i> Another variation would be to create a single macro with all of the text
+</I>&gt;<i> lines that need to be sent one at a time
+</I>&gt;<i>
+</I>&gt;<i> this is line 1^r
+</I>&gt;<i> this is line 2^r
+</I>&gt;<i> this is line 3^r
+</I>&gt;<i> ...
+</I>&gt;<i> this is line N^r
+</I>&gt;<i>
+</I>&gt;<i> The transmit process is again the same.
+</I>&gt;<i>
+</I>&gt;<i> For interactive line by line you will need to use the technique that
+</I>&gt;<i> Stelios outlined.
+</I>&gt;<i>
+</I>&gt;<i> Dave
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000077.html">fldigi feature idea
+</A></li>
+	<LI>Next message: <A HREF="000070.html">Fldigi-3.13AD with Win XP and EMU 0404 soundcard
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Ck2le93450131004171632g4cd7f87fwb9761f4dbe90dbe5%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001157.html">
+   <LINK REL="Next"  HREF="001142.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Ck2le93450131004171632g4cd7f87fwb9761f4dbe90dbe5%40mail.gmail.com%3E"
+       TITLE="Contestia">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sun Apr 18 01:32:14 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001157.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001142.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1141">[ date ]</a>
+              <a href="thread.html#1141">[ thread ]</a>
+              <a href="subject.html#1141">[ subject ]</a>
+              <a href="author.html#1141">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, Apr 17, 2010 at 3:17 PM, hteller &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hteller at comcast.net</A>&gt; wrote:
+
+&gt;<i>  Brian,
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> &gt; I often hear people talking about preserving bandwidth and I wonder why
+</I>&gt;<i> that is such a goal? Sometimes increasing bandwidth can improve performance
+</I>&gt;<i> to the point where you get all the bits through in a shorter period of time,
+</I>&gt;<i> making the channel available to others. Think about spread-spectrum or
+</I>&gt;<i> packet radio vs. RTTY for example.
+</I>&gt;<i>
+</I>&gt;<i> This the argument that Winlink tried to foist upon everyone over five years
+</I>&gt;<i> ago when asking for unlimited space. The fallacy of that argument is that
+</I>&gt;<i> the frequency (or channel)  is dominated by one station that keeps the
+</I>&gt;<i> channel occupied until &quot;its&quot; traffic is passed, whereas, if more stations,
+</I>&gt;<i> say five, can fit in one of our limited frequency ranges and pass traffic
+</I>&gt;<i> simultaneously at only 1/5 the rate, the chances of more than one station
+</I>&gt;<i> successfully passing traffic, even at a slower rate, is greater than the
+</I>&gt;<i> chances of a single wide station passing its traffic. In the limit case, the
+</I>&gt;<i> wide station keeps trying to pass traffic without any success at all, but
+</I>&gt;<i> prevents other stations from using the frequency when one or more of them
+</I>&gt;<i> could have been successful in passing traffic.
+</I>&gt;<i>
+</I>
+Welcome to the wonderful world of media access control or MAC. You have just
+jumped into one of my areas of expertise. MAC is deciding who gets to use a
+shared medium now. Packet radio actually made a [bad] attempt to deal with
+this and used straight carrier-sense multiple access (CSMA). The problem
+with that is, if you have two stations that have traffic, both transmit.
+Phil Karn pointed out the problem and we got p-persistent CSMA which made
+things much better but since it was never automated (persistence 'p' should
+be set to 1/(n-1) where 'n' is the number of stations with traffic to pass
+so 'n' is always changing) it never made much difference.
+
+In the case of HF the right answer is most likely a combination of routing,
+slot, and spectrum negotiation. The software controlling the stations should
+flood their time-bandwidth requirement to the other stations so that they
+can agree who will transmit where and when. The reason for flooding is that
+not all stations can hear all other stations so some stations will have to
+relay the information to other stations. (This problem gets much simpler
+with a single, centralized controller -- net control station.)
+
+Unattended PACTOR is not bad because of its bandwidth, it is bad because it
+doesn't implement any sort of MAC and it doesn't do any sort of CSMA to
+ensure that it doesn't interfere. As a modem it is the only adaptive game in
+town. As a protocol it is an interesting case study. As a MAC, it sucks. We
+can do a LOT better.
+
+As path loss decreases, it makes sense to increase bandwidth in order to
+reduce transmission time. This is a good lesson to learn from PACTOR. The
+optimal bandwidth is going to be a function of path loss. As path loss
+increases, you want to decrease bandwidth in order to keep power, and hence
+Eb/No, where you need for reasonable bit error rates. As path loss decreases
+you want to increase bandwidth bits/symbol, and signaling rate.
+
+
+&gt;<i>
+</I>&gt;<i> The same it true for spread spectrum, or even HSMM. The idea is that a
+</I>&gt;<i> station is on for only a short time, so it creates QRM on that frequency for
+</I>&gt;<i> only a short time, and that is supposed to be acceptable for the harmed
+</I>&gt;<i> station, as they can just repeat their transmission, or perhaps the signal
+</I>&gt;<i> is so weak it is not noticed. The problem occurs when many spread spectrum
+</I>&gt;<i> stations try to use a band of frequencies at one time. In the aggregate,
+</I>&gt;<i> they will QRM the majority of stations over the band in question, since
+</I>&gt;<i> there are few places where others can operate without any QRM at all.
+</I>&gt;<i>
+</I>
+This actually gets into coding robustness. It is not nearly as simple as you
+suggest. We can build codes that expect QRM. For example, some CDMA systems
+do 'puncturing' (actually not sending some bits) to do power control. This
+works because the error-correcting-codes fix it in the receiver.
+
+
+&gt;<i> In layman's terms, a single wide signal can blanket the entire passband of
+</I>&gt;<i> a receiver (let's say MT63-2000),
+</I>&gt;<i>
+</I>
+What's wide about that? It is only 2kHz. That is nowhere near the entire
+passband of a reasonable receiver and even less a part of the entire band.
+My receiver has a passband of about 160kHz without retuning the LO.
+
+
+&gt;<i> and it is not possible to filter out that signal.
+</I>&gt;<i>
+</I>
+Sure it is. It is quite easy to filter that out.
+
+You have to wait until it is finished passing traffic, no matter how fast it
+&gt;<i> transmits.
+</I>&gt;<i>
+</I>
+Part of the problem here Skip is that you are thinking in terms of how
+things are instead of how they should be. Think about it for a minute. Do
+you think that the cell phone system hasn't already solved the MAC problems?
+The cell phone system is a automated, radio-based, multiple-access,
+traffic-passing system. So such a thing is possible. HF does offer us some
+interesting challenges but that doesn't mean we have to keep doing things
+the old way.
+
+
+&gt;<i> In the extreme, if you use a 50 Hz wide IF filter for PSK31, 40 stations
+</I>&gt;<i> can occupy the IF bandwidth at one time without any of them capturing the
+</I>&gt;<i> AGC or interfering with each other.
+</I>&gt;<i>
+</I>
+Yes, and the codec should be selecting the receiver characteristics
+depending on the modem and the coding.
+
+
+&gt;<i> Again, signaling theory can probably make a scientific argument for
+</I>&gt;<i> conserving bandwidth so a band of frequencies is available to more than one
+</I>&gt;<i> station at any given time.
+</I>&gt;<i>
+</I>
+Definitely.
+
+
+&gt;<i>
+</I>&gt;<i> All the &quot;get on and get off fast&quot; arguments may be valid on wired circuits,
+</I>&gt;<i> where access is controlled, but they tend to fall apart in practice on the
+</I>&gt;<i> HF bands where space is so limited and access is random.
+</I>&gt;<i>
+</I>
+No one has done them! I don't think I have ever heard of an intelligent MAC
+on HF. I would really like to see one and if one exists, I would like a
+pointer so I can study it. I have worked on RF-based data distribution
+systems where bandwidth is dynamically allocated to stations based on
+traffic need using both TDMA and FDMA. You throw CSMA in there on top of it
+to deal with rogue stations that are not part of your system.
+
+
+&gt;<i> As a recent example, ROS uses spread spectrum, occupies 2200 Hz of
+</I>&gt;<i> spectrum, but currently is only able to handle two stations on the frequency
+</I>&gt;<i> at one time without interference between stations, and the weak signal
+</I>&gt;<i> performance is no better than MFSK16, for example, in 1/6 the bandwidth.
+</I>&gt;<i>
+</I>
+So? That means that ROS is not very good. OTOH, what is it throughput in
+bps?
+
+
+&gt;<i> The simple reason that narrow bandwidth is such a goal is that it gives
+</I>&gt;<i> more stations the &quot;opportunity&quot; to use a limited number of frequencies at
+</I>&gt;<i> the same time, and speed of traffic passing is not so important for a 50 wpm
+</I>&gt;<i> QSO, which is the speed that G3PLX chose as a reasonable speed to
+</I>&gt;<i> accommodate a most typists. PSK63 is twice as wide, so only half as many
+</I>&gt;<i> stations can use the same frequency range, but the speed (100 wpm) is
+</I>&gt;<i> greater than needed for ragchews. It was only intended to be a RTTY
+</I>&gt;<i> replacement for contests, in less bandwidth, but just as fast as RTTY
+</I>&gt;<i> overall. However, there is a penalty of 3 dB in minimum S/N for the extra
+</I>&gt;<i> speed, so for ragchews, PSK31 is sufficient and twice as many stations can
+</I>&gt;<i> use the same range of frequencies simultaneously.
+</I>&gt;<i>
+</I>
+But when the path provides less loss, you can take advantage of that extra
+S:N to do one of two things: increase speed (less energy needed per bit) or
+decrease power. And who cares how fast someone types. Why should the
+transmitter be on for the entire time the person is typing? Why not transmit
+when some or all of the message is ready? Think packet radio. It doesn't
+transmit until you have finished typing a line (or a whole message for that
+matter). Why such a marriage to having the transmitter on for the entire
+time the person is sitting there thinking or typing (badly for most of us
+;-)? Why the marriage to a 3kHz bandwidth? Why keep doing things the way we
+have been doing things? Why Why Why? We now have massive amounts of compute
+power in virtually every shack. We have SDRs that provide hundreds of kHz of
+bandwidth. They also provide infinitely-variable, brick-wall filters with
+zero passband ripple and constant group delay. Radios are frequency agile.
+There is no reason that the computers can't build up a map of what part of
+the band is being used and what isn't, then automatically tune to the empty
+spaces. Throw in a bit of communications on the side (signaling) and radios
+can relay which frequencies are in use so there won't be any QRM.
+
+And I am sure someone will point out that packet radio doesn't work well on
+HF. I know. But that is because it uses a lousy modem and is badly designed.
+That doesn't mean that some other form of packet radio with a proper
+adaptive modem and an intelligent MAC won't do a MUCH better job.
+
+
+&gt;<i> That is how I see it from a layman's viewpoint...
+</I>&gt;<i>
+</I>
+I see it from a different viewpoint.
+
+-- 
+73 de Brian, WB6RQN/J79BPL
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/326552ec/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/326552ec/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001157.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001142.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1141">[ date ]</a>
+              <a href="thread.html#1141">[ thread ]</a>
+              <a href="subject.html#1141">[ subject ]</a>
+              <a href="author.html#1141">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

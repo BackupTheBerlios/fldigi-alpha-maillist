@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Configuration versus status
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Configuration%20versus%20status&In-Reply-To=%3C4AE77E73.6090906%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000380.html">
+   <LINK REL="Next"  HREF="000383.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Configuration versus status</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Configuration%20versus%20status&In-Reply-To=%3C4AE77E73.6090906%40bellsouth.net%3E"
+       TITLE="Configuration versus status">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Wed Oct 28 00:12:51 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000380.html">3.13AY posted  Saved Op Mode
+</A></li>
+        <LI>Next message: <A HREF="000383.html">Configuration versus status
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#379">[ date ]</a>
+              <a href="thread.html#379">[ thread ]</a>
+              <a href="subject.html#379">[ subject ]</a>
+              <a href="author.html#379">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dick,
+
+I'm running AY on Windows XP Pro SP3, and find that of all the various 
+modes and sub-modes, RTTY is the only one which reverts to something 
+different than it was when I closed Fldigi (the default 170 Hz, 45.5 
+Baud).  If I set it to some different sub-mode, close the program, then 
+re-open it, the mode comes back to 170/45.5.  It appears that your 
+&quot;default&quot; is different than my &quot;default&quot; - strange!
+
+All of this with my radio not transmitting.  So, I tried it with the 
+radio turned off, and get the same result.
+
+So, I tried a custom RTTY config, saved the configuration, and after 
+closing and re-opening the program, my custom settings came back up!  
+After further experimentation, I found that whatever settings are set 
+for the RTTY sub-mode when you save your Fldigi configuration, that is 
+what will default whenever you open Fldigi in RTTY mode.  Bug?  
+Feature?  You decide!   ;-) 
+
+73,
+-Joe-
+
+Designed that way.
+
+What mode you were on is saved in the status file.  How that mode was configure is saved in the configuration file.  You need to look under the covers at the code to fully understand what is a mode and what is a configuration.
+
+PSK31, PSK63, QPSK125 etc are all modes.
+THOR4, THOR16 ... are all modes.
+
+RTTY is a mode
+all of its 2 raised to 8th power variants are configurations.  So,  decide what you favorite RTTY configuration should be and then save it.
+
+Dave
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000380.html">3.13AY posted  Saved Op Mode
+</A></li>
+	<LI>Next message: <A HREF="000383.html">Configuration versus status
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#379">[ date ]</a>
+              <a href="thread.html#379">[ thread ]</a>
+              <a href="subject.html#379">[ subject ]</a>
+              <a href="author.html#379">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.21.15 posted for review
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.21.15%20posted%20for%20review&In-Reply-To=%3C4E7F8C99.1050303%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002068.html">
+   <LINK REL="Next"  HREF="002071.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.21.15 posted for review</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.21.15%20posted%20for%20review&In-Reply-To=%3C4E7F8C99.1050303%40bellsouth.net%3E"
+       TITLE="3.21.15 posted for review">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sun Sep 25 22:18:33 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002068.html">fldigi 3.22-0AT on GCC 4.6.0-10
+</A></li>
+        <LI>Next message: <A HREF="002071.html">Linus Torvalds'thoughts about software development
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2067">[ date ]</a>
+              <a href="thread.html#2067">[ thread ]</a>
+              <a href="subject.html#2067">[ subject ]</a>
+              <a href="author.html#2067">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Please download and test fldigi 3.21.15 before release to the general 
+public.
+
+<A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+
+3.21.14 to 3.21.15 contains many of the changes that were developed and 
+tested in the 3.22 series.  The 3.21 on-line help will be update when 
+the public release is made.  In the meantime refer to the applicable 
+sections of the 3.22 on-line help.
+
+Version 3.21.15 - Maintenance release
+
+   Log Menu Items
+     * Moved menu items in list to prevent careless selection of &quot;New&quot;
+     * Added confirmation dialog to create a new logbook
+
+   Macro Editor
+     * Changed to be resizable.  Edit and Browser controls change in
+       size proportionally.
+     * Added Tile object to resizable group.  Allows the text -
+       picklist intersection to be dragged for resize.
+
+   WWV xmt mode
+     * Added sound card time tick transmit
+
+   Inline macro tags
+     * Created ability to delay execution of designated tags
+       until the time of occurrence in the transmit character
+       stream.  These include:
+         - &lt;DTMF    - dual tones
+         - &lt;!WPM    - CW words per minute
+         - &lt;!POST   - CW post delay
+         - &lt;!PRE    - CW pre delay
+         - &lt;!RISE   - CW rise/decay time
+         - &lt;!MODEM  - change to specified modem
+         - &lt;!GOHOME - move to mode sweet spot audio frequency
+         - &lt;!GOFREQ - move to a specific audio frequency
+         - &lt;!IDLE   - idle for specified number of seconds
+         - &lt;!WAIT   - wait for specified number of seconds
+         - &lt;!QSY    - move to specifed RF and Audio frequency
+       The &lt;! tags use the same parameters as their non delayed
+       counterparts
+     * Added NULL modem, a device which does not receive
+       but can enable transmit.
+       - used as modem type before !QSY, !GOFREQ etc to suppress
+         transmit of audio stream
+       - used with &lt;DTMF... to transmit DTMF tones and suppress any
+         other modem audio stream
+     * Changed end of transmission logic to MT63 modem to allow it
+       to be specified in &lt;!MODEM
+     * Corrected string to numeric conversion
+     * Added abort processing / queue reset
+     * Modified macro parsing to allow multiple
+       invocations of macro containing &lt;! tags
+     * Added ability to schedule a single macro execution
+       at a specifice GMT date and time
+       tag format &lt;SKED:hhmm[:YYYYDDMM]&gt;
+       where the date defaults to current date.
+
+   RTTY baud
+     * Corrected Macro selection of RTTY:45.45
+     * Changed status display to show 45.45 vice 45.5
+
+   CW/RTTY init fault
+     * Modified transmit code for rtty preamble
+     * Added missing stopflag initialization in CW and RTTY modem class
+
+   Log Server lookup
+     * Added cty.dat search when connect to log server
+       - cty.dat must be installed in the current fldigi files directory
+
+   Control-Z bug fix
+     * Fix for seg fault when pressing ctrl-Z immediately after
+       double Escape
+
+   CW QSK
+     * Discard all pre/post timing if QSK on right channel is disabled
+
+   WEFAX MODEM
+     * Added wefax::adjust_metric method.
+     * modem::display_metric now sets the member modem::m
+
+73, Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110925/ea2ea3d7/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110925/ea2ea3d7/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002068.html">fldigi 3.22-0AT on GCC 4.6.0-10
+</A></li>
+	<LI>Next message: <A HREF="002071.html">Linus Torvalds'thoughts about software development
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2067">[ date ]</a>
+              <a href="thread.html#2067">[ thread ]</a>
+              <a href="subject.html#2067">[ subject ]</a>
+              <a href="author.html#2067">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

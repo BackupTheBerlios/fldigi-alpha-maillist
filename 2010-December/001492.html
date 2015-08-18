@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Attn: FT-450, 950, 2000, 5000, and 9000 Fldigi Hamlib users
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Attn%3A%20FT-450%2C%20950%2C%202000%2C%205000%2C%20and%209000%20Fldigi%20Hamlib%20users&In-Reply-To=%3C20101211141729.GC2383%40n0nb.us%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001491.html">
+   <LINK REL="Next"  HREF="001496.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Attn: FT-450, 950, 2000, 5000, and 9000 Fldigi Hamlib users</H1>
+    <B>Nate Bargmann</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Attn%3A%20FT-450%2C%20950%2C%202000%2C%205000%2C%20and%209000%20Fldigi%20Hamlib%20users&In-Reply-To=%3C20101211141729.GC2383%40n0nb.us%3E"
+       TITLE="Attn: FT-450, 950, 2000, 5000, and 9000 Fldigi Hamlib users">n0nb at n0nb.us
+       </A><BR>
+    <I>Sat Dec 11 15:17:29 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001491.html">Notifications and Run Program
+</A></li>
+        <LI>Next message: <A HREF="001496.html">[linuxham] Attn: FT-450, 950, 2000, 5000, and 9000 Fldigi Hamlib	users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1492">[ date ]</a>
+              <a href="thread.html#1492">[ thread ]</a>
+              <a href="subject.html#1492">[ subject ]</a>
+              <a href="author.html#1492">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks to Daniel Wolff, we have solved an issue that has vexed users of
+the FT-450, FT-950, FT-2000, FT-5000, and FT-9000.  For these radios it
+is essential that in Fldigi's Hamlib configuration tab that the value in
+the &quot;Write delay&quot; box be set to 0 and that the RTS/CTS flow control box
+be checked.  These values are needed so that the afore mentioned radios
+will work with Fldigi in their default menu configuration (menu items 
+CAT TOT defaults to 10 mSEc, and CAT RTS defaults to Enable).
+
+I have committed changes to each of these backends to the Hamlib SVN
+that now set the write_delay to 0 to work within the limit of the
+default value of CAT TOT and serial_handshake to Hardware to work with
+the default value of CAT RTS.  These changes are effective as of Hamlib
+SVN revision 3012 and can now be found in the Hamlib daily snapshot at:
+
+<A HREF="http://n0nb.users.sourceforge.net">http://n0nb.users.sourceforge.net</A>
+
+Setting the values in Fldigi as noted above will override the backend
+defaults so that an updated Hamlib is not necessary to improve
+performance of these radios with Fldigi.  So this should work with the
+most recent stable versions of Fldigi and Hamlib.
+
+I encourage owners of these radios to try these values with the Hamlib
+backend and provide feedback.
+
+73, de Nate &gt;&gt;
+
+-- 
+
+&quot;The optimist proclaims that we live in the best of all
+possible worlds.  The pessimist fears this is true.&quot;
+
+Ham radio, Linux, bikes, and more: <A HREF="http://n0nb.us/index.html">http://n0nb.us/index.html</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001491.html">Notifications and Run Program
+</A></li>
+	<LI>Next message: <A HREF="001496.html">[linuxham] Attn: FT-450, 950, 2000, 5000, and 9000 Fldigi Hamlib	users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1492">[ date ]</a>
+              <a href="thread.html#1492">[ thread ]</a>
+              <a href="subject.html#1492">[ subject ]</a>
+              <a href="author.html#1492">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

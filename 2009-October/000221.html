@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13AO posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AO%20posted&In-Reply-To=%3C4AD67DF5.6050605%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000219.html">
+   <LINK REL="Next"  HREF="000222.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13AO posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AO%20posted&In-Reply-To=%3C4AD67DF5.6050605%40bellsouth.net%3E"
+       TITLE="fldigi 3.13AO posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Oct 15 03:42:13 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000219.html">Fldigi-PSKMail Issue
+</A></li>
+        <LI>Next message: <A HREF="000222.html">AO with Ubuntu Karmic Beta
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#221">[ date ]</a>
+              <a href="thread.html#221">[ thread ]</a>
+              <a href="subject.html#221">[ subject ]</a>
+              <a href="author.html#221">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>    *   <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AO.tar.gz">http://www.w1hkj.com/alpha/fldigi-3.13AO.tar.gz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AO.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13AO.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AO.npa.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13AO.npa.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AO_setup.exe">http://www.w1hkj.com/alpha/fldigi-3.13AO_setup.exe</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13AO.dmg">http://www.w1hkj.com/alpha/fldigi-3.13AO.dmg</A>
+
+
+This is a very important alpha test version for Microsoft OS testers.  
+As you know fldigi has been experiencing crashes on MS that would happen 
+when the user would least expect it.  We believe that these are nearly 
+all associated with a subtle difference between the way that MS and 
+Posix systems handle exceptions.  Exceptions are a way that the software 
+responds to error conditions.  When you install this version you should 
+notice that there are two small dynamic link libraries in the program 
+install folder.  Both fldigi and flarq require these dll's to be in the 
+same folder as the exe.
+
+Version 3.13AO
+
+    Talker Socket 
+        * Added Talker Client for Rx stream output.
+          MS only - stream used by experimental text stream to ham
+          speech being developed by KH6TY.
+
+    Update win32 resource files  
+        Add a common rc file with more resource information.
+
+    Fix threads/exceptions bugs on mingw32
+       * Enable dynamic linking for pthreads-win32
+       * Add -mthreads to compiler and linker flags
+       * Modify nsis installer script to include pthreadGC2.dll and 
+mingwm10.dll
+
+    Revert &quot;Hamlib Exception Handling&quot;
+
+73, Dave, W1HKJ
+for the development team
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/842fc102/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091014/842fc102/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000219.html">Fldigi-PSKMail Issue
+</A></li>
+	<LI>Next message: <A HREF="000222.html">AO with Ubuntu Karmic Beta
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#221">[ date ]</a>
+              <a href="thread.html#221">[ thread ]</a>
+              <a href="subject.html#221">[ subject ]</a>
+              <a href="author.html#221">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

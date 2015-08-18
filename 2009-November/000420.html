@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Auto change mode with RS ID ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Auto%20change%20mode%20with%20RS%20ID%20%3F&In-Reply-To=%3C5f51f8060911010519l23713f43ndbb79e0f231ea95a%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000419.html">
+   <LINK REL="Next"  HREF="000416.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Auto change mode with RS ID ?</H1>
+    <B>John Douyere</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Auto%20change%20mode%20with%20RS%20ID%20%3F&In-Reply-To=%3C5f51f8060911010519l23713f43ndbb79e0f231ea95a%40mail.gmail.com%3E"
+       TITLE="Auto change mode with RS ID ?">vk2eta at gmail.com
+       </A><BR>
+    <I>Sun Nov  1 14:19:57 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000419.html">Auto change mode with RS ID ?
+</A></li>
+        <LI>Next message: <A HREF="000416.html">fldigi-3.13AZ / flarq-4.3AC posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#420">[ date ]</a>
+              <a href="thread.html#420">[ thread ]</a>
+              <a href="subject.html#420">[ subject ]</a>
+              <a href="author.html#420">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Andy,
+
+This is the intended behaviour with the latest server and Fldigi 3.13. The
+server should listen to RSID (it runs in the background in version 3.13) and
+switch to the requested mode automatically. The server automatically adjusts
+it's internal timings according to the new mode.
+
+The concept is to let the client choose the most appropriate mode for the
+conditions and connect in that mode.
+
+At the conclusion of the session, the server returns to it's designated mode
+if you have it in frequeny or channel scan or mode scan mode.
+
+I have attached a word document that will be included in the wiki that
+explains the concept and has a setup section for the client and the server.
+
+Hope this helps,
+
+Best 73s, John
+
+
+
+On Sun, Nov 1, 2009 at 10:45 PM, Andy obrien &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">k3ukandy at gmail.com</A>&gt; wrote:
+
+&gt;<i> I'm a little confused..  Can the mode automatically change upon
+</I>&gt;<i> reception of an RS ID , or not ?  I can't see a configuration setting
+</I>&gt;<i> that clearly indicates this.  I mostly recall getting the option to
+</I>&gt;<i> &quot;go to&quot;  when I am at the keyboard and receive and RS ID, but I think
+</I>&gt;<i> I have seem my PSKMAIL server switched to a mode not specified by me
+</I>&gt;<i> when someone has changed the mode via RS ID.
+</I>&gt;<i>
+</I>&gt;<i> Andy K3UK
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091102/791f648d/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091102/791f648d/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Using the RSID V2.doc
+Type: application/msword
+Size: 262144 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091102/791f648d/attachment.doc">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091102/791f648d/attachment.doc</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000419.html">Auto change mode with RS ID ?
+</A></li>
+	<LI>Next message: <A HREF="000416.html">fldigi-3.13AZ / flarq-4.3AC posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#420">[ date ]</a>
+              <a href="thread.html#420">[ thread ]</a>
+              <a href="subject.html#420">[ subject ]</a>
+              <a href="author.html#420">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

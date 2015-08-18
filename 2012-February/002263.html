@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI and Packet Operation: openpty()
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3C4F3770F5.1020708%40optonline.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002257.html">
+   <LINK REL="Next"  HREF="002258.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI and Packet Operation: openpty()</H1>
+    <B>Tony</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3C4F3770F5.1020708%40optonline.net%3E"
+       TITLE="FLDIGI and Packet Operation: openpty()">dxdx at optonline.net
+       </A><BR>
+    <I>Sun Feb 12 08:57:41 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002257.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+        <LI>Next message: <A HREF="002258.html">3.21.38AH Signal Browser issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2263">[ date ]</a>
+              <a href="thread.html#2263">[ thread ]</a>
+              <a href="subject.html#2263">[ subject ]</a>
+              <a href="author.html#2263">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+The SCS company has developed an alternative mode to 300 baud Packet 
+called Robust Packet. I've been testing it in one of their Tracker 
+modems ($350) for some time now and it is robust. If you like Packet and 
+need a modem that works under adverse conditions, this is it.
+
+Short demo here <A HREF="http://www.youtube.com/watch?v=ZOLk4n1ypJU">http://www.youtube.com/watch?v=ZOLk4n1ypJU</A>  The video 
+was recorded during a test link between myself and N9LYA on the 20 meter 
+band.
+
+I'd love to see a similar mode in FLDIGI some day.
+
+Robust Packet Specs:
+
+Baud Rate: 200/600
+Modulation: 8 tone PSK
+Bandwidth: 500Hz
+
+Tony, K2MO
+
+
+
+On 2/11/2012 6:07 PM, Brian Lloyd wrote:
+&gt;<i> On Sat, Feb 11, 2012 at 2:46 PM, Charles Brabham &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">n5pvl at uspacket.org</A> 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">n5pvl at uspacket.org</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>     To hear some people's political opinions about Packet, you would
+</I>&gt;<i>     think that it would not work at all.
+</I>&gt;<i>
+</I>&gt;<i>     Only thing is... It does work, and has worked FB on HF for
+</I>&gt;<i>     decades. Not only that, but AX25 Packet does things that most
+</I>&gt;<i>     other digital modes simply cannot do.
+</I>&gt;<i>     If you leave off the politics and just stick with observed
+</I>&gt;<i>     reality, the fact is that no other digital mode has been developed
+</I>&gt;<i>     yet to do what Packet does - but better.
+</I>&gt;<i>     Q15x25 was a nice try, but in on the air tests, regular old HF
+</I>&gt;<i>     Packet was more robust, and provided better throughput despite the
+</I>&gt;<i>     lower baud rate. We had great hopes for Q15x25, but it did not
+</I>&gt;<i>     prove to be better than 300 baud Packet.
+</I>&gt;<i>     The old urban myth about Packet being technically unusable on HF
+</I>&gt;<i>     was started in the late 80's by amateur TCPIP buffs who were
+</I>&gt;<i>     frustrated because nobody liked amateur TCPIP.
+</I>&gt;<i>
+</I>&gt;<i>     The situation hasn't changed... HF Packet is still going strong,
+</I>&gt;<i>     and the myth-makers are still frustrated because nobody
+</I>&gt;<i>     likes amateur TCPIP.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> And here I thought that the old AX.25 vs. TCP/IP wars were over. I 
+</I>&gt;<i> know I moved on. I guess there are die-hards everywhere. :-)
+</I>&gt;<i>
+</I>&gt;<i> And for what it's worth, if we compare the success of TCP/IP with the 
+</I>&gt;<i> success of any flavor of X.25, including the mis-named AX.25, well, 
+</I>&gt;<i> the jury is definitely in on that topic. :-)
+</I>&gt;<i>
+</I>&gt;<i> But getting back to AMPR on HF, consider: that something works does 
+</I>&gt;<i> not mean that it is optimal and cannot be made better. And my comments 
+</I>&gt;<i> about both the FSK modem and the AX.25 protocol specifics are true no 
+</I>&gt;<i> matter who speaks them. Phil Karn and I did an excellent analysis of 
+</I>&gt;<i> the AX.25 shortcomings back in the 1987 or 1988 ARRL Computer 
+</I>&gt;<i> Networking Conference. We ran computer simulations and then backed 
+</I>&gt;<i> them up with real-world observations of live networks. And the 
+</I>&gt;<i> observations and conclusions haven't changed, even after 25 years. 
+</I>&gt;<i> (Wow, has it been that long?)
+</I>&gt;<i>
+</I>&gt;<i> So, just because it works doesn't mean it can't get better. And just 
+</I>&gt;<i> because someone who likes TCP/IP says it, doesn't mean it isn't true. 
+</I>&gt;<i> Frankly, I couldn't care less about running TCP/IP over an HF link but 
+</I>&gt;<i> I do think that it is possible to craft a better protocol that will do 
+</I>&gt;<i> what AX.25 is doing, but do it better and more reliably. It would be 
+</I>&gt;<i> quite interesting to see progress in this area rather than arguments 
+</I>&gt;<i> about how adequate it is.
+</I>&gt;<i>
+</I>&gt;<i> 73 OM
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> Brian Lloyd, WB6RQN/J79BPL
+</I>&gt;<i> 3191 Western Dr.
+</I>&gt;<i> Cameron Park, CA 95682
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A>&gt;
+</I>&gt;<i> +1.767.617.1365 (Dominica)
+</I>&gt;<i> +1.916.877.5067 (USA)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120212/9b8af7bb/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120212/9b8af7bb/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002257.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+	<LI>Next message: <A HREF="002258.html">3.21.38AH Signal Browser issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2263">[ date ]</a>
+              <a href="thread.html#2263">[ thread ]</a>
+              <a href="subject.html#2263">[ subject ]</a>
+              <a href="author.html#2263">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

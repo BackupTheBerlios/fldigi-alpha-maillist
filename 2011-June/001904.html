@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Help with fldigi Hamlib PTT Issue with USB Interface.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Help%20with%20fldigi%20Hamlib%20PTT%20Issue%20with%20USB%20Interface.&In-Reply-To=%3C20110611010612.GF12227%40n0nb.us%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001903.html">
+   <LINK REL="Next"  HREF="001905.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Help with fldigi Hamlib PTT Issue with USB Interface.</H1>
+    <B>Nate Bargmann</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Help%20with%20fldigi%20Hamlib%20PTT%20Issue%20with%20USB%20Interface.&In-Reply-To=%3C20110611010612.GF12227%40n0nb.us%3E"
+       TITLE="Help with fldigi Hamlib PTT Issue with USB Interface.">n0nb at n0nb.us
+       </A><BR>
+    <I>Sat Jun 11 03:06:12 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001903.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+        <LI>Next message: <A HREF="001905.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1904">[ date ]</a>
+              <a href="thread.html#1904">[ thread ]</a>
+              <a href="subject.html#1904">[ subject ]</a>
+              <a href="author.html#1904">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here are my observations.
+
+I was able to get a working Fldigi on my Debian Sid (Unstable) box with
+the --disable-nls switch to configure.
+
+I fired up Fldigi with my old config and confirmed that Hamlib PTT was
+enabled and that PTT via Hamlib worked.  Yes on both counts.
+
+I then moved ~/.fldigi (configuration directory) out of the way
+temporarily and let Fldigi create a new config directory.  When I got to
+the Rig Control screen I selected the Hamlib tab, set the rig model and
+serial adapter and clicked Initialize.  Then I clicked Finish but had no
+VFO frequency display.  Oops!  I went back into Rig Control and actually
+selected Use Hamlib at the top and noted that the Hamlib PTT checkbox
+was checked by grayed out.  Still, Hamlib PTT to the K3 worked.
+
+I deleted ~/.fldigi, went through the set up procedure again this time
+making sure to also select the Use Hamlib checkbox the first time
+through.  I confirmed Hamlib PTT was working and went back into the
+configuration dialog to find the Hamlib PTT checkbox was not grayed out.
+Repeated selections of the dialog and restarting Fldigi showed the
+checkbox to be active each time.
+
+What I failed to do was to keep the config directory when the checkbox
+was grayed out.  I expected that based on past experience that the
+second new configuration would likewise fail.  It did not.
+
+So that is tonight's experience.
+
+73, de Nate &gt;&gt;
+
+-- 
+
+&quot;The optimist proclaims that we live in the best of all
+possible worlds.  The pessimist fears this is true.&quot;
+
+Ham radio, Linux, bikes, and more: <A HREF="http://www.n0nb.us">http://www.n0nb.us</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001903.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+	<LI>Next message: <A HREF="001905.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1904">[ date ]</a>
+              <a href="thread.html#1904">[ thread ]</a>
+              <a href="subject.html#1904">[ subject ]</a>
+              <a href="author.html#1904">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

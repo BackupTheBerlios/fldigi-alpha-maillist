@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Weather fax
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax&In-Reply-To=%3C1561aee61003141243s79987924q2f111fc4da961f07%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001019.html">
+   <LINK REL="Next"  HREF="001024.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Weather fax</H1>
+    <B>Anony Mous</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax&In-Reply-To=%3C1561aee61003141243s79987924q2f111fc4da961f07%40mail.gmail.com%3E"
+       TITLE="Weather fax">fyngyrz at gmail.com
+       </A><BR>
+    <I>Sun Mar 14 20:43:29 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001019.html">Weather fax
+</A></li>
+        <LI>Next message: <A HREF="001024.html">fldigi - Nice to include
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1022">[ date ]</a>
+              <a href="thread.html#1022">[ thread ]</a>
+              <a href="subject.html#1022">[ subject ]</a>
+              <a href="author.html#1022">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stelios, sorry for the duplicate, I keep forgetting which email I'm
+subscribed with here, and Google is of no help keeping it straight --
+there's no way to filter a message to assign the reply address. --
+Ben/AA7AS
+
+On Sun, Mar 14, 2010 at 6:21 AM, Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">m0gld at enotty.net</A>&gt; wrote:
+
+&gt;<i> Please think very carefully before creating a public API to process
+</I>&gt;<i> received images.  We certainly don't want to deal with dynamically
+</I>&gt;<i> loading shared objects at runtime, as this will require something like
+</I>&gt;<i> libltdl to do portably.
+</I>
+I was thinking of functions that were compiled in on a per-version
+basis, not run-time loadable functions. So the first version might
+have two or three of the most useful functions; the next version four
+or five; etc.
+
+It's still only sane to have a standard &quot;make a process&quot; definition.
+
+&gt;<i> IMO it's much better to just have an option specifying a program to be
+</I>&gt;<i> called with the filename of the image saved in PNG format.
+</I>
+This creates two files where no file needs to exist (the data is
+already in memory); it slows *everything* down (adjust brightness is
+now the hugely cumbersome [fldigi save file, brite load it, brite
+process it, brite save it, fldigi reload it]) so processes that were
+live, running in tiny fractions of a second, now thrash your disk to
+no good purpose at all, are no longer visibly interactive, and take
+much, much longer. These can be significant files. I *really* don't
+need two multi-megabyte temporary file writes to my drives just to
+adjust brightness or filter noise.
+
+&gt;<i> It's trivial to get to the RGB data and there are many
+</I>&gt;<i> image processing libraries than can open PNG files directly.
+</I>
+Nothing wrong with saving a PNG, and the program already does it, both
+automatically and on command. I'm a huge fan of PNG; my commercial
+image processing software was one of the first to support PNG when it
+came out, many years ago. Heck, we can even write MNG files, and that
+*really* puts us in a small minority!
+
+But it is a mistake to think that &quot;PNG out, postprocess(PNG in,
+function,PNG out), PNG in&quot; is even remotely similar to adding
+in-program noise removal, dynamic range controls, etc.
+
+These are extremely lightweight functions, too. The only likely weight
+to them at all will be the UI.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001019.html">Weather fax
+</A></li>
+	<LI>Next message: <A HREF="001024.html">fldigi - Nice to include
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1022">[ date ]</a>
+              <a href="thread.html#1022">[ thread ]</a>
+              <a href="subject.html#1022">[ subject ]</a>
+              <a href="author.html#1022">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

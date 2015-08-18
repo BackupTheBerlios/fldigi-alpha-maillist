@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Automatic detection of reception modes
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Automatic%20detection%20of%20reception%20modes&In-Reply-To=%3CAANLkTikf7-6btCmAHjiTP-8SWs1NHbUuhK_UF6CUQ1ex%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001248.html">
+   <LINK REL="Next"  HREF="001250.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Automatic detection of reception modes</H1>
+    <B>Mike Haynes</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Automatic%20detection%20of%20reception%20modes&In-Reply-To=%3CAANLkTikf7-6btCmAHjiTP-8SWs1NHbUuhK_UF6CUQ1ex%40mail.gmail.com%3E"
+       TITLE="Automatic detection of reception modes">n4znv1 at gmail.com
+       </A><BR>
+    <I>Wed Jun  2 01:37:20 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001248.html">Automatic detection of reception modes
+</A></li>
+        <LI>Next message: <A HREF="001250.html">Automatic detection of reception modes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1249">[ date ]</a>
+              <a href="thread.html#1249">[ thread ]</a>
+              <a href="subject.html#1249">[ subject ]</a>
+              <a href="author.html#1249">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sounds like an excellent candidate for a separate program.
+
+This might be somewhat involved from what I am hearing and if the approach
+would turn out to be like
+ALE , if not a separate program then perhaps a separate fork.
+
+I haven't experienced the difficulty in identifying signals especially since
+the samples of the different modes
+supported in Fldigi were posted some time ago.  That was very nice indeed.
+We use it in our training very heavily along with
+the throughput charts to help folks understand why one might choose a
+particular mode over another.
+
+Just my thoughts.  It is an intriguing idea though.
+
+73's
+
+Mike
+
+On Tue, Jun 1, 2010 at 7:23 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> &lt;
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt; wrote:
+
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> Thanks for the answer.
+</I>&gt;<i>
+</I>&gt;<i> Maybe we could have this kind of architecture:
+</I>&gt;<i>
+</I>&gt;<i> * A scanning module which handles the logic of working on a range
+</I>&gt;<i> frequency, with given steps depending on the frequency. Tempo for each
+</I>&gt;<i> frequency, loop or stop after one scan, etc... ( xml-rpc main.set_frequency
+</I>&gt;<i> ). It might run as well on a list of predefined frequencies (ALE).
+</I>&gt;<i>
+</I>&gt;<i> * A list of 'reasonable'  modes to try, based on the frequency and user
+</I>&gt;<i> choices. Based on usual rules and frequency usage.
+</I>&gt;<i>
+</I>&gt;<i> * A module which 'decides' to 'try' a frequency because there is a signal.
+</I>&gt;<i> It uses the signal/noise ratio, and can be customized given the mode, but by
+</I>&gt;<i> default just uses the power. Maybe uses xml-rpc modem.get_quality function ?
+</I>&gt;<i> Or modem.search_up and modem.search_down, but at the moment the virtual
+</I>&gt;<i> function modem::searchUp is implemented only for psk and rtty, and we would
+</I>&gt;<i> also have to extend the maximum frequency where this function can go,
+</I>&gt;<i> because it is limited at the moment to IMAGE_WIDTH-bandwidth.
+</I>&gt;<i>
+</I>&gt;<i> * A module which 'tries' to decode ( text.get_rx / main.rx ) with the
+</I>&gt;<i> current mode and, given the result, decide whether it is positive or not.
+</I>&gt;<i> Depending on the modem, it can be the entropy, or a reasonable number of
+</I>&gt;<i> English words, etc... abstracted in a boolean value. Uses modem.set_by_id
+</I>&gt;<i>
+</I>&gt;<i> * An optional module sending a specific message when something is detected
+</I>&gt;<i> on a frequency ( main.run_macro or main.tx ). It would wait until the
+</I>&gt;<i> current emission is finished.
+</I>&gt;<i>
+</I>&gt;<i> * A function which saves the frequency map + time + detected sample, in a
+</I>&gt;<i> browsable format (DBLog database or ADIF for example)
+</I>&gt;<i>
+</I>&gt;<i> Would we create a new program or adds this to an existing prog ? Or create
+</I>&gt;<i> a super-macro ?
+</I>&gt;<i>
+</I>&gt;<i> Thanks
+</I>&gt;<i>
+</I>&gt;<i> Remi
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Leigh L. Klotz, Jr WA5ZNU wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I wanted to do this a few years ago; one idea I had then was letting the
+</I>&gt;&gt;<i> user pick the bandwidth of the signal, and then decoding and measuring the
+</I>&gt;&gt;<i> entropy of the received text.  It might be good to use the network interface
+</I>&gt;&gt;<i> to do this, because you then have the freedom to prototype in any language.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I've done some tests and just calculating entropy or Phi value
+</I>&gt;&gt;<i> (approximation of English letter frequency) isn't good enough yet.
+</I>&gt;&gt;<i> I did this by analyzing fldigi log files, not by comparing decoding output
+</I>&gt;&gt;<i> of different modems, so maybe entropy would be good enough.
+</I>&gt;&gt;<i> Phi is not useful, though, because of the high frequency of acronyms,
+</I>&gt;&gt;<i> Q-signals, and numeric reports in short samples of QSOs.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Leigh/WA5ZNU
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On 05/31/2010 02:00 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thanks for the answer. This is something like that I have in mind: A kind
+</I>&gt;&gt;&gt;<i> of software-based scanner looping on every frequency of a given frequency
+</I>&gt;&gt;&gt;<i> range, with a given step.
+</I>&gt;&gt;&gt;<i> At each step, it measures the signal/noise ratio. If it is powerful
+</I>&gt;&gt;&gt;<i> enough, it tries a subset of modem types (Subset based on the frequency for
+</I>&gt;&gt;&gt;<i> example). For each of them, it waits a couple of seconds, and tries to
+</I>&gt;&gt;&gt;<i> decode something meaningful. Instead of looping on a frequency rqnge, it
+</I>&gt;&gt;&gt;<i> might as well try a list of given frequencies.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> If it can find something 'interesting' (Occurence of given strings such
+</I>&gt;&gt;&gt;<i> as 'CQ', callsigns, english words etc...) , it writes the data and the
+</I>&gt;&gt;&gt;<i> frequency in a logbook (Or database like DBlog's one).
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I wondered whether &lt;SRCHUP&gt; and &lt;SRCHDN&gt; may help, but I could not really
+</I>&gt;&gt;&gt;<i> understand them nor make them work.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thanks
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> R
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Andy obrien wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> I have a problem guessing which are the transmit modes of some signals
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> we receive.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> So, do you please think it would be possible to have an automatic
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> system
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> for guessing the mode of a signal ?
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Something which would try all fldigi modes, wait a couple of seconds
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> to
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> decode something,
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> You may be able to do thisalready via the macros.  To save sometime,
+</I>&gt;&gt;&gt;&gt;<i> break it down in to a couple of macros differentiated by distinct
+</I>&gt;&gt;&gt;&gt;<i> classes of signals, leave out the ones you are already knowledgeable
+</I>&gt;&gt;&gt;&gt;<i> about (e.g. RTTY is so distinct you probably do not need that in a
+</I>&gt;&gt;&gt;&gt;<i> macro, same for PSK31.  )  example
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> &lt;MODEM:CTSTIA:250:8&gt;
+</I>&gt;&gt;&gt;&gt;<i> &lt;MODEM:CTSTIA:500:16&gt;
+</I>&gt;&gt;&gt;&gt;<i> &lt;MODEM:CTSTIA:1000:8&gt;
+</I>&gt;&gt;&gt;&gt;<i> &lt;MODEM:CTSTIA:1000:16&gt;
+</I>&gt;&gt;&gt;&gt;<i> &lt;MODEM:CTSTIA:500:8&gt;
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> and play around with the &lt;TIMER:NN&gt;  commands in between each mode
+</I>&gt;&gt;&gt;&gt;<i> command.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Andy K3UK
+</I>&gt;&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;&gt;<i> fldigi-alpha mailing list
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> fldigi-alpha mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100601/6ffc3651/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100601/6ffc3651/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001248.html">Automatic detection of reception modes
+</A></li>
+	<LI>Next message: <A HREF="001250.html">Automatic detection of reception modes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1249">[ date ]</a>
+              <a href="thread.html#1249">[ thread ]</a>
+              <a href="subject.html#1249">[ subject ]</a>
+              <a href="author.html#1249">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

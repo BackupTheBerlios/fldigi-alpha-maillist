@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Portaudio ?.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C4A807DAF.1050000%40urbakken.dk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000007.html">
+   <LINK REL="Next"  HREF="000009.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Portaudio ?.</H1>
+    <B>Erik Jakobsen</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C4A807DAF.1050000%40urbakken.dk%3E"
+       TITLE="Portaudio ?.">eja at urbakken.dk
+       </A><BR>
+    <I>Mon Aug 10 22:06:07 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000007.html">Portaudio ?.
+</A></li>
+        <LI>Next message: <A HREF="000009.html">Portaudio ?.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stelios Bounanos wrote:
+&gt;&gt;&gt;&gt;&gt;&gt;<i> On Mon, 10 Aug 2009 21:42:25 +0200, Erik Jakobsen &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">eja at urbakken.dk</A>&gt; said:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>             
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Thanks Stelios for the reply. I disabled the right channel, but still 
+</I>&gt;&gt;<i> have issue(s)
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Please start fldigi with --debug-level 9 and post the log output. The
+</I>&gt;<i> sound card information will tell us how many channels are supported in
+</I>&gt;<i> each direction.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>It is here:
+
+Q: [22:03:57] main.cxx:213: fldigi 3.13AC log started on Mon Aug 10 
+22:03:57 2009
+
+I: [22:03:57] misc/dxcc.cxx:46: Could not read contest country file 
+&quot;C:/Documents and Settings/Erik Jakobsen/fldigi.files/cty.dat&quot;
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM1
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM4
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM5
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM7
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM8
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM9
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM10
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM11
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM12
+I: [22:03:57] misc/configuration.cxx:812: Found serial port COM13
+D: [22:03:57] rigcontrol/rigsupport.cxx:586: no rig
+D: [22:03:57] soundcard/sound.cxx:1229: looking for device &quot;Virtual Cable 2&quot;
+D: [22:03:57] soundcard/sound.cxx:1304: using input (1 ch) device 
+&quot;Virtual Cable 2&quot;:
+index: 19
+name: Virtual Cable 2
+host API: Windows DirectSound
+max input channels: 0
+max output channels: 2
+default sample rate: 44100
+supported sample rates: Unknown
+input only: false
+output only: true
+full duplex: false
+system default input: false
+system default output: false
+host API default input: false
+host API default output: false
+default low input latency: 0
+default high input latency: 0
+default low output latency: 0
+default high output latency: 0
+
+D: [22:03:57] soundcard/sound.cxx:1310: input: resampling 44100.000000 
+&lt;=&gt; 8000.000000
+D: [22:03:57] soundcard/sound.cxx:1314: input: frames_per_buffer=0
+D: [22:03:57] soundcard/sound.cxx:1181: input rbsize=16384
+E: [22:03:57] trx/trx.cxx:116: PortAudio error: Invalid number of channels
+D: [22:03:58] soundcard/sound.cxx:1229: looking for device &quot;Virtual Cable 2&quot;
+D: [22:03:58] soundcard/sound.cxx:1304: using input (1 ch) device 
+&quot;Virtual Cable 2&quot;:
+index: 19
+name: Virtual Cable 2
+host API: Windows DirectSound
+max input channels: 0
+max output channels: 2
+default sample rate: 44100
+supported sample rates: Unknown
+input only: false
+output only: true
+full duplex: false
+system default input: false
+system default output: false
+host API default input: false
+host API default output: false
+default low input latency: 0
+default high input latency: 0
+default low output latency: 0
+default high output latency: 0
+
+D: [22:03:58] soundcard/sound.cxx:1310: input: resampling 44100.000000 
+&lt;=&gt; 8000.000000
+D: [22:03:58] soundcard/sound.cxx:1314: input: frames_per_buffer=0
+D: [22:03:58] soundcard/sound.cxx:1181: input rbsize=16384
+E: [22:03:58] trx/trx.cxx:116: PortAudio error: Invalid number of channels
+D: [22:03:59] soundcard/sound.cxx:1229: looking for device &quot;Virtual Cable 2&quot;
+D: [22:03:59] soundcard/sound.cxx:1304: using input (1 ch) device 
+&quot;Virtual Cable 2&quot;:
+index: 19
+name: Virtual Cable 2
+host API: Windows DirectSound
+max input channels: 0
+max output channels: 2
+default sample rate: 44100
+supported sample rates: Unknown
+input only: false
+output only: true
+full duplex: false
+system default input: false
+system default output: false
+host API default input: false
+host API default output: false
+default low input latency: 0
+default high input latency: 0
+default low output latency: 0
+default high output latency: 0
+
+D: [22:03:59] soundcard/sound.cxx:1310: input: resampling 44100.000000 
+&lt;=&gt; 8000.000000
+D: [22:03:59] soundcard/sound.cxx:1314: input: frames_per_buffer=0
+D: [22:03:59] soundcard/sound.cxx:1181: input rbsize=16384
+E: [22:03:59] trx/trx.cxx:116: PortAudio error: Invalid number of channels
+D: [22:04:00] soundcard/sound.cxx:1229: looking for device &quot;Virtual Cable 2&quot;
+D: [22:04:00] soundcard/sound.cxx:1304: using input (1 ch) device 
+&quot;Virtual Cable 2&quot;:
+index: 19
+name: Virtual Cable 2
+host API: Windows DirectSound
+max input channels: 0
+max output channels: 2
+default sample rate: 44100
+supported sample rates: Unknown
+input only: false
+output only: true
+full duplex: false
+system default input: false
+system default output: false
+host API default input: false
+host API default output: false
+default low input latency: 0
+default high input latency: 0
+default low output latency: 0
+default high output latency: 0
+
+D: [22:04:00] soundcard/sound.cxx:1310: input: resampling 44100.000000 
+&lt;=&gt; 8000.000000
+D: [22:04:00] soundcard/sound.cxx:1314: input: frames_per_buffer=0
+D: [22:04:00] soundcard/sound.cxx:1181: input rbsize=16384
+E: [22:04:00] trx/trx.cxx:116: PortAudio error: Invalid number of channels
+D: [22:04:01] soundcard/sound.cxx:1229: looking for device &quot;Virtual Cable 2&quot;
+D: [22:04:01] soundcard/sound.cxx:1304: using input (1 ch) device 
+&quot;Virtual Cable 2&quot;:
+index: 19
+name: Virtual Cable 2
+host API: Windows DirectSound
+max input channels: 0
+max output channels: 2
+default sample rate: 44100
+supported sample rates: Unknown
+input only: false
+output only: true
+full duplex: false
+system default input: false
+system default output: false
+host API default input: false
+host API default output: false
+default low input latency: 0
+default high input latency: 0
+default low output latency: 0
+default high output latency: 0
+
+D: [22:04:01] soundcard/sound.cxx:1310: input: resampling 44100.000000 
+&lt;=&gt; 8000.000000
+D: [22:04:01] soundcard/sound.cxx:1314: input: frames_per_buffer=0
+D: [22:04:01] soundcard/sound.cxx:1181: input rbsize=16384
+E: [22:04:01] trx/trx.cxx:116: PortAudio error: Invalid number of channels
+D: [22:04:02] soundcard/sound.cxx:1229: looking for device &quot;Virtual Cable 2&quot;
+D: [22:04:02] soundcard/sound.cxx:1304: using input (1 ch) device 
+&quot;Virtual Cable 2&quot;:
+index: 19
+name: Virtual Cable 2
+host API: Windows DirectSound
+max input channels: 0
+max output channels: 2
+default sample rate: 44100
+supported sample rates: Unknown
+input only: false
+output only: true
+full duplex: false
+system default input: false
+system default output: false
+host API default input: false
+host API default output: false
+default low input latency: 0
+default high input latency: 0
+default low output latency: 0
+default high output latency: 0
+
+D: [22:04:02] soundcard/sound.cxx:1310: input: resampling 44100.000000 
+&lt;=&gt; 8000.000000
+D: [22:04:02] soundcard/sound.cxx:1314: input: frames_per_buffer=0
+D: [22:04:02] soundcard/sound.cxx:1181: input rbsize=16384
+E: [22:04:02] trx/trx.cxx:116: PortAudio error: Invalid number of channels
+
+73s-Erik-OZ4KK
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000007.html">Portaudio ?.
+</A></li>
+	<LI>Next message: <A HREF="000009.html">Portaudio ?.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

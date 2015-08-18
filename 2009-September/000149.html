@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13AG posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AG%20posted&In-Reply-To=%3C4AAFFD66.8090603%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000148.html">
+   <LINK REL="Next"  HREF="000150.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13AG posted</H1>
+    <B>Joseph A. Counsil</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AG%20posted&In-Reply-To=%3C4AAFFD66.8090603%40gmail.com%3E"
+       TITLE="fldigi 3.13AG posted">counsil at rollanet.org
+       </A><BR>
+    <I>Tue Sep 15 22:47:34 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000148.html">fldigi 3.13AG posted
+</A></li>
+        <LI>Next message: <A HREF="000150.html">fldigi 3.13AG posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave,
+
+Unfortunately, the rigCAT mods broke the functionality with my FT-100D.  
+It will WRITE the frequency to the radio, but can't read it properly.  I 
+get the following popup error log:
+
+Q: main: fldigi 3.13AG log started on Tue Sep 15 15:45:26 2009
+
+W: rigCAT_getfreq: Retries failed
+W: rigCAT_getfreq: Retries failed
+W: rigCAT_getfreq: Retries failed
+D: [15:45:32] rigcontrol/rigio.cxx:84: reply 0B 00 AB C0 C0 11 08 00 03 
+A1 00 00 03 33 00 22 14 01 57 65 60 25 08 00 00 A0 00 00 03 33 11 22
+D: [15:45:32] rigcontrol/rigio.cxx:72: sent 00 00 00 00 10
+D: [15:45:33] rigcontrol/rigio.cxx:84: reply 0B 00 AB C0 C0 11 08 00 03 
+A1 00 00 03 33 00 22 14 01 57 65 60 25 08 00 00 A0 00 00 03 33 11 22
+D: [15:45:33] rigcontrol/rigio.cxx:72: sent 00 00 00 00 10
+D: [15:45:33] rigcontrol/rigio.cxx:84: reply 0B 00 AB C0 C0 11 08 00 03 
+A1 00 00 03 33 00 22 14 01 57 65 60 25 08 00 00 A0 00 00 03 33 11 22
+W: [15:45:33] rigcontrol/rigio.cxx:370: Retries failed
+D: [15:45:33] rigcontrol/rigio.cxx:72: sent 00 00 00 00 10
+D: [15:45:33] rigcontrol/rigio.cxx:84: reply 0B 00 AB C0 C0 11 08 00 03 
+A1 00 00 03 33 00 22 14 01 57 65 60 25 08 00 00 A0 00 00 03 33 11 22
+D: [15:45:33] rigcontrol/rigio.cxx:72: sent 00 00 00 00 10
+D: [15:45:33] rigcontrol/rigio.cxx:84: reply 0B 00 AB C0 C0 11 08 00 03 
+A1 00 00 03 33 00 22 14 01 57 65 60 25 08 00 00 A0 00 00 03 33 11 22
+D: [15:45:33] rigcontrol/rigio.cxx:72: sent 00 00 00 00 10
+D: [15:45:33] rigcontrol/rigio.cxx:84: reply 0B 00 AB C0 C0 11 08 00 03 
+A1 00 00 03 33 00 22 14 01 57 65 60 25 08 00 00 A0 00 00 03 33 11 22
+D: [15:45:34] rigcontrol/rigio.cxx:72: sent 00 00 00 00 10
+D: [15:45:34] rigcontrol/rigio.cxx:84: reply 0B 00 AB C0 C0 11 08 00 03 
+A1 00 00 03 33 00 22 14 01 57 65 60 25 08 00 00 A0 00 00 03 33 11 22
+
+...and it goes on and on and on...
+
+I increased the timing delays in the rigCAT tab to 100ms, but that made 
+no difference.
+
+I guess for now I'll go back to AF.
+
+73,
+-Joe-
+
+w1hkj wrote:
+&gt;<i> Version 3.13AG
+</I>&gt;<i>     1.  rigCAT mods
+</I>&gt;<i>         Restructured i/o to allow use with broadcast transceivers.
+</I>&gt;<i>         Icom 7xxx series default to a CI-V server that broadcasts
+</I>&gt;<i>         serial data which disrupted fldigi serial data stream extract.
+</I>&gt;<i>         New code passed tests on Vista with IC-746Pro operating in
+</I>&gt;<i>         CI-V Transceive (server) mode.
+</I>&gt;<i>     2.  Serial i/o Stopbits
+</I>&gt;<i>         Added stopbits configuration for hamlib and rigcat serial i/o
+</I>&gt;<i>     3.  Dom/Thor mod
+</I>&gt;<i>         Modified squelch evaluator for increased sensitivity
+</I>&gt;<i>     4.  QRZ lookup
+</I>&gt;<i>         Added post thread startup delay to allow OS to set up
+</I>&gt;<i>         conditionals.
+</I>&gt;<i>
+</I>&gt;<i> Notes:
+</I>&gt;<i>
+</I>&gt;<i>    1. rigCAT mods should provide better cat i/o with all makes of
+</I>&gt;<i>       transceiver.  You may need to adjust your timing.  This is a
+</I>&gt;<i>       major rewrite to the rigCAT execution code.
+</I>&gt;<i>    2. You need to know whether your transceiver uses 1 or 2 stop
+</I>&gt;<i>       bits.  Icom 7xxx series are usually 1 stop bit.  Kenwoods are
+</I>&gt;<i>       usually 2 stop bits.   I would like to know what performance you
+</I>&gt;<i>       see with a TS50 or TS450.  This mod was targeted at the 2 stop
+</I>&gt;<i>       bit transceivers.
+</I>&gt;<i>    3. Squelch for DominoEX and Thor modes should be faster acting and
+</I>&gt;<i>       also closer in level to PSK modes.
+</I>&gt;<i>    4. This should correct the 2x - 1st time QRZ problem on MS and some
+</I>&gt;<i>       Linux distros.
+</I>&gt;<i>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG.tar.gz">http://www.w1hkj.com/friday/fldigi-3.13AG.tar.gz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AG.bin.tgz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG.npa.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AG.npa.bin.tgz</A>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG_setup.exe">http://www.w1hkj.com/friday/fldigi-3.13AG_setup.exe</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i> for the development team
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>   
+</I>
+-- 
++---------------------------------------------------------------+
+|<i> Joseph A. Counsil  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>  Phone:(573) 341-5186 |
+</I>|<i> 1310 Woodlawn Drive, Rolla, MO 65401  Amateur Radio: - K&#216;OG - |
+</I>+---------------------------------------------------------------+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000148.html">fldigi 3.13AG posted
+</A></li>
+	<LI>Next message: <A HREF="000150.html">fldigi 3.13AG posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

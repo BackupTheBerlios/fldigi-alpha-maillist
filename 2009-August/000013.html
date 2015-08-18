@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Portaudio ?.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C4A80EB61.4070108%40urbakken.dk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000011.html">
+   <LINK REL="Next"  HREF="000018.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Portaudio ?.</H1>
+    <B>Erik Jakobsen</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C4A80EB61.4070108%40urbakken.dk%3E"
+       TITLE="Portaudio ?.">eja at urbakken.dk
+       </A><BR>
+    <I>Tue Aug 11 05:54:09 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000011.html">Portaudio ?.
+</A></li>
+        <LI>Next message: <A HREF="000018.html">Error ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stelios Bounanos wrote:
+&gt;&gt;&gt;&gt;&gt;&gt;<i> On Mon, 10 Aug 2009 14:03:09 -0700, Brian Lloyd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A>&gt; said:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>             
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> On Mon, Aug 10, 2009 at 1:53 PM, Stelios Bounanos&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">m0gld at enotty.net</A>&gt; wrote:
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> On Mon, 10 Aug 2009 22:06:07 +0200, Erik Jakobsen &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">eja at urbakken.dk</A>&gt; said:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>                 
+</I>&gt;&gt;&gt;&gt;<i> Stelios Bounanos wrote:
+</I>&gt;&gt;&gt;&gt;<i>         
+</I>&gt;&gt;&gt;&gt;&gt;<i> Please start fldigi with --debug-level 9 and post the log output. The
+</I>&gt;&gt;&gt;&gt;&gt;<i> sound card information will tell us how many channels are supported in
+</I>&gt;&gt;&gt;&gt;&gt;<i> each direction.
+</I>&gt;&gt;&gt;&gt;&gt;<i>           
+</I>&gt;&gt;&gt;&gt;<i> It is here:
+</I>&gt;&gt;&gt;&gt;<i>         
+</I>&gt;&gt;&gt;<i> [...]
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> That input device looks like an output device to me :)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Let's take a closer look at those virtual cable devices.  Please run the
+</I>&gt;&gt;&gt;<i> program below and send me the output file (pa_devs_out.txt) that it
+</I>&gt;&gt;&gt;<i> generates.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  <A HREF="http://download2.berlios.de/pub/fldigi/alpha/pa_devs.exe">http://download2.berlios.de/pub/fldigi/alpha/pa_devs.exe</A>
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> I have run into this problem with PowerSDR, VAC, and fldigi before. I
+</I>&gt;&gt;<i> have solved it by switching fldigi from portaudio to file I/O and
+</I>&gt;&gt;<i> back. I have also had to match the sample rate manually, i.e. manually
+</I>&gt;&gt;<i> set the sample rate in fldigi to 48000 to match the sample rate set in
+</I>&gt;&gt;<i> PowerSDR. If I do those two things, everything seems to work fine. I
+</I>&gt;&gt;<i> suspect an interaction problem with VAC. Setting everything manually
+</I>&gt;&gt;<i> seems to make it work just fine.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Thanks Brian, this may help Erik with his setup.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Brain, Stelios.
+
+I tried what you have told Brian -thanks for your input here.
+I did set the sample rates for capture as well as for copy. ok ?
+I'm a bit in doubt on the sequence of changing the portaudio to file I/O,
+and back again ?.
+If I change to file I/O, and stop/start Fldigi, Fldigi starts up without 
+errors.
+Being in Fldigi and switch back to portaudio, the log again opens and show
+the portaudio erros again.
+
+I have put some screenshots here:
+
+<A HREF="http://picpaste.com/sdr.jpg">http://picpaste.com/sdr.jpg</A>
+<A HREF="http://picpaste.com/samples.jpg">http://picpaste.com/samples.jpg</A>
+<A HREF="http://picpaste.com/portaudiotofileioandback.jpg">http://picpaste.com/portaudiotofileioandback.jpg</A>
+
+
+73s-Erik-OZ4KK
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000011.html">Portaudio ?.
+</A></li>
+	<LI>Next message: <A HREF="000018.html">Error ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

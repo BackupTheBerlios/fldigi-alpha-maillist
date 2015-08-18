@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Help with fldigi Hamlib PTT Issue with USB Interface.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Help%20with%20fldigi%20Hamlib%20PTT%20Issue%20with%20USB%20Interface.&In-Reply-To=%3C20110611035037.GI12227%40n0nb.us%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001905.html">
+   <LINK REL="Next"  HREF="001906.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Help with fldigi Hamlib PTT Issue with USB Interface.</H1>
+    <B>Nate Bargmann</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Help%20with%20fldigi%20Hamlib%20PTT%20Issue%20with%20USB%20Interface.&In-Reply-To=%3C20110611035037.GI12227%40n0nb.us%3E"
+       TITLE="Help with fldigi Hamlib PTT Issue with USB Interface.">n0nb at n0nb.us
+       </A><BR>
+    <I>Sat Jun 11 05:50:37 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001905.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+        <LI>Next message: <A HREF="001906.html">DLDC RTTY Contest and the new TX Atten
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1907">[ date ]</a>
+              <a href="thread.html#1907">[ thread ]</a>
+              <a href="subject.html#1907">[ subject ]</a>
+              <a href="author.html#1907">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>* On 2011 10 Jun 21:40 -0500, Dick Kriss wrote:
+&gt;<i> On Jun 10, 2011, at 8:06 PM, Nate Bargmann wrote:
+</I>&gt;<i> 
+</I>&gt;<i> &gt; So that is tonight's experience.
+</I>&gt;<i> 
+</I>&gt;<i> Nate N0NB,
+</I>&gt;<i> 
+</I>&gt;<i> Your comments about the K3 working inspired me to try something different 
+</I>&gt;<i> and it helped!  Since fldigi-3.21.11 does not have a Hamlib backend for the
+</I>&gt;<i> TS-590S, I was using the TS-570S backend that worked with my TS-570S. For
+</I>&gt;<i> grins I tried to setup Hamlib again but this time I picked the K3 from the 
+</I>&gt;<i> rig selector. It did not work but the &quot;Good News&quot; was by selecting the K3 it
+</I>&gt;<i> CLEARED the dimmed PTT option!  I then tried the TS-570S option again and 
+</I>&gt;<i> it is no longer dimmed but still does not key the rig.  Fldigi thinks it is transmitting
+</I>&gt;<i> and the output shows on the waterfall, the red LED on the face of the TS-590S
+</I>&gt;<i> is lit but the rig is not transmitting. 
+</I>
+Dick, if the LED in the rig is lit indicating transmit mode, then the
+command *must* have been received by the '590.  Now, I don't have one
+handy to verify, but are you sure you're in the right mode?  My K3 will
+go into TX but won't get any audio input from the back panel until it is
+in DATA mode (PKTUSB in Fldigi).
+
+Update!  See below.
+
+&gt;<i> Can you provide Dave a new backend for the TS-590S?
+</I>
+I just downloaded the owners manual from Kenwood and I see an erro in
+the communications parameters.  It shows 9600 and 115200 bps using 1
+stop bit and 4800 bps using 2 stop bits.  The Hamlib backend shows a
+range of 4800 to 115200 with 1 stop bit.  I'll change that.
+
+&gt;<i> What Kenwood (or other) backend would you suggest as being close to the 
+</I>&gt;<i> new backend you prepared for the TS-590S in the new Hamlib version?
+</I>
+For PTT, probably no other as I see that the TS-590 has added a
+parameter to the TX command (see page 23 of the PC Command Reference For
+the TS-590S Transceiver manual).  This will be a bit complicated to
+implement.  I do think that I can use the PKTUSB/PKTLSB Hamlib modes to
+select the parameter value of 1 for DATA SEND (ACC2/USB inout) and any
+other mode will use the normal PTT command.
+
+&gt;<i> I have messed with Hamlib options so much I may have something set
+</I>&gt;<i> incorrect that is preventing fldigi from keying the TS-590S.  I tried 
+</I>&gt;<i> running at 57.6 Baud and that did not help.
+</I>
+The radio does not appear to support 57.6 bps, just 9600 and 115200 bps.
+
+Gee, it;s bed time!
+
+73, de Nate &gt;&gt;
+
+-- 
+
+&quot;The optimist proclaims that we live in the best of all
+possible worlds.  The pessimist fears this is true.&quot;
+
+Ham radio, Linux, bikes, and more: <A HREF="http://www.n0nb.us">http://www.n0nb.us</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001905.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+	<LI>Next message: <A HREF="001906.html">DLDC RTTY Contest and the new TX Atten
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1907">[ date ]</a>
+              <a href="thread.html#1907">[ thread ]</a>
+              <a href="subject.html#1907">[ subject ]</a>
+              <a href="author.html#1907">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> flrig-0.9.99F now works on Mac OS X ...
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flrig-0.9.99F%20now%20works%20on%20Mac%20OS%20X%20...&In-Reply-To=%3C112308945055769993758779532694035105467-Webmail%40me.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000740.html">
+   <LINK REL="Next"  HREF="000747.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>flrig-0.9.99F now works on Mac OS X ...</H1>
+    <B>Andre M0JEK</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flrig-0.9.99F%20now%20works%20on%20Mac%20OS%20X%20...&In-Reply-To=%3C112308945055769993758779532694035105467-Webmail%40me.com%3E"
+       TITLE="flrig-0.9.99F now works on Mac OS X ...">m0jek at me.com
+       </A><BR>
+    <I>Thu Jan 28 18:02:56 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000740.html">Water Fall offset
+</A></li>
+        <LI>Next message: <A HREF="000747.html">fldigi 3.13BV posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#742">[ date ]</a>
+              <a href="thread.html#742">[ thread ]</a>
+              <a href="subject.html#742">[ subject ]</a>
+              <a href="author.html#742">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I don't know why I didn't see this before, maybe I was rusty or just tired. Anyway, during a tea break I quickly tried it out.
+I have solved the problem of flrig exiting on OS X. The function call &quot;mainwindow-&gt;show();&quot; is on the wrong side of the directive. 
+
+*** rig.cxx.orig	Thu Jan 28 16:34:26 2010
+--- rig.cxx	Thu Jan 28 16:50:31 2010
+***************
+*** 245,253 ****
+  #elif !defined(__APPLE__)
+  	make_pixmap(&amp;Rig_icon_pixmap, flrig_icon);
+  	mainwindow-&gt;icon((char *)Rig_icon_pixmap);
+- 	mainwindow-&gt;show();
+  #endif
+! 
+  	Fl::add_timeout(0.250, startup);
+  
+  	return Fl::run();
+--- 245,252 ----
+  #elif !defined(__APPLE__)
+  	make_pixmap(&amp;Rig_icon_pixmap, flrig_icon);
+  	mainwindow-&gt;icon((char *)Rig_icon_pixmap);
+  #endif
+! 	mainwindow-&gt;show();
+  	Fl::add_timeout(0.250, startup);
+  
+  	return Fl::run();
+
+Easy. Come to think of it, I think the whole directive might be removed. I am going to test that.
+
+The next stage will be to fix the serial port routine so that any OS X serial ports will be found and added to the list.
+
+73
+
+Andr&#233; - M0JEK
+
+--
+
+<A HREF="http://homepage.mac.com/andresk/">http://homepage.mac.com/andresk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000740.html">Water Fall offset
+</A></li>
+	<LI>Next message: <A HREF="000747.html">fldigi 3.13BV posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#742">[ date ]</a>
+              <a href="thread.html#742">[ thread ]</a>
+              <a href="subject.html#742">[ subject ]</a>
+              <a href="author.html#742">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

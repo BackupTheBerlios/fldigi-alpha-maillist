@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> wefax
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20wefax&In-Reply-To=%3C1561aee61003131534k3529f2a1md8cd28861a0447d8%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001006.html">
+   <LINK REL="Next"  HREF="001018.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>wefax</H1>
+    <B>Ben</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20wefax&In-Reply-To=%3C1561aee61003131534k3529f2a1md8cd28861a0447d8%40mail.gmail.com%3E"
+       TITLE="wefax">ben at vk-agency.com
+       </A><BR>
+    <I>Sun Mar 14 00:34:40 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001006.html">wefax
+</A></li>
+        <LI>Next message: <A HREF="001018.html">wefax
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1010">[ date ]</a>
+              <a href="thread.html#1010">[ thread ]</a>
+              <a href="subject.html#1010">[ subject ]</a>
+              <a href="author.html#1010">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, Mar 13, 2010 at 3:29 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>
+&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt; wrote:
+&gt;&gt;<i> o moving / resizing the wefax display window punches holes in the
+</I>&gt;&gt;<i> display bitmap.
+</I>
+&gt;<i> This happens as well each time CPU is taken by another task on my PC. I
+</I>&gt;<i> suspect that some samples are lost when the machine is too busy. For
+</I>&gt;<i> example, when changing the horizontal center of the image, it has to be
+</I>&gt;<i> reallocated and sometimes, a couple of pixels just appear black.
+</I>&gt;<i> Does someone think that some sample could be set to zero when the machine is
+</I>&gt;<i> very busy?
+</I>
+The Mac won't lose audio samples as far as I know. I am a professional
+musician, and I have never noticed gaps in the audio from moving
+windows and that sort of thing. Also, Multimode, another program that
+does fax this way (using the Mac's audio device) never loses samples
+no matter what you do with the machine, so I think that it's happening
+at a higher level. Do you have a specific task whose job it is to get
+samples from the audio and store them into the receive buffer? Or are
+you putting the samples right into the display bitmap? Because there
+will be times the display bitmap is locked, such as the re-allocation
+you mention.
+
+
+&gt;&gt;<i> o confirm start of image definitely resets line rate; shouldn't.
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Do you please mean the LPM ? Do you think it would be better to keep the
+</I>&gt;<i> same unslant tuning ?
+</I>
+Yes, definitely. As I  have said earlier, this adjustment doesn't
+generally apply to the incoming signal, but instead, corrects the
+computer's error in timing. Further, no matter which (or if both), as
+long as you stay on the same broadcast, the slant (and hence the
+correction) will remain the same, so the unslant tuning should not be
+reset between images. Let the user do that (and save it when the
+program exits and restarts... mine is at .997 and every fax signal I
+have seen so far is straightened by that value.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001006.html">wefax
+</A></li>
+	<LI>Next message: <A HREF="001018.html">wefax
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1010">[ date ]</a>
+              <a href="thread.html#1010">[ thread ]</a>
+              <a href="subject.html#1010">[ subject ]</a>
+              <a href="author.html#1010">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

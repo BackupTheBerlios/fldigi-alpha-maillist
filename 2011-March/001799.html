@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Data Point testing QSY command on fldigi-3.22.0AA
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Data%20Point%20testing%20QSY%20command%20on%20fldigi-3.22.0AA&In-Reply-To=%3CAANLkTi%3D6UrtDwMWUteQDwRG_T5vxB43UhjN0Whf4SOoE%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001798.html">
+   <LINK REL="Next"  HREF="001800.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Data Point testing QSY command on fldigi-3.22.0AA</H1>
+    <B>Mike Haynes</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Data%20Point%20testing%20QSY%20command%20on%20fldigi-3.22.0AA&In-Reply-To=%3CAANLkTi%3D6UrtDwMWUteQDwRG_T5vxB43UhjN0Whf4SOoE%40mail.gmail.com%3E"
+       TITLE="Data Point testing QSY command on fldigi-3.22.0AA">n4znv1 at gmail.com
+       </A><BR>
+    <I>Tue Mar  8 20:06:28 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001798.html">Data Point testing QSY command on fldigi-3.22.0AA
+</A></li>
+        <LI>Next message: <A HREF="001800.html">Data Point testing QSY command on fldigi-3.22.0AA
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1799">[ date ]</a>
+              <a href="thread.html#1799">[ thread ]</a>
+              <a href="subject.html#1799">[ subject ]</a>
+              <a href="author.html#1799">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Are both versions sharing the same configuration files?
+
+That may be a problem. Unless you have set up the Alpha version per
+instructions Dave supplied some time ago to isolate it from your main
+application you may be introducing variables you aren't able to trace
+easily.
+
+Just my first thoughts.
+
+Thanks
+
+Mike
+On Mar 8, 2011 1:37 PM, &quot;Dick&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">aa5vu at att.net</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> On Mar 8, 2011, at 10:04 AM, Dave Freese wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> On 3/7/11 9:22 PM, Dick wrote:
+</I>&gt;&gt;&gt;<i> Dave,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> QSL note about the new fldigi-3.22.0AA and while I am not a NBEMS user
+</I>&gt;&gt;&gt;<i> I installed fldgi to check on how it does commanding the TS-590S VFO's.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I was surprised to find fldigi-3.22.0AA would command VFO-A only, like
+</I>&gt;&gt;&gt;<i> the released 3.21.4. It was a short lived success. I then opened 3.21.4
+</I>&gt;&gt;&gt;<i> and confirmed as expected the QSY button only commanded when VFO-A
+</I>&gt;&gt;&gt;<i> was active. I then changed back to 3.22.0AA and (like 3.21.4AA) it
+</I>&gt;&gt;&gt;<i> commanded VFO-B and would not command VFO-A.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Something is getting flipped by the alpha code. Just another clue to the
+</I>&gt;&gt;&gt;<i> puzzle on how to get fldigi to command the active VFO on the TS-590S.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Dick
+</I>&gt;&gt;<i> The rigCat interface code in 3.22.0AA and 3.21.4 are IDENTICAL Dick. I do
+</I>not have a clue as to why your system is behaving the way it is. I've put
+out a call for some other TS590S testers to see if this behavior is specific
+to your setup.
+&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dave
+</I>&gt;<i>
+</I>&gt;<i> I do not think the flipping of the VFO's has anything to do with RigCAT or
+</I>
+&gt;<i> HamLib. It seems to be an fldigi issue between fldigi-3.21.4 and
+</I>fldigi-3.22.0AA.
+&gt;<i> I just tired it again and fldigi-3.21.4 commands the TS-590S VFO-A, but
+</I>does
+&gt;<i> not communicate at all with VFO-B.
+</I>&gt;<i>
+</I>&gt;<i> I quit fldigi-3.21.4 and launched 3.22.0AA with VF0-A still active on the
+</I>&gt;<i> Kenwood display and there was no communications with VFO-A. The QSY
+</I>&gt;<i> button changes fldigi on the waterfall, but does not change the TS-590S.
+</I>&gt;<i> I then depressed the A/B button on the TS-570S to make VFO-B active and
+</I>&gt;<i> fldigi-3.22.0AA commands the rig and the QSY button functions normal as
+</I>&gt;<i> long as VF0-B is active.
+</I>&gt;<i>
+</I>&gt;<i> I am posting this response to the alpha list to see if this weirdness
+</I>shows
+&gt;<i> up in other setups. I cannot explain the flipping of VFO's between two
+</I>&gt;<i> versions of fldigi.
+</I>&gt;<i>
+</I>&gt;<i> The inability of fldigi to detect and command the active VFO is a
+</I>limitation
+&gt;<i> to fldigi/Kenwood TS-590S users. Hopefully, this shortfall can be
+</I>corrected
+&gt;<i> in the future.
+</I>&gt;<i>
+</I>&gt;<i> 73 Dick AA5VU
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110308/2662bd9e/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110308/2662bd9e/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001798.html">Data Point testing QSY command on fldigi-3.22.0AA
+</A></li>
+	<LI>Next message: <A HREF="001800.html">Data Point testing QSY command on fldigi-3.22.0AA
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1799">[ date ]</a>
+              <a href="thread.html#1799">[ thread ]</a>
+              <a href="subject.html#1799">[ subject ]</a>
+              <a href="author.html#1799">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

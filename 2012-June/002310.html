@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.21.43AB alpha posting
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.21.43AB%20alpha%20posting&In-Reply-To=%3C4FC90035.4060605%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002313.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.21.43AB alpha posting</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.21.43AB%20alpha%20posting&In-Reply-To=%3C4FC90035.4060605%40bellsouth.net%3E"
+       TITLE="3.21.43AB alpha posting">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Jun  1 19:47:33 CEST 2012</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002313.html">3.21.43AC alpha posting on Log Time Seconds
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2310">[ date ]</a>
+              <a href="thread.html#2310">[ thread ]</a>
+              <a href="subject.html#2310">[ subject ]</a>
+              <a href="author.html#2310">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+
+Please test at your convenience.  OS X dmg not posted yet but will be in 
+about an hour.
+
+Dave
+
+Changes from 3.21.43
+
+3.21.43AB alpha
+
+     Fork open file descriptors
+       * Add O_CLOEXEC to all open(...) calls
+       * Add &quot;e&quot; to all fopen(...) calls
+       * Prevents passing open file descriptors to child
+         processes.  Leaving psid's available to the child
+         could cause unwanted i/o problems and possibly a
+         security leak.
+
+     Log Time ON/OFF
+       * Added seconds to logged time
+       * Update older records to use seconds, default 0
+       * Add seconds to time sort
+
+     WEFAX update, ported from branch 3.22
+       * The tx and rx windows can be displayed separately as now, or 
+embedded in the main window.
+       * Added wefax tab in configuration menu.
+       * Max rows number, and adif log flag now stored in configuration.
+       * Destination directory can be set in configuration menu with 
+Fl_File_Chooser.
+       * Added option for opening tx window from main menu (Like the rx 
+window).
+       * Shift can ba changed, default 800. Can be set to 850 Hz for 
+Deutsche Wetterdienst.
+       * Wefax adif log flag now in configuration (And is memorized).
+       * When clicking on a received file, the image is displayed in the 
+tx window.
+       * Internationalization.
+       * Transmit image can be zoomed. Default zoom 50% like rx image.
+       * Suppressed duplicate info messages.
+       * The generated image is now really back and white.
+       * Display speedup.
+       * Fax can be saved in monochrome, takes less disk space.
+       * New option to reduce noise on images.
+       * Changed RX interface: Non-stop reception is now easier.
+       * Image RX starts ten lines earlier when high correlation detected.
+       * Display speed-up when zoomed.
+       * Cleaner indexing of correlation buffer
+       * Automatic Frequency Control.
+       * LPM default value for Wefax288.
+       * Set compression flag for PNG images.
+       * Refined AFC (Stable frquency once an image is loaded).
+       * Adjusted widgets size.
+       * Lowered max image height.
+       * Added image binarization.
+       * Changed default image mode to monochrome.
+       * Smoother slant correction
+       * Adjustment to constant frequency detection (Hamburg).
+       * Changed max image size.
+       * Added variable threshold for binary image.
+       * Added erosion/dilatation for fax enhancement (Experimental, 
+disabled).
+       * More information when cannot load playback WAV file.
+       * Speedup waterfall display.
+       * Changed wefax AFC logic for setting frequency (Median/average).
+       * Fixed filenames list which was not scrollable.
+       * Save more information in images metadata.
+       * Change selected band for AFC detection.
+       * Changed level for APT start/stop detection. Now checks several 
+lines.
+       * Added strformat for C-style string formatting.
+       * Better AFC.
+       * Default max image size is increased.
+       * More information saved with fax images.
+       * More filtering of empty blank images based on correlation etc...
+       * Change to use phasing information to stop images.
+       * Phase inversion flag is now constant.
+       * Detection of apt start on four successive lines instead of 
+three only.
+       * Detection of apt stop on three successive lines instead of two 
+only.
+       * Removed apt stop frequency detection (Too many false stops).
+       * Fixed bad proportion of sent faxes (They were vertically 
+stretched).
+
+     Navtex
+       Port of navtex modem from 3.22 branch
+
+     CW decoder update
+       * Cooperative programming effort, W1HKJ and AG1LE
+       * Added matched filter implementation using FFT convolution filter
+       * Added Self Organizing Map decoding.
+       * Added adjustable upper/lower detection levels
+       * Added level indicators on CW digiscope
+       * combined new fft-convolution filter, SOM decoder &amp; FIR filter
+       * added configure controls for filter selection
+       * modified CW digiscope display to show 10 dot intervals independent
+         of WPM setting
+       * increased CW_FIR length to 512
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120601/ab31a79f/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120601/ab31a79f/attachment.html</A>&gt;
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002313.html">3.21.43AC alpha posting on Log Time Seconds
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2310">[ date ]</a>
+              <a href="thread.html#2310">[ thread ]</a>
+              <a href="subject.html#2310">[ subject ]</a>
+              <a href="author.html#2310">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

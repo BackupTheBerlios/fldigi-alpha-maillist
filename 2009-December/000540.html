@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> CPU usage on Linux.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20CPU%20usage%20on%20Linux.&In-Reply-To=%3C4B2566F9.9090808%40qwest.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000538.html">
+   <LINK REL="Next"  HREF="000541.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>CPU usage on Linux.</H1>
+    <B>Mike Stansberry</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20CPU%20usage%20on%20Linux.&In-Reply-To=%3C4B2566F9.9090808%40qwest.net%3E"
+       TITLE="CPU usage on Linux.">mjstansberry at qwest.net
+       </A><BR>
+    <I>Sun Dec 13 23:13:13 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000538.html">CPU usage on Linux.
+</A></li>
+        <LI>Next message: <A HREF="000541.html">CPU usage on Linux.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#540">[ date ]</a>
+              <a href="thread.html#540">[ thread ]</a>
+              <a href="subject.html#540">[ subject ]</a>
+              <a href="author.html#540">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ed wrote:
+&gt;<i> On Sun, 13 Dec 2009 18:11:51 +0000
+</I>&gt;<i> Mike Stansberry &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mjstansberry at qwest.net</A>&gt; wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> I'm seeing 99% CPU usage on Ubuntu 9.10 when Fldigi is running.
+</I>&gt;&gt;<i> This is using the 'System' ' Administration' 'System Monitor'
+</I>&gt;&gt;<i> program.  
+</I>&gt;<i> 
+</I>&gt;<i> I test both here, my cpu runs 2 to 8% on a dual 3.0 32bit 9.04.
+</I>&gt;<i> 
+</I>&gt;<i> Long shot.....and I mean long. Try a different font both RX/TX.
+</I>&gt;<i> 
+</I>&gt;<i> Couple of years ago there was a problem with high cpu on some systems
+</I>&gt;<i> and I &quot;think&quot; (notice the word think) it was a font issue. But I'm
+</I>&gt;<i> not sure. 
+</I>
+Well, you've hit on something.  I reset fldigi back to the default
+configuration and the CPU usage dropped down to about 13%.  Then,
+I started changing everything back to where I started.  When selecting
+the sound card /dev/dsp1, which is the SignaLink USB external modem,
+the CPU usage shot up to around 80%.  I'm using port audio if that
+matters.
+
+I'm now trying the same thing on my laptop computer, running Ubuntu
+9.10 as well.  With the SignaLink selected, it's running about
+80% CPU.  Selecting the internal sound card, the CPU drops to
+about 5%.
+
+Guess it's reflecting the added usage through the USB port?
+
+At any rate, the desktop computer has developed a 'glitch'.  During
+boot, when 'booting grub' shows up it's taking a very, very long time
+for the grub boot menu to shouw up.  It's always possible that I caused
+it as I've played around with the grub menu some.  I also have 2 drives
+on the computer with 4 Linux operating systems.
+
+I'm going to go back to a single drive with a single Ubuntu 9.10
+OS and start over.  :-)  One thing I have plenty of is hard drives
+and time.
+
+Mike, K0TER
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000538.html">CPU usage on Linux.
+</A></li>
+	<LI>Next message: <A HREF="000541.html">CPU usage on Linux.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#540">[ date ]</a>
+              <a href="thread.html#540">[ thread ]</a>
+              <a href="subject.html#540">[ subject ]</a>
+              <a href="author.html#540">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Direct USB interface to fldigi-3.21.9 and 3.22.0AA
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Direct%20USB%20interface%20to%20fldigi-3.21.9%20and%203.22.0AA&In-Reply-To=%3CA8503BED-74CA-423E-8A34-F6FB374EBC65%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001831.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Direct USB interface to fldigi-3.21.9 and 3.22.0AA</H1>
+    <B>Dick</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Direct%20USB%20interface%20to%20fldigi-3.21.9%20and%203.22.0AA&In-Reply-To=%3CA8503BED-74CA-423E-8A34-F6FB374EBC65%40att.net%3E"
+       TITLE="Direct USB interface to fldigi-3.21.9 and 3.22.0AA">aa5vu at att.net
+       </A><BR>
+    <I>Fri Apr 29 03:19:17 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001831.html">flrig-1.1.3C1
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1832">[ date ]</a>
+              <a href="thread.html#1832">[ thread ]</a>
+              <a href="subject.html#1832">[ subject ]</a>
+              <a href="author.html#1832">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Direct USB interface to fldigi
+
+Happiness is having a direct USB interface from the Kenwood TS-590S to the 
+iMac computer and in turn to fldigi. 
+
+The good news is this direct connection allowed me get rid of both the Keyspan 
+USA-28A Serial-to-USB adapter for rig control and the SignaLink USB device 
+for audio. Everything now comes into fldigi via the TS-590S USB port. 
+
+The bad news is I lost the PTT option when using the Hamlib for rig control 
+within fldigi. I cannot key the rig from fldigi when using the Hamlib option. When
+I used the SignaLink with its Auto-PTT, I did not need to check the Hamlib option 
+for PTT via Hamlib command; however, it is required for a direct  USB interface. 
+The PTT option is dimmed (not active) in the OS X versions of  fldigi-3.21.9 and 
+3.22.0AA. It may have been dimmed before but I never paid any attention 
+since it was not needed with the SignaLink device.
+
+The good news is the PTT option within RigCAT works perfect. The even better
+good news is the old 9600 only baud rate limitation I had with RigCAT went
+away when I ditched the Keyspan USA-28A Serial-to-USB adapter. Now RigCAT,
+Hamlib and flrig all work at the 115200 baud rate! 
+
+Since the dimmed PTT option within Hamlib has not been mentioned by others,
+it may be unique to my setup. I have no idea what I did to screwup the PTT 
+option in Hamlib or my fldigi_def.xml file. The only advantage I noticed when 
+using Hamlib (with the SL-USB) over RigCAT was Hamlib reported the frequency 
+of VFO-B that came in handy for working DX splits.  
+
+If you are attempting a direct USB interface in fldigi and run into a PTT issue, try 
+again using the RigCAT option. RigCAT works.
+
+Hopefully, the dimmed PTT in will go away once the new Hamlib version is 
+integrated into fldigi. 
+
+73 Dick AA5VU
+
+Ps: A good URL to bookmark is the Silicon Labs USB to UART Bridge VCP drivers 
+for the various platforms.  I understand the SL driver is need for the new Kenwood 
+and Icom rigs. The OS X version worked perfect with my Kenwood TS-590S and
+fldigi.
+
+&lt;<A HREF="http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx">http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx</A>&gt;
+
+
+
+
+
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110428/9747471d/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110428/9747471d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001831.html">flrig-1.1.3C1
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1832">[ date ]</a>
+              <a href="thread.html#1832">[ thread ]</a>
+              <a href="subject.html#1832">[ subject ]</a>
+              <a href="author.html#1832">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

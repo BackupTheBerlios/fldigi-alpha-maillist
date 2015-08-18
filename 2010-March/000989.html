@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Weather fax
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax&In-Reply-To=%3C4B99F5B3.8080300%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000981.html">
+   <LINK REL="Next"  HREF="000993.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Weather fax</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax&In-Reply-To=%3C4B99F5B3.8080300%40gmail.com%3E"
+       TITLE="Weather fax">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Fri Mar 12 09:05:07 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000981.html">Weather fax
+</A></li>
+        <LI>Next message: <A HREF="000993.html">Weather fax
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#989">[ date ]</a>
+              <a href="thread.html#989">[ thread ]</a>
+              <a href="subject.html#989">[ subject ]</a>
+              <a href="author.html#989">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Some answers and explanations:
+
+&gt;<i> 
+</I>&gt;<i> I tuned in an already running fax signal... couldn't see how to start reception.
+</I>Please click &quot;Skip APT&quot; for the initial APT start, then, click &quot;Skip 
+phasing&quot;. It will then start decoding. You might then recenter the image 
+(The phasing step is done for detecting the beginning of lines).
+&gt;<i> 
+</I>&gt;<i> The following are the basic features you need for a fax system:
+</I>&gt;<i> 
+</I>&gt;<i> 1) manual start/stop
+</I>&gt;<i> 2) auto start/stop (switchable option)
+</I>&quot;Theoretically&quot;, it starts automatically when an APT start sequence is 
+detected. I do not know how to enhance the process at the moent. Maybe a 
+better filter. The APT frequency has some margin, but if it is too 
+large, it starts decoding each time 300 hz is detected in noise. So, the 
+method should be refined.
+
+&gt;<i> 3) auto home to top (switchable option)
+</I>If the end of an image is detected, it is saved in a file (Whose name 
+contains the date/time and the frequency, by default in the directory 
+$HOME/.fldigi/images just like MFSK image files), and the image is emptied.
+
+&gt;<i> 3) manual shift of received image and concurrent adjustment of
+</I>&gt;<i> sampling location to align edges.
+</I>The slider &quot;Center&quot; should do that, if I have understood what you mean. 
+I am thinking about automatic unslanting but first would like to make 
+basic things work.
+
+&gt;<i> 4) fine timing trim to get the edges straight (fax is synchronous,
+</I>&gt;<i> computers differ enough to screw it up.)
+</I>The &quot;LPM&quot; widget can be fine tuned (Small arrows) to reduce the slant. I 
+agree that theoretically LPM (Lines per minutes) should be accurately 
+set. But, in the HAMFAX code I started from, the LPM was automatically 
+detected and adjusted using the first phasing lines. I reused the 
+detection of the LPM (60/90/120) but removed its fine adjustments 
+because it was not accurate enough to suppress the slant. So I 
+prioritized the idea of manually fine-tuning it in order to have a 
+vertical image. I understand this could be put in question.
+
+&gt;<i> 5) zoom control from about 320 wide to full width.
+</I>If LPM=120 which seems to be the most common cases, the width in pixels 
+is 904. Initially, given the usual screens width, I displayed faxes &quot;as 
+is&quot; using the existing &quot;picture&quot; class.
+
+I can certainly add zoom in/ zoom out buttons. Is it what you mean ?
+
+&gt;<i> 6) line mode (threshold the signal to b/w at 1900 hz)
+</I>OK.
+
+&gt;<i> 7) grey mode - linear grey levels from black (1500 hz) to white (2300 hz)
+</I>OK. This is the current mode, no ? I was althgough thinking about 
+applying image enhagcement filters on -the-fly, but hesitated because 
+this can be done with image editing tools such as Gimp or Photoshop, and 
+chose initially to focus on pure &quot;radio fax&quot; features.
+
+&gt;<i> 8) reception to memory so display is never a restricting factor on
+</I>&gt;<i> resolution or sample rate
+</I>There is not limit on the height of images: I just add a hard-limit of 
+10000 lines because no reasonable fax should have this size (Most are 
+about 1300 lines). When this size is reached, an image file is saved and 
+the image cleared.
+
+&gt;&gt;<i>From there, a plug-in system for image processing operators would be wonderful.
+</I>Yes, I was thinking about adding xml-rpc calls.
+&gt;<i> 
+</I>&gt;&gt;<i> The displayed images and the file captures are stretched in the vertical
+</I>&gt;&gt;<i> dimension. Circles appear quite egg-shaped. This may be more related to the
+</I>&gt;&gt;<i> station I was receiving than the program itself, but it would be cool if
+</I>&gt;&gt;<i> there were some way to compensate for that.
+</I>This is right, I will work on this. Again, I wished at first stage to 
+focus on pure fax features
+&gt;<i> 
+</I>&gt;<i> All fax uses square pixels. Sub-sampling of the received data is
+</I>&gt;<i> required for correct display at any ratio other than 1 fax pixel = 1
+</I>&gt;<i> display pixel.
+</I>OK. I noticed the same problem when sending an image and receiving it 
+with another fldigi process, both connected with jackctl.
+
+Thanks for these remarks !
+
+RC
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000981.html">Weather fax
+</A></li>
+	<LI>Next message: <A HREF="000993.html">Weather fax
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#989">[ date ]</a>
+              <a href="thread.html#989">[ thread ]</a>
+              <a href="subject.html#989">[ subject ]</a>
+              <a href="author.html#989">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

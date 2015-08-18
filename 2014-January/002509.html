@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-alpha Bayesian Morse Decoder
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2014-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-alpha%20Bayesian%20Morse%20Decoder&In-Reply-To=%3C545733424.181580.1388586313805.open-xchange%40email.1and1.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002510.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-alpha Bayesian Morse Decoder</H1>
+    <B>mauri at innomore.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-alpha%20Bayesian%20Morse%20Decoder&In-Reply-To=%3C545733424.181580.1388586313805.open-xchange%40email.1and1.com%3E"
+       TITLE="fldigi-alpha Bayesian Morse Decoder">mauri at innomore.com
+       </A><BR>
+    <I>Wed Jan  1 15:25:13 CET 2014</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002510.html">Fwd: New berliOS Portal launched - developer.berlios.de to be closed	on April
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2509">[ date ]</a>
+              <a href="thread.html#2509">[ thread ]</a>
+              <a href="subject.html#2509">[ subject ]</a>
+              <a href="author.html#2509">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>As I indicated earlier the software has still bugs but when it works the
+accuracy improvement compared to the legacy FLDIGI decoder was pretty
+impressive.  I was testing again last night as ham bands were full of CW
+stations working in  ARRL Straight Key Night
+&lt;<A HREF="http://www.arrl.org/straight-key-night">http://www.arrl.org/straight-key-night</A>&gt;  (Thanks for the tip Nate!).
+
+I made also many audio file captures to be used as  additional testing material.
+
+However,  as my alpha testers have also noticed the current decoder is very
+sensitive to proper audio signal settings.  In order to analyze this problem a
+bit more details I re-implemented FLDIGI audio processing chain from audio file
+playback to the decoder (including the FFT filtering in CW.CXX) in a standalone
+version of the Bayesian Morse Decoder.  It was easier to run a series of tests
+by just varying command line variables and WAV audio files  and capture the
+results for analysis &amp; plotting the data.
+
+After running a series of tests I compared the signal amplitude against decoder
+errors and found a very sharp non-linear behavior related to speed estimation
+algorithm.  By increasing signal volume by only 0.06% I was able to re-produce
+this event that alpha testers found and also capture the dynamic behavior of
+various parameters
+
+More details in my blog page:
+&lt;<A HREF="http://ag1le.blogspot.com/2013/12/new-morse-decoder-part-3.html">http://ag1le.blogspot.com/2013/12/new-morse-decoder-part-3.html</A>&gt;
+
+I am very thankful for those brave hams who took this first  (broken) alpha
+release and provided me not only good  feedback but also some WAV file examples
+ that I have been able to use to track down these problems.
+
+I have also converted all the files from C  to C++  to make it easier to
+re-integrate to FLDIGI.  I will continue cleaning up the code and keep working
+to improve the speed estimator. Once I have the next alpha release ready for
+another set of tests I will announce it in the fldigi mailing lists and eham.net
+CW forum.
+
+73 and Happy New Year
+
+Mauri  AG1LE
+
+
+&gt;<i> On December 28, 2013 at 6:00 AM <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha-request at lists.berlios.de</A> wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Send fldigi-alpha mailing list submissions to
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> To subscribe or unsubscribe via the World Wide Web, visit
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i> or, via email, send a message with subject or body 'help' to
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha-request at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> You can reach the person managing the list at
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha-owner at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> When replying, please edit your Subject line so it is more specific
+</I>&gt;<i> than &quot;Re: Contents of fldigi-alpha digest...&quot;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Today's Topics:
+</I>&gt;<i>
+</I>&gt;<i> 1. Re: New Bayesian Morse decoder for FLDIGI available for
+</I>&gt;<i> alpha testing (Nate Bargmann)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 1
+</I>&gt;<i> Date: Fri, 27 Dec 2013 13:27:31 -0600
+</I>&gt;<i> From: Nate Bargmann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">n0nb at n0nb.us</A>&gt;
+</I>&gt;<i> To: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> Subject: Re: New Bayesian Morse decoder for FLDIGI available for
+</I>&gt;<i> alpha testing
+</I>&gt;<i> Message-ID: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">20131227192731.GN32158 at n0nb.us</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=us-ascii
+</I>&gt;<i>
+</I>&gt;<i> I saw that you were looking for non-standard Morse timing. Be patient
+</I>&gt;<i> as Straight Key Night will commence at 0000z 01 Jan 2014 and last until
+</I>&gt;<i> 2359z. After that for the month of January the Straight Key Century
+</I>&gt;<i> Club will hold its anniversary K3Y special event from 0000z 02 January
+</I>&gt;<i> until 2359z 31 January. For both events straight keys and bugs may be
+</I>&gt;<i> used, no electronically generated Morse.
+</I>&gt;<i>
+</I>&gt;<i> SKCC has sprints throughout the year which will provide fresh samples
+</I>&gt;<i> all year long.
+</I>&gt;<i>
+</I>&gt;<i> 73, de Nate &gt;&gt;
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i>
+</I>&gt;<i> &quot;The optimist proclaims that we live in the best of all
+</I>&gt;<i> possible worlds. The pessimist fears this is true.&quot;
+</I>&gt;<i>
+</I>&gt;<i> Ham radio, Linux, bikes, and more: <A HREF="http://www.n0nb.us">http://www.n0nb.us</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i> End of fldigi-alpha Digest, Vol 56, Issue 4
+</I>&gt;<i> *******************************************
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20140101/1da35858/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20140101/1da35858/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002510.html">Fwd: New berliOS Portal launched - developer.berlios.de to be closed	on April
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2509">[ date ]</a>
+              <a href="thread.html#2509">[ thread ]</a>
+              <a href="subject.html#2509">[ subject ]</a>
+              <a href="author.html#2509">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

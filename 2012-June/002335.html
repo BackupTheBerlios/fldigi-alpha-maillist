@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.22.0CB segfault on mode switch to MFSK16
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.22.0CB%20segfault%20on%20mode%20switch%20to%20MFSK16&In-Reply-To=%3C4FD4FD5D.5010704%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002327.html">
+   <LINK REL="Next"  HREF="002339.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.22.0CB segfault on mode switch to MFSK16</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.22.0CB%20segfault%20on%20mode%20switch%20to%20MFSK16&In-Reply-To=%3C4FD4FD5D.5010704%40gmail.com%3E"
+       TITLE="3.22.0CB segfault on mode switch to MFSK16">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Jun 10 22:02:37 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002327.html">3.22.0CB segfault on mode switch to MFSK16
+</A></li>
+        <LI>Next message: <A HREF="002339.html">3.22.0CB segfault on mode switch to MFSK16
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2335">[ date ]</a>
+              <a href="thread.html#2335">[ thread ]</a>
+              <a href="subject.html#2335">[ subject ]</a>
+              <a href="author.html#2335">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Please apply this fix:
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=f2bca8657e636fc863e945d821b598e7f7314b89">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=f2bca8657e636fc863e945d821b598e7f7314b89</A>
+
+diff --git a/src/mfsk/mfsk.cxx b/src/mfsk/mfsk.cxx
+
+
+index 8d08132..c269927 100644 (file)
+
+--- a/src/mfsk/mfsk.cxx
++++ b/src/mfsk/mfsk.cxx
+@@ -680,7 +680,7 @@ void mfsk::eval_s2n()
+
+  int mfsk::rx_process(const double *buf, int len)
+  {
+-       complex z, *bins = 0;
++       complex z;
+
+         while (len-- &gt; 0) {
+  // create analytic signal...
+@@ -721,6 +721,7 @@ int mfsk::rx_process(const double *buf, int len)
+                 // copy current vector to the pipe
+                 // binsfft-&gt;bin(i) copies frequencies of interest.
+                 binsfft-&gt;run (z, pipe[pipeptr].vector, 1);
++               complex * bins = pipe[pipeptr].vector;
+
+                 if (--synccounter &lt;= 0) {
+
+
+Le 06.06.2012 06:46, Leigh L. Klotz, Jr WA5ZNU a &#233;crit :
+&gt;<i> Segfault on switching to MFSK16 mode in 3.22.0CB compiled without hamlib.
+</I>&gt;<i>
+</I>&gt;<i> build-typescript is config and make.
+</I>&gt;<i> crash-typescript is gdb and bt after crash.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Juicy bits here:
+</I>&gt;<i>
+</I>&gt;<i> Program received signal SIGSEGV, Segmentation fault.
+</I>&gt;<i> [Switching to Thread 0xb50e5b70 (LWP 18524)]
+</I>&gt;<i> mfsk::harddecode (this=0x8cbb3d8, in=0x0) at mfsk/mfsk.cxx:554
+</I>&gt;<i> 554 avg += in[i].mag();
+</I>&gt;<i> (gdb)
+</I>&gt;<i> (gdb)
+</I>&gt;<i> (gdb) bt
+</I>&gt;<i> #0 mfsk::harddecode (this=0x8cbb3d8, in=0x0) at mfsk/mfsk.cxx:554
+</I>&gt;<i> #1 0x0811551c in mfsk::rx_process (this=Cannot access memory at address 0x1
+</I>&gt;<i> ) at mfsk/mfsk.cxx:729
+</I>&gt;<i> #2 0x081eee10 in trx_trx_receive_loop () at trx/trx.cxx:264
+</I>&gt;<i> #3 0x081f0675 in trx_loop (args=0x0) at trx/trx.cxx:452
+</I>&gt;<i> #4 0xb7eb6e99 in start_thread (arg=0xb50e5b70) at pthread_create.c:304
+</I>&gt;<i> #5 0xb78589ee in clone () at ../sysdeps/unix/sysv/linux/i386/clone.S:130
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002327.html">3.22.0CB segfault on mode switch to MFSK16
+</A></li>
+	<LI>Next message: <A HREF="002339.html">3.22.0CB segfault on mode switch to MFSK16
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2335">[ date ]</a>
+              <a href="thread.html#2335">[ thread ]</a>
+              <a href="subject.html#2335">[ subject ]</a>
+              <a href="author.html#2335">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

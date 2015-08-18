@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Unified logs aka. ADIF Intelligent Merger [Off topic but	interesting]
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Unified%20logs%20aka.%20ADIF%20Intelligent%20Merger%20%5BOff%20topic%20but%0A%09interesting%5D&In-Reply-To=%3C4E1B8CAC.1080500%40conas.co.cu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001953.html">
+   <LINK REL="Next"  HREF="001957.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Unified logs aka. ADIF Intelligent Merger [Off topic but	interesting]</H1>
+    <B>Ing. Pavel Milanes Costa</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Unified%20logs%20aka.%20ADIF%20Intelligent%20Merger%20%5BOff%20topic%20but%0A%09interesting%5D&In-Reply-To=%3C4E1B8CAC.1080500%40conas.co.cu%3E"
+       TITLE="Unified logs aka. ADIF Intelligent Merger [Off topic but	interesting]">pavel at conas.co.cu
+       </A><BR>
+    <I>Tue Jul 12 01:52:12 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001953.html">Unified logs aka. ADIF Intelligent Merger [Off topic but	interesting]
+</A></li>
+        <LI>Next message: <A HREF="001957.html">Unified logs aka. ADIF Intelligent Merger / adifmerg
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1956">[ date ]</a>
+              <a href="thread.html#1956">[ thread ]</a>
+              <a href="subject.html#1956">[ subject ]</a>
+              <a href="author.html#1956">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sorry about the delay in the asnwer... work and family let me no time 
+for the hobby.
+
+As I promised, attached is the software that start this post, Dave: feel 
+free to put it on the &quot;contributed software&quot; on your site, comments and 
+infos in the comment headers in the script
+
+As all god software, this is free software as GNU GPL v2
+
+Remi, I will love the option in fldigi that allows me to merge logs in 
+this manner (intelligent, detecting duplicated entries, etc...)
+
+73
+
+El 01/07/11 18:20, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> escribi&#243;:
+&gt;<i> Le 01.07.2011 16:49, Ing. Pavel Milanes Costa a &#233;crit :
+</I>&gt;&gt;<i> Hi all.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The past month I was looking in the internet for a tool that allow my to
+</I>&gt;&gt;<i> do a merge of two or more adif logs but in a intelligent way:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 1 - Can recognize duplicated entries (allowing to set arbitrarily a
+</I>&gt;&gt;<i> deviation in time and freq, eg. +/- 1khz and 2 minutes ) to match
+</I>&gt;&gt;<i> contacts in two logs...
+</I>&gt;<i>
+</I>&gt;<i> There might even be some sort of generalization based on time: If the
+</I>&gt;<i> same QSO appears at the same hours on different days, maybe the DATE
+</I>&gt;<i> field could be dropped and the TIME_ON/TIME_OFF interval set to the
+</I>&gt;<i> union of all intervals, the merge criteria being the CALL (if not
+</I>&gt;<i> present, NAME), MODE and FREQ fields. NOTE fields would be concatenated.
+</I>&gt;<i>
+</I>&gt;<i> Could be done with a new &quot;Merge&quot; command in the &quot;Logbook&quot; tab.
+</I>&gt;<i>
+</I>&gt;&gt;<i> 2 - Can get the differences from the two logs in process (the master and
+</I>&gt;&gt;<i> the actual in process) and can enrich the fields in the master with ones
+</I>&gt;&gt;<i> from the other log....
+</I>&gt;<i>
+</I>&gt;<i> Same implementation: Maybe extra parameters to the merge process.
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Unsuccessful task... then I manage to make my own tool:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> adifimerge (ADIF Intelligent Merger) version 0.1b...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The soft is a script in php language (for use in command line with
+</I>&gt;&gt;<i> php-client, sorry PHP is one of the few programming languages that I
+</I>&gt;&gt;<i> known)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The software just make the 2 enunciated tasks before, from a folder with
+</I>&gt;&gt;<i> a undetermined adif formated files (*.adif suffixes) the script
+</I>&gt;&gt;<i> processes all and make a final unified log.
+</I>&gt;<i>
+</I>&gt;<i> In fldigi, this could be implemented by allowing to merge an entire
+</I>&gt;<i> directory.
+</I>&gt;<i>
+</I>&gt;<i> An alternate implementation (although more complicated) would be to
+</I>&gt;<i> select several records on the log viewer, and merge them on a clock. But
+</I>&gt;<i> I prefer your approach.
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The output are a unified log without duplicated QSO and enriched fields
+</I>&gt;&gt;<i> from all logs processed in ADIF 2.2.7 format.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Then, questions:
+</I>&gt;&gt;<i> 1 - Have I reinvented the wheel?
+</I>&gt;&gt;<i> 2 - The software have a real demand/need in users?
+</I>&gt;&gt;<i> 3 - Where I can publish it to make it public available as GPL aka. FREE
+</I>&gt;&gt;<i> SOFTWARE
+</I>&gt;<i>
+</I>&gt;<i> If there is an interest, I could implement that in fldigi.
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I hope to see feedback on this please...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Anyone that wish to unify many logs with duplicated entries or want to
+</I>&gt;&gt;<i> polish an actual log, must feel free to contact me for a test... at the
+</I>&gt;&gt;<i> end the script will get more polished from the use with diverse data...
+</I>&gt;&gt;<i>
+</I>&gt;<i> While we are at it, I implemented a feature in the log viewer: A &quot;Dial&quot;
+</I>&gt;<i> button which sets the frequency and the mode of the currenly selected
+</I>&gt;<i> log record. This is actually very convenient. This allows indirectly to
+</I>&gt;<i> move a log frequency in the frequencies list (Although the modem is not
+</I>&gt;<i> present but can sometimes be inferred).
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+-- 
+Pavel Milanes Costa
+Consultor Inform&#225;tico
+Consultores Asociados S.A. (CONAS), sucursal Camag&#252;ey.
+Telef: (32) 29-6344
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: adifimerge.php.bz2
+Type: application/x-bzip
+Size: 5020 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110711/fa3fcc3c/attachment.bin">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110711/fa3fcc3c/attachment.bin</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: pavel.vcf
+Type: text/x-vcard
+Size: 517 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110711/fa3fcc3c/attachment.vcf">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110711/fa3fcc3c/attachment.vcf</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001953.html">Unified logs aka. ADIF Intelligent Merger [Off topic but	interesting]
+</A></li>
+	<LI>Next message: <A HREF="001957.html">Unified logs aka. ADIF Intelligent Merger / adifmerg
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1956">[ date ]</a>
+              <a href="thread.html#1956">[ thread ]</a>
+              <a href="subject.html#1956">[ subject ]</a>
+              <a href="author.html#1956">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

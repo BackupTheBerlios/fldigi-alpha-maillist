@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> QRZ Lookup - takes two tries first time
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20QRZ%20Lookup%20-%20takes%20two%20tries%20first%20time&In-Reply-To=%3C4AAAFDBB.3060602%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000126.html">
+   <LINK REL="Next"  HREF="000131.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>QRZ Lookup - takes two tries first time</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20QRZ%20Lookup%20-%20takes%20two%20tries%20first%20time&In-Reply-To=%3C4AAAFDBB.3060602%40bellsouth.net%3E"
+       TITLE="QRZ Lookup - takes two tries first time">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Sep 12 03:47:39 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000126.html">QRZ Lookup - takes two tries first time
+</A></li>
+        <LI>Next message: <A HREF="000131.html">QRZ Lookup - takes two tries first time
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#127">[ date ]</a>
+              <a href="thread.html#127">[ thread ]</a>
+              <a href="subject.html#127">[ subject ]</a>
+              <a href="author.html#127">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ed might be right in saying that the OS distro might be an issue. 
+
+Here is the code that is called by the QRZ (and all other browser / web 
+service calls).
+
+void cb_mnuVisitURL(Fl_Widget*, void* arg)
+{
+    const char* url = reinterpret_cast&lt;const char *&gt;(arg);
+#ifndef __WIN32__
+    const char* browsers[] = {
+*        getenv(&quot;FLDIGI_BROWSER&quot;),
+*#  ifdef __APPLE__
+        &quot;open&quot;
+#  else
+*        &quot;xdg-open&quot;, getenv(&quot;BROWSER&quot;), &quot;sensible-brower&quot;, &quot;firefox&quot;, 
+&quot;mozilla&quot;
+*#  endif
+    };
+    switch (fork()) {
+    case 0:
+#  ifndef NDEBUG
+        unsetenv(&quot;MALLOC_CHECK_&quot;);
+        unsetenv(&quot;MALLOC_PERTURB_&quot;);
+#  endif
+*        for (size_t i = 0; i &lt; sizeof(browsers)/sizeof(browsers[0]); i++)
+            if (browsers[i])
+                execlp(browsers[i], browsers[i], url, (char*)0);
+        exit(EXIT_FAILURE);
+*    case -1:
+        fl_alert2(_(&quot;Could not run a web browser:\n%s\n\n&quot;
+             &quot;Open this URL manually:\n%s&quot;),
+             strerror(errno), url);
+    }
+#else
+    // &quot;The return value is cast as an HINSTANCE for backward
+    // compatibility with 16-bit Windows applications. It is
+    // not a true HINSTANCE, however. The only thing that can
+    // be done with the returned HINSTANCE is to cast it to an
+    // int and compare it with the value 32 or one of the error
+    // codes below.&quot; (Error codes omitted to preserve sanity).
+    if ((int)ShellExecute(NULL, &quot;open&quot;, url, NULL, NULL, SW_SHOWNORMAL) 
+&lt;= 32)
+        fl_alert2(_(&quot;Could not open url:\n%s\n&quot;), url);
+#endif
+}
+
+
+I've highlighted the important lines for this discussion.
+
+Do you have an environment variable named FLDIGI_BROWSER set to the 
+browser you want to use?
+Does your OS install have a BROWSER environment variable set
+Can you execute &quot;xdg-open&quot; from a command line prompt?
+
+The takes two tries is a known bug on MS for which a solution has not 
+been discovered.
+
+I will add some Event log debugging lines that may help discover what is 
+happening on your OS.
+
+Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090911/953bf884/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090911/953bf884/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000126.html">QRZ Lookup - takes two tries first time
+</A></li>
+	<LI>Next message: <A HREF="000131.html">QRZ Lookup - takes two tries first time
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#127">[ date ]</a>
+              <a href="thread.html#127">[ thread ]</a>
+              <a href="subject.html#127">[ subject ]</a>
+              <a href="author.html#127">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Cp2ue93450131004171416k3888c97doaef77ac4724ab2d5%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001132.html">
+   <LINK REL="Next"  HREF="001138.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Cp2ue93450131004171416k3888c97doaef77ac4724ab2d5%40mail.gmail.com%3E"
+       TITLE="Contestia">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sat Apr 17 23:16:23 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001132.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001138.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1133">[ date ]</a>
+              <a href="thread.html#1133">[ thread ]</a>
+              <a href="subject.html#1133">[ subject ]</a>
+              <a href="author.html#1133">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, Apr 17, 2010 at 1:43 PM, Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">m0gld at enotty.net</A>&gt; wrote:
+
+&gt;<i> &gt; It is really Really *REALLY* important to understand what is going on
+</I>&gt;<i> with
+</I>&gt;<i> &gt; these protocols in the presence of propagation anomalies in order to be
+</I>&gt;<i> able
+</I>&gt;<i> &gt; to make decisions about which modes work best under what conditions. My
+</I>&gt;<i> own
+</I>&gt;<i> &gt; recent experiments in monitoring and graphing the phase/frequency changes
+</I>&gt;<i> of
+</I>&gt;<i> &gt; the WWV carrier over time (20-30 minute samples typically) have convinced
+</I>&gt;<i> me
+</I>&gt;<i> &gt; that sequential testing of protocols, i.e. transmitting a message and
+</I>&gt;<i> then
+</I>&gt;<i> &gt; immediately transmitting the same message using the other protocol, is
+</I>&gt;<i> not
+</I>&gt;<i> &gt; likely to produce valid results unless repeated numerous times and then
+</I>&gt;<i> the
+</I>&gt;<i> &gt; results averaged with outliers discarded.
+</I>&gt;<i>
+</I>&gt;<i> True, and I seriously doubt that anyone has bothered to do that.
+</I>&gt;<i>
+</I>
+Well, Chen has taken a first pass using HF channel simulator software which
+tells us something. The CCIR evidently did a fair amount of work to quantify
+the characteristics of an HF channel. Chen used that.
+
+(I am finding that I am coming at this from behind several people who have
+done significant work but it doesn't seem to me that anyone has taken it
+beyond building a couple of modems.)
+
+
+&gt;<i>
+</I>&gt;<i> &gt; I have been pestering Dave to do a test version of fldigi that would
+</I>&gt;<i> &gt; let me transmit the same data in two modes at the same time in the
+</I>&gt;<i> &gt; same passband so that both experience *exactly* the same propagation
+</I>&gt;<i> &gt; conditions concurrently.
+</I>&gt;<i>
+</I>&gt;<i> This is somewhat more complex than it sounds...
+</I>
+
+Oh, I figured that.
+
+
+&gt;<i> what would work right
+</I>&gt;<i> now would be to generate two audio files (with signals at suitable
+</I>&gt;<i> frequencies of course) and mix them using another program.  I'm sure sox
+</I>&gt;<i> can do that in one short command line.
+</I>&gt;<i>
+</I>
+&lt;dope slap to the forehead&gt; Duh! Of course! And that would be very simple.
+Of course, that is what Chen did for his testing too.
+
+
+&gt;<i>
+</I>&gt;<i> In fact if fldigi had xmlrpc methods to start/stop audio file
+</I>&gt;<i> generation, it would be easy to write a script to do an audio file for
+</I>&gt;<i> each mode (for a particular input text), and then you could mix them as
+</I>&gt;<i> needed for your tests.  I guess I'll need to write those xmlrpc methods
+</I>&gt;<i> first :-)
+</I>&gt;<i>
+</I>&gt;<i> [snip]
+</I>&gt;<i>
+</I>&gt;<i> &gt; Time to take the next step and build on Chen's work by getting real,
+</I>&gt;<i> &gt; controlled data from live propagation.
+</I>&gt;<i>
+</I>&gt;<i> Some comparisons have been posted to the digitalradio yahoo group.
+</I>&gt;<i> There is one by K2MO, and another by WZ7I.  URL for the latter:
+</I>&gt;<i>
+</I>&gt;<i>  <A HREF="http://mysite.verizon.net/wz7i/digitalmodes.html">http://mysite.verizon.net/wz7i/digitalmodes.html</A>
+</I>&gt;<i>
+</I>&gt;<i> The tests done by K2MO are in the files area of digitalradio, and he has
+</I>&gt;<i> posted them to the group a few times too.
+</I>&gt;<i>
+</I>&gt;<i> I can't say how scientific those experiments were, but I know that the
+</I>&gt;<i> path simulator used (pathsim) is GPL'ed so at least that aspect of the
+</I>&gt;<i> tests can be verified by anyone so inclined.
+</I>&gt;<i>
+</I>
+The problem as I see it is that we have these similar-but-different fixed
+modes; e.g. olivia, contestia, MFSKx, DominoEX, and then the various flavors
+of PSK; that make multiple changes but don't allow us to evaluate the
+protocols while only changing one parameter at a time. That is certainly
+useful for hams wondering which mode to try now but isn't helpful in
+selecting which mode is likely to perform best. Where *is* the crossover
+between IFK, MFSK, and PSK?
+
+Hmm, wouldn't it be nice if the transmission header contained a descriptor
+of the MODEM/CODEC so that the receiver could put together the correct
+pieces.
+
+
+&gt;<i> ES1HJ also has published some test results but I don't recall if they
+</I>&gt;<i> were on-air or simulation tests.
+</I>&gt;<i>
+</I>
+OK, there is a lot more research than I was aware of. I am trying to soak
+all this up (and feeling like I am drinking from a fire hose) with the idea
+of eventually building something to automate the process, i.e. evaluate the
+channel and then configure the best operating mode. Thank you for all the
+pointers Stelios.
+
+-- 
+73 de Brian, WB6RQN/J79BPL
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/a820702c/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/a820702c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001132.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001138.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1133">[ date ]</a>
+              <a href="thread.html#1133">[ thread ]</a>
+              <a href="subject.html#1133">[ subject ]</a>
+              <a href="author.html#1133">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

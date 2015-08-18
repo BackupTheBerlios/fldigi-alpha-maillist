@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI and Packet Operation: openpty()
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3C4F35BD86.5050309%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002248.html">
+   <LINK REL="Next"  HREF="002251.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI and Packet Operation: openpty()</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3C4F35BD86.5050309%40gmail.com%3E"
+       TITLE="FLDIGI and Packet Operation: openpty()">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sat Feb 11 01:59:50 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002248.html">Installing fldigi 3.21.38 on &quot;mint-debian&quot;
+</A></li>
+        <LI>Next message: <A HREF="002251.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2249">[ date ]</a>
+              <a href="thread.html#2249">[ thread ]</a>
+              <a href="subject.html#2249">[ subject ]</a>
+              <a href="author.html#2249">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Do you think it would work for HF packet at 300 bauds (If there is still 
+some traffic there) ?
+
+Le 20.12.2011 17:01, Brian Lloyd a &#233;crit :
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Tue, Dec 20, 2011 at 5:13 AM, Remi Chateauneu
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>     This Perl module is probably a good starting point in term of
+</I>&gt;<i>     implementation:
+</I>&gt;<i>     <A HREF="http://search.cpan.org/~rbdavison/Device-TNC-0.03/lib/Device/TNC/KISS.pm">http://search.cpan.org/~rbdavison/Device-TNC-0.03/lib/Device/TNC/KISS.pm</A>
+</I>&gt;<i>     &quot; This module trys to implement an easy way to talk to a KISS mode
+</I>&gt;<i>     Terminal Node Controller (TNC) such as the TNC-X via a serial port.&quot;
+</I>&gt;<i>     On Fri, Dec 9, 2011 at 3:40 PM, Tim Ellison, W4TME
+</I>&gt;<i>     &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">tim at flex-radio.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">tim at flex-radio.com</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>         A serial (com) port.
+</I>&gt;<i>
+</I>&gt;<i>         A KISS TNC has a very limited command set, not like a full blown
+</I>&gt;<i>         hardware TNC
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Just so everyone knows, here is the specification for the KISS protocol.
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.ka9q.net/papers/kiss.html">http://www.ka9q.net/papers/kiss.html</A>
+</I>&gt;<i>
+</I>&gt;<i> I was one of the original definers of KISS. KISS was created to allow
+</I>&gt;<i> software on any computer with an async serial port to send TCP/IP
+</I>&gt;<i> packets framed in the necessary HDLC frames used in AX.25. We had been
+</I>&gt;<i> trying to decide how we were going interface various HDLC controller
+</I>&gt;<i> chips to the PC-bus. I proposed the idea of using a TNC-2 as a simple
+</I>&gt;<i> protocol converter connected to the PC's standard serial port. I
+</I>&gt;<i> proposed a BISYNC-like protocol to run over the async serial link but
+</I>&gt;<i> Mike Chepponis, K3MC, proposed we adapt SLIP which was, quite frankly, a
+</I>&gt;<i> better solution than mine. He then went on to write the first version in
+</I>&gt;<i> Z-80 assembler.
+</I>&gt;<i>
+</I>&gt;<i> KISS does not have any sort of user-readable command set. You cannot
+</I>&gt;<i> connect a terminal program and type commands at it. OTOH, it is very
+</I>&gt;<i> easy to write code to control a KISS TNC via the serial port. The KISS
+</I>&gt;<i> code provides the low-level media-access-control (MAC) layer so that the
+</I>&gt;<i> PC does not need to keep track of low-level timing.
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Brian Lloyd, WB6RQN/J79BPL
+</I>&gt;<i> 3191 Western Dr.
+</I>&gt;<i> Cameron Park, CA 95682
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A>&gt;
+</I>&gt;<i> +1.767.617.1365 (Dominica)
+</I>&gt;<i> +1.916.877.5067 (USA)
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002248.html">Installing fldigi 3.21.38 on &quot;mint-debian&quot;
+</A></li>
+	<LI>Next message: <A HREF="002251.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2249">[ date ]</a>
+              <a href="thread.html#2249">[ thread ]</a>
+              <a href="subject.html#2249">[ subject ]</a>
+              <a href="author.html#2249">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

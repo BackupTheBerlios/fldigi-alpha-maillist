@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13AG posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AG%20posted&In-Reply-To=%3CCE514C70C42A44A0A12A430BE328EB29%40WA4SXZ1%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000150.html">
+   <LINK REL="Next"  HREF="000152.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13AG posted</H1>
+    <B>Rich Newsom</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AG%20posted&In-Reply-To=%3CCE514C70C42A44A0A12A430BE328EB29%40WA4SXZ1%3E"
+       TITLE="fldigi 3.13AG posted">wa4sxz at cox.net
+       </A><BR>
+    <I>Wed Sep 16 01:11:16 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000150.html">fldigi 3.13AG posted
+</A></li>
+        <LI>Next message: <A HREF="000152.html">fldigi 3.13AG posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Tested on Windows 7, XP, and Ubuntu with no problems.  Call sign lookup works on first try on all OS.  Radio here is FT-897D so the stop bits works fine at 2.  No problems so far using Rigcat. Configuration came up with proper selection of stop bits for both Hamlib &amp; Rigcat.  No audio faults on Ubuntu using /dev/dsp1 soundcard as previously configured.  So far, so good.
+
+Rich
+WA4SXZ
+  ----- Original Message ----- 
+  From: w1hkj 
+  To: fldigi-alpha 
+  Sent: Tuesday, September 15, 2009 2:24 PM
+  Subject: fldigi 3.13AG posted
+
+
+  Version 3.13AG
+      1.  rigCAT mods
+          Restructured i/o to allow use with broadcast transceivers.
+          Icom 7xxx series default to a CI-V server that broadcasts
+          serial data which disrupted fldigi serial data stream extract.
+          New code passed tests on Vista with IC-746Pro operating in
+          CI-V Transceive (server) mode.
+      2.  Serial i/o Stopbits
+          Added stopbits configuration for hamlib and rigcat serial i/o
+      3.  Dom/Thor mod
+          Modified squelch evaluator for increased sensitivity
+      4.  QRZ lookup
+          Added post thread startup delay to allow OS to set up
+          conditionals.
+
+  Notes:
+
+    1.. rigCAT mods should provide better cat i/o with all makes of transceiver.  You may need to adjust your timing.  This is a major rewrite to the rigCAT execution code. 
+    2.. You need to know whether your transceiver uses 1 or 2 stop bits.  Icom 7xxx series are usually 1 stop bit.  Kenwoods are usually 2 stop bits.   I would like to know what performance you see with a TS50 or TS450.  This mod was targeted at the 2 stop bit transceivers. 
+    3.. Squelch for DominoEX and Thor modes should be faster acting and also closer in level to PSK modes. 
+    4.. This should correct the 2x - 1st time QRZ problem on MS and some Linux distros. 
+    a.. <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG.tar.gz">http://www.w1hkj.com/friday/fldigi-3.13AG.tar.gz</A> 
+    b.. <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AG.bin.tgz</A> 
+    c.. <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG.npa.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AG.npa.bin.tgz</A> 
+    d.. <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AG_setup.exe">http://www.w1hkj.com/friday/fldigi-3.13AG_setup.exe</A> 
+
+  73, Dave, W1HKJ
+  for the development team
+
+
+
+
+
+------------------------------------------------------------------------------
+
+
+  _______________________________________________
+  fldigi-alpha mailing list
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+
+
+
+------------------------------------------------------------------------------
+
+
+
+  No virus found in this incoming message.
+  Checked by AVG - www.avg.com 
+  Version: 8.5.409 / Virus Database: 270.13.96/2369 - Release Date: 09/14/09 05:51:00
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090915/f7974786/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090915/f7974786/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000150.html">fldigi 3.13AG posted
+</A></li>
+	<LI>Next message: <A HREF="000152.html">fldigi 3.13AG posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

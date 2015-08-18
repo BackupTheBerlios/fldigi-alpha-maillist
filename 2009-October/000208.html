@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi behior strangeness
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20behior%20strangeness&In-Reply-To=%3C7E6F15AD8B5541E4AD1FA31B926C174A%40latop01%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000206.html">
+   <LINK REL="Next"  HREF="000204.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi behior strangeness</H1>
+    <B>Gary Wescom</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20behior%20strangeness&In-Reply-To=%3C7E6F15AD8B5541E4AD1FA31B926C174A%40latop01%3E"
+       TITLE="fldigi behior strangeness">wescom at wildblue.net
+       </A><BR>
+    <I>Tue Oct 13 20:46:58 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000206.html">fldigi-alpha code / flics-0.1.11 posting
+</A></li>
+        <LI>Next message: <A HREF="000204.html">Fldigi-3.13AN  Contest Capturing QSO Data Quesiton
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#208">[ date ]</a>
+              <a href="thread.html#208">[ thread ]</a>
+              <a href="subject.html#208">[ subject ]</a>
+              <a href="author.html#208">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>While testing fldigi 3.13AN today with pskmail on XP today, I noticed something a bit strange.  I monitored 10.148 MHz for a while with fldigi.  I was getting good BPSK250 copy from a few stations.  Call signs W8MCH, KB2FN, WB5CON, KD5WQD, and others as I remember.  I then fired up jpskmail (version 0.3.7) for the first time to see what that was like.  Once I had gone through the basic configuratin of jpskmail I started paying attention to what was going on with fldigi.  I noticed then that it was bouncing around in frequency randomly over a range of plus and minus 200 Hz or so.  Turning of AFC did not stop this behaviour.  Squelch setting did not change the hopping around.
+
+The problem the hopping around seemed to cause is that it looked like I was starting to occasionally miss receiving the the first characters of transmissions.  It is like there is a search algorithm running that eventually finds the BPSK250 signal but because it is covering such a wide range, lock in can be slow.  This was also a bit of a problem at times when other nearby signals came on as it appeared fldigi was spending extra time figuring out that it was NOT hearing a BPSK250 signal and to start searching again.  Once this frequency hopping starts, shutting down jpskmail does not stop it.
+
+I believe I have seen this problem crop up during my testing with flarq with BPSK250 but didn't find a way to repeat it.  Oh yes, once this starts with BPSK250, it continues in other speeds of PSK.  The hopping around thing does not seem to show up if I switch some other mode like Olivia or MFSK but if I switch back to PSK it starts up again.  This continues until I stop and restart fldigi.
+
+To repeat, today's repeatable wierdness:  Windows XP - fldigi up and running and successfully monitoring BPSK250 transmissions on 10.148 MHz (10.146.5 MHz plus 1500 Hz audio center).  Start jpskmail and after first automatic transmission, fldigi receive frequency randomly hops around up to 200 Hz.
+
+First off, I guess I should ask if this is an intended design feature.  If it is, what it the intent?
+
+Gary - N0GW
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091013/806da48a/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091013/806da48a/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000206.html">fldigi-alpha code / flics-0.1.11 posting
+</A></li>
+	<LI>Next message: <A HREF="000204.html">Fldigi-3.13AN  Contest Capturing QSO Data Quesiton
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#208">[ date ]</a>
+              <a href="thread.html#208">[ thread ]</a>
+              <a href="subject.html#208">[ subject ]</a>
+              <a href="author.html#208">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

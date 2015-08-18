@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Flrig 1.0.0b6 and FT100MP
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Flrig%201.0.0b6%20and%20FT100MP&In-Reply-To=%3CC7CA7980.229C%25mitch%40af2m.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001028.html">
+   <LINK REL="Next"  HREF="001030.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Flrig 1.0.0b6 and FT100MP</H1>
+    <B>Mitch Baum</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Flrig%201.0.0b6%20and%20FT100MP&In-Reply-To=%3CC7CA7980.229C%25mitch%40af2m.net%3E"
+       TITLE="Flrig 1.0.0b6 and FT100MP">mitch at af2m.net
+       </A><BR>
+    <I>Sat Mar 20 18:09:20 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001028.html">Port Audio error with VAC
+</A></li>
+        <LI>Next message: <A HREF="001030.html">Flrig 1.0.0b6 and TS570
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1029">[ date ]</a>
+              <a href="thread.html#1029">[ thread ]</a>
+              <a href="subject.html#1029">[ subject ]</a>
+              <a href="author.html#1029">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Guys,
+
+I just tried the new version of flrig(1.0.0b6) with my FT1000MP.
+I got the CAT to keep running but the frequency display is somehow linked to
+the selection for RX bandwidth and does not display the correct frequency.
+During &quot;normal&quot; polling, it appears that a new frequency is constantly being
+commanded and the RX  is being muted at the polling frequency (~10 Hz).
+
+On exit (close program) there is a burst of data that commands the rig to
+1.100000000 MHz.
+
+We are close, but it appears the data formats are just not correct.
+For use on most MAC systems the Window for the serial (tty) ports name drop
+down is too short and the full name of the ports cannot be seen. This is the
+same for the flrig version on MAC also. In my case the typical port name is:
+/dev/tty.usbserial-FTDWGU46  (27 Characters).
+
+The backend for Hamilb has been working fine in the complied in version.
+Environment:
+OS-X 10.6.2 on Intel MAC
+CAT via external USB to serial
+Second serial port for the RIGblaster (only using RTS+)
+ 
+Thanks,
+
+Mitch Baum AF2M
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001028.html">Port Audio error with VAC
+</A></li>
+	<LI>Next message: <A HREF="001030.html">Flrig 1.0.0b6 and TS570
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1029">[ date ]</a>
+              <a href="thread.html#1029">[ thread ]</a>
+              <a href="subject.html#1029">[ subject ]</a>
+              <a href="author.html#1029">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

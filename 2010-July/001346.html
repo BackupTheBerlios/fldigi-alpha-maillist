@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> flwrap 1.3.0 , fldigi-3.20.22
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flwrap%201.3.0%20%2C%20fldigi-3.20.22&In-Reply-To=%3C4C52F4A0.30206%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001345.html">
+   <LINK REL="Next"  HREF="001347.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>flwrap 1.3.0 , fldigi-3.20.22</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flwrap%201.3.0%20%2C%20fldigi-3.20.22&In-Reply-To=%3C4C52F4A0.30206%40bellsouth.net%3E"
+       TITLE="flwrap 1.3.0 , fldigi-3.20.22">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Jul 30 17:49:52 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001345.html">125/4 Olivia and Contestia menu items ...
+</A></li>
+        <LI>Next message: <A HREF="001347.html">fldigi-3.21.0AK and flrig-1.0.0bK posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1346">[ date ]</a>
+              <a href="thread.html#1346">[ thread ]</a>
+              <a href="subject.html#1346">[ subject ]</a>
+              <a href="author.html#1346">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Both posted on the beta pages for Linux, Windows, OS X and Puppy
+
+<A HREF="http://www.w1hkj.com/beta/fldigi-flarq/">http://www.w1hkj.com/beta/fldigi-flarq/</A>
+<A HREF="http://www.w1hkj.com/beta/flwrap/">http://www.w1hkj.com/beta/flwrap/</A>
+
+This is a matched pair distribution.  flwrap 1.3.0 will work with 
+earlier versions of fldigi but the ^ handling will not be present in 
+fldigi.  This probably does not effect plain text transfers, but it 
+might if compression / base64 encoding is used by flwrap.
+
+========================================================================
+ATTENTION OS X testers:
+
+I would like your opinion on a proposed change to the way that all of 
+the application folders are stored on OS X.  This change would make it 
+easier to locate the various data folders both from the &quot;Finder&quot; and 
+from within fldigi when a file locate dialog is opened.  The changed is 
+prompted by the fact that the default (and OS X preferred) behavior of 
+Finder is to NOT show hidden files.  It is possible to change this 
+behavior, but OS X does not make it easy to make the change.  The file 
+locate dialog behavior seems to be fixed and suppresses all hidden 
+directories and files.
+
+Current         Proposed
+$HOME/.fldigi   $HOME/fldigi.files
+$HOME/.nbems    $HOME/nbems.files
+$HOME/.flrig    $HOME/flrig.files
+
+If the change is implemented it will be very easy to copy your current 
+directory(s) contents to the new convention without loss of the old 
+data.  The change will be made using a Terminal window and instructions 
+will be created to assist you in the change over.
+
+Please comment on whether you think this will enhance your operations.
+
+73, Dave, W1HKJ
+for the development team
+
+========================================================================
+
+fldigi Version 3.20.22
+
+  TX file insertion
+    * For both file insert and drag-n-drop insert into the Tx widget
+      Change all occurrences of ^ to ^^.
+    * Effect is to treat all dnd text as plain text without special fldigi
+      control sequences.
+
+  Xmlrpc Raw data
+    * Added xmlrpc method, rxtx.get_data, which returns the contents
+      of a char data buffer (max 256).  Data buffer contains all
+      text received/transmitted since last query.  Caller responsible
+      for separating the two.
+    * Added xmlrpc method, rx.get_data, which returns the contents
+      of a char buffer (max 256).  Data buffer contains all text
+      received since last query.
+    * Added xmlrpc method, tx.get_data, which returns the contents
+      of a char buffer (max 256).  Data buffer contains all text
+      transmitted since last query.
+
+  Log Sort
+    * Changed logbook sort to DATE / TIME-ON comparison
+    * Changed logbook browser to show DATE / TIME-ON vice DATE / TIME-OFF
+
+  Xmlrpc BS char
+    Added new method to FTextTX to support backspace char from an 
+external program.
+
+  RsID
+    * Added missing support code for patch c8ea4df
+      This enables the encode and decode for the new RsID codes
+    * Added Contestia 4/125 to menu and popup mode selector
+
+========================================================================
+
+flwrap Version 1.3.0
+
+  Control-High bit Codes
+    * Changed plain text documents to include control codes and
+      high order bits.
+    * CR, LF and TAB passed through unchanged.  Other control codes
+      modified by adding 0x20 and preceeding with |+
+    * 0x80 &lt; ch &lt; 0xBF converted to 0x20 to 0x5F and preceded by |-
+      0xC0 &lt; ch &lt; 0xFF converted to 0x20 to 0x5F and preceded by |_
+    * All occurrences of | changed to ||
+    * Added dialog control to select Compression - default OFF
+    * Added In-&gt;Out byte count display.
+
+========================================================================
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100730/6ee67f54/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100730/6ee67f54/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001345.html">125/4 Olivia and Contestia menu items ...
+</A></li>
+	<LI>Next message: <A HREF="001347.html">fldigi-3.21.0AK and flrig-1.0.0bK posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1346">[ date ]</a>
+              <a href="thread.html#1346">[ thread ]</a>
+              <a href="subject.html#1346">[ subject ]</a>
+              <a href="author.html#1346">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

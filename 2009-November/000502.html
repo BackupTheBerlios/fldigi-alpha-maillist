@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Two copies of fldigi/flarq running at the same time
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Two%20copies%20of%20fldigi/flarq%20running%20at%20the%20same%20time&In-Reply-To=%3C8BD67198E32B4AC7ABF97983D6298E71%40latop01%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000501.html">
+   <LINK REL="Next"  HREF="000503.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Two copies of fldigi/flarq running at the same time</H1>
+    <B>Gary Wescom</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Two%20copies%20of%20fldigi/flarq%20running%20at%20the%20same%20time&In-Reply-To=%3C8BD67198E32B4AC7ABF97983D6298E71%40latop01%3E"
+       TITLE="Two copies of fldigi/flarq running at the same time">wescom at wildblue.net
+       </A><BR>
+    <I>Sun Nov 29 22:05:48 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000501.html">Mail Archive
+</A></li>
+        <LI>Next message: <A HREF="000503.html">New alpha test postings
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#502">[ date ]</a>
+              <a href="thread.html#502">[ thread ]</a>
+              <a href="subject.html#502">[ subject ]</a>
+              <a href="author.html#502">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Tom, Joe,
+
+The there is a trick to having multiple configurations for fldigi available on Win32.  I assume this same thing can be done on UNIX but don't run that here.  You need to have separate configuration directories for each copy.  As delivered, the configuration directory defaults to something like &quot;C:\Documents and Settings\wescom\fldigi.files&quot;.  I decided to not only create a second directory but to create two directories, one name &quot;C:\NBEMS_HF&quot; and one named &quot;C:NBEMS_VHF&quot; corresponding to my two external sound card digital interfaces.  You need create only one new directory if you wish.
+
+I'll describe the full setup now in procedure form.
+
+  1.. Create a new fldigi configuration directory.  As an example, I created &quot;C:NBEMS_VHF&quot; (like I described above)
+  2.. Create a second shortcut identical to the existing fldigi.exe shortcut.  In XP all you do is right click on the shortcut icon and click copy.  You then slip the cursor to a blank spot on the screen, right click again, and click the paste option. You now have two identical icons to start fldigi.
+  3.. Rename that icon to something other than that of the original icon so you will be able to tell them apart.
+  4.. Right click on your new icon.
+  5.. Select the properties option.  There will be line labeled &quot;Target.&quot;  It should contain something like this: &quot;C:\Program Files\Fldigi-3.13BD\fldigi.exe&quot;  The actual filename may change as versions change but it should look similar to this.
+  6.. Add the following text to the Target line (except use the name of the directory you created in step 1 above): --config-dir C:\NBEMS_VHF  (Note that it is dash dash config dash dir)
+  7.. Click &quot;Apply&quot; and &quot;OK&quot; to exit the properties box.
+  8.. Click on the your new icon to start the second copy of fldigi and configure it as needed.
+OK, now you can run two copies of fldigi at the same time.  What about flarq.  If you choose to run only one of your fldigi configurations at a time, flarq will hook up with whichever one is running.  A problem comes up if you try to run flarq with two copies of fldigi running at the same time.  flarq communicates with fldigi using TCP/IP port 3122.  Whichever copy of fldigi is started first will claim that port.  flarq will only be able to talk to that one.  To have two copies of flarq running with two configurations of fldigi running it is necessary to have them use different TCP/IP ports.  The procedure for changing the arq server port number in fldigi is similar to how we changed its default directory.  We add it as an additional parameter on the icon Target line.  My NBEMS_VHF target line looks like this:
+
+&quot;C:\Program Files\Fldigi-3.13BD\fldigi.exe&quot; --config-dir C:\NBEMS_VHF --arq-server-port 3123
+
+Notice that I simply added one to the default 3122 port number to get 3123.  It is not scientific but it works in my machine.
+
+Next, we need to create a second flarq icon as in steps 2 and 3 above.  I named it &quot;flarq_vhf&quot;.  Add the --arq-server-port 3123 thing to end of its target line.  My flarq_vhf target line looks like:
+
+&quot;C:\Program Files\Fldigi-3.13BD\flarq.exe&quot; --arq-server-port 3123
+
+Notice that there is no --config-dir parameter used.  flarq does not recognize that parameter and will not start if it is added.  Instead, it defaults to something like:
+
+C:\Documents and Settings\wescom\NBEMS.files
+
+That is OK with me, in fact I was planning on having both versions use the same directory space anyway to simplify moving stuff between HF and VHF.
+
+Anyway, that is what I have done so far.  My PC is has not turned into a smoking heap nor has anything bad happened yet so I'm hoping I got this procedure correct..
+
+Gary - N0GW
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091129/56b2b04c/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091129/56b2b04c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000501.html">Mail Archive
+</A></li>
+	<LI>Next message: <A HREF="000503.html">New alpha test postings
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#502">[ date ]</a>
+              <a href="thread.html#502">[ thread ]</a>
+              <a href="subject.html#502">[ subject ]</a>
+              <a href="author.html#502">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

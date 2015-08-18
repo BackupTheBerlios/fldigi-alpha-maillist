@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Portaudio ?.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C87ocqm3c7f.wl%40obsidian.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000015.html">
+   <LINK REL="Next"  HREF="000017.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Portaudio ?.</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Portaudio%20%3F.&In-Reply-To=%3C87ocqm3c7f.wl%40obsidian.enotty.net%3E"
+       TITLE="Portaudio ?.">m0gld at enotty.net
+       </A><BR>
+    <I>Tue Aug 11 11:57:08 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000015.html">Portaudio ?.
+</A></li>
+        <LI>Next message: <A HREF="000017.html">Portaudio ?.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16">[ date ]</a>
+              <a href="thread.html#16">[ thread ]</a>
+              <a href="subject.html#16">[ subject ]</a>
+              <a href="author.html#16">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> On Tue, 11 Aug 2009 11:04:49 +0200, Erik Jakobsen &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">eja at urbakken.dk</A>&gt; said:
+</I>
+&gt;<i> Stelios Bounanos wrote:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> On Tue, 11 Aug 2009 05:20:53 +0200, Erik Jakobsen &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">eja at urbakken.dk</A>&gt; said:
+</I>
+&gt;&gt;&gt;<i> --------------------------------------- device #9
+</I>&gt;&gt;&gt;<i> Name                        = Virtual Cable 2
+</I>&gt;&gt;&gt;<i> Host API                    = Windows DirectSound
+</I>&gt;&gt;&gt;<i> Max inputs = 8, Max outputs = 0
+</I>&gt;&gt;&gt;<i> Default low input latency   =    0.000
+</I>&gt;&gt;&gt;<i> Default low output latency  =    0.000
+</I>&gt;&gt;&gt;<i> Default high input latency  =    0.000
+</I>&gt;&gt;&gt;<i> Default high output latency =    0.000
+</I>&gt;&gt;&gt;<i> Default sample rate         =     0.00
+</I>&gt;&gt;&gt;<i> Supported standard sample rates
+</I>&gt;&gt;&gt;<i> for half-duplex 16 bit 8 channel input =
+</I>&gt;&gt;&gt;<i> 8000.00,  9600.00, 11025.00, 12000.00,
+</I>&gt;&gt;&gt;<i> 16000.00, 22050.00, 24000.00, 32000.00,
+</I>&gt;&gt;&gt;<i> 44100.00, 48000.00, 88200.00, 96000.00,
+</I>&gt;&gt;&gt;<i> 192000.00
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> This is Virtual Audio Cable masquerading as a DirectSound device.  This
+</I>&gt;&gt;<i> is the input device that gives you the error.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;<i> Because of it's masquerading ?.
+</I>
+Well, VAC pretends to be an audio device because this is what it
+does... I don't know why it's giving you trouble, only that your
+previous email contains an fldigi log that shows an error while trying
+to access the &quot;Virtual Cable 2&quot; DirectSound input device.
+
+&gt;<i> Do you mean still using the VAC, or make a change in the set up in the 
+</I>&gt;<i> SDR itself, here ?
+</I>
+&gt;<i> <A HREF="http://www.urbakken.dk/MME.jpg">http://www.urbakken.dk/MME.jpg</A>
+</I>&gt;<i> and
+</I>&gt;<i> <A HREF="http://www.urbakken.dk/MME2.jpg">http://www.urbakken.dk/MME2.jpg</A>
+</I>
+&gt;<i> and try running this or ?
+</I>
+&gt;<i> <A HREF="http://www.urbakken.dk/windowsdirectsound.jpg">http://www.urbakken.dk/windowsdirectsound.jpg</A>
+</I>
+&gt;<i> I'm not quite sure what to try.
+</I>
+PowerSDR uses PortAudio, like fldigi, (though I believe they have their
+own version forked from PortAudio mainline many months ago).
+
+Concerning VAC, the PowerSDR manual says that &quot;with most digital
+software MME will work well&quot;.  So I suggest that you go with MME both in
+PowerSDR and fldigi.
+
+In fldigi, the PortAudio capture and playback menus contain devices
+names that appear twice.  The device that appears in the main capture or
+playback menu is the MME device, and the corresponding DirectSound
+device in in a submenu.
+
+
+BTW, PowerSDR supports PortAudio backends that fldigi does not.  We
+cannot build ASIO support into the win32 fldigi binary because the ASIO
+license is totally incompatible with the GPL.  The WDM-KS backend I
+could never get to work and in any case it requires a huge SDK download
+from MS (unless one downloads the headers from somewhere else, not
+good).
+
+I mention this because I don't know if VAC is capable of speaking to its
+client programs via different backends, e.g. MME to PowerSDR and
+DirectSound to fldigi.  To be safe use the same backend (Driver) in both.
+
+&gt;&gt;<i> If this works we'll have to assume that VAC doesn't work well under
+</I>&gt;&gt;<i> DirectSound, or that there's a bug in PortAudio's DirectSound backend.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;<i> We'll see it when I have it explained what to do :-)
+</I>&gt;&gt;<i> I think what Brian achieves by forcing the sample rate is to avoid the
+</I>&gt;&gt;<i> problem where fldigi tries to set a sample rate of 0.0 (the default rate
+</I>&gt;&gt;<i> reported by PortAudio for VAC/DS).  The toggle to &quot;File I/O&quot; and back
+</I>&gt;&gt;<i> must be a way to reinitialise PortAudio.  If you save the settings and
+</I>&gt;&gt;<i> restart fldigi you shouldn't have to do this.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;<i> I understand.
+</I>&gt;&gt;<i> I'm not sure why PortAudio reports 0.0 for the VAC DSound device, or how
+</I>&gt;&gt;<i> fldigi should handle this.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;<i> Maybe it's totally a fail to try to get Fldigi to run with Flex radios ?.
+</I>
+I don't see why fldigi would not work with Flex radios, if VAC does what
+it says on the tin :-)  Also, Brian has got it working.
+
+
+-- 
+
+73,
+Stelios, M0GLD.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000015.html">Portaudio ?.
+</A></li>
+	<LI>Next message: <A HREF="000017.html">Portaudio ?.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16">[ date ]</a>
+              <a href="thread.html#16">[ thread ]</a>
+              <a href="subject.html#16">[ subject ]</a>
+              <a href="author.html#16">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

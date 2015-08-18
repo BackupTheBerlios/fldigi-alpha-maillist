@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> High CPU load with USB sound device
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C4B7708BF.6010703%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000839.html">
+   <LINK REL="Next"  HREF="000847.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>High CPU load with USB sound device</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C4B7708BF.6010703%40WA5ZNU.org%3E"
+       TITLE="High CPU load with USB sound device">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Sat Feb 13 21:17:03 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000839.html">High CPU load with USB sound device
+</A></li>
+        <LI>Next message: <A HREF="000847.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#841">[ date ]</a>
+              <a href="thread.html#841">[ thread ]</a>
+              <a href="subject.html#841">[ subject ]</a>
+              <a href="author.html#841">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 02/13/2010 12:01 PM, Rick Kunath wrote:
+&gt;<i> On Saturday 13 February 2010 02:38:24 pm Leigh L. Klotz, Jr WA5ZNU wrote:
+</I>&gt;<i>    
+</I>&gt;&gt;<i> Dave's point about sample rate conversion is a set of &quot;favors&quot; being
+</I>&gt;&gt;<i> done for users by the API or mid-tier software, not the USB Audio driver
+</I>&gt;&gt;<i> itself, which is essentially the same across all USB cards regardless of
+</I>&gt;&gt;<i> what chipset is used or how much it cost.  Choosing OSS or PortAudio
+</I>&gt;&gt;<i> lets you decide which mid-tier software is doing you which favors.  Most
+</I>&gt;&gt;<i> of the favors there are done for music recording, and the performance
+</I>&gt;&gt;<i> and operations decisions aren't necessarily optimal for ham use.
+</I>&gt;&gt;<i>      
+</I>&gt;<i> My question Leigh is whether or not a USB sound device can handle multiple
+</I>&gt;<i> sample rates natively just as a PCI card can that can support these sample
+</I>&gt;<i> rates natively?
+</I>&gt;<i>    
+</I>Stelios or Dave would know for sure, but based on the time I've spent in 
+the Linux driver code, the only way to do this would be with a device 
+which produces multiple independent data streams from more than one 
+ADC.  Sampling at the native rate and then converting in one of the 
+mid-tier APIs is the only way I am aware of, as the simple USB devices 
+do not produce multiple streams of data. The EMU-0404 and EMU-1616 have 
+multiple analog inputs, and produce multiple channels, but those are PCI 
+devices and I don't know if you can configure them internally to split a 
+single input into multiple ADC channels.
+&gt;<i> I'm assuming so based on what you wrote.
+</I>&gt;<i>
+</I>&gt;<i> I guess the question then is how to identify good USB hardware for ham use?
+</I>&gt;<i>    
+</I>The CPU load is going to be pretty much the same for all USB devices.  
+So you're looking at the distortion figures and dynamic range as the 
+main differentiator.   I use a Creative iMic (which is a branded version 
+of a no-name; they change the chipset regularly) for fldigi, and an 
+EMU-0202 for Quisk panadaptor.  The sampling rate of the '0202 is up to 
+96Khz, but high sample rate isn't necessary for fldigi.
+
+Here's N8LP's review of sound cards: 
+<A HREF="http://www.telepostinc.com/soundcards.html">http://www.telepostinc.com/soundcards.html</A>
+It's biased toward Windows, but many of the hardware specs should be the 
+same, as I suspect he understands how to avoid software resampling.  The 
+ARRL also had a two-part set of reviews in QST a year or two ago.
+&gt;<i> Another thread has some discussion about the mixer elements of these USB sound
+</I>&gt;<i> devices, or in this case, the lack of. Wondering how that's handled for card
+</I>&gt;<i> inputs and outputs? Also seemed to not be supported in oss-alsa emulation,
+</I>&gt;<i> i.e. there was no /dev/dsp1 mixer created for the card. Though I don't know if
+</I>&gt;<i> the USB device was aliased correctly or not.
+</I>&gt;<i>
+</I>&gt;<i> Rick Kunath, k9ao
+</I>&gt;<i>    
+</I>
+This level of Linux sound mystifies me, though Stelios has tried to 
+explain it to me several times.
+
+Leigh/WA5ZNU
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000839.html">High CPU load with USB sound device
+</A></li>
+	<LI>Next message: <A HREF="000847.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#841">[ date ]</a>
+              <a href="thread.html#841">[ thread ]</a>
+              <a href="subject.html#841">[ subject ]</a>
+              <a href="author.html#841">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Weather fax
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax&In-Reply-To=%3C87bperks9o.wl%40logrus.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001012.html">
+   <LINK REL="Next"  HREF="001022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Weather fax</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax&In-Reply-To=%3C87bperks9o.wl%40logrus.enotty.net%3E"
+       TITLE="Weather fax">m0gld at enotty.net
+       </A><BR>
+    <I>Sun Mar 14 13:21:55 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001012.html">Weather fax
+</A></li>
+        <LI>Next message: <A HREF="001022.html">Weather fax
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1019">[ date ]</a>
+              <a href="thread.html#1019">[ thread ]</a>
+              <a href="subject.html#1019">[ subject ]</a>
+              <a href="author.html#1019">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> On Sun, 14 Mar 2010 00:16:52 +0000, &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt; said:
+</I>
+&gt;&gt;<i> Ben wrote:
+</I>
+[snip]
+
+&gt;<i> By the way, I have a proble with the Fl_Counter widget to adjust the 
+</I>&gt;<i> maximum number of lines: The step cannot be bigger than one apparently, 
+</I>&gt;<i> which takes a long time to increase from 10000 to, say, 20000 or more !
+</I>
+You can do this by calling step() and lstep(), take a look at the
+test/valuators.cxx example in FLTK's source tree.
+
+[snip]
+
+&gt;&gt;<i> Ouch. Well, my vote is no XML, thank you very much. Really, all we
+</I>&gt;&gt;<i> need is a pointer and five chunks of data, and we can process the
+</I>&gt;&gt;<i> image without any further complications:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> a pointer to image base
+</I>&gt;&gt;<i> x resolution
+</I>&gt;&gt;<i> y resolution
+</I>&gt;&gt;<i> data size (word, byte, nybble)
+</I>&gt;&gt;<i> data packing (two nybbles/byte, etc.)
+</I>&gt;&gt;<i> packing order:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I recommend (presuming nybbles in bytes):
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> struct fimage:
+</I>&gt;&gt;<i> {
+</I>&gt;&gt;<i> word *image; // NULL if invalid, otherwise points to image in RAM.
+</I>&gt;&gt;<i> long xwidth; // ex 1808
+</I>&gt;&gt;<i> long ywidth; // ex 1200
+</I>&gt;&gt;<i> long pixelbits; // ex 4
+</I>&gt;&gt;<i> long pixelsperword; // ex 4
+</I>&gt;&gt;<i> long packingorder; // 0.W.X.Y (unused)(LR or RL within word)(LR or
+</I>&gt;&gt;<i> RL within line)(TB or BT within image)
+</I>&gt;&gt;<i> // packingorder ex in hex: 0000: (unused)(LR)(LR)(TB) [this is natural
+</I>&gt;&gt;<i> bigendian ordering)
+</I>&gt;&gt;<i> }
+</I>&gt;&gt;<i> 
+</I>&gt;<i> No problem with that because this is close to the layout of the existing 
+</I>&gt;<i> &quot;picture&quot; class. Now, where would you like to have this entry point ? At 
+</I>&gt;<i> which stage of the processing ? When displaying ? Should I reuse 
+</I>&gt;<i> 'picture' or create a brand new class?
+</I>
+Please think very carefully before creating a public API to process
+received images.  We certainly don't want to deal with dynamically
+loading shared objects at runtime, as this will require something like
+libltdl to do portably.
+
+IMO it's much better to just have an option specifying a program to be
+called with the filename of the image saved in PNG format.  It's trivial
+to get to the RGB data and there are many image processing libraries
+than can open PNG files directly.
+
+
+-- 
+
+73,
+Stelios, M0GLD.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001012.html">Weather fax
+</A></li>
+	<LI>Next message: <A HREF="001022.html">Weather fax
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1019">[ date ]</a>
+              <a href="thread.html#1019">[ thread ]</a>
+              <a href="subject.html#1019">[ subject ]</a>
+              <a href="author.html#1019">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

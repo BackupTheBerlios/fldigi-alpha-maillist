@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Feedback on alpha fldig-3.20.30 and 3.21.0AO QSO Time Options
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Feedback%20on%20alpha%20fldig-3.20.30%20and%203.21.0AO%20QSO%20Time%20Options&In-Reply-To=%3C637B4C3E-DADE-40D9-87DD-3B2665B89D3D%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001474.html">
+   <LINK REL="Next"  HREF="001477.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Feedback on alpha fldig-3.20.30 and 3.21.0AO QSO Time Options</H1>
+    <B>Dick</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Feedback%20on%20alpha%20fldig-3.20.30%20and%203.21.0AO%20QSO%20Time%20Options&In-Reply-To=%3C637B4C3E-DADE-40D9-87DD-3B2665B89D3D%40att.net%3E"
+       TITLE="Feedback on alpha fldig-3.20.30 and 3.21.0AO QSO Time Options">aa5vu at att.net
+       </A><BR>
+    <I>Sat Nov 20 23:18:26 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001474.html">Mail test to fldigi-alpha list
+</A></li>
+        <LI>Next message: <A HREF="001477.html">3.20.30 and 3.21.0AO posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1476">[ date ]</a>
+              <a href="thread.html#1476">[ thread ]</a>
+              <a href="subject.html#1476">[ subject ]</a>
+              <a href="author.html#1476">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>TNX to Dave, W1HKJ, for the new user time options added in alpha fldig-3.20.30 and 3.21.0AO. They solve some long standing time related issues. The new options are in the User Interface General configuration panel. 
+
+The first option checked by default is:
+
+  Sort by Date/Time OFF
+
+This option toggles the time used in the listing (display) of QSO's in the Logbook. In the default OFF mode, all QSO's are listed and sorted by the logged DATE and TIME_OFF. If the user prefers to display calls using the logged TIME_ON, the option should be unchecked. The export options will follow the user selected preference.
+
+The other new option that is uncheck by default is:
+
+  Date time ON==OFF
+
+When checked, the time ON for new calls logged will be changed to equal the logged time OFF. This option has value to users, like me, who prefer to log QSO's based on TIME_OFF.
+
+By having TIME_OFF equal TIME_ON, the ARRL's LoTW tqsl.app will convert the exported ADIF TIME_ON (really time off)to QSO_TIME.  In addition, this solves an issue with my OS X logging program, Aether, that converts TIME_OFF to QSO_TIME. My fldigi imports to Aether will now agree with my uploads to LoTW.
+
+I do not want to enter a debate of logging Time ON vs. Time OFF. Dave has given fldigi users the option to use either. 
+
+I had another example today when ZL8X came up on 20 meter phone. I selected his call on 20-Nov at 1415z and that time was displayed in the fldigi On box. I called, had lunch, listened for him to finally get to 5's and made the QSO at 1505z. When he confirmed the QSO, I clicked the fldigi log macro and the QSO is logged On and Off at 1505z. I feel sure ZL8X will have the QSO logged at 1505z. If I logged the old way the TIME_ON would be logged at 1415z resulting in a busted or orphaned QSO when uploaded to LoTW.
+
+Yes, I could have used the fldigi hover-mouse-push over time on option to force the ON time equal OFF time. I have a hard time remembering to use this feature for each QSO.
+
+Thanks Dave, the two new user time options will be useful and used by some of us.
+
+73 Dick AA5VU
+ 
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001474.html">Mail test to fldigi-alpha list
+</A></li>
+	<LI>Next message: <A HREF="001477.html">3.20.30 and 3.21.0AO posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1476">[ date ]</a>
+              <a href="thread.html#1476">[ thread ]</a>
+              <a href="subject.html#1476">[ subject ]</a>
+              <a href="author.html#1476">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

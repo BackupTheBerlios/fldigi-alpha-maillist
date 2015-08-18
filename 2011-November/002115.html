@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI broken by FEDORA 16 installation
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20broken%20by%20FEDORA%2016%20installation&In-Reply-To=%3C4EBEDB83.6090403%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002114.html">
+   <LINK REL="Next"  HREF="002117.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI broken by FEDORA 16 installation</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20broken%20by%20FEDORA%2016%20installation&In-Reply-To=%3C4EBEDB83.6090403%40bellsouth.net%3E"
+       TITLE="FLDIGI broken by FEDORA 16 installation">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Nov 12 21:48:03 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002114.html">Wefax detection using statistical correlation
+</A></li>
+        <LI>Next message: <A HREF="002117.html">FLDIGI broken by FEDORA 16 installation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2115">[ date ]</a>
+              <a href="thread.html#2115">[ thread ]</a>
+              <a href="subject.html#2115">[ subject ]</a>
+              <a href="author.html#2115">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have not run any RedHat products since the early days of Fedora when 
+their installation completely blew away my hard drive.  I am rather like 
+an elephant when it comes to that sort of behavior.  My preference is 
+for OS distributions based on Debian.  I find Ubuntu to be the easiest 
+for the average ham to install and administer.
+
+However, there are some users on the alpha team who run Fedora, Mandrake 
+and Suse, all of which use similar repositories.  I am forwarding your 
+email to that list is the hopes that one might be able to assist you.
+
+Dave, W1HKJ
+
+
+I've forwarded your
+On 11/12/2011 12:17 PM, Robert Howard wrote:
+&gt;<i> First, let me thank you for the effort you put into fldigi  I have found
+</I>&gt;<i> the product excellent.  I work professionally in audio signal processing
+</I>&gt;<i> and fldigi is nice piece of work -- effective, nice in appearance and easy
+</I>&gt;<i> to use.
+</I>&gt;<i>
+</I>&gt;<i> I realize that you are probably overloaded right now so please do not feel
+</I>&gt;<i> obligated to respond to this e-mail.  If however there is any help I can
+</I>&gt;<i> render please feel free to contact me.
+</I>&gt;<i>
+</I>&gt;<i> As you are probably aware by now, Fedora 16 has broken fldigi.  I conclude
+</I>&gt;<i> that from the maintenance release.  This breakage is occurring because
+</I>&gt;<i> libfltk_images.3.21.7-1 and libfltk.so.1-1 are apparently deleted /
+</I>&gt;<i> replaced by the Fedora 16 install scripts.  When the dependencies on these
+</I>&gt;<i> pacages are included there appears to be total of 6 packages that have been
+</I>&gt;<i> affected.  Efforts to download these libraries or their dependencies fail
+</I>&gt;<i> to find a download site.  I have included the output of the yum install
+</I>&gt;<i> command in the hopes it will help you.
+</I>&gt;<i>
+</I>&gt;<i> # yum install fldigi
+</I>&gt;<i> Loaded plugins: langpacks, presto, refresh-packagekit
+</I>&gt;<i> Setting up Install Process
+</I>&gt;<i> Resolving Dependencies
+</I>&gt;<i> --&gt;  Running transaction check
+</I>&gt;<i> ---&gt;  Package fldigi.x86_64 0:3.21.7-1.fc16 will be installed
+</I>&gt;<i> --&gt;  Processing Dependency: libfltk_images.so.1.1()(64bit) for package:
+</I>&gt;<i> fldigi-3.21.7-1.fc16.x86_64
+</I>&gt;<i> --&gt;  Processing Dependency: libfltk.so.1.1()(64bit) for package:
+</I>&gt;<i> fldigi-3.21.7-1.fc16.x86_64
+</I>&gt;<i> --&gt;  Finished Dependency Resolution
+</I>&gt;<i> Error: Package: fldigi-3.21.7-1.fc16.x86_64 (fedora)
+</I>&gt;<i>             Requires: libfltk_images.so.1.1()(64bit)
+</I>&gt;<i> Error: Package: fldigi-3.21.7-1.fc16.x86_64 (fedora)
+</I>&gt;<i>             Requires: libfltk.so.1.1()(64bit)
+</I>&gt;<i>   You could try using --skip-broken to work around the problem
+</I>&gt;<i> ** Found 4 pre-existing rpmdb problem(s), 'yum check' output follows:
+</I>&gt;<i> libnih-1.0.2-4.fc15.x86_64 has missing requires of
+</I>&gt;<i> libc.so.6(GLIBC_PRIVATE)(64bit)
+</I>&gt;<i> qtparted-0.4.5-26.fc15.x86_64 has missing requires of
+</I>&gt;<i> libparted.so.0()(64bit)
+</I>&gt;<i> ruby-panelapplet2-0.90.4-1.0.fc14.x86_64 has missing requires of
+</I>&gt;<i> libpanel-applet-2.so.0()(64bit)
+</I>&gt;<i> ruby-panelapplet2-0.90.4-1.0.fc14.x86_64 has missing requires of
+</I>&gt;<i> ruby(gnome2) = ('0', '0.90.4', '1.0.fc14')
+</I>&gt;<i>
+</I>&gt;<i> I tried version 3.21.24 but have not been able to get it to find the
+</I>&gt;<i> libraries.  My initial intention was to add links until I captured all the
+</I>&gt;<i> dependencies.   I did a strings fldigi |grep portaudio and discovered it is
+</I>&gt;<i> looking for port audio in /usr/local/lib  Fedora 16 actually puts that file
+</I>&gt;<i> in /usr/lib64.  Performing an
+</I>&gt;<i>        ln -s /usr/lib64/libportaudio.so.2 libportaudio.so.2 in
+</I>&gt;<i> /usr/local/lib did not solve the dependency issues.  My next step will be
+</I>&gt;<i> to hack the local LIBPATH on my system or attempt compiling from source.
+</I>&gt;<i>
+</I>&gt;<i> Fedora 16 has given me mixed results.  It loaded on one (newer) laptop just
+</I>&gt;<i> fine.  Gnome will not come up now on my desktop.  On an older laptop it
+</I>&gt;<i> failed to load properly and (fortunately) automatically reverted to Fedora
+</I>&gt;<i> 15.  So I at least have a fall-back the will allow me to run fldigi.  I am
+</I>&gt;<i> now considering going over to CENTOS, at least on the desktop I use for HAM
+</I>&gt;<i> radio.
+</I>&gt;<i>
+</I>&gt;<i> Respectfully,
+</I>&gt;<i>
+</I>&gt;<i> Robert Howard / AJ4FT
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002114.html">Wefax detection using statistical correlation
+</A></li>
+	<LI>Next message: <A HREF="002117.html">FLDIGI broken by FEDORA 16 installation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2115">[ date ]</a>
+              <a href="thread.html#2115">[ thread ]</a>
+              <a href="subject.html#2115">[ subject ]</a>
+              <a href="author.html#2115">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

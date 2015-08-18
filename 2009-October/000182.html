@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi - 3.11AI posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20-%203.11AI%20posted&In-Reply-To=%3C4ACA644A.2060300%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000181.html">
+   <LINK REL="Next"  HREF="000183.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi - 3.11AI posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20-%203.11AI%20posted&In-Reply-To=%3C4ACA644A.2060300%40bellsouth.net%3E"
+       TITLE="fldigi - 3.11AI posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Oct  5 23:25:30 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000181.html">Hell80 Tones
+</A></li>
+        <LI>Next message: <A HREF="000183.html">fldigi - 3.11AI posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#182">[ date ]</a>
+              <a href="thread.html#182">[ thread ]</a>
+              <a href="subject.html#182">[ subject ]</a>
+              <a href="author.html#182">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Version 3.11AI
+
+    TX Control Code fix
+        * Fix for Ctrl-C, Ctrl-V etc when entered in Tx widget
+          Bug associated with MS implementation
+          Fix should be compatible with all target OS.
+    NBEMS
+        Added NBEMS.files master directory creation
+        Added auto transmit of named file in NBEMS.files/wrap/auto directory
+        filename : wrap_auto_file
+    Hamlib Exception Handling
+        * Removed all C++ exception handling from the class 'rigclass'
+          Modified hamlib.cxx method calling to accept traditional
+          C style error returns.
+    RigCAT mods
+        * on WIN32 platform - reinitialize commport when driver fails
+          to be responsive.  Associated with some cheap USB dongle
+          drivers on XP / Vista.
+        * Modified serial i/o to accommodate transceivers that send
+          unsolicited data streams - typical of Icom 7... series when
+          transceiver CI-V port is set to &quot;Transceive ON&quot;.
+        * Corrected computed read after write delay.
+
+You should see improved performance of the rigCAT interface.  Please 
+report any significant changes .. good or bad!
+
+Hamlib would crash fldigi on MS XP and Vista (only two I can test).  The 
+Hamlib modification corrects that bug.
+
+NBEMS mod anticipates a change to the way that files are passed between 
+fldigi, flarq, wrap and flics.  When you start 3.13AI it will create a 
+new directory / folder in your home directory named NBEMS.files.  It 
+will also create a set of sub-directories in NBEMS.files.
+
+Fldigi would crash on MS XP and Vista if any control code other than 
+Ctl-T or Ctl-R was entered at the keyboard when the Tx entry widget had 
+focus.  Please test this on your systems and let me know if you still 
+see the seg fault (crash in MS vernacular).
+
+    * <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AI.tar.gz">http://www.w1hkj.com/friday/fldigi-3.13AI.tar.gz</A>
+    * <A HREF="http://www.w1hkj.com/friday/fldigi-3.11AI.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.11AI.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/friday/fldigi-3.11AI.npa.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.11AI.npa.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AI_setup.exe">http://www.w1hkj.com/friday/fldigi-3.13AI_setup.exe</A>
+
+
+73, Dave, W1HKJ
+for the development team.
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091005/69125b79/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091005/69125b79/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000181.html">Hell80 Tones
+</A></li>
+	<LI>Next message: <A HREF="000183.html">fldigi - 3.11AI posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#182">[ date ]</a>
+              <a href="thread.html#182">[ thread ]</a>
+              <a href="subject.html#182">[ subject ]</a>
+              <a href="author.html#182">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

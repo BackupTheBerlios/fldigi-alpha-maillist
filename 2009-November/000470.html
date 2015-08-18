@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.13BC Hamlib issue and Fix
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.13BC%20Hamlib%20issue%20and%20Fix&In-Reply-To=%3CC72970A4.7099%25aa5vu%40arrl.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000468.html">
+   <LINK REL="Next"  HREF="000471.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.13BC Hamlib issue and Fix</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.13BC%20Hamlib%20issue%20and%20Fix&In-Reply-To=%3CC72970A4.7099%25aa5vu%40arrl.net%3E"
+       TITLE="3.13BC Hamlib issue and Fix">aa5vu at arrl.net
+       </A><BR>
+    <I>Wed Nov 18 16:36:36 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000468.html">fldigi-3.13BC for Win32 reposted
+</A></li>
+        <LI>Next message: <A HREF="000471.html">3.13BC is good on Fedora 12
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#470">[ date ]</a>
+              <a href="thread.html#470">[ thread ]</a>
+              <a href="subject.html#470">[ subject ]</a>
+              <a href="author.html#470">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>When I first downloaded fldigi-3.13BC.dmg it worked fine.  This morning
+hamlib was failing to load with the following Event log notes:
+
+Q: main: fldigi 3.13BC log started on Wed Nov 18 07:47:51 2009
+E: show_error: hamlib_init: IO error
+E: show_error: hamlib_init: IO error
+E: show_error: hamlib_init: IO error
+
+I opened the Rig Control panel and tried several times to initialize
+and and it would not initialize.  With a closer look the problem seems
+to be with the options under the Device selector.  The normal options
+I was used to seeing were not listed. The selector only displayed
+the Bluetooth options and there was nothing for my USA28X.
+
+At this point it became semi-obvious to me that fldigi was not
+seeing my Keyspan USA-28X (Serial to USB) adapter.  Maybe that is
+what the Event log was trying to tell me with an IO error note.
+
+At this point, I rebooted the iMac (OS X 10.6.2), disconnected the
+Adapter&#185;s USB and plugged it in again. Started fldigi-3.13BC and Bingo
+the hamlib was working perfect.
+
+The purpose of this message is to suggest users having Hamlib or
+RigCAT issues to first reboot the computer to be sure your adapter
+is really connected and being recognized before messing with fldigi
+settings.
+
+Dave, you may want to consider an Event log error note saying
+something like Specified Device Not Detected or No Device
+Detected?  I was lost on host to address an IO error message.
+
+All is well and 3.13BC is working FB now.
+
+
+73 Dick AA5VU
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000468.html">fldigi-3.13BC for Win32 reposted
+</A></li>
+	<LI>Next message: <A HREF="000471.html">3.13BC is good on Fedora 12
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#470">[ date ]</a>
+              <a href="thread.html#470">[ thread ]</a>
+              <a href="subject.html#470">[ subject ]</a>
+              <a href="author.html#470">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI: two experimental features to improve CW detection and	decoding
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%3A%20two%20experimental%20features%20to%20improve%20CW%20detection%20and%0A%09decoding&In-Reply-To=%3CCACMWOgtqpibCpfkFggji0FcQ9OQ519P3XmJ2otGw4QP-qt9V_g%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002307.html">
+   <LINK REL="Next"  HREF="002309.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI: two experimental features to improve CW detection and	decoding</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%3A%20two%20experimental%20features%20to%20improve%20CW%20detection%20and%0A%09decoding&In-Reply-To=%3CCACMWOgtqpibCpfkFggji0FcQ9OQ519P3XmJ2otGw4QP-qt9V_g%40mail.gmail.com%3E"
+       TITLE="FLDIGI: two experimental features to improve CW detection and	decoding">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Tue May 15 13:57:14 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002307.html">FLDIGI: two experimental features to improve CW detection and	decoding
+</A></li>
+        <LI>Next message: <A HREF="002309.html">FLDIGI: CW matched filter and Self Organizing Map decoding	experimental features
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2308">[ date ]</a>
+              <a href="thread.html#2308">[ thread ]</a>
+              <a href="subject.html#2308">[ subject ]</a>
+              <a href="author.html#2308">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi
+
+On Tue, May 15, 2012 at 12:20 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mauri at innomore.com</A> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mauri at innomore.com</A>&gt; wrote:
+&gt;<i> Hi Remi
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Perhaps you can help with logistics. I don't have git installed in the
+</I>&gt;<i> development sandbox environment.
+</I>
+No prob with logistics. I attached a script in case you would like to
+download the latest version and be more autonomous.
+
+
+
+&gt;<i>
+</I>&gt;<i> I am attaching the fldigi_mfilter.tar file with sources
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> pre-alpha working version of matched filter is in the following FLDIGI files
+</I>&gt;<i> - cw.cxx &#160; &#160; &#160; &#160; &#160;// SOM decoding and matched filter calls added here
+</I>&gt;<i>
+</I>&gt;<i> - cw.h
+</I>&gt;<i>
+</I>&gt;<i> - mfilt.cxx &#160; &#160; &#160;// matched filter code - this is a new file in src/filters
+</I>&gt;<i> &#160; &#160;(need to add to make file)
+</I>&gt;<i> - mfilt.h &#160; &#160; &#160; &#160;// definitions for the above
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I also changed these files to add UI
+</I>&gt;<i> -confdialog.fl
+</I>
+&gt;<i> -confdialog.cxx
+</I>&gt;<i> - configuration.h
+</I>These two files normally do not need to be modified. One just need to
+type &quot;make flgen&quot; : Then they are generated out of confdialog.fl.
+
+I'll have a look tonight.
+
+Do you want me to store the code in a specific commit (In my branch
+pu/rc and will add your name in the sources) ? Later, if you want to
+have your branch, you can take your code and change it as you want.
+
+Remi
+
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> You may want to run a full diff to&#160; fldigi-3.21.41 source code
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 73 de Mauri, &#160;AG1LE
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On May 15, 2012 at 5:57 AM Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Sounds great.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Did you check in your code on a Berlios &quot;GIT&quot; branch ? It might help
+</I>&gt;&gt;<i> other developers to see your code.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Remi
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Tue, May 15, 2012 at 5:24 AM, Mauri Niininen &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mauri at innomore.com</A>&gt;
+</I>&gt;&gt;<i> wrote:
+</I>&gt;&gt;<i> &gt; I have implemented two new experimental features to improve CW detection
+</I>&gt;&gt;<i> &gt; and
+</I>&gt;&gt;<i> &gt; decoding capabilities in FLDIGI softare.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; 1) Matched Filter &#160;feature improves signal-to-noise making barely
+</I>&gt;&gt;<i> &gt; audible
+</I>&gt;&gt;<i> &gt; morse code detection &#160;to work better in FLDIGI &#160;CW mode.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; 2) Self Organized Map feature is using an artificial neural network
+</I>&gt;&gt;<i> &gt; algorithm from SOM (see <A HREF="http://en.wikipedia.org/wiki/Self-organizing_map">http://en.wikipedia.org/wiki/Self-organizing_map</A>
+</I>&gt;&gt;<i> &gt; )
+</I>&gt;&gt;<i> &gt; to calculate best matching codebook entry from input vector using
+</I>&gt;&gt;<i> &gt; Euclidian
+</I>&gt;&gt;<i> &gt; distance method.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; I have documented these experimental features in my blog as well as test
+</I>&gt;&gt;<i> &gt; results:
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; <A HREF="http://ag1le.blogspot.com/2012/05/fldigi-adding-matched-filter-feature-to.html">http://ag1le.blogspot.com/2012/05/fldigi-adding-matched-filter-feature-to.html</A>
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; The software is pre alpha quality and not ready for broader
+</I>&gt;&gt;<i> &gt; distribution.
+</I>&gt;&gt;<i> &gt; If you have interest in testing/improving this software let me know.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; 73 de
+</I>&gt;&gt;<i> &gt; Mauri &#160; AG1LE_______________________________________________
+</I>&gt;&gt;<i> &gt; fldigi-alpha mailing list
+</I>&gt;&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: FldigiCreationEng.sh
+Type: application/x-sh
+Size: 1617 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120515/ac45736b/attachment.sh">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120515/ac45736b/attachment.sh</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002307.html">FLDIGI: two experimental features to improve CW detection and	decoding
+</A></li>
+	<LI>Next message: <A HREF="002309.html">FLDIGI: CW matched filter and Self Organizing Map decoding	experimental features
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2308">[ date ]</a>
+              <a href="thread.html#2308">[ thread ]</a>
+              <a href="subject.html#2308">[ subject ]</a>
+              <a href="author.html#2308">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

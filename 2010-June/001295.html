@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi-3.21.17 Ungraceful Failure
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi-3.21.17%20Ungraceful%20Failure&In-Reply-To=%3CC84912D6.10594%25aa5vu%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001294.html">
+   <LINK REL="Next"  HREF="001296.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi-3.21.17 Ungraceful Failure</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi-3.21.17%20Ungraceful%20Failure&In-Reply-To=%3CC84912D6.10594%25aa5vu%40att.net%3E"
+       TITLE="Fldigi-3.21.17 Ungraceful Failure">aa5vu at att.net
+       </A><BR>
+    <I>Thu Jun 24 20:49:10 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001294.html">3.20.17 posted on main web page
+</A></li>
+        <LI>Next message: <A HREF="001296.html">Fldigi-3.21.17 Ungraceful Failure
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1295">[ date ]</a>
+              <a href="thread.html#1295">[ thread ]</a>
+              <a href="subject.html#1295">[ subject ]</a>
+              <a href="author.html#1295">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I was running fldigi-3.20.17.dmg and had to change back
+to fldigi-3.21.0AF.dmg for what started as ungraceful rig
+control failures and later tuned into what I suspect may
+ben an issue with how 3.20.17 writes or reads the
+fldigi_def.xml file.
+
+The problems started when I was in 3.20.17 in SSB mode
+logging a brief six meter opening.  All of a sudden I got
+spinning beach ball (Mac slang for a fldigi application hang).
+I finally had to use the Mac OS X Force Quit to clear the hang
+and when I tried to start 3.20.17 again, it hung again.  It was
+hanging while trying to write an event to the event log.
+
+I rebooted (a Mac restart) and got 3.20.17 to run then it hung
+again due to a rig control failure and I use hamlib that has
+been working FB.  I then reverted to fldigi-3.21.0AF.dmg and
+it worked perfect with hamlib.
+
+Since everything was working okay with the old alpha version,
+I quit and tried to 3.20.17 again and it took FOREVER to start
+and generated the attached  status_log.txt error message that
+says:
+
+E: show_error: Get Mode: Communication timed out
+
+I then had a hard time exiting 3.21.17.  Again, it seemed to
+take forever to close. I restarted using the older
+fldigi-3.21.0AF.dmg and it failed for the same reason.
+
+Upon examination of the fldigi_def.xml file, I suspected there may
+be an issue with the way 3.21.17  was writing or reading the Saved
+Configuration preferences to the file.
+
+As a test, I trashed the fldigi_def.xml file and used a backup save
+from before the 3.20.17 release that worked perfect with 3.21.0AF.
+When I did a restart using 3.21.0AF, all worked fine. I was not sure
+if being in SSB mode may have caused the problem so I changed to
+RTTY and Saved the Configuration.  Fldigi 3.21.0AF then restarted
+perfect.  
+
+Figuring I may have just had a bad fldigi_def.xml file, I then
+restarted using 2.20.17 and noticed it came up in THOR 5 mode
+rather than the saved RTTY.  I then changed the mode to RTTY
+and Saved the Config again.... assuming 3.20.17 would write
+RTTY to the fldigi_def.xml file.  I quit and tried to restart 3.20.17
+and it came up in THOR 5 (that I have never used).
+
+I suspect there may be an issue in 3.20.17 on the way it writes
+or reads the fldigi_def.xml file and don&#185;t understand why it opens
+in THOR 5 &#173; that I never use?
+
+FYI, I have reverted to fldigi-3.21.0AF.dmg for daily use and it
+has been working good.  Needless to say I am a little gun shy of 3.20.17.
+
+Has anyone notice an issue with the way 3.20.17 writes or
+reads the fldigi_def.xml file?
+
+
+73 Dick AA5VU
+
+
+
+
+
+
+
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100624/d748cb31/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100624/d748cb31/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: status_log.txt
+Type: application/octet-stream
+Size: 851 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100624/d748cb31/attachment.obj">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100624/d748cb31/attachment.obj</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001294.html">3.20.17 posted on main web page
+</A></li>
+	<LI>Next message: <A HREF="001296.html">Fldigi-3.21.17 Ungraceful Failure
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1295">[ date ]</a>
+              <a href="thread.html#1295">[ thread ]</a>
+              <a href="subject.html#1295">[ subject ]</a>
+              <a href="author.html#1295">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

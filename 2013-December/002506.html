@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> New Bayesian Morse decoder for FLDIGI available for alpha testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2013-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Bayesian%20Morse%20decoder%20for%20FLDIGI%20available%20for%20alpha%20testing&In-Reply-To=%3CCACMWOguxA9phvR%3D%2Be0hosP6AHyFY25zdmRoB8v9NHAQeHC6u0w%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002498.html">
+   <LINK REL="Next"  HREF="002508.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>New Bayesian Morse decoder for FLDIGI available for alpha testing</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Bayesian%20Morse%20decoder%20for%20FLDIGI%20available%20for%20alpha%20testing&In-Reply-To=%3CCACMWOguxA9phvR%3D%2Be0hosP6AHyFY25zdmRoB8v9NHAQeHC6u0w%40mail.gmail.com%3E"
+       TITLE="New Bayesian Morse decoder for FLDIGI available for alpha testing">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Thu Dec 26 22:21:13 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002498.html">New Bayesian Morse decoder for FLDIGI  available for alpha testing
+</A></li>
+        <LI>Next message: <A HREF="002508.html">New Bayesian Morse decoder for FLDIGI  available for alpha testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2506">[ date ]</a>
+              <a href="thread.html#2506">[ thread ]</a>
+              <a href="subject.html#2506">[ subject ]</a>
+              <a href="author.html#2506">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Mauri
+
+Have you considered generating noise and distortions, to make better tests ?
+
+
+PS: Some advertisement here.
+
+<A HREF="http://ask.slashdot.org/story/13/12/26/1523250/ask-slashdot-how-to-build-a-morse-code-audio-library-for-machine-learning">http://ask.slashdot.org/story/13/12/26/1523250/ask-slashdot-how-to-build-a-morse-code-audio-library-for-machine-learning</A>
+
+
+
+On Wed, Dec 25, 2013 at 4:27 AM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mauri at innomore.com</A> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mauri at innomore.com</A>&gt;wrote:
+
+&gt;<i>   I have been working on a new Bayesian Morse decoder for FLDIGI for a
+</I>&gt;<i> while.
+</I>&gt;<i> The goal was to have a CW decoder that adapts better to different
+</I>&gt;<i> operators rhytms, sudden speed changes, signal fluctuations and noise and
+</I>&gt;<i> still is able to decode Morse code fairly accurately.
+</I>&gt;<i>
+</I>&gt;<i> While this software is not perfect and has some bugs I am happy to release
+</I>&gt;<i> this brand new version for alpha testing.  I finished the software
+</I>&gt;<i> integration to FLDIGI v3.21.75 and spent few hours today listening bands.
+</I>&gt;<i> Below is a small example of W1AW code bulletin at 3.58105 MHz  received
+</I>&gt;<i> with KX3 and a side by side comparison of legacy CW decoder  vs  Bayesian
+</I>&gt;<i> decoder:
+</I>&gt;<i> <A HREF="http://ag1le.blogspot.com/2013/12/new-morse-decoder-part-2.html">http://ag1le.blogspot.com/2013/12/new-morse-decoder-part-2.html</A>
+</I>&gt;<i>
+</I>&gt;<i> The full source code is available in here:  <A HREF="http://www.w1hkj.com/ag1le">http://www.w1hkj.com/ag1le</A>
+</I>&gt;<i>
+</I>&gt;<i> I would like to get some alpha testers who are not afraid of compiling
+</I>&gt;<i> this code from sources,  playing with it, breaking it and hopefully also
+</I>&gt;<i> helping me to find the bugs.
+</I>&gt;<i> For example  - the noise level estimator (noise.c) needs some serious
+</I>&gt;<i> work.  If you have a algorithm that does the job better this would be one
+</I>&gt;<i> place to start improving.  Also, if you know Viterbi or Kalman filter
+</I>&gt;<i> algorithms like your pockets I would like to get help fixing a bug that
+</I>&gt;<i> appears in posterior probability calculations in probp.c occasionally.
+</I>&gt;<i>
+</I>&gt;<i> Anyways,  happy holidays for all FLDIGI users and hope to work you over
+</I>&gt;<i> the radio.
+</I>&gt;<i>
+</I>&gt;<i> 73
+</I>&gt;<i> Mauri AG1LE
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20131226/ccf16b64/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20131226/ccf16b64/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002498.html">New Bayesian Morse decoder for FLDIGI  available for alpha testing
+</A></li>
+	<LI>Next message: <A HREF="002508.html">New Bayesian Morse decoder for FLDIGI  available for alpha testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2506">[ date ]</a>
+              <a href="thread.html#2506">[ thread ]</a>
+              <a href="subject.html#2506">[ subject ]</a>
+              <a href="author.html#2506">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

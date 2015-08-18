@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> First foray in to Linux- FLdigi diffefrencs ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20First%20foray%20in%20to%20Linux-%20FLdigi%20diffefrencs%20%3F&In-Reply-To=%3C12EAA128-806F-42F8-A1C1-401EB5A91AE5%40wb4whd.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000251.html">
+   <LINK REL="Next"  HREF="000252.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>First foray in to Linux- FLdigi diffefrencs ?</H1>
+    <B>William Douglas</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20First%20foray%20in%20to%20Linux-%20FLdigi%20diffefrencs%20%3F&In-Reply-To=%3C12EAA128-806F-42F8-A1C1-401EB5A91AE5%40wb4whd.com%3E"
+       TITLE="First foray in to Linux- FLdigi diffefrencs ?">william at wb4whd.com
+       </A><BR>
+    <I>Sat Oct 17 21:59:56 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000251.html">First foray in to Linux- FLdigi diffefrencs ?
+</A></li>
+        <LI>Next message: <A HREF="000252.html">First foray in to Linux- FLdigi diffefrencs ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#256">[ date ]</a>
+              <a href="thread.html#256">[ thread ]</a>
+              <a href="subject.html#256">[ subject ]</a>
+              <a href="author.html#256">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>True I didnt mean leave fat32 but fat32 or unformated linux works with  
+much better. Ubuntu will re-format for it's structure.
+
+Sent from my iPhone
+
+On Oct 17, 2009, at 3:51 PM, Rick Kunath &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">k9ao at charter.net</A>&gt; wrote:
+
+&gt;<i> On Saturday 17 October 2009 3:06:19 pm William Douglas wrote:
+</I>&gt;&gt;<i> In order to properly install dual boot with XP and Ubuntu you need to
+</I>&gt;&gt;<i> split the hard drive using a partition utility and then format the
+</I>&gt;&gt;<i> empty partition as FAT32 to install ubuntu to it. Ubuntu cannot set  
+</I>&gt;&gt;<i> up
+</I>&gt;&gt;<i> on a NTFS drive which is XP's default file structure.
+</I>&gt;<i>
+</I>&gt;<i> You really don't need to format the new second partition at all after
+</I>&gt;<i> shrinking the existing NTFS partition and creating the new one. Just  
+</I>&gt;<i> leave it
+</I>&gt;<i> unformatted and let the Linux installer format it to whatever file  
+</I>&gt;<i> system you
+</I>&gt;<i> decide to use. That would be ReiserFS for me here. It will create the
+</I>&gt;<i> partition structure for you.
+</I>&gt;<i>
+</I>&gt;<i> FAT32 is not a journaling file system, so you would not want to use  
+</I>&gt;<i> that for
+</I>&gt;<i> Linux anyway and I suspect the Linux installer will just reformat  
+</I>&gt;<i> that to
+</I>&gt;<i> something appropriate anyway.
+</I>&gt;<i>
+</I>&gt;<i> As to partitioning utilities, Mandriva's installer does a fine job at
+</I>&gt;<i> repartitioning existing NTFS drives. I don't know about the Ubuntu  
+</I>&gt;<i> installer,
+</I>&gt;<i> I've never tried it. As for pay partitioning utilities, for mixed  
+</I>&gt;<i> Windows and
+</I>&gt;<i> Linux stay (make that run away fast) from Partition Magic. It's a  
+</I>&gt;<i> solid
+</I>&gt;<i> program, but makes the false assumption that *nix partitions must  
+</I>&gt;<i> start on a
+</I>&gt;<i> hard drive cylinder boundary, which is not a requirement and many  
+</I>&gt;<i> don't. If
+</I>&gt;<i> you ever use anything else to work with partitions, or use PM on an  
+</I>&gt;<i> already
+</I>&gt;<i> partitioned partition set up with a *nix partitioning utility or one  
+</I>&gt;<i> that is
+</I>&gt;<i> properly aware, you'll have a blown hard drive. Paragon's Hard drive  
+</I>&gt;<i> Manager
+</I>&gt;<i> is aware of properly handling *nix and other partitions and does not  
+</I>&gt;<i> have the
+</I>&gt;<i> problem of cylinder boundaries that PM does. I own that one, but  
+</I>&gt;<i> mostly just
+</I>&gt;<i> use the Mandriva utility to do the partitioning these days.
+</I>&gt;<i>
+</I>&gt;<i> If you just use the utility to shrink the existing Windows NTFS  
+</I>&gt;<i> partition,
+</I>&gt;<i> leaving the amount of hard drive space that you want free and  
+</I>&gt;<i> unpartitioned,
+</I>&gt;<i> let the Linux installer decide the rest, and then install GRUB  
+</I>&gt;<i> automatically
+</I>&gt;<i> into the MBR, and you will have a dual boot working setup.
+</I>&gt;<i>
+</I>&gt;<i> I do things more complex here because I have many Linux and  
+</I>&gt;<i> Microsoft versions
+</I>&gt;<i> on the same machine. I won't go into that now. It's not hard but  
+</I>&gt;<i> takes just a
+</I>&gt;<i> little more planning and a different bootloader in the MBR chaining  
+</I>&gt;<i> to the
+</I>&gt;<i> individual bootloaders in the various partition's boot partition  
+</I>&gt;<i> root sector.
+</I>&gt;<i>
+</I>&gt;<i> I've had W98, 2K, XP, W7, Solaris 8 and 9, and quite a few Linux  
+</I>&gt;<i> distros all
+</I>&gt;<i> installed and multi-booting on the same machine. I never share home  
+</I>&gt;<i> or other
+</I>&gt;<i> directories across the various Linux distros because the configuration
+</I>&gt;<i> differences are just not worth the needless grief across various  
+</I>&gt;<i> versions of
+</I>&gt;<i> the applications. Hard drives are cheap enough now not trying to get  
+</I>&gt;<i> multiple
+</I>&gt;<i> revisions of apps that have changing configs working is just not  
+</I>&gt;<i> worth the
+</I>&gt;<i> grief. I keep them separate and never have an issue. I do share the  
+</I>&gt;<i> swap
+</I>&gt;<i> partition under Linux.
+</I>&gt;<i>
+</I>&gt;<i> Rick Kunath, k9ao
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000251.html">First foray in to Linux- FLdigi diffefrencs ?
+</A></li>
+	<LI>Next message: <A HREF="000252.html">First foray in to Linux- FLdigi diffefrencs ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#256">[ date ]</a>
+              <a href="thread.html#256">[ thread ]</a>
+              <a href="subject.html#256">[ subject ]</a>
+              <a href="author.html#256">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

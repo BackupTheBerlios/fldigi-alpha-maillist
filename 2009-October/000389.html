@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> flrig 0.9.951 available for testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flrig%200.9.951%20available%20for%20testing&In-Reply-To=%3C4AE8C2CE.40905%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000388.html">
+   <LINK REL="Next"  HREF="000391.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>flrig 0.9.951 available for testing</H1>
+    <B>Walter Fey</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flrig%200.9.951%20available%20for%20testing&In-Reply-To=%3C4AE8C2CE.40905%40web.de%3E"
+       TITLE="flrig 0.9.951 available for testing">walter.fey at web.de
+       </A><BR>
+    <I>Wed Oct 28 23:16:46 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000388.html">flrig 0.9.951 available for testing
+</A></li>
+        <LI>Next message: <A HREF="000391.html">flrig 0.9.951 available for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#389">[ date ]</a>
+              <a href="thread.html#389">[ thread ]</a>
+              <a href="subject.html#389">[ subject ]</a>
+              <a href="author.html#389">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo David,
+
+This version compiles for openSUSE 11.1 but does not work on my 11.1
+x86_64 system. Starting the program from a xterm reports a segmentation
+fault. Unfortunately I have to wait until Friday or Saturday to test it
+on a i586 system. Maybe this makes a difference.
+
+Since about one week I am also testing on openSUSE 11.2RC1. For this
+version I have to use the attached util_cxx.diff to solve the first
+compile problem. But a few step later the next error stopped
+compilation. I attached also the build log.
+
+Fldigi and Flarq compile without any warning or error on openSUSE 11.2.
+For Wrap I had to use a patch similar to the one I tried for Flrig. This
+patch is only for 11.2, the older versions compile only unpatched. The
+latest releases will be available for openSUSE 11.2 at
+<A HREF="http://download.opensuse.org/repositories/hamradio/">http://download.opensuse.org/repositories/hamradio/</A>
+in a few hours.
+
+The test versions are available at
+<A HREF="http://download.opensuse.org/repositories/home:/dl8fcl/">http://download.opensuse.org/repositories/home:/dl8fcl/</A>
+
+73, Walter DL8FCL
+
+
+w1hkj schrieb:
+&gt;<i> Flrig is a separate rig control program that can be also run as an
+</I>&gt;<i> adjunct to fldigi on Linux and Windows platforms (no OS X yet).  It
+</I>&gt;<i> currently supports the following transceivers
+</I>&gt;<i>
+</I>&gt;<i> 1.  FT100D          11. IC756PRO-II         21. TT516
+</I>&gt;<i> 2.  FT450           12. IC756PRO-II         22. TT538
+</I>&gt;<i> 3.  FT817           13. IC7000              23. TT550
+</I>&gt;<i> 4.  FT857D          14. IC7200              24. TT563
+</I>&gt;<i> 5.  FT2000          15. IC7700
+</I>&gt;<i> 6.  IC706MKIIG      16. IC910H
+</I>&gt;<i> 7.  IC728           17. K2
+</I>&gt;<i> 8.  IC735           18. K3
+</I>&gt;<i> 9.  IC746           19. TS140
+</I>&gt;<i> 10. IC746PRO        20. TS2000
+</I>&gt;<i>
+</I>&gt;<i> The program configures its primary dialog in accordance with the
+</I>&gt;<i> capability of the transceiver.  The user only sees and can operate the
+</I>&gt;<i> controls that are relevant to the transceiver being controlled. 
+</I>&gt;<i> Controls not available are either hidden or grayed out.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Older Icom Model
+</I>&gt;<i> 	
+</I>&gt;<i>
+</I>&gt;<i> Modern Icom HF/VHF all mode
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Low cost Yaesu HF all mode
+</I>&gt;<i> 	
+</I>&gt;<i>
+</I>&gt;<i> TenTec - Pegasus - Computer Only Transceiver
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> If you use the program with fldigi, then fldigi needs to start first
+</I>&gt;<i> and finish last as it acts as a socket server to the flrig program. 
+</I>&gt;<i> When used together flrig sends vital data to fldigi respecting the
+</I>&gt;<i> transceiver characteristic, TRANSCEIVER MODES / TRANSCEIVER
+</I>&gt;<i> BANDWIDTHS.  For some transceivers the bandwidth selection is mode
+</I>&gt;<i> dependent.  flrig manages that relationship.  You tell fldigi to work
+</I>&gt;<i> with flrig by selecting the rig control called &quot;xmlrpc&quot; from the rig
+</I>&gt;<i> control configuration tabs.
+</I>&gt;<i>
+</I>&gt;<i> Most, but not all of the supported transceivers have been tested. 
+</I>&gt;<i> Remember that you will be testing alpha code if you choose to try this
+</I>&gt;<i> program.
+</I>&gt;<i>
+</I>&gt;<i> The s/n and power out meters will be active if and only if your
+</I>&gt;<i> transceiver supports sending that data.
+</I>&gt;<i>
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.951.zip">http://www.w1hkj.com/alpha/flrig-0.9.951.zip</A> - windows executable
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.951.tgz">http://www.w1hkj.com/alpha/flrig-0.9.951.tgz</A> - linux binary
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.951.src.tgz">http://www.w1hkj.com/alpha/flrig-0.9.951.src.tgz</A> - source code
+</I>&gt;<i>     * <A HREF="http://www.w1hkj.com/alpha/rig.png">http://www.w1hkj.com/alpha/rig.png</A> - image suitable for linux
+</I>&gt;<i>       desktop launcher
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> This body part will be downloaded on demand.
+</I>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: util_cxx.diff
+Type: text/x-patch
+Size: 425 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091028/534e91fd/attachment.bin">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091028/534e91fd/attachment.bin</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: wrap.cxx.diff
+Type: text/x-patch
+Size: 281 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091028/534e91fd/attachment-0001.bin">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091028/534e91fd/attachment-0001.bin</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: build.log
+Type: text/x-log
+Size: 19335 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091028/534e91fd/attachment-0002.bin">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091028/534e91fd/attachment-0002.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000388.html">flrig 0.9.951 available for testing
+</A></li>
+	<LI>Next message: <A HREF="000391.html">flrig 0.9.951 available for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#389">[ date ]</a>
+              <a href="thread.html#389">[ thread ]</a>
+              <a href="subject.html#389">[ subject ]</a>
+              <a href="author.html#389">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

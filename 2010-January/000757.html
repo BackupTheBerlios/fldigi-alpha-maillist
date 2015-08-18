@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Fwd: Re: [fldigi] #4: Segfault info following fldigi 3.13BS crash	after	running for approx 20 Hrs.]
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20%5BFwd%3A%20Re%3A%20%5Bfldigi%5D%20%234%3A%20Segfault%20info%20following%20fldigi%203.13BS%20crash%0A%09after%09running%20for%20approx%2020%20Hrs.%5D&In-Reply-To=%3C4B644ED0.805%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000756.html">
+   <LINK REL="Next"  HREF="000761.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Fwd: Re: [fldigi] #4: Segfault info following fldigi 3.13BS crash	after	running for approx 20 Hrs.]</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20%5BFwd%3A%20Re%3A%20%5Bfldigi%5D%20%234%3A%20Segfault%20info%20following%20fldigi%203.13BS%20crash%0A%09after%09running%20for%20approx%2020%20Hrs.%5D&In-Reply-To=%3C4B644ED0.805%40bellsouth.net%3E"
+       TITLE="[Fwd: Re: [fldigi] #4: Segfault info following fldigi 3.13BS crash	after	running for approx 20 Hrs.]">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Jan 30 16:22:56 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000756.html">RSID on playback
+</A></li>
+        <LI>Next message: <A HREF="000761.html">[Fwd: Re: [fldigi] #4: Segfault info following fldigi 3.13BS crash after	running for approx 20 Hrs.]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#757">[ date ]</a>
+              <a href="thread.html#757">[ thread ]</a>
+              <a href="subject.html#757">[ subject ]</a>
+              <a href="author.html#757">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Anyone else seeing this problem?
+
+Dave
+
+-------- Original Message --------
+Subject: 	Re: [fldigi] #4: Segfault info following fldigi 3.13BS crash 
+after running for approx 20 Hrs.
+Date: 	Sat, 30 Jan 2010 15:03:21 -0000
+From: 	fldigi &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">trac at fedorahosted.org</A>&gt;
+Reply-To: 	<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">nobody at fedoraproject.org</A>
+CC: 	<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-devel at lists.berlios.de</A>
+References: 	&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">066.4e71029dacfd481f08843099e327b6a7 at fedorahosted.org</A>&gt;
+
+
+
+#4: Segfault info following fldigi 3.13BS crash after running for approx 20
+Hrs.
+-------------------------------------+--------------------------------------
+  Reporter:  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">linuxradio at giastar.com</A>  |       Owner:                                          
+      Type:  defect                  |      Status:  new                                     
+ Milestone:                          |   Component:  general                                 
+   Version:  devel                   |    Severity:  important                               
+Resolution:                          |    Keywords:  segfault pa_atomic_load pulsecore ubuntu
+-------------------------------------+--------------------------------------
+Comment (by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">peter at giastar.com</A>):
+
+ Replying to [comment:2 <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">peter at giastar.com</A>]:
+ I recompiled without pulseaudio support and after a day or so I again got
+ the &quot;pulsecore/memblock.c:188, function stat_remove()&quot; segfault! So this
+ appears to be an Ubuntu problem. I purged pulseaudio from Ubuntu 9.10 and
+ that fixed the periodic crashes, however it also broke a few Ubuntu apps.
+ So I installed Xubuntu, which isn't tainted with pulseaudio, instead.
+ Since then fldigi has run for a couple of days without crashing. So I will
+ be sticking to Xubuntu in future - it's faster and less bloated than
+ Ubuntu/Gnome, and I've grown to like Xfce.
+
+ However, I have again just experienced the &quot;max processor load&quot; problem
+ after running for a couple of days. The only solution to this appears to
+ be to kill fldigi and restart, as once this happens Fldigi slows to a
+ crawl or freezes completely. The mode was Olivia at the time. Is there any
+ other info I can usefully gather relatedm to this problem?
+
+-- 
+Ticket URL: &lt;<A HREF="https://fedorahosted.org/fldigi/ticket/4#comment:3">https://fedorahosted.org/fldigi/ticket/4#comment:3</A>&gt;
+fldigi &lt;<A HREF="http://www.w1hkj.com/Fldigi.html">http://www.w1hkj.com/Fldigi.html</A>&gt;
+Digital modem program for radio amateurs
+_______________________________________________
+fldigi-devel mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-devel at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100130/f1b099d2/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100130/f1b099d2/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000756.html">RSID on playback
+</A></li>
+	<LI>Next message: <A HREF="000761.html">[Fwd: Re: [fldigi] #4: Segfault info following fldigi 3.13BS crash after	running for approx 20 Hrs.]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#757">[ date ]</a>
+              <a href="thread.html#757">[ thread ]</a>
+              <a href="subject.html#757">[ subject ]</a>
+              <a href="author.html#757">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

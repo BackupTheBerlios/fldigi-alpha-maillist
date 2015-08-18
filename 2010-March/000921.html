@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Beta test announcement
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Beta%20test%20announcement&In-Reply-To=%3C4B9139F6.7070007%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000920.html">
+   <LINK REL="Next"  HREF="001031.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Beta test announcement</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Beta%20test%20announcement&In-Reply-To=%3C4B9139F6.7070007%40bellsouth.net%3E"
+       TITLE="Beta test announcement">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Mar  5 18:05:58 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000920.html">Beta code posted
+</A></li>
+        <LI>Next message: <A HREF="001031.html">Squelch Check Not Visible
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#921">[ date ]</a>
+              <a href="thread.html#921">[ thread ]</a>
+              <a href="subject.html#921">[ subject ]</a>
+              <a href="author.html#921">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+    News &amp; Updates - beta test program for new releases
+
+    *
+
+
+            fldigi / flarq &lt;<A HREF="http://www.w1hkj.com/Fldigi.html">http://www.w1hkj.com/Fldigi.html</A>&gt; - digital
+            modem / ARQ file transfer
+
+    *
+
+
+            flwrap &lt;<A HREF="http://www.w1hkj.com/Flwrap/index.html">http://www.w1hkj.com/Flwrap/index.html</A>&gt; - file
+            encapsulation / compression
+
+    *
+
+
+            flics &lt;<A HREF="http://www.w1hkj.com/flics-quick-guide/index.html">http://www.w1hkj.com/flics-quick-guide/index.html</A>&gt; -
+            ICS213 manager,  ICS file compression &amp; encapsulation
+
+    *
+
+
+            flrig &lt;<A HREF="http://www.w1hkj.com/flrig-help/index.html">http://www.w1hkj.com/flrig-help/index.html</A>&gt; - rig
+            control program, cooperates with fldigi
+
+    *
+
+
+            Beta download page &lt;<A HREF="http://www.w1hkj.com/beta.html">http://www.w1hkj.com/beta.html</A>&gt;
+
+Changes in fldigi from the b2 beta release
+
+Version 3.20.0b3
+   
+Beta release
+    Add custom RTTY shift option
+      Allow the RTTY carrier shift to be any value between 10 and 1000 Hz.
+      Signed-off-by: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">vcs at enotty.net</A>&gt;
+
+    Add XML-RPC methods for Olivia
+      * modem.olivia.get_bandwidth
+      * modem.olivia.set_bandwidth
+      * modem.olivia.get_tones
+      * modem.olivia.set_tones
+
+    Modify FText add() methods
+      Use efficient versions of add() for all FText derived classes except
+      FTextRX (which receives text one character at a time anyway).  This
+      greatly reduces the Event log window's draw overhead.
+
+    Fix bandwidth marker
+      Keep bandwidth marker visible at the end of the waterfall
+
+    Olivia Pre/Postamble visibility on waterfall
+      Changed pre/postamble sample block sizes to 512 for passing
+      to ModulateXmtr.  This allows the waterfall FFT to faithfully
+      reproduce the tones on the waterfall.  This change only effects
+      the monitored signal and not the actual transmitted signal
+
+    Empty Call Nag
+      Show message when save log attempted with no call entered
+
+    Initial Configuration
+      Changed Rx text double click to TRUE
+      Changed convert Call to uppercase to TRUE
+
+Changes in flrig from the b1 release
+
+Version 1.0.0b2
+Beta release
+    On Line Help link
+        Added Help/On Line help menu and associated code
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100305/b8d202d2/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100305/b8d202d2/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000920.html">Beta code posted
+</A></li>
+	<LI>Next message: <A HREF="001031.html">Squelch Check Not Visible
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#921">[ date ]</a>
+              <a href="thread.html#921">[ thread ]</a>
+              <a href="subject.html#921">[ subject ]</a>
+              <a href="author.html#921">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

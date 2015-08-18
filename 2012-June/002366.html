@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.45AA posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.45AA%20posted&In-Reply-To=%3C4FED25D6.2090403%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002365.html">
+   <LINK REL="Next"  HREF="002367.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.45AA posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.45AA%20posted&In-Reply-To=%3C4FED25D6.2090403%40bellsouth.net%3E"
+       TITLE="fldigi-3.21.45AA posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Jun 29 05:49:42 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002365.html">ARM build /  BeagleBone and Fldigi
+</A></li>
+        <LI>Next message: <A HREF="002367.html">fldigi-3.21.45AA posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2366">[ date ]</a>
+              <a href="thread.html#2366">[ thread ]</a>
+              <a href="subject.html#2366">[ subject ]</a>
+              <a href="author.html#2366">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/v3.21/">http://www.w1hkj.com/alpha/fldigi/v3.21/</A>
+
+Includes the following changes:
+
+commit ce90378544664d65a850f580dd8d9b7ee2d87450
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jun 28 13:29:55 2012 -0500
+
+     CW Farnsworth
+
+       * Changed method of generating Farnsworth code
+       * Added Farnsworth specifier to WPM macro tag;
+&lt;WPM:WW:FF&gt; WW = WPM, FF = Farnsworth WPM
+
+commit ae08433b0506c4f4ca14137e2a008e7191c8ddf6
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jun 28 10:01:03 2012 -0500
+
+     Merge log records
+
+       * Correction to merge logic for HHMMSS in TIME_ON, TIME_OFF
+       * Fix for possible seg fault during record merging
+
+commit 0ddb867f81bcc8cddbe60802778a49fa5e2780a4
+Author: Leonardo &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">leonardo.masoni at gmail.com</A>&gt;
+Date:   Tue Jun 26 09:50:45 2012 -0500
+
+     Wavefile playback
+
+       * Corrected fault when trying to playback a stereo wavefile
+       * Leonardo is not yet a ham, but credits his interest to
+         his grandfather, I5LAP
+
+This is an example macro usage for the Farnsworth CW generator.  Each 
+wpm 'paris' transmission should be 1 minute in duration.
+
+=============================================
+&lt;MODEM:NULL&gt;
+&lt;!QSY:3579.200:800&gt;
+&lt;TX&gt;
+&lt;!MODEM:CW&gt;
+&lt;!WPM:5:15&gt;&lt;!IDLE:2&gt;5 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris
+&lt;!WPM:10:15&gt;&lt;!IDLE:2&gt;10 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris paris paris paris paris paris
+&lt;!WPM:13:15&gt;&lt;!IDLE:2&gt;13 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris
+&lt;!WPM:15:15&gt;&lt;!IDLE:2&gt;15 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris
+&lt;!WPM:18&gt;&lt;!IDLE:2&gt;18 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris
+&lt;!WPM:20&gt;&lt;!IDLE:2&gt;20 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+&lt;!WPM:25&gt;&lt;!IDLE:2&gt;25 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+paris paris paris paris paris
+&lt;!WPM:30&gt;&lt;!IDLE:2&gt;30 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+&lt;!WPM:35&gt;&lt;!IDLE:2&gt;35 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+paris paris paris paris paris
+&lt;!WPM:40&gt;&lt;!IDLE:2&gt;40 wpm&lt;!IDLE:2&gt;
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+paris paris paris paris paris paris paris paris paris paris paris paris 
+paris paris paris paris paris paris paris paris
+&lt;!WPM:15:15&gt;test complete de &lt;MYCALL&gt; k
+&lt;RX&gt;
+=============================================
+
+73, Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120628/2e4d7762/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120628/2e4d7762/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002365.html">ARM build /  BeagleBone and Fldigi
+</A></li>
+	<LI>Next message: <A HREF="002367.html">fldigi-3.21.45AA posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2366">[ date ]</a>
+              <a href="thread.html#2366">[ thread ]</a>
+              <a href="subject.html#2366">[ subject ]</a>
+              <a href="author.html#2366">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

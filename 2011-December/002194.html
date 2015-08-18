@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI and Packet Operation
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation&In-Reply-To=%3CCAO0qARH5PYaNE4CscF9i-OpU5ptacSP%3Dr_t%3DiDS2bLUjbXfv5g%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002190.html">
+   <LINK REL="Next"  HREF="002200.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI and Packet Operation</H1>
+    <B>Chris</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation&In-Reply-To=%3CCAO0qARH5PYaNE4CscF9i-OpU5ptacSP%3Dr_t%3DiDS2bLUjbXfv5g%40mail.gmail.com%3E"
+       TITLE="FLDIGI and Packet Operation">kc2rgw at gmail.com
+       </A><BR>
+    <I>Fri Dec  9 17:48:04 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002190.html">FLDIGI and Packet Operation
+</A></li>
+        <LI>Next message: <A HREF="002200.html">FLDIGI and Packet Operation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2194">[ date ]</a>
+              <a href="thread.html#2194">[ thread ]</a>
+              <a href="subject.html#2194">[ subject ]</a>
+              <a href="author.html#2194">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>When replying on my phone I forgot that this list doesn't reply to the
+list by default heh.
+
+To summarize a few replies.
+
+Yes I'm fully aware of packet network fragility. When the wind blows
+funny around here we tend to lose most of the regional wide coverage
+digis.  This is why I'm integrating NBEMS into the tool set for the
+local RACES groups.
+
+NBEMS however cannot connect to a database, it is not networking.
+Packet allows for fully networked applications to be on the other end
+of the connection.  We need this functionality...when it's working, to
+run a database that tracks shelter and hospital check ins.
+
+We tend to use FBB messages for sending bulletins about road closings,
+power outages, flooding etc.  This allows the messages to just stay on
+FBB for whenever the field stations can connect and read them.  This
+persistence is a convenience of packet that NBEMS doesn't equal.
+
+However, a LOT of traffic is much better and more easily and
+conveniently handled with NBEMS.  As an augmentation, and the ultimate
+fall back until you go back to voice traffic, NBEMS is great.
+
+NBEMS could in theory send a CSV of people in a given shelter, that
+list being maintained by the shelter op.  The difference then is they
+need to be centralized, sorted, collated and any time the OIC wants a
+head count total we would need to reconfirm the lists from each
+shelter, combine, sort etc again.  With a database, each change is
+made &quot;live&quot; into the database and whenever you dump it, it is the
+current status.
+
+A very minor hurricane activation back in August had three very large
+high schools filled with people.  Thankfully that wasn't my region
+here or it would have been close to 5,000 people I would have had to
+track.  Our packet system if functioning would handle that.  NBEMS in
+CSV files would never cut it for that.
+
+I prefer msg traffic to run over NBEMS, but packet can do things that
+a one-way msg form cannot.  Until NBEMS can &quot;Find where John Smith is
+located?&quot; we will also need to keep packet around.
+
+-- 
+73&#160; de&#160;Chris&#160;-- KC2RGW
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">KC2RGW at W2LI.</A>#NNJ.NJ.USA.NOAM
+------------------------------------------------------------
+&#729;dn &#477;p&#305;s &#647;&#613;&#387;&#305;&#633; &#633;o&#647;&#305;uo&#623; &#633;no&#654; u&#633;n&#647;
+&#477;s&#592;&#477;&#1503;d 's&#305;&#613;&#647; &#387;u&#305;p&#592;&#477;&#633; &#477;&#633;&#592; no&#654; &#607;&#305;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002190.html">FLDIGI and Packet Operation
+</A></li>
+	<LI>Next message: <A HREF="002200.html">FLDIGI and Packet Operation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2194">[ date ]</a>
+              <a href="thread.html#2194">[ thread ]</a>
+              <a href="subject.html#2194">[ subject ]</a>
+              <a href="author.html#2194">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

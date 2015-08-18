@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI and Packet Operation: openpty()
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3C4EE13AA6.5020702%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002174.html">
+   <LINK REL="Next"  HREF="002176.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI and Packet Operation: openpty()</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%20and%20Packet%20Operation%3A%20openpty%28%29&In-Reply-To=%3C4EE13AA6.5020702%40gmail.com%3E"
+       TITLE="FLDIGI and Packet Operation: openpty()">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Thu Dec  8 23:31:02 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002174.html">fldigi-3.22.0BI posted for alpha testing
+</A></li>
+        <LI>Next message: <A HREF="002176.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2175">[ date ]</a>
+              <a href="thread.html#2175">[ thread ]</a>
+              <a href="subject.html#2175">[ subject ]</a>
+              <a href="author.html#2175">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Is there a plan to create a packet interface just like soundmodem does ?
+It uses the Linux function openpty() to 
+create I think a pseudo pty usable by kernel ax25. This interface name 
+is then given to the kernel ax25 operations, like that:
+
+$ cat /etc/ax25/axports
+sm0     F4ECW   1200    255     7       SoundModem1 afsk1200
+
+Then this interface becomes usable by applications such : XFBB (aka FBB) 
+or Xastir. It is also possible with ifconfig (Ideally, one needs an 
+AMPRNET IP address: 44.x.y.z) , to run any network application (ftp, 
+telnet ...)
+
+I have no idea how this can be done on Windows and Apple OS but at least 
+on Linux this can be done.
+
+Le 03.09.2011 00:43, Charles Brabham a &#233;crit :
+&gt;<i> I get the impression that Packet mode is a new feature, perhaps not 
+</I>&gt;<i> fully implemented yet.
+</I>&gt;<i> It worked great for me, monitoring HFactivity on the 20m NET105 the 
+</I>&gt;<i> other night.
+</I>&gt;<i> 73 DE Charles, N5PVL
+</I>&gt;<i>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111208/210a6e6e/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111208/210a6e6e/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002174.html">fldigi-3.22.0BI posted for alpha testing
+</A></li>
+	<LI>Next message: <A HREF="002176.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2175">[ date ]</a>
+              <a href="thread.html#2175">[ thread ]</a>
+              <a href="subject.html#2175">[ subject ]</a>
+              <a href="author.html#2175">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

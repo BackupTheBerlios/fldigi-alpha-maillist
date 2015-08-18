@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLARQ
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLARQ&In-Reply-To=%3C4C041A0F.7090800%40salsgiver.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001174.html">
+   <LINK REL="Next"  HREF="001170.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLARQ</H1>
+    <B>David Kleber</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLARQ&In-Reply-To=%3C4C041A0F.7090800%40salsgiver.com%3E"
+       TITLE="FLARQ">davek at salsgiver.com
+       </A><BR>
+    <I>Mon May 31 22:20:31 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001174.html">Rig Control/Freq Display request
+</A></li>
+        <LI>Next message: <A HREF="001170.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1244">[ date ]</a>
+              <a href="thread.html#1244">[ thread ]</a>
+              <a href="subject.html#1244">[ subject ]</a>
+              <a href="author.html#1244">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I'm getting very strange behavior from FLARQ 4.3.1 with FLDIGI 3.20.12 
+on both my Vista desktop and xp netbook.
+
+In testing with my VISTA desktop, trying to connect from another 
+station, I would get the station in the FLARQ window, click connect but 
+get a very long delay from when I hit the button and when it 
+transmitted. After successfully connecting, my machine would 
+consistently double with the other connected station.
+
+Today I decided to run a test between the netbook and the desktop and 
+when I clicked the beacon button on the netbook, it went it did not 
+generate any sound but just went into the beacon timer mode.
+
+Going back to the Desktop I tried hitting the beacon button and it too 
+went into the timer mode... just for the heck of it I decided to go into 
+FLDIGI and switch from PSK250R to BPSK and suddenly FLARQ/FLDIGI started 
+transmitting... I then got an error window pop up and here is the log:
+
+Q: main: fldigi 3.20.12 log started on Mon May 31 16:09:53 2010
+
+Q: log_excluded_modes: RSID (rx) : CW DomEX4 DomEX5 FELDHELL SLOWHELL 
+HELLX5 HELLX9 FSK-HELL FSK-H105 HELL80 MFSK-8 MFSK16 MFSK-32 MFSK-4 
+MFSK-11 MFSK-22 MFSK-31 MFSK-64 BPSK31 BPSK63 BPSK125 BPSK250 BPSK500 
+QPSK31 QPSK63 QPSK125 QPSK250 QPSK500 RTTY THOR4 THOR5 THOR8 THOR11 
+THOR16 THOR22 THROB1 THROB2 THROB4 THRBX1 THRBX2 THRBX4
+Q: log_excluded_modes: RSID (tx) : CW BPSK31 RTTY
+Q: log_excluded_modes: CWID      : CW
+Q: log_excluded_modes: VIDEOID   : CW BPSK31 RTTY
+I: testCommPorts: Found serial port COM1
+I: testCommPorts: Found serial port COM3
+I: open_talker: Talker Server not available
+I: speak: Talker server not available
+E: WriteARQsocket: send: Bad file descriptor
+
+-Dave, KB3FXI
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001174.html">Rig Control/Freq Display request
+</A></li>
+	<LI>Next message: <A HREF="001170.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1244">[ date ]</a>
+              <a href="thread.html#1244">[ thread ]</a>
+              <a href="subject.html#1244">[ subject ]</a>
+              <a href="author.html#1244">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

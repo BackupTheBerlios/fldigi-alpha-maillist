@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Hamlib vs. RigCAT with 3.21.0AK
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hamlib%20vs.%20RigCAT%20with%203.21.0AK&In-Reply-To=%3C4C616305.6060902%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001359.html">
+   <LINK REL="Next"  HREF="001363.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Hamlib vs. RigCAT with 3.21.0AK</H1>
+    <B>Ed</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hamlib%20vs.%20RigCAT%20with%203.21.0AK&In-Reply-To=%3C4C616305.6060902%40gmail.com%3E"
+       TITLE="Hamlib vs. RigCAT with 3.21.0AK">autek2 at gmail.com
+       </A><BR>
+    <I>Tue Aug 10 16:32:37 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001359.html">Hamlib vs. RigCAT with 3.21.0AK
+</A></li>
+        <LI>Next message: <A HREF="001363.html">Hamlib vs. RigCAT with 3.21.0AK
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1360">[ date ]</a>
+              <a href="thread.html#1360">[ thread ]</a>
+              <a href="subject.html#1360">[ subject ]</a>
+              <a href="author.html#1360">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 08/10/2010 09:28 AM, Eric Keerbs wrote:
+&gt;<i> Ed--
+</I>&gt;<i>
+</I>&gt;<i> I have all of the suggested settings below, though I have been
+</I>&gt;<i> playing with different values for retry interval, # of retries,
+</I>&gt;<i> and delay to determine if this would change anything. So far,
+</I>&gt;<i> no luck.
+</I>
+Go back to my suggested settings, increase the write delay in increments 
+of 10 and see what you get.
+
+
+&gt;<i> With no RTS/CTS or DTR/DSR lines, it did not make sense to
+</I>&gt;<i> have any of those boxes checked.
+</I>
+Your are correct, none are needed.
+
+
+&gt;<i> The interface is based on one that I found on the web, which
+</I>&gt;<i> was in turn based on one in the ARRL Handbook. I am using an
+</I>&gt;<i> RS-232 chip with two Tx and two Rx sections. Wiring is as
+</I>&gt;<i> follows:
+</I>&gt;<i>
+</I>&gt;<i> - Radio to TTL Tx1, Tx2, and Rx1
+</I>&gt;<i> - Computer to RS-232 Tx1 and Rx1
+</I>&gt;<i> - Other devices to TTL Rx2
+</I>&gt;<i> - RS-232 Tx2 wired to Rx2
+</I>&gt;<i>
+</I>&gt;<i> Also, I am using an external wall-wart to a 5v regulator,
+</I>&gt;<i> so no power is being pulled from the RS-232 interface.
+</I>
+Perfect choice for an interface. I built one usng the same schematic, so 
+we know its not the interface.
+
+
+&gt;<i> This design isolates the radio from the rest of the CI-V equip-
+</I>&gt;<i> ment. I was having issues with the TTL signal being pulled to zero
+</I>&gt;<i> volts when my radio and SteppIR were connected to the same Tx
+</I>&gt;<i> and Rx inputs when I had the radio set to transceive on the
+</I>&gt;<i> CI-V line.
+</I>
+Were you able to correct this problem ?
+
+
+&gt;<i> Eric
+</I>&gt;<i>
+</I>
+Now, when you built from source did you run ::
+
+sudo apt-get build-deps fldigi
+
+first ? Did you have any errors when you were building from source ?
+
+You did uncheck use hamlib and check use rigCAT ?
+
+You did click the red intialize after every change ?
+
+You do have commands are echoed checked ?
+
+The last 3 are the most overlooked items, I'm just verifying that you 
+did and have rechecked your settings.
+
+Ed
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001359.html">Hamlib vs. RigCAT with 3.21.0AK
+</A></li>
+	<LI>Next message: <A HREF="001363.html">Hamlib vs. RigCAT with 3.21.0AK
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1360">[ date ]</a>
+              <a href="thread.html#1360">[ thread ]</a>
+              <a href="subject.html#1360">[ subject ]</a>
+              <a href="author.html#1360">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.38AH alpha release posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.38AH%20alpha%20release%20posted&In-Reply-To=%3C4F36C7F2.6040408%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002256.html">
+   <LINK REL="Next"  HREF="002260.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.38AH alpha release posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.38AH%20alpha%20release%20posted&In-Reply-To=%3C4F36C7F2.6040408%40bellsouth.net%3E"
+       TITLE="fldigi-3.21.38AH alpha release posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Feb 11 20:56:34 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002256.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+        <LI>Next message: <A HREF="002260.html">fldigi-3.21.38AH alpha release posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2253">[ date ]</a>
+              <a href="thread.html#2253">[ thread ]</a>
+              <a href="subject.html#2253">[ subject ]</a>
+              <a href="author.html#2253">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+
+Version 3.21.38AF
+
+     Cyrillic-UTF8 chars
+       * Added support for displaying, transmitting &amp; receiving
+         UTF-8 characters
+       * Modes which support UTF-8 characters:
+         - PSK31, PSK63, PSK125, PSK250, PSK500
+         - Olivia - must enable 8 bit extended characters
+         - MT63 - must enable 8 bit extended characters
+         - MFSK - all baudrates supported
+       * Modified &quot;clear_sent&quot; method in FTextRXTX to correct
+         behavior when TX buffer contains UTF-8 characters
+
+     QSK test
+       * Added test for CW mode &amp;&amp; QSK_adjust to inhibit
+         display of Tx characters in Rx Panel.
+
+     Weather report
+       * Added return http document error tests
+       * Removed &quot;Weather:\n&quot; prefix from returned data string
+       * Corrected English / Metric conversions
+       * Added wind in Meters/Sec to MPH KPH conversion
+       * Added condition parsing from raw data string
+       * Added web lookup for METAR station of interest
+
+Weather report change is sigificant.
+
+Cyrillic-UTF8 character implementation impacts on a large number of 
+source files.  I can provide a macro file with Russian alphabet if you 
+are interested.  I have not tested with Greek, or any other eastern 
+language Cyrillic characters.  Western characters that use inflection 
+marks are also handled by this implementation; but they must be 
+generated using a UTF-8 compatible font.  Olivia and MT63 handle the 
+extended character set by using an escape mechanism.  Bytes whose value 
+is &gt; 127 are sent using a two byte sequence.  UTF-8 characters may be 
+either a single byte (ASCII) or two byte with both bytes &gt; 127.  
+Therefore a text containing Cyrillic characters will require a 4 byte 
+transmission for each Cyrillic character.  PSK and MFSK support 
+transmitting bytes up to value 255 (0xFF), therefore those modes only 
+require 2 bytes for each Cyrillic character.  In any case, transmitting 
+Cyrillic characters is slower than pure ASCII text.
+
+73, Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120211/126c94cb/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120211/126c94cb/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002256.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+	<LI>Next message: <A HREF="002260.html">fldigi-3.21.38AH alpha release posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2253">[ date ]</a>
+              <a href="thread.html#2253">[ thread ]</a>
+              <a href="subject.html#2253">[ subject ]</a>
+              <a href="author.html#2253">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

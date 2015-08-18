@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> GMT on Linux (or how to set linux time)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20GMT%20on%20Linux%20%28or%20how%20to%20set%20linux%20time%29&In-Reply-To=%3CWorldClient-F201004141332.AA32190004%40frcuba.co.cu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001049.html">
+   <LINK REL="Next"  HREF="001053.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>GMT on Linux (or how to set linux time)</H1>
+    <B>Pavel Milanes Costa</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20GMT%20on%20Linux%20%28or%20how%20to%20set%20linux%20time%29&In-Reply-To=%3CWorldClient-F201004141332.AA32190004%40frcuba.co.cu%3E"
+       TITLE="GMT on Linux (or how to set linux time)">co7wt at frcuba.co.cu
+       </A><BR>
+    <I>Wed Apr 14 19:32:19 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001049.html">Squelch Check Not Visible
+</A></li>
+        <LI>Next message: <A HREF="001053.html">Double log
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1113">[ date ]</a>
+              <a href="thread.html#1113">[ thread ]</a>
+              <a href="subject.html#1113">[ subject ]</a>
+              <a href="author.html#1113">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+&gt;<i> Pino Zollo wrote:
+</I>&gt;<i> &gt; Please,
+</I>&gt;<i> &gt; how does fldigi to set the GMT time in the log ?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Actually it i doing wrong in my set-up....
+</I>&gt;<i> &gt; I have the time zone set on America/Asuncion ...at present we are at
+</I>GMT -3 so
+&gt;<i> &gt; the local 17:43 is 20:43 GMT but fldigi sets 21:43...
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I do not find any way of changing it.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Best 73
+</I>&gt;<i> &gt; Pino ZP4KFX
+</I>&gt;<i> 
+</I>&gt;<i> The time in fldigi is determined by your computer time. You may want to
+</I>&gt;<i> see what the bios clock is set to, but I don't think that really matters.
+</I>&gt;<i> 
+</I>&gt;<i> There is not a way via fldigi to set the time. So you need to look to
+</I>&gt;<i> your OS settings.
+</I>&gt;<i> 
+</I>&gt;<i> Ed W3NR
+</I>
+On debian/ubuntu: (# lines are comments...)
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pavel at gandalf</A>:~$ sudo bash
+[sudo] password for pavel:
+# gain access to run the rigth command as root... 
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">root at gandalf</A>:~# dpkg-reconfigure tzdata
+# here you have a ncurses interface to select your time zone
+Current default time zone: 'America/Havana'
+Local time is now:      Wed Apr 14 13:22:26 CDT 2010.
+Universal Time is now:  Wed Apr 14 17:22:26 UTC 2010.
+# ok, set the date time as local time
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">root at gandalf</A>:~# date -s &quot;Wed Apr 14 13:26:39 CDT 2010&quot;
+# chech your correct utc time
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">root at gandalf</A>:~# date -u
+wed apr 14 17:27:28 UTC 2010
+# store your date to the cmos, and exit
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">root at gandalf</A>:~# hwclock --systohc
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">root at gandalf</A>:~# exit 
+
+73.
+
+
+=======================================================================
+Este mensaje ha sido enviado mediante el servicio de correo electronico que ofrece la Federacion de Radioaficionados de Cuba a sus miembros para respaldar el cumplimiento de los objetivos de la organizacion y su politica informativa. La persona que envia este correo asume el compromiso de  usar el servicio a tales fines y cumplir con las regulaciones establecidas.
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001049.html">Squelch Check Not Visible
+</A></li>
+	<LI>Next message: <A HREF="001053.html">Double log
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1113">[ date ]</a>
+              <a href="thread.html#1113">[ thread ]</a>
+              <a href="subject.html#1113">[ subject ]</a>
+              <a href="author.html#1113">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

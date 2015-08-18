@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Time Check on Startup
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Time%20Check%20on%20Startup&In-Reply-To=%3C4B9BC594.4060504%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001008.html">
+   <LINK REL="Next"  HREF="001005.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Time Check on Startup</H1>
+    <B>Joseph A. Counsil</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Time%20Check%20on%20Startup&In-Reply-To=%3C4B9BC594.4060504%40gmail.com%3E"
+       TITLE="Time Check on Startup">counsil at rollanet.org
+       </A><BR>
+    <I>Sat Mar 13 18:04:20 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001008.html">Time Check on Startup
+</A></li>
+        <LI>Next message: <A HREF="001005.html">Time Check on Startup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1000">[ date ]</a>
+              <a href="thread.html#1000">[ thread ]</a>
+              <a href="subject.html#1000">[ subject ]</a>
+              <a href="author.html#1000">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>David,
+
+This might be a good option for some - in cases where there is not a 
+live network connection where NTP can be used to automatically update 
+the time. For those of us who usually have a network connection, it can 
+be disabled.
+
+For instance, during Field Day, we don't have a network connection at 
+our remote location, and it would be good to verify accurate time.
+
+73,
+-Joe-
+
+David Kleber wrote:
+&gt;<i> A while back, I suggested that upon startup of FLDIGI, a window pop up 
+</I>&gt;<i> showing the current time and date that the computer is set to. This 
+</I>&gt;<i> could appear with a question, &quot;Is your time and date correct&quot; and a 
+</I>&gt;<i> yes to continue... maybe clicking no would take you to where you can 
+</I>&gt;<i> make the correction. Perhaps there could be somewhere in the program 
+</I>&gt;<i> that this could be disabled for those who just can't stand the idea.
+</I>&gt;<i>
+</I>&gt;<i> I think for EmComm, this could become a very important issue, 
+</I>&gt;<i> especially when logging incoming wrap files during an actual emergency 
+</I>&gt;<i> deployment. Its pretty important to know that your messages are logged 
+</I>&gt;<i> with the correct time and date.
+</I>&gt;<i>
+</I>&gt;<i> BTW, take a look at the time and date headers from folks in your email 
+</I>&gt;<i> in boxes. I bet you don't have to look very far before you find a few 
+</I>&gt;<i> with incorrect times or zulu time corrections (i.e. I'm at -5 but that 
+</I>&gt;<i> will be -4 in a few days).
+</I>&gt;<i>
+</I>&gt;<i> -Dave
+</I>&gt;<i>
+</I>&gt;<i> Ed wrote:
+</I>&gt;&gt;<i> Dick Kriss wrote:
+</I>&gt;&gt;&gt;&gt;<i> Date: Mon, 8 Mar 2010 11:20:58 +0100
+</I>&gt;&gt;&gt;&gt;<i> From: &quot;M. Jenssen&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">m.jenssen at wtnet.de</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> Subject: 3.20.0b3 logbook time
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> This morning during QSO I noted that the &quot;time end&quot; indication 
+</I>&gt;&gt;&gt;&gt;<i> changed from
+</I>&gt;&gt;&gt;&gt;<i> 0859 to 0860 rather than 0900.
+</I>&gt;&gt;&gt;&gt;<i> First time this showed up ever.
+</I>&gt;&gt;&gt;&gt;<i> 73 Fred DL6XAZ
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Fred,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I just tired to duplicate the problem using your call in fldigi and 
+</I>&gt;&gt;&gt;<i> clicked
+</I>&gt;&gt;&gt;<i> on the &lt;LOG&gt; macro as the OS X computer clock in the OSX desktop 
+</I>&gt;&gt;&gt;<i> changed
+</I>&gt;&gt;&gt;<i> from 2:59.59 to 3:00.00 and the QSO was logged correct at 2100. 
+</I>&gt;&gt;&gt;<i> Prior to
+</I>&gt;&gt;&gt;<i> clicking on the log button, I had 2059 entered in fldigi as the OFF 
+</I>&gt;&gt;&gt;<i> time.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Seemed to work normal to me?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Let me know if there is something else I need to try to duplicate the
+</I>&gt;&gt;&gt;<i> 60 minutes.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Dick AA5VU 
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I would look at the bios time, as this is where fldigi gets the time 
+</I>&gt;&gt;<i> to calculate on/off times.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I do know that the begin/end time was worked on extensively about 3 
+</I>&gt;&gt;<i> years ago and there have been no problems since then that I'm aware of.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Ed W3NR
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> fldigi-alpha mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>
+-- 
++---------------------------------------------------------------+
+|<i> Joseph A. Counsil  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>  Phone:(573) 341-5186 |
+</I>|<i> 1310 Woodlawn Drive, Rolla, MO 65401  Amateur Radio: - K?OG - |
+</I>+---------------------------------------------------------------+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001008.html">Time Check on Startup
+</A></li>
+	<LI>Next message: <A HREF="001005.html">Time Check on Startup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1000">[ date ]</a>
+              <a href="thread.html#1000">[ thread ]</a>
+              <a href="subject.html#1000">[ subject ]</a>
+              <a href="author.html#1000">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

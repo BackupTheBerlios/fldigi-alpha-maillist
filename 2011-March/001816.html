@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> anyone using rigcat with a ts450 ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20anyone%20using%20rigcat%20with%20a%20ts450%20%3F&In-Reply-To=%3C8739mac8k5.fsf%40penny.tippete.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001815.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>anyone using rigcat with a ts450 ?</H1>
+    <B>Pierfrancesco Caci</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20anyone%20using%20rigcat%20with%20a%20ts450%20%3F&In-Reply-To=%3C8739mac8k5.fsf%40penny.tippete.net%3E"
+       TITLE="anyone using rigcat with a ts450 ?">pf at tippete.net
+       </A><BR>
+    <I>Sat Mar 26 14:31:22 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001815.html">widgets/Panel.cxx does not compile
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1816">[ date ]</a>
+              <a href="thread.html#1816">[ thread ]</a>
+              <a href="subject.html#1816">[ subject ]</a>
+              <a href="author.html#1816">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I normally use hamlib, and it works. I want to give rigcat a try, but I
+can't get it to work properly. I can command the radio for tx/rx, I can
+change mode, I can change frequency, but no matter what, I can't get
+fldigi to read the current frequency from the radio. 
+
+Here's a bit of event log:
+
+
+erial port parameters:
+device	 : /dev/ts450
+baudrate   : 4800
+stopbits   : 2
+retries	: 2
+timeout	: 10
+wait	   : 0
+initial rts: -12
+use rts ptt: F
+initial dtr: -12
+use dtr ptt: F
+flowcontrol: T
+echo	   : F
+
+D: [14:29:09] rigcontrol/rigio.cxx:88: 46 41 3B
+D: [14:29:10] rigcontrol/rigio.cxx:103: reply 46 41 30 30 30 30 30 30 36 32 34 30 30 3B
+V: [14:29:10] rigcontrol/rigio.cxx:351: sendCommand failed
+D: [14:29:10] rigcontrol/rigio.cxx:88: 46 41 3B
+D: [14:29:10] rigcontrol/rigio.cxx:103: reply 46 41 30 30 30 30 30 30 36 32 34 30 30 3B
+V: [14:29:10] rigcontrol/rigio.cxx:351: sendCommand failed
+W: [14:29:10] rigcontrol/rigio.cxx:392: Retries failed
+D: [14:29:10] rigcontrol/rigsupport.cxx:448: xml rig
+V: [14:29:10] rigcontrol/rigio.cxx:1108: New thread 0x7f0900008aa0
+D: [14:29:10] rigcontrol/serial.cxx:199: No PTT specified
+D: [14:29:10] rigcontrol/rigio.cxx:88: 52 58 3B
+D: [14:29:10] misc/threads.cxx:99: fldigi thread 2 is LWP 22625
+D: [14:29:10] rigcontrol/rigio.cxx:103: reply 
+D: [14:29:10] rigcontrol/rigio.cxx:88: 46 41 3B
+D: [14:29:10] rigcontrol/rigio.cxx:103: reply 46 41 30 30 30 30 30 30 36 32 34 30 30 3B
+V: [14:29:10] rigcontrol/rigio.cxx:351: sendCommand failed
+D: [14:29:10] rigcontrol/rigio.cxx:88: 46 41 3B
+D: [14:29:10] rigcontrol/rigio.cxx:103: reply 46 41 30 30 30 30 30 30 36 32 34 30 30 3B
+V: [14:29:10] rigcontrol/rigio.cxx:351: sendCommand failed
+W: [14:29:10] rigcontrol/rigio.cxx:392: Retries failed
+D: [14:29:10] rigcontrol/rigio.cxx:88: 4D 44 3B
+D: [14:29:10] rigcontrol/rigio.cxx:103: reply 3F 3B
+D: [14:29:10] rigcontrol/rigio.cxx:88: 4D 44 3B
+D: [14:29:10] rigcontrol/rigio.cxx:103: reply 3F 3B
+W: [14:29:10] rigcontrol/rigio.cxx:555: Retries failed
+D: [14:29:11] rigcontrol/rigio.cxx:88: 46 41 3B
+D: [14:29:11] rigcontrol/rigio.cxx:103: reply 46 41 30 30 30 30 30 30 36 32 34 30 30 3B
+V: [14:29:11] rigcontrol/rigio.cxx:351: sendCommand failed
+D: [14:29:11] rigcontrol/rigio.cxx:88: 46 41 3B
+D: [14:29:11] rigcontrol/rigio.cxx:103: reply 46 41 30 30 30 30 30 30 36 32 34 30 30 3B
+V: [14:29:11] rigcontrol/rigio.cxx:351: sendCommand failed
+W: [14:29:11] rigcontrol/rigio.cxx:392: Retries failed
+
+
+I'll appreciate suggestions.
+
+
+-- 
+Pierfrancesco Caci, ik5pvx
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001815.html">widgets/Panel.cxx does not compile
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1816">[ date ]</a>
+              <a href="thread.html#1816">[ thread ]</a>
+              <a href="subject.html#1816">[ subject ]</a>
+              <a href="author.html#1816">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

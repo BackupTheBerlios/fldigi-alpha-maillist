@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi-3.13AN Contest Capturing QSO Data Quesiton
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi-3.13AN%20Contest%20Capturing%20QSO%20Data%20Quesiton&In-Reply-To=%3C121ceae60910131306u608c771t75e5e2a9ac14981a%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000205.html">
+   <LINK REL="Next"  HREF="000207.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi-3.13AN Contest Capturing QSO Data Quesiton</H1>
+    <B>Mike Haynes</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi-3.13AN%20Contest%20Capturing%20QSO%20Data%20Quesiton&In-Reply-To=%3C121ceae60910131306u608c771t75e5e2a9ac14981a%40mail.gmail.com%3E"
+       TITLE="Fldigi-3.13AN Contest Capturing QSO Data Quesiton">n4znv1 at gmail.com
+       </A><BR>
+    <I>Tue Oct 13 22:06:52 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000205.html">Fldigi-3.13AN  Contest Capturing QSO Data Quesiton
+</A></li>
+        <LI>Next message: <A HREF="000207.html">fldigi AN compiled with Ubuntu Karmic Koala beta
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#209">[ date ]</a>
+              <a href="thread.html#209">[ thread ]</a>
+              <a href="subject.html#209">[ subject ]</a>
+              <a href="author.html#209">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dick,
+
+I have just finished testing for this problem,  here is my setup.
+
+Mac Mini with Snow Leopard 10.6.1
+Fldigi 3.13AN
+FT817  5 watts
+Miracle Antenna  (used this to set close to the Mac Mini so as to induce
+some RFI, it does on the Mini)
+Rascal Interface
+USB to Serial Converter  (listed as
+/dev.cu/usbserial&lt;<A HREF="http://dev.cu/USBserial">http://dev.cu/USBserial</A>&gt;on my system)
+Tested All modes
+
+Results:  I can not duplicate the problem on this setup.  The capturing QSO
+Data works as it should per the instructions.
+
+Tried same test setup using Virtual Machines with Ubuntu 9.04, Windows XP,
+Windows RC beta.  No problem found
+using Virtual Machines but the same hardware setup.
+
+I am wondering if some feedback or RFI is getting into the interface which
+might cause this to happen.
+
+By chance are you and Jeff using the same interface?  This is a very curious
+phenomena you have observed.
+
+I can confirm the problem does not exist using FT857 in the Shack with Linux
+Mint or Ubuntu 9.04 using
+Rig Blaster M8 with 25 watts into Inverted V or the Mystery Antenna using
+MFJ Autotuner.
+
+I will try and set up to test on the Mobile later this week.  That will be
+using a Macbook with 10.6.1
+the FT857 in the car and Hustler antenna setup.  Again this will be using a
+Rascal Interface as
+I use those in my portable and mobile operations.
+
+Will let everyone know the results of that when completed.
+
+73's
+
+Mike
+
+
+
+On Sun, Oct 11, 2009 at 5:26 AM, Dick Kriss &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">aa5vu at att.net</A>&gt; wrote:
+
+&gt;<i> I made a few QSO&#185;s using fldgi-3.13AN in the Makrothen
+</I>&gt;<i> RTTY contest where the exchange is the grid square. Fldigi
+</I>&gt;<i> did fine but I noticed one item and I am not sure if this is
+</I>&gt;<i> normal or an RFI issue with my setup.
+</I>&gt;<i>
+</I>&gt;<i> Reference: Capturing QSO data
+</I>&gt;<i> &lt;<A HREF="http://www.w1hkj.com/FldigiHelp/Logbook.html">http://www.w1hkj.com/FldigiHelp/Logbook.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> One of the fldigi Contest Long Menu items is the ability
+</I>&gt;<i> right-click on the received report (in this case the grid
+</I>&gt;<i> square) and select Exchange in and fldigi will log the
+</I>&gt;<i> exchange.
+</I>&gt;<i>
+</I>&gt;<i> The item I noticed was this option would not work while
+</I>&gt;<i> I was transmitting.  I don't know if that is a limitation
+</I>&gt;<i> of fldigi or if it was due to RFI?
+</I>&gt;<i>
+</I>&gt;<i> I was mostly using Search and Pounce mode and I
+</I>&gt;<i> would sent my call Macro (hiscall DE mycall mycall K)
+</I>&gt;<i> and he would ACK my call and send his grid twice. I
+</I>&gt;<i> then would use my Report macro (hiscall EM10 EM10 mycall
+</I>&gt;<i> TU) and while I was transmitting I would try to select
+</I>&gt;<i> and log his report using the right-click/Exchnage in
+</I>&gt;<i> option.  This was when I observed I could not use the
+</I>&gt;<i> capture data option when I was transmitting.  I had
+</I>&gt;<i> to wait until my Report macro finished sending before
+</I>&gt;<i> I could select and log his report. I gave up trying to
+</I>&gt;<i> use the capture data option and just typed in the
+</I>&gt;<i> data - it was much faster.
+</I>&gt;<i>
+</I>&gt;<i> Is the fldigi capture QSO data option blanked (or
+</I>&gt;<i> locked out) while fldigi is sending data?
+</I>&gt;<i>
+</I>&gt;<i> 73 Dick AA5VU
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091013/ecb147b8/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091013/ecb147b8/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000205.html">Fldigi-3.13AN  Contest Capturing QSO Data Quesiton
+</A></li>
+	<LI>Next message: <A HREF="000207.html">fldigi AN compiled with Ubuntu Karmic Koala beta
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#209">[ date ]</a>
+              <a href="thread.html#209">[ thread ]</a>
+              <a href="subject.html#209">[ subject ]</a>
+              <a href="author.html#209">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

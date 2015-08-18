@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Bug with macro &lt;TIMER:NN&gt; ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Bug%20with%20macro%20%3CTIMER%3ANN%3E%20%3F&In-Reply-To=%3C4E6FC9CB.9090007%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002015.html">
+   <LINK REL="Next"  HREF="002021.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Bug with macro &lt;TIMER:NN&gt; ?</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Bug%20with%20macro%20%3CTIMER%3ANN%3E%20%3F&In-Reply-To=%3C4E6FC9CB.9090007%40bellsouth.net%3E"
+       TITLE="Bug with macro &lt;TIMER:NN&gt; ?">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Tue Sep 13 23:23:23 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002015.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+        <LI>Next message: <A HREF="002021.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2017">[ date ]</a>
+              <a href="thread.html#2017">[ thread ]</a>
+              <a href="subject.html#2017">[ subject ]</a>
+              <a href="author.html#2017">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The current implementation requires a &lt;TX&gt; in the macro for the 
+&lt;TIMER:nn&gt; to be effective.
+
+If you propose any changes please be sure that they are based on 
+3.22.0AN or later.  Note that I have added the ability to delay 
+execution of certain macro tags until the actual time of occurrence in 
+the macro string.
+
+Dave
+
+On 09/13/2011 04:03 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> wrote:
+&gt;<i> Thanks. Apparently, it's OK but &lt;TIMER&gt; needs I think the macro tag 
+</I>&gt;<i> &lt;TX&gt; is needed otherwise there is no repetition. Am I wrong ? Is it 
+</I>&gt;<i> intended and if not should it be corrected, so that &lt;TIMER&gt; would 
+</I>&gt;<i> repeat even if there is no transmission ?
+</I>&gt;<i>
+</I>&gt;<i> Remi
+</I>&gt;<i>
+</I>&gt;<i> Le 13.09.2011 18:40, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pa3gwh at pa3gwh.com</A> a &#233;crit :
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have the TIMER tag before the RX tag, not sure why I ever put it there
+</I>&gt;&gt;<i> but it has worked fine for me even though it is described differently in
+</I>&gt;&gt;<i> the manual :-)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Having said that, I have e-mailed with Dave extensively about problems I
+</I>&gt;&gt;<i> had with the timer randomly stopping. Most evident while switching 
+</I>&gt;&gt;<i> between
+</I>&gt;&gt;<i> virtual screens in KDE at first, but that was fixed a long time ago. The
+</I>&gt;&gt;<i> last time I had this problem I *think* I deleted my macro definition 
+</I>&gt;&gt;<i> file
+</I>&gt;&gt;<i> and rebuilt it from scratch and that fixed it that time.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Richard
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> On Sun, Sep 11, 2011 at 08:59:41PM +0100, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>
+</I>&gt;&gt;&gt;&gt;<i> wrote:
+</I>&gt;&gt;&gt;&gt;&gt;<i> Apparently there is a problem with the macro tag&lt;TIMER:NN&gt;  :  
+</I>&gt;&gt;&gt;&gt;&gt;<i> There is
+</I>&gt;&gt;&gt;&gt;&gt;<i> no repetition.
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> For example, this macro does not work as expected:
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> <A HREF="http://www.w1hkj.com/FldigiHelp-3.12/Macros.html">http://www.w1hkj.com/FldigiHelp-3.12/Macros.html</A>
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> &lt;TX&gt;&lt;IDLE:5&gt;CQ CQ de&lt;MYCALL&gt; &lt;MYCALL&gt;  k&lt;RX&gt;&lt;TIMER:20&gt;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Sun, Sep 11, 2011 at 9:54 PM, Larry Levesque&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ka1vgm at gmail.com</A>&gt;  
+</I>&gt;&gt;&gt;<i> wrote:
+</I>&gt;&gt;&gt;&gt;<i> Define repetition? Are you expecting the macro to repeat itself after
+</I>&gt;&gt;&gt;&gt;<i> the 20 seconds?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Yes.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="http://www.w1hkj.com/FldigiHelp-3.22/Macros.html">http://www.w1hkj.com/FldigiHelp-3.22/Macros.html</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> &lt;TX&gt;&lt;IDLE:5&gt;CQ CQ de&lt;MYCALL&gt; &lt;MYCALL&gt;  k&lt;RX&gt;&lt;TIMER:20&gt;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> *will enable the PTT
+</I>&gt;&gt;&gt;<i> *cause 5 seconds of idle signal
+</I>&gt;&gt;&gt;<i> *send the CQ CQ de W1HKJ W1HKJ k
+</I>&gt;&gt;&gt;<i> *disable PTT
+</I>&gt;&gt;&gt;<i> *and count down 20 seconds before repeating the macro
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I'll investigate more but could you please confirm that this macro
+</I>&gt;&gt;&gt;<i> should automatically restart every 20 seconds? Thanks
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> fldigi-alpha mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110913/e29197c7/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110913/e29197c7/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002015.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+	<LI>Next message: <A HREF="002021.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2017">[ date ]</a>
+              <a href="thread.html#2017">[ thread ]</a>
+              <a href="subject.html#2017">[ subject ]</a>
+              <a href="author.html#2017">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

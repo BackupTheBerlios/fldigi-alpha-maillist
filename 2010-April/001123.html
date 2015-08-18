@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Ck2xe93450131004170744m8edee4b3lf83e3e32d31bd68e%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001122.html">
+   <LINK REL="Next"  HREF="001126.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Ck2xe93450131004170744m8edee4b3lf83e3e32d31bd68e%40mail.gmail.com%3E"
+       TITLE="Contestia">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sat Apr 17 16:44:20 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001122.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001126.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1123">[ date ]</a>
+              <a href="thread.html#1123">[ thread ]</a>
+              <a href="subject.html#1123">[ subject ]</a>
+              <a href="author.html#1123">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, Apr 17, 2010 at 6:59 AM, Pino Zollo &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pinozollo at gmail.com</A>&gt; wrote:
+
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> I made two QSO's in Contestia....
+</I>&gt;<i>
+</I>&gt;<i> It works fine but the water-fall was not showing anything.
+</I>&gt;<i>
+</I>&gt;<i> Is this because Contestia is so sensible to decode extremely weak signals
+</I>&gt;<i> or
+</I>&gt;<i> is a problem ?
+</I>&gt;<i> The water fall was showing other PSK31 signal in the band.
+</I>&gt;<i>
+</I>
+Contestia and Olivia are virtually identical CODECs. Their performance is
+going to be within one or two dB of each other so what you expect from
+Olivia you can expect from Contestia.
+
+Contestia uses a small character set so it needs fewer bits transferred for
+the same message. This also means that you don't get lower case letters and
+many punctuation symbols you can send with Olivia. Also Contestia has a
+smaller block size and shorter interleave. This means less delay but less
+resistance to long fading (QSB). If you increase the interleave to provide
+QSB resistance you can expect longer delays (latency) before copy starts.
+
+In this same family of protocols you will find MFSK16, DominoEX, and Thor.
+Olivia, Contestia, and MFSK16 all share the same base modulation -- m-ary
+frequency shift keying. The differences are in the alphabet/character-set
+they use, the symbol (baud) rate, and the robustness of the forward error
+correction (FEC). If you set the #tones (always a power of 2, e.g. 2, 4, 8,
+16, 32), symbol rate (determines tone spacing), and level of FEC the same on
+these protocols, they will provide the same speed and weak-signal
+performance.
+
+(Soapbox -- We would be better served by having just one of these modes and
+then allow selection of the tones, baud rate, convolution polynomial, block
+size, interleave factor, and Viterbi decoder settings and then transmit that
+in something equivalent to an RSID header.)
+
+DominoEX and Thor use a novel and, frankly, better modulation scheme than
+the pure MFSK used in MFSK16/Olivia/Contestia. All other things being equal,
+if you were to put DominoEX with FEC or Thor up against on the three other
+above but ensure that you are using like parameters for baud rate,
+convolutional coding, and FEC, DominoEX and Thor would be easier to tune and
+more resilient in the presence of doppler. In other words, they would
+flat-out work better.
+
+I apologize for what is a really long answer to your question. I hope it
+helps to understand the differences and to set reasonable expectations for
+performance.
+
+Hmm, it would be great if there were a table that listed the basic parameter
+differences between modes so we could pick the one that best met conditions
+at the time so as to provide maximum throughput at 100% copy. Frankly, most
+of the time Olivia is overkill but it also provides the most robust FEC and
+interleave so it will get through under the worst conditions when the other
+modes are failing.
+
+-- 
+73 de Brian, WB6RQN/J79BPL
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/7a9bbc4b/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/7a9bbc4b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001122.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001126.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1123">[ date ]</a>
+              <a href="thread.html#1123">[ thread ]</a>
+              <a href="subject.html#1123">[ subject ]</a>
+              <a href="author.html#1123">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

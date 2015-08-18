@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Some VHF testing with fldigi/flarq
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Some%20VHF%20testing%20with%20fldigi/flarq&In-Reply-To=%3CCB2FCA46ACE74EFAA503DF15D904AD9A%40latop01%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000496.html">
+   <LINK REL="Next"  HREF="000498.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Some VHF testing with fldigi/flarq</H1>
+    <B>Gary Wescom</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Some%20VHF%20testing%20with%20fldigi/flarq&In-Reply-To=%3CCB2FCA46ACE74EFAA503DF15D904AD9A%40latop01%3E"
+       TITLE="Some VHF testing with fldigi/flarq">wescom at wildblue.net
+       </A><BR>
+    <I>Sat Nov 28 19:51:51 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000496.html">Configuration screen minimizes to tray - Win XP
+</A></li>
+        <LI>Next message: <A HREF="000498.html">My Rig
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#497">[ date ]</a>
+              <a href="thread.html#497">[ thread ]</a>
+              <a href="subject.html#497">[ subject ]</a>
+              <a href="author.html#497">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave,
+
+Just thought it was about time to give you a little more feedback on our experimenting with fldigi/flarq.  We had been doing our testing on HF for use with statewide NVIS operation.  That has been working good for us.
+
+In thinking about how we might use fldigi with flarq in a disaster situation, we decided that we needed to look at using those programs on VHF.  We knew that other folks have worked successfully with the fldigi/wrap combination so we started working with the fldigi/flarq pair.  We have had good success there too.  Here are some notes from those experiments by Tom, KN4JX and I:
+
+1. Proper setting of transmit audio levels is necessary for reliable operation under marginal conditions.  This is a bit more complicated than on HF.  Fortunately, great precision is not needed.  The correct level appears to be a little below where signal distortion starts showing up on the receive water fall.  If a deviation meter is available, this is typically in the same range as is used with packet operation, in the 2.5 to 3 KHz range for typical ham transceivers.
+
+2. When using the TigerTronics SignaLink interface, set the DLY control to minimum.  If not set to minimum, the SignaLink holds the transmitter in transmit after the end of the flarq audio transmission and could overlap the start of the transmission from the other station.
+
+3. Flarq configuration settings should be the same at both ends.  The values we ended up with on VHF were: Retries 5, Wait Time 10 seconds, Timeout 30 seconds, TX delay 1000 msec.  When these were different, we would get unexpected disconnects.  Long Timeout values turned out to a problem as it appeared that if one end became disconnected, the other would remain in the connected state for that full time.  If the connection was lost during some kinds of operations (don't remember which ones right now), the 10 second retries would continue way past the 5 retries when we had Timeout set to 300 seconds. We are guessing the retries would have continued either for the full Timeout period or maybe forever.  We gave up waiting after a couple minutes so don't know which.
+
+4. For operating modes, we definitely preferred BPSK500 over other modes.  It continued working with signal levels down to where voice operation was marginal.  MFSK would work a bit better with those poor signal levels but not as much as we had expected.  If signals were really bad, we would have switched to something like OLIVIA with WRAP.  We did find though, that if the signal was strong enough to just make out something of what the other station was saying on voice, BPSK500 would work OK.
+
+5. DominoEX  worked (with FEC turned off of course) but we didn't care for it.  The thing we did not care for was the sluggish squelch operation in fldigi.  We seemed to be getting the start of transmissions OK but the green squelch bar built up slowly and at the end of a transmission it dropped off slowly.  The slow squelch level drop off caused the busy channel hold off in flarq to delay the start of subsequent transmissions, sometimes by 3 or 4 seconds.  MFSK and PSK did not have that delay plus MFSK seemed to work as well or better than DominoEX anyway.
+
+6. My Kenwood TM-V71 worked just fine with and without the its squelch closed.  The TM-V71 squelch worked fast enough that there was no significant shortening of the received idle signal at the start of transmissions.  When I had the squelch full open, I kept the volume turned down so I couldn't hear the receive signal.  The unsquelched noise got to be annoying quickly.  The TM-V71 has the 6 pin mini-din jack on the back for packet operation so the front panel volume setting does not effect the audio level for the SignaLink.  When I started using the squelch on the radio, I left the radio volume turned up so I could hear the receive digital signal.  I was surprised how noisy the signal was.  We were operating far from full quieting.  I imagine OLIVIA could handle even weaker signals but for our operation this was about as low a signal level as we would expect to have to deal with anyway.
+
+7. The user interface in FLARQ for selecting files to send is a bit of a nuisance.  FLARQ always starts at the default directory for selecting files.  That means we have to navigate through the file system each time we send a file.  It would be much better if the last directory selected would be the default for subsequent send file selections.  It is just one of those things that would make using the program more difficult for beginners.
+
+8. Plain Talk operation while disconnected is definitely desirable.  Where we ran into a problem was when one end thought it was no longer connected but the other thought it was.  The person at the end that showed &quot;connected&quot; would type messages in Plain Talk and not bother looking at the fldigi receive area for a response.  When connected, the two flarq ends periodically talk back and forth to verify the connection is still active so we found we began not paying much attention to the fldigi window.  With long Timeout values, this was a pain in the butt.  At least reducing timeout to 30 seconds helped.
+
+Overall though, fldigi and flarq worked well.  There was a non-zero learning curve but it should not be too hard to come up with fairly easy to follow setup description.
+
+Anyway, that is the stuff I remember right now.  I'll shoot you more if I think of it.  Maybe Tom, KN4JX, will remember more.
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091128/27073268/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091128/27073268/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000496.html">Configuration screen minimizes to tray - Win XP
+</A></li>
+	<LI>Next message: <A HREF="000498.html">My Rig
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#497">[ date ]</a>
+              <a href="thread.html#497">[ thread ]</a>
+              <a href="subject.html#497">[ subject ]</a>
+              <a href="author.html#497">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

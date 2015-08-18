@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Bug with macro &lt;TIMER:NN&gt; ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Bug%20with%20macro%20%3CTIMER%3ANN%3E%20%3F&In-Reply-To=%3CCACMWOgven1Ytrh5-p5z_rZLJfECv7wPQ43ZZ3OE6AJLW98OmRQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002012.html">
+   <LINK REL="Next"  HREF="002014.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Bug with macro &lt;TIMER:NN&gt; ?</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Bug%20with%20macro%20%3CTIMER%3ANN%3E%20%3F&In-Reply-To=%3CCACMWOgven1Ytrh5-p5z_rZLJfECv7wPQ43ZZ3OE6AJLW98OmRQ%40mail.gmail.com%3E"
+       TITLE="Bug with macro &lt;TIMER:NN&gt; ?">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Tue Sep 13 16:42:48 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002012.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+        <LI>Next message: <A HREF="002014.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2013">[ date ]</a>
+              <a href="thread.html#2013">[ thread ]</a>
+              <a href="subject.html#2013">[ subject ]</a>
+              <a href="author.html#2013">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> On Sun, Sep 11, 2011 at 08:59:41PM +0100, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> wrote:
+</I>&gt;&gt;<i> Apparently there is a problem with the macro tag &lt;TIMER:NN&gt; :  There is no repetition.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> For example, this macro does not work as expected:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> <A HREF="http://www.w1hkj.com/FldigiHelp-3.12/Macros.html">http://www.w1hkj.com/FldigiHelp-3.12/Macros.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> &lt;TX&gt;&lt;IDLE:5&gt;CQ CQ de &lt;MYCALL&gt; &lt;MYCALL&gt; k&lt;RX&gt;&lt;TIMER:20&gt;
+</I>
+
+On Sun, Sep 11, 2011 at 9:54 PM, Larry Levesque &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ka1vgm at gmail.com</A>&gt; wrote:
+&gt;<i> Define repetition? Are you expecting the macro to repeat itself after the 20 seconds?
+</I>
+Yes.
+
+<A HREF="http://www.w1hkj.com/FldigiHelp-3.22/Macros.html">http://www.w1hkj.com/FldigiHelp-3.22/Macros.html</A>
+
+&lt;TX&gt;&lt;IDLE:5&gt;CQ CQ de &lt;MYCALL&gt; &lt;MYCALL&gt; k&lt;RX&gt;&lt;TIMER:20&gt;
+
+*will enable the PTT
+*cause 5 seconds of idle signal
+*send the CQ CQ de W1HKJ W1HKJ k
+*disable PTT
+*and count down 20 seconds before repeating the macro
+
+I'll investigate more but could you please confirm that this macro
+should automatically restart every 20 seconds? Thanks
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002012.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+	<LI>Next message: <A HREF="002014.html">Bug with macro &lt;TIMER:NN&gt; ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2013">[ date ]</a>
+              <a href="thread.html#2013">[ thread ]</a>
+              <a href="subject.html#2013">[ subject ]</a>
+              <a href="author.html#2013">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> High CPU load with USB sound device
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C201002131415.53991.k9ao%40charter.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000835.html">
+   <LINK REL="Next"  HREF="000837.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>High CPU load with USB sound device</H1>
+    <B>Rick Kunath</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C201002131415.53991.k9ao%40charter.net%3E"
+       TITLE="High CPU load with USB sound device">k9ao at charter.net
+       </A><BR>
+    <I>Sat Feb 13 20:15:53 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000835.html">High CPU load with USB sound device
+</A></li>
+        <LI>Next message: <A HREF="000837.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#836">[ date ]</a>
+              <a href="thread.html#836">[ thread ]</a>
+              <a href="subject.html#836">[ subject ]</a>
+              <a href="author.html#836">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Saturday 13 February 2010 02:04:44 pm Peter Hamilton wrote:
+&gt;<i> The one
+</I>&gt;<i> consistent trend I've noticed is that the more &quot;primitive&quot; the sound
+</I>&gt;<i> subsystem the better it is in this application. Less versatile, maybe.
+</I>
+Not exactly. Soundcard makers of late have been getting lazy in supplying 
+hardware capable of handling all of the usual sample rates natively. Instead 
+they rely on the OS to do the conversion. 44100 is CD quality, but most higher 
+end cards generally support (at least) 48000 which has lower overhead in 
+conversions to some other sample rates. 
+
+For radio purposes it is better to have a stable soundcard that can support 
+all of the sample rates it needs to without requiring the OS to do a 
+conversion, as all conversions are not necessarily as clean as handling the 
+stream at the intended sample rate in the first place. That's why some sample 
+rate conversion ratios require greater overhead and produce less satisfactory 
+results.
+
+&gt;<i> I
+</I>&gt;<i> had no end of problems with Pulseaudio,
+</I>
+Mandriva is rock solid now in 2010.0 and up with Pulse. From some of the 
+things I am seeing Ubuntu has not completely tamed Pulse as of the current 
+release.
+
+&gt;<i> Portaudio had a few minor
+</I>&gt;<i> problems but was basically OK apart from this
+</I>
+Yes, also what I see here.
+
+&gt;<i> , and OSS seems rock solid.
+</I>
+Though OSS emulation will likely soon be going away and the emulation may not 
+always be available. Something to keep in mind when selecting soundcards for 
+Linux.
+
+&gt;<i> As there have been quite a few Pulse-related changes since my earlier
+</I>&gt;<i> Pulse problems I intend to try my current setup with a fresh Ubuntu 9.10
+</I>&gt;<i> installation, so I'll do some comparisons.
+</I>
+Ed, is working through this right now on Ubuntu. I'm not having his issues at 
+all on Mandriva 2010.0.
+
+Peter, your reply to is set to have the list replies go to you and not the 
+list address.
+
+Rick Kunath, k9ao
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000835.html">High CPU load with USB sound device
+</A></li>
+	<LI>Next message: <A HREF="000837.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#836">[ date ]</a>
+              <a href="thread.html#836">[ thread ]</a>
+              <a href="subject.html#836">[ subject ]</a>
+              <a href="author.html#836">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

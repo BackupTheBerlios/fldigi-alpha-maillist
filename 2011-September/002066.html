@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.22-0AT on GCC 4.6.0-10
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.22-0AT%20on%20GCC%204.6.0-10&In-Reply-To=%3C4E7F5F4E.6050707%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002065.html">
+   <LINK REL="Next"  HREF="002068.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.22-0AT on GCC 4.6.0-10</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.22-0AT%20on%20GCC%204.6.0-10&In-Reply-To=%3C4E7F5F4E.6050707%40gmail.com%3E"
+       TITLE="fldigi 3.22-0AT on GCC 4.6.0-10">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Sep 25 19:05:18 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002065.html">fldigi 3.22-0AT on GCC 4.6.0-10
+</A></li>
+        <LI>Next message: <A HREF="002068.html">fldigi 3.22-0AT on GCC 4.6.0-10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2066">[ date ]</a>
+              <a href="thread.html#2066">[ thread ]</a>
+              <a href="subject.html#2066">[ subject ]</a>
+              <a href="author.html#2066">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Instead of:
+
+rxbuf = { 0x66, 0x77, 0x7e, 0x7e,
+                       0x80, 0x80, 0x80, 0x80, 0x80, 0x80,
+                       0xf2,
+                       0x9e, 0x9e, 0x9e, 0x9e, 0x9e, 0x9e,
+                       0x61,
+                       0x03, 0xf0,
+                       0x58, 0x0b,
+                       0x7e, 0x00 };
+
+Why not:
+
+static const unsigned char xxx[] = { 0x66, 0x77, 0x7e, 0x7e,
+                       0x80, 0x80, 0x80, 0x80, 0x80, 0x80,
+                       0xf2,
+                       0x9e, 0x9e, 0x9e, 0x9e, 0x9e, 0x9e,
+                       0x61,
+                       0x03, 0xf0,
+                       0x58, 0x0b,
+                       0x7e, 0x00 };
+std::copy( xxx, xxx + sizeof(xxx), rxbuf );
+
+Cheers
+
+Remi
+
+
+Le 25.09.2011 12:57, Josh Rovero a &#233;crit :
+&gt;<i> Additional info:
+</I>&gt;<i>
+</I>&gt;<i> even though the std=c++-x or std=gnu++0x
+</I>&gt;<i> is present on the command line going in, it
+</I>&gt;<i> doesn't make it to the CXXFLAGS in the Makefiles.
+</I>&gt;<i>
+</I>&gt;<i> If I manually add it to the Makefiles, the following error
+</I>&gt;<i> occurs earlier, in fldigi-rdx_extract
+</I>&gt;<i>
+</I>&gt;<i>   CXX    fldigi-rx_extract.o
+</I>&gt;<i> logger/rx_extract.cxx: In function &#8216;void rx_extract_add(int)&#8217;:
+</I>&gt;<i> logger/rx_extract.cxx:100:31: error: reference to &#8216;end&#8217; is ambiguous
+</I>&gt;<i> logger/rx_extract.cxx:44:13: error: candidates are: const char* end
+</I>&gt;<i> /usr/lib/gcc/x86_64-redhat-linux/4.6.0/../../../../include/c++/4.6.0/initializer_list:96:36:
+</I>&gt;<i> error:                 template&lt;class _Tp&gt;  constexpr const _Tp*
+</I>&gt;<i> std::end(std::initializer_list&lt;_Tp&gt;)
+</I>&gt;<i> /usr/lib/gcc/x86_64-redhat-linux/4.6.0/../../../../include/c++/4.6.0/bits/range_access.h:97:26:
+</I>&gt;<i> error:                 template&lt;class _Tp, long unsigned int _Nm&gt;  _Tp*
+</I>&gt;<i> std::end(_Tp (&amp;)[_Nm])
+</I>&gt;<i> /usr/lib/gcc/x86_64-redhat-linux/4.6.0/../../../../include/c++/4.6.0/bits/range_access.h:78:59:
+</I>&gt;<i> error:                 template&lt;class _Container&gt;  decltype
+</I>&gt;<i> (__cont.end()) std::end(const _Container&amp;)
+</I>&gt;<i> /usr/lib/gcc/x86_64-redhat-linux/4.6.0/../../../../include/c++/4.6.0/bits/range_access.h:68:53:
+</I>&gt;<i> error:                 template&lt;class _Container&gt;  decltype
+</I>&gt;<i> (__cont.end()) std::end(_Container&amp;)
+</I>&gt;<i>
+</I>&gt;<i> My next step, after the gym and a motorcycle ride to clear my head,
+</I>&gt;<i> is to remove the flag and convert the new initializer style back to
+</I>&gt;<i> regular assignments.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002065.html">fldigi 3.22-0AT on GCC 4.6.0-10
+</A></li>
+	<LI>Next message: <A HREF="002068.html">fldigi 3.22-0AT on GCC 4.6.0-10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2066">[ date ]</a>
+              <a href="thread.html#2066">[ thread ]</a>
+              <a href="subject.html#2066">[ subject ]</a>
+              <a href="author.html#2066">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

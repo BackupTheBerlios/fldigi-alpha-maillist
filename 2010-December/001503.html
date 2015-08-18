@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> PSK31 spotting without GUI?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20PSK31%20spotting%20without%20GUI%3F&In-Reply-To=%3C4D1495DB.8020402%40wallawalla.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001502.html">
+   <LINK REL="Next"  HREF="001504.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>PSK31 spotting without GUI?</H1>
+    <B>Rob Frohne</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20PSK31%20spotting%20without%20GUI%3F&In-Reply-To=%3C4D1495DB.8020402%40wallawalla.edu%3E"
+       TITLE="PSK31 spotting without GUI?">frohro at wallawalla.edu
+       </A><BR>
+    <I>Fri Dec 24 13:45:15 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001502.html">PSK31 spotting without GUI?
+</A></li>
+        <LI>Next message: <A HREF="001504.html">Can you set the operating frequency automatically on startup?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1503">[ date ]</a>
+              <a href="thread.html#1503">[ thread ]</a>
+              <a href="subject.html#1503">[ subject ]</a>
+              <a href="author.html#1503">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi All,
+
+With help from Leigh, I have been able to take the CPU usage down from 
+14% to 6% on each instance of fldigi.  The tricks are:
+
+1)  Set to use linear interpolation instead of medium sync interpolator. 
+(from 14% down to 8%)
+2)  Check slow CPU. (from 8% down to 7%)
+3)  On the waterfall in the main window, click on normal until it is 
+paused.  (from 7% down to 6%)
+
+This is using a 96KHz sound card.
+
+Perhaps it would help to have all these optimizations in one area, or 
+something so you can know what to do to make fldigi use less CPU.
+
+73,
+
+Rob
+KL7NA
+
+On 12/23/2010 10:17 AM, Rob Frohne wrote:
+&gt;<i> Hi Everyone,
+</I>&gt;<i>
+</I>&gt;<i> I've been using fldigi to spot PSK31 signals on our websdr server. 
+</I>&gt;<i> &lt;<A HREF="http://outside.wallawalla.edu:8901/">http://outside.wallawalla.edu:8901/</A>&gt;  I have been using jack to feed 
+</I>&gt;<i> the audio to websdr and to sdr-core (DttSP) and then on to fldigi.  I 
+</I>&gt;<i> would like to run more instances of fldigi to spot for more bands, but 
+</I>&gt;<i> the load is getting a bit heavy for the CPU to keep up with.  The 
+</I>&gt;<i> instances of fldigi are the biggest CPU hogs and NX which I was using 
+</I>&gt;<i> because I need X to use fldigi is sometimes also a big CPU user.  What 
+</I>&gt;<i> I think I want is the PSK spotting engine of fldigi running without 
+</I>&gt;<i> all the GUI and from the command line.  What is the best way to 
+</I>&gt;<i> address these issues?
+</I>&gt;<i>
+</I>&gt;<i> Thanks &amp; 73,
+</I>&gt;<i>
+</I>&gt;<i> Rob
+</I>&gt;<i> KL7NA
+</I>&gt;<i> -- 
+</I>&gt;<i> Rob Frohne, Ph.D., P.E.
+</I>&gt;<i> E.F. Cross School of Engineering
+</I>&gt;<i> Walla Walla University
+</I>&gt;<i> 100 SW 4th Street
+</I>&gt;<i> College Place, WA 99324
+</I>&gt;<i> (509) 527-2075			<A HREF="http://people.wallawalla.edu/~rob.frohne">http://people.wallawalla.edu/~rob.frohne</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+-- 
+Rob Frohne, Ph.D., P.E.
+E.F. Cross School of Engineering
+Walla Walla University
+100 SW 4th Street
+College Place, WA 99324
+(509) 527-2075			 <A HREF="http://people.wallawalla.edu/~rob.frohne">http://people.wallawalla.edu/~rob.frohne</A>
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101224/c068ba01/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101224/c068ba01/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: frohro.vcf
+Type: text/x-vcard
+Size: 298 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101224/c068ba01/attachment.vcf">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101224/c068ba01/attachment.vcf</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001502.html">PSK31 spotting without GUI?
+</A></li>
+	<LI>Next message: <A HREF="001504.html">Can you set the operating frequency automatically on startup?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1503">[ date ]</a>
+              <a href="thread.html#1503">[ thread ]</a>
+              <a href="subject.html#1503">[ subject ]</a>
+              <a href="author.html#1503">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

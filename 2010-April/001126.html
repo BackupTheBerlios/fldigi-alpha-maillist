@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3C4BC9DB63.20200%40comcast.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001123.html">
+   <LINK REL="Next"  HREF="001127.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>hteller</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3C4BC9DB63.20200%40comcast.net%3E"
+       TITLE="Contestia">hteller at comcast.net
+       </A><BR>
+    <I>Sat Apr 17 18:01:39 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001123.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001127.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1126">[ date ]</a>
+              <a href="thread.html#1126">[ thread ]</a>
+              <a href="subject.html#1126">[ subject ]</a>
+              <a href="author.html#1126">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Brian,
+
+We again tested DominoEx against Contestia on UHF today with the 
+customary Doppler disturbance and DominoEx 8 did poorly, but Contestia 
+had perfect copy. Signals were S3, so moderately strong. This is not the 
+first time Contestia has outperformed DominoEx by a wide margin. In this 
+screen capture, the &quot;Doppler kink&quot; in the spurious seen in the DominoEx 
+waterfall is not there in Contestia, but was there a minute earlier and 
+Contestia printed perfectly the entire time. You can tell from the text 
+that DominoEx 8 was producing poor copy, but signals were fairly strong.
+
+
+
+
+73 - Skip KH6TY
+
+
+
+
+Brian Lloyd wrote:
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Sat, Apr 17, 2010 at 6:59 AM, Pino Zollo &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pinozollo at gmail.com</A> 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pinozollo at gmail.com</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>     Hi,
+</I>&gt;<i>
+</I>&gt;<i>     I made two QSO's in Contestia....
+</I>&gt;<i>
+</I>&gt;<i>     It works fine but the water-fall was not showing anything.
+</I>&gt;<i>
+</I>&gt;<i>     Is this because Contestia is so sensible to decode extremely weak
+</I>&gt;<i>     signals or
+</I>&gt;<i>     is a problem ?
+</I>&gt;<i>     The water fall was showing other PSK31 signal in the band.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Contestia and Olivia are virtually identical CODECs. Their performance 
+</I>&gt;<i> is going to be within one or two dB of each other so what you expect 
+</I>&gt;<i> from Olivia you can expect from Contestia. 
+</I>&gt;<i>
+</I>&gt;<i> Contestia uses a small character set so it needs fewer bits 
+</I>&gt;<i> transferred for the same message. This also means that you don't get 
+</I>&gt;<i> lower case letters and many punctuation symbols you can send with 
+</I>&gt;<i> Olivia. Also Contestia has a smaller block size and shorter 
+</I>&gt;<i> interleave. This means less delay but less resistance to long fading 
+</I>&gt;<i> (QSB). If you increase the interleave to provide QSB resistance you 
+</I>&gt;<i> can expect longer delays (latency) before copy starts.
+</I>&gt;<i>
+</I>&gt;<i> In this same family of protocols you will find MFSK16, DominoEX, and 
+</I>&gt;<i> Thor. Olivia, Contestia, and MFSK16 all share the same base modulation 
+</I>&gt;<i> -- m-ary frequency shift keying. The differences are in the 
+</I>&gt;<i> alphabet/character-set they use, the symbol (baud) rate, and the 
+</I>&gt;<i> robustness of the forward error correction (FEC). If you set the 
+</I>&gt;<i> #tones (always a power of 2, e.g. 2, 4, 8, 16, 32), symbol rate 
+</I>&gt;<i> (determines tone spacing), and level of FEC the same on these 
+</I>&gt;<i> protocols, they will provide the same speed and weak-signal performance.
+</I>&gt;<i>
+</I>&gt;<i> (Soapbox -- We would be better served by having just one of these 
+</I>&gt;<i> modes and then allow selection of the tones, baud rate, convolution 
+</I>&gt;<i> polynomial, block size, interleave factor, and Viterbi decoder 
+</I>&gt;<i> settings and then transmit that in something equivalent to an RSID 
+</I>&gt;<i> header.)
+</I>&gt;<i>
+</I>&gt;<i> DominoEX and Thor use a novel and, frankly, better modulation scheme 
+</I>&gt;<i> than the pure MFSK used in MFSK16/Olivia/Contestia. All other things 
+</I>&gt;<i> being equal, if you were to put DominoEX with FEC or Thor up against 
+</I>&gt;<i> on the three other above but ensure that you are using like parameters 
+</I>&gt;<i> for baud rate, convolutional coding, and FEC, DominoEX and Thor would 
+</I>&gt;<i> be easier to tune and more resilient in the presence of doppler. In 
+</I>&gt;<i> other words, they would flat-out work better.
+</I>&gt;<i>
+</I>&gt;<i> I apologize for what is a really long answer to your question. I hope 
+</I>&gt;<i> it helps to understand the differences and to set reasonable 
+</I>&gt;<i> expectations for performance. 
+</I>&gt;<i>
+</I>&gt;<i> Hmm, it would be great if there were a table that listed the basic 
+</I>&gt;<i> parameter differences between modes so we could pick the one that best 
+</I>&gt;<i> met conditions at the time so as to provide maximum throughput at 100% 
+</I>&gt;<i> copy. Frankly, most of the time Olivia is overkill but it also 
+</I>&gt;<i> provides the most robust FEC and interleave so it will get through 
+</I>&gt;<i> under the worst conditions when the other modes are failing.
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> 73 de Brian, WB6RQN/J79BPL
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>   
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/92a83d43/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/92a83d43/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: DOMEX8.JPG
+Type: image/jpeg
+Size: 138488 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/92a83d43/attachment.jpe">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/92a83d43/attachment.jpe</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: CONT.JPG
+Type: image/jpeg
+Size: 182285 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/92a83d43/attachment-0001.jpe">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/92a83d43/attachment-0001.jpe</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001123.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001127.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1126">[ date ]</a>
+              <a href="thread.html#1126">[ thread ]</a>
+              <a href="subject.html#1126">[ subject ]</a>
+              <a href="author.html#1126">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

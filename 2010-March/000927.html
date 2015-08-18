@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.20.0b3 beta issue
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.20.0b3%20beta%20issue&In-Reply-To=%3C60513.1267907242%40ct.metrocast.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000938.html">
+   <LINK REL="Next"  HREF="000929.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.20.0b3 beta issue</H1>
+    <B>P.J. Rovero</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.20.0b3%20beta%20issue&In-Reply-To=%3C60513.1267907242%40ct.metrocast.net%3E"
+       TITLE="3.20.0b3 beta issue">provero at ct.metrocast.net
+       </A><BR>
+    <I>Sat Mar  6 21:27:22 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000938.html">RSID ON 3.20.0b3
+</A></li>
+        <LI>Next message: <A HREF="000929.html">Weather fax and set_scope
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#927">[ date ]</a>
+              <a href="thread.html#927">[ thread ]</a>
+              <a href="subject.html#927">[ subject ]</a>
+              <a href="author.html#927">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Saw the following error/diagnostic:
+
+Expression 'ret' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 1025
+Expression 'AlsaOpen( &amp;alsaApi-&gt;baseHostApiRep, params, streamDir, &amp;self-&gt;pcm )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 1182
+Expression 'PaAlsaStreamComponent_Initialize( &amp;self-&gt;playback, alsaApi, outParams, StreamDirection_Out, NULL != callback )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 1413
+Expression 'PaAlsaStream_Initialize( stream, alsaHostApi, inputParameters, outputParameters, sampleRate, framesPerBuffer, callback, streamFlags, userData )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 1990
+E: trx_trx_transmit_loop: PortAudio error: Device unavailable
+
+The program appeared to be operating properly.
+
+Built for Linux x86_64 from source.
+
+
+
+P.J. &quot;Josh&quot; Rovero        Ham Radio:  KK1D
+ABC:  9277                   1985 BMW R80RT
+Web:     <A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>
+
+ 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000938.html">RSID ON 3.20.0b3
+</A></li>
+	<LI>Next message: <A HREF="000929.html">Weather fax and set_scope
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#927">[ date ]</a>
+              <a href="thread.html#927">[ thread ]</a>
+              <a href="subject.html#927">[ subject ]</a>
+              <a href="author.html#927">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Rig Control/Freq Display request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3Cg2h1561aee61005011435jc49f3d60p50f36bb2ee3cb6c6%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001184.html">
+   <LINK REL="Next"  HREF="001182.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Rig Control/Freq Display request</H1>
+    <B>Anony Mous</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Rig%20Control/Freq%20Display%20request&In-Reply-To=%3Cg2h1561aee61005011435jc49f3d60p50f36bb2ee3cb6c6%40mail.gmail.com%3E"
+       TITLE="Rig Control/Freq Display request">fyngyrz at gmail.com
+       </A><BR>
+    <I>Sat May  1 23:35:00 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001184.html">Rig Control/Freq Display request
+</A></li>
+        <LI>Next message: <A HREF="001182.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1187">[ date ]</a>
+              <a href="thread.html#1187">[ thread ]</a>
+              <a href="subject.html#1187">[ subject ]</a>
+              <a href="author.html#1187">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, May 1, 2010 at 2:20 PM, Brian Lloyd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A>&gt; wrote:
+
+BTW, if you  look at how channels are defined in commercial SSB operation,
+&gt;<i> they  specify the passband width (3kHz) and a center frequency for
+</I>&gt;<i> thechannel as that clearly defines precisely where the RF ends up in the
+</I>&gt;<i> spectrum.
+</I>&gt;<i>
+</I>
+But that's also simply convention - there's no more info there than saying
+the (suppressed) carrier frequency is 8080 Khz, and the signal is USB, 3
+KHz. That's 8080 to 8083, just as saying the center frequency is 8081.5 KHz,
+and the signal is 3 KHz centered there, is *also* 8080-8083. Strictly
+convention. Not more, or better, information.
+
+So the question becomes, since these are not different from one another in
+terms of describing what's actually happening with the RF, is there are a
+reason to use one or the other at any other level? And there are several
+that I've identified, all of which fall on the carrier frequency side of the
+argument, rather than the center. I'm very interested to learn what benefit
+one might gain from center and excursion, instead, because that's kind of
+what the subject is. So far, nothing.
+
+
+&gt;<i> &gt; Ok. Here's the crux of the matter. Why does &quot;the operating ham need to
+</I>&gt;<i> know
+</I>&gt;<i> &gt; this&quot;?
+</I>&gt;<i>
+</I>&gt;<i> Because he needs to know precisely where his RF is going so that he
+</I>&gt;<i> doesn't operate outside the band. Here in the US the FCC doesn't give
+</I>&gt;<i> a rat's patootie what the dial frequency is, only if the RF goes
+</I>&gt;<i> outside the spectrum allocated to the class of license held by the
+</I>&gt;<i> operator.
+</I>&gt;<i>
+</I>
+So, you have a 3 Khz USB signal, you don't go beyond 3 KHz of near the
+band's upper edge. Are you telling me you don't think hams should know that?
+Heck, if they don't know that, they're not even qualified to operate voice.
+Further, if your radio is on 14.349 KHz, and you intend to transmit 170 Hz
+around that (presuming you were allowed to), but the cat pulls your AF wire,
+you're all of a sudden sending noise from 14.349-14.253 KHz... No, I'm not
+buying that one. You should be tuned to the suppressed carrier frequency,
+MAX at 14.247, so you KNOW you won't be sending out of band. That's the
+correct way to handle OOB tuning. Next?
+
+
+&gt;<i> You are thinking too much from the point of view of doing things for
+</I>&gt;<i> the radio, not the radio doing things for you.
+</I>&gt;<i>
+</I>
+The radio isn't going to re-tune the if shift, or correct the AF output for
+external hardware, or eliminate AGC signals from a wide-open passband, is
+it? So this isn't a valid point.
+
+
+&gt;<i>  &gt; Please enlighten me here. What *is* fldigi's display of RF, as opposed
+</I>&gt;<i> to
+</I>&gt;<i> &gt; AF, frequency good for, and why does the operator &quot;need to know&quot;?
+</I>&gt;<i>
+</I>&gt;<i> Uh, because the operator might not want a pink ticket?
+</I>&gt;<i>
+</I>
+No, that's already been disposed of. It's not sensible. If the op doesn't
+know where he's allowed to operate, and is setting his radio so that the
+transmit capability overlaps the edge of the band, what's he doing on a ham
+band in the first place?
+
+
+&gt;<i>  &gt; On the other hand, if the waterfall is set to AF, and the modem is set
+</I>&gt;<i> &gt; correctly (let's say that RTTY mark is at 2125 Hz where it belongs),
+</I>&gt;<i>
+</I>&gt;<i> Why does it belong at 2125?
+</I>
+
+1) Because every chunk of hardware designed for RTTY expects that frequency
+(and there are a lot of great AF filters and other devices, such as displays
+or teletypes, out there);
+
+2) because the higher in frequency it is, the sharper the mark-space
+transitions can become
+
+3) because that puts your radio, when its in the proper sideband, on the
+same frequency to transmit back
+
+
+&gt;<i> I never use 2125 for RTTY. I happen to use 1500 because that is the center
+</I>&gt;<i> of my passband and I have my filters centered on that. I just switch the
+</I>&gt;<i> width to match the emission mode  but they are still centered on 1500 Hz low
+</I>&gt;<i> IF.
+</I>&gt;<i>
+</I>
+Well, then you're doing it less well than you could be. Generally speaking,
+you'd get better performance at 2125. Not to mention better compatibility
+with other hardware and direct rx/tx frequency correlation for AFSK users
+(ie, most of us.)
+
+
+&gt;<i> You mean by mentally setting your radio dial 2125 Hz below the
+</I>&gt;<i> frequency where you actually want to operate.
+</I>
+
+No, I don't mean that at all. I simply slot the signal where the modem says
+it should go, then check the radio to make sure that's inside the band
+limits so I don't get a ticket if I transmit. There is no other step. I'm
+tuned, ready to go, AGC is tight inside the signal bandwidth, IF shift is
+correct, external hardware is set perfectly, nothing else to do but enjoy
+everything working correctly. One hand motion. No mental gymnastics that
+exceed what you have to do (we both need to look at where we're operating,
+for instance... you can't get out of that.)
+
+
+&gt;<i> I understand why you do that. We have been doing that in our heads for
+</I>&gt;<i> probably 75 years when operating RTTY.
+</I>
+
+But see, you didn't understand at all, because I don't even do it.
+
+
+&gt;<i> But that doesn't mean that it is what is really
+</I>&gt;<i> happening. It is what we do by convention to ensure that we put the
+</I>&gt;<i> signal where it should be in the RF spectrum.
+</I>&gt;<i>
+</I>
+We are generally using a VOICE mode (USB, LSB) with a 3 KHz bandwidth to
+work these modes. We should remain sensible of that at all times. If for no
+other reason than the transmitter is capable of sending significant RF
+anywhere from 300 Hz or so above the (suppressed) carrier frequency to 3
+KHz, and so we should NEVER tune the transmitter further than 3 KHz of the
+edge of the band (upper for USB, lower for LSB.) You may have an audio jack
+plugged in that you think will never carry a signal other than what you mean
+to send, and then your cat or dog or your own tripping foot pulls the jack,
+and bingo, you're transmitting out of band. So the right thing, in the very
+most technical sense, is to control the frequency of the transmitter. Not
+operate by some sum that is made up of audio and RF frequencies and that --
+at the moment, because the cat is asleep -- doesn't exceed the band edge.
+
+
+&gt;<i> 73 de Brian, WB6RQN/J79BPL
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100501/37918f15/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100501/37918f15/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001184.html">Rig Control/Freq Display request
+</A></li>
+	<LI>Next message: <A HREF="001182.html">Rig Control/Freq Display request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1187">[ date ]</a>
+              <a href="thread.html#1187">[ thread ]</a>
+              <a href="subject.html#1187">[ subject ]</a>
+              <a href="author.html#1187">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

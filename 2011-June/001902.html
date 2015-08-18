@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Help with fldigi Hamlib PTT Issue with USB Interface.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Help%20with%20fldigi%20Hamlib%20PTT%20Issue%20with%20USB%20Interface.&In-Reply-To=%3CB015B6E8-57AE-4733-9F09-0B71C811B1FB%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001901.html">
+   <LINK REL="Next"  HREF="001903.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Help with fldigi Hamlib PTT Issue with USB Interface.</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Help%20with%20fldigi%20Hamlib%20PTT%20Issue%20with%20USB%20Interface.&In-Reply-To=%3CB015B6E8-57AE-4733-9F09-0B71C811B1FB%40att.net%3E"
+       TITLE="Help with fldigi Hamlib PTT Issue with USB Interface.">aa5vu at att.net
+       </A><BR>
+    <I>Sat Jun 11 01:43:28 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001901.html">WEFAX under 3.21.10
+</A></li>
+        <LI>Next message: <A HREF="001903.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1902">[ date ]</a>
+              <a href="thread.html#1902">[ thread ]</a>
+              <a href="subject.html#1902">[ subject ]</a>
+              <a href="author.html#1902">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>First, the good news is fldigi-3.21.11.dmg works with my Kenwood TS-590S 
+using, the direct USB interface to an iMac using the Silicon Labs USB-to-UART 
+VPC Driver - provided I use the fldigi RigCAT option for rig control. 
+
+The bad news is I have not been able to get the Hamlib option for rig control 
+in fldigi to key or cause the TS-590S to transmit. I suspect the reason it will not 
+transmit is the Hamlib option for &quot;PTT via hamlib command&quot; is checked but the 
+option is dimmed or not active in the fldigi configuration panel. 
+
+Dave W1HKJ, has not been able to duplicate problem most likely because he 
+does have a Kenwood TS-590S and may not use a direct USB interface in his 
+development setup.
+
+One guess was the problem could be related to the Silicon Labs USB to UART 
+VPC driver used by Kenwood for the TS-590S and Icom for the IC-7410; however,
+RigCAT does not have an issue with this driver. For this reason I tend to discount 
+the SL USB-to-UART as the problem child.
+
+I had no problem using the Hamlib interface when I used the SignaLink USB 
+via the TS-590's Acc2 port. Keying the rig was handled by the Auto-PTT circuit
+in the SignaLink USB.  There was no reason for me to check the box to 
+&quot;PTT via Hamlib command&quot; and I never noticed if it was dimmed or active. 
+
+I first noticed the inactive or dimmed out PTT option when took the SignaLink 
+out of line and went to the direct USB interface for audio and rig control. When 
+Hamlib would not transmit, I switch over to RigCAT that works but does not 
+report VFO-B frequencies for DX split operations.
+
+When Dave W1HKJ could not duplicate the problem, I assumed there may 
+something wrong with my setup so I started over as a new user. I let the fldigi 
+Wizard do its thing and when it presented the rig control options, the PTT option 
+was not dimmed in Hamlib. I selected it and when I pushed the red initialize button,
+fldigi crashed - hung - big time and I had to use the OS X Force Quit to escape. 
+When I restarted, the PTT option was checked but the option was dimmed and 
+fldigi could not key the rig.
+
+I have seen notes from Nate N0NB about a new version of Hamlib. Has the
+new version been tested with fldigi? I wonder if the new version will correct
+the noted PTT issue. Nate indicated Hamlib keys his K3 via a USB using his 
+old .fldigi folder but I don't know how his K3 setup relates to a Kenwood. 
+
+Someone mentioned there could be a port ownership issue with RigCAT or
+the Mac OS owning the USB port and not releasing for use by Hamlib. I have no 
+way to assess or test for port ownership. I could not get Hamlib to work as 
+a new user.
+
+Has any member of fldigi alpha team recently tested the Hamlib option to &quot;PTT 
+via Hamlib control&quot; via a USB port?
+
+Anyone else using one of the Silicon Labs USB to UART drivers with Hamlib
+for Window, Linux and Mac OS X?
+
+<A HREF="http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx">http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx</A>
+
+How about some feedback from another fldigi Kenwood TS-590S or Icom 
+IC-7410 user with the USB interface?
+
+I am open to any suggestion to get Hamlib working with the Kenwood TS-590S 
+USB interface. 
+
+I don't think the Hamlib PTT option in fldigi should be dimmed out.
+
+Dick AA5VU
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001901.html">WEFAX under 3.21.10
+</A></li>
+	<LI>Next message: <A HREF="001903.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1902">[ date ]</a>
+              <a href="thread.html#1902">[ thread ]</a>
+              <a href="subject.html#1902">[ subject ]</a>
+              <a href="author.html#1902">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

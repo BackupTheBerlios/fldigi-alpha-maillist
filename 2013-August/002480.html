@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.21.74AB posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2013-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.74AB%20posted&In-Reply-To=%3C5216B01E.4090202%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002481.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.21.74AB posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.74AB%20posted&In-Reply-To=%3C5216B01E.4090202%40bellsouth.net%3E"
+       TITLE="fldigi 3.21.74AB posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Aug 23 02:43:10 CEST 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002481.html">Fwd: Re: fldigi 3.21.74AB posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2480">[ date ]</a>
+              <a href="thread.html#2480">[ thread ]</a>
+              <a href="subject.html#2480">[ subject ]</a>
+              <a href="author.html#2480">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/v3.21">http://www.w1hkj.com/alpha/fldigi/v3.21</A>
+
+Version 3.21 alpha
+       * 3.21.74AB
+
+     RSID update
+       * Changes needed to improve double RsID detection
+       * Removed resample test and dependent code
+       * Reimplemented FFT bucket array
+         - removed array pointer arithmetic
+         - memory copy and initializers used to update
+           the bucket array
+         - modified search routine to insure that all elements
+           of FFT bucket array are tested.
+
+     Sound File
+       * Changed recording to selectable
+         - 22050, 24000, 44100, 48000 samples / sec
+       * Change to allow playback at any sample rate
+       * Record and playback are monophonic
+         - left channel active
+
+     fltk 1.1.x
+       * Remove all code elements specifically in support
+         of the Fast Light Toolkit version 1.1.x
+
+RsID detection should be improved over the current 3.21.74 release. 
+Suggest concentrating on testing that facility.  If you do not have a 
+test partner you can copy the VOA broadcasts this weekend.
+
+73, Dave, W1HKJ
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002481.html">Fwd: Re: fldigi 3.21.74AB posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2480">[ date ]</a>
+              <a href="thread.html#2480">[ thread ]</a>
+              <a href="subject.html#2480">[ subject ]</a>
+              <a href="author.html#2480">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

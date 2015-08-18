@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Cq2ye93450131004181619wd4de04e8r740e0c5d72dfe017%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001139.html">
+   <LINK REL="Next"  HREF="001148.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Cq2ye93450131004181619wd4de04e8r740e0c5d72dfe017%40mail.gmail.com%3E"
+       TITLE="Contestia">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Mon Apr 19 01:19:30 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001139.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001148.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1147">[ date ]</a>
+              <a href="thread.html#1147">[ thread ]</a>
+              <a href="subject.html#1147">[ subject ]</a>
+              <a href="author.html#1147">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, Apr 17, 2010 at 4:08 PM, hteller &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hteller at comcast.net</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> I think the distinction needs to be made between passing traffic and a QSO. No matter how fast a typist you may be, or how fast the mode is, unless you &quot;typeahead&quot; at a furious rate, the amount of time spent typing thoughts, or during changeovers, is the same if the mode is 50 wpm or 250 wpm.
+</I>&gt;<i>
+</I>&gt;<i> The other problem is that wide modes &quot;tend&quot; to have a poorer minimum S/N than more narrow modes. I am not sure why this is true, but it is for almost all the modes at our disposal.
+</I>
+Bandwidth means noise admittance. If you double the bandwidth, you
+double (+3dB) the noise power you admit with it. Likewise, if you
+double your signaling (baud) rate you double the bandwidth (look at
+the sidebands) and at the same time you cut the energy per symbol in
+half. That combination is an instant 6dB hit. So that is why slow,
+narrow modes work farther down into the noise.
+But when you come right down to it, for a given quality of copy (bit
+error rate) the energy-per-bit remains the same no matter what speed
+you run.
+
+&gt;<i>
+</I>&gt;<i> Double the speed, and you double the bandwidth, but require two times better S/N. Perhaps if a wide mode were designed that effectively used all the bandwidth as effectively as a more narrow mode, this would not be true. There is probably communications theory to tell if this is possible.
+</I>
+&quot;Wide&quot; modes do use the bandwidth as effectively as &quot;narrow&quot; modes.
+You need to look at the signal energy per bit vs. the effective noise
+energy per bit. This is called Eb/No. Remember that we are looking at
+energy and not power. When you send data twice as fast, you have half
+the signal energy but also half the noise energy.
+But all of that presumes a channel dominated by gaussian white noise
+and not an HF path through the ionosphere. At that point the
+theoretical advantage of, say, BPSK may no longer hold true. The CODEC
+needs to be smart enough to evaluate what the path is doing to the
+signal and to &quot;shift gears&quot;. It may turn out that as band conditions
+change, it may discover that there is sufficient signal quality to
+switch from MFSK/ISK to BPSK. As it improves it may switch to QPSK. It
+may even go as far as QAM (not likely but possible). As conditions
+improve it may even do OFDM. As conditions worsen it needs to roll
+back until maybe it is at 5-baud 8-tone MFSK again.
+&gt;<i>
+</I>&gt;<i> Just suppose all the PSK31 operators switched to Contestia, which works better than PSK31 under adverse conditions. There probably would not be enough space on HF to handle all the QSO's now on PSK31. Sure, there would be less fills or errors, but many people are satisfied with the PSK31 performance. However, there is a case to be made for using Olivia or Contestia 16-500 (30 wpm in Contestia or 15 wpm in Olivia) - communication is simply possible when it is impossible using PSK31, for example on UHF where Doppler effects make PSK31 totally unusable, or over the polar path.
+</I>
+There just aren't many times when conditions really favor PSK on an HF
+path. It is almost a given that any MFSK mode will outperform any PSK
+mode for a given set of signal conditions. Oh, and equivalent FEC. The
+reason we use PSK31 and RTTY is because, well, they have been around
+for awhile, not because the are particularly good. (PSK31 *is* better
+than RTTY but then, everything *is* better than RTTY. :-)
+Yup to the rest of what you said.
+
+&gt;<i>
+</I>&gt;<i> There were 3 S-units of enhancement two days ago on our UHF path, and very little Doppler, so we tried PSK125R. No problem at all, and no errors, but you type for a minute and it all goes out in a few seconds, and then you wait for the other station to type for a minute, etc.! It is just essential to define the purpose of communication - is it for passing traffic as quickly as possible, or is it for conversation? The choice of mode and speed depends upon the path and purpose and there is no clear choice that fits all.
+</I>
+No, you don't need to choose. You need to multiplex. Use the excess
+capacity to carry other traffic. If nothing else, have it carry signal
+information, e.g. S:N, Eb/No, QSB, BER, flutter, doppler, multipath,
+etc. Now the sending end can make a decision how to send the next
+chunk of information. Heck, the computer can even do that. Oh, wait,
+that is what I am going to work on. Never mind.
+
+&gt;<i>
+</I>&gt;<i> For us on UHF, we find that Contestia is every bit as good as Olivia, but twice as fast (at 30 wpm) when Olivia seems painfully slow for comfortable conversation at only 15 wpm. I touch-type at only about 35 wpm, and if I make a typo, many times there is time for me to backspace and make a correction just before the letters are sent out, so Contestia is a good &quot;fit&quot; for me - sensitive, fast enough, and resilient to the rough conditions we have on UHF. Olivia might be a better &quot;fit&quot; for others and have both upper and lower cases. BTW, in the latest fldigi, there is an option to print incoming text in all lower case, which some find easier to read for conversation than all upper case. Transmission is converted to all upper case, of course.
+</I>
+&#160;Contestia is as good as olivia only if they are running the same baud
+rate, block size, and interleave. Well, it sends characters in fewer
+bits. But then that means that a burst of errors will take out more
+characters.
+
+
+but then, we really dont need upper and lower case to get our message
+through. still, i do like lower case most of the time. it is easier to
+read.
+BUT THEN, WE REALLY DONT NEED UPPER AND&#160;LOWER CASE TO GET OUR MESSAGE
+THROUGH. STILL, I DO LIKE LOWER CASE MOST OF THE TIME. IT IS EASIER TO
+READ.
+
+--
+73 de Brian, WB6RQN/J79BPL
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001139.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001148.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1147">[ date ]</a>
+              <a href="thread.html#1147">[ thread ]</a>
+              <a href="subject.html#1147">[ subject ]</a>
+              <a href="author.html#1147">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

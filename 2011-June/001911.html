@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Adif files, tags MODE, USERDEF1, USERDEF2 etc...
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Adif%20files%2C%20tags%20MODE%2C%20USERDEF1%2C%20USERDEF2%20etc...&In-Reply-To=%3C4DF51ECD.9090706%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001910.html">
+   <LINK REL="Next"  HREF="001912.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Adif files, tags MODE, USERDEF1, USERDEF2 etc...</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Adif%20files%2C%20tags%20MODE%2C%20USERDEF1%2C%20USERDEF2%20etc...&In-Reply-To=%3C4DF51ECD.9090706%40gmail.com%3E"
+       TITLE="Adif files, tags MODE, USERDEF1, USERDEF2 etc...">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Jun 12 22:17:17 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001910.html">RTTY, ADIF files
+</A></li>
+        <LI>Next message: <A HREF="001912.html">Adif files, tags MODE, USERDEF1, USERDEF2 etc...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1911">[ date ]</a>
+              <a href="thread.html#1911">[ thread ]</a>
+              <a href="subject.html#1911">[ subject ]</a>
+              <a href="author.html#1911">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I wish to be able to correctly tune fldigi given a record in an ADIF file.
+
+When saving a record in the adif log file, fldigi creates a mode tag 
+which is not a one-to-one map to ADIF specification.
+
+Example:
+
+const struct mode_info_t {
+	trx_mode mode;
+...
+	const char *adif_name;
+...
+};mode_info[NUM_MODES] = {
+...
+	{ MODE_DOMINOEX4, ... &quot;DOMINO&quot;, },
+	{ MODE_DOMINOEX5, ... &quot;DOMINO&quot;, },
+	{ MODE_DOMINOEX8, ... &quot;DOMINO&quot;, },
+...
+
+So, if the ADFI file has the tag &quot;&lt;MODE:6&gt;DOMINO&quot;, it is not possible to 
+restore the original fldigi modem.
+
+Even if there is a one-to-one match, such as RTTY &lt;=&gt; RTTY, we loose 
+many parameters, on the contrary of what is done with macros parameters:
+&lt;MODEM:RTTY:850:75:5&gt;
+
+So, it is not possible to restore the conditions of a QSO because we 
+lose some information in the process of saving a record to an adif file:
+- The rig mode: USB, AM etc... (Although it could by heuristically restored)
+- The modem parameters.
+
+
+On the other hand, adif gives the possibility to add user-defined files 
+(<A HREF="http://www.adif.org/adif224.htm">http://www.adif.org/adif224.htm</A> ). So why not using them to save more 
+information, such as these exemples:
+&lt;MODE:4&gt;RTTY&lt;USERDEF1:13&gt;RTTY;850;75;5&lt;USERDEF2:3&gt;USB&lt;EOR&gt;
+&lt;MODE:3&gt;FAX&lt;USERDEF1:11&gt;WEFAXIOC576&lt;USERDEF2:3&gt;USB&lt;EOR&gt;
+
+This would be completely compatible with existing adif files and 
+applications, but would allow to retune to a former qso
+
+What do you think ?
+
+Remi F4ECW
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001910.html">RTTY, ADIF files
+</A></li>
+	<LI>Next message: <A HREF="001912.html">Adif files, tags MODE, USERDEF1, USERDEF2 etc...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1911">[ date ]</a>
+              <a href="thread.html#1911">[ thread ]</a>
+              <a href="subject.html#1911">[ subject ]</a>
+              <a href="author.html#1911">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Help with fldigi Hamlib PTT Issue with USB Interface.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Help%20with%20fldigi%20Hamlib%20PTT%20Issue%20with%20USB%20Interface.&In-Reply-To=%3C20110611002917.GE12227%40n0nb.us%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001902.html">
+   <LINK REL="Next"  HREF="001904.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Help with fldigi Hamlib PTT Issue with USB Interface.</H1>
+    <B>Nate Bargmann</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Help%20with%20fldigi%20Hamlib%20PTT%20Issue%20with%20USB%20Interface.&In-Reply-To=%3C20110611002917.GE12227%40n0nb.us%3E"
+       TITLE="Help with fldigi Hamlib PTT Issue with USB Interface.">n0nb at n0nb.us
+       </A><BR>
+    <I>Sat Jun 11 02:29:17 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001902.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+        <LI>Next message: <A HREF="001904.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1903">[ date ]</a>
+              <a href="thread.html#1903">[ thread ]</a>
+              <a href="subject.html#1903">[ subject ]</a>
+              <a href="author.html#1903">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>* On 2011 10 Jun 18:45 -0500, Dick Kriss wrote:
+&gt;<i> Has any member of fldigi alpha team recently tested the Hamlib option to &quot;PTT 
+</I>&gt;<i> via Hamlib control&quot; via a USB port?
+</I>
+I would, except that the 3.21.10 package for Debian now fails with the
+same error I reported to this list last month about getMenuItem
+failures.  Fldigi exits with a stack trace at this point.  Fortunately,
+WE0A advised that compiling locally and disabling NLS allowed Fldigi to
+run for him.  So I guess it's back to local compiles until this is
+sorted.
+
+I recall that when I tried a new profile with some version of Fldigi
+that I no longer have that the Hamlib PTT button was greyed out as you
+describe but with my old config it was fine and working.  Then I tried
+a local build of 3.21.9 and got the menu issue.  Fortunately, Kamal's
+3.21.9 package worked which was updated last week so I'm without Fldigi
+again.
+
+And, yes, I do try the latest Hamlib releases since I've taken on being
+the Hamlib release manager role.
+
+&gt;<i> I don't think the Hamlib PTT option in fldigi should be dimmed out.
+</I>
+I agree since I've just reviewed the Hamlib sources and the TS-590 calls
+the same kenwood_set_ptt function that the K3 backend calls and Hamlib
+PTT was working in 3.21.9 for me.
+
+I'll try building my own copy of Fldigi and report back.
+
+73, de Nate &gt;&gt;
+
+-- 
+
+&quot;The optimist proclaims that we live in the best of all
+possible worlds.  The pessimist fears this is true.&quot;
+
+Ham radio, Linux, bikes, and more: <A HREF="http://www.n0nb.us">http://www.n0nb.us</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001902.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+	<LI>Next message: <A HREF="001904.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1903">[ date ]</a>
+              <a href="thread.html#1903">[ thread ]</a>
+              <a href="subject.html#1903">[ subject ]</a>
+              <a href="author.html#1903">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

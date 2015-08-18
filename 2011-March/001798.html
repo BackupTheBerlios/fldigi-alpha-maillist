@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Data Point testing QSY command on fldigi-3.22.0AA
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Data%20Point%20testing%20QSY%20command%20on%20fldigi-3.22.0AA&In-Reply-To=%3CF6BD0E33-E018-4185-988F-9C6680DE3731%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001797.html">
+   <LINK REL="Next"  HREF="001799.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Data Point testing QSY command on fldigi-3.22.0AA</H1>
+    <B>Dick</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Data%20Point%20testing%20QSY%20command%20on%20fldigi-3.22.0AA&In-Reply-To=%3CF6BD0E33-E018-4185-988F-9C6680DE3731%40att.net%3E"
+       TITLE="Data Point testing QSY command on fldigi-3.22.0AA">aa5vu at att.net
+       </A><BR>
+    <I>Tue Mar  8 19:37:46 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001797.html">fldigi-3.22.0AA  / flmsg-1.1.3
+</A></li>
+        <LI>Next message: <A HREF="001799.html">Data Point testing QSY command on fldigi-3.22.0AA
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1798">[ date ]</a>
+              <a href="thread.html#1798">[ thread ]</a>
+              <a href="subject.html#1798">[ subject ]</a>
+              <a href="author.html#1798">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 8, 2011, at 10:04 AM, Dave Freese wrote:
+
+&gt;<i> On 3/7/11 9:22 PM, Dick wrote:
+</I>&gt;&gt;<i> Dave,
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> QSL note about the new fldigi-3.22.0AA and while I am not a NBEMS user
+</I>&gt;&gt;<i> I installed fldgi to check on how it does commanding the TS-590S VFO's.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I was surprised to find fldigi-3.22.0AA would command VFO-A only, like
+</I>&gt;&gt;<i> the released 3.21.4.  It was a short lived success.  I then opened 3.21.4
+</I>&gt;&gt;<i> and confirmed as expected the QSY button only commanded when VFO-A
+</I>&gt;&gt;<i> was active. I then changed back to 3.22.0AA and (like 3.21.4AA) it
+</I>&gt;&gt;<i> commanded VFO-B and would not command VFO-A.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Something is getting flipped by the alpha code.  Just another clue to the
+</I>&gt;&gt;<i> puzzle on how to get fldigi to command the active VFO on the TS-590S.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Dick
+</I>&gt;<i> The rigCat interface code in 3.22.0AA and 3.21.4 are IDENTICAL Dick.  I do not have a clue as to why your system is behaving the way it is.  I've put out a call for some other TS590S testers to see if this behavior is specific to your setup.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Dave
+</I>
+I do not think the flipping of the VFO's has anything to do with RigCAT or 
+HamLib. It seems to be an fldigi issue between fldigi-3.21.4 and fldigi-3.22.0AA.
+I just tired it again and fldigi-3.21.4 commands the TS-590S VFO-A, but does 
+not communicate at all with VFO-B.  
+
+I quit fldigi-3.21.4 and launched 3.22.0AA with VF0-A still active on the
+Kenwood display and there was no communications with VFO-A. The QSY 
+button changes fldigi on the waterfall, but does not change the TS-590S. 
+I then depressed the A/B button on the TS-570S to make VFO-B active and
+fldigi-3.22.0AA commands the rig and the QSY button functions normal as
+long as VF0-B is active.
+
+I am posting this response to the alpha list to see if this weirdness shows
+up in other setups.  I cannot explain the flipping of VFO's between two
+versions of fldigi.
+
+The inability of fldigi to detect and command the active VFO is a limitation
+to fldigi/Kenwood TS-590S users. Hopefully, this shortfall can be corrected 
+in the future. 
+
+73 Dick AA5VU
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001797.html">fldigi-3.22.0AA  / flmsg-1.1.3
+</A></li>
+	<LI>Next message: <A HREF="001799.html">Data Point testing QSY command on fldigi-3.22.0AA
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1798">[ date ]</a>
+              <a href="thread.html#1798">[ thread ]</a>
+              <a href="subject.html#1798">[ subject ]</a>
+              <a href="author.html#1798">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

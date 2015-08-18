@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldige Sound Error - Cooneti
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldige%20Sound%20Error%20-%20Cooneti&In-Reply-To=%3C60310.1249830525%40ct.metrocast.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000001.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldige Sound Error - Cooneti</H1>
+    <B>P.J. Rovero</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldige%20Sound%20Error%20-%20Cooneti&In-Reply-To=%3C60310.1249830525%40ct.metrocast.net%3E"
+       TITLE="Fldige Sound Error - Cooneti">provero at ct.metrocast.net
+       </A><BR>
+    <I>Sun Aug  9 17:08:45 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000001.html">Fldige Sound Error - Cooneti
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#0">[ date ]</a>
+              <a href="thread.html#0">[ thread ]</a>
+              <a href="subject.html#0">[ subject ]</a>
+              <a href="author.html#0">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>All,
+
+After fldigi has been up for several hours, at some point
+I'll get the following message after initiating a transmission.  
+The rig gets keyed, but no transmit audio is generated.  
+
+The only way out is to kill fldigi and restart it.  After a
+fresh restart, the problem does not occur again for 
+several hours.
+
+D: [10:49:13] soundcard/sound.cxx:1181: input rbsize=16384
+D: [10:49:18] soundcard/sound.cxx:1187: output rbsize=16384
+D: [10:49:18] rigcontrol/ptt.cxx:271: Status 06, 00000110
+E: [10:49:19] trx/modem.cxx:270: Sound error: Connection timed out
+E: [10:49:20] trx/modem.cxx:270: Sound error: Connection timed out
+E: [10:49:21] trx/modem.cxx:270: Sound error: Connection timed out
+
+This is on a reasonably fast box (dual core Athlon 4200+) with 
+2 GB Ram (less than 600 MB in use when problem occurs, no 
+swap in use),
+
+Build information:
+built : Wed Jul 29 17:32:46 EDT 2009 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">josh at radio.rovero.net</A> on x86_64-unknown-linux-gnu for x86_64-unknown-linux-gnu
+
+configure flags: '--enable-optimizations=sse2'
+
+compiler : gcc version 4.3.2 20081105 (Red Hat 4.3.2-7) (GCC) 
+
+compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -pthread -I/usr/include/freetype2 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT -I/usr/local/include -I/usr/include/libpng12 -I/usr/include/libxml2 -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -fomit-frame-pointer -msse2 -mfpmath=sse -DNDEBUG
+
+linker flags : -lportaudio -lm -lpthread -lfltk_images -lpng -lz -ljpeg -lfltk -lsamplerate -lpulse-simple -lpulse -L/usr/local/lib -lhamlib -lm -lpng12 -lxmlrpc_server_abyss++ -ldl -lrt
+
+libraries : FLTK 1.1.9
+libsamplerate 0.1.4
+PortAudio 19
+PulseAudio 0.9.14
+Hamlib 1.2.8
+XMLRPC-C 1.14.8
+
+
+Runtime information:
+system : Linux radio.rovero.net 2.6.27.29-170.2.78.fc10.x86_64 #1 SMP Fri Jul 31 04:16:20 EDT 2009 x86_64
+
+libraries : libsamplerate-0.1.4 (c) 2002-2008 Erik de Castro Lopo
+PortAudio V19-devel (built Dec 10 2008) 1899
+Pulseaudio 0.9.14
+Hamlib version 1.2.8
+
+P.J. &quot;Josh&quot; Rovero        Ham Radio:  KK1D
+ABC:  9277                   1985 BMW R80RT
+Web:     <A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>
+
+ 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000001.html">Fldige Sound Error - Cooneti
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#0">[ date ]</a>
+              <a href="thread.html#0">[ thread ]</a>
+              <a href="subject.html#0">[ subject ]</a>
+              <a href="author.html#0">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

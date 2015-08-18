@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> New Bayesian Morse decoder for FLDIGI  available for alpha testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2013-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Bayesian%20Morse%20decoder%20for%20FLDIGI%20%20available%20for%20alpha%20testing&In-Reply-To=%3C652518181.15044.1387942028814.open-xchange%40email.1and1.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002506.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>New Bayesian Morse decoder for FLDIGI  available for alpha testing</H1>
+    <B>mauri at innomore.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Bayesian%20Morse%20decoder%20for%20FLDIGI%20%20available%20for%20alpha%20testing&In-Reply-To=%3C652518181.15044.1387942028814.open-xchange%40email.1and1.com%3E"
+       TITLE="New Bayesian Morse decoder for FLDIGI  available for alpha testing">mauri at innomore.com
+       </A><BR>
+    <I>Wed Dec 25 04:27:08 CET 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002506.html">New Bayesian Morse decoder for FLDIGI available for alpha testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2498">[ date ]</a>
+              <a href="thread.html#2498">[ thread ]</a>
+              <a href="subject.html#2498">[ subject ]</a>
+              <a href="author.html#2498">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have been working on a new Bayesian Morse decoder for FLDIGI for a while.
+The goal was to have a CW decoder that adapts better to different operators
+rhytms, sudden speed changes, signal fluctuations and noise and still is able to
+decode Morse code fairly accurately.
+
+While this software is not perfect and has some bugs I am happy to release this
+brand new version for alpha testing.  I finished the software integration to
+FLDIGI v3.21.75 and spent few hours today listening bands.  Below is a small
+example of W1AW code bulletin at 3.58105 MHz  received with KX3 and a side by
+side comparison of legacy CW decoder  vs  Bayesian decoder:
+&lt;<A HREF="http://ag1le.blogspot.com/2013/12/new-morse-decoder-part-2.html">http://ag1le.blogspot.com/2013/12/new-morse-decoder-part-2.html</A>&gt;
+
+
+The full source code is available in here: &lt;<A HREF="http://www.w1hkj.com/ag1le">http://www.w1hkj.com/ag1le</A>&gt;
+
+I would like to get some alpha testers who are not afraid of compiling this code
+from sources,  playing with it, breaking it and hopefully also helping me to
+find the bugs.
+For example  - the noise level estimator (noise.c) needs some serious work.  If
+you have a algorithm that does the job better this would be one place to start
+improving.  Also, if you know Viterbi or Kalman filter algorithms like your
+pockets I would like to get help fixing a bug that appears in posterior
+probability calculations in probp.c occasionally.
+
+Anyways,  happy holidays for all FLDIGI users and hope to work you over the
+radio.
+
+73
+Mauri AG1LE
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20131224/8d81e7b6/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20131224/8d81e7b6/attachment.html</A>&gt;
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002506.html">New Bayesian Morse decoder for FLDIGI available for alpha testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2498">[ date ]</a>
+              <a href="thread.html#2498">[ thread ]</a>
+              <a href="subject.html#2498">[ subject ]</a>
+              <a href="author.html#2498">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

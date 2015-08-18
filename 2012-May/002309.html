@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLDIGI: CW matched filter and Self Organizing Map decoding	experimental features
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%3A%20CW%20matched%20filter%20and%20Self%20Organizing%20Map%20decoding%0A%09experimental%20features&In-Reply-To=%3C1536583477.979900.1337123398988.JavaMail.open-xchange%40email.1and1.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002308.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLDIGI: CW matched filter and Self Organizing Map decoding	experimental features</H1>
+    <B>mauri at innomore.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLDIGI%3A%20CW%20matched%20filter%20and%20Self%20Organizing%20Map%20decoding%0A%09experimental%20features&In-Reply-To=%3C1536583477.979900.1337123398988.JavaMail.open-xchange%40email.1and1.com%3E"
+       TITLE="FLDIGI: CW matched filter and Self Organizing Map decoding	experimental features">mauri at innomore.com
+       </A><BR>
+    <I>Wed May 16 01:09:58 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002308.html">FLDIGI: two experimental features to improve CW detection and	decoding
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2309">[ date ]</a>
+              <a href="thread.html#2309">[ thread ]</a>
+              <a href="subject.html#2309">[ subject ]</a>
+              <a href="author.html#2309">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I added two experimental pre-alpha level features to  fldigi-3.21.41.
+
+1) CW matched filter - improve signal-to-noise
+2)  Self Organizing Maps / BMU algorithm for improved decoding
+
+I documented these features in my latest blog entry:
+<A HREF="http://ag1le.blogspot.com/2012/05/fldigi-adding-matched-filter-feature-to.html">http://ag1le.blogspot.com/2012/05/fldigi-adding-matched-filter-feature-to.html</A>
+&lt;<A HREF="http://ag1le.blogspot.com/2012/05/fldigi-adding-matched-filter-feature-to.html">http://ag1le.blogspot.com/2012/05/fldigi-adding-matched-filter-feature-to.html</A>&gt;
+
+Rene has  committed my code in his view, so everyone can access it. The
+view is pu/rc :
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=shortlog;h=refs/heads/pu/rc">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=shortlog;h=refs/heads/pu/rc</A>
+&lt;<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=shortlog;h=refs/heads/pu/rc">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=shortlog;h=refs/heads/pu/rc</A>&gt;
+
+The software is here
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=145b7eb1d11a12f54a3d8d6e484c9a3a550c1b0e">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=145b7eb1d11a12f54a3d8d6e484c9a3a550c1b0e</A>
+&lt;<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=145b7eb1d11a12f54a3d8d6e484c9a3a550c1b0e">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=145b7eb1d11a12f54a3d8d6e484c9a3a550c1b0e</A>&gt;
+
+
+These two features are still experimental quality and causing Sig 11
+occasionally (especially if FLDIGI configuration: UI/Browser/&quot;Play back
+history when active channel selected&quot;  feature is used).
+
+If anybody has interest in testing these out please have a look at the blog
+link above and let me know.
+I would appreciate any help making these features more robust and speed
+optimized.
+
+73
+Mauri  AG1LE
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120515/bea9ec9c/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120515/bea9ec9c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002308.html">FLDIGI: two experimental features to improve CW detection and	decoding
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2309">[ date ]</a>
+              <a href="thread.html#2309">[ thread ]</a>
+              <a href="subject.html#2309">[ subject ]</a>
+              <a href="author.html#2309">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

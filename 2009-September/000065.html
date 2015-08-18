@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi feature idea
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20feature%20idea&In-Reply-To=%3CCC8712763A0247F2849740C73510C10D%40latop01%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000057.html">
+   <LINK REL="Next"  HREF="000066.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi feature idea</H1>
+    <B>Gary Wescom</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20feature%20idea&In-Reply-To=%3CCC8712763A0247F2849740C73510C10D%40latop01%3E"
+       TITLE="fldigi feature idea">wescom at wildblue.net
+       </A><BR>
+    <I>Thu Sep  3 05:57:28 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000057.html">PSK Browser
+</A></li>
+        <LI>Next message: <A HREF="000066.html">fldigi feature idea
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#65">[ date ]</a>
+              <a href="thread.html#65">[ thread ]</a>
+              <a href="subject.html#65">[ subject ]</a>
+              <a href="author.html#65">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I just wanted to float this idea by everyone.  If it is of some interest, great.  If not, only a few digital bits wasted.
+
+While testing fldigi and flarq we found the flarq Plain Talk feature very handy.  It made coordinating our testing very easy.  We were running BPSK250.  For running flarq, high data rates are good.  Hitting enter after typing a line of text causes flarq to send that line and switch back to receive.  It was similar to running vox on SSB.  When we screwed up and lost flarq Plain Talk communications, we would switch over to fldigi keyboard-to-keyboard operation.  After Plain Talk, that felt a bit clumsy.  Keyboard BPSK250 operation is a bit silly.  fldigi is screaming away sending the idle pattern while infrequently a keyboard character sneaks out.
+
+I don't suppose that idle time mattered for what we were doing but it brings up the idea I've had.  How about putting a feature in fldigi so that it could be switched to an operating mode where pressing the enter key causes what is in the transmit panel to be sent and then automatically drop back to receive.  This would allow a kind of Plain Talk operation within fldigi.
+
+What I have in mind for this is net operation.  Much of what goes on in a net is basically one line transmissions, or at least often should be, when real traffic is not being passed.  I am picturing net control having a few macros to run things while net check in could be done with short on/off transmissions.  Simple one liners in PSK250 take less time to transmit than it takes me to slide the mouse cursor to the transmit button.  Things run a little slower in other modes but mostly we will be running the fastest mode that provides reliable communications.  Whatever we can do to shorten needed transmission time during an active net should be an advantage.
+
+Transmission identification is an issue in this kind of operation.  What I think would work best is for each of these Plain Talk style transmissions to start with an automatic header consisting of a CR/LF to start the text on the left side of the screen, the transmitting stations call sign, a colon, a space, and then the transmit buffer text.  It might sound a little cute to format a transmission like that but for minimizing transmission time for net operation with several stations on frequency, it might allow things to move along quickly.
+
+Anyway, that is my thought.
+
+Gary - N0GW
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090902/140c332b/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090902/140c332b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000057.html">PSK Browser
+</A></li>
+	<LI>Next message: <A HREF="000066.html">fldigi feature idea
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#65">[ date ]</a>
+              <a href="thread.html#65">[ thread ]</a>
+              <a href="subject.html#65">[ subject ]</a>
+              <a href="author.html#65">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

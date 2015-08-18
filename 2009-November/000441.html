@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Flrig S Meter not showing any level
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Flrig%20S%20Meter%20not%20showing%20any%20level&In-Reply-To=%3C1257700308.2706.44.camel%40bilbo.ensay.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000440.html">
+   <LINK REL="Next"  HREF="000442.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Flrig S Meter not showing any level</H1>
+    <B>Roger Beever</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Flrig%20S%20Meter%20not%20showing%20any%20level&In-Reply-To=%3C1257700308.2706.44.camel%40bilbo.ensay.org%3E"
+       TITLE="Flrig S Meter not showing any level">roger.beever at rogernet.org.uk
+       </A><BR>
+    <I>Sun Nov  8 18:11:48 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000440.html">BB crash
+</A></li>
+        <LI>Next message: <A HREF="000442.html">Flrig S Meter not showing any level
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#441">[ date ]</a>
+              <a href="thread.html#441">[ thread ]</a>
+              <a href="subject.html#441">[ subject ]</a>
+              <a href="author.html#441">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi.
+Having got the FT-857 in the house from the camper I thought I would try
+flrig as the Ft is one of the listed radios.
+The S mete shows on the GUI but no level is seen even on a local AM
+broadcast station.
+the vfo swap does not seem to be working either there is a click as if
+it switched and then straight back.
+
+Log extract below.
+I was using it in standalone mode (I assume the E: is an attempt to talk
+to fldigi) and the baud rate was 38400 as I had been trying to software
+wideband it as I have a 5 MHz NoV.
+The latest FT-857D does not respond to software widebanding but it does
+coeme set to do 40m up to 7.2 MHz out of the box.
+Out of the box is more or less what the radio is as I have not used it
+much yet
+
+W: main: flrig log started on Sun Nov  8 16:51:58 2009
+
+E: init_xmlrpc: xmlrpc queries disabled
+Unable to transport XML to server and get XML response back.  Curl
+failed to perform HTTP POST request.  curl_easy_perform() says: couldn't
+connect to host
+W: initStatusConfigDialog: Aux port not selected
+D: sendCommand: sent 00 00 00 00 E7
+D: sendCommand: reply 0A
+I: get_smeter: 0A =&gt; 1
+D: sendCommand: sent 00 00 00 00 03
+D: sendCommand: reply 00 01 98 00 04
+D: sendCommand: sent 00 00 00 00 E7
+D: sendCommand: reply 0A
+I: get_smeter: 0A =&gt; 1
+D: sendCommand: sent 00 00 00 00 03
+D: sendCommand: reply 00 01 98 00 04
+D: sendCommand: sent 00 00 00 00 E7
+D: sendCommand: reply 0A
+I: get_smeter: 0A =&gt; 1
+D: sendCommand: sent 00 00 00 00 03
+D: sendCommand: reply 00 01 98 00 04
+D: sendCommand: sent 00 00 00 00 E7
+I: get_smeter: 0A =&gt; 1
+I: get_smeter: 0A =&gt; 1
+I: get_smeter: 0B =&gt; 1
+I: get_smeter: 0A =&gt; 1
+I: get_smeter: 0A =&gt; 1
+I: get_smeter: 0A =&gt; 1
+I: get_smeter: 0A =&gt; 1
+
+Version is 0.9.956 but the previous version I was using is the same.
+73 Roger G6CKR
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000440.html">BB crash
+</A></li>
+	<LI>Next message: <A HREF="000442.html">Flrig S Meter not showing any level
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#441">[ date ]</a>
+              <a href="thread.html#441">[ thread ]</a>
+              <a href="subject.html#441">[ subject ]</a>
+              <a href="author.html#441">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.22.0AL posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.22.0AL%20posted&In-Reply-To=%3C4E69F644.7000209%40cox.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002006.html">
+   <LINK REL="Next"  HREF="002008.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.22.0AL posted</H1>
+    <B>W6HGF</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.22.0AL%20posted&In-Reply-To=%3C4E69F644.7000209%40cox.net%3E"
+       TITLE="fldigi-3.22.0AL posted">w6hgf at cox.net
+       </A><BR>
+    <I>Fri Sep  9 13:19:32 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002006.html">fldigi-3.22.0AL posted
+</A></li>
+        <LI>Next message: <A HREF="002008.html">fldigi 3.22.0AL
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2007">[ date ]</a>
+              <a href="thread.html#2007">[ thread ]</a>
+              <a href="subject.html#2007">[ subject ]</a>
+              <a href="author.html#2007">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 09/08/2011 05:40 PM, w1hkj wrote:
+&gt;<i> <A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+</I>&gt;<i>
+</I>&gt;<i> Version 3.22.0AL Alpha release
+</I>&gt;<i>
+</I>&gt;<i> Log Server lookup
+</I>&gt;<i>   * Added cty.dat search when connect to log server
+</I>&gt;<i>     - cty.dat must be installed in the current fldigi
+</I>&gt;<i>       files directory
+</I>&gt;<i>
+</I>&gt;<i> Delayed Tags
+</I>&gt;<i>   * Added queued tags
+</I>&gt;<i>     - &lt;!GOHOME
+</I>&gt;<i>     - &lt;!GOFREQ
+</I>&gt;<i>     - &lt;!IDLE
+</I>&gt;<i>     - &lt;!WAIT
+</I>&gt;<i>
+</I>&gt;<i> Remember that the Inline macro tags
+</I>&gt;<i>
+</I>&gt;<i>     - &lt;DTMF - dual tones
+</I>&gt;<i>     - &lt;!WPM - CW words per minute
+</I>&gt;<i>     - &lt;!POST - CW post delay
+</I>&gt;<i>     - &lt;!PRE  - CW pre delay
+</I>&gt;<i>     - &lt;!RISE - CW rise/decay time
+</I>&gt;<i>     - &lt;!MODEM: - change to specified modem
+</I>&gt;<i>     - &lt;!GOHOME
+</I>&gt;<i>     - &lt;!GOFREQ
+</I>&gt;<i>     - &lt;!IDLE
+</I>&gt;<i>     - &lt;!WAIT
+</I>&gt;<i>
+</I>&gt;<i> are not listed in the macro editor.  You select the immediate mode 
+</I>&gt;<i> equivalent and then manually insert the ! character.
+</I>&gt;<i> Each delayed tag shows as &quot;&lt;!&quot; in the TX transmit buffer.  As it is 
+</I>&gt;<i> executed it is displayed in the RX buffer using the full string and 
+</I>&gt;<i> highlighted with the control coloring.
+</I>&gt;<i>
+</I>&gt;<i> Dave
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>Dave,
+
+    I had some fun playing with the new AL version with Ubuntu 8.04 and 
+11.04 last night.  Here is what I have found.
+
+I am running fllog remote on a separate server and two connected 
+desktops both imputing log info over the network to the logbook.
+
+  - The cty.dat seems to be working fine now.
+
+   - The dupe color is not working correctly.  I am not sure how to 
+narrow this down yet.  The symptoms I am getting indicate it may be a 
+timing issue, because my older/slower computer (on wifi) seems to be 
+working fine with dupes, but the faster computer (on wired connection) 
+is not indicating dupe by changing color unless the callsign is only one 
+character long, anything like a normal call does not seem to work.  
+Timing/race issues always make me scratch my head.
+
+   - On the remote server (Ubuntu 8.04) running fllog, the update and 
+delete buttons are both greyed out when I do a VNC into that server, so 
+I can not work with that log.  That may have been an intended feature, 
+but I was not able to clean up mistakes there.   I also noticed the 
+actual log entry seems to be sorting, because two entries in the same 
+minute time span are not showing up in the same sequence they were 
+entered.  Again that may be intentional, just something I noticed.
+
+  - With the &lt;! delayed tag changes.  I had some fun playing last night, 
+but there seems to still be a small problem, and it looks like something 
+to do with the transmit buffer not being cleared before going to the 
+next tag, or not being cleared when &lt;RX&gt; is sent.  The symptom is that 
+it will sometimes get stuck without ending, if I cascade more than two 
+or three different modems, and I noticed it best when using the MFSK16 
+modem as the last one in the sequence.  The other symptom is after the 
+sequence is ended or stopped, the next time I press the same macro 
+button, it starts off with what ever the last modem was, for a few 
+characters, and then shifts to the first modem requested in the macro 
+line.  The good part is that it did not crash my computer.
+
+73,
+Al W6HGF
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110909/7241e10f/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110909/7241e10f/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002006.html">fldigi-3.22.0AL posted
+</A></li>
+	<LI>Next message: <A HREF="002008.html">fldigi 3.22.0AL
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2007">[ date ]</a>
+              <a href="thread.html#2007">[ thread ]</a>
+              <a href="subject.html#2007">[ subject ]</a>
+              <a href="author.html#2007">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

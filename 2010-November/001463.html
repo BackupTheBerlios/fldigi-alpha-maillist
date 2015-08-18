@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> CLRTX Macro
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20CLRTX%20Macro&In-Reply-To=%3C4CE6AC78.1010609%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001462.html">
+   <LINK REL="Next"  HREF="001464.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>CLRTX Macro</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20CLRTX%20Macro&In-Reply-To=%3C4CE6AC78.1010609%40WA5ZNU.org%3E"
+       TITLE="CLRTX Macro">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Fri Nov 19 17:57:28 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001462.html">CLRTX Macro
+</A></li>
+        <LI>Next message: <A HREF="001464.html">CLRTX Macro
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1463">[ date ]</a>
+              <a href="thread.html#1463">[ thread ]</a>
+              <a href="subject.html#1463">[ subject ]</a>
+              <a href="author.html#1463">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 11/19/2010 08:17 AM, Brian Lloyd wrote:
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Fri, Nov 19, 2010 at 1:01 AM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A> 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>     Leigh L. Klotz, Jr WA5ZNU wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>         I agree this is what it is doing but it doesn't do what I had
+</I>&gt;<i>         thought it would do&quot;
+</I>&gt;<i>         1. put a bunch of spaces in the TX buffer
+</I>&gt;<i>         2. press a macro button with &lt;CLR2X&gt;&lt;TX&gt;&lt;CALL&gt; DE &lt;MYCALL&gt;&lt;RX&gt;
+</I>&gt;<i>         3. RESULT: it still sends the spaces; DESIRED RESULT: it
+</I>&gt;<i>         doesn't send the spaces.
+</I>&gt;<i>
+</I>&gt;<i>         I can see how this may be hard with the macro invocation
+</I>&gt;<i>         separate from the macro interpretation.
+</I>&gt;<i>         I'm not sure this current behavior is useful; we on the list
+</I>&gt;<i>         seem to agree on that point.
+</I>&gt;<i>
+</I>&gt;<i>         Leigh/WA5ZNU
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     OK Leigh etal,
+</I>&gt;<i>
+</I>&gt;<i>     I will go back and see what an be done to achieve your requested
+</I>&gt;<i>     behavior.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Dave,
+</I>&gt;<i>
+</I>&gt;<i> There is a definite need for a macro atom that will clear the TX 
+</I>&gt;<i> buffer up to the point of that atom and then begin immediate 
+</I>&gt;<i> transmission at that point. This is analogous to the TCP 'push' and 
+</I>&gt;<i> 'urgent' control bits, i.e. &quot;read and discard everything in the buffer 
+</I>&gt;<i> up to this point and then begin processing everything after to the 
+</I>&gt;<i> application.&quot; While not used too much anymore in todays faster 
+</I>&gt;<i> networks, it was critically necessary for sending things like the 
+</I>&gt;<i> attention character (^c) over a slow path to a telnet application. I 
+</I>&gt;<i> think we can probably agree that something like this would be useful 
+</I>&gt;<i> when sending using a low-speed transport.
+</I>&gt;<i>
+</I>&gt;<i> As we move to future systems where we are passing message and control 
+</I>&gt;<i> data over internet protocols it makes a lot of sense to see where the 
+</I>&gt;<i> application can better make use of the behaviors of the underlying 
+</I>&gt;<i> transport.
+</I>&gt;<i>
+</I>&gt;<i> But I would also want one that just works for visually formatting my 
+</I>&gt;<i> TX and RX buffers when interleaving both TX and RX data. I think you 
+</I>&gt;<i> really are talking about two different atoms here.
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> Brian Lloyd, WB6RQN/J79BPL
+</I>&gt;<i> 3191 Western Dr.
+</I>&gt;<i> Cameron Park, CA 95682
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A>&gt;
+</I>&gt;<i> +1.767.617.1365 (Dominica)
+</I>&gt;<i> +1.931.492.6776 (USA)
+</I>&gt;<i> (+1.931.4.WB6RQN)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+This is indeed what I wanted, but if it's too hard (or too hard for now) 
+then I'll just take a look at the macro output space problem (unless 
+Dave does).
+
+You might remember with urgent data that Berkeley implemented it 
+improperly in their TCP stack and instead of giving you the pointer to 
+the urgent data, it retrieved the single byte at that location in the 
+stream and handed it to you, as in &quot;Urgent data: 42&quot;.  That may be one 
+reason it didn't gain the use it originally was designed for, even 
+though other TCP stacks prior to Berkeley Unix did it correctly.  The 
+analogy fails to some degree, though, in that the urgent data pointer is 
+processed on the RX side, and the cleartx is for the TX side.
+
+Leigh/WA5ZNU
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101119/ba58651d/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101119/ba58651d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001462.html">CLRTX Macro
+</A></li>
+	<LI>Next message: <A HREF="001464.html">CLRTX Macro
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1463">[ date ]</a>
+              <a href="thread.html#1463">[ thread ]</a>
+              <a href="subject.html#1463">[ subject ]</a>
+              <a href="author.html#1463">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

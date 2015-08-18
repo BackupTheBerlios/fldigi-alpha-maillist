@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi alpha on Debian
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20alpha%20on%20Debian&In-Reply-To=%3C5f51f8060911022326l57d9fea6lb5187b985dcf6bcf%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000429.html">
+   <LINK REL="Next"  HREF="000432.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi alpha on Debian</H1>
+    <B>John Douyere</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20alpha%20on%20Debian&In-Reply-To=%3C5f51f8060911022326l57d9fea6lb5187b985dcf6bcf%40mail.gmail.com%3E"
+       TITLE="fldigi alpha on Debian">vk2eta at gmail.com
+       </A><BR>
+    <I>Tue Nov  3 08:26:28 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000429.html">fldigi alpha on Debian
+</A></li>
+        <LI>Next message: <A HREF="000432.html">fldigi alpha on Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#430">[ date ]</a>
+              <a href="thread.html#430">[ thread ]</a>
+              <a href="subject.html#430">[ subject ]</a>
+              <a href="author.html#430">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Mike,
+
+1. I suspect it is trying to access an &quot;unvalid&quot; portaudio device. You can
+try to delete the .fldigi directory under your home directory. In that case
+I believe Fldigi will try for the OSS devices (/dev/dsp) first, then you can
+try to re-selct the desired portaaudio device.
+
+2. The GNU library (GLIBC) is at the core of your operating system and I
+think it is pretty difficult to upgrade it independantly. Hence the benefit
+of re-compiling with your version of GLIBC.
+
+Hope this helps
+
+Regards, John
+
+
+On Tue, Nov 3, 2009 at 5:15 PM, Mike Stansberry &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">mjstansberry at qwest.net</A>&gt;wrote:
+
+&gt;<i>
+</I>&gt;<i> I'm having problems getting fldig 3.13AZ to build on Debian
+</I>&gt;<i> 5.03.
+</I>&gt;<i>
+</I>&gt;<i> After compiling and running fldigi I get:
+</I>&gt;<i>
+</I>&gt;<i> E: init_portaudio: No available audio devices
+</I>&gt;<i>
+</I>&gt;<i> note:  audio devices are available, just not found.  ;-)
+</I>&gt;<i>
+</I>&gt;<i> Trying the pre-compiled binary from w1hkj.com/alpha I get:
+</I>&gt;<i>
+</I>&gt;<i>  ./fldigi: /lib/i686/cmov/libc.so.6: version `GLIBC_2.8' not found
+</I>&gt;<i> (required by .
+</I>&gt;<i> /fldigi)
+</I>&gt;<i>
+</I>&gt;<i> Any ideas?
+</I>&gt;<i>
+</I>&gt;<i> 73, Mike, K0TER
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091103/89d94dc2/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091103/89d94dc2/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000429.html">fldigi alpha on Debian
+</A></li>
+	<LI>Next message: <A HREF="000432.html">fldigi alpha on Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#430">[ date ]</a>
+              <a href="thread.html#430">[ thread ]</a>
+              <a href="subject.html#430">[ subject ]</a>
+              <a href="author.html#430">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

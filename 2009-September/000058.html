@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13AE alpha test posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AE%20alpha%20test%20posted&In-Reply-To=%3C4A9EF54D.6000900%40salsgiver.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000055.html">
+   <LINK REL="Next"  HREF="000059.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13AE alpha test posted</H1>
+    <B>David Kleber</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AE%20alpha%20test%20posted&In-Reply-To=%3C4A9EF54D.6000900%40salsgiver.com%3E"
+       TITLE="fldigi 3.13AE alpha test posted">davek at salsgiver.com
+       </A><BR>
+    <I>Thu Sep  3 00:44:29 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000055.html">fldigi 3.13AE alpha test posted
+</A></li>
+        <LI>Next message: <A HREF="000059.html">fldigi 3.13AE alpha test posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#58">[ date ]</a>
+              <a href="thread.html#58">[ thread ]</a>
+              <a href="subject.html#58">[ subject ]</a>
+              <a href="author.html#58">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave and all,
+
+Any chance of getting a layman's summary of the notifications menu?
+
+Major changes to RSID, indeed.  I'll see if I can get these feature 
+tested on some of our upcoming nets.
+
+-Dave, KB3FXI
+www.wpaNBEMS.org
+
+
+w1hkj wrote:
+&gt;<i> Version 3.13AE
+</I>&gt;<i> 
+</I>&gt;<i>    * Source code:
+</I>&gt;<i>      <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AE.tar.gz">http://www.w1hkj.com/friday/fldigi-3.13AE.tar.gz</A>
+</I>&gt;<i>    * Linux binary:
+</I>&gt;<i>      <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AE.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AE.bin.tgz</A>
+</I>&gt;<i>    * Linux binary without pulse audio dependency:
+</I>&gt;<i>      <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AE.npa.bin.tgz">http://www.w1hkj.com/friday/fldigi-3.13AE.npa.bin.tgz</A>
+</I>&gt;<i>    * Windows setup:
+</I>&gt;<i>      <A HREF="http://www.w1hkj.com/friday/fldigi-3.13AE_setup.exe">http://www.w1hkj.com/friday/fldigi-3.13AE_setup.exe</A>
+</I>&gt;<i>    * OSX binary:
+</I>&gt;<i>      <A HREF="http://download2.berlios.de/pub/fldigi/alpha/fldigi-3.13AE.dmg">http://download2.berlios.de/pub/fldigi/alpha/fldigi-3.13AE.dmg</A>
+</I>&gt;<i> 
+</I>&gt;<i> Changes:
+</I>&gt;<i> 
+</I>&gt;<i> Improve RSID notifications
+</I>&gt;<i> 
+</I>&gt;<i> *Enable concurrent RSID decoding
+</I>&gt;<i> *    * Change Sound*::Read methods to float
+</I>&gt;<i>    * Enable RSID upsampling for 8 KHz modems
+</I>&gt;<i>    * Add main.{get,set,toggle}_rsid XML-RPC methods
+</I>&gt;<i>    * Add option to disable RSID decoding on reception
+</I>&gt;<i>    * RSID may be enabled during transmit or tune
+</I>&gt;<i> 
+</I>&gt;<i> Clean up RSID code
+</I>&gt;<i> 
+</I>&gt;<i> Handle nested qrunner calls
+</I>&gt;<i> 
+</I>&gt;<i> Fix notifier TX text handling
+</I>&gt;<i> 
+</I>&gt;<i> Replace all occurences of backreference strings in the &quot;TX text&quot; field.
+</I>&gt;<i> 
+</I>&gt;<i> Fix log/manual spotting
+</I>&gt;<i> 
+</I>&gt;<i> Change transmit-lock marker width
+</I>&gt;<i>    In some modes, the main marker is wider than the modem bandwidth. The
+</I>&gt;<i>    transmit-lock marker must always be the same width as vertical tracks.
+</I>&gt;<i> 
+</I>&gt;<i> Add missing include
+</I>&gt;<i> 
+</I>&gt;<i> *PSK post DCD signal      Increased post DCD signal to be same length as 
+</I>&gt;<i> pre DCD signal
+</I>&gt;<i> *
+</I>&gt;<i> The two big changes are in bold.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> RSID is now a background modem that runs concurrent with your normal 
+</I>&gt;<i> operations. You can have the RSID detector automatically change the 
+</I>&gt;<i> operation to the detected frequency and mode, or simply annunciate the 
+</I>&gt;<i> detected RSID signal.  Please test this as often as you can.  This is a 
+</I>&gt;<i> significant change in the processing path for RSID.   Thanks Stelios.
+</I>&gt;<i> 
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i> for the development team
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000055.html">fldigi 3.13AE alpha test posted
+</A></li>
+	<LI>Next message: <A HREF="000059.html">fldigi 3.13AE alpha test posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#58">[ date ]</a>
+              <a href="thread.html#58">[ thread ]</a>
+              <a href="subject.html#58">[ subject ]</a>
+              <a href="author.html#58">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

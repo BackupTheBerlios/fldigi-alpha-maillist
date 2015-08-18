@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> New Postings:
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Postings%3A&In-Reply-To=%3C4B0BCB37.1050608%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000473.html">
+   <LINK REL="Next"  HREF="000476.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>New Postings:</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20New%20Postings%3A&In-Reply-To=%3C4B0BCB37.1050608%40bellsouth.net%3E"
+       TITLE="New Postings:">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Tue Nov 24 13:01:59 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000473.html">Keyspan Driver
+</A></li>
+        <LI>Next message: <A HREF="000476.html">New Postings:
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#474">[ date ]</a>
+              <a href="thread.html#474">[ thread ]</a>
+              <a href="subject.html#474">[ subject ]</a>
+              <a href="author.html#474">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>fldigi-3.13BC / flarq
+
+    Version 3.13BD
+        Remove unused variables
+        Add missing USE_X checks
+        Update crash handler
+          * Change bug report address
+          * Add new ticket URL
+          * Replace abort() with exit()
+        Fix LDFLAGS
+            Link with all needed libraries. Required when linking with
+            --no-add-needed or the experimental gold linker, which has this
+            behaviour by default.
+              * Add -lpthread switch (needed by flarq)
+              * On X11 platforms we should explicitly link with libX11
+    because
+                we use XCreatePixmap via the FLTK fl_create_offscreen macro
+        Fix custom pkg-config macro
+            AC_FLDIGI_PKG_CHECK([pkg], [pkg], [no], ...) should check
+    for pkg
+            despite no help being shown
+        Fix conditional pkg check
+            Correctly skip checks for libsamplerate and libpng when
+            --disable-fldigi is used
+        Hamlib build fix
+            * Added missing #if USE_HAMLIB pragma in conf.fl source file
+              and in fl_digi.cxx
+
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BD.tar.gz">http://www.w1hkj.com/alpha/fldigi-3.13BD.tar.gz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BD.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13BD.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BD.npa.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13BD.npa.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BD_setup.exe">http://www.w1hkj.com/alpha/fldigi-3.13BD_setup.exe</A>
+
+flwrap-1.0.1 - */replacement for wrap/* - automatically compresses the 
+data when compression / base64 encoding results in a smaller payload.  
+The compression/decompression is lzma.
+
+    * <A HREF="http://www.w1hkj.com/alpha/flwrap-1.0.1.tar.gz">http://www.w1hkj.com/alpha/flwrap-1.0.1.tar.gz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/flwrap-1.0.1.bin.tgz">http://www.w1hkj.com/alpha/flwrap-1.0.1.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/flwrap-1.0.1_setup.exe">http://www.w1hkj.com/alpha/flwrap-1.0.1_setup.exe</A>
+
+flics-0.2.0 - this version is compatible with flwrap-1.0.1 and includes 
+the automatic compression.
+
+    * <A HREF="http://www.w1hkj.com/alpha/flics-0.2.0.tar.gz">http://www.w1hkj.com/alpha/flics-0.2.0.tar.gz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/flics-0.2.0.bin.tgz">http://www.w1hkj.com/alpha/flics-0.2.0.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/flics-0.2.0_setup.exe">http://www.w1hkj.com/alpha/flics-0.2.0_setup.exe</A>
+
+flrig-0.9.9
+
+    <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.9.tar.gz">http://www.w1hkj.com/alpha/flrig-0.9.9.tar.gz</A>
+    <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.9.bin.tgz">http://www.w1hkj.com/alpha/flrig-0.9.9.bin.tgz</A>
+    <A HREF="http://www.w1hkj.com/alpha/flrig-0.9.9_setup.exe">http://www.w1hkj.com/alpha/flrig-0.9.9_setup.exe</A>
+
+    Version 0.9.9
+        * Initial gnu autotools build source
+        Build fixes
+            * Added correct flrig.icns for OS-X build
+            * Added missing specifiers to mingw32 build scripts
+            * Added builddist.sh script
+        Fix OS X compilation
+          * Add OSX conditional for Pixmap code
+          * Always define KNAME and call Fl_Window::xclass()
+        Fix resource include
+        Add pthreads-w32 build flags
+
+==============================================
+Note the following changes for all of these applications:
+    Building the source is now identical for all 4;
+
+    ./configure - make - make install
+
+    The 'make install' includes the creation of the desktop scripts for 
+the menu
+and desktop launch icons.
+
+    Win32 installation uses a setup program for each with proper 
+registration
+and uninstall included for each installation.
+
+The OS-X dmg and Pet files will follow later today as time and build 
+machines
+become available.
+
+73, Dave, W1HKJ
+for the development team
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091124/8c5e743d/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091124/8c5e743d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000473.html">Keyspan Driver
+</A></li>
+	<LI>Next message: <A HREF="000476.html">New Postings:
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#474">[ date ]</a>
+              <a href="thread.html#474">[ thread ]</a>
+              <a href="subject.html#474">[ subject ]</a>
+              <a href="author.html#474">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

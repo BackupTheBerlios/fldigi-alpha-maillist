@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi behior strangeness
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20behior%20strangeness&In-Reply-To=%3C13C7FF09D0104F1998596D0FE5649CB1%40latop01%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000210.html">
+   <LINK REL="Next"  HREF="000211.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi behior strangeness</H1>
+    <B>Gary Wescom</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20behior%20strangeness&In-Reply-To=%3C13C7FF09D0104F1998596D0FE5649CB1%40latop01%3E"
+       TITLE="fldigi behior strangeness">wescom at wildblue.net
+       </A><BR>
+    <I>Tue Oct 13 23:45:45 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000210.html">Fwd: fldigi behior strangeness
+</A></li>
+        <LI>Next message: <A HREF="000211.html">Fldigi-3.13AN Contest Capturing QSO Data Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#213">[ date ]</a>
+              <a href="thread.html#213">[ thread ]</a>
+              <a href="subject.html#213">[ subject ]</a>
+              <a href="author.html#213">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>John,
+
+Thanks.  My problem is that I was ignoring the parameters for PSK modem mail settings.  It just went over my head that was something that is triggered when any ARQ application is running.   Maybe making that a little clearer on the mail dialog box would help other folks too.  I readjusted those settings for the narrower search and AFC bandwidths and now fldigi is behaving like I expected it to.
+
+Thanks again,
+
+Gary - N0GW
+  ----- Original Message ----- 
+  From: John Douyere 
+  To: fldigi-alpha 
+  Sent: Tuesday, October 13, 2009 3:49 PM
+  Subject: Fwd: fldigi behior strangeness
+
+
+  Forwarded: I should have sent it to the mail list. Sorry.
+
+
+  ---------- Forwarded message ----------
+  From: John Douyere &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">vk2eta at gmail.com</A>&gt;
+  Date: Wed, Oct 14, 2009 at 7:47 AM
+  Subject: Re: fldigi behior strangeness
+  To: Gary Wescom &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">wescom at wildblue.net</A>&gt;
+
+
+  Gary,
+
+  First let me say that this behavior is intended but not to the extent that you mentioned and that it is controllable by parameters.
+
+  I also noted that the PSK modes are far more susceptible to this drift than other modes like MSK. THOR doesn't move and has AFC automatically disabled since it can pickup drifts of up to around 100Hz. 
+
+  The logic is as follow: when Fldigi is used as a modem like with FLARQ for example, it is required to listen on a specific frequency and within a limited range of that frequency (say +/- 20Hz as a typical example). 
+
+  Since the AFC is required (there may be no operator around at time of connect) to lock in an incoming signal, the center frequency needs to be adjusted constantly as the modem is trying to lock in on any signal (including noise). This would result in the centre frequency drifting overtime far away from the targeted listening point.
+
+  Therefore a few mechanisms are used for this purpose. First there is a &quot;reset to carrier&quot; function that regularly takes the centre frequency back to the sweet spot when we don't have a signal lock. Two, there are limits as to how far the centre frequency can &quot;wonder around&quot;. and three there is a sensitivity level for the centre frequency search. 
+
+  These mechanisms are triggered as soon as you start an ARQ application like FLARQ or Pskmail which explains why you see that behaviour when you start the latter, and it disappears only when you restart Fldigi.
+
+  In 3.13AN you have two tabs for the behaviour of the PSK mode frequency search: one for QSO mode (Called &quot;General&quot;) and one for AQR mode (called &quot;Mail&quot;). I have attached two screen copies of my setup as a starting point for your investigation. These values give me a stable system for psk mode linkups.
+
+  Hope this helps,
+
+  Regards, 
+
+  John (VK2ETA)
+
+
+
+
+  On Wed, Oct 14, 2009 at 5:46 AM, Gary Wescom &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">wescom at wildblue.net</A>&gt; wrote:
+
+    While testing fldigi 3.13AN today with pskmail on XP today, I noticed something a bit strange.  I monitored 10.148 MHz for a while with fldigi.  I was getting good BPSK250 copy from a few stations.  Call signs W8MCH, KB2FN, WB5CON, KD5WQD, and others as I remember.  I then fired up jpskmail (version 0.3.7) for the first time to see what that was like.  Once I had gone through the basic configuratin of jpskmail I started paying attention to what was going on with fldigi.  I noticed then that it was bouncing around in frequency randomly over a range of plus and minus 200 Hz or so.  Turning of AFC did not stop this behaviour.  Squelch setting did not change the hopping around.
+
+    The problem the hopping around seemed to cause is that it looked like I was starting to occasionally miss receiving the the first characters of transmissions.  It is like there is a search algorithm running that eventually finds the BPSK250 signal but because it is covering such a wide range, lock in can be slow.  This was also a bit of a problem at times when other nearby signals came on as it appeared fldigi was spending extra time figuring out that it was NOT hearing a BPSK250 signal and to start searching again.  Once this frequency hopping starts, shutting down jpskmail does not stop it.
+
+    I believe I have seen this problem crop up during my testing with flarq with BPSK250 but didn't find a way to repeat it.  Oh yes, once this starts with BPSK250, it continues in other speeds of PSK.  The hopping around thing does not seem to show up if I switch some other mode like Olivia or MFSK but if I switch back to PSK it starts up again.  This continues until I stop and restart fldigi.
+
+    To repeat, today's repeatable wierdness:  Windows XP - fldigi up and running and successfully monitoring BPSK250 transmissions on 10.148 MHz (10.146.5 MHz plus 1500 Hz audio center).  Start jpskmail and after first automatic transmission, fldigi receive frequency randomly hops around up to 200 Hz.
+
+    First off, I guess I should ask if this is an intended design feature.  If it is, what it the intent?
+
+    Gary - N0GW
+
+
+    _______________________________________________
+    fldigi-alpha mailing list
+    <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+    <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------
+
+
+  _______________________________________________
+  fldigi-alpha mailing list
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091013/ce7f5869/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091013/ce7f5869/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000210.html">Fwd: fldigi behior strangeness
+</A></li>
+	<LI>Next message: <A HREF="000211.html">Fldigi-3.13AN Contest Capturing QSO Data Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#213">[ date ]</a>
+              <a href="thread.html#213">[ thread ]</a>
+              <a href="subject.html#213">[ subject ]</a>
+              <a href="author.html#213">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

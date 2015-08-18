@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> RigCAT Lives with Kenwood TS-570
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20RigCAT%20Lives%20with%20Kenwood%20TS-570&In-Reply-To=%3CC6DD8212.5554%25aa5vu%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000166.html">
+   <LINK REL="Next"  HREF="000168.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>RigCAT Lives with Kenwood TS-570</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20RigCAT%20Lives%20with%20Kenwood%20TS-570&In-Reply-To=%3CC6DD8212.5554%25aa5vu%40att.net%3E"
+       TITLE="RigCAT Lives with Kenwood TS-570">aa5vu at att.net
+       </A><BR>
+    <I>Tue Sep 22 02:18:42 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000166.html">Video Text
+</A></li>
+        <LI>Next message: <A HREF="000168.html">RigCAT Lives with Kenwood TS-570
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#167">[ date ]</a>
+              <a href="thread.html#167">[ thread ]</a>
+              <a href="subject.html#167">[ subject ]</a>
+              <a href="author.html#167">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is a good day. I have fldigi-3.13AH functioning with
+RigCAT to the Kenwood TS-570. Some minor tweaking
+may be in order.
+
+As some of you may recall I have been able to use Hamlib
+with my Kenwood TS-570S but have never been able to
+get RigCAT to work.
+
+Rather than sending an attachment Dave sent me a
+message with revised text for the TS-570 definition file
+appended to his email message.  I copied and pasted in
+his modified version
+
+&lt;STATUS&gt;
+    Verified
+    Version:    3.13
+    Date:        17 September 2009
+&lt;/STATUS&gt;
+
+into my &quot;TS-570&quot; file and it still did not work. I slept on
+the problem for a few day and just figured out the problem.
+
+When I went to 
+&lt;<A HREF="http://www.w1hkj.com/xmls/kenwood/TS-570.xml">http://www.w1hkj.com/xmls/kenwood/TS-570.xml</A>&gt;
+per the online help page, it opened up to a text version
+of the definition.
+
+------
+Kenwood TS-570 Dave Freese     W1HKJ Tested by:     Bob Christenson, WU9Q
+Verified Version:    3.11 Date:     15 April 2009 RigCAT - TS-570 50 2 5
+9600 true false true LSB31 USB32 CW33 FM34 AM35 FSK36 CW-R37 FSK-R39 LSB FSK
+CW-R MODE 4 MD BYTE 1 ; FREQ 14 FA DECIMAL 11 99999999999 00001500000 1 ;
+SETFREQ 14 FA DECIMAL 11 99999999999 00001500000 1 ; FREQ GETFREQ 3 FA; FREQ
+SETMODE 4 MD BYTE 1 ; GETMODE 3 MD; MODE PTTON 3 TX; PTTOFF 3 RX;
+-----
+
+When I saved it from the Apple Safari browser, it saved
+the definition file as &quot;TS-570&quot; without the .xml suffix.  This
+file &quot;TS-570&quot; has been saved in my .fldgi/rigs folder without
+the suffix for months.  When I did an OS X &quot;Get Info&quot; on the
+file, it showed it the filename as TS-570.xml with the
+&quot;Hide Extension&quot; box checked.
+
+I modified the TS-570 file to include the version 3.13
+definition from Dave W1HKJ and the file still did not work.
+The &quot;fix&quot; was to uncheck the OS X Hide Prefix box so the
+filename now reads &quot;TS-570.xml&quot; and it works.
+
+The filename problem could have been avoided if I had
+used the right-click to download the file rather than
+a left-click that opened the file as text.
+
+The file now functions and I only have one issue to
+resolve to keep RigCAT working.  I am getting the following
+error using the version 3.11 version:
+
+Q: main: fldigi 3.13AH log started on Mon Sep 21 18:37:10 2009
+
+
+W: rigCAT_getmode: Retries failed
+
+W: rigCAT_getmode: Retries failed
+
+W: rigCAT_getmode: Retries failed
+
+
+Q: main: fldigi 3.13AH log started on Mon Sep 21 18:53:29 2009
+
+
+D: [18:54:14] rigcontrol/rigio.cxx:72: sent 46 41 3B
+
+D: [18:54:15] rigcontrol/rigio.cxx:84: reply 46 41 30 30 30 31 34 30 39 32
+30 30 30 3B
+
+D: [18:54:15] rigcontrol/rigio.cxx:72: sent 4D 44 3B
+
+D: [18:54:15] rigcontrol/rigio.cxx:84: reply 4D 44 32 3B
+
+D: [18:54:15] rigcontrol/rigio.cxx:72: sent 46 41 3B
+
+D: [18:54:15] rigcontrol/rigio.cxx:84: reply 46 41 30 30 30 31 34 30 39 32
+30 30 30 3B
+
+I am getting very close to having RigCAT work as well as Hamlib.  The
+filename problem was my error when I left-clicked rather the right-clicked
+on the file to download with the correct suffix.
+
+73 Dick AA5VU
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000166.html">Video Text
+</A></li>
+	<LI>Next message: <A HREF="000168.html">RigCAT Lives with Kenwood TS-570
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#167">[ date ]</a>
+              <a href="thread.html#167">[ thread ]</a>
+              <a href="subject.html#167">[ subject ]</a>
+              <a href="author.html#167">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

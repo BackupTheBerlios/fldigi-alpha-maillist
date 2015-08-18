@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> E: trx_trx_receive_loop: Sound error: Connection timed out
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20E%3A%20trx_trx_receive_loop%3A%20Sound%20error%3A%20Connection%20timed%20out&In-Reply-To=%3Cq2n2cce4ed61005030318yf9d1488fhd89ef676a06f012d%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001205.html">
+   <LINK REL="Next"  HREF="001210.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>E: trx_trx_receive_loop: Sound error: Connection timed out</H1>
+    <B>Andrew Hart</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20E%3A%20trx_trx_receive_loop%3A%20Sound%20error%3A%20Connection%20timed%20out&In-Reply-To=%3Cq2n2cce4ed61005030318yf9d1488fhd89ef676a06f012d%40mail.gmail.com%3E"
+       TITLE="E: trx_trx_receive_loop: Sound error: Connection timed out">andylhart at gmail.com
+       </A><BR>
+    <I>Mon May  3 12:18:08 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001205.html">E: trx_trx_receive_loop: Sound error: Connection timed out
+</A></li>
+        <LI>Next message: <A HREF="001210.html">E: trx_trx_receive_loop: Sound error: Connection timed out
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1206">[ date ]</a>
+              <a href="thread.html#1206">[ thread ]</a>
+              <a href="subject.html#1206">[ subject ]</a>
+              <a href="author.html#1206">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have had the same error, on a low computing power EEEpc. I determined that
+the problem was that there was too much graphics utilization of the cpu ,
+for drawing the waterfall. I had htop running so I could watch which
+processes were taking up the cycles. There was always high graphics
+interactivity when the audio chain timed out. You could try reducing the
+vertical and horizontal sizes of the waterfall to see if that helps.
+
+This is consistent with a receive only situation when the problem occurs, as
+during transmit there is so much less graphics use even if you have monitot
+transmit turned on.
+-- 
+Andrew Hart C.Eng. MRINA
+ radio calls G8VTV / VE3NVK
+
+28, Chimo Drive, Kanata, ON, K2L 1A5 Canada
+
+tel: 613 592 5043
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100503/3aa0ec89/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100503/3aa0ec89/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001205.html">E: trx_trx_receive_loop: Sound error: Connection timed out
+</A></li>
+	<LI>Next message: <A HREF="001210.html">E: trx_trx_receive_loop: Sound error: Connection timed out
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1206">[ date ]</a>
+              <a href="thread.html#1206">[ thread ]</a>
+              <a href="subject.html#1206">[ subject ]</a>
+              <a href="author.html#1206">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

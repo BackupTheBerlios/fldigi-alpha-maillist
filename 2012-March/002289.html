@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> http address change for flrig download
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20http%20address%20change%20for%20flrig%20download&In-Reply-To=%3C4F669636.1040109%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002288.html">
+   <LINK REL="Next"  HREF="002290.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>http address change for flrig download</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20http%20address%20change%20for%20flrig%20download&In-Reply-To=%3C4F669636.1040109%40bellsouth.net%3E"
+       TITLE="http address change for flrig download">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Mar 19 03:13:10 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002288.html">fldigi 3.21.40AB posted for testing
+</A></li>
+        <LI>Next message: <A HREF="002290.html">fldigi-3.21.40AF posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2289">[ date ]</a>
+              <a href="thread.html#2289">[ thread ]</a>
+              <a href="subject.html#2289">[ subject ]</a>
+              <a href="author.html#2289">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Alpha test versions of fldigi and flrig are posted at
+
+<A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+
+<A HREF="http://www.w1hkj.com/alpha/flrig/">http://www.w1hkj.com/alpha/flrig/</A>
+
+These are a matched set of alpha postings with the following changes 
+from the currently posted distribution.  Note that selection of a notch 
+filter from the waterfall requires both 3.21.40AE and 1.2.9AV as well as 
+a transceiver that provides CAT notch control.  This has only been tests 
+so far with the FT950.
+
+73, Dave, W1HKJ
+
+========= fldigi =========
+3.21.40AE alpha - test release
+
+Clear sent text
+   * add UTF8 code to only clear to ^r in Tx buffer
+     - allows user to enter text with multiple ^r entries in a single 
+text buffer
+
+Control-Z fault
+   * Restored control-Z fix
+
+Notch
+   * Added xcvr notch filter adjust from waterfall
+     - Alt-Ctl-Left-Click sets notch at current WF cursor position
+     - Alt-Ctl-Left-Click clears notch if set
+
+EXEC macro
+   * Corrected &lt;TX&gt; disabling when executing &lt;EXEC&gt;...&lt;/EXEC&gt;
+   * Modified code to allow multiple &lt;EXEC&gt;...&lt;/EXEC&gt; calls with a 
+single macro text
+   * Removed ability to recurse the &lt;EXEC&gt;...&lt;/EXEC&gt; macro tag
+
+========= flrig =========
+
+XML notch
+   * Added get/set notch via xmlrpc i/o
+
+FT950/5000
+   * 950
+     - Cleanup adjust_bandwidth()
+   * 5000
+     - Added mode emuns from FT950
+     - Added PKT_FM mode support
+     - Adjusted default bandwidth to match FT950
+     - Added LSB/USB bandwidth &quot;3800&quot;
+     - Fix set_bwB()
+
+FT950 PKT bandwidth
+   * Changed default PKT_L, PKT_U bandwidth to 2400
+
+TT588 mods
+   * added has_split_AB flag
+   * corrected set BW vfo B
+   * corrected adjust_bandwidths method
+   * changed get_vol method to return progStatus.volume if xcvr does not 
+respond to query.
+
+Code cleanup
+   * fix btnA, btnB tooltip.
+   * fix read_mode() vfoB bug.
+   * fix FT950 vfoB/vfoA bugs.
+   * cleanup cbBandSelect()
+
+TT599 split
+   * Added has_split_AB flag to instantiation
+
+FT100 split
+   * added has_splitAB flag to class instantiation
+
+TS 480/590S/2000 Split Vfo
+   * Added full split functionality
+
+Xmlrpc reset
+   * Allow initialization and start of xmlrpc client without restarting 
+application
+
+Win32 bottom bar
+   * prevent combo box pop-up from extending into Win32 windows bottom bar
+
+TS-870 fix to rig numbering
+   * Added missing TS870 definition in rigbase.h
+
+BW control update
+   * Combined effort of W1HKJ and KJ4EED
+   * Separate selection of new default BW from UI update
+   * Remove BW selector update from xml_io thread
+   * Cleaned up xml_io.cxx
+     - removed unused code
+     - removed development debug code
+   * Changed get_split to return numeric value
+     0 / 1 for simple transceivers
+     0...3 for xcvrs which report A/B separately
+     0 - Rx A, Tx A
+     1 - Rx B, Tx A
+     2 - Rx A, Tx B
+     3 - Rx B, Tx B
+
+Read Mode
+   * Fix to race condition between xcvr, flrig and fldigi when mode 
+change requires update to bandwidth table.
+
+TS2000 split query
+   * Change split query to use FR/FT vice IF CAT command
+
+serviceAB2
+   * Added synchronization between vfoA/B and vfo when updatebandwith 
+function alters the current assigned bandwidth value
+
+TS870
+   * Added TS870 source files to allow Dave, G0WBX, to work on TS870 
+class methods and variables
+
+TS590S split
+   * Added split A/B, B/A methods to 590S class
+
+FT950 bandwidths
+   * Added code to insure unique behavior of bandwidth selection
+   * This submit is a collaborative effort with Terry Embry, KJ4EED
+
+FT950 dual split
+   * Added split A/B, split B/A to set_split method
+
+Service A/B
+   * Correct logic for servicing A/B vfos
+
+TS2000 split
+   * change split operation to be dependent on which vfo is active A 
+active: Rx on A, Tx on B
+     B active: Rx on B, Tx on A
+   * added has_split_AB flag to rigbase; can be used with other xcvrs 
+that allow split A/B, B/A
+
+Freq List Alpha Tag - About Change
+   * Programmer credit changes in Help/About dialog
+   * commit 0b5bbba1dffec incorrectly credited to W1HKJ
+     this work was submitted by Terry Embry, KJ4EED
+
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120318/41ba56bf/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120318/41ba56bf/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002288.html">fldigi 3.21.40AB posted for testing
+</A></li>
+	<LI>Next message: <A HREF="002290.html">fldigi-3.21.40AF posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2289">[ date ]</a>
+              <a href="thread.html#2289">[ thread ]</a>
+              <a href="subject.html#2289">[ subject ]</a>
+              <a href="author.html#2289">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

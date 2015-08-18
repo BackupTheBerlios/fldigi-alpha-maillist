@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.20.30 posted for alpha testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.20.30%20posted%20for%20alpha%20testing&In-Reply-To=%3C246121d06bcfed1b379c65cdd69a1be1.squirrel%40graflex.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001451.html">
+   <LINK REL="Next"  HREF="001453.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.20.30 posted for alpha testing</H1>
+    <B>Leigh L. Klotz, Jr. WA5ZNU</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.20.30%20posted%20for%20alpha%20testing&In-Reply-To=%3C246121d06bcfed1b379c65cdd69a1be1.squirrel%40graflex.org%3E"
+       TITLE="3.20.30 posted for alpha testing">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Wed Nov 17 23:01:25 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001451.html">3.20.30 posted for alpha testing
+</A></li>
+        <LI>Next message: <A HREF="001453.html">3.20.30 posted for alpha testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1454">[ date ]</a>
+              <a href="thread.html#1454">[ thread ]</a>
+              <a href="subject.html#1454">[ subject ]</a>
+              <a href="author.html#1454">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hack AA5VU has addressed the time on / time off issue more clearly than I
+did, so I won't go into it here, but I want to clarify about the macros.
+
+Suppose you click or type into the TX window, even a few spaces, which are
+totally invisible in the TX window. (Or you run a macro that outputs
+spaces or something else.) Then you search &amp; pounce but when you pounce
+your CW does nothing, or your RTTY sends a bunch of spaces, or worse yet,
+it sends the text you've accidentally pasted into the TX buffer.   So I
+will make my contest macros do this:
+  &lt;CLEARTX&gt;&lt;TX&gt;...
+before they launch into the exchange, return, etc.
+
+Leigh/WA5ZNU
+
+&gt;<i> On 11/17/2010 01:56 PM, Leigh L. Klotz, Jr. WA5ZNU wrote:
+</I>&gt;&gt;<i> I reported or requested these on the devel list after operating in CW
+</I>&gt;&gt;<i> Sweepstakes.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The log change could be addressed by export, but I noticed that the adif
+</I>&gt;&gt;<i> log file was storing the qso by the date you started but the time you
+</I>&gt;&gt;<i> ended.  So if you have a qso which crosses a gmt date boundary it
+</I>&gt;&gt;<i> appears
+</I>&gt;&gt;<i> in the way wrong spot in the file.  I reported to Dave that it was
+</I>&gt;&gt;<i> sorting
+</I>&gt;&gt;<i> by date on and time off.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I agree that needed to be fixed. But a cabrillo wants date and time off,
+</I>&gt;<i> not on. But the ARRL has always been the odd man out.
+</I>&gt;<i>
+</I>&gt;<i> The saving grace is Dave allows the user to select what he wants or needs.
+</I>&gt;<i>
+</I>&gt;<i> Plus we have the option to edit the log.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> In a contest you probably want date on instead of date off, but as you
+</I>&gt;&gt;<i> all
+</I>&gt;&gt;<i> point our, you can handle the choice in export.  No matter what the fix,
+</I>&gt;&gt;<i> though, date on and time off together is wrong.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> In any contest you want date off and time off.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> The clear tx macro is for use in other macros, not for use by itself.
+</I>&gt;&gt;<i> I
+</I>&gt;&gt;<i> wanted the contest macros to clear any accidental TX text before
+</I>&gt;&gt;<i> transmitting.  The default macros CQ etc probably don't want to do this
+</I>&gt;&gt;<i> since people might type in som,e text and press CQ instead of CALL or
+</I>&gt;&gt;<i> something, but in general, I think contesters will want the macros to
+</I>&gt;&gt;<i> send
+</I>&gt;&gt;<i> exactly only the text in the macro.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> You are correct, but any contester worth his salt, has the macros set
+</I>&gt;<i> exactly as needed. But in the heat of battle it may come in handy.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> There is another bug that exec macros are inserting spaces even if there
+</I>&gt;&gt;<i> is no output, but that is I believe unaddresed.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Leigh/WA5ZNU
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Ed W3NR
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001451.html">3.20.30 posted for alpha testing
+</A></li>
+	<LI>Next message: <A HREF="001453.html">3.20.30 posted for alpha testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1454">[ date ]</a>
+              <a href="thread.html#1454">[ thread ]</a>
+              <a href="subject.html#1454">[ subject ]</a>
+              <a href="author.html#1454">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

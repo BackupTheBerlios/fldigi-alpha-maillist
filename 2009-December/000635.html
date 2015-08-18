@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi / flrig updates posted to alpha test page
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20/%20flrig%20updates%20posted%20to%20alpha%20test%20page&In-Reply-To=%3C4B3C1BD0.5010505%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000634.html">
+   <LINK REL="Next"  HREF="000642.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi / flrig updates posted to alpha test page</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20/%20flrig%20updates%20posted%20to%20alpha%20test%20page&In-Reply-To=%3C4B3C1BD0.5010505%40bellsouth.net%3E"
+       TITLE="fldigi / flrig updates posted to alpha test page">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Dec 31 04:34:40 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000634.html">fldigi &quot;E: trx_trx_receive_loop&quot;  Error
+</A></li>
+        <LI>Next message: <A HREF="000642.html">fldigi / flrig updates posted to alpha test page
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#635">[ date ]</a>
+              <a href="thread.html#635">[ thread ]</a>
+              <a href="subject.html#635">[ subject ]</a>
+              <a href="author.html#635">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/">http://www.w1hkj.com/alpha/</A>
+
+Updates to OS X, Linux, Puppy and Windows files
+
+Fldigi 3.13BK
+
+    Olivia Mods
+      * Added integration period default settings iaw the number
+        of tones and the bandwidth for the specific Olivia mode.
+      * Modified squelch detection using SyncSNR value generated
+        by Pawel's MFSK C++ template.
+
+    Fix xmlrpc locking
+   
+      Add new XMLRPC_LOCK macro that should be called in every execute()
+      method that modifies the server state or calls REQ.
+
+    Clean up xmlrpc
+   
+      * Rename the following methods (old methods are kept for
+        compatibility):
+        - main.set_rig_name -&gt; rig.set_name
+        - main.set_rig_frequency -&gt; rig.set_frequency
+        - main.set_rig_modes -&gt; rig.set_modes
+        - main.set_rig_mode -&gt; rig.set_mode
+        - main.get_rig_modes -&gt; rig.get_modes
+        - main.get_rig_mode -&gt; rig.get_mode
+        - main.set_rig_bandwidths -&gt; rig.set_bandwidths
+        - main.set_rig_bandwidth -&gt; rig.set_bandwidth
+        - main.get_rig_bandwidths -&gt; rig.get_bandwidths
+        - main.get_rig_bandwidth -&gt; rig.get_bandwidth
+      * Add log.set_qth and log.set_locator
+      * Deprecate log.get_sideband, which became equivalent to
+        main.get_wf_sideband
+
+    THOR soft decoding
+   
+      Removed soft decoding.  The implementation gave questionable
+      signal processing s/n gain.
+==================================================================
+Flrig 0.9.99B
+
+    XML_IO Race Condition
+   
+        Corrected race condition during xml_io update to mode/bw
+   
+    TT-516 AM bandwidths
+   
+        Added AM bandwidths table
+
+    FT100D fix
+   
+        Fixed bit interpretation for transceiver bandwidth report
+        Submitted by Walter Fey, DL8FCL
+
+    XMLRPC mod
+   
+        Updated xmlrpc calls to server to comply with changes in
+        server command language.
+
+
+73, Dave, W1HKJ
+for the development team
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091230/3be9efb1/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091230/3be9efb1/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000634.html">fldigi &quot;E: trx_trx_receive_loop&quot;  Error
+</A></li>
+	<LI>Next message: <A HREF="000642.html">fldigi / flrig updates posted to alpha test page
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#635">[ date ]</a>
+              <a href="thread.html#635">[ thread ]</a>
+              <a href="subject.html#635">[ subject ]</a>
+              <a href="author.html#635">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

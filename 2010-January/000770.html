@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Weather fax: Design questions
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax%3A%20Design%20questions&In-Reply-To=%3C4B65E197.4010109%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000769.html">
+   <LINK REL="Next"  HREF="000767.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Weather fax: Design questions</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Weather%20fax%3A%20Design%20questions&In-Reply-To=%3C4B65E197.4010109%40gmail.com%3E"
+       TITLE="Weather fax: Design questions">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Jan 31 21:01:27 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000769.html">Arithmetic exception on selecting 2-tone Olivia
+</A></li>
+        <LI>Next message: <A HREF="000767.html">Arithmetic exception on selecting 2-tone Olivia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#770">[ date ]</a>
+              <a href="thread.html#770">[ thread ]</a>
+              <a href="subject.html#770">[ subject ]</a>
+              <a href="author.html#770">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+As agreed, I am working on a fax weather modem. Here is where I am at 
+the moment:
+- It is able to receive fax correctly.
+- The transmission part is written but not well tested.
+- There is still some debugging code (logging to stdout).
+
+On top of that, there are a couple of parameters which are hard-coded, 
+but I do not know whether I should put them in a new &quot;wefax&quot; modem 
+parameters tab (color/bw flag, inverted flag, number of phasing lines 
+etc...)
+
+So here is my question: Should I push an initial revision just to let 
+you see where I am, or would you prefer to wait more ?
+
+By the way, I found a bug in the way MSFK reception image mode flag is 
+set. When you switch from MFSK-4 to MFSK-8, this flag is not set, 
+although it should be. This does not happen if you switch from CW to 
+MFSK-8 for example. This comes from the fact that trx_start_modem_loop 
+calls a modem destructor (which de-activate the menu) after a new modem 
+was created. I can suggest a fix for that if you wish to (An extra test 
+in activate_mfsk_image_item).
+
+Thanks
+
+Remi f4ecw
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000769.html">Arithmetic exception on selecting 2-tone Olivia
+</A></li>
+	<LI>Next message: <A HREF="000767.html">Arithmetic exception on selecting 2-tone Olivia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#770">[ date ]</a>
+              <a href="thread.html#770">[ thread ]</a>
+              <a href="subject.html#770">[ subject ]</a>
+              <a href="author.html#770">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

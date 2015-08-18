@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Pskmail TX lock-up with 3.13AE (in fact since 3.10)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Pskmail%20TX%20lock-up%20with%203.13AE%20%28in%20fact%20since%203.10%29&In-Reply-To=%3C5f51f8060909071716o16f44868m5c523e02521376fd%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000098.html">
+   <LINK REL="Next"  HREF="000100.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Pskmail TX lock-up with 3.13AE (in fact since 3.10)</H1>
+    <B>John Douyere</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Pskmail%20TX%20lock-up%20with%203.13AE%20%28in%20fact%20since%203.10%29&In-Reply-To=%3C5f51f8060909071716o16f44868m5c523e02521376fd%40mail.gmail.com%3E"
+       TITLE="Pskmail TX lock-up with 3.13AE (in fact since 3.10)">vk2eta at gmail.com
+       </A><BR>
+    <I>Tue Sep  8 02:16:37 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000098.html">QRZ Lookup - takes two tries first time
+</A></li>
+        <LI>Next message: <A HREF="000100.html">Pskmail TX lock-up with 3.13AE (in fact since 3.10)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#99">[ date ]</a>
+              <a href="thread.html#99">[ thread ]</a>
+              <a href="subject.html#99">[ subject ]</a>
+              <a href="author.html#99">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi All,
+
+First let me say that the new feature of background RSID is a great addition
+for the ARQ scene as it allows to connect in (more or less) any mode
+depending on the conditions. More on the tests below.
+
+But for the lockup issue: I have done more tests to identify the issue I
+highlighted some months ago where Fldigi would lockup and stop transmitting
+at connect or seemingly at random while used with the Server of PSKmail.
+
+The problem (very repeatable now that I know what to look for) occurs when
+Fldigi is currently sending a frame and another frame is being submitted by
+the server before the end of the transmission.
+
+This also explains why lockups would be far more common on slow(er) modes
+like THOR22, uncommon with PSK125 and rare with PSK250 since the chances of
+frames overlaps is greater as the transmission time extends.
+
+It also explains why the server would stop responding at seemingly random
+times. In fact this occurs when there is a timeout condition in the server
+and a poll frame is sent to Fldigi while a normal status frame is being
+currently transmitted.
+
+I believe has been experienced by other PSKMail server operators too (in
+particular VK2ZSZ with whom I did a number of tests).
+
+Restarting Fldigi clears the issue until another frame overlap occurs.
+Restarting the server only does not resolve the problem.
+
+This issue appeared at the transition between Fldigi 3.03 to 3.10. In other
+words, version 3.03 does not exhibit this issue. Please note that this
+occurs with pre-compiled binaries as well as when recompiling from source.
+
+Current operating environment: Ubuntu 8.04 (up to date), PSKMail server
+0.9.1 (but issue present on older versions too), Fldigi 13AE (compiled from
+source).
+
+Correcting this problem in the server by adding delays partially solve the
+problem but it is still unreliable since the server has no knowledge of the
+transmission status of Fldigi. Therefore the effective behaviour is for
+Fldigi to queue the frames for transmission.
+
+Just for information, slower more robust modes are essential as our tests
+have demonstrated here in VK: large distances, land mobile operations (and
+therefore compromise antennas and constantly changing earth and orientation
+of the car means significant and rapid QSB).
+
+We have had great success with the THOR and MFSK modes on 40 and 80M while
+mobile, but this issue issue is really a show stopper.
+
+Please let me know how I can help more. My knowledge would probably extend
+to setting up a debugging environment and tracing the code in Fldigi.
+
+So far I have traced the Perl code on the server side and I can confirm that
+the frames are being sent to fldigi via the msgsnd function but Fldigi does
+not respond to what is being received. If required I could setup a small
+Perl script to emulate the issue.
+
+Now back on the background RSID: I have successfully tried that new option
+with the PSKMail server. This allows us to scan different frequencies
+independently of the mode used for the exchange. Brilliant.
+
+The only small issue is that even if the option &quot;only provide notification&quot;
+in the RSID tab is unticked, I still get a notification pop-up window which
+is redundant since the change of mode and frequency adjustment has already
+occurred.
+
+Please keep up the great work.
+
+Thanks and regards, John (VK2ETA)
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090908/34350e70/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090908/34350e70/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000098.html">QRZ Lookup - takes two tries first time
+</A></li>
+	<LI>Next message: <A HREF="000100.html">Pskmail TX lock-up with 3.13AE (in fact since 3.10)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#99">[ date ]</a>
+              <a href="thread.html#99">[ thread ]</a>
+              <a href="subject.html#99">[ subject ]</a>
+              <a href="author.html#99">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

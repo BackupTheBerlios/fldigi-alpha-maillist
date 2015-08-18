@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> FLMSG 1.1.0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLMSG%201.1.0&In-Reply-To=%3C4CD70D73.3070601%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001412.html">
+   <LINK REL="Next"  HREF="001422.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>FLMSG 1.1.0</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20FLMSG%201.1.0&In-Reply-To=%3C4CD70D73.3070601%40bellsouth.net%3E"
+       TITLE="FLMSG 1.1.0">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sun Nov  7 21:34:59 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001412.html">FLMSG 1.1.0
+</A></li>
+        <LI>Next message: <A HREF="001422.html">FLMSG 1.1.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1416">[ date ]</a>
+              <a href="thread.html#1416">[ thread ]</a>
+              <a href="subject.html#1416">[ subject ]</a>
+              <a href="author.html#1416">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave Kleber wrote:
+&gt;<i>
+</I>&gt;<i> I just noticed in the new release of FLMSG 1.1.0, under the 
+</I>&gt;<i> NTS/Radiogram form, periods in the message body are now being 
+</I>&gt;<i> converted to &quot;DOT&quot; rather than &quot;X&quot; after the check button is clicked. 
+</I>&gt;<i> I apologize for not catching this on the alpha. I just came across 
+</I>&gt;<i> this during our 80m net this morning when sending a message to one of 
+</I>&gt;<i> our checkins.
+</I>&gt;<i>
+</I>&gt;<i> Also, on the ICS-205 form, the FEMA version of the form states 
+</I>&gt;<i> &quot;System/Cache&quot; for the first column rather than &quot;Radio Type&quot; as it 
+</I>&gt;<i> does in FLMSG.
+</I>&gt;<i>
+</I>&gt;<i> -Dave, KB3FXI 
+</I>
+The rule iaw W3YVQ.v1.04-5/02 PSCM APP.-B NTS MPG-MESSAGE FORMAT P 1-1, 
+CHAPTER 1 - THE ARRL MESSAGE FORMAT:
+
+1.3.1 PUNCTUATION
+PUNCTUATION characters are not used in the text except as follows:
+/: The slash, &quot;/&quot;, is used to separate characters within a group, as in 
+304/BA. Since
+the &quot;/&quot; is part of the group it does not qualify as a separate group for 
+the check.
+Although usually not used as a group by itself (a space on the left and 
+on the right),
+if so used it would be counted in the check.
+X: The letter &quot;X&quot; used to denote a period. The letter &quot;X&quot; is never used 
+as the last
+group of the text. The &quot;X&quot; is a separate group and IS counted for the check.
+R: The letter &quot;R&quot; is used in place of a decimal in mixed figure groups, 
+as in 7013R5
+(7013.5), or 146R670 (146.670). Since the &quot;R&quot; is part of the group it 
+does not
+qualify as a separate group for the check. (The inclusion of the &quot;R&quot; 
+makes the
+group a &quot;mixed group&quot; for transmission on voice.)
+
+1.3.2 EMAIL, PACKET or INTERNET ADDRESSES
+
+Punctuation is not permitted. Appropriate spelled words are used as 
+substitutes where required,
+i.e.:
+W3XXX ATSIGN AOL DOT COM (&quot;AT&quot; may be used for &quot;ATSIGN&quot;)
+W3XXX ATSIGN WB3XXX DOT MD DOT USA DOT NA
+HTTP COLON SLASH SLASH WWW DOT HOMEPAGE DOT COM
+Notes: &quot;\&quot; is written as &quot;BACKSLASH&quot;, &quot;/&quot; is written as &quot;SLASH&quot;.
+&quot;TILDE&quot;, &quot;UNDERSCORE&quot;, &quot;POUNDSIGN&quot;, etc., are often encountered.
+Use &quot;UPPERCASE&quot; or &quot;LOWERCASE&quot; where required to specify case.
+Use &quot;SPACE&quot; and &quot;DASH&quot; where they are an integral part of an address group.
+
+The way that flmsg tries to find the occurrence of the period is thus:
+
+A period followed by a space i.e. &quot;. &quot; is converted to &quot;X &quot;
+
+All embedded periods such as &quot;bellsouth.com&quot; are converted to &quot;DOT&quot; as 
+in &quot;BELLSOUTH DOT COM&quot;
+
+&quot;3.14159&quot; becomes &quot;3R14159&quot;
+
+This is archaic behaviour dictated by the historic transmission schemes 
+used before we entered the world of digital communications.  They 
+continue since we have no way of knowing how a Radiogram might be 
+handled in route.
+
+Check your original text Dave to see where the period occurred.  If the 
+conversion to DOT was not in accordance with the above then the code 
+needs to be changed.
+
+73,
+Dave
+
+
+P.S.  some pseudo code that shows how this is accomplished
+
+*// punctuation to text table*
+const char *punctuation[] = {
+&quot;. &quot;, &quot; X &quot;,
+&quot;,&quot;, &quot; COMMA &quot;,
+&quot;?&quot;, &quot; QUERY &quot;,
+&quot;\\&quot;, &quot; BACKSLASH &quot;,
+&quot;://&quot;, &quot; COLON SLASH SLASH &quot;,
+&quot;~&quot;, &quot; TILDE &quot;,
+&quot;_&quot;, &quot; UNDERSCORE &quot;,
+&quot;@&quot;, &quot; AT &quot;,
+&quot;#&quot;, &quot; POUNDSIGN &quot;,
+&quot;\&quot;&quot;, &quot; QUOTE &quot;,
+&quot;\'&quot;, &quot;&quot;,
+ 0, 0 };
+
+void cb_rg_check()
+{
+    string temp = txt_rg_msg-&gt;buffer()-&gt;text();
+    if (temp.empty()) {
+        txt_rg_check-&gt;value(&quot;&quot;);
+        btn_rg_check-&gt;labelcolor(FL_BLACK);
+        btn_rg_check-&gt;redraw_label();
+        return;
+    }
+
+    // convert to uppercase
+    for (size_t n = 0; n &lt; temp.length(); n++)
+        temp[n] = toupper(temp[n]);
+
+    size_t pos = string::npos;
+
+    strip_lfs(temp);
+*    // remove trailing period*
+    if (temp[temp.length()-1] == '.') temp.erase(temp.length()-1,1);
+*    // convert punctuation*
+    for (int n = 0; punctuation[n]; n += 2)
+        while ((pos = temp.find(punctuation[n])) != string::npos)
+            temp.replace(pos,1,punctuation[n+1]);
+*    //convert embedded periods*
+    while ((pos = temp.find(&quot;.&quot;)) != string::npos)
+        if (isdigit(temp[pos-1]) || isdigit(temp[pos+1]))
+            temp[pos] = 'R';
+        else
+            temp.replace(pos, 1, &quot; DOT &quot;);
+
+*    // remove any user inserted end-of-lines*
+    while ((pos = temp.find('\n')) != string::npos) temp[pos] = ' ';
+
+*    // only single spaces no trailing spaces, no leading spaces*
+    while ((pos = temp.find(&quot;  &quot;)) != string::npos) temp.erase(pos,1);
+    while (temp[temp.length() -1] == ' ') temp.erase(temp.length()-1, 1);
+    if (temp[0] == ' ') temp.erase(0,1);
+
+*    // count number of words in textdef_rg_filename*
+    int numwords = 1;
+    if (temp.length()) {
+        pos = 0;
+        while ((pos = temp.find(&quot; &quot;, pos + 1)) != string::npos) numwords++;
+    }
+
+*    // no more than 5 words to a line*
+    if (numwords &gt; progStatus.wpl) {
+        int wc = numwords;
+        size_t pos = 0;
+        while (wc &gt; progStatus.wpl) {
+            for (int i = 0; i &lt; progStatus.wpl; i++) pos = temp.find(' 
+', pos + 1);
+            temp[pos] = '\n';
+            wc -= progStatus.wpl;
+        }
+    }
+*    // insert trailing end-of-line*
+    temp += '\n';
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101107/8cfd80e0/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20101107/8cfd80e0/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001412.html">FLMSG 1.1.0
+</A></li>
+	<LI>Next message: <A HREF="001422.html">FLMSG 1.1.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1416">[ date ]</a>
+              <a href="thread.html#1416">[ thread ]</a>
+              <a href="subject.html#1416">[ subject ]</a>
+              <a href="author.html#1416">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

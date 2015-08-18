@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-alpha Digest, Vol 32, Issue 13
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-alpha%20Digest%2C%20Vol%2032%2C%20Issue%2013&In-Reply-To=%3C9572F3CC230D48D4B114BCAACA3DD95A%40pcxp98e998377f%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002203.html">
+   <LINK REL="Next"  HREF="002209.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-alpha Digest, Vol 32, Issue 13</H1>
+    <B>M.Jenssen</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-alpha%20Digest%2C%20Vol%2032%2C%20Issue%2013&In-Reply-To=%3C9572F3CC230D48D4B114BCAACA3DD95A%40pcxp98e998377f%3E"
+       TITLE="fldigi-alpha Digest, Vol 32, Issue 13">m.jenssen at wtnet.de
+       </A><BR>
+    <I>Mon Dec 12 12:36:24 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002203.html">WEFAX interface change proposal.
+</A></li>
+        <LI>Next message: <A HREF="002209.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2204">[ date ]</a>
+              <a href="thread.html#2204">[ thread ]</a>
+              <a href="subject.html#2204">[ subject ]</a>
+              <a href="author.html#2204">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Remi,
+I find Joe's idea very good; in principle I haven't got difficulties with the extra window,
+Fred DL6XAZ
+
+
+  Today's Topics:
+
+     1. WEFAX interface change proposal. (<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>)
+     2. Re: WEFAX interface change proposal. (Joseph A. Counsil)
+     3. Re: WEFAX interface change proposal. (L.T.  Easterly)
+
+
+  ----------------------------------------------------------------------
+
+  Message: 1
+  Date: Sun, 11 Dec 2011 20:46:06 +0000
+  From: &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+  To: fldigi alpha &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+  Subject: WEFAX interface change proposal.
+  Message-ID: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">4EE5168E.4050200 at gmail.com</A>&gt;
+  Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+
+  Hi,
+
+  Some of us were not very happy that for receving and sending faxes, 
+  extra windows must be opened.
+
+  I tried to work out things so that the normal rx/tx windows are reused 
+  for faxes, a bit like FeldHell.
+
+  At the moment:
+  * It is much more convenient.
+  * On the other hand the windows are smaller because they are in the 
+  middle of the main fldigi page.
+
+  Is there an interest for this ?
+
+  Thanks
+
+
+  ------------------------------
+
+  Message: 2
+  Date: Sun, 11 Dec 2011 15:22:38 -0600
+  From: &quot;Joseph A. Counsil&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>&gt;
+  To: FLDigi Alpha &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+  Subject: Re: WEFAX interface change proposal.
+  Message-ID: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">4EE51F1E.20602 at gmail.com</A>&gt;
+  Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+
+  Remi,
+
+  That seems like a good alternative.  It would be nice, if it is 
+  reasonable without bloating the Fldigi code, to have a check box to 
+  choose either the main Fldigi window as you propose, or a separate 
+  window as it is now.
+
+  73,
+  -Joe-
+
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> wrote:
+  &gt; Hi,
+  &gt;
+  &gt; Some of us were not very happy that for receving and sending faxes, 
+  &gt; extra windows must be opened.
+  &gt;
+  &gt; I tried to work out things so that the normal rx/tx windows are reused 
+  &gt; for faxes, a bit like FeldHell.
+  &gt;
+  &gt; At the moment:
+  &gt; * It is much more convenient.
+  &gt; * On the other hand the windows are smaller because they are in the 
+  &gt; middle of the main fldigi page.
+  &gt;
+  &gt; Is there an interest for this ?
+  &gt;
+  &gt; Thanks
+  &gt; _______________________________________________
+  &gt; fldigi-alpha mailing list
+  &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+  &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+  &gt;
+
+  -- 
+  +---------------------------------------------------------------+
+  | Joseph A. Counsil  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>  Phone:(573) 341-5186 |
+  | 1310 Woodlawn Drive, Rolla, MO 65401  Amateur Radio: - K?OG - |
+  +---------------------------------------------------------------+
+
+
+
+
+  ------------------------------
+
+  Message: 3
+  Date: Sun, 11 Dec 2011 17:46:17 -0500
+  From: &quot;L.T.  Easterly&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">corqpub at gmail.com</A>&gt;
+  To: &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt;
+  Cc: fldigi alpha &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>&gt;
+  Subject: Re: WEFAX interface change proposal.
+  Message-ID:
+  &lt;CAD1HWtoKWPikC3Nw=<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">TtcHY_a4LmozLzoeAPWUOoh4bKLbyMbiA at mail.gmail.com</A>&gt;
+  Content-Type: text/plain; charset=&quot;iso-8859-1&quot;
+
+  I would be interested in this, even if were just a more obvious menu
+  option, that called the wefax window to the forefront, at present after you
+  choose the mode, its not apparent that another option must be chosen to
+  'see' the  wefax copy.
+
+  Thanks!
+   On Dec 11, 2011 3:46 PM, &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&quot; &lt;
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A>&gt; wrote:
+
+  &gt; Hi,
+  &gt;
+  &gt; Some of us were not very happy that for receving and sending faxes, extra
+  &gt; windows must be opened.
+  &gt;
+  &gt; I tried to work out things so that the normal rx/tx windows are reused for
+  &gt; faxes, a bit like FeldHell.
+  &gt;
+  &gt; At the moment:
+  &gt; * It is much more convenient.
+  &gt; * On the other hand the windows are smaller because they are in the middle
+  &gt; of the main fldigi page.
+  &gt;
+  &gt; Is there an interest for this ?
+  &gt;
+  &gt; Thanks
+  &gt; ______________________________**_________________
+  &gt; fldigi-alpha mailing list
+  &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+  &gt; <A HREF="https://lists.berlios.de/**mailman/listinfo/fldigi-alpha&lt;https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/**mailman/listinfo/fldigi-alpha&lt;https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>&gt;
+  &gt;
+  -------------- next part --------------
+  An HTML attachment was scrubbed...
+  URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111211/eea1ef55/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111211/eea1ef55/attachment-0001.html</A>&gt;
+
+  ------------------------------
+
+  _______________________________________________
+  fldigi-alpha mailing list
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+
+
+  End of fldigi-alpha Digest, Vol 32, Issue 13
+  ********************************************
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111212/8c039e91/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111212/8c039e91/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002203.html">WEFAX interface change proposal.
+</A></li>
+	<LI>Next message: <A HREF="002209.html">FLDIGI and Packet Operation: openpty()
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2204">[ date ]</a>
+              <a href="thread.html#2204">[ thread ]</a>
+              <a href="subject.html#2204">[ subject ]</a>
+              <a href="author.html#2204">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

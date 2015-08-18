@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13BG
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BG&In-Reply-To=%3C4B27BCC1.7020600%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000549.html">
+   <LINK REL="Next"  HREF="000551.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13BG</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BG&In-Reply-To=%3C4B27BCC1.7020600%40bellsouth.net%3E"
+       TITLE="fldigi 3.13BG">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Tue Dec 15 17:43:45 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000549.html">fldigi 3.13BG
+</A></li>
+        <LI>Next message: <A HREF="000551.html">fldigi 3.13BG
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#550">[ date ]</a>
+              <a href="thread.html#550">[ thread ]</a>
+              <a href="subject.html#550">[ subject ]</a>
+              <a href="author.html#550">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Edward Brown wrote:
+&gt;<i> I noticed today that the  RxID turns off when you acknowledge the
+</I>&gt;<i> pop-up screen. In the ID screen &quot;Reception disables detector&quot; is not
+</I>&gt;<i> checked. Normally I would leave the RSID on all the time, since it
+</I>&gt;<i> makes finding some of the  more obscure modes a lot easier.
+</I>&gt;<i>
+</I>&gt;<i> Also is it possible to sen the RSID on demand in a macro? I see where
+</I>&gt;<i> you can turn RSID on, off or toggle, but not just send it regardless
+</I>&gt;<i> of it's current state. In other programs I have macros that send RSID
+</I>&gt;<i> on CQ's or initial call up but once the QSO is established I no longer
+</I>&gt;<i> send it.
+</I>&gt;<i>
+</I>&gt;<i> &lt;TX&gt;
+</I>&gt;<i> &lt;TXID&gt;
+</I>&gt;<i> CQ CQ de etc ...
+</I>&gt;<i>
+</I>&gt;<i> Ed
+</I>&gt;<i>   
+</I>Suggest you might use the existing 3.13BG macro tags as follows:
+
+Call CQ with RSID
+
+&lt;TXRSID:on&gt;&lt;TX&gt;CQ CQ CQ de &lt;MYCALL&gt; &lt;MYCALL&gt; &lt;MYCALL&gt;&lt;RX&gt;
+
+QSO exchange
+
+&lt;TXRSID:off&gt;&lt;TX&gt;&lt;CALL&gt; &lt;CALL&gt; de &lt;MYCALL&gt;
+
+Turning TXRSID off if it is already off will be ignored.  You can safely 
+that tag to the beginning any macro which you want to associate with 
+RSID repression.
+
+The various programs that support a macro language do not implement them 
+in the same manner.  So what works for one program may not for another 
+and vice versa.
+
+Dave
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000549.html">fldigi 3.13BG
+</A></li>
+	<LI>Next message: <A HREF="000551.html">fldigi 3.13BG
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#550">[ date ]</a>
+              <a href="thread.html#550">[ thread ]</a>
+              <a href="subject.html#550">[ subject ]</a>
+              <a href="author.html#550">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

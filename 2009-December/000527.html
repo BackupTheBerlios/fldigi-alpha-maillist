@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13BG -- Locator codes interpreted as callsigns
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BG%20--%20Locator%20codes%20interpreted%20as%20callsigns&In-Reply-To=%3C87skbgnftq.wl%40logrus.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000525.html">
+   <LINK REL="Next"  HREF="000528.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13BG -- Locator codes interpreted as callsigns</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BG%20--%20Locator%20codes%20interpreted%20as%20callsigns&In-Reply-To=%3C87skbgnftq.wl%40logrus.enotty.net%3E"
+       TITLE="fldigi 3.13BG -- Locator codes interpreted as callsigns">m0gld at enotty.net
+       </A><BR>
+    <I>Sat Dec 12 20:38:09 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000525.html">Flrig Problems, Windows XP
+</A></li>
+        <LI>Next message: <A HREF="000528.html">fldigi 3.13BG -- Locator codes interpreted as callsigns
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#527">[ date ]</a>
+              <a href="thread.html#527">[ thread ]</a>
+              <a href="subject.html#527">[ subject ]</a>
+              <a href="author.html#527">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> On Sat, 12 Dec 2009 08:39:51 -0500, &quot;P.J. Rovero&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">provero at ct.metrocast.net</A>&gt; said:
+</I>
+&gt;<i> &quot;JM51MP&quot; was interpreted as a Japanese callsign instead of
+</I>&gt;<i> a locator code and &quot;spotted&quot; to pskreporter....
+</I>
+Matching calling stations in the received text is somewhat non-trivial,
+and the current code tries to do its best to find callsigns but avoid
+false positives.
+
+I would very much like to see the surrounding text if you still have it.
+It should be somewhere in ~/.fldigi/status_log.txt if verbose logging
+was enabled.
+
+Some time ago I was working on some improvements to the psk-reporter
+regex matching.  I will resume this soon.  It would really help to have
+a lot of logging output to test against and ensure that whatever changes
+I make will work at least as well as before with respect to false
+negatives.  False positives are harder to test for.
+
+PSK reporter users, please open &quot;Help-&gt;Event log&quot;, drag the slider to
+Debug, let fldigi spot some (many) callsigns and send me your logs! :-)
+You can use the Log sources menu to disable sources other than Spotter
+if you are worried about file size or overhead.  The logging messages go
+to ~/.fldigi/status_log.txt and that file is overwritten every time
+fldigi is started.
+
+&gt;<i> I also noticed that the SNR estimate for Olivia
+</I>&gt;<i> signals is gone, frequency offset is still there....
+</I>
+Will take a look at this.
+
+
+-- 
+
+73,
+Stelios, M0GLD.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000525.html">Flrig Problems, Windows XP
+</A></li>
+	<LI>Next message: <A HREF="000528.html">fldigi 3.13BG -- Locator codes interpreted as callsigns
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#527">[ date ]</a>
+              <a href="thread.html#527">[ thread ]</a>
+              <a href="subject.html#527">[ subject ]</a>
+              <a href="author.html#527">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Error compiling flrig 1.0.0bT
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Error%20compiling%20flrig%201.0.0bT&In-Reply-To=%3CAANLkTinwtvnAiDgu_8%3D80hzLgtEpwK-NZwpTp_Fg6H67%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001614.html">
+   <LINK REL="Next"  HREF="001616.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Error compiling flrig 1.0.0bT</H1>
+    <B>Andrew Hart</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Error%20compiling%20flrig%201.0.0bT&In-Reply-To=%3CAANLkTinwtvnAiDgu_8%3D80hzLgtEpwK-NZwpTp_Fg6H67%40mail.gmail.com%3E"
+       TITLE="Error compiling flrig 1.0.0bT">andylhart at gmail.com
+       </A><BR>
+    <I>Wed Jan 12 19:27:01 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001614.html">SN Generator Wake Up and  Rx Panel Overload
+</A></li>
+        <LI>Next message: <A HREF="001616.html">Error compiling flrig 1.0.0bT
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1615">[ date ]</a>
+              <a href="thread.html#1615">[ thread ]</a>
+              <a href="subject.html#1615">[ subject ]</a>
+              <a href="author.html#1615">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Version 1.0.00.bt of flrig will not compile on Linux 64 bit.
+
+Here is the end of the compile screen
+
+g++ -DHAVE_CONFIG_H -I.  -I. -I./include -I./xmlrpcpp
+ -I/usr/include/freetype2 -g -O2 -D_THREAD_SAFE -D_REENTRANT -pipe -Wall
+-fexceptions -O2 -ffast-math -finline-functions -fomit-frame-pointer
+-DNDEBUG -g -O2 -MT flrig-xml_io.o -MD -MP -MF .deps/flrig-xml_io.Tpo -c -o
+flrig-xml_io.o `test -f 'xml_io.cxx' || echo './'`xml_io.cxx
+xml_io.cxx: In function &#8216;void smc(void*)&#8217;:
+xml_io.cxx:224: error: cast from &#8216;void*&#8217; to &#8216;int&#8217; loses precision
+xml_io.cxx: In function &#8216;void sbc(void*)&#8217;:
+xml_io.cxx:238: error: cast from &#8216;void*&#8217; to &#8216;int&#8217; loses precision
+xml_io.cxx: In function &#8216;void update_mode_change(void*)&#8217;:
+xml_io.cxx:300: error: cast from &#8216;void*&#8217; to &#8216;int&#8217; loses precision
+xml_io.cxx: In function &#8216;void update_bandwidth_change(void*)&#8217;:
+xml_io.cxx:346: error: cast from &#8216;void*&#8217; to &#8216;int&#8217; loses precision
+make[2]: *** [flrig-xml_io.o] Error 1
+make[2]: Leaving directory `/home/andy/source/flrig-1.0.0bT/src'
+make[1]: *** [all] Error 2
+make[1]: Leaving directory `/home/andy/source/flrig-1.0.0bT/src'
+make: *** [all-recursive] Error 1
+
+=============
+No executable was created.
+
+NB on fldigi
+How do I change the width of the viewer portion on the latest beta version.
+I can't select the size bar to change width on either Windows (prebuilt) or
+my build of the 64 bit linux version.
+
+Andy - VE3NVK
+
+Andrew Hart C.Eng. MRINA
+amateur radio calls G8VTV / VE3NVK locator FN25bh
+
+28, Chimo Drive, Kanata, ON, K2L 1A5 Canada
+
+tel: 613 592 5043
+
+The content of this message is *NOT* intended for the public, and is a
+private communication.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110112/b46e1889/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110112/b46e1889/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001614.html">SN Generator Wake Up and  Rx Panel Overload
+</A></li>
+	<LI>Next message: <A HREF="001616.html">Error compiling flrig 1.0.0bT
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1615">[ date ]</a>
+              <a href="thread.html#1615">[ thread ]</a>
+              <a href="subject.html#1615">[ subject ]</a>
+              <a href="author.html#1615">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

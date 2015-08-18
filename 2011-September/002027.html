@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> No Country Data logbook auto fill Fldigi-0AM
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20No%20Country%20Data%20logbook%20auto%20fill%20Fldigi-0AM&In-Reply-To=%3C4E72015E.6010901%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002026.html">
+   <LINK REL="Next"  HREF="002028.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>No Country Data logbook auto fill Fldigi-0AM</H1>
+    <B>Ed</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20No%20Country%20Data%20logbook%20auto%20fill%20Fldigi-0AM&In-Reply-To=%3C4E72015E.6010901%40gmail.com%3E"
+       TITLE="No Country Data logbook auto fill Fldigi-0AM">autek2 at gmail.com
+       </A><BR>
+    <I>Thu Sep 15 15:45:02 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002026.html">No Country Data logbook auto fill Fldigi-0AM
+</A></li>
+        <LI>Next message: <A HREF="002028.html">No Country Data logbook auto fill Fldigi-0AM
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2027">[ date ]</a>
+              <a href="thread.html#2027">[ thread ]</a>
+              <a href="subject.html#2027">[ subject ]</a>
+              <a href="author.html#2027">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 09/15/2011 08:34 AM, W6HGF wrote:
+&gt;<i> On 09/15/2011 06:34 AM, w1hkj wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On 09/15/2011 04:19 AM, Graham G1RNZ wrote:
+</I>&gt;&gt;&gt;<i> This Email was sent on 15/09/11 at 10:15
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Hi,
+</I>&gt;&gt;&gt;<i> It appears that the country data is not getting filled in
+</I>&gt;&gt;&gt;<i> onFLdigi0AM, I am using fllog as server with cty,dat file in a
+</I>&gt;&gt;&gt;<i> profile folder (ie fldigi --config-dir ~/fldigi/general/)
+</I>&gt;&gt;&gt;<i> O/S is Ubuntu 10.04
+</I>&gt;&gt;&gt;<i> fldigi is from bin file
+</I>&gt;&gt;<i> You've named a directory the same as an executable Graham.  I'm not
+</I>&gt;&gt;<i> sure if that is a cause of the problem
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> executable ==&gt;  fldigi
+</I>&gt;&gt;<i> directory ==&gt;  ~/fldigi
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Suggest you change your directory structure to use something like
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ~fldigi.general
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> and then make sure that the cty.dat file is in that directory (not a
+</I>&gt;&gt;<i> sub).  Also be sure that the cty.dat format is the one suitable for
+</I>&gt;&gt;<i> fldigi.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dave
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> fldigi-alpha mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i> Interesting.  I was curious, and looked in my server directory for the
+</I>&gt;<i> cty.dat file and could not find it.  I looked in /.fllog, and in /fllog
+</I>&gt;<i> and it is not there, yet on my remote fldigi, the country data still
+</I>&gt;<i> appears, so I am going to assume it is finding the cty.dat file on the
+</I>&gt;<i> local machine rather than getting it from the remote fllog server.   On
+</I>&gt;<i> standard fldigi,  I put the cty.dat in the /.fldigi folder.  Is that
+</I>&gt;<i> where it should be on the remote log server directory, in /.fllog?  If
+</I>&gt;<i> not then where would be the best place for fllog to find it?  Note
+</I>&gt;<i> fldigi is not running on the remote server.
+</I>
+I moved cty.dat to /.fllog and removed it from /.fldigi. all fields are 
+populated as you would expect including the country.
+
+
+
+&gt;<i> While I was looking, I noticed that the log text .adif file had nothing
+</I>&gt;<i> in it, although the gui panel had all the remotely enterd logs
+</I>&gt;<i> appearing.  So I went to the fllog menu, File, and hit save.  Now my log
+</I>&gt;<i> file has all the cached data in it.  So it seems a few things are not
+</I>&gt;<i> really ready for remote operation.  The save function needs to be
+</I>&gt;<i> automatic, or continuous, or something other than requiring a manual
+</I>&gt;<i> save.  If the server loses power or something fails, I would really hate
+</I>&gt;<i> to loose everything in cache that had not been saved.  Also I was unable
+</I>&gt;<i> to edit the fllog with the normal update and delete buttons like I do
+</I>&gt;<i> with fldigi, because they were all greyed out.  I have found mistakes I
+</I>&gt;<i> make, or double log entries, that I would like to remove to make a
+</I>&gt;<i> cleaner log, but was unable to.  I wondered  if it was a permissions
+</I>&gt;<i> thing, and looked back in /usr/local/bin, and found write was limited to
+</I>&gt;<i> root only.  Protection I guess.  I use Ubuntu where root is harder to
+</I>&gt;<i> get to, so I changed the permissions to include me and now it works fine.
+</I>
+I'm seeing fllog updated and saved after each entry. There is no cached 
+data that I could find. I can also update and delete entries. Root owns 
+the executable in /usr/local/bin.
+
+Basicaly fllog is working as it should, at least here.
+
+Ed W3NR
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002026.html">No Country Data logbook auto fill Fldigi-0AM
+</A></li>
+	<LI>Next message: <A HREF="002028.html">No Country Data logbook auto fill Fldigi-0AM
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2027">[ date ]</a>
+              <a href="thread.html#2027">[ thread ]</a>
+              <a href="subject.html#2027">[ subject ]</a>
+              <a href="author.html#2027">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

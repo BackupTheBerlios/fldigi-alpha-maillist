@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> tx text always starts at top of tx panel
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2012-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20tx%20text%20always%20starts%20at%20top%20of%20tx%20panel&In-Reply-To=%3C4F7B7A80.8050504%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002301.html">
+   <LINK REL="Next"  HREF="002303.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>tx text always starts at top of tx panel</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20tx%20text%20always%20starts%20at%20top%20of%20tx%20panel&In-Reply-To=%3C4F7B7A80.8050504%40bellsouth.net%3E"
+       TITLE="tx text always starts at top of tx panel">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Wed Apr  4 00:32:32 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002301.html">tx text always starts at top of tx panel
+</A></li>
+        <LI>Next message: <A HREF="002303.html">tx text always starts at top of tx panel
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2302">[ date ]</a>
+              <a href="thread.html#2302">[ thread ]</a>
+              <a href="subject.html#2302">[ subject ]</a>
+              <a href="author.html#2302">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>1.  multiple ^r in the Tx buffer behavior is as follows:
+
+2.  When transmit starts the outgoing text will stop at the first ^r 
+(the sent text should clear from the Tx buffer)
+
+3.  You can then wait for a reply, scratch your nose, or get a cup of 
+coffee.
+
+4.  Press T/R (or Pause/Break) and transmit will start again and 
+continue until the tx pointer encounters the next ^r.
+
+2 .. 4 repeats for as many times as ^r appears in the Tx buffer.
+
+Let me know if it does not behave in this manner.
+
+Dave
+
+On 04/03/2012 04:28 PM, Ed wrote:
+&gt;<i> On Tue, 03 Apr 2012 21:45:56 +0200
+</I>&gt;<i> Pierfrancesco Caci&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pf at tippete.net</A>&gt;  wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I haven't used digimodes much lately, so I'm not really sure when this
+</I>&gt;&gt;<i> crept in.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> So, I type something in the tx panel, say my cq macro (which has ^r at
+</I>&gt;&gt;<i> the end). Then I try to type something else, and fldigi restarts
+</I>&gt;&gt;<i> transmitting from the top of the tx panel, i.e. from my cq macro.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have not touched the mouse, so the cursor is still at the end of the
+</I>&gt;&gt;<i> text where I left it.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Content of the tx panel:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 123^r456^r789^r
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Content of the rx panel:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> i iAo
+</I>&gt;&gt;<i> 123heo e   leeaa e  .L_eoh o.
+</I>&gt;&gt;<i> 123oi
+</I>&gt;&gt;<i> 123eoos SeZ ouI eo e e
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> As you can see, it keeps transmitting 123 and stopping there, instead
+</I>&gt;&gt;<i> of going on with the rest.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> What's going on?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ik5pvx at penny</A>:~ $ fldigi --version
+</I>&gt;&gt;<i> fldigi 3.22.0BY
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ik5pvx at penny</A>:~ $ fldigi --build-info
+</I>&gt;&gt;<i> Build information:
+</I>&gt;&gt;<i>    built          : Sun Mar 25 21:55:50 CEST 2012 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ik5pvx at penny</A> on
+</I>&gt;&gt;<i> x86_64-unknown-linux-gnu for x86_64-unknown-linux-gnu
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    configure flags: '--enable-optimizations=native'
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    compiler       : gcc version 4.4.3 (Ubuntu 4.4.3-4ubuntu5)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+</I>&gt;&gt;<i> -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread
+</I>&gt;&gt;<i> -I/usr/include/freetype2 -g -O2 -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;&gt;<i> -D_REENTRANT -I/usr/include/libpng12 -I/usr/include -pipe -Wall
+</I>&gt;&gt;<i> -fexceptions -O2 -ffast-math -finline-functions -march=native
+</I>&gt;&gt;<i> -mfpmath=sse -DNDEBUG
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    linker flags   : -lportaudio -lasound -lm -lpthread
+</I>&gt;&gt;<i> -Wl,-Bsymbolic-functions -lfltk_images -lfltk -lX11 -lsndfile
+</I>&gt;&gt;<i> -lsamplerate -lpulse-simple -lpulse -lhamlib -lm -lpng12 -L/usr/lib
+</I>&gt;&gt;<i> -lxmlrpc_server_abyss++ -lxmlrpc_server++ -lxmlrpc_server_abyss
+</I>&gt;&gt;<i> -lxmlrpc_server -lxmlrpc_abyss -lxmlrpc++ -lxmlrpc -lxmlrpc_util
+</I>&gt;&gt;<i> -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt -lpthread
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    libraries      : FLTK 1.1.10
+</I>&gt;&gt;<i>                     libsamplerate 0.1.7
+</I>&gt;&gt;<i>                     libsndfile 1.0.21
+</I>&gt;&gt;<i>                     PortAudio 19
+</I>&gt;&gt;<i>                     PulseAudio 0.9.21-63-gd3efa-dirty
+</I>&gt;&gt;<i>                     Hamlib 1.2.14
+</I>&gt;&gt;<i>                     XMLRPC-C 1.06.27
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Runtime information:
+</I>&gt;&gt;<i>    system         : Linux penny 2.6.32-38-generic #83-Ubuntu SMP Wed
+</I>&gt;&gt;<i> Jan 4 11:12:07 UTC 2012 x86_64
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro
+</I>&gt;&gt;<i> Lopo libsndfile-1.0.21
+</I>&gt;&gt;<i>                     PortAudio V19-devel (built Feb 18 2010 23:31:11)
+</I>&gt;&gt;<i> 1899 Pulseaudio 0.9.21-63-gd3efa-dirty
+</I>&gt;&gt;<i>                     Hamlib 1.2.14
+</I>&gt;<i>
+</I>&gt;<i> Try installing the latest version and bulid with fltk 1.3
+</I>&gt;<i>
+</I>&gt;<i> Ed W3NR
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120403/a30d56d5/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20120403/a30d56d5/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002301.html">tx text always starts at top of tx panel
+</A></li>
+	<LI>Next message: <A HREF="002303.html">tx text always starts at top of tx panel
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2302">[ date ]</a>
+              <a href="thread.html#2302">[ thread ]</a>
+              <a href="subject.html#2302">[ subject ]</a>
+              <a href="author.html#2302">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

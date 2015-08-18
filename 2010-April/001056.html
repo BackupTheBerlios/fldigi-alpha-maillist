@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> GMT on Linux
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20GMT%20on%20Linux&In-Reply-To=%3Ch2oe93450131004060729m5ea683b2zefc2c0daf76f7949%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001057.html">
+   <LINK REL="Next"  HREF="001058.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>GMT on Linux</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20GMT%20on%20Linux&In-Reply-To=%3Ch2oe93450131004060729m5ea683b2zefc2c0daf76f7949%40mail.gmail.com%3E"
+       TITLE="GMT on Linux">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Tue Apr  6 16:29:14 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001057.html">GMT on Linux
+</A></li>
+        <LI>Next message: <A HREF="001058.html">GMT on Linux
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1056">[ date ]</a>
+              <a href="thread.html#1056">[ thread ]</a>
+              <a href="subject.html#1056">[ subject ]</a>
+              <a href="author.html#1056">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Apr 6, 2010 at 5:38 AM, Dick Kriss &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">aa5vu at att.net</A>&gt; wrote:
+
+&gt;<i> Interesting there is no UTC offset for users to set in fldigi.  How
+</I>&gt;<i> does fldigi determine the correct offset based on local computer
+</I>&gt;<i> time?  Sounds really hard to program with no user preferences.
+</I>&gt;<i>
+</I>&gt;<i> I assumed (probably wrong?) that fldigi used the QTH or the
+</I>&gt;<i> Locator in the Operator configuration panel to know how to display
+</I>&gt;<i> the correct UTC.
+</I>&gt;<i>
+</I>
+Unix systems, e.g. Linux and MacOS, maintain the internal system real-time
+clock at UTC/GMT. When you set the TZ environment variable that tells the
+date-time routines what offset to use when displaying and setting the time.
+This reflects the multi-user history of Unix, where simultaneous users could
+be in different time zones when using the machine.
+
+Conversely, Windows sets the system real-time clock to local time. Windows
+assumes (rightly so) that the user will be sitting in front of the machine
+so that machine only really operates in one time zone. You get to experience
+this problem when you dual-boot a windows/unix system and the system time is
+loaded from the battery-backed hardware clock. Apple's approach when running
+Bootcamp (dual boot) is to install a filter program in Windows that makes
+the correction so that the hardware clock continues to run in UTC.
+
+So, which approach should fldigi assume? I think that the approach Stelios
+describes is the one that makes sense.
+
+-- 
+73 de Brian, WB6RQN/J79BPL
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100406/88d0a491/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100406/88d0a491/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001057.html">GMT on Linux
+</A></li>
+	<LI>Next message: <A HREF="001058.html">GMT on Linux
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1056">[ date ]</a>
+              <a href="thread.html#1056">[ thread ]</a>
+              <a href="subject.html#1056">[ subject ]</a>
+              <a href="author.html#1056">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

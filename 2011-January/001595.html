@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Idea for Browser Feature
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Idea%20for%20Browser%20Feature&In-Reply-To=%3C4D288BF8.9050301%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001593.html">
+   <LINK REL="Next"  HREF="001591.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Idea for Browser Feature</H1>
+    <B>Joseph A. Counsil</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Idea%20for%20Browser%20Feature&In-Reply-To=%3C4D288BF8.9050301%40gmail.com%3E"
+       TITLE="Idea for Browser Feature">counsil at rollanet.org
+       </A><BR>
+    <I>Sat Jan  8 17:08:24 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001593.html">Idea for Browser Feature
+</A></li>
+        <LI>Next message: <A HREF="001591.html">Enhancement Requests
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1595">[ date ]</a>
+              <a href="thread.html#1595">[ thread ]</a>
+              <a href="subject.html#1595">[ subject ]</a>
+              <a href="author.html#1595">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Skip,
+
+Thanks for your comments.
+
+I respectfully disagree with your analysis.  Often times (probably more 
+than 50% of the time) I find that using my 500 Hz filter and defining 
+the sweet spot as the center of that filter allows me much better 
+decode, especially on a very weak station or when there is deep QSB.  If 
+there is another strong station in the passband, it will push the radio 
+AGC way down and I can lose a weak station, so when working weak 
+stations or ragchewing (parked on a station for a while) I use the &quot;Dig&quot; 
+mode and 500 Hz filter on my FT-100D.  Works VERY well with all modes 
+with bandwidth less than or equal to 500 Hz.  Surely I'm not the first 
+or only one to think of this or use it?!?  This is the same technique 
+that has been used for generations on CW, and for similar reasons 
+(improved S/N and AGC performance).
+
+I know nothing about programming Fldigi, but it seems very possible that 
+a macro could be built that would allow a text string that matches an 
+entry in the pulldown list of rig modes to be set by a macro called 
+RIGMODE, and similarly a text string match for the filter width in 
+RIGFLTR, and I would think RIGFREQ would be easy to accomplish also.  It 
+seems to me that this shold be possible in a way that is generally 
+available to any defined rig in RigCat or Rig XML by simply using text 
+string matching for the pulldown mode and bandwidth boxes.  If your 
+particular rig does not allow filter or mode selection via CAT, then so 
+be it, but I think most do.  I'm not thinking about interfacing macros 
+with the external Flrig program directly, but with the RigCat or Rig XML 
+built-in interfaces.
+
+Of course, this all may be WAY too much trouble for Dave &amp; crew to code 
+- I don't know...
+
+-Joe-
+
+-------- Original Message  --------
+Subject: Re: Idea for Browser Feature
+From: Howard Teller &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hteller at comcast.net</A>&gt;
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+Date: 1/8/2011 09:45
+&gt;<i> Joe,
+</I>&gt;<i>
+</I>&gt;<i> That would require linking flrig controls with fldigi macros. Probably 
+</I>&gt;<i> not feasible, and not all fuctions, perhaps like filter selection, are 
+</I>&gt;<i> controllable through CAT commands anyway. Are you using any rig 
+</I>&gt;<i> control program now? With PSK31, all the stations are found in the IF 
+</I>&gt;<i> passband, so rig control is really not necessary. The DSP filters in 
+</I>&gt;<i> fldigi are very sharp and steep-sided, so unless you have an AGC 
+</I>&gt;<i> capture problem, a narrow filter is not needed, and besides, in order 
+</I>&gt;<i> to use the PSK browser, you need a wide IF bandwidth anyway.
+</I>&gt;<i>
+</I>&gt;<i> 73, Skip KH6TY
+</I>&gt;<i>
+</I>&gt;<i> On 1/8/2011 9:42 AM, Joseph A. Counsil wrote:
+</I>&gt;&gt;<i> I would also like the option to have it go to the narrow filter 
+</I>&gt;&gt;<i> (&quot;Dig&quot; mode on my FT-100D) - but realize that may be asking too much 
+</I>&gt;&gt;<i> since the similar feature will be different for different radios. 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>
+-- 
++---------------------------------------------------------------+
+|<i> Joseph A. Counsil  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>  Phone:(573) 341-5186 |
+</I>|<i> 1310 Woodlawn Drive, Rolla, MO 65401  Amateur Radio: - K&#216;OG - |
+</I>+---------------------------------------------------------------+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001593.html">Idea for Browser Feature
+</A></li>
+	<LI>Next message: <A HREF="001591.html">Enhancement Requests
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1595">[ date ]</a>
+              <a href="thread.html#1595">[ thread ]</a>
+              <a href="subject.html#1595">[ subject ]</a>
+              <a href="author.html#1595">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

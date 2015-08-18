@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> WEFAX under 3.21.10
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20WEFAX%20under%203.21.10&In-Reply-To=%3C4DF291C1.9090701%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001900.html">
+   <LINK REL="Next"  HREF="001902.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>WEFAX under 3.21.10</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20WEFAX%20under%203.21.10&In-Reply-To=%3C4DF291C1.9090701%40gmail.com%3E"
+       TITLE="WEFAX under 3.21.10">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Fri Jun 10 23:50:57 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001900.html">WEFAX under 3.21.10
+</A></li>
+        <LI>Next message: <A HREF="001902.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1901">[ date ]</a>
+              <a href="thread.html#1901">[ thread ]</a>
+              <a href="subject.html#1901">[ subject ]</a>
+              <a href="author.html#1901">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Jim,
+
+A couple of questions please:
+- Was the signal good?
+- Did it happen only and a while, or each time ?
+- Does it happen with other stations?
+- Is there something unusual with this station?
+- Was your radio properly tuned?
+
+As far as I remember, at the beginning of an image, there is a phase 
+which is similar to APT STOP, and maybe this is what was detected.
+
+It is not a 100% reliable process to detect image transitions, anyway.
+
+If this happens regularly, it might be worth to fully understand this 
+bad behaviour and add some logic, which could be for example:
+- When the user has clicked 'Skip phasing', assume that an image is 
+being sent, and first listen to the signal a couple of seconds before 
+stopping reception.
+- Ensure a minimum timing after phasing or APT start, before assuming 
+that an image end is detected.
+- Maybe tune the detection levels (Have them customizable?)
+
+But again, this extra logic is difficult to tune, and might have 
+annoying side effects, so it might be preferrable if you do not mind, to 
+be 100% sure of the root cause of the problem.
+
+Thanks anyway for this interesting remark!
+
+Remi F4ECW
+
+PS: In the next fldigi release, it will be possible to send and receive 
+fax images with XML-RPC.
+
+Le 10.06.2011 03:55, Jim Haynes a &#233;crit :
+&gt;<i> I just tried WEFAX after ignoring it for quite a while. Was trying to
+</I>&gt;<i> copy the station on 8502 KHz. A transmission was in progress, and while
+</I>&gt;<i> they were sending the white part of a page the green picture bar was fully
+</I>&gt;<i> lit up. But when I punched SKIP APT and then SKIP PHASING it would almost
+</I>&gt;<i> immediately jump back to the place where SKIP APT is displayed. I had to
+</I>&gt;<i> use MANUAL to get it to keep receiving. Wonder if anyone else is having
+</I>&gt;<i> this kind of problem.
+</I>&gt;<i>
+</I>&gt;<i> Jim W6JVE
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001900.html">WEFAX under 3.21.10
+</A></li>
+	<LI>Next message: <A HREF="001902.html">Help with fldigi Hamlib PTT Issue with USB Interface.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1901">[ date ]</a>
+              <a href="thread.html#1901">[ thread ]</a>
+              <a href="subject.html#1901">[ subject ]</a>
+              <a href="author.html#1901">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

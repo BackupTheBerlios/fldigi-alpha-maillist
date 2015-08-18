@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> amtor, sitor-b navtex decoding ? (gabriel illouz)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20amtor%2C%20sitor-b%20navtex%20decoding%20%3F%20%28gabriel%20illouz%29&In-Reply-To=%3C008901cae2d6%241e4445f0%24b752d1d5%40jenssen670cb6e%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001165.html">
+   <LINK REL="Next"  HREF="001160.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>amtor, sitor-b navtex decoding ? (gabriel illouz)</H1>
+    <B>M. Jenssen</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20amtor%2C%20sitor-b%20navtex%20decoding%20%3F%20%28gabriel%20illouz%29&In-Reply-To=%3C008901cae2d6%241e4445f0%24b752d1d5%40jenssen670cb6e%3E"
+       TITLE="amtor, sitor-b navtex decoding ? (gabriel illouz)">m.jenssen at wtnet.de
+       </A><BR>
+    <I>Fri Apr 23 13:14:19 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001165.html">Rig Control/Freq Display request
+</A></li>
+        <LI>Next message: <A HREF="001160.html">amtor, sitor-b navtex decoding ? (gabriel illouz)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1159">[ date ]</a>
+              <a href="thread.html#1159">[ thread ]</a>
+              <a href="subject.html#1159">[ subject ]</a>
+              <a href="author.html#1159">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Gabriel,
+to complete your statement, here a short summary about AMTOR/SITOR and FEC as compiled by Patrick (author of Multipsk):
+ quote
+
+
+Description :
+Baud rate : 100. A character is composed of 4 &#171; space &#187; and 3 &#171; mark &#187; bits. A block of characters (called &#171; Block 1 &#187; or &#171; Block 2 &#187;) is composed of three characters (total duration: 3 x 70 = 210 ms) and a pause of 240 ms duration. During this pause, the receiving station emits a control signal of 70 ms duration to say &#171; please next block &#187; (symbol &quot;ACK&quot; for acknowledge) or to ask for a repetition of the last block, in case of erroneous character (symbol &quot;NACK&quot; for not acknowledge)
+Speed : between 0 and 67 wpm (67 wpm corresponding to the 50 bauds RTTY) depending of the number of repetitions
+Modulation : FSK two tones (&#171; mark &#187; and &#171; space &#187;, &quot;mark&quot; high) with a shift between tones of 170 Hz
+Reception mode : USB
+Character set : CCIR476-4 (32 letters, 32 figures and 6 control, idle or phasing signals) with no error reset character (&#171; fixed length &#187; characters).
+In SITOR A, the character set may be extended to the Cyrillic characters by using the character for &#171; un-perforated tape &#187; (third shift).
+In AMTOR A, the character set may be extended to the ASCII characters (32 to 128) by using the character for the &#171; un-perforated tape &#187; 
+Shape of pulse : rectangular
+Bandwidth : about 800 Hz (due to rectangular shape),
+Demodulation : non coherent
+Synchronization : automatic using the signal
+Correction code : yes via automatic repetition and easy detection of an erroneous character due to the particular content of a character (4 &#171; space &#187; and 3 &#171; mark &#187; bits)
+Convolution code : no
+Interleaving : no
+Pmean/Ppeak : 1
+Note :   In AMTOR ARQ LISTEN, characters are tranlated the best possible way because no repetition can be requested. Therefore, receive quality is not generally very good.
+
+- AMTOR FEC (called also SITOR-B for the navy (as a maritime mobile service system) or simply FEC) collective B-mode
+
+
+
+
+
+
+Description :
+Baud rate : 100. A character is composed of 4 &#171; space &#187; and 3 &#171; mark &#187; bits. It is an uninterrupted stream of characters, contrary to AMTOR ARQ.
+Speed : 71 wpm
+Modulation : FSK two tones (&#171; mark &#187; and &#171; space &#187;, &quot;mark&quot; high) with a shift between tones of 170 Hz
+Reception mode : USB
+Character set : CCIR476-4 (32 letters, 32 figures and 6 control, idle or phasing signals) with no error correction character (&#171; fixed length &#187; characters). Small characters are transformed in capital characters and special characters as &#171; &#233; &#187;  are transformed in standard capital (in the example: &#171; E &#187;)
+Shape of pulse : rectangular
+Bandwidth : about 800 Hz (due to rectangular shape),
+Demodulation : non coherent
+Synchronization : automatic using the signal
+Correction code : no
+Convolution code : no
+Interleaving : each character is repeated 5 positions later (that is 350 ms between 2 transmissions of the same character). This diversity in time allows the correction of an erroneous character. Its detection is easy due to the particular content of a character (4 &#171; space &#187; and 3 &#171; mark &#187;).
+Pmean/Ppeak : 1
+Lowest S/N :  about -5 dB
+Note : There are 2 FEC modes: the collective B-mode (described before) and the selective B-mode (little differences as an inversion of bits).
+
+unquote
+
+
+You will not have much fun in using rtty mode for reading Amtor/Sitor.
+In any case, you can read this mode with MixW and Multipsk. I personally do not see any advantage in fldigi having this mode incorporated as it is used sporadically only on our bands and as it does not offer any better performance than those we got at our disposal. When I want to read Navtex - when we got bad wx in our region - I just use one of those programs.
+vy73 Fred DL6XAZ
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100423/7f943825/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100423/7f943825/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001165.html">Rig Control/Freq Display request
+</A></li>
+	<LI>Next message: <A HREF="001160.html">amtor, sitor-b navtex decoding ? (gabriel illouz)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1159">[ date ]</a>
+              <a href="thread.html#1159">[ thread ]</a>
+              <a href="subject.html#1159">[ subject ]</a>
+              <a href="author.html#1159">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Flex 5000 A and Fldigi.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Flex%205000%20A%20and%20Fldigi.&In-Reply-To=%3Ce93450130908260746x5b6edffbnaa0cc6e1523bab7a%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000049.html">
+   <LINK REL="Next"  HREF="000051.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Flex 5000 A and Fldigi.</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Flex%205000%20A%20and%20Fldigi.&In-Reply-To=%3Ce93450130908260746x5b6edffbnaa0cc6e1523bab7a%40mail.gmail.com%3E"
+       TITLE="Flex 5000 A and Fldigi.">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Wed Aug 26 16:46:35 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000049.html">Flex 5000 A and Fldigi.
+</A></li>
+        <LI>Next message: <A HREF="000051.html">Flex 5000 A and Fldigi.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#50">[ date ]</a>
+              <a href="thread.html#50">[ thread ]</a>
+              <a href="subject.html#50">[ subject ]</a>
+              <a href="author.html#50">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Aug 26, 2009 at 12:16 AM, Erik Jakobsen&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">eja at urbakken.dk</A>&gt; wrote:
+&gt;<i> Hi again Brian.
+</I>&gt;<i>
+</I>&gt;<i> Now I have checked the settings. Would you please double check, that they
+</I>&gt;<i> are ok ?.
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.urbakken.dk/flexradio.jpg">http://www.urbakken.dk/flexradio.jpg</A>
+</I>&gt;<i> <A HREF="http://www.urbakken.dk/vac.jpg">http://www.urbakken.dk/vac.jpg</A>
+</I>&gt;<i> <A HREF="http://www.urbakken.dk/psdrvac.jpg">http://www.urbakken.dk/psdrvac.jpg</A>
+</I>&gt;<i>
+</I>&gt;<i> I don't think there are other settings to be ckecked ?.
+</I>
+Well, there are a couple of things that I notice that you might change:
+
+1. Set maximum sample rate for VAC to 48,000 Hz. I don't know how VAC
+works but it may reserve buffer memory for a worst-case set of
+operating parameters. It would need more memory to be able to buffer a
+stream at 96KHz. Since 48KHz is maximum for PowerSDR, there is no need
+to tell VAC that it will have to run faster than that. I would set
+sample rate values for VAC to run from 8KHz to 48KHz.
+
+2. I also see you are running the radio at a sample rate of 192KHz.
+Unless you need the panadaptor display to show you 160KHz of span, you
+are better off dropping the sample rate to 96KHz. It will improve the
+shape of the filters if you do. When I am trying to run really narrow
+modes with optimum filter shape I even drop the sample rate down to
+48KHz.
+
+Dropping the sample rate also means that the computer does not have to
+work as hard. It also means more latency (delay) for the signal to
+pass through the radio but for most modes that is not a problem.
+
+Try those things and see how it works.
+
+-- 
+73 de Brian, WB6RQN/J79BPL
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000049.html">Flex 5000 A and Fldigi.
+</A></li>
+	<LI>Next message: <A HREF="000051.html">Flex 5000 A and Fldigi.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#50">[ date ]</a>
+              <a href="thread.html#50">[ thread ]</a>
+              <a href="subject.html#50">[ subject ]</a>
+              <a href="author.html#50">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

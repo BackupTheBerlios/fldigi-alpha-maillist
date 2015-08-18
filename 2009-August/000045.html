@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Flex 5000 A and Fldigi.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Flex%205000%20A%20and%20Fldigi.&In-Reply-To=%3C4A9440FB.5090403%40urbakken.dk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000044.html">
+   <LINK REL="Next"  HREF="000049.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Flex 5000 A and Fldigi.</H1>
+    <B>Erik Jakobsen</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Flex%205000%20A%20and%20Fldigi.&In-Reply-To=%3C4A9440FB.5090403%40urbakken.dk%3E"
+       TITLE="Flex 5000 A and Fldigi.">eja at urbakken.dk
+       </A><BR>
+    <I>Tue Aug 25 21:52:27 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000044.html">Flex 5000 A and Fldigi.
+</A></li>
+        <LI>Next message: <A HREF="000049.html">Flex 5000 A and Fldigi.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Brian Lloyd wrote:
+&gt;<i> On Tue, Aug 25, 2009 at 3:31 AM, w1hkj&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A>&gt; wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;&gt;&gt;<i>  What can cause such pulses or whatever it is ?.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>  Have I reached the correct mailinglist ?.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>         
+</I>&gt;&gt;<i> Yes. Erik, the right mailing list.  But you will have to wait for one of
+</I>&gt;&gt;<i> the 5000 / fldigi alpha team members to speak to your report.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> The jumping, pulsing panadaptor display was a bug in some versions of
+</I>&gt;<i> PowerSDR. As far as I know, that bug was squashed about 3-4 months ago
+</I>&gt;<i> but obviously if you use SVN to build some versions of PowerSDR you
+</I>&gt;<i> are going to experience that problem. As far as I know neither the
+</I>&gt;<i> current release version of PowerSDR (1.18.2), nor the current version
+</I>&gt;<i> from the test branch (I am not in front of a machine that will let me
+</I>&gt;<i> check) have that problem. I suspect that some branches may still have
+</I>&gt;<i> the problem as they are addressing other areas of development.
+</I>&gt;<i>
+</I>&gt;<i> Double check that firewire buffer sizes and sample rates match between
+</I>&gt;<i> the radio's firewire driver and PowerSDR itself. Also, make sure that
+</I>&gt;<i> the settings in VAC (sample rates supported and buffer sizes) match
+</I>&gt;<i> the settings in PowerSDR. PowerSDR can handle buffer-size mismatch but
+</I>&gt;<i> it ends up creating a LOT of processing overhead which may show up as
+</I>&gt;<i> a result of: a) increased CPU usage when fldigi is runnig, and/or, b)
+</I>&gt;<i> blocking due to buffer starvation due to buffer size mismatch.
+</I>&gt;<i>
+</I>&gt;<i> The bottom line is that fldigi, both the alpha and release versions,
+</I>&gt;<i> seem to be working fine in general with both the latest SVN test
+</I>&gt;<i> branch or the released version of PowerSDR so you need to look at some
+</I>&gt;<i> of the other things that could be affecting performance.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Thank you very much Brain. You are explaining things such that they are 
+understandable.
+The issue is when I use SVN versions. I will try again using the PSDR 
+1.18.2, and then after I'll report back here again.
+
+73s-Erik-OZ4KK
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000044.html">Flex 5000 A and Fldigi.
+</A></li>
+	<LI>Next message: <A HREF="000049.html">Flex 5000 A and Fldigi.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

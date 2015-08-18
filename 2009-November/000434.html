@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi alpha on Debian
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20alpha%20on%20Debian&In-Reply-To=%3C4AF0AC77.6090506%40qwest.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000432.html">
+   <LINK REL="Next"  HREF="000435.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi alpha on Debian</H1>
+    <B>Mike Stansberry</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20alpha%20on%20Debian&In-Reply-To=%3C4AF0AC77.6090506%40qwest.net%3E"
+       TITLE="fldigi alpha on Debian">mjstansberry at qwest.net
+       </A><BR>
+    <I>Tue Nov  3 23:19:35 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000432.html">fldigi alpha on Debian
+</A></li>
+        <LI>Next message: <A HREF="000435.html">fldigi alpha on Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#434">[ date ]</a>
+              <a href="thread.html#434">[ thread ]</a>
+              <a href="subject.html#434">[ subject ]</a>
+              <a href="author.html#434">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ed wrote:
+&gt;<i> On Tue, 3 Nov 2009 18:26:28 +1100
+</I>&gt;<i> John Douyere &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">vk2eta at gmail.com</A>&gt; wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Mike,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 1. I suspect it is trying to access an &quot;unvalid&quot; portaudio device.
+</I>&gt;&gt;<i> You can try to delete the .fldigi directory under your home
+</I>&gt;&gt;<i> directory. In that case I believe Fldigi will try for the OSS devices
+</I>&gt;&gt;<i> (/dev/dsp) first, then you can try to re-selct the desired portaaudio
+</I>&gt;&gt;<i> device.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Keep in mind that if you do this you loose logs, macros....etc. You
+</I>&gt;<i> only need to delete the fldigi_defs.xml file.
+</I>
+Nothing will be lost.  I normally use Ubuntu 9.04 and this Debian is
+on a separate drive, for &quot;testing&quot;.  I just wanted to see if I could
+compile and run fldigi on Debian.  I guess I cannot.
+
+&gt;<i> 
+</I>&gt;<i> The user determines which sound device to use, not fldigi. fldigi shows
+</I>&gt;<i> a list of all sound devices it found, whether they are available is
+</I>&gt;<i> another question.
+</I>
+No sound devices are found by fldigi.
+
+Here are the results from several things you, Ed, asked me to try, plus
+one other from another suggestion.
+
+I doubt that I'm going to spend much more time on this.  It appears
+that Ubuntu is MUCH, MUCH more user friendly.
+
+Oh, I had done the apt-get build-dep fldigi last night but I'm still
+seeing the same results.  No &quot;GLIBC&quot; error message, just no sound
+cards found.
+
+lspci results:
+
+00:00.0 Host bridge: VIA Technologies, Inc. VT8363/8365 [KT133/KM133] 
+(rev 03)
+00:01.0 PCI bridge: VIA Technologies, Inc. VT8363/8365 [KT133/KM133 AGP]
+00:07.0 ISA bridge: VIA Technologies, Inc. VT82C686 [Apollo Super South] 
+(rev 40)
+00:07.1 IDE interface: VIA Technologies, Inc. 
+VT82C586A/B/VT82C686/A/B/VT823x/A/C PIPC Bus Master IDE (rev 06)
+00:07.2 USB Controller: VIA Technologies, Inc. VT82xxxxx UHCI USB 1.1 
+Controller (rev 1a)
+00:07.3 USB Controller: VIA Technologies, Inc. VT82xxxxx UHCI USB 1.1 
+Controller (rev 1a)
+00:07.4 SMBus: VIA Technologies, Inc. VT82C686 [Apollo Super ACPI] (rev 40)
+00:07.5 Multimedia audio controller: VIA Technologies, Inc. VT82C686 
+AC97 Audio Controller (rev 50)
+00:0a.0 Ethernet controller: Realtek Semiconductor Co., Ltd. 
+RTL-8139/8139C/8139C+ (rev 10)
+01:00.0 VGA compatible controller: Silicon Integrated Systems [SiS] 
+86C326 5598/6326 (rev 0b)
+
+lsusb results:
+Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 001 Device 003: ID 08bb:2904 Texas Instruments Japan PCM2904 Audio Codec
+Bus 001 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+
+tail end of dmesg after unplugging and replugging the usb from
+   the back of the SignaLink USB:
+
+[  289.376244] input,hidraw0: USB HID v1.00 Device [Burr-Brown from TI 
+              USB Audio CODEC ] on usb-0000:00:07.2-2
+[  289.376449] usb 1-2: New USB device found, idVendor=08bb, idProduct=2904
+[  289.376455] usb 1-2: New USB device strings: Mfr=1, Product=2, 
+SerialNumber=0
+[  289.376460] usb 1-2: Product: USB Audio CODEC
+[  289.376464] usb 1-2: Manufacturer: Burr-Brown from TI
+
+73, Mike, K0TER
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000432.html">fldigi alpha on Debian
+</A></li>
+	<LI>Next message: <A HREF="000435.html">fldigi alpha on Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#434">[ date ]</a>
+              <a href="thread.html#434">[ thread ]</a>
+              <a href="subject.html#434">[ subject ]</a>
+              <a href="author.html#434">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

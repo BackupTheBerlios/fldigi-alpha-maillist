@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3C4BCA3CE8.8080003%40salsgiver.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001133.html">
+   <LINK REL="Next"  HREF="001140.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>David Kleber</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3C4BCA3CE8.8080003%40salsgiver.com%3E"
+       TITLE="Contestia">davek at salsgiver.com
+       </A><BR>
+    <I>Sun Apr 18 00:57:44 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001133.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001140.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1138">[ date ]</a>
+              <a href="thread.html#1138">[ thread ]</a>
+              <a href="subject.html#1138">[ subject ]</a>
+              <a href="author.html#1138">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Our group has settled on the specific modes we use through trial and 
+error under the exact conditions and bands we would find ourselves using 
+in an emergency. By running 3 nets a week for well over a year now, 
+we've found that on 80m and 10m, Olivia 8/500 is the best compromise for 
+speed, accuracy, tuning forgiveness and bandwidth for shorter messages 
+and keyboard chat. On occasion we have to switch to the much slower 
+16/500 olivia, but that's rare.
+
+For larger messages and spreadsheets on 80m and 10m we use MT63 1k long. 
+We do a broadcast transmission with a WRAP file and then go around the 
+table with amazingly good results with all but the stations reporting 
+the weakest rx signals.
+
+On FM we use MT63 2k long.  Again, it seems to be the best compromise 
+for speed, accuracy and tuning forgiveness.
+
+Interestingly enough, there are a ton of new digital sound card emcomm 
+and traffic nets popping up on 80m, many of which tried MFSK16, Domino 
+and others, but they all seem to land on 8/500 olivia just like we did. 
+And I've heard nothing but good things from those using MT63 2k long on 
+FM.  We have tried the PSK modes (including R) as well as the very 
+wide/fast MFSK and Olivia modes on FM, but nothing seems to out perform 
+MT63 2k long.
+
+Anyway, my point is that on paper and s/n ratio tests, many modes come 
+out as looking better than Olivia and MT63, but there's no substitute 
+for running MANY nets with more than one other station under varying 
+conditions.
+
+We're always willing to try new modes, but we always wind up with Olivia 
+and MT63 being the best overall fit for our needs here in WPA.
+
+-Dave, KB3FXI
+
+
+Brian Lloyd wrote:
+&gt;<i> On Sat, Apr 17, 2010 at 1:43 PM, Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">m0gld at enotty.net</A>&gt; wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;&gt;<i> It is really Really *REALLY* important to understand what is going on
+</I>&gt;&gt;<i> with
+</I>&gt;&gt;&gt;<i> these protocols in the presence of propagation anomalies in order to be
+</I>&gt;&gt;<i> able
+</I>&gt;&gt;&gt;<i> to make decisions about which modes work best under what conditions. My
+</I>&gt;&gt;<i> own
+</I>&gt;&gt;&gt;<i> recent experiments in monitoring and graphing the phase/frequency changes
+</I>&gt;&gt;<i> of
+</I>&gt;&gt;&gt;<i> the WWV carrier over time (20-30 minute samples typically) have convinced
+</I>&gt;&gt;<i> me
+</I>&gt;&gt;&gt;<i> that sequential testing of protocols, i.e. transmitting a message and
+</I>&gt;&gt;<i> then
+</I>&gt;&gt;&gt;<i> immediately transmitting the same message using the other protocol, is
+</I>&gt;&gt;<i> not
+</I>&gt;&gt;&gt;<i> likely to produce valid results unless repeated numerous times and then
+</I>&gt;&gt;<i> the
+</I>&gt;&gt;&gt;<i> results averaged with outliers discarded.
+</I>&gt;&gt;<i> True, and I seriously doubt that anyone has bothered to do that.
+</I>&gt;&gt;<i>
+</I>&gt;<i> 
+</I>&gt;<i> Well, Chen has taken a first pass using HF channel simulator software which
+</I>&gt;<i> tells us something. The CCIR evidently did a fair amount of work to quantify
+</I>&gt;<i> the characteristics of an HF channel. Chen used that.
+</I>&gt;<i> 
+</I>&gt;<i> (I am finding that I am coming at this from behind several people who have
+</I>&gt;<i> done significant work but it doesn't seem to me that anyone has taken it
+</I>&gt;<i> beyond building a couple of modems.)
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;&gt;<i> I have been pestering Dave to do a test version of fldigi that would
+</I>&gt;&gt;&gt;<i> let me transmit the same data in two modes at the same time in the
+</I>&gt;&gt;&gt;<i> same passband so that both experience *exactly* the same propagation
+</I>&gt;&gt;&gt;<i> conditions concurrently.
+</I>&gt;&gt;<i> This is somewhat more complex than it sounds...
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Oh, I figured that.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i> what would work right
+</I>&gt;&gt;<i> now would be to generate two audio files (with signals at suitable
+</I>&gt;&gt;<i> frequencies of course) and mix them using another program.  I'm sure sox
+</I>&gt;&gt;<i> can do that in one short command line.
+</I>&gt;&gt;<i>
+</I>&gt;<i> 
+</I>&gt;<i> &lt;dope slap to the forehead&gt; Duh! Of course! And that would be very simple.
+</I>&gt;<i> Of course, that is what Chen did for his testing too.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i> In fact if fldigi had xmlrpc methods to start/stop audio file
+</I>&gt;&gt;<i> generation, it would be easy to write a script to do an audio file for
+</I>&gt;&gt;<i> each mode (for a particular input text), and then you could mix them as
+</I>&gt;&gt;<i> needed for your tests.  I guess I'll need to write those xmlrpc methods
+</I>&gt;&gt;<i> first :-)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> [snip]
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Time to take the next step and build on Chen's work by getting real,
+</I>&gt;&gt;&gt;<i> controlled data from live propagation.
+</I>&gt;&gt;<i> Some comparisons have been posted to the digitalradio yahoo group.
+</I>&gt;&gt;<i> There is one by K2MO, and another by WZ7I.  URL for the latter:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  <A HREF="http://mysite.verizon.net/wz7i/digitalmodes.html">http://mysite.verizon.net/wz7i/digitalmodes.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The tests done by K2MO are in the files area of digitalradio, and he has
+</I>&gt;&gt;<i> posted them to the group a few times too.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I can't say how scientific those experiments were, but I know that the
+</I>&gt;&gt;<i> path simulator used (pathsim) is GPL'ed so at least that aspect of the
+</I>&gt;&gt;<i> tests can be verified by anyone so inclined.
+</I>&gt;&gt;<i>
+</I>&gt;<i> 
+</I>&gt;<i> The problem as I see it is that we have these similar-but-different fixed
+</I>&gt;<i> modes; e.g. olivia, contestia, MFSKx, DominoEX, and then the various flavors
+</I>&gt;<i> of PSK; that make multiple changes but don't allow us to evaluate the
+</I>&gt;<i> protocols while only changing one parameter at a time. That is certainly
+</I>&gt;<i> useful for hams wondering which mode to try now but isn't helpful in
+</I>&gt;<i> selecting which mode is likely to perform best. Where *is* the crossover
+</I>&gt;<i> between IFK, MFSK, and PSK?
+</I>&gt;<i> 
+</I>&gt;<i> Hmm, wouldn't it be nice if the transmission header contained a descriptor
+</I>&gt;<i> of the MODEM/CODEC so that the receiver could put together the correct
+</I>&gt;<i> pieces.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i> ES1HJ also has published some test results but I don't recall if they
+</I>&gt;&gt;<i> were on-air or simulation tests.
+</I>&gt;&gt;<i>
+</I>&gt;<i> 
+</I>&gt;<i> OK, there is a lot more research than I was aware of. I am trying to soak
+</I>&gt;<i> all this up (and feeling like I am drinking from a fire hose) with the idea
+</I>&gt;<i> of eventually building something to automate the process, i.e. evaluate the
+</I>&gt;<i> channel and then configure the best operating mode. Thank you for all the
+</I>&gt;<i> pointers Stelios.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001133.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001140.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1138">[ date ]</a>
+              <a href="thread.html#1138">[ thread ]</a>
+              <a href="subject.html#1138">[ subject ]</a>
+              <a href="author.html#1138">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

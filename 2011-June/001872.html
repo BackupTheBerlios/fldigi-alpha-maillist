@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi Alpha Wish List - AA5VU
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi%20Alpha%20Wish%20List%20-%20AA5VU&In-Reply-To=%3C4DE969D1.2030107%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001873.html">
+   <LINK REL="Next"  HREF="001874.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi Alpha Wish List - AA5VU</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi%20Alpha%20Wish%20List%20-%20AA5VU&In-Reply-To=%3C4DE969D1.2030107%40WA5ZNU.org%3E"
+       TITLE="Fldigi Alpha Wish List - AA5VU">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Sat Jun  4 01:10:09 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001873.html">Fldigi Alpha Wish List - AA5VU
+</A></li>
+        <LI>Next message: <A HREF="001874.html">Fldigi Alpha Wish List - AA5VU
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1872">[ date ]</a>
+              <a href="thread.html#1872">[ thread ]</a>
+              <a href="subject.html#1872">[ subject ]</a>
+              <a href="author.html#1872">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Actually, I think we should decouple the UI from the modem and services 
+(logging, spotting, etc) set and use a protocol between them.  I've done 
+a couple of versions of this in the past, and believe that an HTTP based 
+approach is the right one now.  (It's not quite what we have with 
+XML-RPC, but similar.  I'm not going to complain about something that 
+works and is easy to author, and don't think we should move away from 
+it, but it's not a good play for the interoperable web space and across 
+different digimode application.)  Right nowI'm working with a few other 
+people who've had this same idea.  The main reason I propose this is 
+because it lets the modem and software-hard developers do their thing 
+best, and lets the UI designers do what they do.  So, instead of a 
+&quot;fork&quot; of fldigi, if we had this type of approach, it'd be a new 
+front-end client to fldigi.
+
+I realize this isn't an overnight change, and so I'm continuing to work 
+on it in the background.  A common control protocol would mean that 
+front ends could work with multiple different programs, and I think it's 
+quite likely that with or without us (us, me, fldigi, et al) this will 
+come to pass anyway.
+
+As an example of what this might enable, I believe that a PSK Reporter 
+like UI as for a digimode program is an enchanting idea, and might 
+appeal to a different set of people than the current style of digimode 
+UI, which range from MultiPSK's highly utilitiarian to HRD Deluxe's Mad 
+Scientist.  There's no reason someone who wants to do a different UI 
+(map-based UI or a cloud-text UI, or even like KI6IMM who wants an 
+xboard front end so he can play chess over the air) should have to deal 
+with a complex modem system or C++ or Pascal (MultiPSK) or anything at 
+all remotely like that.  In fact, I think an HTML+JS based UI, or an 
+Apple or Android toolkit UI should be trivially possible, and each will 
+appeal to a different set of people as users and as developers.
+
+Leigh/WA5ZNU
+
+&gt;<i>
+</I>&gt;<i> On Fri, Jun 3, 2011 at 2:26 PM, John Witchell 
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">john at onefosseway.force9.co.uk</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">john at onefosseway.force9.co.uk</A>&gt;&gt; 
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;<i>     As the gist of this thread appears to be a means of easily
+</I>&gt;<i>     determining if your transmission is within the band limits I
+</I>&gt;<i>     wonder if it would be easier to enter the actual band (or
+</I>&gt;<i>     sub-band) limits into a config page somewhere and have a line
+</I>&gt;<i>     appear on the waterfall as you approach the limit?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> No, that is the kind of thinking I was hoping to foster with my 
+</I>&gt;<i> &quot;rant&quot;. The problem is, there are entirely too many people telling me 
+</I>&gt;<i> how we should keep doing the same things instead of asking themselves 
+</I>&gt;<i> if the old methods are indeed the best.
+</I>&gt;<i>
+</I>&gt;<i> Now I am making some assumptions here that I accept as standard. They are:
+</I>&gt;<i>
+</I>&gt;<i>    1. Rig control is the rule rather than the exception.
+</I>&gt;<i>    2. The radio/computer combination forms a communications system.
+</I>&gt;<i>       They are not really separate.
+</I>&gt;<i>
+</I>&gt;<i> Once you make that leap then perhaps what I am talking about begins to 
+</I>&gt;<i> make more sense. We don't really need a VFO control in fldigi. We 
+</I>&gt;<i> already have one on the rig. You don't really need an extra one. OTOH, 
+</I>&gt;<i> we *could* have a single frequency control for our emission. That 
+</I>&gt;<i> single control would actually control two function -- VFO frequency 
+</I>&gt;<i> and audio subcarrier. The setting of that control would then be 
+</I>&gt;<i> reflected in the display of emission center frequency. Yes, all of 
+</I>&gt;<i> this already appears in one fashion or another in fldigi as it stands. 
+</I>&gt;<i> I am just pushing everyone to start thinking about a different way of 
+</I>&gt;<i> viewing things and no longer focusing on the VFO setting on the rig.
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> Brian Lloyd, WB6RQN/J79BPL
+</I>&gt;<i> 3191 Western Dr.
+</I>&gt;<i> Cameron Park, CA 95682
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian at lloyd.com</A>&gt;
+</I>&gt;<i> +1.767.617.1365 (Dominica)
+</I>&gt;<i> +1.931.492.6776 (USA)
+</I>&gt;<i> (+1.931.4.WB6RQN)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110603/6efda511/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110603/6efda511/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001873.html">Fldigi Alpha Wish List - AA5VU
+</A></li>
+	<LI>Next message: <A HREF="001874.html">Fldigi Alpha Wish List - AA5VU
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1872">[ date ]</a>
+              <a href="thread.html#1872">[ thread ]</a>
+              <a href="subject.html#1872">[ subject ]</a>
+              <a href="author.html#1872">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

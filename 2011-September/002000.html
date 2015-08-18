@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 0AJ
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%200AJ&In-Reply-To=%3C87sjoctsm4.fsf%40penny.tippete.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001998.html">
+   <LINK REL="Next"  HREF="002001.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 0AJ</H1>
+    <B>Pierfrancesco Caci</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%200AJ&In-Reply-To=%3C87sjoctsm4.fsf%40penny.tippete.net%3E"
+       TITLE="fldigi 0AJ">pf at tippete.net
+       </A><BR>
+    <I>Sun Sep  4 14:11:15 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001998.html">fldigi 0AJ
+</A></li>
+        <LI>Next message: <A HREF="002001.html">fldigi 0AJ
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2000">[ date ]</a>
+              <a href="thread.html#2000">[ thread ]</a>
+              <a href="subject.html#2000">[ subject ]</a>
+              <a href="author.html#2000">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> &quot;w1hkj&quot; == w1hkj  &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A>&gt; writes:
+</I>
+
+    w1hkj&gt; Forgot to include on the posting announcement.  It was
+    w1hkj&gt; necessary to change the 
+    w1hkj&gt; delay and length specifiers on the send tone macro tag to
+    w1hkj&gt; prevent a conflict in 
+    w1hkj&gt; parsing the wait delay and the row/col tone for 'D'
+
+    w1hkj&gt; &lt;DTMF:Wnnn:Lnnn:digits&gt; where
+
+    w1hkj&gt; Wnnn - wait for nnn milliseconds before first tone
+    w1hkj&gt; Lnnn - length of each tone and silence period (default 50 msec)
+
+    w1hkj&gt; i.e. &lt;DTMV:W250:L100:123A-456B-789C-*0#D,,,,&gt;
+
+    w1hkj&gt; waits 250 milliseconds
+    w1hkj&gt; tone symbol length = 100 milliseconds.
+    w1hkj&gt; silence period between rows, and 4 silence periods at end of
+    w1hkj&gt; transmission. 
+
+Seems ok to me. But is there a way to not transmit anything in the
+current mode?
+
+I've used the following macro:
+&lt;CLRTX&gt;&lt;TX&gt;&lt;DTMF:W100:L300:1234-5670,,AD&gt;&lt;RX&gt;
+
+I was on psk31, and the attached image shows that I transmitted some
+psk31 as well, even though there was not even a newline between &lt;TX&gt; and
+&lt;RX&gt;, just the &lt;DTMF&gt; macro. 
+
+I have not tested the decoder, no way to test it unless I find someone
+who can transmit the tones in HF for me to receive. 
+
+I'll try testing packet later. 
+
+Pf
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: dtmf.png
+Type: image/png
+Size: 43102 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110904/5fe3fa31/attachment.png">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110904/5fe3fa31/attachment.png</A>&gt;
+-------------- next part --------------
+
+
+-- 
+Pierfrancesco Caci, ik5pvx
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001998.html">fldigi 0AJ
+</A></li>
+	<LI>Next message: <A HREF="002001.html">fldigi 0AJ
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2000">[ date ]</a>
+              <a href="thread.html#2000">[ thread ]</a>
+              <a href="subject.html#2000">[ subject ]</a>
+              <a href="author.html#2000">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

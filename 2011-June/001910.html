@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> RTTY, ADIF files
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20RTTY%2C%20ADIF%20files&In-Reply-To=%3C4DF37955.2040500%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001909.html">
+   <LINK REL="Next"  HREF="001911.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>RTTY, ADIF files</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20RTTY%2C%20ADIF%20files&In-Reply-To=%3C4DF37955.2040500%40gmail.com%3E"
+       TITLE="RTTY, ADIF files">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sat Jun 11 16:19:01 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001909.html">RTTY, ADIF files
+</A></li>
+        <LI>Next message: <A HREF="001911.html">Adif files, tags MODE, USERDEF1, USERDEF2 etc...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1910">[ date ]</a>
+              <a href="thread.html#1910">[ thread ]</a>
+              <a href="subject.html#1910">[ subject ]</a>
+              <a href="author.html#1910">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Le 11.06.2011 12:59, Dick Kriss a &#233;crit :
+&gt;<i>
+</I>&gt;<i> On Jun 11, 2011, at 6:38 AM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">remi.chateauneu at gmail.com</A> wrote:
+</I>
+&gt;&gt;<i> Question please about RTTY records in ADIF files. Is there a way to save the shift and the number of bits? When creating a macro, one can specify the mode this way:
+</I>&gt;&gt;<i> &lt;MODEM:RTTY:850:75:5&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Unfortunately, this extra information is apparently not saved in the log. Any idea plase ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Another question: When viewing an adif record, it would be fine to set the mode and the frequency by adding an extra button. Any interest in this?
+</I>
+&gt;<i>
+</I>&gt;<i> Why would you want to save that information in ADIF format?  I don't think
+</I>&gt;<i> they are covered in the current ADIF specifications.
+</I>
+This is my problem: I am looking for a standard for saving frequencies, 
+a kind of frequency database, if you like, but so,ething readable by 
+everything. Adif seems to be the only possibility although, I agree, it 
+is not exactly made for that.
+
+But on the other hand, it would give a convenient possibility to create 
+on-the-fly a freq database:
+- Suppose, you find an interesting frequency, no matter what it is.
+- Then you save it in the right ADIF file, by clicking the existing 
+&quot;Save&quot; button.
+- Then later, when you want to tune to it, you just need to open the 
+ADIF file and click on the record: This simple feature is missing yet. 
+Of course, this would work with any kind of ADIF file, maybe generated 
+with a frequency database - why not plain AM and FM stations.
+
+The extra small features I need (and I can add in a coulpe of 
+development hours) are:
+- Save some extra bits of information in the ADIF: Mode (USB,FM,AM etc...)
+- All the parameters for the modem (RTTY for example).
+- And click on the record to tune the rig accordingly.
+
+Indeed, the fact that ADIF files are not exactly made for that is 
+completely agreed, but:
+- They do 95% of the job.
+- They are usable by many softwares.
+- They are already implemented in fldigi.
+
+Cheers
+
+Remi F4ECW
+
+&gt;<i>
+</I>&gt;<i> I can see where you may want to save a macro setup so you could quickly get back
+</I>&gt;<i> to that setting but do not understand why you would want to log the extra data.
+</I>&gt;<i>
+</I>&gt;<i> The reason for saving modes is really for QSL's, DXCC and LoTW and all they
+</I>&gt;<i> really only recognize is CW, Phone (or SSB), RTTY and DATA.  The tqs.app
+</I>&gt;<i> program changes most of the digital modes saved in ADIF format to DATA. A
+</I>&gt;<i> RTTY QSO is a RTTY QSO no mater what baud rate, shift or bits.
+</I>&gt;<i>
+</I>&gt;<i> Maybe I am missing something?
+</I>&gt;<i>
+</I>&gt;<i> Dick AA5VU
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001909.html">RTTY, ADIF files
+</A></li>
+	<LI>Next message: <A HREF="001911.html">Adif files, tags MODE, USERDEF1, USERDEF2 etc...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1910">[ date ]</a>
+              <a href="thread.html#1910">[ thread ]</a>
+              <a href="subject.html#1910">[ subject ]</a>
+              <a href="author.html#1910">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

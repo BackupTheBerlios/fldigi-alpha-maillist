@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.22.0AH posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.22.0AH%20posted&In-Reply-To=%3C4E5D04F7.7040608%40conas.co.cu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001983.html">
+   <LINK REL="Next"  HREF="001976.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.22.0AH posted</H1>
+    <B>Ing. Pavel Milanes Costa</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.22.0AH%20posted&In-Reply-To=%3C4E5D04F7.7040608%40conas.co.cu%3E"
+       TITLE="fldigi 3.22.0AH posted">pavel at conas.co.cu
+       </A><BR>
+    <I>Tue Aug 30 17:42:47 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001983.html">fldigi 3.22.0AH posted
+</A></li>
+        <LI>Next message: <A HREF="001976.html">fldigi 3.22.0AH posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1975">[ date ]</a>
+              <a href="thread.html#1975">[ thread ]</a>
+              <a href="subject.html#1975">[ subject ]</a>
+              <a href="author.html#1975">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>El 29/08/11 21:14, w1hkj escribi&#243;:
+&gt;<i> Added since AG
+</I>&gt;<i>
+</I>&gt;<i> DTMF encoder
+</I>&gt;<i> * Added DTMF encoder accessible as a macro tag
+</I>&gt;<i> - &lt;DTMF:string of chars&gt; where string of chars can
+</I>&gt;<i> contain 0..9,space,-,comma,*,#,A..D
+</I>&gt;<i> - space, hyphen and comma insert a 50 msec silent
+</I>&gt;<i> period in the transmission
+</I>&gt;<i>
+</I>&gt;<i> Packet audio boost
+</I>&gt;<i> * Added control to provide Rx audio gain boost
+</I>&gt;<i>
+</I>&gt;<i> Wide Cursor Tracks
+</I>&gt;<i> * Added user configurable item for 2x track widths
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i>
+</I>
+Build ok on Ubuntu 11.04 natty,
+
+Some warnings, but build and run ok.
+
+The complete log of the build process is in the attachment.
+
+Working in the Spanish translation completion is in progress...
+
+73
+
+-- 
+Pavel Milanes Costa
+Consultor Inform&#225;tico
+Consultores Asociados S.A. (CONAS), sucursal Camag&#252;ey.
+Telef: (32) 29-6344
+
+&quot;Utilizamos Open Source en nuestros servidores porque es una manera m&#225;s 
+de controlar nuestro propio destino.&quot;
+
+     DiBona (Google SysAdmin)
+
+Yo uso Free and Open Source Software (FOSS), y t&#250;?
+-------------- next part --------------
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pavel at gandalf</A>:~/Documentos/Software/src/fldigi/fldigi-3.22.0AH$ ./configure 
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
+checking target system type... i686-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for ANSI C header files... (cached) yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking execinfo.h usability... yes
+checking execinfo.h presence... yes
+checking for execinfo.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking for memory.h... (cached) yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking regex.h usability... yes
+checking regex.h presence... yes
+checking for regex.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for unistd.h... (cached) yes
+checking values.h usability... yes
+checking values.h presence... yes
+checking for values.h... yes
+checking linux/ppdev.h usability... yes
+checking linux/ppdev.h presence... yes
+checking for linux/ppdev.h... yes
+checking dev/ppbus/ppi.h usability... no
+checking dev/ppbus/ppi.h presence... no
+checking for dev/ppbus/ppi.h... no
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for int8_t... yes
+checking for C/C++ restrict keyword... __restrict
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uint8_t... yes
+checking for working volatile... yes
+checking whether closedir returns void... no
+checking for error_at_line... yes
+checking whether gcc needs -traditional... no
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking for sys/socket.h... (cached) yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking return type of signal handlers... void
+checking for strftime... yes
+checking for working strtod... yes
+checking for getaddrinfo... yes
+checking for gethostbyname... yes
+checking for hstrerror... yes
+checking for gmtime_r... yes
+checking for localtime_r... yes
+checking for memmove... yes
+checking for memset... yes
+checking for mkdir... yes
+checking for select... yes
+checking for setenv... yes
+checking for snprintf... yes
+checking for socket... yes
+checking for socketpair... yes
+checking for strcasecmp... yes
+checking for strcasestr... yes
+checking for strchr... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strlcpy... no
+checking for strncasecmp... yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for strtol... yes
+checking for uname... yes
+checking for unsetenv... yes
+checking for vsnprintf... yes
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for library containing dlopen... -ldl
+checking for library containing clock_gettime... -lrt
+checking for library containing sem_unlink... -lpthread
+checking for library containing sem_timedwait... -lpthread
+checking for TLS support... yes
+checking for std::bind in &lt;functional&gt;... no
+checking for std::tr1::bind in &lt;tr1/functional&gt;... yes
+checking for fltk-config... /usr/bin/fltk-config
+checking for fluid... no
+checking for xmlrpc-c-config... /usr/bin/xmlrpc-c-config
+checking sys/soundcard.h usability... yes
+checking sys/soundcard.h presence... yes
+checking for sys/soundcard.h... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for PNG... yes
+checking for SAMPLERATE... yes
+checking for SNDFILE... yes
+checking for PORTAUDIO... yes
+checking for PULSEAUDIO... yes
+checking for HAMLIB... yes
+checking for X... yes
+checking for asciidoc... no
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating po/Makefile.in
+config.status: creating doc/Makefile
+config.status: creating src/config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+
+Configuration summary:
+
+  Version ..................... 3.22.0AH
+
+  Static linking .............. no
+  CPU optimizations ........... none
+  Debugging ................... no
+
+  fldigi ...................... yes
+  flarq ....................... yes
+
+  i18n ........................ yes
+
+ fldigi build options:
+
+  sndfile ..................... yes
+  oss ......................... yes
+  portaudio ................... yes
+  pulseaudio .................. yes
+
+  hamlib ...................... yes
+  xmlrpc ...................... yes
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pavel at gandalf</A>:~/Documentos/Software/src/fldigi/fldigi-3.22.0AH$ make
+Making all in po
+make[1]: se ingresa al directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH/po&#187;
+make[1]: se sale del directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH/po&#187;
+Making all in doc
+make[1]: se ingresa al directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH/doc&#187;
+make[1]: No se hace nada para &#171;all&#187;.
+make[1]: se sale del directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH/doc&#187;
+Making all in src
+make[1]: se ingresa al directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH/src&#187;
+make  all-am
+make[2]: se ingresa al directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH/src&#187;
+  CXX    fldigi-hamlib.o
+  CXX    fldigi-rigclass.o
+  CXX    fldigi-xmlrpc.o
+  CXX    fldigi-nls.o
+  CXX    fldigi-combo.o
+  CXX    fldigi-cw.o
+  CXX    fldigi-morse.o
+  CXX    fldigi-rtty.o
+  CXX    fldigi-view_rtty.o
+  CXX    fldigi-contestia.o
+  CXX    fldigi-colorsfonts.o
+  CXX    fldigi-confdialog.o
+  CXX    fldigi-fl_digi.o
+  CXX    fldigi-font_browser.o
+  CXX    fldigi-Viewer.o
+  CXX    fldigi-htmlstrings.o
+  CXX    fldigi-notifydialog.o
+  CXX    fldigi-thor.o
+  CXX    fldigi-thorvaricode.o
+  CXX    fldigi-dominoex.o
+  CXX    fldigi-dominovar.o
+  CXX    fldigi-feld.o
+  CXX    fldigi-feldfonts.o
+  CXX    fldigi-fft.o
+  CXX    fldigi-Fl_Native_File_Chooser.o
+  CXX    fldigi-fileselect.o
+  CXX    fldigi-fftfilt.o
+  CXX    fldigi-filters.o
+  CXX    fldigi-viterbi.o
+  CXX    fldigi-globals.o
+  CXX    fldigi-irrXML.o
+In file included from irrxml/irrXML.cpp:11:0:
+irrxml/irrString.h: In member function ?irr::core::string&lt;char_type&gt; irr::io::CXMLReaderImpl&lt;char_type, superclass&gt;::replaceSpecialCharacters(irr::core::string&lt;char_type&gt;&amp;) [with char_type = long unsigned int, superclass = irr::io::IXMLBase]?:
+irrxml/irrString.h:639:3: warning: assuming signed overflow does not occur when assuming that (X + c) &lt; X is always false
+irrxml/irrString.h: In member function ?irr::core::string&lt;char_type&gt; irr::io::CXMLReaderImpl&lt;char_type, superclass&gt;::replaceSpecialCharacters(irr::core::string&lt;char_type&gt;&amp;) [with char_type = short unsigned int, superclass = irr::io::IXMLBase]?:
+irrxml/irrString.h:639:3: warning: assuming signed overflow does not occur when assuming that (X + c) &lt; X is always false
+irrxml/irrString.h: In member function ?irr::core::string&lt;char_type&gt; irr::io::CXMLReaderImpl&lt;char_type, superclass&gt;::replaceSpecialCharacters(irr::core::string&lt;char_type&gt;&amp;) [with char_type = char, superclass = irr::io::IXMLBase]?:
+irrxml/irrString.h:639:3: warning: assuming signed overflow does not occur when assuming that (X + c) &lt; X is always false
+  CXX    fldigi-adif_io.o
+  CXX    fldigi-calendar.o
+  CXX    fldigi-date.o
+  CXX    fldigi-lgbook.o
+  CXX    fldigi-logbook.o
+  CXX    fldigi-logsupport.o
+  CXX    fldigi-qso_db.o
+  CXX    fldigi-table.o
+  CXX    fldigi-textio.o
+  CXX    fldigi-logger.o
+  CXX    fldigi-rx_extract.o
+  CXX    fldigi-speak.o
+  CXX    fldigi-main.o
+  CXX    fldigi-interleave.o
+  CXX    fldigi-mfsk.o
+  CXX    fldigi-mfskvaricode.o
+  CXX    fldigi-wefax.o
+  CXX    fldigi-wefax-pic.o
+  CXX    fldigi-ascii.o
+  CXX    fldigi-configuration.o
+  CXX    fldigi-debug.o
+  CXX    fldigi-dxcc.o
+  CC     fldigi-flstring.o
+  CXX    fldigi-icons.o
+  CXX    fldigi-log.o
+  CXX    fldigi-macroedit.o
+  CXX    fldigi-macros.o
+  CXX    fldigi-misc.o
+  CXX    fldigi-network.o
+  CXX    fldigi-newinstall.o
+  CXX    fldigi-arq_io.o
+  CXX    fldigi-lookupcall.o
+  CXX    fldigi-pixmaps.o
+  CXX    fldigi-qrzlib.o
+  CXX    fldigi-re.o
+  CXX    fldigi-socket.o
+  CXX    fldigi-stacktrace.o
+  CXX    fldigi-status.o
+  CXX    fldigi-strutil.o
+  CXX    fldigi-threads.o
+  CXX    fldigi-timeops.o
+  CXX    fldigi-util.o
+  CXX    fldigi-dsp.o
+  CXX    fldigi-mt63.o
+  CXX    fldigi-mt63base.o
+  CXX    fldigi-olivia.o
+  CXX    fldigi-psk.o
+  CXX    fldigi-pskcoeff.o
+  CXX    fldigi-pskvaricode.o
+  CXX    fldigi-viewpsk.o
+  CXX    fldigi-pskeval.o
+  CXX    fldigi-qrunner.o
+  CXX    fldigi-FreqControl.o
+  CXX    fldigi-ptt.o
+  CXX    fldigi-rigMEM.o
+  CXX    fldigi-rigio.o
+  CXX    fldigi-rigsupport.o
+  CXX    fldigi-rigxml.o
+  CXX    fldigi-serial.o
+  CXX    fldigi-rsid.o
+  CXX    fldigi-mixer.o
+  CXX    fldigi-sound.o
+  CXX    fldigi-soundconf.o
+  CXX    fldigi-notify.o
+  CXX    fldigi-pskrep.o
+  CXX    fldigi-spot.o
+  CXX    fldigi-ssb.o
+  CXX    fldigi-throb.o
+  CXX    fldigi-pkt.o
+  CXX    fldigi-modem.o
+  CXX    fldigi-trx.o
+  CXX    fldigi-colorbox.o
+  CXX    fldigi-digiscope.o
+  CXX    fldigi-raster.o
+  CXX    fldigi-waterfall.o
+  CXX    fldigi-FTextView.o
+  CXX    fldigi-FTextRXTX.o
+  CXX    fldigi-Fl_Text_Buffer_mod.o
+  CXX    fldigi-Fl_Text_Display_mod.o
+  CXX    fldigi-Fl_Text_Editor_mod.o
+  CXX    fldigi-Panel.o
+  CXX    fldigi-flinput2.o
+  CXX    fldigi-flmisc.o
+  CXX    fldigi-flslider2.o
+  CXX    fldigi-picture.o
+  CXX    fldigi-progress.o
+  CXX    fldigi-psk_browser.o
+  CXX    fldigi-analysis.o
+  CXX    fldigi-wwv.o
+  CXX    fldigi-xmlrpc_log.o
+  CXX    fldigi-XmlRpcClient.o
+  CXX    fldigi-XmlRpcDispatch.o
+  CXX    fldigi-XmlRpcMutex.o
+  CXX    fldigi-XmlRpcServer.o
+  CXX    fldigi-XmlRpcServerConnection.o
+  CXX    fldigi-XmlRpcServerMethod.o
+  CXX    fldigi-XmlRpcSocket.o
+  CXX    fldigi-XmlRpcSource.o
+  CXX    fldigi-XmlRpcThread.o
+  CXX    fldigi-XmlRpcThreadedServer.o
+  CXX    fldigi-XmlRpcUtil.o
+  CXX    fldigi-XmlRpcValue.o
+  CXXLD  fldigi
+  CXX    flarq-nls.o
+  CXX    flarq-font_browser.o
+  CXX    flarq-arq.o
+  CXX    flarq-arqdialogs.o
+  CXX    flarq-arqhelp.o
+  CXX    flarq-b64.o
+  CXX    flarq-flarq.o
+  CXX    flarq-flarqenv.o
+  CXX    flarq-combo.o
+  CXX    flarq-Fl_Native_File_Chooser.o
+  CXX    flarq-fileselect.o
+  CXX    flarq-table.o
+  CXX    flarq-ascii.o
+  CXX    flarq-debug.o
+  CXX    flarq-stacktrace.o
+  CXX    flarq-threads.o
+  CXX    flarq-timeops.o
+  CXX    flarq-flinput2.o
+  CXX    flarq-flmisc.o
+  CXX    flarq-flslider2.o
+  CXX    flarq-icons.o
+  CXX    flarq-pixmaps.o
+  CXX    flarq-re.o
+  CXX    flarq-socket.o
+  CXX    flarq-util.o
+  CXX    flarq-Fl_Text_Buffer_mod.o
+  CXX    flarq-Fl_Text_Display_mod.o
+  CXX    flarq-Fl_Text_Editor_mod.o
+  CXX    flarq-FTextView.o
+  CXXLD  flarq
+make[2]: se sale del directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH/src&#187;
+make[1]: se sale del directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH/src&#187;
+make[1]: se ingresa al directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH&#187;
+make[1]: No se hace nada para &#171;all-am&#187;.
+make[1]: se sale del directorio &#171;/home/pavel/Documentos/Software/src/fldigi/fldigi-3.22.0AH&#187;
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">pavel at gandalf</A>:~/Documentos/Software/src/fldigi/fldigi-3.22.0AH$
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: pavel.vcf
+Type: text/x-vcard
+Size: 531 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110830/3dd27b2c/attachment.vcf">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20110830/3dd27b2c/attachment.vcf</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001983.html">fldigi 3.22.0AH posted
+</A></li>
+	<LI>Next message: <A HREF="001976.html">fldigi 3.22.0AH posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1975">[ date ]</a>
+              <a href="thread.html#1975">[ thread ]</a>
+              <a href="subject.html#1975">[ subject ]</a>
+              <a href="author.html#1975">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

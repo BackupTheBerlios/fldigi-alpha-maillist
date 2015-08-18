@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13BC posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BC%20posted&In-Reply-To=%3C4B020327.4070102%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000463.html">
+   <LINK REL="Next"  HREF="000466.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13BC posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BC%20posted&In-Reply-To=%3C4B020327.4070102%40bellsouth.net%3E"
+       TITLE="fldigi 3.13BC posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Tue Nov 17 02:57:59 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000463.html">fldigi-alpha Digest, Vol 7, Issue 15
+</A></li>
+        <LI>Next message: <A HREF="000466.html">fldigi 3.13BC posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#464">[ date ]</a>
+              <a href="thread.html#464">[ thread ]</a>
+              <a href="subject.html#464">[ subject ]</a>
+              <a href="author.html#464">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>    *   <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BC.tar.gz">http://www.w1hkj.com/alpha/fldigi-3.13BC.tar.gz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BC.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13BC.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BC.npa.bin.tgz">http://www.w1hkj.com/alpha/fldigi-3.13BC.npa.bin.tgz</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BC_setup.exe">http://www.w1hkj.com/alpha/fldigi-3.13BC_setup.exe</A>
+    * <A HREF="http://www.w1hkj.com/alpha/fldigi-3.13BC.dmg">http://www.w1hkj.com/alpha/fldigi-3.13BC.dmg</A>
+
+
+These have been built using hamlib-1.2.10.  The following changes have 
+been incorporated since 3.13BB
+
+Version 3.13BC
+    Rig CAT mods
+        * Serial i/o - reordered initialization tests to suppress
+          irrelevant error messages (MS specific).
+        * Fixed loss of xml rig Title when switching between rigCAT
+          on/off or between rigCAT and any other cat method.
+    RigCat Mods
+        * Changed the hamlib configuration dialog tab
+            . All settings are display only until Initialization pressed
+            . Added &quot;Revert&quot; button to undo changes
+            . Added restore function when dialog closed / reopened
+            . Added new rigxml tag &lt;STOPBITS&gt;nn
+    Hamlib mod fix
+        * Add test to prevent accessing a null &quot;rig&quot; structure when
+          testing for the presence of various rig functions.
+    Hamlib-RigCAT mods
+        Hamlib:
+        * Corrected RTS/CTS hamlib initialization
+        * Changed the hamlib configuration dialog tab
+            . All settings are display only until Initialization pressed
+            . Added &quot;Revert&quot; button to undo changes
+            . Added restore function when dialog closed / reopened
+            . Corrected hamlib thread loop shutdown call to use
+              pthread_join
+        RigCAT:
+        * Corrected rigCAT thread loop shutdown call to use pthread_join
+    Minimalist GUI
+        * Added a waterfall-only GUI to allow external applications to
+          use fldigi as a modem / waterfall application.  External app
+          must provide the Rx / Tx / Logger services.
+          Command line switch --wo is used to obtain this minimalist
+          UI.
+    Hamlib mod
+        * Added methods to test for get_freq, set_freq, get_mode,
+          set_mode, get_ppt and set_ptt capability.
+        * Interface allows use of a device that can set frequency but
+          cannot get frequency, mode or ptt state such as the
+          Elektor 3/04 receiver, a drm implementation.  getFreq method
+          simply returns the last setFreq.
+
+73, Dave, W1HKJ
+for the development team
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091116/51360378/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20091116/51360378/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000463.html">fldigi-alpha Digest, Vol 7, Issue 15
+</A></li>
+	<LI>Next message: <A HREF="000466.html">fldigi 3.13BC posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#464">[ date ]</a>
+              <a href="thread.html#464">[ thread ]</a>
+              <a href="subject.html#464">[ subject ]</a>
+              <a href="author.html#464">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi rigCAT
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20rigCAT&In-Reply-To=%3C20090912141200.GB5393%40charybde.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000128.html">
+   <LINK REL="Next"  HREF="000136.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi rigCAT</H1>
+    <B>Stephane Fillod</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi%20rigCAT&In-Reply-To=%3C20090912141200.GB5393%40charybde.local%3E"
+       TITLE="fldigi rigCAT">f8cfe at free.fr
+       </A><BR>
+    <I>Sat Sep 12 16:12:00 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000128.html">fldigi rigCAT
+</A></li>
+        <LI>Next message: <A HREF="000136.html">Linux Plastic vs GTK+ UI
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#134">[ date ]</a>
+              <a href="thread.html#134">[ thread ]</a>
+              <a href="subject.html#134">[ subject ]</a>
+              <a href="author.html#134">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Gary,
+
+Gary Wescom wrote:
+&gt;<i> I thought I'd better make sure this problem didn't get overlooked.  The first alpha version of fldigi I tried was 3.13AE.  In that version and 3.13AF there is a problem with rigCAT with the Icom IC-756 Pro III.  fldigi will error out and crash dead if I touch the tuning dial on the radio while rigCAT is enabled.  This is apparently from the rigCAT code not handling the frequency broadcast initiated by the radio whenever frequency is changed at the radio.  This is a feature of the Icom protocol that allows other devices like the IC-PW1 amplifier and other second party equipment to track and automatically adjust themselves to the new transceiver frequency.  These transmissions are produced automatically by the radio and can be recognized by the destination address in the header specified as 00H instead of E0H as used to respond to rigCat transmissions.  Version 3.12.4 did not crash with this situation but it did pop up warning dialogs infrequently when turning the tuning dial on the radio or changing modes.  Turning of the CI-V &quot;transceive&quot; mode in the Pro III allows 3.13AF to operate without crashing but I wouldn't want to have to manually turn it off and on every time I use fldigi.
+</I>
+What about Hamlib as the protocol driver?
+The multi-device CI-V bus is supposed to be handled properly.
+
+Cheers
+-- 
+Stephane - F8CFE
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000128.html">fldigi rigCAT
+</A></li>
+	<LI>Next message: <A HREF="000136.html">Linux Plastic vs GTK+ UI
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#134">[ date ]</a>
+              <a href="thread.html#134">[ thread ]</a>
+              <a href="subject.html#134">[ subject ]</a>
+              <a href="author.html#134">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

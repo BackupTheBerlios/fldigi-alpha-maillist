@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.0AK and flrig-1.0.0bK posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.0AK%20and%20flrig-1.0.0bK%20posted&In-Reply-To=%3C4C531503.7020506%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001346.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.0AK and flrig-1.0.0bK posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.0AK%20and%20flrig-1.0.0bK%20posted&In-Reply-To=%3C4C531503.7020506%40bellsouth.net%3E"
+       TITLE="fldigi-3.21.0AK and flrig-1.0.0bK posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Jul 30 20:08:03 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001346.html">flwrap 1.3.0 , fldigi-3.20.22
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1347">[ date ]</a>
+              <a href="thread.html#1347">[ thread ]</a>
+              <a href="subject.html#1347">[ subject ]</a>
+              <a href="author.html#1347">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi-flarq/">http://www.w1hkj.com/alpha/fldigi-flarq/</A>
+<A HREF="http://www.w1hkj.com/alpha/flrig/">http://www.w1hkj.com/alpha/flrig/</A>
+
+for Linux, Windows, OS X and Puppy
+
+73, Dave, W1HKJ
+for the development team
+========================================================================
+Version 3.21.0AK
+
+  TX file insertion
+    * For both file insert and drag-n-drop insert into the Tx widget
+      Change all occurrences of ^ to ^^.
+    * Effect is to treat all dnd text as plain text without special fldigi
+      control sequences.
+
+  Xmlrpc Raw data
+    * Added xmlrpc method, rxtx.get_data, which returns the contents
+      of a char data buffer (max 256).  Data buffer contains all
+      text received/transmitted since last query.  Caller responsible
+      for separating the two.
+    * Added xmlrpc method, rx.get_data, which returns the contents
+      of a char buffer (max 256).  Data buffer contains all text
+      received since last query.
+    * Added xmlrpc method, tx.get_data, which returns the contents
+      of a char buffer (max 256).  Data buffer contains all text
+      transmitted since last query.
+
+  Log Sort
+    * Changed logbook sort to DATE / TIME-ON comparison
+    * Changed logbook browser to show DATE / TIME-ON vice DATE / TIME-OFF
+
+  Xmlrpc BS char
+    Added new method to FTextTX to support backspace char from an 
+external program.
+
+  RsID
+    * Added support code for RSID code additions
+          RSID  MODE
+          203   OLIVIA-4-125
+          204   CONTESTIA-4-125
+          211   OLIVIA-64-2000
+          214   OLIVIA-8-2000
+          221   OLIVIA-32-2000
+          229   OLIVIA-4-1000
+          234   OLIVIA-16-2000
+          238   OLIVIA-4-2000
+          247   CONTESTIA-8-2000
+          254   CONTESTIA-4-2000
+          255   CONTESTIA-4-1000
+          259   CONTESTIA-16-2000
+
+  Logger
+    Fixed bug in external log record introduced by e7d9cd1
+
+  Compile Warnings
+    Modifications to avoid compiler warnings in Jalocha code sections.
+
+  ThrobX
+    Added Idle-Space initialization to rx_init method for ThrobX.
+
+  Post RsID
+    Removed post RsID transmission pending resolution of OS X
+    segmentation fault caused by post RsID.
+
+  Revert &quot;RSID silence period&quot;
+    This reverts commit 7f7aeab2b9058084dd2752fdcf63820bc5a7bde0.
+
+========================================================================
+flrig Version 1.0.0bK
+   
+  IC703 seg fault fix
+    Added missing _mode_type initializer to IC703 instantiation
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100730/4eb00266/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100730/4eb00266/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001346.html">flwrap 1.3.0 , fldigi-3.20.22
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1347">[ date ]</a>
+              <a href="thread.html#1347">[ thread ]</a>
+              <a href="subject.html#1347">[ subject ]</a>
+              <a href="author.html#1347">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

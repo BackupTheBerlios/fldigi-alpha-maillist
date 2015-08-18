@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.20.30 posted for alpha testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.20.30%20posted%20for%20alpha%20testing&In-Reply-To=%3CC909AE09.3BB2%25aa5vu%40arrl.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001452.html">
+   <LINK REL="Next"  HREF="001456.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.20.30 posted for alpha testing</H1>
+    <B>Dick</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%203.20.30%20posted%20for%20alpha%20testing&In-Reply-To=%3CC909AE09.3BB2%25aa5vu%40arrl.net%3E"
+       TITLE="3.20.30 posted for alpha testing">aa5vu at arrl.net
+       </A><BR>
+    <I>Wed Nov 17 23:06:33 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001452.html">3.20.30 posted for alpha testing
+</A></li>
+        <LI>Next message: <A HREF="001456.html">3.20.29 - waterfall going black but fldigi still decoding
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1455">[ date ]</a>
+              <a href="thread.html#1455">[ thread ]</a>
+              <a href="subject.html#1455">[ subject ]</a>
+              <a href="author.html#1455">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 11/17/10 12:56 PM, &quot;Leigh L. Klotz, Jr. WA5ZNU&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">Leigh at WA5ZNU.org</A>&gt;
+wrote:
+
+&gt;<i>I reported or requested these on the devel list after operating in CW
+</I>&gt;<i>Sweepstakes.
+</I>&gt;<i>
+</I>&gt;<i>The log change could be addressed by export, but I noticed that the adif
+</I>&gt;<i>log file was storing the qso by the date you started but the time you
+</I>&gt;<i>ended.  So if you have a qso which crosses a gmt date boundary it appears
+</I>&gt;<i>in the way wrong spot in the file.  I reported to Dave that it was sorting
+</I>&gt;<i>by date on and time off.
+</I>&gt;<i>
+</I>&gt;<i>In a contest you probably want date on instead of date off, but as you all
+</I>&gt;<i>point our, you can handle the choice in export.  No matter what the fix,
+</I>&gt;<i>though, date on and time off together is wrong.
+</I>
+snip
+
+&gt;<i>Leigh/WA5ZNU
+</I>
+Hopefully, this 2nd copy corrects the Microsoft CR/LF issue and
+is easier to read
+
+
+Leigh WA5ZNU,
+
+With regard to sorting time for contests, export using the Logs/Export
+Cabrillo and you will only see TIME_OFF displayed and sorted. All contests
+logs are time off.
+
+Dave's recent addition of the Date and Time for both ON and OFF is a good
+thing and would have paid off for me when I was trying to work the new
+PJ2MI entity on RTTY. Only a hand full of people managed to get a PJ2 on
+RTTY 
+on the opening few days. The big gun PJ2T station only did CW and Phone. A
+few days later PM2MI came up on 40 meters and created one of the largest
+RTTY
+pileups I have seen for some time.
+
+Like everyone else I needed PJ2MI so I selected his call and fldigi placed
+it in the time on box in the main QSO pane. My station and skills were not
+that good to work him right away. Some time passed and I made a number of
+calls before he heard me and sent a report. I just happened to look at UTC
+Clock in the corner of the Mac desktop and it showed at 0000z. I
+acknowledged the QSO and clicked the LOG macro.
+
+My log at that time showed I started the QSO many hours after I ended the
+QSO because only one date was shown. Using the dumb LoTW TIME_ON this would
+have been a busted or orphaned QSO. I recognized the issue and manually
+corrected the fldigi logbook file to show both Time ON and Time off to the
+same date and time at 0000Z.
+
+With Dave's new implementation of the ADIF specification, this kind of
+problem will take care of itself in that the log will show the correct
+date 
+and times for both ON and OFF. Like I said this addition is a good thing.
+
+With regard to PJ2MI he later confirmed by email that he uploaded our QSO
+to LoTW as 28-Oct-2010 at 0000z. The ARRL has blocked all PJ QSO's until
+after the first of the year; however, I know my PJ2MIl will be a good
+QSO.
+
+I don't know if my other posting was distributed to the alpha list but I
+log all of my QSO's as TIME_OFF and have requested a new macro from Dave
+that
+will let me sync TIME-OFF to TIME_ON. Just like the current hover-push
+thing
+over the time On box. This macro will not be for everyone. Many still like
+to
+log both time on time off.
+
+73 Dick AA5VU
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001452.html">3.20.30 posted for alpha testing
+</A></li>
+	<LI>Next message: <A HREF="001456.html">3.20.29 - waterfall going black but fldigi still decoding
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1455">[ date ]</a>
+              <a href="thread.html#1455">[ thread ]</a>
+              <a href="subject.html#1455">[ subject ]</a>
+              <a href="author.html#1455">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

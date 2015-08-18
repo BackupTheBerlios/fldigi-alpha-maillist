@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> PSK Browser Scrambles BPSK125 Decode
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20PSK%20Browser%20Scrambles%20BPSK125%20Decode&In-Reply-To=%3Cbc29d43e1003221021v18a2314flc6bc614ad6a011d2%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001040.html">
+   <LINK REL="Next"  HREF="001042.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>PSK Browser Scrambles BPSK125 Decode</H1>
+    <B>Joe Counsil</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20PSK%20Browser%20Scrambles%20BPSK125%20Decode&In-Reply-To=%3Cbc29d43e1003221021v18a2314flc6bc614ad6a011d2%40mail.gmail.com%3E"
+       TITLE="PSK Browser Scrambles BPSK125 Decode">counsil at rollanet.org
+       </A><BR>
+    <I>Mon Mar 22 18:21:04 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001040.html">PSK Browser Scrambles BPSK125 Decode
+</A></li>
+        <LI>Next message: <A HREF="001042.html">[NBEMSham] Re: flrig-1.0.0b5 beta posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1041">[ date ]</a>
+              <a href="thread.html#1041">[ thread ]</a>
+              <a href="subject.html#1041">[ subject ]</a>
+              <a href="author.html#1041">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave, et. al.,
+
+I'll do some more testing on this.  After I observed this situation with
+PSK125, I tried the same thing with PSK31 and did not observe the problem.
+However, it might be difficult to test this since there are few PSK125
+signals on the air.
+
+Another observation:  There were lightning crashes at the time this was
+happening, and even without the PSK browser open, I would occasionally lose
+characters due to the crashes, but then it would continue decoding.  When I
+would open the browser window, I would usually get a few characters, then
+there would be a crash, then total scramble.  It appeared that the cursor in
+the waterfall would drift off a little bit when the crash would occur, but
+even when I would click on it to get it back on trace (hence hoping to
+decode a few seconds of lost decoding), nothing would decode - total
+gibberish.  I wonder if having the PSK browser window open was reducing the
+ability of the decoder engine to properly decode signals with low S/N, but
+may not be noticeable with signals with a high S/N.
+
+Another possibility:  Even though I tried this opening/closing of the
+browser window about 5 times, and every time it blew the decoding, perhaps
+it was just poor conditions and my observation was coincidentally
+artifactual.  Conditions were certainly marginal.
+
+If I observe this again, I'll try the suggestion by Mike, KL7MJ, to create a
+new preferences file.
+
+73,
+-Joe-
+
+On Mon, Mar 22, 2010 at 6:46 AM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">w1hkj at bellsouth.net</A>&gt; wrote:
+
+&gt;<i> Joseph A. Counsil wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Greetings,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I had the PSK browser open, and it work great when in BPSK31 mode.
+</I>&gt;&gt;<i>  However, a station called in BPSK125 and I left the browser open but
+</I>&gt;&gt;<i> changed from 31 to 125 to copy and have a QSO with him.  He had a 599 signal
+</I>&gt;&gt;<i> to my station, but I was only getting partial decodes.  After several
+</I>&gt;&gt;<i> minutes of trying to figure out what was wrong, I closed the PSK browser
+</I>&gt;&gt;<i> window and suddenly got perfect decode, as I would expect with such a strong
+</I>&gt;&gt;<i> signal.  While decoding him I re-opened the PSK browser window, and the
+</I>&gt;&gt;<i> decode immediately scrambled, but unscrambled when I again closed the
+</I>&gt;&gt;<i> browser window.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Not too big a deal since the PSK browser window in mostly for BPSK31
+</I>&gt;&gt;<i> anyway, but should probably be fixed.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm running FLdigi 3.20.0b7 on Windows XP Pro SP3.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 73,
+</I>&gt;&gt;<i> -Joe-
+</I>&gt;&gt;<i>
+</I>&gt;<i> I just tested this on both Vista and Linux.  The PSK browser open does not
+</I>&gt;<i> effect the reception of any PSK mode in the Rx Panel.  In fact the PSK
+</I>&gt;<i> browser also receives in the selected PSK mode, ie PSK125 can be decoded in
+</I>&gt;<i> both the Rx panel and the Browser.  This is not true for the FEC psk modes,
+</I>&gt;<i> PSK63F, PSK125R, PSK250R and PSK500R.  The browser can be left open and the
+</I>&gt;<i> Rx panel decoding performs correctly.  The browser is just not designed to
+</I>&gt;<i> decode those modes.
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>
+
+
+-- 
++----------------------------------------------------------------+
+|<i> Joseph A. Counsil  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">counsil at rollanet.org</A>   Phone:(573) 341-5186 |
+</I>|<i> 1310 Woodlawn Drive, Rolla, MO 65401       Ham Radio:   K&#216;OG   |
+</I>+----------------------------------------------------------------+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100322/0ff4b0c5/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100322/0ff4b0c5/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001040.html">PSK Browser Scrambles BPSK125 Decode
+</A></li>
+	<LI>Next message: <A HREF="001042.html">[NBEMSham] Re: flrig-1.0.0b5 beta posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1041">[ date ]</a>
+              <a href="thread.html#1041">[ thread ]</a>
+              <a href="subject.html#1041">[ subject ]</a>
+              <a href="author.html#1041">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

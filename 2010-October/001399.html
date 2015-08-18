@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> flrig Testing Results and Comments
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flrig%20Testing%20Results%20and%20Comments&In-Reply-To=%3C4CA54FD9.1050600%40pcez.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="001400.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>flrig Testing Results and Comments</H1>
+    <B>Eric Keerbs</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20flrig%20Testing%20Results%20and%20Comments&In-Reply-To=%3C4CA54FD9.1050600%40pcez.com%3E"
+       TITLE="flrig Testing Results and Comments">ekeerbs at pcez.com
+       </A><BR>
+    <I>Fri Oct  1 05:04:57 CEST 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="001400.html">Using Eclipse for fldigi developments ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1399">[ date ]</a>
+              <a href="thread.html#1399">[ thread ]</a>
+              <a href="subject.html#1399">[ subject ]</a>
+              <a href="author.html#1399">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I've been checking out flrig for about 4 weeks now, and it's
+about time to provide a list of results and comments.
+
+First things first: the configuration!
+Radio: Icom IC-746Pro
+Computer: AMD K8, 2.4 GHz, 2GB RAM
+OS: Ubuntu 10.04 x86_64
+Software: fldigi 3.20.28 (stable) and 3.21.0AM (alpha)
+Interface: SignaLink USB sound card
+CI-V Interface: Home-brew RS232-to-TTL with USB-to-RS232 converter
+
+I started using flrig because neither hamlib nor RigCAT appear to be
+capable of activating the 746Pro's digital SSB mode. The digital mode,
+among other things, cancels the speech compressor. I could not always
+remember to activate this mode when using fldigi.
+
+Overall, I'm very pleased with the enhanced control that flrig provides.
+Not only can I control the digital mode, I can also control other
+settings such as my power output, attenuator, and noise reduction
+from my computer. The GUI interface is easy to work with. I wish it
+were a little bit larger, however, that's minor.
+
+I have noticed, on occasion, a lag between when I set something on the
+computer screen and when the radio responds. To use the &quot;human factors&quot;
+description, the amount of time is longer than the 0.1 second that
+an average person would consider reasonable for a reaction to an input.
+I am pretty certain that this lag time is due to my computer hardware,
+and not an issue with the software.
+
+I have noticed that the software will &quot;hang&quot; if I turn my 746Pro off
+before I shut down the software. Is there a graceful way to handle
+this situation?
+
+I have not noted any significant issues if flrig is running and if I
+inadvertently start xlog, which uses hamlib for rig control.
+
+My wish list is very short. Since I use flrig for control of my radio
+for both voice and digital modes, I would really like to have control
+of the speech compressor...and preferably on the main panel. (I tried
+to implement this by adding functions to the source code, without
+success, and I bet it's because my C skills are rusty.) I'd also
+like control of the auto notch filter mode from the front panel...I
+have found the auto notch to be more effective than the manual notch.
+
+I'm a tough grader, so when I say this software gets a 9.5 out of 10,
+it's definitely a well-written and robust application. Kudos to Dave
+and the development team!
+
+73,
+
+Eric
+AD7HM
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="001400.html">Using Eclipse for fldigi developments ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1399">[ date ]</a>
+              <a href="thread.html#1399">[ thread ]</a>
+              <a href="subject.html#1399">[ subject ]</a>
+              <a href="author.html#1399">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

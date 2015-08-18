@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Alsa
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2013-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Alsa&In-Reply-To=%3C52BB9A85.30103%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002503.html">
+   <LINK REL="Next"  HREF="002504.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Alsa</H1>
+    <B>Pino Zollo</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Alsa&In-Reply-To=%3C52BB9A85.30103%40gmail.com%3E"
+       TITLE="Alsa">pinozollo at gmail.com
+       </A><BR>
+    <I>Thu Dec 26 03:55:01 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002503.html">Alsa
+</A></li>
+        <LI>Next message: <A HREF="002504.html">Alsa
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2505">[ date ]</a>
+              <a href="thread.html#2505">[ thread ]</a>
+              <a href="subject.html#2505">[ subject ]</a>
+              <a href="author.html#2505">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+El 25/12/13 22:59, Pavel Milanes Costa escribi&#243;:
+&gt;<i> Ok, I see you a re using 3.22.0CM... But what OS?
+</I>
+Linux Ubuntu 12.04
+&gt;<i> 
+</I>&gt;<i> Your Audio device is the onboard audio card? PCI Card? USB dongle?
+</I>
+I am using a USB dongle... I have also an internal audio connected to
+speakers.
+
+&gt;<i> 
+</I>&gt;<i> Re-reading your original post to the list I see this detail:
+</I>&gt;<i> 
+</I>&gt;<i> ============%&lt;=============================
+</I>&gt;<i> Expression 'parameters-&gt;channelCount &lt;= maxChans' failed in
+</I>&gt;<i> 'src/hostapi/alsa/pa_linux_alsa.c', line: 1438
+</I>&gt;<i> Expression 'ValidateParameters( inputParameters, hostApi,
+</I>&gt;<i> StreamDirection_In )' failed in 'src/hostapi/alsa/pa_linux_alsa.c'
+</I>&gt;<i> ===========================================
+</I>&gt;<i> 
+</I>&gt;<i> This error is like the audio-in have LESS audio channels that expected;
+</I>&gt;<i> I have read some here that some cheap USB dongles have only mono
+</I>&gt;<i> audio-in...
+</I>&gt;<i> 
+</I>
+it must be that !
+
+&gt;<i> This can be the cause, but this is just a shot, not a C programmer here...
+</I>&gt;<i> 
+</I>&gt;<i> BTW, try to backup your config &quot;mv ~/.fldigi ~/.fldigi-bkp&quot; and start it
+</I>&gt;<i> and in the wizard pick any of the none pulse options and try to run it
+</I>&gt;<i> with that... (port audio will be my next choice, as Ubuntu has no OSS
+</I>&gt;<i> support)
+</I>&gt;<i> 
+</I>&gt;<i> if you want to restore your olf fldigi settings run this
+</I>&gt;<i> 
+</I>&gt;<i> &quot;mv ~/.fldigi-bkp ~/.fldigi&quot;
+</I>&gt;<i> 
+</I>&gt;<i> 73
+</I>
+OK I am going to do it...
+
+Bye
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002503.html">Alsa
+</A></li>
+	<LI>Next message: <A HREF="002504.html">Alsa
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2505">[ date ]</a>
+              <a href="thread.html#2505">[ thread ]</a>
+              <a href="subject.html#2505">[ subject ]</a>
+              <a href="author.html#2505">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

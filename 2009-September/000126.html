@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> QRZ Lookup - takes two tries first time
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20QRZ%20Lookup%20-%20takes%20two%20tries%20first%20time&In-Reply-To=%3C20090911212723.263065c0%40w3nr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000125.html">
+   <LINK REL="Next"  HREF="000127.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>QRZ Lookup - takes two tries first time</H1>
+    <B>Ed</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20QRZ%20Lookup%20-%20takes%20two%20tries%20first%20time&In-Reply-To=%3C20090911212723.263065c0%40w3nr%3E"
+       TITLE="QRZ Lookup - takes two tries first time">autek2 at gmail.com
+       </A><BR>
+    <I>Sat Sep 12 03:27:23 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000125.html">QRZ Lookup - takes two tries first time
+</A></li>
+        <LI>Next message: <A HREF="000127.html">QRZ Lookup - takes two tries first time
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, 11 Sep 2009 17:46:22 -0700
+Bob Snyder &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">bob.snyder at cox.net</A>&gt; wrote:
+
+
+&gt;<i> Hi Ed, thanks for testing for the problem.
+</I>&gt;<i> 
+</I>&gt;<i> It may help for me to be more specific.
+</I>&gt;<i> 
+</I>&gt;<i> I am experiencing this problem on Slackware Linux 12.0, on two
+</I>&gt;<i> different machines. I see it both on the distribution binary and when
+</I>&gt;<i> I build it from source. I have seen it on every version of fldigi
+</I>&gt;<i> going back a year or more. It seems especially curious that while
+</I>&gt;<i> most don't see the problem, the original poster saw what seems to me
+</I>&gt;<i> to be the same problem on Windows.
+</I>&gt;<i> 
+</I>&gt;<i> It doesn't matter whether I configure it for &quot;QRZ online via default 
+</I>&gt;<i> Internet Browser&quot; or &quot;Paid online subscription&quot;. It also doesn't
+</I>&gt;<i> matter which method I use to invoke the lookup: &quot;right click
+</I>&gt;<i> menu-&gt;Look up call&quot; or enter the call manually and press the QRZ
+</I>&gt;<i> button. It doesn't matter which order I use those methods. The very
+</I>&gt;<i> first time I do this, nothing happens. If I'm configured for the
+</I>&gt;<i> subscription, I see &quot;Request sent to qrz.com...&quot; With it set for web
+</I>&gt;<i> lookup nothing happens on my browser. If the browser is not running
+</I>&gt;<i> it won't be started. In any case it will stay in that state forever
+</I>&gt;<i> although fldigi continues to operate normally. On all subsequent
+</I>&gt;<i> lookup attempts, whichever method I use, it works fine.
+</I>&gt;<i> 
+</I>&gt;<i> Using Wireshark I have verified that on the first attempt nothing is 
+</I>&gt;<i> sent out to QRZ.com. If I had to take a wild guess, I'd say it may be 
+</I>&gt;<i> related to some library version, or possibly the kernel version 
+</I>&gt;<i> (2.6.21.5-smp) since that is something that could be different on my 
+</I>&gt;<i> setup. This isn't a major issue, but it bugs me every time :-)
+</I>&gt;<i> 
+</I>&gt;<i> Fwiw, I've included the output from ldd on fldigi Ver 3.13AD below.
+</I>&gt;<i> 
+</I>&gt;<i> Bob W6CP
+</I>
+
+I've tested this on Ubuntu at least as far back a 8.04 and maybe even
+further. So that is at least 18 months ago.
+
+It just works, period, end of subject.
+
+I can verify that there is a problem in M$, it takes 2 tries to work.
+
+I would suggest to look at what the default browser is set to. 
+
+x-www-browser '%s' I think is the correct syntax. 
+
+Do this, download and burn the Ubuntu livecd, and test it from there.
+
+I know Slackware is not for the faint of heart, but is it truly a
+mainstream distro anymore ?
+
+I've been alpha testing fldigi for over 3 years now, and except for
+early on problems I rarely see any bugs/gotchas. I use Ubuntu and early
+on I used Debian.
+
+fldigi running under Linux is rock solid and stable.
+
+Here is my ldd output ::
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ed at w3nr</A>:~$ cd bin
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ed at w3nr</A>:~/bin$ ldd fldigi
+	linux-gate.so.1 =&gt;  (0xb80a1000)
+	libportaudio.so.2 =&gt; /usr/lib/libportaudio.so.2 (0xb806b000)
+	libpthread.so.0 =&gt; /lib/tls/i686/cmov/libpthread.so.0 (0xb8052000)
+	libpng12.so.0 =&gt; /usr/lib/libpng12.so.0 (0xb802c000)
+	libz.so.1 =&gt; /lib/libz.so.1 (0xb8016000)
+	libjpeg.so.62 =&gt; /usr/lib/libjpeg.so.62 (0xb7ff6000)
+	libXft.so.2 =&gt; /usr/lib/libXft.so.2 (0xb7fe2000)
+	libdl.so.2 =&gt; /lib/tls/i686/cmov/libdl.so.2 (0xb7fdd000)
+	libm.so.6 =&gt; /lib/tls/i686/cmov/libm.so.6 (0xb7fb7000)
+	libXext.so.6 =&gt; /usr/lib/libXext.so.6 (0xb7fa7000)
+	libX11.so.6 =&gt; /usr/lib/libX11.so.6 (0xb7eb8000)
+	libsndfile.so.1 =&gt; /usr/lib/libsndfile.so.1 (0xb7e5b000)
+	libsamplerate.so.0 =&gt; /usr/lib/libsamplerate.so.0 (0xb7cf1000)
+	libpulse-simple.so.0 =&gt; /usr/lib/libpulse-simple.so.0 (0xb7cdf000)
+	libpulse.so.0 =&gt; /usr/lib/libpulse.so.0 (0xb7c80000)
+	libhamlib.so.2 =&gt; /usr/local/lib/libhamlib.so.2 (0xb7c64000)
+	librt.so.1 =&gt; /lib/tls/i686/cmov/librt.so.1 (0xb7c5b000)
+	libstdc++.so.6 =&gt; /usr/lib/libstdc++.so.6 (0xb7b6c000)
+	libgcc_s.so.1 =&gt; /lib/libgcc_s.so.1 (0xb7b5c000)
+	libc.so.6 =&gt; /lib/tls/i686/cmov/libc.so.6 (0xb79f9000)
+	libfontconfig.so.1 =&gt; /usr/lib/libfontconfig.so.1 (0xb79cc000)
+	libasound.so.2 =&gt; /usr/lib/libasound.so.2 (0xb7904000)
+	/lib/ld-linux.so.2 (0xb80a2000)
+	libfreetype.so.6 =&gt; /usr/lib/libfreetype.so.6 (0xb788d000)
+	libXrender.so.1 =&gt; /usr/lib/libXrender.so.1 (0xb7882000)
+	libXau.so.6 =&gt; /usr/lib/libXau.so.6 (0xb787e000)
+	libxcb.so.1 =&gt; /usr/lib/libxcb.so.1 (0xb7864000)
+	libFLAC.so.8 =&gt; /usr/lib/libFLAC.so.8 (0xb7811000)
+	libSM.so.6 =&gt; /usr/lib/libSM.so.6 (0xb7808000)
+	libICE.so.6 =&gt; /usr/lib/libICE.so.6 (0xb77ef000)
+	libcap.so.2 =&gt; /lib/libcap.so.2 (0xb77ea000)
+	libgdbm.so.3 =&gt; /usr/lib/libgdbm.so.3 (0xb77e3000)
+	libusb-0.1.so.4 =&gt; /lib/libusb-0.1.so.4 (0xb77da000)
+	libexpat.so.1 =&gt; /usr/lib/libexpat.so.1 (0xb77b3000)
+	libXdmcp.so.6 =&gt; /usr/lib/libXdmcp.so.6 (0xb77ad000)
+	libogg.so.0 =&gt; /usr/lib/libogg.so.0 (0xb77a7000)
+	libuuid.so.1 =&gt; /lib/libuuid.so.1 (0xb77a2000)
+	libattr.so.1 =&gt; /lib/libattr.so.1 (0xb779c000)
+
+
+Ed W3NR
+
+
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000125.html">QRZ Lookup - takes two tries first time
+</A></li>
+	<LI>Next message: <A HREF="000127.html">QRZ Lookup - takes two tries first time
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

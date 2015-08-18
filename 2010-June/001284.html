@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi-3.21.0AB In WEFAX mode
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi-3.21.0AB%20In%20WEFAX%20mode&In-Reply-To=%3C4C169EB5.20101%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001283.html">
+   <LINK REL="Next"  HREF="001285.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi-3.21.0AB In WEFAX mode</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Fldigi-3.21.0AB%20In%20WEFAX%20mode&In-Reply-To=%3C4C169EB5.20101%40gmail.com%3E"
+       TITLE="Fldigi-3.21.0AB In WEFAX mode">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Mon Jun 14 23:27:17 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001283.html">Fldigi-3.21.0AB In WEFAX mode
+</A></li>
+        <LI>Next message: <A HREF="001285.html">Picky ARRL Contest Robot for June VHF QSO Party
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1284">[ date ]</a>
+              <a href="thread.html#1284">[ thread ]</a>
+              <a href="subject.html#1284">[ subject ]</a>
+              <a href="author.html#1284">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Mitch,
+
+Mitch Baum wrote:
+&gt;<i> Dave,
+</I>&gt;<i>  
+</I>&gt;<i> Would it be possible to open the WEFAX receive viewer window in place of 
+</I>&gt;<i> both the normal receive and transmit windows?
+</I> &gt; It seems like a waste of real estate to have to open another window.
+
+There has been some reflection about the decision to create these two 
+windows, here are some elements:
+- It was needed to have a fully scrollable window. The normal receive 
+window does not provide that. Many other widgets are necessary for fax only.
+- It was massively inspired from sending/receivign MFSK images.
+- In order to reuse the existing window, many changes are necessary in 
+code which is used by all other modes so it is a bit dangerous (At this 
+time, 99% of the fax logic is in two files so it is safe for the rest of 
+the code).
+- I thought also about writing text to these two windows, for example 
+when an image is received (Maybe some quick OCR scan of the fax ?). Or, 
+give the possibility to send free text by fax, just like Hell. This 
+would decrease the feeling that display space is wasted as you pointed out.
+
+What you describe would be easier if there is an easy way to insert the 
+fax receive window in the normal window (and hide it when not in fax 
+mode), without changing anything else. Same for the transmit window.T 
+his needs reflection but you have a point in my opinion.
+
+
+&gt;<i> Also would it be possible to &quot;lock&quot; the WEFAX receive bandpass bars to 
+</I>&gt;<i> what the decoder is looking for? This would make tuning a lot easier if 
+</I>&gt;<i> we could use the waterfall with some actual &quot;markers&quot; like the other 
+</I>&gt;<i> modes make use of.
+</I>- In my opinion you are right too, the thing is that I did not fully 
+understand how the bandpass bars work and how they can be controlled. 
+Other people had about the same idea. An alternative is to freeze the 
+bandpass bar like in MT63 but I did not find how to do it at the moment.
+
+&gt;<i> If this can't be done, could we make the WEFAX decoder operate like the 
+</I>&gt;<i> other decoders, and pass the center frequency value to the decoder so 
+</I>&gt;<i> that we could adjust the balck/white levels (and the other elements) 
+</I>&gt;<i> relative to the decoder bandpass? The &quot;sweet spot&quot; for my radio is not 
+</I>&gt;<i> up at 1900 Hz and the audio passband starts to drop off at around 2000Hz 
+</I>&gt;<i> with the 2kHz filter in-line. It would be much better if we could shift 
+</I>&gt;<i> the decoder center down to 1500 Hz (or so - in my case).
+</I>Sorry for the question: I do not understand why it cannot be done simply 
+be tuning ? Normally the frequency does not have to change much, does it ?
+
+&gt;<i> Also the tuning 
+</I>&gt;<i> bars added to the latest WEFAX don't really help as the time constant is 
+</I>&gt;<i> too short and they bounce around from nothing to full scale. Adding 
+</I>&gt;<i> about 10 seconds of time integration to the reading would stabilize the 
+</I>&gt;<i> indications and allow these to be more useful as a tuning indicator.
+</I>
+wefax/wefax.cpp : return decayavg( avg_pwr, pwr, 10 );
+
+Yes this coefficient (10) could be increased. The current level seems to 
+be OK as far as I could see, but as you said it could certainly be 
+tunable. Config parameter ?
+
+
+&gt;<i>  
+</I>&gt;<i> The prefs file does indicate &quot;23&quot;, but on reopening fldigi, it is not 
+</I>&gt;<i> recognized as IOC576.
+</I>Strange. Does it work fine with the other modes ? With the other 
+parameters ? (Parameters related or not to WEFAX) Thanks.
+&gt;<i>  
+</I>&gt;<i> I'll download and install the 0AE later tonigh and give it a run for the 
+</I>&gt;<i> money! :)
+</I>&gt;<i>  
+</I>&gt;<i> BTW I love letting the program just sit on the WEFAX and pull in the 
+</I>&gt;<i> Faxes! Being an avid boater, I did not have this capability on my boat, 
+</I>&gt;<i> but I could tune the IC-710-M to any frequency (I had it &quot;opened up&quot; for 
+</I>&gt;<i> Ham use also), but I didn't have the ability to capture the WEFAX images.
+</I>
+About receiving many faxes, it would be to fine-tune the detection of 
+the end of an image. The logic at the moment is based on two things:
+- Detected the APT stop frequency.
+- If the frequency cannot be extracted, use the power/noise ratio at APT 
+stop frequency, and stop image reception if this is &quot;strong enough&quot;. The 
+difficulty is in adjusting &quot;string enough&quot; which is variable depending 
+on everything. I thought about an assisted mode:
+- This would start as it is now.
+- But when the user stops reception, we would conclude that the current 
+levels mean &quot;image stop&quot;. This would give the right power thresholds 
+when receiving the next image on the same frequency. Same logic for 
+image start. This is quite complicated of course, the user-levels wold 
+have to be saved somewhere, it would have to be tested in many different 
+cases etc...
+
+&gt;<i>  
+</I>&gt;<i> One other &quot;Honey-Do&quot; - If we are sitting on a WEFAX channel and detect a 
+</I>&gt;<i> 75 baud RTTY/850 Hz, why not switch to RTTY decode for the broadcasts 
+</I>&gt;<i> and capture those as text also? This would probably need another thread 
+</I>&gt;<i> to monitor the RX bandpass and detect the mode being used and activate 
+</I>&gt;<i> the correct decoder/modem.
+</I>
+The difficulty is that two different modes, as you said, must be 
+monitored at the same time, which is not in the logic of fldigi AFAIK.
+
+Wonder whether it would be possible to &quot;conditionnaly&quot; set a mode with 
+macros. That is, we would say:
+&quot;Set mode to wefax and wait 20 seconds, then return if nothing is 
+detected, otherwise stay in this mode&quot;. Same for rtty, maybe with a 
+command like &lt;MODE:WEFAX:20&gt;
+
+Thanks for your remarks.
+
+Cheers
+
+Remi
+
+
+
+
+
+
+There might be several ways to do that:
+- When no signal is detected in wefax mode, automatically switch  to
+
+&gt;<i> 
+</I>&gt;<i> Thanks,
+</I>&gt;<i> 
+</I>&gt;<i> Mitch Baum / AF2M
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001283.html">Fldigi-3.21.0AB In WEFAX mode
+</A></li>
+	<LI>Next message: <A HREF="001285.html">Picky ARRL Contest Robot for June VHF QSO Party
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1284">[ date ]</a>
+              <a href="thread.html#1284">[ thread ]</a>
+              <a href="subject.html#1284">[ subject ]</a>
+              <a href="author.html#1284">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

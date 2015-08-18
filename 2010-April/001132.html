@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3C878w8lizcl.wl%40logrus.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001128.html">
+   <LINK REL="Next"  HREF="001133.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3C878w8lizcl.wl%40logrus.enotty.net%3E"
+       TITLE="Contestia">m0gld at enotty.net
+       </A><BR>
+    <I>Sat Apr 17 22:43:54 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001128.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001133.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1132">[ date ]</a>
+              <a href="thread.html#1132">[ thread ]</a>
+              <a href="subject.html#1132">[ subject ]</a>
+              <a href="author.html#1132">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> On Sat, 17 Apr 2010 10:37:31 -0700, Brian Lloyd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A>&gt; said:
+</I>
+&gt;<i> (I forgot to reply to all.)
+</I>
+(I removed one level of &gt; characters below)
+
+&gt;<i> On Sat, Apr 17, 2010 at 9:49 AM, Brian Lloyd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A>&gt; wrote:
+</I>
+[snip]
+
+&gt;<i> It is really Really *REALLY* important to understand what is going on with
+</I>&gt;<i> these protocols in the presence of propagation anomalies in order to be able
+</I>&gt;<i> to make decisions about which modes work best under what conditions. My own
+</I>&gt;<i> recent experiments in monitoring and graphing the phase/frequency changes of
+</I>&gt;<i> the WWV carrier over time (20-30 minute samples typically) have convinced me
+</I>&gt;<i> that sequential testing of protocols, i.e. transmitting a message and then
+</I>&gt;<i> immediately transmitting the same message using the other protocol, is not
+</I>&gt;<i> likely to produce valid results unless repeated numerous times and then the
+</I>&gt;<i> results averaged with outliers discarded.
+</I>
+True, and I seriously doubt that anyone has bothered to do that.
+
+&gt;<i> I have been pestering Dave to do a test version of fldigi that would
+</I>&gt;<i> let me transmit the same data in two modes at the same time in the
+</I>&gt;<i> same passband so that both experience *exactly* the same propagation
+</I>&gt;<i> conditions concurrently.
+</I>
+This is somewhat more complex than it sounds... what would work right
+now would be to generate two audio files (with signals at suitable
+frequencies of course) and mix them using another program.  I'm sure sox
+can do that in one short command line.
+
+In fact if fldigi had xmlrpc methods to start/stop audio file
+generation, it would be easy to write a script to do an audio file for
+each mode (for a particular input text), and then you could mix them as
+needed for your tests.  I guess I'll need to write those xmlrpc methods
+first :-)
+
+[snip]
+
+&gt;<i> Time to take the next step and build on Chen's work by getting real,
+</I>&gt;<i> controlled data from live propagation.
+</I>
+Some comparisons have been posted to the digitalradio yahoo group.
+There is one by K2MO, and another by WZ7I.  URL for the latter:
+
+  <A HREF="http://mysite.verizon.net/wz7i/digitalmodes.html">http://mysite.verizon.net/wz7i/digitalmodes.html</A>
+
+The tests done by K2MO are in the files area of digitalradio, and he has
+posted them to the group a few times too.
+
+I can't say how scientific those experiments were, but I know that the
+path simulator used (pathsim) is GPL'ed so at least that aspect of the
+tests can be verified by anyone so inclined.
+
+ES1HJ also has published some test results but I don't recall if they
+were on-air or simulation tests.
+
+
+-- 
+
+73,
+Stelios, M0GLD.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001128.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001133.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1132">[ date ]</a>
+              <a href="thread.html#1132">[ thread ]</a>
+              <a href="subject.html#1132">[ subject ]</a>
+              <a href="author.html#1132">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

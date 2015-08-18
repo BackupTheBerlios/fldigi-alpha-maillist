@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.22.0BI posted for alpha testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.22.0BI%20posted%20for%20alpha%20testing&In-Reply-To=%3C4ED94B6B.90303%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002171.html">
+   <LINK REL="Next"  HREF="002173.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.22.0BI posted for alpha testing</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20fldigi-3.22.0BI%20posted%20for%20alpha%20testing&In-Reply-To=%3C4ED94B6B.90303%40bellsouth.net%3E"
+       TITLE="fldigi-3.22.0BI posted for alpha testing">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Dec  2 23:04:27 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002171.html">Navtex decoder added in pu/rc
+</A></li>
+        <LI>Next message: <A HREF="002173.html">fldigi-3.22.0BI posted for alpha testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2172">[ date ]</a>
+              <a href="thread.html#2172">[ thread ]</a>
+              <a href="subject.html#2172">[ subject ]</a>
+              <a href="author.html#2172">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+
+Note that all but the first two changes are also in the current 3.21.31 
+posting
+
+73, Dave, W1HKJ
+
+Version 3.22.0BI - Alpha release
+
+   Contestia 64/1000
+     * Added to mode menu system iaw request from KH6TY
+
+   Call lookups
+     * Added hamQTH browser lookup
+     * Added ability to do both browser and xml call lookup
+
+   Compile warnings
+     * Changed code to correct for some warning messages on newer gcc 
+compilers
+
+   UI changes
+     * Added check box / configuration item for presetting
+       RST-in to 599 when clearing the log entries
+
+   Main thread hang
+     * Main thread would deadlock during initial read of logbook.  This
+       was reported and duplicated on Linux and OS X systems.
+     * Added timeout call to execute initialization routines that might
+       modify any UI element after Fl::run() is executed
+
+   ver2int
+     * Corrected ver2int string to long integer conversion function
+       Used by routine which checks for version updates
+
+   Merge dups
+     * Corrected logic for instance when merge source file has duplicate
+       records
+
+   Logbook dirty boolean
+     * Added code to clear dirty boolean when log first loaded
+
+   Tx Attenuator Control
+     * Moved tx attenuator control to main panel
+
+   HamQTH app ident
+     * removed version number from FLDIGI application identification
+       at request of Petr, OK2CQR
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111202/c701b934/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20111202/c701b934/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002171.html">Navtex decoder added in pu/rc
+</A></li>
+	<LI>Next message: <A HREF="002173.html">fldigi-3.22.0BI posted for alpha testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2172">[ date ]</a>
+              <a href="thread.html#2172">[ thread ]</a>
+              <a href="subject.html#2172">[ subject ]</a>
+              <a href="author.html#2172">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

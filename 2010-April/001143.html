@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Cn2ze93450131004171722m1c6ec916ta73f85bfce98f1df%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001142.html">
+   <LINK REL="Next"  HREF="001144.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>Brian Lloyd</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3Cn2ze93450131004171722m1c6ec916ta73f85bfce98f1df%40mail.gmail.com%3E"
+       TITLE="Contestia">brian-wb6rqn at lloyd.com
+       </A><BR>
+    <I>Sun Apr 18 02:22:15 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001142.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001144.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1143">[ date ]</a>
+              <a href="thread.html#1143">[ thread ]</a>
+              <a href="subject.html#1143">[ subject ]</a>
+              <a href="author.html#1143">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, Apr 17, 2010 at 4:49 PM, hteller &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">hteller at comcast.net</A>&gt; wrote:
+
+&gt;<i> Brian,
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> &gt; But when the path provides less loss, you can take advantage of that
+</I>&gt;<i> extra S:N to do one of two things: increase speed (less energy needed per
+</I>&gt;<i> bit) or decrease power. And who cares how fast someone types. Why should the
+</I>&gt;<i> transmitter be on for the entire time the person is typing? Why not transmit
+</I>&gt;<i> when some or all of the message is ready?
+</I>&gt;<i>
+</I>&gt;<i> This is the principle of the &quot;typeahead&quot; buffer, which almost all PSK31,
+</I>&gt;<i> and other digital programs, programs already have. Some even have an option
+</I>&gt;<i> to transmit when the Enter key is pressed. The PROBLEM  is that the
+</I>&gt;<i> frequency is  occupied, whether or not anyone is currently sending. That is
+</I>&gt;<i> the purpose of transmitting the QRL and waiting for a reply.
+</I>
+
+&gt;<i> Media Access Control depends upon control of access,
+</I>
+
+Yeah, that is what its name implies. :-)
+
+
+&gt;<i> but on the ham bands, access is random, and not controllable.
+</I>
+
+Why? You don't even need everyone participating for it to work. And don't
+stop with thinking that your MAC just controls *when* you transmit but also
+*where* (frequency) you transmit and maybe even *how* you transmit.
+
+Our method of &quot;control&quot; is listening first, or the QRL,  and courteous
+&gt;<i> operating practices.
+</I>
+
+So? That is CSMA.
+
+
+&gt;<i> This is the way that we SHARE frequencies to make most efficient use of
+</I>&gt;<i> them by a lot of stations which may fade in and out.
+</I>
+
+Statistical heuristic on CSMA.
+
+If you can control access then you can share resources, but if access by a
+&gt;<i> central control is not possible, then we must rely on the human brain to
+</I>&gt;<i> control access.
+</I>
+
+Why? Do you have any idea just how complex distributed control is in the
+Internet and the cell phone systems? There is no central control. Yet it
+works very well with many orders of magnitude more complexity than what we
+are talking about here.
+
+If you think about it, what we do as human media access control computers is
+actually very algorithmic. I bet you could write down the steps you use to
+find a frequency and operate. But given the power of the computers we have
+there is no reason why we can't automate that process.
+
+Here is an example of how traditional thinking skews the process. You
+probably think that if a station tunes to a different frequency and you
+don't know it, you aren't going to receive their query about whether the
+frequency is in use. But now think about CW skimmer and the PSK browser. We
+have the ability to receive and decode an ENTIRE BAND at once. We can see
+when a frequency is occupied and when it isn't. We can be frequency and time
+agile. Why should an entire QSO take place on a single frequency? Why not
+adaptively QSY? Why not beacon, &quot;we are going to be using this frequency for
+this long.&quot;
+
+
+&gt;<i> Heck, when I worked at Western Electric 50 years ago, we were given a
+</I>&gt;<i> demonstration of multiplexing over the phone lines, and what happened if too
+</I>&gt;<i> many users tried to get on at the same time - everyone's syllables were
+</I>&gt;<i> clipped. Of course, this is all covered by queuing theory, as you point out
+</I>&gt;<i> by the cell phone access control.
+</I>&gt;<i>
+</I>
+Yeah. They have the problem with blocking because they required a 64kbps
+channel. But look at the Internet. The more people who use it, it just
+degrades gradually for everyone. Still, the traffic gets through.
+
+
+&gt;<i>
+</I>&gt;<i> If you can design a mode that does better than what we have today, then do
+</I>&gt;<i> it! I assure you it will be welcomed and you can show us all how it should
+</I>&gt;<i> be done properly!
+</I>&gt;<i>
+</I>
+I am considering doing just that. Step one is to investigate the medium and
+how to build an efficient adaptive link that runs over that medium. It may
+run as slowly as a few bits-per-second, or as fast as several thousand bps
+depending on band conditions. It will not require the operator to make that
+decision.
+
+Once I have that I can layer the MAC and the routing. Oh, and it will
+support kbd-to-kbd. My problem is that, while I am quite good with
+protocols, I don't have the signal processing and coding background. That
+was all phy stuff that was done by someone else. But once someone gave me a
+path to move bits from here to there, then I could make them sit up and beg.
+Now I want to understand the phy so I can get it right.
+
+But right now I am trying to get you guys to stop thinking in the same path.
+Radios are changing. These changes bring about capabilities we have only
+just dreamed of. Now they are here. We need to start thinking about taking
+advantage of them.
+
+-- 
+73 de Brian, WB6RQN/J79BPL
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/e6b6174d/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/e6b6174d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001142.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001144.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1143">[ date ]</a>
+              <a href="thread.html#1143">[ thread ]</a>
+              <a href="subject.html#1143">[ subject ]</a>
+              <a href="author.html#1143">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

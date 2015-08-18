@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Contestia
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3C4BCA3390.9090901%40comcast.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001130.html">
+   <LINK REL="Next"  HREF="001136.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Contestia</H1>
+    <B>hteller</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Contestia&In-Reply-To=%3C4BCA3390.9090901%40comcast.net%3E"
+       TITLE="Contestia">hteller at comcast.net
+       </A><BR>
+    <I>Sun Apr 18 00:17:52 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001130.html">Contestia
+</A></li>
+        <LI>Next message: <A HREF="001136.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1135">[ date ]</a>
+              <a href="thread.html#1135">[ thread ]</a>
+              <a href="subject.html#1135">[ subject ]</a>
+              <a href="author.html#1135">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Brian,
+
+ &gt; I often hear people talking about preserving bandwidth and I wonder 
+why that is such a goal? Sometimes increasing bandwidth can improve 
+performance to the point where you get all the bits through in a shorter 
+period of time, making the channel available to others. Think about 
+spread-spectrum or packet radio vs. RTTY for example.
+
+This the argument that Winlink tried to foist upon everyone over five 
+years ago when asking for unlimited space. The fallacy of that argument 
+is that the frequency (or channel)  is dominated by one station that 
+keeps the channel occupied until &quot;its&quot; traffic is passed, whereas, if 
+more stations, say five, can fit in one of our limited frequency ranges 
+and pass traffic simultaneously at only 1/5 the rate, the chances of 
+more than one station successfully passing traffic, even at a slower 
+rate, is greater than the chances of a single wide station passing its 
+traffic. In the limit case, the wide station keeps trying to pass 
+traffic without any success at all, but prevents other stations from 
+using the frequency when one or more of them could have been successful 
+in passing traffic.
+
+The same it true for spread spectrum, or even HSMM. The idea is that a 
+station is on for only a short time, so it creates QRM on that frequency 
+for only a short time, and that is supposed to be acceptable for the 
+harmed station, as they can just repeat their transmission, or perhaps 
+the signal is so weak it is not noticed. The problem occurs when many 
+spread spectrum stations try to use a band of frequencies at one time. 
+In the aggregate, they will QRM the majority of stations over the band 
+in question, since there are few places where others can operate without 
+any QRM at all.
+
+In layman's terms, a single wide signal can blanket the entire passband 
+of a receiver (let's say MT63-2000), and it is not possible to filter 
+out that signal. You have to wait until it is finished passing traffic, 
+no matter how fast it transmits. In the extreme, if you use a 50 Hz wide 
+IF filter for PSK31, 40 stations can occupy the IF bandwidth at one time 
+without any of them capturing the AGC or interfering with each other. 
+Again, signaling theory can probably make a scientific argument for 
+conserving bandwidth so a band of frequencies is available to more than 
+one station at any given time.
+
+All the &quot;get on and get off fast&quot; arguments may be valid on wired 
+circuits, where access is controlled, but they tend to fall apart in 
+practice on the HF bands where space is so limited and access is random. 
+As a recent example, ROS uses spread spectrum, occupies 2200 Hz of 
+spectrum, but currently is only able to handle two stations on the 
+frequency at one time without interference between stations, and the 
+weak signal performance is no better than MFSK16, for example, in 1/6 
+the bandwidth.
+
+The simple reason that narrow bandwidth is such a goal is that it gives 
+more stations the &quot;opportunity&quot; to use a limited number of frequencies 
+at the same time, and speed of traffic passing is not so important for a 
+50 wpm QSO, which is the speed that G3PLX chose as a reasonable speed to 
+accommodate a most typists. PSK63 is twice as wide, so only half as many 
+stations can use the same frequency range, but the speed (100 wpm) is 
+greater than needed for ragchews. It was only intended to be a RTTY 
+replacement for contests, in less bandwidth, but just as fast as RTTY 
+overall. However, there is a penalty of 3 dB in minimum S/N for the 
+extra speed, so for ragchews, PSK31 is sufficient and twice as many 
+stations can use the same range of frequencies simultaneously.
+
+That is how I see it from a layman's viewpoint...
+
+
+73 - Skip KH6TY
+
+
+
+
+Brian Lloyd wrote:
+&gt;<i> On Sat, Apr 17, 2010 at 1:03 PM, Brian Lloyd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A> 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">brian-wb6rqn at lloyd.com</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     On Sat, Apr 17, 2010 at 10:24 AM, ke4lkq &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ke4lkq at doramefa.us</A>
+</I>&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">ke4lkq at doramefa.us</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>         That would be an excellent idea and a must have for amatuer
+</I>&gt;<i>         radio operators.  It would preserve bandwidth and also educate.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     To educate is good. OTOH, good luck with that! One of my favorite
+</I>&gt;<i>     saying is:
+</I>&gt;<i>
+</I>&gt;<i>     &quot;Five percent of the people think. Ten percent of the people think
+</I>&gt;<i>     they think. Eighty-five percent of the people would rather die
+</I>&gt;<i>     than think.&quot; -- Thomas Alva Edison.
+</I>&gt;<i>
+</I>&gt;<i>     I often hear people talking about preserving bandwidth and I
+</I>&gt;<i>     wonder why that is such a goal? Sometimes increasing bandwidth can
+</I>&gt;<i>     improve performance to the point where you get all the bits
+</I>&gt;<i>     through in a shorter period of time, making the channel available
+</I>&gt;<i>     to others. Think about spread-spectrum or packet radio vs. RTTY
+</I>&gt;<i>     for example.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     -- 
+</I>&gt;<i>     73 de Brian, WB6RQN/J79BPL
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> 73 de Brian, WB6RQN/J79BPL
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>   
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/483bfc10/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20100417/483bfc10/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001130.html">Contestia
+</A></li>
+	<LI>Next message: <A HREF="001136.html">Contestia
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1135">[ date ]</a>
+              <a href="thread.html#1135">[ thread ]</a>
+              <a href="subject.html#1135">[ subject ]</a>
+              <a href="author.html#1135">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

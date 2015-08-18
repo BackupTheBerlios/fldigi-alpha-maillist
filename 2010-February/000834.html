@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> High CPU load with USB sound device
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C201002131332.29844.k9ao%40charter.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000833.html">
+   <LINK REL="Next"  HREF="000835.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>High CPU load with USB sound device</H1>
+    <B>Rick Kunath</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20High%20CPU%20load%20with%20USB%20sound%20device&In-Reply-To=%3C201002131332.29844.k9ao%40charter.net%3E"
+       TITLE="High CPU load with USB sound device">k9ao at charter.net
+       </A><BR>
+    <I>Sat Feb 13 19:32:29 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000833.html">High CPU load with USB sound device
+</A></li>
+        <LI>Next message: <A HREF="000835.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#834">[ date ]</a>
+              <a href="thread.html#834">[ thread ]</a>
+              <a href="subject.html#834">[ subject ]</a>
+              <a href="author.html#834">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sorry, a re-send. Reply to was set to the sender and not the group.
+
+On Saturday 13 February 2010 12:42:56 pm Peter Hamilton wrote:
+&gt;<i> &gt; Since you didn't specify a M$ OS
+</I>&gt;<i> 
+</I>&gt;<i> No, I specified Linux:
+</I>&gt;<i> &gt;&gt; 3.13BX, Portaudio, Xubuntu 9.10.
+</I>&gt;<i> 
+</I>&gt;<i> See other message to Dave for more detail. Problem now fixed by
+</I>&gt;<i> switching from Portaudio to OSS. I don't have a clue why, but all works
+</I>&gt;<i> as expected with OSS.
+</I>
+Sorry, didn't see the reference.
+
+But the loading was as I expected.
+
+The reason for the difference is in the efficiency of the sample rate converter. 
+In my experience the OSS sample rate converter is a lot more efficient than the 
+converter built into PortAudio for certain sample rate conversion ratios. That 
+is compounded by the 44100 native sample rate of the card. I suspect that a 
+card that had a native sample rate of 48000 would not have loaded the 
+PortAudio sample rate converter as badly.
+
+It's better to have a soundcard that supports any of the sample rates needed 
+by the application natively, but these are increasingly hard to find these 
+days. 
+
+It might be interesting to see how Pulse handles this. 
+
+The quick fix is probably to use OSS emulation on these cards that have a 
+higher sample rate conversion overhead. I had one card like this that I was 
+using on a machine that had plenty of CPU overhead so I didn't care about the 
+additional loading. But it just was not as sensitive and some of the digital 
+modes such as Olivia refused to decode correctly using the PortAudio sample 
+rate conversion routines to 44100. Using OSS the CPU load dropped and 
+everything decoded fine.
+
+Rick Kunath, k9ao
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000833.html">High CPU load with USB sound device
+</A></li>
+	<LI>Next message: <A HREF="000835.html">High CPU load with USB sound device
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#834">[ date ]</a>
+              <a href="thread.html#834">[ thread ]</a>
+              <a href="subject.html#834">[ subject ]</a>
+              <a href="author.html#834">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

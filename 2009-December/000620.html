@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Version 3.13BJ
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Version%203.13BJ&In-Reply-To=%3C200912270953.05723.pinozollo%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000632.html">
+   <LINK REL="Next"  HREF="000622.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Version 3.13BJ</H1>
+    <B>Pino Zollo</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Version%203.13BJ&In-Reply-To=%3C200912270953.05723.pinozollo%40gmail.com%3E"
+       TITLE="Version 3.13BJ">pinozollo at gmail.com
+       </A><BR>
+    <I>Sun Dec 27 13:53:05 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000632.html">Fwd: Re: Portaudio problem.
+</A></li>
+        <LI>Next message: <A HREF="000622.html">Weather fax modems ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#620">[ date ]</a>
+              <a href="thread.html#620">[ thread ]</a>
+              <a href="subject.html#620">[ subject ]</a>
+              <a href="author.html#620">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Il sabato 26 dicembre 2009 22:50:58 hai scritto:
+&gt;<i> We are controlling the transceiver from the external application. &#160;
+</I>&gt;<i> Fldigi sends it's requests to that application and also displays the
+</I>&gt;<i> values for frequency, transceiver mode and bandwidth. &#160;Both Rick's
+</I>&gt;<i> logger32 (Windows) and my flrig (Linux/Windows) are using the following
+</I>&gt;<i> xmlrpc commands (the ones in bold):
+</I>
+humble ???
+
+so the other applications (Logger32) acts as an XML server, is it ?
+
+The advantage I have with DBLog asking Fldigi is that only Fldigi knows which 
+is  the real TX/RX frequency which depends both on radio VFO and from &quot;QSY&quot; 
+of the digimode.
+
+So my DBLog shows, logs and spots the real frequency used by the digi-modem
+without having to do any computation.
+
+The drawback is that DBLog has to do continuous polling and mixing frequency 
+polls to other requests is really difficult.
+
+DBLog normally is stateless ...it is event-driven. To make it to remember 
+states is difficult and not reliable.
+
+As we were talking in a previous mail, the best would be that fldigi replies 
+to commands giving also the information about what the returned vale is.
+ 
+This will make the interaction very solid, simple and easier to modify for 
+adding new features..
+
+ Thanks Dave for the help
+
+Pino ZP4KFX
+
+-- 
+Key ID: 0xF6768208 
+Key fingerprint = B16D 0A7C 5B29 A334 CE6A  71F6 EAF8 3D88 F676 8208
+Key server: <A HREF="hkp://wwwkeys.eu.pgp.net">hkp://wwwkeys.eu.pgp.net</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000632.html">Fwd: Re: Portaudio problem.
+</A></li>
+	<LI>Next message: <A HREF="000622.html">Weather fax modems ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#620">[ date ]</a>
+              <a href="thread.html#620">[ thread ]</a>
+              <a href="subject.html#620">[ subject ]</a>
+              <a href="author.html#620">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

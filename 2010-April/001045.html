@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Incorrect &quot;postamble&quot; sent  in QPSK31:    fldigi 3.20.0b9
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Incorrect%20%22postamble%22%20sent%20%20in%20QPSK31%3A%20%20%20%20fldigi%203.20.0b9&In-Reply-To=%3C4BB66B0F.5050809%40penjarvis.co.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001044.html">
+   <LINK REL="Next"  HREF="001046.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Incorrect &quot;postamble&quot; sent  in QPSK31:    fldigi 3.20.0b9</H1>
+    <B>Peter Hamilton</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Incorrect%20%22postamble%22%20sent%20%20in%20QPSK31%3A%20%20%20%20fldigi%203.20.0b9&In-Reply-To=%3C4BB66B0F.5050809%40penjarvis.co.uk%3E"
+       TITLE="Incorrect &quot;postamble&quot; sent  in QPSK31:    fldigi 3.20.0b9">fldigi at penjarvis.co.uk
+       </A><BR>
+    <I>Sat Apr  3 00:09:19 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001044.html">Olivia problems in3.20.0b9
+</A></li>
+        <LI>Next message: <A HREF="001046.html">Squelch Check Not Visible
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1045">[ date ]</a>
+              <a href="thread.html#1045">[ thread ]</a>
+              <a href="subject.html#1045">[ subject ]</a>
+              <a href="author.html#1045">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+During a QPSK QSO with G3PLX the originator of PSK31 today, he pointed
+out that my signal did not include about a second of centre-frequency CW
+at the end of transmission, with the result that his demod was
+displaying some garbage characters at the end of my transmission. The CW
+&quot;postamble&quot; tells the demod that the transmission has finished and to
+tidy up cleanly.
+
+The fldigi demod appears to work correctly: if the centre-frequency
+postamble is received no garbage characters are displayed, but if the
+transmission is abruptly stopped while in the two-tone idle state random
+characters are shown, as expected.
+
+Checking the fldigi QPSK output on a monitor receiver here confirms that
+a two-tone rather than single-tone postamble is sent for all QPSK variants.
+
+BPSK is fine and sends the single-tone postamble as expected.
+
+
+-- 
+Peter
+G4VLC
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001044.html">Olivia problems in3.20.0b9
+</A></li>
+	<LI>Next message: <A HREF="001046.html">Squelch Check Not Visible
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1045">[ date ]</a>
+              <a href="thread.html#1045">[ thread ]</a>
+              <a href="subject.html#1045">[ subject ]</a>
+              <a href="author.html#1045">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

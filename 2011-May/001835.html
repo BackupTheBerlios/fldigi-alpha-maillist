@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA 
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hamlib%20PTT%20Bug%20Report%20in%20fldigi-3.21.9%20and%203.22.0AA%20&In-Reply-To=%3C61F0D9EF-5259-4451-8946-4AD00EF7954A%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001834.html">
+   <LINK REL="Next"  HREF="001836.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA </H1>
+    <B>Dick</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hamlib%20PTT%20Bug%20Report%20in%20fldigi-3.21.9%20and%203.22.0AA%20&In-Reply-To=%3C61F0D9EF-5259-4451-8946-4AD00EF7954A%40att.net%3E"
+       TITLE="Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA ">aa5vu at att.net
+       </A><BR>
+    <I>Mon May  2 18:19:06 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001834.html">Correct Procedure to Submit a Bug Report on fldig-3.21.9 and	3.22.0AA
+</A></li>
+        <LI>Next message: <A HREF="001836.html">Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1835">[ date ]</a>
+              <a href="thread.html#1835">[ thread ]</a>
+              <a href="subject.html#1835">[ subject ]</a>
+              <a href="author.html#1835">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This was reported to Dave W1HKJ the same day as his big WX event by
+email. I have no idea if he received the report but would like to archive 
+it for when his life returns to something more normal.
+
+I recently updated my setup to a direct USB interface and ran into an 
+issue getting the Hamlib option to key the Kenwood TS-590S.  The 
+workaround has been to use the RigCAT option. The issue is the same in 
+fldigi-3.21.9 and 3.22.0AA.
+
+The issue or problem is the &quot;PTT via Hamlib command&quot; option in the 
+Hamlib configuration pane is now dimmed and fldigi does not key the
+rig when the Hamlib option is selected for rig control.
+
+     &lt;<A HREF="http://www.qsl.net/aa5vu/temp_hamlib.png">http://www.qsl.net/aa5vu/temp_hamlib.png</A>&gt;
+
+When I first discovered the issue, I changed over to the fldigi RigCAT option
+and it allows me to transmit. Since then I have been running tests to 
+understand what caused PTT option in Hamlib to not function and to be
+dimmed.
+
+First, the issue may not be new because I in the past I let the SignaLink
+USB Auto-PTT circuit take care of the PTT and I never needed to check the 
+box or even tired to use the Hamlib software PTT option. I am now using 
+the direct USB (TS-590S to iMac) interface and the software PTT option is 
+necessary.
+
+To hep figure out what happen I started over by trashing my fldigi_def.xml 
+and fldigi.prefs files. I then downloaded and installed a fresh copy of
+fldigi-3.21.9.dmg.  I do not think this issue is unique to the OS X version
+of fldigi because another TS-590S  Windows user has confirmed the same 
+observation.
+
+I used the fldigi setup wizard to enter data. When it came time to enter the 
+rig control options, I selected the Hamlib option and it worked! The PTT option 
+was checked, it was NOT dimmed and rig control was seemed to be working. 
+That was the good news. The bad news was I could not get fldigi to key the 
+rig.  The Hamlib PTT option was not working. I then changed over to RigCAT 
+and could key the rig; however, going to RigCAT caused the PTT option in 
+Hamlib to dim and no longer be active as shown in the screenshot listed above. 
+I do not understand how selecting the RigCAT option caused the Hamlib
+PTT option to dim. I have not been able to make it active.
+
+I suspect there is something wrong with the PTT option in the Hamlib used
+in the current fldigi. The reason I prefer Hamlib over RigCAT is Hamlib
+displays the frequency of VFO-B when operating split for working DX.
+
+FYI, another big advantage of using the direct interface is it allowed me to 
+get rid of the old Keyspan Serial-to-USB adapter that was preventing me from 
+being able to use RigCAT at anything over 9600 baud. The direct USB is working 
+FB at 115200 baud.
+
+I am open to suggestions on how to get the Hamlib software PTT option to
+key the rig.
+
+73 Dick AA5VU
+
+Ps: I do not need comments that your Hamlib works with other interface devices. 
+I never had this issue with the SignaLink.  It seems to be unique to direct USB interface.
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001834.html">Correct Procedure to Submit a Bug Report on fldig-3.21.9 and	3.22.0AA
+</A></li>
+	<LI>Next message: <A HREF="001836.html">Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1835">[ date ]</a>
+              <a href="thread.html#1835">[ thread ]</a>
+              <a href="subject.html#1835">[ subject ]</a>
+              <a href="author.html#1835">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

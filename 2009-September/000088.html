@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Hard to &quot;Save&quot; Rig Control setting preference in 3.13AE OS X	version
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hard%20to%20%22Save%22%20Rig%20Control%20setting%20preference%20in%203.13AE%20OS%20X%0A%09version&In-Reply-To=%3C4AA22B48.70806%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000087.html">
+   <LINK REL="Next"  HREF="000089.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Hard to &quot;Save&quot; Rig Control setting preference in 3.13AE OS X	version</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hard%20to%20%22Save%22%20Rig%20Control%20setting%20preference%20in%203.13AE%20OS%20X%0A%09version&In-Reply-To=%3C4AA22B48.70806%40bellsouth.net%3E"
+       TITLE="Hard to &quot;Save&quot; Rig Control setting preference in 3.13AE OS X	version">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Sep  5 11:11:36 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000087.html">Hard to &quot;Save&quot; Rig Control setting preference in 3.13AE OS X	version
+</A></li>
+        <LI>Next message: <A HREF="000089.html">Hard to &quot;Save&quot; Rig Control setting preference in 3.13AE OS X 	version
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#88">[ date ]</a>
+              <a href="thread.html#88">[ thread ]</a>
+              <a href="subject.html#88">[ subject ]</a>
+              <a href="author.html#88">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Roger Beever wrote:
+&gt;<i> On Fri, 2009-09-04 at 21:14 -0500, Dick Kriss wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Something is not correct in the way the Mac version of 
+</I>&gt;&gt;<i> 3.13AE saves Rig Control settings.   When I click on the
+</I>&gt;&gt;<i> Configure/Rig Control button, the page opens showing
+</I>&gt;&gt;<i> RigCAT at the active setting and Rig CAT has never 
+</I>&gt;&gt;<i> worked for me. 
+</I>&gt;&gt;<i>     
+</I>&gt;<i> Dick If the first picture is supposed to be the actual state when you
+</I>&gt;<i> open the rig tab then RigCAT is not the active tab as the use RigCAT box
+</I>&gt;<i> is not checked.
+</I>&gt;<i>
+</I>&gt;<i> I just checked with the last release version and it always opens at
+</I>&gt;<i> Hamlib even though I use RigCAT.
+</I>&gt;<i> If you close and re-open the tab it seems to open at what ever tab was
+</I>&gt;<i> last displayed but shutting down fldigi and restarting always gives the
+</I>&gt;<i> Hamlib tab when the Rig tab is selected.
+</I>&gt;<i> Maybe from the cries for help on the lists Dave has changed the default
+</I>&gt;<i> as there has been more success in getting RigCAT to work.
+</I>&gt;<i> I guess if you open the rig tab for the very first time you would try
+</I>&gt;<i> what was offered first. Yes I know some people would be perverse and try
+</I>&gt;<i> anything but ;-)
+</I>&gt;<i>   
+</I>Actually the reason for the difference in the behavior between 3.12.4 
+and 3.13xx is quite simple.  It just happened to be the last tab I had 
+opened when I was fiddling with the gui design.  That is the default the 
+very first time you open that set of tabs for any execution of fldigi.  
+Subsequent visits to the rig control tabs will open the last tab you 
+were at.  That memory disappears when you close fldigi.  In order to 
+alter that behavior it would be necessary to save the state of every tab 
+and sub tab in the configuration dialog.  Whew!  We are already saving a 
+ton of configuration items and program states.
+
+Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090905/a2a1052c/attachment.html">https://lists.berlios.de/pipermail/fldigi-alpha/attachments/20090905/a2a1052c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000087.html">Hard to &quot;Save&quot; Rig Control setting preference in 3.13AE OS X	version
+</A></li>
+	<LI>Next message: <A HREF="000089.html">Hard to &quot;Save&quot; Rig Control setting preference in 3.13AE OS X 	version
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#88">[ date ]</a>
+              <a href="thread.html#88">[ thread ]</a>
+              <a href="subject.html#88">[ subject ]</a>
+              <a href="author.html#88">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA 
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hamlib%20PTT%20Bug%20Report%20in%20fldigi-3.21.9%20and%203.22.0AA%20&In-Reply-To=%3C3EB4D4E6-C9EE-4C22-9816-EBF54DF95D9F%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001835.html">
+   <LINK REL="Next"  HREF="001837.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA </H1>
+    <B>Dick</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20Hamlib%20PTT%20Bug%20Report%20in%20fldigi-3.21.9%20and%203.22.0AA%20&In-Reply-To=%3C3EB4D4E6-C9EE-4C22-9816-EBF54DF95D9F%40att.net%3E"
+       TITLE="Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA ">aa5vu at att.net
+       </A><BR>
+    <I>Mon May  2 23:13:56 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001835.html">Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA 
+</A></li>
+        <LI>Next message: <A HREF="001837.html">Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1836">[ date ]</a>
+              <a href="thread.html#1836">[ thread ]</a>
+              <a href="subject.html#1836">[ subject ]</a>
+              <a href="author.html#1836">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On May 2, 2011, at 11:19 AM, Dick AA5VU wrote:
+
+&gt;<i> The issue or problem is the &quot;PTT via Hamlib command&quot; option in the 
+</I>&gt;<i> Hamlib configuration pane is now dimmed and fldigi does not key the
+</I>&gt;<i> rig when the Hamlib option is selected for rig control.
+</I>&gt;<i> 
+</I>&gt;<i>     &lt;<A HREF="http://www.qsl.net/aa5vu/temp_hamlib.png">http://www.qsl.net/aa5vu/temp_hamlib.png</A>&gt;
+</I>
+More than one has questioned why I selected the Kenwood TS-570S in
+the Hamlib rig selector. The Kenwood TS-590S is not currently an option
+in Hamlib and the TS-570S worked perfect with the TS-590S when I was 
+using the SignaLink USB and the Keyspan USA-28A Serial-to-USB adapter.  
+There were issues with the other Kenwood options and the only one that 
+worked correct with the TS-590S was the TS-570S.
+
+I could be wrong but I do not think the rig selection has anything to do 
+with Hamlib PTT issue.
+
+The SLAB_USBtoUART used in the Device selector is the USB to UART Bridge 
+VCP Driver from Silicon Labs.  The drivers for various platforms are aviable 
+for download at
+
+<A HREF="http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx">http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx</A>
+
+In addition to working with the Kenwood TS-590S, I understand the Silicon
+Labs drivers also work with new Icom IC-7410. I do not think the driver has 
+anything to do with the Hamlab PTT issue since the driver works perfect with 
+RigCAT.
+
+Has anyone tested and used the &quot;PTT via Hamlib command&quot; option?  
+
+Dick AA5VU
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001835.html">Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA 
+</A></li>
+	<LI>Next message: <A HREF="001837.html">Hamlib PTT Bug Report in fldigi-3.21.9 and 3.22.0AA
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1836">[ date ]</a>
+              <a href="thread.html#1836">[ thread ]</a>
+              <a href="subject.html#1836">[ subject ]</a>
+              <a href="author.html#1836">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>

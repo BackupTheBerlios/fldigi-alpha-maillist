@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> PSK31 spotting without GUI?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-alpha/2011-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20PSK31%20spotting%20without%20GUI%3F&In-Reply-To=%3C87mxmghduz.wl%40darkstar.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="001672.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>PSK31 spotting without GUI?</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-alpha%40lists.berlios.de?Subject=Re%3A%20PSK31%20spotting%20without%20GUI%3F&In-Reply-To=%3C87mxmghduz.wl%40darkstar.enotty.net%3E"
+       TITLE="PSK31 spotting without GUI?">m0gld at enotty.net
+       </A><BR>
+    <I>Tue Feb  1 00:07:00 CET 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="001672.html">Log use question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1671">[ date ]</a>
+              <a href="thread.html#1671">[ thread ]</a>
+              <a href="subject.html#1671">[ subject ]</a>
+              <a href="author.html#1671">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> On Thu, 23 Dec 2010 10:44:15 -0800, &quot;Leigh L. Klotz, Jr WA5ZNU&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">Leigh at WA5ZNU.org</A>&gt; said:
+</I>
+&gt;<i> There's been some thought abotu an fldigi-lib but it would be a major task.
+</I>&gt;<i> Outside of fldigi I did a PSK engine (ui-free, network-based) in Java 
+</I>&gt;<i> called znudigi, mostly for academic purposes; it doesn't do spotting or 
+</I>&gt;<i> multi-decoding.
+</I>
+&gt;<i> With the current software, here's what I found:
+</I>&gt;<i> Setting the waterfall speed to PAUSE causes the CPU usage to drop from 
+</I>&gt;<i> 14% to 12% on my system.
+</I>&gt;<i> Changing from Best to Fast Sinc interpolator under Sound Settings causes 
+</I>&gt;<i> it to drop to 4%.
+</I>&gt;<i> I also tried moving the main RX squelch slider all the way up and didn't 
+</I>&gt;<i> see any change.
+</I>&gt;<i> At that point, re-enabling waterfall speed didn't increase CPU usage.
+</I>
+&gt;<i> What X server are you using? There is an X server called xvnc that 
+</I>&gt;<i> writes solely to memory and not to display, and you can then connect to 
+</I>&gt;<i> them with VNC if you want to see.
+</I>
+The manual page mentions a similar trick with xvfb-run but something
+like vnc or xpra might be better because you can see the window if
+necessary.  Don't know about overhead though.  Anyway it should be
+possible to set the psk browser to open automatically with the desired
+number of channels so that all you need to do is run fldigi under xvfb.
+I don't think there are xmlrpc calls to toggle the browser but we could
+add some.
+
+I too have thought of a libdigi but the amount of work involved is
+daunting.
+
+
+-- 
+
+73,
+Stelios, M0GLD.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="001672.html">Log use question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1671">[ date ]</a>
+              <a href="thread.html#1671">[ thread ]</a>
+              <a href="subject.html#1671">[ subject ]</a>
+              <a href="author.html#1671">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">More information about the fldigi-alpha
+mailing list</a><br>
+</body></html>
